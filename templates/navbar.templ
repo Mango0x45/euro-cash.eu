@@ -3,7 +3,7 @@ package templates
 import "git.thomasvoss.com/euro-cash.eu/i18n"
 
 templ navbar() {
-	{{ p := ctx.Value(PrinterKey).(i18n.Printer) }}
+	{{ p := ctx.Value("printer").(i18n.Printer) }}
 
 	<nav>
 		<menu>

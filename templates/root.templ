@@ -4,7 +4,7 @@ import "strings"
 import "git.thomasvoss.com/euro-cash.eu/i18n"
 
 templ Root(head, body templ.Component) {
-	{{ p := ctx.Value(PrinterKey).(i18n.Printer) }}
+	{{ p := ctx.Value("printer").(i18n.Printer) }}
 
 	<!DOCTYPE html>
 	<html lang={ p.Lang } data-theme="dark">
@@ -34,7 +34,7 @@ templ Root(head, body templ.Component) {
 }
 
 templ Index() {
-	{{ p := ctx.Value(PrinterKey).(i18n.Printer) }}
+	{{ p := ctx.Value("printer").(i18n.Printer) }}
 
 	<header>
 		@navbar()
@@ -49,7 +49,7 @@ templ Index() {
 }
 
 templ SetLanguage() {
-	{{ p := ctx.Value(PrinterKey).(i18n.Printer) }}
+	{{ p := ctx.Value("printer").(i18n.Printer) }}
 
 	<header>
 		@navbar()
@@ -83,7 +83,7 @@ templ languageGrid(eurozone bool) {
 				if loc.Eurozone == eurozone {
 					<button
 						type="submit"
-						name={ LocaleKey }
+						name="locale"
 						value={ loc.Code }
 						disabled?={ !loc.Enabled }
 					>

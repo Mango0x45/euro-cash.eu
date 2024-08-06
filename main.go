@@ -40,7 +40,7 @@ func main() {
 }
 
 func finalHandler(w http.ResponseWriter, r *http.Request) {
-	p := r.Context().Value(middleware.PrinterKey).(i18n.Printer)
+	p := r.Context().Value("printer").(i18n.Printer)
 
 	/* Strip trailing slash from the URL */
 	path := r.URL.Path
@@ -57,7 +57,7 @@ func finalHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func setUserLanguage(w http.ResponseWriter, r *http.Request) {
-	loc := r.FormValue(templates.LocaleKey)
+	loc := r.FormValue("locale")
 	_, ok := i18n.Printers[strings.ToLower(loc)]
 	if !ok {
 		w.WriteHeader(http.StatusBadRequest)
@@ -65,7 +65,7 @@ func setUserLanguage(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	http.SetCookie(w, &http.Cookie{
-		Name:   "lang",
+		Name:   "locale",
 		Value:  loc,
 		MaxAge: math.MaxInt32,
 	})
