@@ -42,6 +42,7 @@ func main() {
 func finalHandler(w http.ResponseWriter, r *http.Request) {
 	p := r.Context().Value(middleware.PrinterKey).(i18n.Printer)
 
+	/* Strip trailing slash from the URL */
 	path := r.URL.Path
 	if path != "/" && path[len(path)-1] == '/' {
 		path = path[:len(path)-1]
