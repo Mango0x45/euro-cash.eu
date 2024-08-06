@@ -52,7 +52,6 @@ func finalHandler(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusNotFound)
 		fmt.Fprintln(w, p.T("Page not found"))
 	} else {
-		w.WriteHeader(http.StatusOK)
 		templates.Root(nil, c).Render(r.Context(), w)
 	}
 }
