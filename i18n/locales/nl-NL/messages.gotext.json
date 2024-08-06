@@ -1,0 +1,70 @@
+{
+    "language": "nl-NL",
+    "messages": [
+        {
+            "id": "Home",
+            "message": "Home",
+            "translation": ""
+        },
+        {
+            "id": "News",
+            "message": "News",
+            "translation": ""
+        },
+        {
+            "id": "Coin Collecting",
+            "message": "Coin Collecting",
+            "translation": ""
+        },
+        {
+            "id": "Coins",
+            "message": "Coins",
+            "translation": ""
+        },
+        {
+            "id": "Banknotes",
+            "message": "Banknotes",
+            "translation": ""
+        },
+        {
+            "id": "Jargon",
+            "message": "Jargon",
+            "translation": ""
+        },
+        {
+            "id": "Discord",
+            "message": "Discord",
+            "translation": ""
+        },
+        {
+            "id": "Found a mistake or want to contribute missing information?",
+            "message": "Found a mistake or want to contribute missing information?",
+            "translation": ""
+        },
+        {
+            "id": "Feel free to contact us!",
+            "message": "Feel free to contact us!",
+            "translation": ""
+        },
+        {
+            "id": "Select Your Language",
+            "message": "Select Your Language",
+            "translation": ""
+        },
+        {
+            "id": "Select your preferred language to use on the site.",
+            "message": "Select your preferred language to use on the site.",
+            "translation": ""
+        },
+        {
+            "id": "Eurozone Languages",
+            "message": "Eurozone Languages",
+            "translation": ""
+        },
+        {
+            "id": "Other Languages",
+            "message": "Other Languages",
+            "translation": ""
+        }
+    ]
+}

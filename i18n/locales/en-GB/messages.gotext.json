@@ -1,0 +1,96 @@
+{
+    "language": "en-GB",
+    "messages": [
+        {
+            "id": "Home",
+            "message": "Home",
+            "translation": "Home",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "News",
+            "message": "News",
+            "translation": "News",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Coin Collecting",
+            "message": "Coin Collecting",
+            "translation": "Coin Collecting",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Coins",
+            "message": "Coins",
+            "translation": "Coins",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Banknotes",
+            "message": "Banknotes",
+            "translation": "Banknotes",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Jargon",
+            "message": "Jargon",
+            "translation": "Jargon",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Discord",
+            "message": "Discord",
+            "translation": "Discord",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Found a mistake or want to contribute missing information?",
+            "message": "Found a mistake or want to contribute missing information?",
+            "translation": "Found a mistake or want to contribute missing information?",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Feel free to contact us!",
+            "message": "Feel free to contact us!",
+            "translation": "Feel free to contact us!",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Select Your Language",
+            "message": "Select Your Language",
+            "translation": "Select Your Language",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Select your preferred language to use on the site.",
+            "message": "Select your preferred language to use on the site.",
+            "translation": "Select your preferred language to use on the site.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Eurozone Languages",
+            "message": "Eurozone Languages",
+            "translation": "Eurozone Languages",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Other Languages",
+            "message": "Other Languages",
+            "translation": "Other Languages",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        }
+    ]
+}

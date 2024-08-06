@@ -1,0 +1,101 @@
+package templates
+
+import "strings"
+import "git.thomasvoss.com/euro-cash.eu/i18n"
+
+templ Root(head, body templ.Component) {
+	{{ p := ctx.Value(PrinterKey).(i18n.Printer) }}
+
+	<!DOCTYPE html>
+	<html lang={ p.Lang } data-theme="dark">
+		<head>
+			<meta charset="UTF-8" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+			<link rel="stylesheet" type="text/css" href="/style.css">
+			<title>Euro Cash</title>
+			if head != nil {
+				@head
+			}
+		</head>
+		<body>
+			if body != nil {
+				@body
+			}
+			<footer>
+				<p>
+					<small>
+						{ p.T("Found a mistake or want to contribute missing information?") }
+						<a href="/">{ p.T("Feel free to contact us!") }</a>
+					</small>
+				</p>
+			</footer>
+		</body>
+	</html>
+}
+
+templ Index() {
+	{{ p := ctx.Value(PrinterKey).(i18n.Printer) }}
+
+	<header>
+		@navbar()
+		<h1>{ p.T("The Euro Cash Compendium") }</h1>
+		<p>
+			{ p.T("United in") }
+			<del>{ p.T("diversity") }</del>
+			<ins>{ p.T("cash") }</ins>
+		</p>
+		<p>{ p.T("Växjö has %d people", 70_489) }</p>
+	</header>
+}
+
+templ SetLanguage() {
+	{{ p := ctx.Value(PrinterKey).(i18n.Printer) }}
+
+	<header>
+		@navbar()
+		<h1>{ p.T("Select Your Language") }</h1>
+	</header>
+
+	<main>
+		<p>
+			{ p.T("Select your preferred language to use on the site.") }
+		</p>
+		<p>
+			If you are an American user, it’s suggested that you select
+			American English instead of British English. This will ensure that
+			dates will be formatted with the month before the day. 
+		</p>
+
+		<hr />
+
+		<h2>{ p.T("Eurozone Languages") }</h2>
+		@languageGrid(true)
+
+		<h2>{ p.T("Other Languages") }</h2>
+		@languageGrid(false)
+	</main>
+}
+
+templ languageGrid(eurozone bool) {
+	<form action="/language" method="POST">
+		<div class="lang-grid">
+			for _, loc := range i18n.Locales {
+				if loc.Eurozone == eurozone {
+					<button
+						type="submit"
+						name={ LocaleKey }
+						value={ loc.Code }
+						disabled?={ !loc.Enabled }
+					>
+						<span
+							lang={ loc.Code }
+							data-code={ strings.ToUpper(loc.Language()) }
+						>
+							{ loc.Name }
+						</span>
+					</button>
+				}
+			}
+		</div>
+	</form>
+}
