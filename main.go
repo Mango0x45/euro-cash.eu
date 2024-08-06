@@ -27,8 +27,10 @@ func main() {
 	port := flag.Int("port", 8080, "port number")
 	flag.Parse()
 
+	fs := http.FileServer(http.Dir("static"))
 	mux := http.NewServeMux()
-	mux.Handle("GET /style.css", http.FileServer(http.Dir("static")))
+	mux.Handle("GET /favicon.ico", fs)
+	mux.Handle("GET /style.css", fs)
 	mux.Handle("GET /", middleware.I18n(http.HandlerFunc(finalHandler)))
 	mux.Handle("POST /language", http.HandlerFunc(setUserLanguage))
 
