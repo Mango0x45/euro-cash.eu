@@ -41,7 +41,6 @@ func main() {
 
 func finalHandler(w http.ResponseWriter, r *http.Request) {
 	p := r.Context().Value(middleware.PrinterKey).(i18n.Printer)
-	ctx := context.WithValue(context.Background(), templates.PrinterKey, p)
 
 	path := r.URL.Path
 	if path != "/" && path[len(path)-1] == '/' {
@@ -53,7 +52,7 @@ func finalHandler(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintln(w, p.T("Page not found"))
 	} else {
 		w.WriteHeader(http.StatusOK)
-		templates.Root(nil, c).Render(ctx, w)
+		templates.Root(nil, c).Render(r.Context(), w)
 	}
 }
 
