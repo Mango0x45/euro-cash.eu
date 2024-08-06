@@ -28,12 +28,15 @@ func I18n(next http.Handler) http.Handler {
 			}
 		}
 
-		used := cmp.Or(p, i18n.DefaultPrinter)
-		ctx := context.WithValue(r.Context(), PrinterKey, used)
+		ctx := context.WithValue(
+			r.Context(), PrinterKey, cmp.Or(p, i18n.DefaultPrinter))
 
 		if p == pZero {
+			http.SetCookie(w, &http.Cookie{
+				Name:  "redirect",
+				Value: r.URL.Path,
+			})
 			templates.Root(nil, templates.SetLanguage()).Render(ctx, w)
-			/* TODO: Redirect the user back to where they came from */
 		} else {
 			next.ServeHTTP(w, r.WithContext(ctx))
 		}

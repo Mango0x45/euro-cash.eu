@@ -1,7 +1,7 @@
 package main
 
 import (
-	"context"
+	"errors"
 	"flag"
 	"fmt"
 	"log"
@@ -69,4 +69,14 @@ func setUserLanguage(w http.ResponseWriter, r *http.Request) {
 		Value:  loc,
 		MaxAge: math.MaxInt32,
 	})
+
+	if c, err := r.Cookie("redirect"); errors.Is(err, http.ErrNoCookie) {
+		http.Redirect(w, r, "/", http.StatusFound)
+	} else {
+		http.SetCookie(w, &http.Cookie{
+			Name:   "redirect",
+			MaxAge: -1,
+		})
+		http.Redirect(w, r, c.Value, http.StatusFound)
+	}
 }
