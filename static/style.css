@@ -2455,13 +2455,14 @@ nav menu:last-of-type li:last-child a {
 	display: grid;
 	grid-template-columns: repeat(
 		auto-fit,
-		minmax(min(180px, 100%), 1fr)
+		minmax(min(210px, 100%), 1fr)
 	);
 	column-gap: var(--x-grid-spacing-horizontal);
 }
 
 .lang-grid button {
 	text-align: left;
+	padding-inline: .75rem;
 }
 
 .lang-grid span::before {
