@@ -1,6 +1,7 @@
 package main
 
 import (
+	"cmp"
 	"errors"
 	"flag"
 	"fmt"
@@ -52,6 +53,16 @@ func finalHandler(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusNotFound)
 		fmt.Fprintln(w, p.T("Page not found"))
 	} else {
+		/* When a user clicks on the language button to be taken to the
+		   language selection page, we need to set a redirect cookie so
+		   that after selecting a language they are taken back to the
+		   original page they came from. */
+		if path == "/language" {
+			http.SetCookie(w, &http.Cookie{
+				Name:  "redirect",
+				Value: cmp.Or(r.Referer(), "/"),
+			})
+		}
 		templates.Root(nil, c).Render(r.Context(), w)
 	}
 }
