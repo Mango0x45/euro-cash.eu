@@ -10,7 +10,7 @@ templ Root(head, body templ.Component) {
 	{{ p := ctx.Value("printer").(i18n.Printer) }}
 
 	<!DOCTYPE html>
-	<html lang={ p.Locale.Code } data-theme="dark">
+	<html lang={ p.Locale.Code } data-theme={ ctx.Value("theme").(string) }>
 		<head>
 			<meta charset="UTF-8" />
 			<meta name="viewport" content="width=device-width, initial-scale=1.0" />

@@ -77,8 +77,7 @@ templ navbar() {
 							fill="none"
 							xmlns="http://www.w3.org/2000/svg"
 						>
-							<!-- TODO: if theme == dark -->
-							if true {
+							if ctx.Value("theme").(string) == "dark" {
 								<path
 									d="M 7.28451 10.3333
 									   C 7.10026 10.8546

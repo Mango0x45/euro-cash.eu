@@ -32,7 +32,11 @@ func main() {
 	mux := http.NewServeMux()
 	mux.Handle("GET /favicon.ico", fs)
 	mux.Handle("GET /style.css", fs)
-	mux.Handle("GET /", middleware.I18n(http.HandlerFunc(finalHandler)))
+	mux.Handle("GET /", middleware.Pipe(
+		middleware.I18n,
+		middleware.Theme,
+	)(http.HandlerFunc(finalHandler)))
+
 	mux.Handle("POST /language", http.HandlerFunc(setUserLanguage))
 
 	portStr := ":" + strconv.Itoa(*port)
