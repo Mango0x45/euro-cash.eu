@@ -2,6 +2,76 @@
     "language": "en-GB",
     "messages": [
         {
+            "id": "Page not found",
+            "message": "Page not found",
+            "translation": "Page not found",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "About Us",
+            "message": "About Us",
+            "translation": "About Us",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Open Source",
+            "message": "Open Source",
+            "translation": "Open Source",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found {LinkStart}here{LinkEnd}. This site is licensed under the BSD 0-Clause license giving you the full freedom to do whatever you would like with any of the content on this site.",
+            "message": "This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found {LinkStart}here{LinkEnd}. This site is licensed under the BSD 0-Clause license giving you the full freedom to do whatever you would like with any of the content on this site.",
+            "translation": "This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found {LinkStart}here{LinkEnd}. This site is licensed under the BSD 0-Clause license giving you the full freedom to do whatever you would like with any of the content on this site.",
+            "translatorComment": "Copied from source.",
+            "placeholders": [
+                {
+                    "id": "LinkStart",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "linkStart"
+                },
+                {
+                    "id": "LinkEnd",
+                    "string": "%[2]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 2,
+                    "expr": "linkEnd"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "Contact Us",
+            "message": "Contact Us",
+            "translation": "Contact Us",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "While we try to stay as up-to-date as possible and to fact check our information, it is always possible that we get something wrong, lack a translation, or are missing some piece of data you may have. In such a case don’t hesitate to contact us; we’ll try to get the site updated or fixed as soon as possible. You are always free to contribute via a git patch if you are more technically included, but if not you can always send an email to {ContactEmail} or contact ‘@onetruemangoman’ on Discord.",
+            "message": "While we try to stay as up-to-date as possible and to fact check our information, it is always possible that we get something wrong, lack a translation, or are missing some piece of data you may have. In such a case don’t hesitate to contact us; we’ll try to get the site updated or fixed as soon as possible. You are always free to contribute via a git patch if you are more technically included, but if not you can always send an email to {ContactEmail} or contact ‘@onetruemangoman’ on Discord.",
+            "translation": "While we try to stay as up-to-date as possible and to fact check our information, it is always possible that we get something wrong, lack a translation, or are missing some piece of data you may have. In such a case don’t hesitate to contact us; we’ll try to get the site updated or fixed as soon as possible. You are always free to contribute via a git patch if you are more technically included, but if not you can always send an email to {ContactEmail} or contact ‘@onetruemangoman’ on Discord.",
+            "translatorComment": "Copied from source.",
+            "placeholders": [
+                {
+                    "id": "ContactEmail",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "contactEmail"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
             "id": "Home",
             "message": "Home",
             "translation": "Home",
@@ -51,6 +121,20 @@
             "fuzzy": true
         },
         {
+            "id": "About",
+            "message": "About",
+            "translation": "About",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Language",
+            "message": "Language",
+            "translation": "Language",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
             "id": "Found a mistake or want to contribute missing information?",
             "message": "Found a mistake or want to contribute missing information?",
             "translation": "Found a mistake or want to contribute missing information?",
@@ -61,6 +145,41 @@
             "id": "Feel free to contact us!",
             "message": "Feel free to contact us!",
             "translation": "Feel free to contact us!",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "The Euro Cash Compendium",
+            "message": "The Euro Cash Compendium",
+            "translation": "The Euro Cash Compendium",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "United in",
+            "message": "United in",
+            "translation": "United in",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "diversity",
+            "message": "diversity",
+            "translation": "diversity",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "cash",
+            "message": "cash",
+            "translation": "cash",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Welcome to the Euro Cash Compendium. This sites aims to be a resource for you to discover everything there is to know about the coins and banknotes of the Euro, a currency that spans 26 countries and 350 million people. We also have dedicated sections of the site for collectors.",
+            "message": "Welcome to the Euro Cash Compendium. This sites aims to be a resource for you to discover everything there is to know about the coins and banknotes of the Euro, a currency that spans 26 countries and 350 million people. We also have dedicated sections of the site for collectors.",
+            "translation": "Welcome to the Euro Cash Compendium. This sites aims to be a resource for you to discover everything there is to know about the coins and banknotes of the Euro, a currency that spans 26 countries and 350 million people. We also have dedicated sections of the site for collectors.",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },

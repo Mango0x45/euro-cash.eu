@@ -1,0 +1,52 @@
+package templates
+
+import "git.thomasvoss.com/euro-cash.eu/i18n"
+
+const (
+	contactEmail = `<a href="mailto:mail@euro-cash.eu">mail@euro-cash.eu</a>`
+	linkStart    = `<a href="https://git.thomasvoss.com/www.euro-cash.eu" target="_blank">`
+	linkEnd      = `</a>`
+)
+
+templ About() {
+	{{ p := ctx.Value("printer").(i18n.Printer) }}
+	<header>
+		@navbar()
+		<h1>{ p.T("About Us") }</h1>
+	</header>
+	<main>
+		<h2>{ p.T("Open Source") }</h2>
+		<p>
+			@templ.Raw(p.T("This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found %shere%s. This site is licensed under the BSD 0-Clause license giving you the full freedom to do whatever you would like with any of the content on this site.", linkStart, linkEnd))
+		</p>
+		<h2>{ p.T("Contact Us") }</h2>
+		<p>
+			@templ.Raw(p.T("While we try to stay as up-to-date as possible and to fact check our information, it is always possible that we get something wrong, lack a translation, or are missing some piece of data you may have. In such a case don’t hesitate to contact us; we’ll try to get the site updated or fixed as soon as possible. You are always free to contribute via a git patch if you are more technically included, but if not you can always send an email to %s or contact ‘@onetruemangoman’ on Discord.", contactEmail))
+		</p>
+		<h2>{ p.T("Special Thanks") }</h2>
+		<table>
+			<thead>
+				<th scope="col">{ p.T("Development") }</th>
+				<th scope="col">{ p.T("Research") }</th>
+				<th scope="col">{ p.T("Translations") }</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Jessika Wexler,
+						Lyyli Savolainen,
+						Ralf Nadel
+					</td>
+					<td>
+						Elín Hjartardóttir,
+						Storm Sørensen
+					</td>
+					<td>
+						<span data-tooltip={ p.T("British- & American English") }>Thomas Voss</span>,
+						<span data-tooltip={ p.T("Icelandic") }>Védís Indriðadóttir</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</main>
+}

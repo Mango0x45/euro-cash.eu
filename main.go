@@ -19,6 +19,7 @@ import (
 
 var components = map[string]templ.Component{
 	"/":         templates.Index(),
+	"/about":    templates.About(),
 	"/language": templates.SetLanguage(),
 }
 
