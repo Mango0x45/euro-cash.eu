@@ -105,6 +105,13 @@ var (
 			Enabled:  false,
 		},
 		Locale{
+			Code:     "lb-LU",
+			Name:     "lëtzebuergesch",
+			dateFmt:  "2.1.2006",
+			Eurozone: true,
+			Enabled:  false,
+		},
+		Locale{
 			Code:     "lt-LT",
 			Name:     "lietuvių",
 			dateFmt:  "2006-01-02",
@@ -172,6 +179,13 @@ var (
 		Locale{
 			Code:     "ro-RO",
 			Name:     "română",
+			dateFmt:  "02.01.2006",
+			Eurozone: false,
+			Enabled:  false,
+		},
+		Locale{
+			Code:     "uk-UA",
+			Name:     "yкраїнська",
 			dateFmt:  "02.01.2006",
 			Eurozone: false,
 			Enabled:  false,
