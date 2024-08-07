@@ -12,9 +12,9 @@
 	--pico-outline-width: 0.125rem;
 	--pico-transition: 0.2s ease-in-out;
 	--pico-spacing: 1rem;
-	--pico-typography-spacing-vertical: 1rem;
-	--pico-block-spacing-vertical: var(--pico-spacing);
-	--pico-block-spacing-horizontal: var(--pico-spacing);
+	--pico-typography-spacing-vertical: 1.5rem;
+	--pico-block-spacing-vertical: calc(var(--pico-spacing) * 2);
+	--pico-block-spacing-horizontal: calc(var(--pico-spacing) * 2);
 	--pico-form-element-spacing-vertical: 0.75rem;
 	--pico-form-element-spacing-horizontal: 1rem;
 	--pico-group-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
