@@ -9,4 +9,6 @@ autocmd BufWritePre *.go
 autocmd BufWritePre *.templ
 	\ call s:SaveExcursion("templ fmt | sed 's/{ {/{{/; s/} }/}}/'")
 
+nnoremap gM :make all-i18n<CR>
+
 let g:netrw_list_hide .= ",.*_templ.go$"
