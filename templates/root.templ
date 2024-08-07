@@ -1,13 +1,16 @@
 package templates
 
-import "strings"
-import "git.thomasvoss.com/euro-cash.eu/i18n"
+import (
+	"strings"
+
+	"git.thomasvoss.com/euro-cash.eu/i18n"
+)
 
 templ Root(head, body templ.Component) {
 	{{ p := ctx.Value("printer").(i18n.Printer) }}
 
 	<!DOCTYPE html>
-	<html lang={ p.Lang } data-theme="dark">
+	<html lang={ p.Locale.Code } data-theme="dark">
 		<head>
 			<meta charset="UTF-8" />
 			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
