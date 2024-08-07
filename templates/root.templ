@@ -41,13 +41,20 @@ templ Index() {
 
 	<header>
 		@navbar()
-		<h1>{ p.T("The Euro Cash Compendium") }</h1>
-		<p>
-			{ p.T("United in") }
-			<del>{ p.T("diversity") }</del>
-			<ins>{ p.T("cash") }</ins>
-		</p>
+		<hgroup>
+			<h1>{ p.T("The Euro Cash Compendium") }</h1>
+			<p>
+				{ p.T("United in") }
+				<del>{ p.T("diversity") }</del>
+				<ins>{ p.T("cash") }</ins>
+			</p>
+		</hgroup>
 	</header>
+	<main>
+		<p>
+			{ p.T("Welcome to the Euro Cash Compendium. This sites aims to be a resource for you to discover everything there is to know about the coins and banknotes of the Euro, a currency that spans 26 countries and 350 million people. We also have dedicated sections of the site for collectors.") }
+		</p>
+	</main>
 }
 
 templ SetLanguage() {
