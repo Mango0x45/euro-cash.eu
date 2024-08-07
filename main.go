@@ -119,8 +119,8 @@ func setUserTheme(w http.ResponseWriter, r *http.Request) {
 	}
 
 	http.SetCookie(w, &http.Cookie{
-		Name: "theme",
-		Value: theme,
+		Name:   "theme",
+		Value:  theme,
 		MaxAge: math.MaxInt32,
 	})
 	http.Redirect(w, r, r.Referer(), http.StatusFound)
