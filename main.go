@@ -38,6 +38,7 @@ func main() {
 	)(http.HandlerFunc(finalHandler)))
 
 	mux.Handle("POST /language", http.HandlerFunc(setUserLanguage))
+	mux.Handle("POST /theme", http.HandlerFunc(setUserTheme))
 
 	portStr := ":" + strconv.Itoa(*port)
 	log.Println("Listening on", portStr)
@@ -94,4 +95,33 @@ func setUserLanguage(w http.ResponseWriter, r *http.Request) {
 		})
 		http.Redirect(w, r, c.Value, http.StatusFound)
 	}
+}
+
+func setUserTheme(w http.ResponseWriter, r *http.Request) {
+	c, err := r.Cookie("theme")
+	if errors.Is(err, http.ErrNoCookie) {
+		w.WriteHeader(http.StatusBadRequest)
+		fmt.Fprintf(w, "No ‘theme’ cookie exists")
+		return
+	}
+
+	var theme string
+
+	switch c.Value {
+	case "dark":
+		theme = "light"
+	case "light":
+		theme = "dark"
+	default:
+		w.WriteHeader(http.StatusBadRequest)
+		fmt.Fprintf(w, "Theme ‘%s’ is invalid", c.Value)
+		return
+	}
+
+	http.SetCookie(w, &http.Cookie{
+		Name: "theme",
+		Value: theme,
+		MaxAge: math.MaxInt32,
+	})
+	http.Redirect(w, r, r.Referer(), http.StatusFound)
 }

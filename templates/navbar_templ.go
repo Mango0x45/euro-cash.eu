@@ -168,11 +168,11 @@ func navbar() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" action=\"#TODO\" method=\"POST\"><button><svg version=\"1.1\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><!-- TODO: if theme == dark -->")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" action=\"/theme\" method=\"POST\"><button><svg version=\"1.1\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		if true {
+		if ctx.Value("theme").(string) == "dark" {
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<path d=\"M 7.28451 10.3333\n\t\t\t\t\t\t\t\t\t   C 7.10026 10.8546\n\t\t\t\t\t\t\t\t\t\t 7       11.4156\n\t\t\t\t\t\t\t\t\t\t 7       12\n\t\t\t\t\t\t\t\t\t   C 7       14.7614\n\t\t\t\t\t\t\t\t\t\t 9.23858 17\n\t\t\t\t\t\t\t\t\t\t 12      17\n\t\t\t\t\t\t\t\t\t   C 14.7614 17\n\t\t\t\t\t\t\t\t\t\t 17      14.7614\n\t\t\t\t\t\t\t\t\t\t 17      12\n\t\t\t\t\t\t\t\t\t   C 17      9.23858\n\t\t\t\t\t\t\t\t\t\t 14.7614 7\n\t\t\t\t\t\t\t\t\t\t 12      7\n\t\t\t\t\t\t\t\t\t   C 11.4156 7\n\t\t\t\t\t\t\t\t\t\t 10.8546 7.10026\n\t\t\t\t\t\t\t\t\t\t 10.3333 7.28451\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path> <path d=\"M 12 2 V 4\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path> <path d=\"M 12 20 V 22\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path> <path d=\"M 4 12 L 2 12\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path> <path d=\"M 22 12 L 20 12\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path> <path d=\"M 19.7778 4.22266 L 17.5558 6.25424\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path> <path d=\"M 4.22217 4.22266 L 6.44418 6.25424\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path> <path d=\"M 6.44434 17.5557 L 4.22211 19.7779\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path> <path d=\"M 19.7778 19.7773 L 17.5558 17.5551\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
