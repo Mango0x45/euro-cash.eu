@@ -11,6 +11,6 @@ endfunction
 autocmd BufWritePre *.go    call s:SaveExcursion("gofmt -s")
 autocmd BufWritePre *.templ call s:SaveExcursion("templ fmt")
 
-nnoremap gM :make all-i18n<CR>
+nnoremap <silent> gM :wall \| make all-i18n<CR>
 
 let g:netrw_list_hide .= ",.*_templ\\.go$"
