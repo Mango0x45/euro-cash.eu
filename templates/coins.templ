@@ -4,7 +4,7 @@ import "git.thomasvoss.com/euro-cash.eu/i18n"
 
 const newsLinkStart = `<a href="/news">`
 
-templ CoinsIndex() {
+templ Coins() {
 	{{ p := ctx.Value("printer").(i18n.Printer) }}
 	<header>
 		@navbar()

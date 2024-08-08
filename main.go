@@ -18,9 +18,9 @@ import (
 )
 
 var components = map[string]templ.Component{
-	"/":              templates.Index(),
+	"/":              templates.Root(),
 	"/about":         templates.About(),
-	"/coins":         templates.CoinsIndex(),
+	"/coins":         templates.Coins(),
 	"/coins/designs": templates.CoinsDesigns(),
 	"/language":      templates.Language(),
 }
@@ -71,7 +71,7 @@ func finalHandler(w http.ResponseWriter, r *http.Request) {
 				Value: cmp.Or(r.Referer(), "/"),
 			})
 		}
-		templates.Root(nil, c).Render(r.Context(), w)
+		templates.Base(nil, c).Render(r.Context(), w)
 	}
 }
 

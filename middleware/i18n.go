@@ -34,7 +34,7 @@ func I18n(next http.Handler) http.Handler {
 				Name:  "redirect",
 				Value: r.URL.Path,
 			})
-			templates.Root(nil, templates.Language()).Render(ctx, w)
+			templates.Base(nil, templates.Language()).Render(ctx, w)
 		} else {
 			next.ServeHTTP(w, r.WithContext(ctx))
 		}

@@ -2,36 +2,7 @@ package templates
 
 import "git.thomasvoss.com/euro-cash.eu/i18n"
 
-templ Root(head, body templ.Component) {
-	{{ p := ctx.Value("printer").(i18n.Printer) }}
-	<!DOCTYPE html>
-	<html lang={ p.Locale.Bcp } data-theme={ ctx.Value("theme").(string) }>
-		<head>
-			<meta charset="UTF-8"/>
-			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-			<link rel="stylesheet" type="text/css" href="/style.css"/>
-			<title>Euro Cash</title>
-			if head != nil {
-				@head
-			}
-		</head>
-		<body>
-			if body != nil {
-				@body
-			}
-			<footer>
-				<p>
-					<small>
-						{ p.T("Found a mistake or want to contribute missing information?") }
-						<a href="/">{ p.T("Feel free to contact us!") }</a>
-					</small>
-				</p>
-			</footer>
-		</body>
-	</html>
-}
-
-templ Index() {
+templ Root() {
 	{{ p := ctx.Value("printer").(i18n.Printer) }}
 	<header>
 		@navbar()

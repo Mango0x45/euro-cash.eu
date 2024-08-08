@@ -114,6 +114,20 @@
             "fuzzy": true
         },
         {
+            "id": "Found a mistake or want to contribute missing information?",
+            "message": "Found a mistake or want to contribute missing information?",
+            "translation": "Found a mistake or want to contribute missing information?",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Feel free to contact us!",
+            "message": "Feel free to contact us!",
+            "translation": "Feel free to contact us!",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
             "id": "Andorra",
             "message": "Andorra",
             "translation": "Andorra",
@@ -475,20 +489,6 @@
             "id": "Language",
             "message": "Language",
             "translation": "Language",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "Found a mistake or want to contribute missing information?",
-            "message": "Found a mistake or want to contribute missing information?",
-            "translation": "Found a mistake or want to contribute missing information?",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "Feel free to contact us!",
-            "message": "Feel free to contact us!",
-            "translation": "Feel free to contact us!",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
