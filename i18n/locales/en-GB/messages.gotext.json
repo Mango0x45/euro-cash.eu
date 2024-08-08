@@ -72,6 +72,76 @@
             "fuzzy": true
         },
         {
+            "id": "Special Thanks",
+            "message": "Special Thanks",
+            "translation": "Special Thanks",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Development",
+            "message": "Development",
+            "translation": "Development",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Research",
+            "message": "Research",
+            "translation": "Research",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Translations",
+            "message": "Translations",
+            "translation": "Translations",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "British- \u0026 American English",
+            "message": "British- \u0026 American English",
+            "translation": "British- \u0026 American English",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Icelandic",
+            "message": "Icelandic",
+            "translation": "Icelandic",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Select Your Language",
+            "message": "Select Your Language",
+            "translation": "Select Your Language",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Select your preferred language to use on the site.",
+            "message": "Select your preferred language to use on the site.",
+            "translation": "Select your preferred language to use on the site.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Eurozone Languages",
+            "message": "Eurozone Languages",
+            "translation": "Eurozone Languages",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Other Languages",
+            "message": "Other Languages",
+            "translation": "Other Languages",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
             "id": "Home",
             "message": "Home",
             "translation": "Home",
@@ -180,34 +250,6 @@
             "id": "Welcome to the Euro Cash Compendium. This sites aims to be a resource for you to discover everything there is to know about the coins and banknotes of the Euro, a currency that spans 26 countries and 350 million people. We also have dedicated sections of the site for collectors.",
             "message": "Welcome to the Euro Cash Compendium. This sites aims to be a resource for you to discover everything there is to know about the coins and banknotes of the Euro, a currency that spans 26 countries and 350 million people. We also have dedicated sections of the site for collectors.",
             "translation": "Welcome to the Euro Cash Compendium. This sites aims to be a resource for you to discover everything there is to know about the coins and banknotes of the Euro, a currency that spans 26 countries and 350 million people. We also have dedicated sections of the site for collectors.",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "Select Your Language",
-            "message": "Select Your Language",
-            "translation": "Select Your Language",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "Select your preferred language to use on the site.",
-            "message": "Select your preferred language to use on the site.",
-            "translation": "Select your preferred language to use on the site.",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "Eurozone Languages",
-            "message": "Eurozone Languages",
-            "translation": "Eurozone Languages",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "Other Languages",
-            "message": "Other Languages",
-            "translation": "Other Languages",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         }

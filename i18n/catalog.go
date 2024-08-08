@@ -39,45 +39,55 @@ func init() {
 }
 
 var messageKeyToIndex = map[string]int{
-	"About":                    13,
-	"About Us":                 1,
-	"Banknotes":                10,
-	"Coin Collecting":          8,
-	"Coins":                    9,
-	"Contact Us":               4,
-	"Discord":                  12,
-	"Eurozone Languages":       24,
-	"Feel free to contact us!": 16,
-	"Found a mistake or want to contribute missing information?": 15,
-	"Home":                 6,
-	"Jargon":               11,
-	"Language":             14,
-	"News":                 7,
+	"About":                       23,
+	"About Us":                    1,
+	"Banknotes":                   20,
+	"British- & American English": 10,
+	"Coin Collecting":             18,
+	"Coins":                       19,
+	"Contact Us":                  4,
+	"Development":                 7,
+	"Discord":                     22,
+	"Eurozone Languages":          14,
+	"Feel free to contact us!":    26,
+	"Found a mistake or want to contribute missing information?": 25,
+	"Home":                 16,
+	"Icelandic":            11,
+	"Jargon":               21,
+	"Language":             24,
+	"News":                 17,
 	"Open Source":          2,
-	"Other Languages":      25,
+	"Other Languages":      15,
 	"Page not found":       0,
-	"Select Your Language": 22,
-	"Select your preferred language to use on the site.": 23,
-	"The Euro Cash Compendium":                           17,
+	"Research":             8,
+	"Select Your Language": 12,
+	"Select your preferred language to use on the site.": 13,
+	"Special Thanks":           6,
+	"The Euro Cash Compendium": 27,
 	"This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found %shere%s. This site is licensed under the BSD 0-Clause license giving you the full freedom to do whatever you would like with any of the content on this site.": 3,
-	"United in": 18,
-	"Welcome to the Euro Cash Compendium. This sites aims to be a resource for you to discover everything there is to know about the coins and banknotes of the Euro, a currency that spans 26 countries and 350 million people. We also have dedicated sections of the site for collectors.":                                                                                                                                                                                                               21,
+	"Translations": 9,
+	"United in":    28,
+	"Welcome to the Euro Cash Compendium. This sites aims to be a resource for you to discover everything there is to know about the coins and banknotes of the Euro, a currency that spans 26 countries and 350 million people. We also have dedicated sections of the site for collectors.":                                                                                                                                                                                                               31,
 	"While we try to stay as up-to-date as possible and to fact check our information, it is always possible that we get something wrong, lack a translation, or are missing some piece of data you may have. In such a case don’t hesitate to contact us; we’ll try to get the site updated or fixed as soon as possible. You are always free to contribute via a git patch if you are more technically included, but if not you can always send an email to %s or contact ‘@onetruemangoman’ on Discord.": 5,
-	"cash":      20,
-	"diversity": 19,
+	"cash":      30,
+	"diversity": 29,
 }
 
-var en_GBIndex = []uint32{ // 27 elements
+var en_GBIndex = []uint32{ // 33 elements
+	// Entry 0 - 1F
 	0x00000000, 0x0000000f, 0x00000018, 0x00000024,
-	0x00000189, 0x00000194, 0x00000385, 0x0000038a,
-	0x0000038f, 0x0000039f, 0x000003a5, 0x000003af,
-	0x000003b6, 0x000003be, 0x000003c4, 0x000003cd,
-	0x00000408, 0x00000421, 0x0000043a, 0x00000444,
-	0x0000044e, 0x00000453, 0x0000056b, 0x00000580,
-	0x000005b3, 0x000005c6, 0x000005d6,
-} // Size: 132 bytes
+	0x00000189, 0x00000194, 0x00000385, 0x00000394,
+	0x000003a0, 0x000003a9, 0x000003b6, 0x000003d2,
+	0x000003dc, 0x000003f1, 0x00000424, 0x00000437,
+	0x00000447, 0x0000044c, 0x00000451, 0x00000461,
+	0x00000467, 0x00000471, 0x00000478, 0x00000480,
+	0x00000486, 0x0000048f, 0x000004ca, 0x000004e3,
+	0x000004fc, 0x00000506, 0x00000510, 0x00000515,
+	// Entry 20 - 3F
+	0x0000062d,
+} // Size: 156 bytes
 
-const en_GBData string = "" + // Size: 1494 bytes
+const en_GBData string = "" + // Size: 1581 bytes
 	"\x02Page not found\x02About Us\x02Open Source\x02This website is an open" +
 	" project, and a collaboration between developers, translators, and resea" +
 	"rchers. All source code, data, images, and more for the website are open" +
@@ -90,27 +100,33 @@ const en_GBData string = "" + // Size: 1494 bytes
 	"itate to contact us; we’ll try to get the site updated or fixed as soon " +
 	"as possible. You are always free to contribute via a git patch if you ar" +
 	"e more technically included, but if not you can always send an email to " +
-	"%[1]s or contact ‘@onetruemangoman’ on Discord.\x02Home\x02News\x02Coin " +
-	"Collecting\x02Coins\x02Banknotes\x02Jargon\x02Discord\x02About\x02Langua" +
-	"ge\x02Found a mistake or want to contribute missing information?\x02Feel" +
-	" free to contact us!\x02The Euro Cash Compendium\x02United in\x02diversi" +
-	"ty\x02cash\x02Welcome to the Euro Cash Compendium. This sites aims to be" +
-	" a resource for you to discover everything there is to know about the co" +
-	"ins and banknotes of the Euro, a currency that spans 26 countries and 35" +
-	"0 million people. We also have dedicated sections of the site for collec" +
-	"tors.\x02Select Your Language\x02Select your preferred language to use o" +
-	"n the site.\x02Eurozone Languages\x02Other Languages"
+	"%[1]s or contact ‘@onetruemangoman’ on Discord.\x02Special Thanks\x02Dev" +
+	"elopment\x02Research\x02Translations\x02British- & American English\x02I" +
+	"celandic\x02Select Your Language\x02Select your preferred language to us" +
+	"e on the site.\x02Eurozone Languages\x02Other Languages\x02Home\x02News" +
+	"\x02Coin Collecting\x02Coins\x02Banknotes\x02Jargon\x02Discord\x02About" +
+	"\x02Language\x02Found a mistake or want to contribute missing informatio" +
+	"n?\x02Feel free to contact us!\x02The Euro Cash Compendium\x02United in" +
+	"\x02diversity\x02cash\x02Welcome to the Euro Cash Compendium. This sites" +
+	" aims to be a resource for you to discover everything there is to know a" +
+	"bout the coins and banknotes of the Euro, a currency that spans 26 count" +
+	"ries and 350 million people. We also have dedicated sections of the site" +
+	" for collectors."
 
-var nl_NLIndex = []uint32{ // 27 elements
+var nl_NLIndex = []uint32{ // 33 elements
+	// Entry 0 - 1F
 	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 	0x00000000, 0x00000000, 0x00000000, 0x00000000,
 	0x00000000, 0x00000000, 0x00000000, 0x00000000,
-	0x00000000, 0x00000000, 0x00000000,
-} // Size: 132 bytes
+	0x00000000, 0x00000000, 0x00000000, 0x00000000,
+	0x00000000, 0x00000000, 0x00000000, 0x00000000,
+	// Entry 20 - 3F
+	0x00000000,
+} // Size: 156 bytes
 
 const nl_NLData string = ""
 
-// Total table size 1758 bytes (1KiB); checksum: 8485E573
+// Total table size 1893 bytes (1KiB); checksum: 3644FA46

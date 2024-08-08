@@ -60,6 +60,56 @@
             ]
         },
         {
+            "id": "Special Thanks",
+            "message": "Special Thanks",
+            "translation": ""
+        },
+        {
+            "id": "Development",
+            "message": "Development",
+            "translation": ""
+        },
+        {
+            "id": "Research",
+            "message": "Research",
+            "translation": ""
+        },
+        {
+            "id": "Translations",
+            "message": "Translations",
+            "translation": ""
+        },
+        {
+            "id": "British- \u0026 American English",
+            "message": "British- \u0026 American English",
+            "translation": ""
+        },
+        {
+            "id": "Icelandic",
+            "message": "Icelandic",
+            "translation": ""
+        },
+        {
+            "id": "Select Your Language",
+            "message": "Select Your Language",
+            "translation": ""
+        },
+        {
+            "id": "Select your preferred language to use on the site.",
+            "message": "Select your preferred language to use on the site.",
+            "translation": ""
+        },
+        {
+            "id": "Eurozone Languages",
+            "message": "Eurozone Languages",
+            "translation": ""
+        },
+        {
+            "id": "Other Languages",
+            "message": "Other Languages",
+            "translation": ""
+        },
+        {
             "id": "Home",
             "message": "Home",
             "translation": ""
@@ -137,26 +187,6 @@
         {
             "id": "Welcome to the Euro Cash Compendium. This sites aims to be a resource for you to discover everything there is to know about the coins and banknotes of the Euro, a currency that spans 26 countries and 350 million people. We also have dedicated sections of the site for collectors.",
             "message": "Welcome to the Euro Cash Compendium. This sites aims to be a resource for you to discover everything there is to know about the coins and banknotes of the Euro, a currency that spans 26 countries and 350 million people. We also have dedicated sections of the site for collectors.",
-            "translation": ""
-        },
-        {
-            "id": "Select Your Language",
-            "message": "Select Your Language",
-            "translation": ""
-        },
-        {
-            "id": "Select your preferred language to use on the site.",
-            "message": "Select your preferred language to use on the site.",
-            "translation": ""
-        },
-        {
-            "id": "Eurozone Languages",
-            "message": "Eurozone Languages",
-            "translation": ""
-        },
-        {
-            "id": "Other Languages",
-            "message": "Other Languages",
             "translation": ""
         }
     ]
