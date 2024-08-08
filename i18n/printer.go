@@ -27,133 +27,133 @@ type Locale struct {
 
 var (
 	Locales = [...]Locale{
-		Locale{
+		{
 			Code:     "ca-AD",
 			Name:     "català",
 			dateFmt:  "2/1/2006",
 			Eurozone: true,
 			Enabled:  false,
 		},
-		Locale{
+		{
 			Code:     "de-DE",
 			Name:     "Deutsch",
 			dateFmt:  "2.1.2006",
 			Eurozone: true,
 			Enabled:  false,
 		},
-		Locale{
+		{
 			Code:     "el-GR",
 			Name:     "ελληνικά",
 			dateFmt:  "2/1/2006",
 			Eurozone: true,
 			Enabled:  false,
 		},
-		Locale{
+		{
 			Code:     "en-GB",
 			Name:     "English",
 			dateFmt:  "02/01/2006",
 			Eurozone: true,
 			Enabled:  true,
 		},
-		Locale{
+		{
 			Code:     "es-ES",
 			Name:     "español",
 			dateFmt:  "2/1/2006",
 			Eurozone: true,
 			Enabled:  false,
 		},
-		Locale{
+		{
 			Code:     "et-EE",
 			Name:     "eesti",
 			dateFmt:  "2.1.2006",
 			Eurozone: true,
 			Enabled:  false,
 		},
-		Locale{
+		{
 			Code:     "fi-FI",
 			Name:     "suomi",
 			dateFmt:  "2.1.2006",
 			Eurozone: true,
 			Enabled:  false,
 		},
-		Locale{
+		{
 			Code:     "fr-FR",
 			Name:     "français",
 			dateFmt:  "02/01/2006",
 			Eurozone: true,
 			Enabled:  false,
 		},
-		Locale{
+		{
 			Code:     "ga-IE",
 			Name:     "Gaeilge",
 			dateFmt:  "02/01/2006",
 			Eurozone: true,
 			Enabled:  false,
 		},
-		Locale{
+		{
 			Code:     "hr-HR",
 			Name:     "hrvatski",
 			dateFmt:  "02. 01. 2006.",
 			Eurozone: true,
 			Enabled:  false,
 		},
-		Locale{
+		{
 			Code:     "it-IT",
 			Name:     "italiano",
 			dateFmt:  "02/01/2006",
 			Eurozone: true,
 			Enabled:  false,
 		},
-		Locale{
+		{
 			Code:     "lb-LU",
 			Name:     "lëtzebuergesch",
 			dateFmt:  "2.1.2006",
 			Eurozone: true,
 			Enabled:  false,
 		},
-		Locale{
+		{
 			Code:     "lt-LT",
 			Name:     "lietuvių",
 			dateFmt:  "2006-01-02",
 			Eurozone: true,
 			Enabled:  false,
 		},
-		Locale{
+		{
 			Code:     "lv-LV",
 			Name:     "latviešu",
 			dateFmt:  "2.01.2006.",
 			Eurozone: true,
 			Enabled:  false,
 		},
-		Locale{
+		{
 			Code:     "mt-MT",
 			Name:     "Malti",
 			dateFmt:  "2/1/2006",
 			Eurozone: true,
 			Enabled:  false,
 		},
-		Locale{
+		{
 			Code:     "nl-NL",
 			Name:     "Nederlands",
 			dateFmt:  "2-1-2006",
 			Eurozone: true,
 			Enabled:  true,
 		},
-		Locale{
+		{
 			Code:     "pt-PT",
 			Name:     "português",
 			dateFmt:  "02/01/2006",
 			Eurozone: true,
 			Enabled:  false,
 		},
-		Locale{
+		{
 			Code:     "sk-SK",
 			Name:     "slovenčina",
 			dateFmt:  "2. 1. 2006",
 			Eurozone: true,
 			Enabled:  false,
 		},
-		Locale{
+		{
 			Code:     "sl-SI",
 			Name:     "slovenščina",
 			dateFmt:  "2. 1. 2006",
@@ -162,28 +162,28 @@ var (
 		},
 
 		/* Non-Eurozone locales */
-		Locale{
+		{
 			Code:     "bg-BG",
 			Name:     "български",
 			dateFmt:  "2.01.2006 г.",
 			Eurozone: false,
 			Enabled:  false,
 		},
-		Locale{
+		{
 			Code:     "en-US",
 			Name:     "English (US)",
 			dateFmt:  "1/2/2006",
 			Eurozone: false,
 			Enabled:  false,
 		},
-		Locale{
+		{
 			Code:     "ro-RO",
 			Name:     "română",
 			dateFmt:  "02.01.2006",
 			Eurozone: false,
 			Enabled:  false,
 		},
-		Locale{
+		{
 			Code:     "uk-UA",
 			Name:     "yкраїнська",
 			dateFmt:  "02.01.2006",
