@@ -41,110 +41,114 @@ func init() {
 
 var messageKeyToIndex = map[string]int{
 	"About":                       57,
-	"About Us":                    1,
-	"Andorra":                     12,
-	"Austria":                     13,
+	"About Us":                    25,
+	"Andorra":                     0,
+	"Austria":                     1,
 	"Banknotes":                   54,
-	"Belgium":                     14,
-	"British- & American English": 10,
+	"Belgium":                     2,
+	"British- & American English": 34,
 	"Coin Collecting":             52,
 	"Coins":                       53,
-	"Contact Us":                  4,
-	"Croatia":                     22,
-	"Cyprus":                      15,
+	"Contact Us":                  28,
+	"Croatia":                     10,
+	"Cyprus":                      3,
 	"Designs":                     40,
-	"Development":                 7,
+	"Development":                 31,
 	"Discord":                     56,
-	"Estonia":                     17,
+	"Estonia":                     5,
 	"Euro Coin Designs":           36,
 	"Euro Coins":                  38,
 	"Eurozone Languages":          48,
 	"Feel free to contact us!":    60,
-	"Finland":                     19,
+	"Finland":                     7,
 	"Found a mistake or want to contribute missing information?": 59,
-	"France":  20,
-	"Germany": 16,
-	"Greece":  21,
+	"France":  8,
+	"Germany": 4,
+	"Greece":  9,
 	"Here you’ll be able to view all the coin designs for each country in the Eurozone. This section of the site doesn’t include minor varieties such as different mintmarks or errors; those are on the %svarieties%s page.": 37,
 	"Home":        50,
-	"Icelandic":   11,
-	"Ireland":     23,
-	"Italy":       24,
+	"Icelandic":   35,
+	"Ireland":     11,
+	"Italy":       12,
 	"Jargon":      55,
 	"Language":    58,
-	"Latvia":      27,
-	"Lithuania":   25,
-	"Luxembourg":  26,
-	"Malta":       29,
+	"Latvia":      15,
+	"Lithuania":   13,
+	"Luxembourg":  14,
+	"Malta":       17,
 	"Mintages":    42,
-	"Monaco":      28,
-	"Netherlands": 30,
+	"Monaco":      16,
+	"Netherlands": 18,
 	"News":        51,
 	"On this section of the site you can find everything there is to know about the coins of the Eurozone. For the latest news on coin- and design releases, check out the %snews%s tab!": 39,
-	"Open Source":          2,
+	"Open Source":          26,
 	"Other Languages":      49,
-	"Page not found":       0,
-	"Portugal":             31,
-	"Research":             8,
-	"San Marino":           34,
+	"Page not found":       24,
+	"Portugal":             19,
+	"Research":             32,
+	"San Marino":           22,
 	"Select Your Language": 46,
 	"Select your preferred language to use on the site.": 47,
-	"Slovakia":                 33,
-	"Slovenia":                 32,
-	"Spain":                    18,
-	"Special Thanks":           6,
+	"Slovakia":                 21,
+	"Slovenia":                 20,
+	"Spain":                    6,
+	"Special Thanks":           30,
 	"The Euro Cash Compendium": 61,
-	"This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found %shere%s. This site is licensed under the BSD 0-Clause license giving you the full freedom to do whatever you would like with any of the content on this site.": 3,
-	"Translations":                       9,
+	"This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found %shere%s. This site is licensed under the BSD 0-Clause license giving you the full freedom to do whatever you would like with any of the content on this site.": 27,
+	"Translations":                       33,
 	"United in":                          62,
 	"Varieties":                          44,
-	"Vatican City":                       35,
+	"Vatican City":                       23,
 	"View all the known Euro varieties!": 45,
 	"View the 600+ different Euro-coin designs!":      41,
 	"View the mintage figures of all the Euro coins!": 43,
 	"Welcome to the Euro Cash Compendium. This sites aims to be a resource for you to discover everything there is to know about the coins and banknotes of the Euro, a currency that spans 26 countries and 350 million people. We also have dedicated sections of the site for collectors.":                                                                                                                                                                                                               65,
-	"While we try to stay as up-to-date as possible and to fact check our information, it is always possible that we get something wrong, lack a translation, or are missing some piece of data you may have. In such a case don’t hesitate to contact us; we’ll try to get the site updated or fixed as soon as possible. You are always free to contribute via a git patch if you are more technically included, but if not you can always send an email to %s or contact ‘@onetruemangoman’ on Discord.": 5,
+	"While we try to stay as up-to-date as possible and to fact check our information, it is always possible that we get something wrong, lack a translation, or are missing some piece of data you may have. In such a case don’t hesitate to contact us; we’ll try to get the site updated or fixed as soon as possible. You are always free to contribute via a git patch if you are more technically included, but if not you can always send an email to %s or contact ‘@onetruemangoman’ on Discord.": 29,
 	"cash":      64,
 	"diversity": 63,
 }
 
 var elIndex = []uint32{ // 67 elements
 	// Entry 0 - 1F
-	0x00000000, 0x00000000, 0x00000000, 0x00000000,
-	0x00000000, 0x00000000, 0x00000000, 0x00000000,
-	0x00000000, 0x00000000, 0x00000000, 0x00000000,
-	0x00000000, 0x00000000, 0x00000000, 0x00000000,
-	0x00000000, 0x00000000, 0x00000000, 0x00000000,
-	0x00000000, 0x00000000, 0x00000000, 0x00000000,
-	0x00000000, 0x00000000, 0x00000000, 0x00000000,
-	0x00000000, 0x00000000, 0x00000000, 0x00000000,
+	0x00000000, 0x0000000d, 0x0000001c, 0x00000029,
+	0x00000036, 0x00000047, 0x00000056, 0x00000065,
+	0x00000078, 0x00000085, 0x00000092, 0x000000a1,
+	0x000000b2, 0x000000bf, 0x000000d2, 0x000000eb,
+	0x000000fa, 0x00000107, 0x00000112, 0x00000123,
+	0x00000138, 0x00000149, 0x0000015a, 0x0000016e,
+	0x0000017f, 0x0000017f, 0x0000017f, 0x0000017f,
+	0x0000017f, 0x0000017f, 0x0000017f, 0x0000017f,
 	// Entry 20 - 3F
-	0x00000000, 0x00000000, 0x00000000, 0x00000000,
-	0x00000000, 0x00000000, 0x00000000, 0x00000000,
-	0x00000000, 0x00000000, 0x00000000, 0x00000000,
-	0x00000000, 0x00000000, 0x00000000, 0x00000000,
-	0x00000000, 0x00000000, 0x00000000, 0x00000000,
-	0x00000000, 0x00000000, 0x00000000, 0x00000000,
-	0x00000000, 0x00000000, 0x00000000, 0x00000000,
-	0x00000000, 0x00000000, 0x00000000, 0x00000000,
+	0x0000017f, 0x0000017f, 0x0000017f, 0x0000017f,
+	0x0000017f, 0x0000017f, 0x0000017f, 0x0000017f,
+	0x0000017f, 0x0000017f, 0x0000017f, 0x0000017f,
+	0x0000017f, 0x0000017f, 0x0000017f, 0x0000017f,
+	0x0000017f, 0x0000017f, 0x0000017f, 0x0000017f,
+	0x0000017f, 0x0000017f, 0x0000017f, 0x0000017f,
+	0x0000017f, 0x0000017f, 0x0000017f, 0x0000017f,
+	0x0000017f, 0x0000017f, 0x0000017f, 0x0000017f,
 	// Entry 40 - 5F
-	0x00000000, 0x00000000, 0x00000000,
+	0x0000017f, 0x0000017f, 0x0000017f,
 } // Size: 292 bytes
 
-const elData string = ""
+const elData string = "" + // Size: 383 bytes
+	"\x02Ανδόρα\x02Αυστρία\x02Βέλγιο\x02Κύπρος\x02Γερμανία\x02Εσθονία\x02Ισπα" +
+	"νία\x02Φινλανδία\x02Γαλλία\x02Ελλάδα\x02Κροατία\x02Ιρλανδία\x02Ιταλία" +
+	"\x02Λιθουανία\x02Λουξεμβούργο\x02Λετονία\x02Μονακό\x02Μάλτα\x02Ολλανδία" +
+	"\x02Πορτογαλία\x02Σλοβενία\x02Σλοβακία\x02Σαν Μαρίνο\x02Βατικανό"
 
 var enIndex = []uint32{ // 67 elements
 	// Entry 0 - 1F
-	0x00000000, 0x0000000f, 0x00000018, 0x00000024,
-	0x00000189, 0x00000194, 0x00000385, 0x00000394,
-	0x000003a0, 0x000003a9, 0x000003b6, 0x000003d2,
-	0x000003dc, 0x000003e4, 0x000003ec, 0x000003f4,
-	0x000003fb, 0x00000403, 0x0000040b, 0x00000411,
-	0x00000419, 0x00000420, 0x00000427, 0x0000042f,
-	0x00000437, 0x0000043d, 0x00000447, 0x00000452,
-	0x00000459, 0x00000460, 0x00000466, 0x00000472,
+	0x00000000, 0x00000008, 0x00000010, 0x00000018,
+	0x0000001f, 0x00000027, 0x0000002f, 0x00000035,
+	0x0000003d, 0x00000044, 0x0000004b, 0x00000053,
+	0x0000005b, 0x00000061, 0x0000006b, 0x00000076,
+	0x0000007d, 0x00000084, 0x0000008a, 0x00000096,
+	0x0000009f, 0x000000a8, 0x000000b1, 0x000000bc,
+	0x000000c9, 0x000000d8, 0x000000e1, 0x000000ed,
+	0x00000252, 0x0000025d, 0x0000044e, 0x0000045d,
 	// Entry 20 - 3F
-	0x0000047b, 0x00000484, 0x0000048d, 0x00000498,
+	0x00000469, 0x00000472, 0x0000047f, 0x0000049b,
 	0x000004a5, 0x000004b7, 0x00000599, 0x000005a4,
 	0x0000065e, 0x00000666, 0x00000691, 0x0000069a,
 	0x000006ca, 0x000006d4, 0x000006f7, 0x0000070c,
@@ -157,32 +161,32 @@ var enIndex = []uint32{ // 67 elements
 } // Size: 292 bytes
 
 const enData string = "" + // Size: 2376 bytes
-	"\x02Page not found\x02About Us\x02Open Source\x02This website is an open" +
-	" project, and a collaboration between developers, translators, and resea" +
-	"rchers. All source code, data, images, and more for the website are open" +
-	" source and can be found %[1]shere%[2]s. This site is licensed under the" +
-	" BSD 0-Clause license giving you the full freedom to do whatever you wou" +
-	"ld like with any of the content on this site.\x02Contact Us\x02While we " +
-	"try to stay as up-to-date as possible and to fact check our information," +
-	" it is always possible that we get something wrong, lack a translation, " +
-	"or are missing some piece of data you may have. In such a case don’t hes" +
-	"itate to contact us; we’ll try to get the site updated or fixed as soon " +
-	"as possible. You are always free to contribute via a git patch if you ar" +
-	"e more technically included, but if not you can always send an email to " +
-	"%[1]s or contact ‘@onetruemangoman’ on Discord.\x02Special Thanks\x02Dev" +
-	"elopment\x02Research\x02Translations\x02British- & American English\x02I" +
-	"celandic\x02Andorra\x02Austria\x02Belgium\x02Cyprus\x02Germany\x02Estoni" +
-	"a\x02Spain\x02Finland\x02France\x02Greece\x02Croatia\x02Ireland\x02Italy" +
-	"\x02Lithuania\x02Luxembourg\x02Latvia\x02Monaco\x02Malta\x02Netherlands" +
-	"\x02Portugal\x02Slovenia\x02Slovakia\x02San Marino\x02Vatican City\x02Eu" +
-	"ro Coin Designs\x02Here you’ll be able to view all the coin designs for " +
-	"each country in the Eurozone. This section of the site doesn’t include m" +
-	"inor varieties such as different mintmarks or errors; those are on the %" +
-	"[1]svarieties%[2]s page.\x02Euro Coins\x02On this section of the site yo" +
-	"u can find everything there is to know about the coins of the Eurozone. " +
-	"For the latest news on coin- and design releases, check out the %[1]snew" +
-	"s%[2]s tab!\x02Designs\x02View the 600+ different Euro-coin designs!\x02" +
-	"Mintages\x02View the mintage figures of all the Euro coins!\x02Varieties" +
+	"\x02Andorra\x02Austria\x02Belgium\x02Cyprus\x02Germany\x02Estonia\x02Spa" +
+	"in\x02Finland\x02France\x02Greece\x02Croatia\x02Ireland\x02Italy\x02Lith" +
+	"uania\x02Luxembourg\x02Latvia\x02Monaco\x02Malta\x02Netherlands\x02Portu" +
+	"gal\x02Slovenia\x02Slovakia\x02San Marino\x02Vatican City\x02Page not fo" +
+	"und\x02About Us\x02Open Source\x02This website is an open project, and a" +
+	" collaboration between developers, translators, and researchers. All sou" +
+	"rce code, data, images, and more for the website are open source and can" +
+	" be found %[1]shere%[2]s. This site is licensed under the BSD 0-Clause l" +
+	"icense giving you the full freedom to do whatever you would like with an" +
+	"y of the content on this site.\x02Contact Us\x02While we try to stay as " +
+	"up-to-date as possible and to fact check our information, it is always p" +
+	"ossible that we get something wrong, lack a translation, or are missing " +
+	"some piece of data you may have. In such a case don’t hesitate to contac" +
+	"t us; we’ll try to get the site updated or fixed as soon as possible. Yo" +
+	"u are always free to contribute via a git patch if you are more technica" +
+	"lly included, but if not you can always send an email to %[1]s or contac" +
+	"t ‘@onetruemangoman’ on Discord.\x02Special Thanks\x02Development\x02Res" +
+	"earch\x02Translations\x02British- & American English\x02Icelandic\x02Eur" +
+	"o Coin Designs\x02Here you’ll be able to view all the coin designs for e" +
+	"ach country in the Eurozone. This section of the site doesn’t include mi" +
+	"nor varieties such as different mintmarks or errors; those are on the %[" +
+	"1]svarieties%[2]s page.\x02Euro Coins\x02On this section of the site you" +
+	" can find everything there is to know about the coins of the Eurozone. F" +
+	"or the latest news on coin- and design releases, check out the %[1]snews" +
+	"%[2]s tab!\x02Designs\x02View the 600+ different Euro-coin designs!\x02M" +
+	"intages\x02View the mintage figures of all the Euro coins!\x02Varieties" +
 	"\x02View all the known Euro varieties!\x02Select Your Language\x02Select" +
 	" your preferred language to use on the site.\x02Eurozone Languages\x02Ot" +
 	"her Languages\x02Home\x02News\x02Coin Collecting\x02Coins\x02Banknotes" +
@@ -219,4 +223,4 @@ var nlIndex = []uint32{ // 67 elements
 
 const nlData string = ""
 
-// Total table size 3252 bytes (3KiB); checksum: 90566C81
+// Total table size 3635 bytes (3KiB); checksum: 3E1AA495
