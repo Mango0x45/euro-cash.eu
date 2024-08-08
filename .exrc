@@ -12,5 +12,7 @@ autocmd BufWritePre *.go    call s:SaveExcursion("gofmt -s")
 autocmd BufWritePre *.templ call s:SaveExcursion("templ fmt")
 
 nnoremap <silent> gM :wall \| make all-i18n<CR>
+nnoremap <silent> <LocalLeader>t :vimgrep /TODO/ **/*<CR>
 
+let &wildignore = netrw_gitignore#Hide() . ',*_templ.go,.git/*,vendor/*'
 let g:netrw_list_hide .= ",.*_templ\\.go$"
