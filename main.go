@@ -18,11 +18,12 @@ import (
 )
 
 var components = map[string]templ.Component{
-	"/":              templates.Root(),
-	"/about":         templates.About(),
-	"/coins":         templates.Coins(),
-	"/coins/designs": templates.CoinsDesigns(),
-	"/language":      templates.Language(),
+	"/":                 templates.Root(),
+	"/about":            templates.About(),
+	"/coins":            templates.Coins(),
+	"/coins/designs":    templates.CoinsDesigns(),
+	"/coins/designs/nl": templates.CoinsDesignsNl(),
+	"/language":         templates.Language(),
 }
 
 func main() {
@@ -33,6 +34,7 @@ func main() {
 
 	fs := http.FileServer(http.Dir("static"))
 	mux := http.NewServeMux()
+	mux.Handle("GET /designs/", fs)
 	mux.Handle("GET /favicon.ico", fs)
 	mux.Handle("GET /fonts/", fs)
 	mux.Handle("GET /style.css", fs)
