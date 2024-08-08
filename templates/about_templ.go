@@ -11,9 +11,9 @@ import templruntime "github.com/a-h/templ/runtime"
 import "git.thomasvoss.com/euro-cash.eu/i18n"
 
 const (
-	contactEmail = `<a href="mailto:mail@euro-cash.eu">mail@euro-cash.eu</a>`
-	linkStart    = `<a href="https://git.thomasvoss.com/www.euro-cash.eu" target="_blank">`
-	linkEnd      = `</a>`
+	contactEmail  = `<a href="mailto:mail@euro-cash.eu">mail@euro-cash.eu</a>`
+	repoLinkStart = `<a href="https://git.thomasvoss.com/www.euro-cash.eu" target="_blank">`
+	linkEnd       = `</a>`
 )
 
 func About() templ.Component {
@@ -73,7 +73,7 @@ func About() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templ.Raw(p.T("This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found %shere%s. This site is licensed under the BSD 0-Clause license giving you the full freedom to do whatever you would like with any of the content on this site.", linkStart, linkEnd)).Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = templ.Raw(p.T("This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found %shere%s. This site is licensed under the BSD 0-Clause license giving you the full freedom to do whatever you would like with any of the content on this site.", repoLinkStart, linkEnd)).Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

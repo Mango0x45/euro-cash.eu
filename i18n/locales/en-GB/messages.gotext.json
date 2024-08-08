@@ -23,18 +23,18 @@
             "fuzzy": true
         },
         {
-            "id": "This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found {LinkStart}here{LinkEnd}. This site is licensed under the BSD 0-Clause license giving you the full freedom to do whatever you would like with any of the content on this site.",
-            "message": "This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found {LinkStart}here{LinkEnd}. This site is licensed under the BSD 0-Clause license giving you the full freedom to do whatever you would like with any of the content on this site.",
-            "translation": "This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found {LinkStart}here{LinkEnd}. This site is licensed under the BSD 0-Clause license giving you the full freedom to do whatever you would like with any of the content on this site.",
+            "id": "This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found {RepoLinkStart}here{LinkEnd}. This site is licensed under the BSD 0-Clause license giving you the full freedom to do whatever you would like with any of the content on this site.",
+            "message": "This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found {RepoLinkStart}here{LinkEnd}. This site is licensed under the BSD 0-Clause license giving you the full freedom to do whatever you would like with any of the content on this site.",
+            "translation": "This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found {RepoLinkStart}here{LinkEnd}. This site is licensed under the BSD 0-Clause license giving you the full freedom to do whatever you would like with any of the content on this site.",
             "translatorComment": "Copied from source.",
             "placeholders": [
                 {
-                    "id": "LinkStart",
+                    "id": "RepoLinkStart",
                     "string": "%[1]s",
                     "type": "string",
                     "underlyingType": "string",
                     "argNum": 1,
-                    "expr": "linkStart"
+                    "expr": "repoLinkStart"
                 },
                 {
                     "id": "LinkEnd",
@@ -110,6 +110,280 @@
             "id": "Icelandic",
             "message": "Icelandic",
             "translation": "Icelandic",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Andorra",
+            "message": "Andorra",
+            "translation": "Andorra",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Austria",
+            "message": "Austria",
+            "translation": "Austria",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Belgium",
+            "message": "Belgium",
+            "translation": "Belgium",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Cyprus",
+            "message": "Cyprus",
+            "translation": "Cyprus",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Germany",
+            "message": "Germany",
+            "translation": "Germany",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Estonia",
+            "message": "Estonia",
+            "translation": "Estonia",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Spain",
+            "message": "Spain",
+            "translation": "Spain",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Finland",
+            "message": "Finland",
+            "translation": "Finland",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "France",
+            "message": "France",
+            "translation": "France",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Greece",
+            "message": "Greece",
+            "translation": "Greece",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Croatia",
+            "message": "Croatia",
+            "translation": "Croatia",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Ireland",
+            "message": "Ireland",
+            "translation": "Ireland",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Italy",
+            "message": "Italy",
+            "translation": "Italy",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Lithuania",
+            "message": "Lithuania",
+            "translation": "Lithuania",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Luxembourg",
+            "message": "Luxembourg",
+            "translation": "Luxembourg",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Latvia",
+            "message": "Latvia",
+            "translation": "Latvia",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Monaco",
+            "message": "Monaco",
+            "translation": "Monaco",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Malta",
+            "message": "Malta",
+            "translation": "Malta",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Netherlands",
+            "message": "Netherlands",
+            "translation": "Netherlands",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Portugal",
+            "message": "Portugal",
+            "translation": "Portugal",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Slovenia",
+            "message": "Slovenia",
+            "translation": "Slovenia",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Slovakia",
+            "message": "Slovakia",
+            "translation": "Slovakia",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "San Marino",
+            "message": "San Marino",
+            "translation": "San Marino",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Vatican City",
+            "message": "Vatican City",
+            "translation": "Vatican City",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Euro Coin Designs",
+            "message": "Euro Coin Designs",
+            "translation": "Euro Coin Designs",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Here you’ll be able to view all the coin designs for each country in the Eurozone. This section of the site doesn’t include minor varieties such as different mintmarks or errors; those are on the {VarietiesLinkStart}varieties{LinkEnd} page.",
+            "message": "Here you’ll be able to view all the coin designs for each country in the Eurozone. This section of the site doesn’t include minor varieties such as different mintmarks or errors; those are on the {VarietiesLinkStart}varieties{LinkEnd} page.",
+            "translation": "Here you’ll be able to view all the coin designs for each country in the Eurozone. This section of the site doesn’t include minor varieties such as different mintmarks or errors; those are on the {VarietiesLinkStart}varieties{LinkEnd} page.",
+            "translatorComment": "Copied from source.",
+            "placeholders": [
+                {
+                    "id": "VarietiesLinkStart",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "varietiesLinkStart"
+                },
+                {
+                    "id": "LinkEnd",
+                    "string": "%[2]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 2,
+                    "expr": "linkEnd"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "Euro Coins",
+            "message": "Euro Coins",
+            "translation": "Euro Coins",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "On this section of the site you can find everything there is to know about the coins of the Eurozone. For the latest news on coin- and design releases, check out the {NewsLinkStart}news{LinkEnd} tab!",
+            "message": "On this section of the site you can find everything there is to know about the coins of the Eurozone. For the latest news on coin- and design releases, check out the {NewsLinkStart}news{LinkEnd} tab!",
+            "translation": "On this section of the site you can find everything there is to know about the coins of the Eurozone. For the latest news on coin- and design releases, check out the {NewsLinkStart}news{LinkEnd} tab!",
+            "translatorComment": "Copied from source.",
+            "placeholders": [
+                {
+                    "id": "NewsLinkStart",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "newsLinkStart"
+                },
+                {
+                    "id": "LinkEnd",
+                    "string": "%[2]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 2,
+                    "expr": "linkEnd"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "Designs",
+            "message": "Designs",
+            "translation": "Designs",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "View the 600+ different Euro-coin designs!",
+            "message": "View the 600+ different Euro-coin designs!",
+            "translation": "View the 600+ different Euro-coin designs!",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Mintages",
+            "message": "Mintages",
+            "translation": "Mintages",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "View the mintage figures of all the Euro coins!",
+            "message": "View the mintage figures of all the Euro coins!",
+            "translation": "View the mintage figures of all the Euro coins!",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Varieties",
+            "message": "Varieties",
+            "translation": "Varieties",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "View all the known Euro varieties!",
+            "message": "View all the known Euro varieties!",
+            "translation": "View all the known Euro varieties!",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },

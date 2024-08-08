@@ -17,17 +17,17 @@
             "translation": ""
         },
         {
-            "id": "This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found {LinkStart}here{LinkEnd}. This site is licensed under the BSD 0-Clause license giving you the full freedom to do whatever you would like with any of the content on this site.",
-            "message": "This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found {LinkStart}here{LinkEnd}. This site is licensed under the BSD 0-Clause license giving you the full freedom to do whatever you would like with any of the content on this site.",
+            "id": "This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found {RepoLinkStart}here{LinkEnd}. This site is licensed under the BSD 0-Clause license giving you the full freedom to do whatever you would like with any of the content on this site.",
+            "message": "This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found {RepoLinkStart}here{LinkEnd}. This site is licensed under the BSD 0-Clause license giving you the full freedom to do whatever you would like with any of the content on this site.",
             "translation": "",
             "placeholders": [
                 {
-                    "id": "LinkStart",
+                    "id": "RepoLinkStart",
                     "string": "%[1]s",
                     "type": "string",
                     "underlyingType": "string",
                     "argNum": 1,
-                    "expr": "linkStart"
+                    "expr": "repoLinkStart"
                 },
                 {
                     "id": "LinkEnd",
@@ -87,6 +87,212 @@
         {
             "id": "Icelandic",
             "message": "Icelandic",
+            "translation": ""
+        },
+        {
+            "id": "Andorra",
+            "message": "Andorra",
+            "translation": ""
+        },
+        {
+            "id": "Austria",
+            "message": "Austria",
+            "translation": ""
+        },
+        {
+            "id": "Belgium",
+            "message": "Belgium",
+            "translation": ""
+        },
+        {
+            "id": "Cyprus",
+            "message": "Cyprus",
+            "translation": ""
+        },
+        {
+            "id": "Germany",
+            "message": "Germany",
+            "translation": ""
+        },
+        {
+            "id": "Estonia",
+            "message": "Estonia",
+            "translation": ""
+        },
+        {
+            "id": "Spain",
+            "message": "Spain",
+            "translation": ""
+        },
+        {
+            "id": "Finland",
+            "message": "Finland",
+            "translation": ""
+        },
+        {
+            "id": "France",
+            "message": "France",
+            "translation": ""
+        },
+        {
+            "id": "Greece",
+            "message": "Greece",
+            "translation": ""
+        },
+        {
+            "id": "Croatia",
+            "message": "Croatia",
+            "translation": ""
+        },
+        {
+            "id": "Ireland",
+            "message": "Ireland",
+            "translation": ""
+        },
+        {
+            "id": "Italy",
+            "message": "Italy",
+            "translation": ""
+        },
+        {
+            "id": "Lithuania",
+            "message": "Lithuania",
+            "translation": ""
+        },
+        {
+            "id": "Luxembourg",
+            "message": "Luxembourg",
+            "translation": ""
+        },
+        {
+            "id": "Latvia",
+            "message": "Latvia",
+            "translation": ""
+        },
+        {
+            "id": "Monaco",
+            "message": "Monaco",
+            "translation": ""
+        },
+        {
+            "id": "Malta",
+            "message": "Malta",
+            "translation": ""
+        },
+        {
+            "id": "Netherlands",
+            "message": "Netherlands",
+            "translation": ""
+        },
+        {
+            "id": "Portugal",
+            "message": "Portugal",
+            "translation": ""
+        },
+        {
+            "id": "Slovenia",
+            "message": "Slovenia",
+            "translation": ""
+        },
+        {
+            "id": "Slovakia",
+            "message": "Slovakia",
+            "translation": ""
+        },
+        {
+            "id": "San Marino",
+            "message": "San Marino",
+            "translation": ""
+        },
+        {
+            "id": "Vatican City",
+            "message": "Vatican City",
+            "translation": ""
+        },
+        {
+            "id": "Euro Coin Designs",
+            "message": "Euro Coin Designs",
+            "translation": ""
+        },
+        {
+            "id": "Here you’ll be able to view all the coin designs for each country in the Eurozone. This section of the site doesn’t include minor varieties such as different mintmarks or errors; those are on the {VarietiesLinkStart}varieties{LinkEnd} page.",
+            "message": "Here you’ll be able to view all the coin designs for each country in the Eurozone. This section of the site doesn’t include minor varieties such as different mintmarks or errors; those are on the {VarietiesLinkStart}varieties{LinkEnd} page.",
+            "translation": "",
+            "placeholders": [
+                {
+                    "id": "VarietiesLinkStart",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "varietiesLinkStart"
+                },
+                {
+                    "id": "LinkEnd",
+                    "string": "%[2]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 2,
+                    "expr": "linkEnd"
+                }
+            ]
+        },
+        {
+            "id": "Euro Coins",
+            "message": "Euro Coins",
+            "translation": ""
+        },
+        {
+            "id": "On this section of the site you can find everything there is to know about the coins of the Eurozone. For the latest news on coin- and design releases, check out the {NewsLinkStart}news{LinkEnd} tab!",
+            "message": "On this section of the site you can find everything there is to know about the coins of the Eurozone. For the latest news on coin- and design releases, check out the {NewsLinkStart}news{LinkEnd} tab!",
+            "translation": "",
+            "placeholders": [
+                {
+                    "id": "NewsLinkStart",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "newsLinkStart"
+                },
+                {
+                    "id": "LinkEnd",
+                    "string": "%[2]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 2,
+                    "expr": "linkEnd"
+                }
+            ]
+        },
+        {
+            "id": "Designs",
+            "message": "Designs",
+            "translation": ""
+        },
+        {
+            "id": "View the 600+ different Euro-coin designs!",
+            "message": "View the 600+ different Euro-coin designs!",
+            "translation": ""
+        },
+        {
+            "id": "Mintages",
+            "message": "Mintages",
+            "translation": ""
+        },
+        {
+            "id": "View the mintage figures of all the Euro coins!",
+            "message": "View the mintage figures of all the Euro coins!",
+            "translation": ""
+        },
+        {
+            "id": "Varieties",
+            "message": "Varieties",
+            "translation": ""
+        },
+        {
+            "id": "View all the known Euro varieties!",
+            "message": "View all the known Euro varieties!",
             "translation": ""
         },
         {
