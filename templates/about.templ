@@ -3,9 +3,9 @@ package templates
 import "git.thomasvoss.com/euro-cash.eu/i18n"
 
 const (
-	contactEmail = `<a href="mailto:mail@euro-cash.eu">mail@euro-cash.eu</a>`
-	linkStart    = `<a href="https://git.thomasvoss.com/www.euro-cash.eu" target="_blank">`
-	linkEnd      = `</a>`
+	contactEmail  = `<a href="mailto:mail@euro-cash.eu">mail@euro-cash.eu</a>`
+	repoLinkStart = `<a href="https://git.thomasvoss.com/www.euro-cash.eu" target="_blank">`
+	linkEnd       = `</a>`
 )
 
 templ About() {
@@ -17,7 +17,7 @@ templ About() {
 	<main>
 		<h2>{ p.T("Open Source") }</h2>
 		<p>
-			@templ.Raw(p.T("This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found %shere%s. This site is licensed under the BSD 0-Clause license giving you the full freedom to do whatever you would like with any of the content on this site.", linkStart, linkEnd))
+			@templ.Raw(p.T("This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found %shere%s. This site is licensed under the BSD 0-Clause license giving you the full freedom to do whatever you would like with any of the content on this site.", repoLinkStart, linkEnd))
 		</p>
 		<h2>{ p.T("Contact Us") }</h2>
 		<p>
