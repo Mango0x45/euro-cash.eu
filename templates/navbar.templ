@@ -4,17 +4,15 @@ import "git.thomasvoss.com/euro-cash.eu/i18n"
 
 templ navbar() {
 	{{ p := ctx.Value("printer").(i18n.Printer) }}
-
 	<nav>
 		<menu>
 			<li><a href="/">{ p.T("Home") }</a></li>
 			<li><a href="#TODO">{ p.T("News") }</a></li>
 			<li><a href="#TODO">{ p.T("Coin Collecting") }</a></li>
-			<li><a href="#TODO">{ p.T("Coins") }</a></li>
+			<li><a href="/coins">{ p.T("Coins") }</a></li>
 			<li><a href="#TODO">{ p.T("Banknotes") }</a></li>
 			<li><a href="#TODO">{ p.T("Jargon") }</a></li>
 		</menu>
-
 		<menu>
 			<li>
 				<a
