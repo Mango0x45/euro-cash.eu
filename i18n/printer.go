@@ -9,7 +9,7 @@ import (
 	"golang.org/x/text/message"
 )
 
-//go:generate gotext -srclang=en-GB update -out=catalog.go -lang=en-GB,nl-NL git.thomasvoss.com/euro-cash.eu
+//go:generate gotext -srclang=en update -out=catalog.go -lang=el,en,nl git.thomasvoss.com/euro-cash.eu
 
 type Printer struct {
 	Locale  Locale
@@ -17,7 +17,7 @@ type Printer struct {
 }
 
 type Locale struct {
-	Code     string
+	Bcp      string
 	Name     string
 	dateFmt  string
 	moneyFmt string
@@ -28,133 +28,133 @@ type Locale struct {
 var (
 	Locales = [...]Locale{
 		{
-			Code:     "ca-AD",
+			Bcp:      "ca",
 			Name:     "català",
 			dateFmt:  "2/1/2006",
 			Eurozone: true,
 			Enabled:  false,
 		},
 		{
-			Code:     "de-DE",
+			Bcp:      "de",
 			Name:     "Deutsch",
 			dateFmt:  "2.1.2006",
 			Eurozone: true,
 			Enabled:  false,
 		},
 		{
-			Code:     "el-GR",
+			Bcp:      "el",
 			Name:     "ελληνικά",
 			dateFmt:  "2/1/2006",
 			Eurozone: true,
 			Enabled:  false,
 		},
 		{
-			Code:     "en-GB",
+			Bcp:      "en",
 			Name:     "English",
 			dateFmt:  "02/01/2006",
 			Eurozone: true,
 			Enabled:  true,
 		},
 		{
-			Code:     "es-ES",
+			Bcp:      "es",
 			Name:     "español",
 			dateFmt:  "2/1/2006",
 			Eurozone: true,
 			Enabled:  false,
 		},
 		{
-			Code:     "et-EE",
+			Bcp:      "et",
 			Name:     "eesti",
 			dateFmt:  "2.1.2006",
 			Eurozone: true,
 			Enabled:  false,
 		},
 		{
-			Code:     "fi-FI",
+			Bcp:      "fi",
 			Name:     "suomi",
 			dateFmt:  "2.1.2006",
 			Eurozone: true,
 			Enabled:  false,
 		},
 		{
-			Code:     "fr-FR",
+			Bcp:      "fr",
 			Name:     "français",
 			dateFmt:  "02/01/2006",
 			Eurozone: true,
 			Enabled:  false,
 		},
 		{
-			Code:     "ga-IE",
+			Bcp:      "ga",
 			Name:     "Gaeilge",
 			dateFmt:  "02/01/2006",
 			Eurozone: true,
 			Enabled:  false,
 		},
 		{
-			Code:     "hr-HR",
+			Bcp:      "hr",
 			Name:     "hrvatski",
 			dateFmt:  "02. 01. 2006.",
 			Eurozone: true,
 			Enabled:  false,
 		},
 		{
-			Code:     "it-IT",
+			Bcp:      "it",
 			Name:     "italiano",
 			dateFmt:  "02/01/2006",
 			Eurozone: true,
 			Enabled:  false,
 		},
 		{
-			Code:     "lb-LU",
+			Bcp:      "lb",
 			Name:     "lëtzebuergesch",
 			dateFmt:  "2.1.2006",
 			Eurozone: true,
 			Enabled:  false,
 		},
 		{
-			Code:     "lt-LT",
+			Bcp:      "lt",
 			Name:     "lietuvių",
 			dateFmt:  "2006-01-02",
 			Eurozone: true,
 			Enabled:  false,
 		},
 		{
-			Code:     "lv-LV",
+			Bcp:      "lv",
 			Name:     "latviešu",
 			dateFmt:  "2.01.2006.",
 			Eurozone: true,
 			Enabled:  false,
 		},
 		{
-			Code:     "mt-MT",
+			Bcp:      "mt",
 			Name:     "Malti",
 			dateFmt:  "2/1/2006",
 			Eurozone: true,
 			Enabled:  false,
 		},
 		{
-			Code:     "nl-NL",
+			Bcp:      "nl",
 			Name:     "Nederlands",
 			dateFmt:  "2-1-2006",
 			Eurozone: true,
 			Enabled:  true,
 		},
 		{
-			Code:     "pt-PT",
+			Bcp:      "pt",
 			Name:     "português",
 			dateFmt:  "02/01/2006",
 			Eurozone: true,
 			Enabled:  false,
 		},
 		{
-			Code:     "sk-SK",
+			Bcp:      "sk",
 			Name:     "slovenčina",
 			dateFmt:  "2. 1. 2006",
 			Eurozone: true,
 			Enabled:  false,
 		},
 		{
-			Code:     "sl-SI",
+			Bcp:      "sl",
 			Name:     "slovenščina",
 			dateFmt:  "2. 1. 2006",
 			Eurozone: true,
@@ -163,28 +163,28 @@ var (
 
 		/* Non-Eurozone locales */
 		{
-			Code:     "bg-BG",
+			Bcp:      "bg",
 			Name:     "български",
 			dateFmt:  "2.01.2006 г.",
 			Eurozone: false,
 			Enabled:  false,
 		},
 		{
-			Code:     "en-US",
+			Bcp:      "en-US",
 			Name:     "English (US)",
 			dateFmt:  "1/2/2006",
 			Eurozone: false,
 			Enabled:  false,
 		},
 		{
-			Code:     "ro-RO",
+			Bcp:      "ro",
 			Name:     "română",
 			dateFmt:  "02.01.2006",
 			Eurozone: false,
 			Enabled:  false,
 		},
 		{
-			Code:     "uk-UA",
+			Bcp:      "uk",
 			Name:     "yкраїнська",
 			dateFmt:  "02.01.2006",
 			Eurozone: false,
@@ -201,14 +201,14 @@ var (
 func InitPrinters() {
 	for _, loc := range Locales {
 		if loc.Enabled {
-			lang := language.MustParse(loc.Code)
-			Printers[strings.ToLower(loc.Code)] = Printer{
+			lang := language.MustParse(loc.Bcp)
+			Printers[strings.ToLower(loc.Bcp)] = Printer{
 				Locale:  loc,
 				printer: message.NewPrinter(lang),
 			}
 		}
 	}
-	DefaultPrinter = Printers["en-gb"]
+	DefaultPrinter = Printers["en"]
 }
 
 func (p Printer) T(fmt string, args ...any) string {
@@ -235,16 +235,17 @@ func (p Printer) Money(val float64, round bool) string {
 	/* All Eurozone languages place the eurosign after the value except
 	   for Dutch, English, Gaelic, and Maltese.  Austrian German also
 	   uses Dutch-style formatting, but we do not support that dialect. */
-	switch p.Locale.Code {
-	case "en-GB", "en-US", "ga-IE", "mt-MT":
+	switch p.Locale.Bcp {
+	case "en", "en-US", "ga", "mt":
 		return fmt.Sprintf("€%s", valstr)
-	case "nl-NL":
+	case "nl":
 		return fmt.Sprintf("€ %s", valstr)
 	default:
 		return fmt.Sprintf("%s €", valstr)
 	}
 }
 
+/* Transform ‘en-US’ to ‘en’ */
 func (l Locale) Language() string {
-	return l.Code[:2]
+	return l.Bcp[:2]
 }

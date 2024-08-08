@@ -146,9 +146,9 @@ func languageGrid(eurozone bool) templ.Component {
 					return templ_7745c5c3_Err
 				}
 				var templ_7745c5c3_Var7 string
-				templ_7745c5c3_Var7, templ_7745c5c3_Err = templ.JoinStringErrs(loc.Code)
+				templ_7745c5c3_Var7, templ_7745c5c3_Err = templ.JoinStringErrs(loc.Bcp)
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `language.templ`, Line: 40, Col: 22}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `language.templ`, Line: 40, Col: 21}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var7))
 				if templ_7745c5c3_Err != nil {
@@ -169,9 +169,9 @@ func languageGrid(eurozone bool) templ.Component {
 					return templ_7745c5c3_Err
 				}
 				var templ_7745c5c3_Var8 string
-				templ_7745c5c3_Var8, templ_7745c5c3_Err = templ.JoinStringErrs(loc.Code)
+				templ_7745c5c3_Var8, templ_7745c5c3_Err = templ.JoinStringErrs(loc.Bcp)
 				if templ_7745c5c3_Err != nil {
-					return templ.Error{Err: templ_7745c5c3_Err, FileName: `language.templ`, Line: 44, Col: 22}
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `language.templ`, Line: 44, Col: 21}
 				}
 				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var8))
 				if templ_7745c5c3_Err != nil {

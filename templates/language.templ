@@ -37,11 +37,11 @@ templ languageGrid(eurozone bool) {
 					<button
 						type="submit"
 						name="locale"
-						value={ loc.Code }
+						value={ loc.Bcp }
 						disabled?={ !loc.Enabled }
 					>
 						<span
-							lang={ loc.Code }
+							lang={ loc.Bcp }
 							data-code={ strings.ToUpper(loc.Language()) }
 						>
 							{ loc.Name }
