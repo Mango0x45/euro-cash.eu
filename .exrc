@@ -4,7 +4,7 @@ call setenv("TEMPL_EXPERIMENT", "rawgo")
 
 function s:SaveExcursion(cmd)
 	let l:win = winsaveview()
-	execute "%!" .. a:cmd
+	silent execute "%!" .. a:cmd
 	call winrestview(l:win)
 endfunction
 
