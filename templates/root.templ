@@ -1,20 +1,15 @@
 package templates
 
-import (
-	"strings"
-
-	"git.thomasvoss.com/euro-cash.eu/i18n"
-)
+import "git.thomasvoss.com/euro-cash.eu/i18n"
 
 templ Root(head, body templ.Component) {
 	{{ p := ctx.Value("printer").(i18n.Printer) }}
-
 	<!DOCTYPE html>
 	<html lang={ p.Locale.Code } data-theme={ ctx.Value("theme").(string) }>
 		<head>
-			<meta charset="UTF-8" />
-			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-			<link rel="stylesheet" type="text/css" href="/style.css" />
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<link rel="stylesheet" type="text/css" href="/style.css"/>
 			<title>Euro Cash</title>
 			if head != nil {
 				@head
@@ -38,7 +33,6 @@ templ Root(head, body templ.Component) {
 
 templ Index() {
 	{{ p := ctx.Value("printer").(i18n.Printer) }}
-
 	<header>
 		@navbar()
 		<hgroup>
@@ -55,56 +49,4 @@ templ Index() {
 			{ p.T("Welcome to the Euro Cash Compendium. This sites aims to be a resource for you to discover everything there is to know about the coins and banknotes of the Euro, a currency that spans 26 countries and 350 million people. We also have dedicated sections of the site for collectors.") }
 		</p>
 	</main>
-}
-
-templ SetLanguage() {
-	{{ p := ctx.Value("printer").(i18n.Printer) }}
-
-	<header>
-		@navbar()
-		<h1>{ p.T("Select Your Language") }</h1>
-	</header>
-
-	<main>
-		<p>
-			{ p.T("Select your preferred language to use on the site.") }
-		</p>
-		<p>
-			If you are an American user, it’s suggested that you select
-			American English instead of British English. This will ensure that
-			dates will be formatted with the month before the day. 
-		</p>
-
-		<hr />
-
-		<h2>{ p.T("Eurozone Languages") }</h2>
-		@languageGrid(true)
-
-		<h2>{ p.T("Other Languages") }</h2>
-		@languageGrid(false)
-	</main>
-}
-
-templ languageGrid(eurozone bool) {
-	<form action="/language" method="POST">
-		<div class="lang-grid">
-			for _, loc := range i18n.Locales {
-				if loc.Eurozone == eurozone {
-					<button
-						type="submit"
-						name="locale"
-						value={ loc.Code }
-						disabled?={ !loc.Enabled }
-					>
-						<span
-							lang={ loc.Code }
-							data-code={ strings.ToUpper(loc.Language()) }
-						>
-							{ loc.Name }
-						</span>
-					</button>
-				}
-			}
-		</div>
-	</form>
 }
