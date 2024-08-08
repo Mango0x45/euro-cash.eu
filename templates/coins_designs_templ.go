@@ -8,13 +8,23 @@ package templates
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
-import "git.thomasvoss.com/euro-cash.eu/i18n"
+import (
+	"fmt"
+	"strings"
+
+	"git.thomasvoss.com/euro-cash.eu/i18n"
+)
 
 type country struct {
-	Code, Name string
+	code, name string
 }
 
 var varietiesLinkStart = `<a href="/coins/varieties">`
+
+func makeURL(c country) templ.SafeURL {
+	url := fmt.Sprintf("/coins/designs/%s", strings.ToLower(c.code))
+	return templ.SafeURL(url)
+}
 
 func CoinsDesigns() templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
@@ -37,30 +47,30 @@ func CoinsDesigns() templ.Component {
 
 		p := ctx.Value("printer").(i18n.Printer)
 		countries := []country{
-			{Code: "AD", Name: p.T("Andorra")},
-			{Code: "AT", Name: p.T("Austria")},
-			{Code: "BE", Name: p.T("Belgium")},
-			{Code: "CY", Name: p.T("Cyprus")},
-			{Code: "DE", Name: p.T("Germany")},
-			{Code: "EE", Name: p.T("Estonia")},
-			{Code: "ES", Name: p.T("Spain")},
-			{Code: "FI", Name: p.T("Finland")},
-			{Code: "FR", Name: p.T("France")},
-			{Code: "GR", Name: p.T("Greece")},
-			{Code: "HR", Name: p.T("Croatia")},
-			{Code: "IE", Name: p.T("Ireland")},
-			{Code: "IT", Name: p.T("Italy")},
-			{Code: "LT", Name: p.T("Lithuania")},
-			{Code: "LU", Name: p.T("Luxembourg")},
-			{Code: "LV", Name: p.T("Latvia")},
-			{Code: "MC", Name: p.T("Monaco")},
-			{Code: "MT", Name: p.T("Malta")},
-			{Code: "NL", Name: p.T("Netherlands")},
-			{Code: "PT", Name: p.T("Portugal")},
-			{Code: "SI", Name: p.T("Slovenia")},
-			{Code: "SK", Name: p.T("Slovakia")},
-			{Code: "SM", Name: p.T("San Marino")},
-			{Code: "VA", Name: p.T("Vatican City")},
+			{code: "AD", name: p.T("Andorra")},
+			{code: "AT", name: p.T("Austria")},
+			{code: "BE", name: p.T("Belgium")},
+			{code: "CY", name: p.T("Cyprus")},
+			{code: "DE", name: p.T("Germany")},
+			{code: "EE", name: p.T("Estonia")},
+			{code: "ES", name: p.T("Spain")},
+			{code: "FI", name: p.T("Finland")},
+			{code: "FR", name: p.T("France")},
+			{code: "GR", name: p.T("Greece")},
+			{code: "HR", name: p.T("Croatia")},
+			{code: "IE", name: p.T("Ireland")},
+			{code: "IT", name: p.T("Italy")},
+			{code: "LT", name: p.T("Lithuania")},
+			{code: "LU", name: p.T("Luxembourg")},
+			{code: "LV", name: p.T("Latvia")},
+			{code: "MC", name: p.T("Monaco")},
+			{code: "MT", name: p.T("Malta")},
+			{code: "NL", name: p.T("Netherlands")},
+			{code: "PT", name: p.T("Portugal")},
+			{code: "SI", name: p.T("Slovenia")},
+			{code: "SK", name: p.T("Slovakia")},
+			{code: "SM", name: p.T("San Marino")},
+			{code: "VA", name: p.T("Vatican City")},
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<header>")
 		if templ_7745c5c3_Err != nil {
@@ -77,7 +87,7 @@ func CoinsDesigns() templ.Component {
 		var templ_7745c5c3_Var2 string
 		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(p.T("Euro Coin Designs"))
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `coins_designs.templ`, Line: 43, Col: 32}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `coins_designs.templ`, Line: 53, Col: 32}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
 		if templ_7745c5c3_Err != nil {
@@ -101,24 +111,33 @@ func CoinsDesigns() templ.Component {
 				return templ_7745c5c3_Err
 			}
 			var templ_7745c5c3_Var3 string
-			templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(c.Code)
+			templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(c.code)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `coins_designs.templ`, Line: 55, Col: 23}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `coins_designs.templ`, Line: 65, Col: 23}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" href=\"#TODO\">")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" href=\"")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			var templ_7745c5c3_Var4 string
-			templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinStringErrs(p.T(c.Name))
+			var templ_7745c5c3_Var4 templ.SafeURL = makeURL(c)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(string(templ_7745c5c3_Var4)))
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `coins_designs.templ`, Line: 58, Col: 18}
+				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var4))
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\">")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			var templ_7745c5c3_Var5 string
+			templ_7745c5c3_Var5, templ_7745c5c3_Err = templ.JoinStringErrs(p.T(c.name))
+			if templ_7745c5c3_Err != nil {
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `coins_designs.templ`, Line: 68, Col: 18}
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var5))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
