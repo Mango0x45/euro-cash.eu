@@ -18,10 +18,11 @@ import (
 )
 
 var components = map[string]templ.Component{
-	"/":         templates.Index(),
-	"/about":    templates.About(),
-	"/coins":    templates.CoinsIndex(),
-	"/language": templates.Language(),
+	"/":              templates.Index(),
+	"/about":         templates.About(),
+	"/coins":         templates.CoinsIndex(),
+	"/coins/designs": templates.CoinsDesigns(),
+	"/language":      templates.Language(),
 }
 
 func main() {

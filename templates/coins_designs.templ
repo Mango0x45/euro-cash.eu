@@ -1,0 +1,63 @@
+package templates
+
+import "git.thomasvoss.com/euro-cash.eu/i18n"
+
+type country struct {
+	Code, Name string
+}
+
+var varietiesLinkStart = `<a href="/coins/varieties">`
+
+templ CoinsDesigns() {
+	{{
+		p := ctx.Value("printer").(i18n.Printer)
+		countries := []country{
+			{Code: "AD", Name: p.T("Andorra")},
+			{Code: "AT", Name: p.T("Austria")},
+			{Code: "BE", Name: p.T("Belgium")},
+			{Code: "CY", Name: p.T("Cyprus")},
+			{Code: "DE", Name: p.T("Germany")},
+			{Code: "EE", Name: p.T("Estonia")},
+			{Code: "ES", Name: p.T("Spain")},
+			{Code: "FI", Name: p.T("Finland")},
+			{Code: "FR", Name: p.T("France")},
+			{Code: "GR", Name: p.T("Greece")},
+			{Code: "HR", Name: p.T("Croatia")},
+			{Code: "IE", Name: p.T("Ireland")},
+			{Code: "IT", Name: p.T("Italy")},
+			{Code: "LT", Name: p.T("Lithuania")},
+			{Code: "LU", Name: p.T("Luxembourg")},
+			{Code: "LV", Name: p.T("Latvia")},
+			{Code: "MC", Name: p.T("Monaco")},
+			{Code: "MT", Name: p.T("Malta")},
+			{Code: "NL", Name: p.T("Netherlands")},
+			{Code: "PT", Name: p.T("Portugal")},
+			{Code: "SI", Name: p.T("Slovenia")},
+			{Code: "SK", Name: p.T("Slovakia")},
+			{Code: "SM", Name: p.T("San Marino")},
+			{Code: "VA", Name: p.T("Vatican City")},
+		}
+	}}
+	<header>
+		@navbar()
+		<h1>{ p.T("Euro Coin Designs") }</h1>
+	</header>
+	<main>
+		<p>
+			@templ.Raw(p.T("Here you’ll be able to view all the coin designs for each country in the Eurozone. This section of the site doesn’t include minor varieties such as different mintmarks or errors; those are on the %svarieties%s page.", varietiesLinkStart, linkEnd))
+		</p>
+		<hr/>
+		<div class="country-grid">
+			for _, c := range countries {
+				<a
+					role="button"
+					class="outline"
+					data-code={ c.Code }
+					href="#TODO"
+				>
+					{ p.T(c.Name) }
+				</a>
+			}
+		</div>
+	</main>
+}
