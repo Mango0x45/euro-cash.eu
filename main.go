@@ -32,12 +32,12 @@ func main() {
 	fs := http.FileServer(http.Dir("static"))
 	mux := http.NewServeMux()
 	mux.Handle("GET /favicon.ico", fs)
+	mux.Handle("GET /fonts/", fs)
 	mux.Handle("GET /style.css", fs)
 	mux.Handle("GET /", middleware.Pipe(
 		middleware.Theme,
 		middleware.I18n,
 	)(http.HandlerFunc(finalHandler)))
-
 	mux.Handle("POST /language", http.HandlerFunc(setUserLanguage))
 	mux.Handle("POST /theme", http.HandlerFunc(setUserTheme))
 
