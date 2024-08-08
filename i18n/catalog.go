@@ -27,11 +27,9 @@ func (d *dictionary) Lookup(key string) (data string, ok bool) {
 
 func init() {
 	dict := map[string]catalog.Dictionary{
-		"el":    &dictionary{index: elIndex, data: elData},
-		"en":    &dictionary{index: enIndex, data: enData},
-		"en_GB": &dictionary{index: en_GBIndex, data: en_GBData},
-		"nl":    &dictionary{index: nlIndex, data: nlData},
-		"nl_NL": &dictionary{index: nl_NLIndex, data: nl_NLData},
+		"el": &dictionary{index: elIndex, data: elData},
+		"en": &dictionary{index: enIndex, data: enData},
+		"nl": &dictionary{index: nlIndex, data: nlData},
 	}
 	fallback := language.MustParse("en")
 	cat, err := catalog.NewFromMap(dict, catalog.Fallback(fallback))
@@ -196,67 +194,6 @@ const enData string = "" + // Size: 2376 bytes
 	" currency that spans 26 countries and 350 million people. We also have d" +
 	"edicated sections of the site for collectors."
 
-var en_GBIndex = []uint32{ // 67 elements
-	// Entry 0 - 1F
-	0x00000000, 0x0000000f, 0x00000018, 0x00000024,
-	0x00000189, 0x00000194, 0x00000385, 0x00000394,
-	0x000003a0, 0x000003a9, 0x000003b6, 0x000003d2,
-	0x000003dc, 0x000003e4, 0x000003ec, 0x000003f4,
-	0x000003fb, 0x00000403, 0x0000040b, 0x00000411,
-	0x00000419, 0x00000420, 0x00000427, 0x0000042f,
-	0x00000437, 0x0000043d, 0x00000447, 0x00000452,
-	0x00000459, 0x00000460, 0x00000466, 0x00000472,
-	// Entry 20 - 3F
-	0x0000047b, 0x00000484, 0x0000048d, 0x00000498,
-	0x000004a5, 0x000004b7, 0x00000599, 0x000005a4,
-	0x0000065e, 0x00000666, 0x00000691, 0x0000069a,
-	0x000006ca, 0x000006d4, 0x000006f7, 0x0000070c,
-	0x0000073f, 0x00000752, 0x00000762, 0x00000767,
-	0x0000076c, 0x0000077c, 0x00000782, 0x0000078c,
-	0x00000793, 0x0000079b, 0x000007a1, 0x000007aa,
-	0x000007e5, 0x000007fe, 0x00000817, 0x00000821,
-	// Entry 40 - 5F
-	0x0000082b, 0x00000830, 0x00000948,
-} // Size: 292 bytes
-
-const en_GBData string = "" + // Size: 2376 bytes
-	"\x02Page not found\x02About Us\x02Open Source\x02This website is an open" +
-	" project, and a collaboration between developers, translators, and resea" +
-	"rchers. All source code, data, images, and more for the website are open" +
-	" source and can be found %[1]shere%[2]s. This site is licensed under the" +
-	" BSD 0-Clause license giving you the full freedom to do whatever you wou" +
-	"ld like with any of the content on this site.\x02Contact Us\x02While we " +
-	"try to stay as up-to-date as possible and to fact check our information," +
-	" it is always possible that we get something wrong, lack a translation, " +
-	"or are missing some piece of data you may have. In such a case don’t hes" +
-	"itate to contact us; we’ll try to get the site updated or fixed as soon " +
-	"as possible. You are always free to contribute via a git patch if you ar" +
-	"e more technically included, but if not you can always send an email to " +
-	"%[1]s or contact ‘@onetruemangoman’ on Discord.\x02Special Thanks\x02Dev" +
-	"elopment\x02Research\x02Translations\x02British- & American English\x02I" +
-	"celandic\x02Andorra\x02Austria\x02Belgium\x02Cyprus\x02Germany\x02Estoni" +
-	"a\x02Spain\x02Finland\x02France\x02Greece\x02Croatia\x02Ireland\x02Italy" +
-	"\x02Lithuania\x02Luxembourg\x02Latvia\x02Monaco\x02Malta\x02Netherlands" +
-	"\x02Portugal\x02Slovenia\x02Slovakia\x02San Marino\x02Vatican City\x02Eu" +
-	"ro Coin Designs\x02Here you’ll be able to view all the coin designs for " +
-	"each country in the Eurozone. This section of the site doesn’t include m" +
-	"inor varieties such as different mintmarks or errors; those are on the %" +
-	"[1]svarieties%[2]s page.\x02Euro Coins\x02On this section of the site yo" +
-	"u can find everything there is to know about the coins of the Eurozone. " +
-	"For the latest news on coin- and design releases, check out the %[1]snew" +
-	"s%[2]s tab!\x02Designs\x02View the 600+ different Euro-coin designs!\x02" +
-	"Mintages\x02View the mintage figures of all the Euro coins!\x02Varieties" +
-	"\x02View all the known Euro varieties!\x02Select Your Language\x02Select" +
-	" your preferred language to use on the site.\x02Eurozone Languages\x02Ot" +
-	"her Languages\x02Home\x02News\x02Coin Collecting\x02Coins\x02Banknotes" +
-	"\x02Jargon\x02Discord\x02About\x02Language\x02Found a mistake or want to" +
-	" contribute missing information?\x02Feel free to contact us!\x02The Euro" +
-	" Cash Compendium\x02United in\x02diversity\x02cash\x02Welcome to the Eur" +
-	"o Cash Compendium. This sites aims to be a resource for you to discover " +
-	"everything there is to know about the coins and banknotes of the Euro, a" +
-	" currency that spans 26 countries and 350 million people. We also have d" +
-	"edicated sections of the site for collectors."
-
 var nlIndex = []uint32{ // 67 elements
 	// Entry 0 - 1F
 	0x00000000, 0x00000000, 0x00000000, 0x00000000,
@@ -282,29 +219,4 @@ var nlIndex = []uint32{ // 67 elements
 
 const nlData string = ""
 
-var nl_NLIndex = []uint32{ // 67 elements
-	// Entry 0 - 1F
-	0x00000000, 0x00000000, 0x00000000, 0x00000000,
-	0x00000000, 0x00000000, 0x00000000, 0x00000000,
-	0x00000000, 0x00000000, 0x00000000, 0x00000000,
-	0x00000000, 0x00000000, 0x00000000, 0x00000000,
-	0x00000000, 0x00000000, 0x00000000, 0x00000000,
-	0x00000000, 0x00000000, 0x00000000, 0x00000000,
-	0x00000000, 0x00000000, 0x00000000, 0x00000000,
-	0x00000000, 0x00000000, 0x00000000, 0x00000000,
-	// Entry 20 - 3F
-	0x00000000, 0x00000000, 0x00000000, 0x00000000,
-	0x00000000, 0x00000000, 0x00000000, 0x00000000,
-	0x00000000, 0x00000000, 0x00000000, 0x00000000,
-	0x00000000, 0x00000000, 0x00000000, 0x00000000,
-	0x00000000, 0x00000000, 0x00000000, 0x00000000,
-	0x00000000, 0x00000000, 0x00000000, 0x00000000,
-	0x00000000, 0x00000000, 0x00000000, 0x00000000,
-	0x00000000, 0x00000000, 0x00000000, 0x00000000,
-	// Entry 40 - 5F
-	0x00000000, 0x00000000, 0x00000000,
-} // Size: 292 bytes
-
-const nl_NLData string = ""
-
-// Total table size 6212 bytes (6KiB); checksum: 7D179823
+// Total table size 3252 bytes (3KiB); checksum: 90566C81
