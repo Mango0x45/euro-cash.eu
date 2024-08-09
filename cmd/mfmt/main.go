@@ -64,6 +64,7 @@ func mfmt(path string, in io.Reader, out io.Writer) error {
 		fmt.Fprintln(out, "\n\nBEGIN PROOF")
 		formatSection(out, data.Proof)
 	}
+	fmt.Fprintln(out, "")
 
 	if outfile {
 		if off, err := f.Seek(0, io.SeekCurrent); err != nil {
