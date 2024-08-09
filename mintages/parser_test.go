@@ -90,6 +90,35 @@ func TestParserComplete(t *testing.T) {
 	}
 }
 
+func TestParserNoProof(t *testing.T) {
+	data, err := parse(bytes.NewBuffer([]byte(`
+		BEGIN 2020
+		BEGIN CIRC
+		1.000 1001 1002 1003 1004 1005 1006 1007
+		 2000    ? 2002 2003 2004 2005 2006 2007
+		BEGIN BU
+		1.100 1101 1102 1103 1104 1105 1106 1107
+		 2100    ? 2102 2103 2104 2105 2106 2107
+	`)), "-")
+
+	if err != nil {
+		t.Fatalf(`Expected err=nil; got "%s"`, err)
+	}
+
+	for _, row := range data.Proof {
+		for _, col := range row {
+			if col != -1 {
+				t.Fatalf("Expected data.Proof[i][j]=-1; got %d", col)
+			}
+		}
+	}
+
+	rowsWant := time.Now().Year() - data.StartYear + 1
+	if len(data.Proof) != rowsWant {
+		t.Fatalf("Expected len(data.Proof)=%d; got %d", rowsWant, len(data.Proof))
+	}
+}
+
 func TestParserNoYear(t *testing.T) {
 	_, err := parse(bytes.NewBuffer([]byte(`
 		BEGIN CIRC
