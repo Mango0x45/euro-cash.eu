@@ -23,7 +23,7 @@ autocmd FileType templ autocmd BufWritePre <buffer>
 	\ call s:SaveExcursion("templ fmt")
 
 nnoremap <silent> gM :wall \| make all-i18n<CR>
-nnoremap <silent> <LocalLeader>t :vimgrep /TODO/ **/*<CR>
+nnoremap <silent> <LocalLeader>t :vimgrep /\CTODO/ **/*<CR>
 
 let &wildignore = netrw_gitignore#Hide() . ',*_templ.go,.git/*,vendor/*'
 let g:netrw_list_hide .= ",.*_templ\\.go$"
