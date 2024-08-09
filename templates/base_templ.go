@@ -42,20 +42,7 @@ func Base(head, body templ.Component) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" data-theme=\"")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		var templ_7745c5c3_Var3 string
-		templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(ctx.Value("theme").(string))
-		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `base.templ`, Line: 8, Col: 69}
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><link rel=\"stylesheet\" type=\"text/css\" href=\"/style.css\"><title>Euro Cash</title>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><link rel=\"stylesheet\" type=\"text/css\" href=\"/style.css\"><title>Euro Cash</title><script type=\"text/javascript\">\n\t\t\t\tconst validate = theme =>\n\t\t\t\t\t[\"light\", \"dark\"].includes(theme) ? theme : \"light\";\n\n\t\t\t\tconst toggle = theme =>\n\t\t\t\t\ttheme == \"light\" ? \"dark\" : \"light\";\n\n\t\t\t\tconst setTheme = theme => {\n\t\t\t\t\tlocalStorage.setItem(\"theme\", theme);\n\t\t\t\t\tdocument\n\t\t\t\t\t\t.getElementsByTagName(\"html\")[0]\n\t\t\t\t\t\t.setAttribute(\"data-theme\", theme);\n\t\t\t\t\tdocument\n\t\t\t\t\t\t.getElementById(`nav-icon-theme-${theme}`)\n\t\t\t\t\t\t.style.display = '';\n\t\t\t\t\tdocument\n\t\t\t\t\t\t.getElementById(`nav-icon-theme-${toggle(theme)}`)\n\t\t\t\t\t\t.style.display = 'none';\n\t\t\t\t};\n\n\t\t\t\tdocument.addEventListener('DOMContentLoaded', _ => {\n\t\t\t\t\tdocument.getElementById(\"theme-button\").onclick = () => {\n\t\t\t\t\t\tsetTheme(toggle(validate(localStorage.getItem(\"theme\"))));\n\t\t\t\t\t};\n\t\t\t\t\tsetTheme(validate(localStorage.getItem(\"theme\")));\n\t\t\t\t});\n\t\t\t</script>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -79,12 +66,12 @@ func Base(head, body templ.Component) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		var templ_7745c5c3_Var4 string
-		templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinStringErrs(p.T("Found a mistake or want to contribute missing information?"))
+		var templ_7745c5c3_Var3 string
+		templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(p.T("Found a mistake or want to contribute missing information?"))
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `base.templ`, Line: 25, Col: 73}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `base.templ`, Line: 52, Col: 73}
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var4))
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -92,12 +79,12 @@ func Base(head, body templ.Component) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		var templ_7745c5c3_Var5 string
-		templ_7745c5c3_Var5, templ_7745c5c3_Err = templ.JoinStringErrs(p.T("Feel free to contact us!"))
+		var templ_7745c5c3_Var4 string
+		templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinStringErrs(p.T("Feel free to contact us!"))
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `base.templ`, Line: 26, Col: 51}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `base.templ`, Line: 53, Col: 51}
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var5))
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var4))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
