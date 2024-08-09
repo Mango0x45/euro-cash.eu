@@ -50,81 +50,42 @@ func CoinsDesignsNl() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</h1></header><main><p>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</h1></header><main><div class=\"design-container\"><img src=\"/designs/nl-050-beatrix.png\" alt=\"Netherlands Queen Beatrix €0.50 Coin\"> <img src=\"/designs/nl-050-willem-alexander.png\" alt=\"Netherlands King Willem-Alexander €0.50 Coin\"></div><div class=\"design-container\"><img src=\"/designs/nl-100-beatrix.png\" alt=\"Netherlands Queen Beatrix €1 Coin\"> <img src=\"/designs/nl-100-willem-alexander.png\" alt=\"Netherlands King Willem-Alexander €1 Coin\"></div><p>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var3 string
-		templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(p.T("From 1999 to 2013, all Dutch denominations bore a portrait of Queen Beatrix of the Netherlands. Beginning in 2014 following her abdication, the coins began to bear the portrait of her son King Willem-Alexander."))
+		templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(p.T("From the years 1999–2013 all Dutch euro coins featured the portrait of Queen Beatrix of the Netherlands. After her abdication from the throne in 2013 the designs of all denominations were changed to feature the portrait of the new King Willem-Alexander. After her abdication the direction in which the monarchs portrait faced was flipped; a tradition dating back to the earliest coins of the Kingdom of the Netherlands."))
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `coins_designs_nl.templ`, Line: 13, Col: 222}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `coins_designs_nl.templ`, Line: 33, Col: 433}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p><h2>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p><p>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var4 string
-		templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinStringErrs(p.T("1-, 2-, 5-, 10-, 20- and 50 Euro Cent Coins"))
+		templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinStringErrs(p.T("Coins featuring both monarchs contain text reading ‘BEATRIX KONINGIN DER NEDERLANDEN’ (‘BEATRIX QUEEN OF THE NETHERLANDS’) and ‘Willem-Alexander Koning der Nederlanden’ (‘Willem-Alexander King of the Netherlands’) respectively."))
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `coins_designs_nl.templ`, Line: 15, Col: 58}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `coins_designs_nl.templ`, Line: 36, Col: 255}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var4))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</h2><div class=\"design-container\"><img src=\"/designs/nl-050-beatrix.png\" alt=\"Netherlands Queen Beatrix 50 Euro Cent Coin\"> <img src=\"/designs/nl-050-willem-alexander.png\" alt=\"Netherlands King Willem-Alexander 50 Euro Cent Coin\"></div><p>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p><p><!-- TODO: Link to the relief description in the Jargon page -->")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var5 string
-		templ_7745c5c3_Var5, templ_7745c5c3_Err = templ.JoinStringErrs(p.T("All the denominations under a euro bear the same design. The coins featuring Queen Beatrix have a small portrait surrounded by various dots and the 12 stars of Europe. In the coins featuring King Willem-Alexander the stars were moved farther out and the dots removed to allow for a larger and more detailed portrait. The coins featuring King Willem-Alexander also feature the text ‘Willem-Alexander — Koning der Nederlanden’ (‘Willem-Alexander — King of the Netherlands’)."))
+		templ_7745c5c3_Var5, templ_7745c5c3_Err = templ.JoinStringErrs(p.T("The €1 and €2 coins featuring King Willem-Alexander were minted with a much lower relief than most euro coins of the same denomination. As a result it is not uncommon for these coins to appear worn after little use in circulation."))
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `coins_designs_nl.templ`, Line: 27, Col: 498}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `coins_designs_nl.templ`, Line: 40, Col: 246}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var5))
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p><h2>")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		var templ_7745c5c3_Var6 string
-		templ_7745c5c3_Var6, templ_7745c5c3_Err = templ.JoinStringErrs(p.T("1- and 2 Euro Coins"))
-		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `coins_designs_nl.templ`, Line: 29, Col: 34}
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var6))
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</h2><div class=\"design-container\"><img src=\"/designs/nl-100-beatrix.png\" alt=\"Netherlands Queen Beatrix 1 Euro Coin\"> <img src=\"/designs/nl-100-willem-alexander.png\" alt=\"Netherlands King Willem-Alexander 1 Euro Coin\"></div><p>")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		var templ_7745c5c3_Var7 string
-		templ_7745c5c3_Var7, templ_7745c5c3_Err = templ.JoinStringErrs(p.T("The 1- and 2 Euro designs have more detailed portraits than the cent coins but follow the same general theme. The coins featuring King Willem-Alexander includes the same text as the cent coins while the coins featuring Queen Beatrix now feature the text ‘BEATRIX — KONINGIN DER NEDERLANDEN’ (‘BEATRIX — QUEEN OF THE NETHERLANDS’)."))
-		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `coins_designs_nl.templ`, Line: 41, Col: 355}
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var7))
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p><p><!-- TODO: Link to ‘relief’ in the Jargon page! -->")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		var templ_7745c5c3_Var8 string
-		templ_7745c5c3_Var8, templ_7745c5c3_Err = templ.JoinStringErrs(p.T("The coins featuring King Willem-Alexander are minted with very low-relief in comparison to the coins featuring Queen Beatrix. As a result these coins often look very worn after little time in circulation."))
-		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `coins_designs_nl.templ`, Line: 45, Col: 216}
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var8))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
