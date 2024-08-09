@@ -11,7 +11,8 @@ function s:SaveExcursion(cmd)
 endfunction
 
 autocmd BufNewFile,BufRead */data/mintages/*
-	\ setfiletype mintage
+	\   setfiletype mintage
+	\ | setlocal nowrap
 autocmd BufNewFile,BufRead */cmd/mfmt/*
 	\ setlocal makeprg=go\ build\ ./cmd/mfmt
 
