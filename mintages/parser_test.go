@@ -7,7 +7,7 @@ import (
 )
 
 func TestParserComplete(t *testing.T) {
-	data, err := parse(bytes.NewBuffer([]byte(`
+	data, err := Parse(bytes.NewBuffer([]byte(`
 		BEGIN 2020
 		BEGIN CIRC
 		1.000 1001 1002 1003 1004 1005 1006 1007
@@ -82,7 +82,7 @@ func TestParserComplete(t *testing.T) {
 }
 
 func TestParserNoProof(t *testing.T) {
-	data, err := parse(bytes.NewBuffer([]byte(`
+	data, err := Parse(bytes.NewBuffer([]byte(`
 		BEGIN 2020
 		BEGIN CIRC
 		1.000 1001 1002 1003 1004 1005 1006 1007
@@ -102,7 +102,7 @@ func TestParserNoProof(t *testing.T) {
 }
 
 func TestParserMintmarks(t *testing.T) {
-	data, err := parse(bytes.NewBuffer([]byte(`
+	data, err := Parse(bytes.NewBuffer([]byte(`
 		BEGIN 2020
 		BEGIN CIRC
 		      1.000 1001 1002 1003 1004 1005 1006 1007
@@ -140,7 +140,7 @@ func TestParserMintmarks(t *testing.T) {
 }
 
 func TestParserNoYear(t *testing.T) {
-	_, err := parse(bytes.NewBuffer([]byte(`
+	_, err := Parse(bytes.NewBuffer([]byte(`
 		BEGIN CIRC
 		1.000 1001 1002 1003 1004 1005 1006 1007
 		 2000    ? 2002 2003 2004 2005 2006 2007
@@ -159,7 +159,7 @@ func TestParserNoYear(t *testing.T) {
 }
 
 func TestParserNoType(t *testing.T) {
-	_, err := parse(bytes.NewBuffer([]byte(`
+	_, err := Parse(bytes.NewBuffer([]byte(`
 		BEGIN 2020
 		1.000 1001 1002 1003 1004 1005 1006 1007
 		 2000    ? 2002 2003 2004 2005 2006 2007
@@ -178,7 +178,7 @@ func TestParserNoType(t *testing.T) {
 }
 
 func TestParserNoYearOrType(t *testing.T) {
-	_, err := parse(bytes.NewBuffer([]byte(`
+	_, err := Parse(bytes.NewBuffer([]byte(`
 		1.000 1001 1002 1003 1004 1005 1006 1007
 		 2000    ? 2002 2003 2004 2005 2006 2007
 		BEGIN BU
@@ -196,7 +196,7 @@ func TestParserNoYearOrType(t *testing.T) {
 }
 
 func TestParserBadToken(t *testing.T) {
-	_, err := parse(bytes.NewBuffer([]byte(`
+	_, err := Parse(bytes.NewBuffer([]byte(`
 		BEGIN 2020
 		BEGIN CIRC
 		1.000 1001 1002 1003 1004 1005 1006 1007
@@ -217,7 +217,7 @@ func TestParserBadToken(t *testing.T) {
 }
 
 func TestParserShortRow(t *testing.T) {
-	_, err := parse(bytes.NewBuffer([]byte(`
+	_, err := Parse(bytes.NewBuffer([]byte(`
 		BEGIN 2020
 		BEGIN CIRC
 		1.000 1001 1002 1003 1004 1005 1006 1007
@@ -237,7 +237,7 @@ func TestParserShortRow(t *testing.T) {
 }
 
 func TestParserLongRow(t *testing.T) {
-	_, err := parse(bytes.NewBuffer([]byte(`
+	_, err := Parse(bytes.NewBuffer([]byte(`
 		BEGIN 2020
 		BEGIN CIRC
 		1.000 1001 1002 1003 1004 1005 1006 1007
@@ -257,7 +257,7 @@ func TestParserLongRow(t *testing.T) {
 }
 
 func TestParserBadCoinType(t *testing.T) {
-	_, err := parse(bytes.NewBuffer([]byte(`
+	_, err := Parse(bytes.NewBuffer([]byte(`
 		BEGIN 2020
 		BEGIN CIRCULATED
 		1.000 1001 1002 1003 1004 1005 1006 1007

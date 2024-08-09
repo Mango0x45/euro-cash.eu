@@ -4,8 +4,6 @@ import (
 	"bufio"
 	"fmt"
 	"io"
-	"os"
-	"path/filepath"
 	"strconv"
 	"strings"
 	"unicode"
@@ -32,18 +30,7 @@ type Data struct {
 	Circ, BU, Proof []Row
 }
 
-func ForCountry(code string) (Data, error) {
-	path := filepath.Join("data", "mintages", code)
-
-	f, err := os.Open(path)
-	if err != nil {
-		return Data{}, err
-	}
-	defer f.Close()
-	return parse(f, path)
-}
-
-func parse(reader io.Reader, file string) (Data, error) {
+func Parse(reader io.Reader, file string) (Data, error) {
 	var (
 		data  Data   // Our data struct
 		slice *[]Row // Where to append mintages
@@ -150,10 +137,10 @@ func parse(reader io.Reader, file string) (Data, error) {
 			var row Row
 			switch {
 			case mintmark.s == "":
-				year += 1
+				year++
 				row.Label = strconv.Itoa(year)
 			case mintmark.star:
-				year += 1
+				year++
 				fallthrough
 			default:
 				row.Label = fmt.Sprintf("%d %s", year, mintmark.s)
