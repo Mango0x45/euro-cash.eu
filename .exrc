@@ -10,8 +10,10 @@ function s:SaveExcursion(cmd)
 	call winrestview(l:win)
 endfunction
 
-autocmd BufNewFile,BufRead */data/mintages/* setfiletype mintage
-autocmd BufNewFile,BufRead */cmd/mfmt/*      setlocal makeprg=go\ build\ ./cmd/mfmt
+autocmd BufNewFile,BufRead */data/mintages/*
+	\ setfiletype mintage
+autocmd BufNewFile,BufRead */cmd/mfmt/*
+	\ setlocal makeprg=go\ build\ ./cmd/mfmt
 
 autocmd FileType go autocmd BufWritePre <buffer>
 	\ call s:SaveExcursion("gofmt -s")
