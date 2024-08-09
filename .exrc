@@ -1,3 +1,5 @@
+set runtimepath+=contrib
+
 " We make use of this feature, so set this in the environment so that all
 " Ex-calls to templ are aware of this
 call setenv("TEMPL_EXPERIMENT", "rawgo")
@@ -8,8 +10,14 @@ function s:SaveExcursion(cmd)
 	call winrestview(l:win)
 endfunction
 
-autocmd BufWritePre *.go    call s:SaveExcursion("gofmt -s")
-autocmd BufWritePre *.templ call s:SaveExcursion("templ fmt")
+autocmd BufNewFile,BufRead */data/mintages/* setfiletype mintage
+
+autocmd FileType go autocmd BufWritePre <buffer>
+	\ call s:SaveExcursion("gofmt -s")
+autocmd FileType mintage autocmd BufWritePre <buffer>
+	\ call s:SaveExcursion("./mfmt")
+autocmd FileType templ autocmd BufWritePre <buffer>
+	\ call s:SaveExcursion("templ fmt")
 
 nnoremap <silent> gM :wall \| make all-i18n<CR>
 nnoremap <silent> <LocalLeader>t :vimgrep /TODO/ **/*<CR>
