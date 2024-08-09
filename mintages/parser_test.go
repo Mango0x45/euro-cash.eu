@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"errors"
 	"testing"
-	"time"
 )
 
 func TestParserComplete(t *testing.T) {
@@ -29,17 +28,12 @@ func TestParserComplete(t *testing.T) {
 			data.StartYear)
 	}
 
-	/* The following 3 loops assert that we have correct mintages,
-	   including padding mintages.  After the loops we assert that the
-	   number of padding mintages is actually correct. */
-
 	for i, row := range data.Circ {
 		for j, col := range row.Cols {
 			var n int
-			switch {
-			case i == 1 && j == 1, i >= 2:
+			if i == 1 && j == 1 {
 				n = -1
-			default:
+			} else {
 				n = 1000*i + j + 1000
 			}
 			if col != n {
@@ -51,10 +45,9 @@ func TestParserComplete(t *testing.T) {
 	for i, row := range data.BU {
 		for j, col := range row.Cols {
 			var n int
-			switch {
-			case i == 1 && j == 1, i >= 2:
+			if i == 1 && j == 1 {
 				n = -1
-			default:
+			} else {
 				n = 1000*i + j + 1100
 			}
 			if col != n {
@@ -66,10 +59,9 @@ func TestParserComplete(t *testing.T) {
 	for i, row := range data.Proof {
 		for j, col := range row.Cols {
 			var n int
-			switch {
-			case i == 1 && j == 1, i >= 2:
+			if i == 1 && j == 1 {
 				n = -1
-			default:
+			} else {
 				n = 1000*i + j + 1200
 			}
 			if col != n {
@@ -78,15 +70,14 @@ func TestParserComplete(t *testing.T) {
 		}
 	}
 
-	rowsWant := time.Now().Year() - data.StartYear + 1
-	if len(data.Circ) != rowsWant {
-		t.Fatalf("Expected len(data.Circ)=%d; got %d", rowsWant, len(data.Circ))
+	if len(data.Circ) != 2 {
+		t.Fatalf("Expected len(data.Circ)=2; got %d", len(data.Circ))
 	}
-	if len(data.BU) != rowsWant {
-		t.Fatalf("Expected len(data.BU)=%d; got %d", rowsWant, len(data.BU))
+	if len(data.BU) != 2 {
+		t.Fatalf("Expected len(data.BU)=2; got %d", len(data.BU))
 	}
-	if len(data.Proof) != rowsWant {
-		t.Fatalf("Expected len(data.Proof)=%d; got %d", rowsWant, len(data.Proof))
+	if len(data.Proof) != 2 {
+		t.Fatalf("Expected len(data.Proof)=2; got %d", len(data.Proof))
 	}
 }
 
@@ -105,17 +96,8 @@ func TestParserNoProof(t *testing.T) {
 		t.Fatalf(`Expected err=nil; got "%s"`, err)
 	}
 
-	for _, row := range data.Proof {
-		for _, col := range row.Cols {
-			if col != -1 {
-				t.Fatalf("Expected data.Proof[i][j]=-1; got %d", col)
-			}
-		}
-	}
-
-	rowsWant := time.Now().Year() - data.StartYear + 1
-	if len(data.Proof) != rowsWant {
-		t.Fatalf("Expected len(data.Proof)=%d; got %d", rowsWant, len(data.Proof))
+	if len(data.Proof) != 0 {
+		t.Fatalf("Expected len(data.Proof)=0; got %d", len(data.Proof))
 	}
 }
 
@@ -135,10 +117,9 @@ func TestParserMintmarks(t *testing.T) {
 	for i, row := range data.Circ {
 		for j, col := range row.Cols {
 			var n int
-			switch {
-			case i > 0 && j == 1, i >= 3:
+			if i > 0 && j == 1 {
 				n = -1
-			default:
+			} else {
 				n = 1000*i + j + 1000
 			}
 			if col != n {

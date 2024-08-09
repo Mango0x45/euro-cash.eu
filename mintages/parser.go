@@ -8,7 +8,6 @@ import (
 	"path/filepath"
 	"strconv"
 	"strings"
-	"time"
 	"unicode"
 )
 
@@ -53,7 +52,10 @@ func parse(reader io.Reader, file string) (Data, error) {
 
 	scanner := bufio.NewScanner(reader)
 	for linenr := 1; scanner.Scan(); linenr++ {
-		var mintmark string
+		var mintmark struct {
+			s    string
+			star bool
+		}
 
 		line := scanner.Text()
 		tokens := strings.FieldsFunc(strings.TrimSpace(line), unicode.IsSpace)
@@ -94,7 +96,13 @@ func parse(reader io.Reader, file string) (Data, error) {
 
 			year = data.StartYear - 1
 		case isLabel(tokens[0]):
-			mintmark = tokens[0][:len(tokens[0])-1]
+			n := len(tokens[0])
+			if n > 2 && tokens[0][n-2] == '*' {
+				mintmark.star = true
+				mintmark.s = tokens[0][:n-2]
+			} else {
+				mintmark.s = tokens[0][:n-1]
+			}
 			tokens = tokens[1:]
 			if !isNumeric(tokens[0], true) && tokens[0] != "?" {
 				return Data{}, SyntaxError{
@@ -141,15 +149,14 @@ func parse(reader io.Reader, file string) (Data, error) {
 
 			var row Row
 			switch {
-			case mintmark == "":
+			case mintmark.s == "":
 				year += 1
 				row.Label = strconv.Itoa(year)
-			case mintmark[len(mintmark)-1] == '*':
+			case mintmark.star:
 				year += 1
-				mintmark = mintmark[:len(mintmark)-1]
 				fallthrough
 			default:
-				row.Label = fmt.Sprintf("%d %s", year, mintmark)
+				row.Label = fmt.Sprintf("%d %s", year, mintmark.s)
 			}
 
 			for i, tok := range tokens {
@@ -167,22 +174,6 @@ func parse(reader io.Reader, file string) (Data, error) {
 				file:     file,
 				linenr:   linenr,
 			}
-		}
-	}
-
-	/* Pad rows of ‘unknown’ mintages at the end of each set of mintages
-	   for each year that we haven’t filled in info for. This avoids
-	   things accidentally breaking if the new year comes and we forget
-	   to add extra rows. */
-	for _, ms := range [...]*[]Row{&data.Circ, &data.BU, &data.Proof} {
-		finalYear := len(*ms) + data.StartYear - 1
-		missing := time.Now().Year() - finalYear
-		for i := 0; i < missing; i++ {
-			label := strconv.Itoa(finalYear + i + 1)
-			*ms = append(*ms, Row{
-				Label: label,
-				Cols:  [8]int{-1, -1, -1, -1, -1, -1, -1, -1},
-			})
 		}
 	}
 
@@ -205,7 +196,14 @@ func isNumeric(s string, dot bool) bool {
 }
 
 func isLabel(s string) bool {
-	return s[len(s)-1] == ':' && len(s) > 1
+	n := len(s)
+	switch {
+	case len(s) > 2 && s[n-1] == ':' && s[n-2] == '*',
+		len(s) > 1 && s[n-1] == ':':
+		return true
+	default:
+		return false
+	}
 }
 
 func atoiWithDots(s string) int {
