@@ -23,15 +23,19 @@ func (e SyntaxError) Error() string {
 		e.file, e.linenr, e.expected, e.got)
 }
 
-type coinset [8]int
+type Row struct {
+	Label string
+	Cols  [8]int
+}
 
 type Data struct {
 	StartYear       int
-	Circ, BU, Proof []coinset
+	Circ, BU, Proof []Row
 }
 
 func ForCountry(code string) (Data, error) {
 	path := filepath.Join("data", "mintages", code)
+
 	f, err := os.Open(path)
 	if err != nil {
 		return Data{}, err
@@ -42,12 +46,15 @@ func ForCountry(code string) (Data, error) {
 
 func parse(reader io.Reader, file string) (Data, error) {
 	var (
-		data  Data       // Our data struct
-		slice *[]coinset // Where to append mintages
+		data  Data   // Our data struct
+		slice *[]Row // Where to append mintages
+		year  int    // The current year we are at
 	)
 
 	scanner := bufio.NewScanner(reader)
 	for linenr := 1; scanner.Scan(); linenr++ {
+		var mintmark string
+
 		line := scanner.Text()
 		tokens := strings.FieldsFunc(strings.TrimSpace(line), unicode.IsSpace)
 
@@ -84,6 +91,20 @@ func parse(reader io.Reader, file string) (Data, error) {
 				}
 				data.StartYear, _ = strconv.Atoi(arg)
 			}
+
+			year = data.StartYear - 1
+		case isLabel(tokens[0]):
+			mintmark = tokens[0][:len(tokens[0])-1]
+			tokens = tokens[1:]
+			if !isNumeric(tokens[0], true) && tokens[0] != "?" {
+				return Data{}, SyntaxError{
+					expected: "mintage row after label",
+					got:      tokens[0],
+					file:     file,
+					linenr:   linenr,
+				}
+			}
+			fallthrough
 		case isNumeric(tokens[0], true), tokens[0] == "?":
 			switch {
 			case slice == nil:
@@ -102,7 +123,7 @@ func parse(reader io.Reader, file string) (Data, error) {
 				}
 			}
 
-			numcoins := len(coinset{})
+			numcoins := len(Row{}.Cols)
 			tokcnt := len(tokens)
 
 			if tokcnt != numcoins {
@@ -118,12 +139,24 @@ func parse(reader io.Reader, file string) (Data, error) {
 				}
 			}
 
-			var row coinset
+			var row Row
+			switch {
+			case mintmark == "":
+				year += 1
+				row.Label = strconv.Itoa(year)
+			case mintmark[len(mintmark)-1] == '*':
+				year += 1
+				mintmark = mintmark[:len(mintmark)-1]
+				fallthrough
+			default:
+				row.Label = fmt.Sprintf("%d %s", year, mintmark)
+			}
+
 			for i, tok := range tokens {
 				if tok == "?" {
-					row[i] = -1
+					row.Cols[i] = -1
 				} else {
-					row[i] = atoiWithDots(tok)
+					row.Cols[i] = atoiWithDots(tok)
 				}
 			}
 			*slice = append(*slice, row)
@@ -141,11 +174,15 @@ func parse(reader io.Reader, file string) (Data, error) {
 	   for each year that we haven’t filled in info for. This avoids
 	   things accidentally breaking if the new year comes and we forget
 	   to add extra rows. */
-	for _, ms := range [...]*[]coinset{&data.Circ, &data.BU, &data.Proof} {
+	for _, ms := range [...]*[]Row{&data.Circ, &data.BU, &data.Proof} {
 		finalYear := len(*ms) + data.StartYear - 1
 		missing := time.Now().Year() - finalYear
 		for i := 0; i < missing; i++ {
-			*ms = append(*ms, coinset{-1, -1, -1, -1, -1, -1, -1, -1})
+			label := strconv.Itoa(finalYear + i + 1)
+			*ms = append(*ms, Row{
+				Label: label,
+				Cols:  [8]int{-1, -1, -1, -1, -1, -1, -1, -1},
+			})
 		}
 	}
 
@@ -165,6 +202,10 @@ func isNumeric(s string, dot bool) bool {
 		}
 	}
 	return true
+}
+
+func isLabel(s string) bool {
+	return s[len(s)-1] == ':' && len(s) > 1
 }
 
 func atoiWithDots(s string) int {

@@ -34,7 +34,7 @@ func TestParserComplete(t *testing.T) {
 	   number of padding mintages is actually correct. */
 
 	for i, row := range data.Circ {
-		for j, col := range row {
+		for j, col := range row.Cols {
 			var n int
 			switch {
 			case i == 1 && j == 1, i >= 2:
@@ -49,7 +49,7 @@ func TestParserComplete(t *testing.T) {
 	}
 
 	for i, row := range data.BU {
-		for j, col := range row {
+		for j, col := range row.Cols {
 			var n int
 			switch {
 			case i == 1 && j == 1, i >= 2:
@@ -64,7 +64,7 @@ func TestParserComplete(t *testing.T) {
 	}
 
 	for i, row := range data.Proof {
-		for j, col := range row {
+		for j, col := range row.Cols {
 			var n int
 			switch {
 			case i == 1 && j == 1, i >= 2:
@@ -106,7 +106,7 @@ func TestParserNoProof(t *testing.T) {
 	}
 
 	for _, row := range data.Proof {
-		for _, col := range row {
+		for _, col := range row.Cols {
 			if col != -1 {
 				t.Fatalf("Expected data.Proof[i][j]=-1; got %d", col)
 			}
@@ -116,6 +116,45 @@ func TestParserNoProof(t *testing.T) {
 	rowsWant := time.Now().Year() - data.StartYear + 1
 	if len(data.Proof) != rowsWant {
 		t.Fatalf("Expected len(data.Proof)=%d; got %d", rowsWant, len(data.Proof))
+	}
+}
+
+func TestParserMintmarks(t *testing.T) {
+	data, err := parse(bytes.NewBuffer([]byte(`
+		BEGIN 2020
+		BEGIN CIRC
+		      1.000 1001 1002 1003 1004 1005 1006 1007
+		KNM*:  2000    ? 2002 2003 2004 2005 2006 2007
+		MdP:   3000    ? 3002 3003 3004 3005 3006 3007
+	`)), "-")
+
+	if err != nil {
+		t.Fatalf(`Expected err=nil; got "%s"`, err)
+	}
+
+	for i, row := range data.Circ {
+		for j, col := range row.Cols {
+			var n int
+			switch {
+			case i > 0 && j == 1, i >= 3:
+				n = -1
+			default:
+				n = 1000*i + j + 1000
+			}
+			if col != n {
+				t.Fatalf("Expected data.Circ[i][j]=%d; got %d", n, col)
+			}
+		}
+	}
+
+	if data.Circ[0].Label != "2020" {
+		t.Fatalf(`Expected data.Circ[0].Label="2020"; got %s`, data.Circ[0].Label)
+	}
+	if data.Circ[1].Label != "2021\u00A0KNM" {
+		t.Fatalf(`Expected data.Circ[1].Label="2021 KNM"; got %s`, data.Circ[1].Label)
+	}
+	if data.Circ[2].Label != "2021\u00A0MdP" {
+		t.Fatalf(`Expected data.Circ[2].Label="2021 MdP"; got %s`, data.Circ[2].Label)
 	}
 }
 
