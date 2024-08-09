@@ -3,6 +3,7 @@ package mintages
 import (
 	"bufio"
 	"fmt"
+	"io"
 	"os"
 	"path/filepath"
 	"strconv"
@@ -15,7 +16,7 @@ type coinset [8]int
 
 type Data struct {
 	StartYear       int
-	Circ, Bu, Proof []coinset
+	Circ, BU, Proof []coinset
 }
 
 func ForCountry(code string) (Data, error) {
@@ -25,13 +26,16 @@ func ForCountry(code string) (Data, error) {
 		return Data{}, err
 	}
 	defer f.Close()
-	scanner := bufio.NewScanner(f)
+	return parse(f, path)
+}
 
+func parse(reader io.Reader, path string) (Data, error) {
 	var (
 		data  Data       // Our data struct
 		slice *[]coinset // Where to append mintages
 	)
 
+	scanner := bufio.NewScanner(reader)
 	for linenr := 1; scanner.Scan(); linenr++ {
 		line := scanner.Text()
 		tokens := strings.FieldsFunc(strings.TrimSpace(line), unicode.IsSpace)
@@ -40,11 +44,10 @@ func ForCountry(code string) (Data, error) {
 		case len(tokens) == 0:
 			continue
 		case tokens[0] == "BEGIN":
-			if len(tokens) != 2 {
-				return Data{}, ArgCountMismatchError{
-					token:    tokens[0],
-					expected: 1,
-					got:      len(tokens) - 1,
+			if len(tokens)-1 != 1 {
+				return Data{}, SyntaxError{
+					expected: "single argument to ‘BEGIN’",
+					got:      fmt.Sprintf("%d arguments", len(tokens)-1),
 					location: location{path, linenr},
 				}
 			}
@@ -55,7 +58,7 @@ func ForCountry(code string) (Data, error) {
 			case "CIRC":
 				slice = &data.Circ
 			case "BU":
-				slice = &data.Bu
+				slice = &data.BU
 			case "PROOF":
 				slice = &data.Proof
 			default:
@@ -68,26 +71,50 @@ func ForCountry(code string) (Data, error) {
 				}
 				data.StartYear, _ = strconv.Atoi(arg)
 			}
-		case isNumeric(tokens[0], true):
+		case isNumeric(tokens[0], true), tokens[0] == "?":
+			switch {
+			case slice == nil:
+				return Data{}, SyntaxError{
+					expected: "coin type declaration",
+					got:      tokens[0],
+					location: location{path, linenr},
+				}
+			case data.StartYear == 0:
+				return Data{}, SyntaxError{
+					expected: "start year declaration",
+					got:      tokens[0],
+					location: location{path, linenr},
+				}
+			}
+
 			numcoins := len(coinset{})
 			tokcnt := len(tokens)
 
 			if tokcnt != numcoins {
+				word := "entries"
+				if tokcnt == 1 {
+					word = "entry"
+				}
 				return Data{}, SyntaxError{
 					expected: fmt.Sprintf("%d mintage entries", numcoins),
-					got:      fmt.Sprintf("%d entries", tokcnt),
+					got:      fmt.Sprintf("%d %s", tokcnt, word),
 					location: location{path, linenr},
 				}
 			}
 
 			var row coinset
 			for i, tok := range tokens {
-				row[i], _ = strconv.Atoi(strings.ReplaceAll(tok, ".", ""))
+				if tok == "?" {
+					row[i] = -1
+				} else {
+					row[i] = atoiWithDots(tok)
+				}
 			}
 			*slice = append(*slice, row)
 		default:
-			return Data{}, BadTokenError{
-				token:    tokens[0],
+			return Data{}, SyntaxError{
+				expected: "‘BEGIN’ directive or mintage row",
+				got:      fmt.Sprintf("invalid token ‘%s’", tokens[0]),
 				location: location{path, linenr},
 			}
 		}
@@ -97,7 +124,7 @@ func ForCountry(code string) (Data, error) {
 	   for each year that we haven’t filled in info for. This avoids
 	   things accidentally breaking if the new year comes and we forget
 	   to add extra rows. */
-	for _, ms := range [...]*[]coinset{&data.Circ, &data.Bu, &data.Proof} {
+	for _, ms := range [...]*[]coinset{&data.Circ, &data.BU, &data.Proof} {
 		finalYear := len(*ms) + data.StartYear - 1
 		missing := time.Now().Year() - finalYear
 		for i := 0; i < missing; i++ {
@@ -121,4 +148,15 @@ func isNumeric(s string, dot bool) bool {
 		}
 	}
 	return true
+}
+
+func atoiWithDots(s string) int {
+	n := 0
+	for _, ch := range s {
+		if ch == '.' {
+			continue
+		}
+		n = n*10 + int(ch) - '0'
+	}
+	return n
 }
