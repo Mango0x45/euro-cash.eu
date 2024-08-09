@@ -12,6 +12,17 @@ import (
 	"unicode"
 )
 
+type SyntaxError struct {
+	expected, got string
+	file          string
+	linenr        int
+}
+
+func (e SyntaxError) Error() string {
+	return fmt.Sprintf("%s:%d: syntax error: expected %s but got %s",
+		e.file, e.linenr, e.expected, e.got)
+}
+
 type coinset [8]int
 
 type Data struct {
@@ -29,7 +40,7 @@ func ForCountry(code string) (Data, error) {
 	return parse(f, path)
 }
 
-func parse(reader io.Reader, path string) (Data, error) {
+func parse(reader io.Reader, file string) (Data, error) {
 	var (
 		data  Data       // Our data struct
 		slice *[]coinset // Where to append mintages
@@ -48,7 +59,8 @@ func parse(reader io.Reader, path string) (Data, error) {
 				return Data{}, SyntaxError{
 					expected: "single argument to ‘BEGIN’",
 					got:      fmt.Sprintf("%d arguments", len(tokens)-1),
-					location: location{path, linenr},
+					file:     file,
+					linenr:   linenr,
 				}
 			}
 
@@ -66,7 +78,8 @@ func parse(reader io.Reader, path string) (Data, error) {
 					return Data{}, SyntaxError{
 						expected: "‘CIRC’, ‘BU’, ‘PROOF’, or a year",
 						got:      arg,
-						location: location{path, linenr},
+						file:     file,
+						linenr:   linenr,
 					}
 				}
 				data.StartYear, _ = strconv.Atoi(arg)
@@ -77,13 +90,15 @@ func parse(reader io.Reader, path string) (Data, error) {
 				return Data{}, SyntaxError{
 					expected: "coin type declaration",
 					got:      tokens[0],
-					location: location{path, linenr},
+					file:     file,
+					linenr:   linenr,
 				}
 			case data.StartYear == 0:
 				return Data{}, SyntaxError{
 					expected: "start year declaration",
 					got:      tokens[0],
-					location: location{path, linenr},
+					file:     file,
+					linenr:   linenr,
 				}
 			}
 
@@ -98,7 +113,8 @@ func parse(reader io.Reader, path string) (Data, error) {
 				return Data{}, SyntaxError{
 					expected: fmt.Sprintf("%d mintage entries", numcoins),
 					got:      fmt.Sprintf("%d %s", tokcnt, word),
-					location: location{path, linenr},
+					file:     file,
+					linenr:   linenr,
 				}
 			}
 
@@ -115,7 +131,8 @@ func parse(reader io.Reader, path string) (Data, error) {
 			return Data{}, SyntaxError{
 				expected: "‘BEGIN’ directive or mintage row",
 				got:      fmt.Sprintf("invalid token ‘%s’", tokens[0]),
-				location: location{path, linenr},
+				file:     file,
+				linenr:   linenr,
 			}
 		}
 	}
