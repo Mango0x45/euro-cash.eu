@@ -9,6 +9,11 @@ import (
 	"unicode"
 )
 
+const (
+	Unknown = -1 // Unknown mintage
+	Invalid = -2 // All mintages <= than this are invalid
+)
+
 type SyntaxError struct {
 	expected, got string
 	file          string
@@ -148,7 +153,7 @@ func Parse(reader io.Reader, file string) (Data, error) {
 
 			for i, tok := range tokens {
 				if tok == "?" {
-					row.Cols[i] = -1
+					row.Cols[i] = Unknown
 				} else {
 					row.Cols[i] = atoiWithDots(tok)
 				}

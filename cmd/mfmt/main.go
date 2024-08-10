@@ -133,9 +133,9 @@ func formatSection(out io.Writer, rows []mintages.Row) {
 }
 
 func formatInt(n int) string {
-	if n < -1 {
-		panic("mintage count is negative and not -1")
-	} else if n == -1 {
+	if n <= mintages.Invalid {
+		panic(fmt.Sprintf("invalid input %d", n))
+	} else if n == mintages.Unknown {
 		return "?"
 	}
 
@@ -158,9 +158,9 @@ func formatInt(n int) string {
 
 func intlen(v int) int {
 	switch {
-	case v < -1:
+	case v <= mintages.Invalid:
 		panic("mintage count is negative and not -1")
-	case v == 0, v == -1:
+	case v == 0, v == mintages.Unknown:
 		return 1
 	default:
 		n := 0
