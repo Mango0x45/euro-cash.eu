@@ -172,6 +172,6 @@ func intlen(v int) int {
 }
 
 func warn(e error) {
-	fmt.Fprintf(os.Stderr, "%s: %+v\n", filepath.Base(os.Args[0]), e)
+	fmt.Fprintf(os.Stderr, "%s: %s\n", filepath.Base(os.Args[0]), e)
 	rv = 1
 }
