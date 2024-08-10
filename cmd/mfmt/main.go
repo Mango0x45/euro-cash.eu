@@ -5,7 +5,6 @@ import (
 	"io"
 	"os"
 	"path/filepath"
-	"strings"
 	"unsafe"
 
 	"git.thomasvoss.com/euro-cash.eu/mintage"
@@ -77,24 +76,20 @@ func mfmt(path string, in io.Reader, out io.Writer) error {
 
 func formatSection(out io.Writer, rows []mintage.Row) {
 	var (
-		year       string
 		longestMM  int
 		longestNum [cols]int
 	)
 
-	for _, row := range rows {
-		s, mm, ok := strings.Cut(row.Label, "\u00A0")
-		if ok {
-			n := len(mm)
-			if s != year {
-				n++
-			}
-			longestMM = max(longestMM, n)
+	for i, row := range rows {
+		n := len(row.Mintmark)
+		if n != 0 && i != 0 && row.Year != rows[i-1].Year {
+			n++
 		}
-		year = s
-		for i, col := range row.Cols {
+		longestMM = max(longestMM, n)
+
+		for j, col := range row.Cols {
 			n := intlen(col)
-			longestNum[i] = max(longestNum[i], n+(n-1)/3)
+			longestNum[j] = max(longestNum[j], n+(n-1)/3)
 		}
 	}
 
@@ -103,21 +98,15 @@ func formatSection(out io.Writer, rows []mintage.Row) {
 		extraSpace = 2
 	}
 
-	year = ""
-
 	for i, row := range rows {
 		var label string
-
-		s, mm, ok := strings.Cut(row.Label, "\u00A0")
-		if ok {
-			if s != year {
-				label = mm + "*: "
+		if row.Mintmark != "" {
+			if i != 0 && row.Year != rows[i-1].Year {
+				label = row.Mintmark + "*: "
 			} else {
-				label = mm + ": "
+				label = row.Mintmark + ": "
 			}
 		}
-		year = s
-
 		fmt.Fprintf(out, "%-*s", longestMM+extraSpace, label)
 		for j, n := range row.Cols {
 			if j != 0 {

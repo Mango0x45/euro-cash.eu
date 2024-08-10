@@ -27,8 +27,9 @@ func (e SyntaxError) Error() string {
 }
 
 type Row struct {
-	Label string
-	Cols  [8]int
+	Year     int
+	Mintmark string
+	Cols     [8]int
 }
 
 type Set struct {
@@ -36,11 +37,17 @@ type Set struct {
 	Circ, BU, Proof []Row
 }
 
+func (r Row) Label() string {
+	if r.Mintmark != "" {
+		return fmt.Sprintf("%d %s", r.Year, r.Mintmark)
+	}
+	return strconv.Itoa(r.Year)
+}
+
 func Parse(reader io.Reader, file string) (Set, error) {
 	var (
 		data  Set    // Our data struct
 		slice *[]Row // Where to append mintages
-		year  int    // The current year we are at
 	)
 
 	scanner := bufio.NewScanner(reader)
@@ -86,8 +93,6 @@ func Parse(reader io.Reader, file string) (Set, error) {
 				}
 				data.StartYear, _ = strconv.Atoi(arg)
 			}
-
-			year = data.StartYear - 1
 		case isLabel(tokens[0]):
 			n := len(tokens[0])
 			if n > 2 && tokens[0][n-2] == '*' {
@@ -140,16 +145,14 @@ func Parse(reader io.Reader, file string) (Set, error) {
 				}
 			}
 
-			var row Row
-			switch {
-			case mintmark.s == "":
-				year++
-				row.Label = strconv.Itoa(year)
-			case mintmark.star:
-				year++
-				fallthrough
-			default:
-				row.Label = fmt.Sprintf("%d %s", year, mintmark.s)
+			row := Row{Mintmark: mintmark.s}
+			if len(*slice) == 0 {
+				row.Year = data.StartYear
+			} else {
+				row.Year = (*slice)[len(*slice)-1].Year
+				if row.Mintmark == "" || mintmark.star {
+					row.Year++
+				}
 			}
 
 			for i, tok := range tokens {

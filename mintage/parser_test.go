@@ -128,14 +128,17 @@ func TestParserMintmarks(t *testing.T) {
 		}
 	}
 
-	if data.Circ[0].Label != "2020" {
-		t.Fatalf(`Expected data.Circ[0].Label="2020"; got %s`, data.Circ[0].Label)
+	for i, y := range [...]int{2020, 2021, 2021} {
+		if data.Circ[i].Year != y {
+			t.Fatalf("Expected data.Circ[%d].Year=%d; got %d",
+				i, y, data.Circ[i].Year)
+		}
 	}
-	if data.Circ[1].Label != "2021\u00A0KNM" {
-		t.Fatalf(`Expected data.Circ[1].Label="2021 KNM"; got %s`, data.Circ[1].Label)
-	}
-	if data.Circ[2].Label != "2021\u00A0MdP" {
-		t.Fatalf(`Expected data.Circ[2].Label="2021 MdP"; got %s`, data.Circ[2].Label)
+	for i, s := range [...]string{"", "KNM", "MdP"} {
+		if data.Circ[i].Mintmark != s {
+			t.Fatalf(`Expected data.Circ[%d].Mintmark="%s"; got "%s"`,
+				i, s, data.Circ[i].Mintmark)
+		}
 	}
 }
 
