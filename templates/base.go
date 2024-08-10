@@ -2,12 +2,28 @@
 
 package templates
 
-import "git.thomasvoss.com/euro-cash.eu/i18n"
+import (
+	"fmt"
+	"slices"
 
-type country struct{ code, name string }
+	"git.thomasvoss.com/euro-cash.eu/i18n"
+	"golang.org/x/text/collate"
+	"golang.org/x/text/language"
+)
 
-func countries(p i18n.Printer) []country {
-	return []country{
+type country struct {
+	code, name string
+}
+
+type sortType int
+
+const (
+	sortByCode sortType = iota
+	sortByName
+)
+
+func countries(p i18n.Printer, sort sortType) []country {
+	xs := []country{
 		{code: "AD", name: p.T("Andorra")},
 		{code: "AT", name: p.T("Austria")},
 		{code: "BE", name: p.T("Belgium")},
@@ -33,4 +49,15 @@ func countries(p i18n.Printer) []country {
 		{code: "SM", name: p.T("San Marino")},
 		{code: "VA", name: p.T("Vatican City")},
 	}
+	switch sort {
+	case sortByCode:
+	case sortByName:
+		c := collate.New(language.MustParse(p.Locale.Bcp))
+		slices.SortFunc(xs, func(x, y country) int {
+			return c.CompareString(x.name, y.name)
+		})
+	default:
+		panic(fmt.Sprintf("Attempted to sort by invalid sortType=%d", sort))
+	}
+	return xs
 }

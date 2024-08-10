@@ -26,7 +26,7 @@ templ CoinsDesigns() {
 		</p>
 		<hr/>
 		<div class="country-grid">
-			for _, c := range countries(p) {
+			for _, c := range countries(p, sortByCode) {
 				<a
 					role="button"
 					class="outline"
