@@ -10,8 +10,9 @@ import (
 )
 
 const (
-	Unknown = -1 // Unknown mintage
-	Invalid = -2 // All mintages <= than this are invalid
+	_       = -iota
+	Unknown // Unknown mintage
+	Invalid // All mintages <= than this are invalid
 )
 
 type SyntaxError struct {
