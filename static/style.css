@@ -2254,7 +2254,7 @@ textarea,
 	display: grid;
 	grid-template-columns: repeat(
 		auto-fit,
-		minmax(min(180px, 100%), 1fr)
+		minmax(min(220px, 100%), 1fr)
 	);
 	column-gap: var(--grid-spacing-horizontal);
 }
