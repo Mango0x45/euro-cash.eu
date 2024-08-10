@@ -171,12 +171,10 @@ func isNumeric(s string, dot bool) bool {
 	for _, ch := range s {
 		switch ch {
 		case '0', '1', '2', '3', '4', '5', '6', '7', '8', '9':
-		case '.':
-			if !dot {
+		default:
+			if ch != '.' || !dot {
 				return false
 			}
-		default:
-			return false
 		}
 	}
 	return true
@@ -184,13 +182,8 @@ func isNumeric(s string, dot bool) bool {
 
 func isLabel(s string) bool {
 	n := len(s)
-	switch {
-	case len(s) > 2 && s[n-1] == ':' && s[n-2] == '*',
-		len(s) > 1 && s[n-1] == ':':
-		return true
-	default:
-		return false
-	}
+	return (n > 2 && s[n-1] == ':' && s[n-2] == '*') ||
+		(n > 1 && s[n-1] == ':')
 }
 
 func atoiWithDots(s string) int {
