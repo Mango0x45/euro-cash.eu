@@ -8,11 +8,11 @@ import (
 	"strings"
 	"unsafe"
 
-	"git.thomasvoss.com/euro-cash.eu/mintages"
+	"git.thomasvoss.com/euro-cash.eu/mintage"
 )
 
-const cols = unsafe.Sizeof(mintages.Row{}.Cols) /
-	unsafe.Sizeof(mintages.Row{}.Cols[0])
+const cols = unsafe.Sizeof(mintage.Row{}.Cols) /
+	unsafe.Sizeof(mintage.Row{}.Cols[0])
 
 var rv int
 
@@ -37,7 +37,7 @@ func main() {
 }
 
 func mfmt(path string, in io.Reader, out io.Writer) error {
-	data, err := mintages.Parse(in, path)
+	data, err := mintage.Parse(in, path)
 	if err != nil {
 		return err
 	}
@@ -75,7 +75,7 @@ func mfmt(path string, in io.Reader, out io.Writer) error {
 	return nil
 }
 
-func formatSection(out io.Writer, rows []mintages.Row) {
+func formatSection(out io.Writer, rows []mintage.Row) {
 	var (
 		year       string
 		longestMM  int
@@ -133,9 +133,9 @@ func formatSection(out io.Writer, rows []mintages.Row) {
 }
 
 func formatInt(n int) string {
-	if n <= mintages.Invalid {
+	if n <= mintage.Invalid {
 		panic(fmt.Sprintf("invalid input %d", n))
-	} else if n == mintages.Unknown {
+	} else if n == mintage.Unknown {
 		return "?"
 	}
 
@@ -158,9 +158,9 @@ func formatInt(n int) string {
 
 func intlen(v int) int {
 	switch {
-	case v <= mintages.Invalid:
+	case v <= mintage.Invalid:
 		panic("mintage count is negative and not -1")
-	case v == 0, v == mintages.Unknown:
+	case v == 0, v == mintage.Unknown:
 		return 1
 	default:
 		n := 0

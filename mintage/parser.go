@@ -1,4 +1,4 @@
-package mintages
+package mintage
 
 import (
 	"bufio"
@@ -31,14 +31,14 @@ type Row struct {
 	Cols  [8]int
 }
 
-type Data struct {
+type Set struct {
 	StartYear       int
 	Circ, BU, Proof []Row
 }
 
-func Parse(reader io.Reader, file string) (Data, error) {
+func Parse(reader io.Reader, file string) (Set, error) {
 	var (
-		data  Data   // Our data struct
+		data  Set    // Our data struct
 		slice *[]Row // Where to append mintages
 		year  int    // The current year we are at
 	)
@@ -58,7 +58,7 @@ func Parse(reader io.Reader, file string) (Data, error) {
 			continue
 		case tokens[0] == "BEGIN":
 			if len(tokens)-1 != 1 {
-				return Data{}, SyntaxError{
+				return Set{}, SyntaxError{
 					expected: "single argument to ‘BEGIN’",
 					got:      fmt.Sprintf("%d arguments", len(tokens)-1),
 					file:     file,
@@ -77,7 +77,7 @@ func Parse(reader io.Reader, file string) (Data, error) {
 				slice = &data.Proof
 			default:
 				if !isNumeric(arg, false) {
-					return Data{}, SyntaxError{
+					return Set{}, SyntaxError{
 						expected: "‘CIRC’, ‘BU’, ‘PROOF’, or a year",
 						got:      arg,
 						file:     file,
@@ -98,7 +98,7 @@ func Parse(reader io.Reader, file string) (Data, error) {
 			}
 			tokens = tokens[1:]
 			if !isNumeric(tokens[0], true) && tokens[0] != "?" {
-				return Data{}, SyntaxError{
+				return Set{}, SyntaxError{
 					expected: "mintage row after label",
 					got:      tokens[0],
 					file:     file,
@@ -109,14 +109,14 @@ func Parse(reader io.Reader, file string) (Data, error) {
 		case isNumeric(tokens[0], true), tokens[0] == "?":
 			switch {
 			case slice == nil:
-				return Data{}, SyntaxError{
+				return Set{}, SyntaxError{
 					expected: "coin type declaration",
 					got:      tokens[0],
 					file:     file,
 					linenr:   linenr,
 				}
 			case data.StartYear == 0:
-				return Data{}, SyntaxError{
+				return Set{}, SyntaxError{
 					expected: "start year declaration",
 					got:      tokens[0],
 					file:     file,
@@ -132,7 +132,7 @@ func Parse(reader io.Reader, file string) (Data, error) {
 				if tokcnt == 1 {
 					word = "entry"
 				}
-				return Data{}, SyntaxError{
+				return Set{}, SyntaxError{
 					expected: fmt.Sprintf("%d mintage entries", numcoins),
 					got:      fmt.Sprintf("%d %s", tokcnt, word),
 					file:     file,
@@ -161,7 +161,7 @@ func Parse(reader io.Reader, file string) (Data, error) {
 			}
 			*slice = append(*slice, row)
 		default:
-			return Data{}, SyntaxError{
+			return Set{}, SyntaxError{
 				expected: "‘BEGIN’ directive or mintage row",
 				got:      fmt.Sprintf("invalid token ‘%s’", tokens[0]),
 				file:     file,

@@ -6,7 +6,7 @@ package main
 import (
 	"testing"
 
-	"git.thomasvoss.com/euro-cash.eu/mintages"
+	"git.thomasvoss.com/euro-cash.eu/mintage"
 )
 
 func TestFormatInt(t *testing.T) {
@@ -18,7 +18,7 @@ func TestFormatInt(t *testing.T) {
 		{123, "123"},
 		{81758, "81.758"},
 		{752759237528, "752.759.237.528"},
-		{mintages.Unknown, "?"},
+		{mintage.Unknown, "?"},
 	} {
 		s := formatInt(x.n)
 		if s != x.s {
@@ -33,7 +33,7 @@ func TestIntLen(t *testing.T) {
 		{123, len("123")},
 		{81758, len("81758")},
 		{752759237528, len("752759237528")},
-		{mintages.Unknown, len("?")},
+		{mintage.Unknown, len("?")},
 	} {
 		n := intlen(x.x)
 		if n != x.y {

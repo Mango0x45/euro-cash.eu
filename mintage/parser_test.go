@@ -1,4 +1,4 @@
-package mintages
+package mintage
 
 import (
 	"bytes"
