@@ -1,5 +1,5 @@
 {
-    "language": "nl",
+    "language": "bg",
     "messages": [
         {
             "id": "Page not found",
@@ -92,122 +92,122 @@
         {
             "id": "Andorra",
             "message": "Andorra",
-            "translation": "Andorra"
+            "translation": "Андора"
         },
         {
             "id": "Austria",
             "message": "Austria",
-            "translation": "Oostenrijk"
+            "translation": "Австрия"
         },
         {
             "id": "Belgium",
             "message": "Belgium",
-            "translation": "België"
+            "translation": "Белгия"
         },
         {
             "id": "Cyprus",
             "message": "Cyprus",
-            "translation": "Cyprus"
+            "translation": "Кипър"
         },
         {
             "id": "Germany",
             "message": "Germany",
-            "translation": "Duitsland"
+            "translation": "Германия"
         },
         {
             "id": "Estonia",
             "message": "Estonia",
-            "translation": "Estland"
+            "translation": "Естония"
         },
         {
             "id": "Spain",
             "message": "Spain",
-            "translation": "Spanje"
+            "translation": "Испания"
         },
         {
             "id": "Finland",
             "message": "Finland",
-            "translation": "Finland"
+            "translation": "Финландия"
         },
         {
             "id": "France",
             "message": "France",
-            "translation": "Frankrijk"
+            "translation": "Франция"
         },
         {
             "id": "Greece",
             "message": "Greece",
-            "translation": "Griekenland"
+            "translation": "Гърция"
         },
         {
             "id": "Croatia",
             "message": "Croatia",
-            "translation": "Kroatië"
+            "translation": "Хърватия"
         },
         {
             "id": "Ireland",
             "message": "Ireland",
-            "translation": "Ierland"
+            "translation": "Ирландия"
         },
         {
             "id": "Italy",
             "message": "Italy",
-            "translation": "Italië"
+            "translation": "Италия"
         },
         {
             "id": "Lithuania",
             "message": "Lithuania",
-            "translation": "Litouwen"
+            "translation": "Литва"
         },
         {
             "id": "Luxembourg",
             "message": "Luxembourg",
-            "translation": "Luxemburg"
+            "translation": "Люксембург"
         },
         {
             "id": "Latvia",
             "message": "Latvia",
-            "translation": "Letland"
+            "translation": "Латвия"
         },
         {
             "id": "Monaco",
             "message": "Monaco",
-            "translation": "Monaco"
+            "translation": "Монако"
         },
         {
             "id": "Malta",
             "message": "Malta",
-            "translation": "Malta"
+            "translation": "Малта"
         },
         {
             "id": "Netherlands",
             "message": "Netherlands",
-            "translation": "Nederland"
+            "translation": "Холандия"
         },
         {
             "id": "Portugal",
             "message": "Portugal",
-            "translation": "Portugal"
+            "translation": "Португалия"
         },
         {
             "id": "Slovenia",
             "message": "Slovenia",
-            "translation": "Slovenië"
+            "translation": "Словения"
         },
         {
             "id": "Slovakia",
             "message": "Slovakia",
-            "translation": "Slowakije"
+            "translation": "Словакия"
         },
         {
             "id": "San Marino",
             "message": "San Marino",
-            "translation": "San Marino"
+            "translation": "Сан Марино"
         },
         {
             "id": "Vatican City",
             "message": "Vatican City",
-            "translation": "Vaticaanstad"
+            "translation": "град Ватикана"
         },
         {
             "id": "Found a mistake or want to contribute missing information?",

@@ -114,20 +114,6 @@
             "fuzzy": true
         },
         {
-            "id": "Found a mistake or want to contribute missing information?",
-            "message": "Found a mistake or want to contribute missing information?",
-            "translation": "Found a mistake or want to contribute missing information?",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "Feel free to contact us!",
-            "message": "Feel free to contact us!",
-            "translation": "Feel free to contact us!",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
             "id": "Andorra",
             "message": "Andorra",
             "translation": "Andorra",
@@ -296,6 +282,48 @@
             "fuzzy": true
         },
         {
+            "id": "Found a mistake or want to contribute missing information?",
+            "message": "Found a mistake or want to contribute missing information?",
+            "translation": "Found a mistake or want to contribute missing information?",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Feel free to contact us!",
+            "message": "Feel free to contact us!",
+            "translation": "Feel free to contact us!",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Dutch Euro Coin Designs",
+            "message": "Dutch Euro Coin Designs",
+            "translation": "Dutch Euro Coin Designs",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "From the years 1999–2013 all Dutch euro coins featured the portrait of Queen Beatrix of the Netherlands. After her abdication from the throne in 2013 the designs of all denominations were changed to feature the portrait of the new King Willem-Alexander. After her abdication the direction in which the monarchs portrait faced was flipped; a tradition dating back to the earliest coins of the Kingdom of the Netherlands.",
+            "message": "From the years 1999–2013 all Dutch euro coins featured the portrait of Queen Beatrix of the Netherlands. After her abdication from the throne in 2013 the designs of all denominations were changed to feature the portrait of the new King Willem-Alexander. After her abdication the direction in which the monarchs portrait faced was flipped; a tradition dating back to the earliest coins of the Kingdom of the Netherlands.",
+            "translation": "From the years 1999–2013 all Dutch euro coins featured the portrait of Queen Beatrix of the Netherlands. After her abdication from the throne in 2013 the designs of all denominations were changed to feature the portrait of the new King Willem-Alexander. After her abdication the direction in which the monarchs portrait faced was flipped; a tradition dating back to the earliest coins of the Kingdom of the Netherlands.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Coins featuring both monarchs contain text reading ‘BEATRIX KONINGIN DER NEDERLANDEN’ (‘BEATRIX QUEEN OF THE NETHERLANDS’) and ‘Willem-Alexander Koning der Nederlanden’ (‘Willem-Alexander King of the Netherlands’) respectively.",
+            "message": "Coins featuring both monarchs contain text reading ‘BEATRIX KONINGIN DER NEDERLANDEN’ (‘BEATRIX QUEEN OF THE NETHERLANDS’) and ‘Willem-Alexander Koning der Nederlanden’ (‘Willem-Alexander King of the Netherlands’) respectively.",
+            "translation": "Coins featuring both monarchs contain text reading ‘BEATRIX KONINGIN DER NEDERLANDEN’ (‘BEATRIX QUEEN OF THE NETHERLANDS’) and ‘Willem-Alexander Koning der Nederlanden’ (‘Willem-Alexander King of the Netherlands’) respectively.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "The €1 and €2 coins featuring King Willem-Alexander were minted with a much lower relief than most euro coins of the same denomination. As a result it is not uncommon for these coins to appear worn after little use in circulation.",
+            "message": "The €1 and €2 coins featuring King Willem-Alexander were minted with a much lower relief than most euro coins of the same denomination. As a result it is not uncommon for these coins to appear worn after little use in circulation.",
+            "translation": "The €1 and €2 coins featuring King Willem-Alexander were minted with a much lower relief than most euro coins of the same denomination. As a result it is not uncommon for these coins to appear worn after little use in circulation.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
             "id": "Euro Coin Designs",
             "message": "Euro Coin Designs",
             "translation": "Euro Coin Designs",
@@ -325,6 +353,27 @@
                     "expr": "linkEnd"
                 }
             ],
+            "fuzzy": true
+        },
+        {
+            "id": "Euro Coin Mintages",
+            "message": "Euro Coin Mintages",
+            "translation": "Euro Coin Mintages",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Here you’ll be able to view all the known mintages for all coins. You’ll also be able to filter on country, denomination, etc. If you have any mintage data that’s missing from our site, feel free to contact us.",
+            "message": "Here you’ll be able to view all the known mintages for all coins. You’ll also be able to filter on country, denomination, etc. If you have any mintage data that’s missing from our site, feel free to contact us.",
+            "translation": "Here you’ll be able to view all the known mintages for all coins. You’ll also be able to filter on country, denomination, etc. If you have any mintage data that’s missing from our site, feel free to contact us.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Country",
+            "message": "Country",
+            "translation": "Country",
+            "translatorComment": "Copied from source.",
             "fuzzy": true
         },
         {

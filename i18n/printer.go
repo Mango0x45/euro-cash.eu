@@ -9,7 +9,7 @@ import (
 	"golang.org/x/text/message"
 )
 
-//go:generate gotext -srclang=en update -out=catalog.go -lang=el,en,nl git.thomasvoss.com/euro-cash.eu
+//go:generate gotext -srclang=en update -out=catalog.go -lang=bg,el,en,nl git.thomasvoss.com/euro-cash.eu
 
 type Printer struct {
 	Locale  Locale
@@ -167,7 +167,7 @@ var (
 			Name:     "български",
 			dateFmt:  "2.01.2006 г.",
 			Eurozone: false,
-			Enabled:  false,
+			Enabled:  true,
 		},
 		{
 			Bcp:      "en-US",
