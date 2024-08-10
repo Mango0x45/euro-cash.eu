@@ -5,7 +5,6 @@ import (
 	"io"
 	"os"
 	"path/filepath"
-	"strconv"
 	"strings"
 	"unsafe"
 
@@ -94,7 +93,8 @@ func formatSection(out io.Writer, rows []mintages.Row) {
 		}
 		year = s
 		for i, col := range row.Cols {
-			longestNum[i] = max(longestNum[i], intlen(col))
+			n := intlen(col)
+			longestNum[i] = max(longestNum[i], n+(n-1)/3)
 		}
 	}
 
@@ -139,18 +139,19 @@ func formatInt(n int) string {
 		return "?"
 	}
 
-	in := strconv.Itoa(n)
-	dots := (len(in) - 1) / 3
-	out := make([]byte, len(in)+dots)
+	digits := intlen(n)
+	dots := (digits - 1) / 3
+	out := make([]byte, digits+dots)
 
-	for i, j, k := len(in)-1, len(out)-1, 0; ; i, j = i-1, j-1 {
-		out[j] = in[i]
-		if i == 0 {
+	for i, j := len(out)-1, 0; ; i-- {
+		out[i] = byte(n%10) + 48
+		n /= 10
+		if n == 0 {
 			return string(out)
 		}
-		if k++; k == 3 {
-			j, k = j-1, 0
-			out[j] = '.'
+		if j++; j == 3 {
+			i, j = i-1, 0
+			out[i] = '.'
 		}
 	}
 }
@@ -166,7 +167,7 @@ func intlen(v int) int {
 		for x := v; x != 0; x /= 10 {
 			n++
 		}
-		return n + (n-1)/3 /* Thousands separators */
+		return n
 	}
 }
 
