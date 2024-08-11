@@ -1,10 +1,130 @@
 {
-    "language": "el",
+    "language": "nl",
     "messages": [
         {
             "id": "Page not found",
             "message": "Page not found",
             "translation": ""
+        },
+        {
+            "id": "Andorra",
+            "message": "Andorra",
+            "translation": "Andorra"
+        },
+        {
+            "id": "Austria",
+            "message": "Austria",
+            "translation": "Oostenrijk"
+        },
+        {
+            "id": "Belgium",
+            "message": "Belgium",
+            "translation": "België"
+        },
+        {
+            "id": "Cyprus",
+            "message": "Cyprus",
+            "translation": "Cyprus"
+        },
+        {
+            "id": "Germany",
+            "message": "Germany",
+            "translation": "Duitsland"
+        },
+        {
+            "id": "Estonia",
+            "message": "Estonia",
+            "translation": "Estland"
+        },
+        {
+            "id": "Spain",
+            "message": "Spain",
+            "translation": "Spanje"
+        },
+        {
+            "id": "Finland",
+            "message": "Finland",
+            "translation": "Finland"
+        },
+        {
+            "id": "France",
+            "message": "France",
+            "translation": "Frankrijk"
+        },
+        {
+            "id": "Greece",
+            "message": "Greece",
+            "translation": "Griekenland"
+        },
+        {
+            "id": "Croatia",
+            "message": "Croatia",
+            "translation": "Kroatië"
+        },
+        {
+            "id": "Ireland",
+            "message": "Ireland",
+            "translation": "Ierland"
+        },
+        {
+            "id": "Italy",
+            "message": "Italy",
+            "translation": "Italië"
+        },
+        {
+            "id": "Lithuania",
+            "message": "Lithuania",
+            "translation": "Litouwen"
+        },
+        {
+            "id": "Luxembourg",
+            "message": "Luxembourg",
+            "translation": "Luxemburg"
+        },
+        {
+            "id": "Latvia",
+            "message": "Latvia",
+            "translation": "Letland"
+        },
+        {
+            "id": "Monaco",
+            "message": "Monaco",
+            "translation": "Monaco"
+        },
+        {
+            "id": "Malta",
+            "message": "Malta",
+            "translation": "Malta"
+        },
+        {
+            "id": "Netherlands",
+            "message": "Netherlands",
+            "translation": "Nederland"
+        },
+        {
+            "id": "Portugal",
+            "message": "Portugal",
+            "translation": "Portugal"
+        },
+        {
+            "id": "Slovenia",
+            "message": "Slovenia",
+            "translation": "Slovenië"
+        },
+        {
+            "id": "Slovakia",
+            "message": "Slovakia",
+            "translation": "Slowakije"
+        },
+        {
+            "id": "San Marino",
+            "message": "San Marino",
+            "translation": "San Marino"
+        },
+        {
+            "id": "Vatican City",
+            "message": "Vatican City",
+            "translation": "Vaticaanstad"
         },
         {
             "id": "About Us",
@@ -90,126 +210,6 @@
             "translation": ""
         },
         {
-            "id": "Andorra",
-            "message": "Andorra",
-            "translation": "Ανδόρα"
-        },
-        {
-            "id": "Austria",
-            "message": "Austria",
-            "translation": "Αυστρία"
-        },
-        {
-            "id": "Belgium",
-            "message": "Belgium",
-            "translation": "Βέλγιο"
-        },
-        {
-            "id": "Cyprus",
-            "message": "Cyprus",
-            "translation": "Κύπρος"
-        },
-        {
-            "id": "Germany",
-            "message": "Germany",
-            "translation": "Γερμανία"
-        },
-        {
-            "id": "Estonia",
-            "message": "Estonia",
-            "translation": "Εσθονία"
-        },
-        {
-            "id": "Spain",
-            "message": "Spain",
-            "translation": "Ισπανία"
-        },
-        {
-            "id": "Finland",
-            "message": "Finland",
-            "translation": "Φινλανδία"
-        },
-        {
-            "id": "France",
-            "message": "France",
-            "translation": "Γαλλία"
-        },
-        {
-            "id": "Greece",
-            "message": "Greece",
-            "translation": "Ελλάδα"
-        },
-        {
-            "id": "Croatia",
-            "message": "Croatia",
-            "translation": "Κροατία"
-        },
-        {
-            "id": "Ireland",
-            "message": "Ireland",
-            "translation": "Ιρλανδία"
-        },
-        {
-            "id": "Italy",
-            "message": "Italy",
-            "translation": "Ιταλία"
-        },
-        {
-            "id": "Lithuania",
-            "message": "Lithuania",
-            "translation": "Λιθουανία"
-        },
-        {
-            "id": "Luxembourg",
-            "message": "Luxembourg",
-            "translation": "Λουξεμβούργο"
-        },
-        {
-            "id": "Latvia",
-            "message": "Latvia",
-            "translation": "Λετονία"
-        },
-        {
-            "id": "Monaco",
-            "message": "Monaco",
-            "translation": "Μονακό"
-        },
-        {
-            "id": "Malta",
-            "message": "Malta",
-            "translation": "Μάλτα"
-        },
-        {
-            "id": "Netherlands",
-            "message": "Netherlands",
-            "translation": "Ολλανδία"
-        },
-        {
-            "id": "Portugal",
-            "message": "Portugal",
-            "translation": "Πορτογαλία"
-        },
-        {
-            "id": "Slovenia",
-            "message": "Slovenia",
-            "translation": "Σλοβενία"
-        },
-        {
-            "id": "Slovakia",
-            "message": "Slovakia",
-            "translation": "Σλοβακία"
-        },
-        {
-            "id": "San Marino",
-            "message": "San Marino",
-            "translation": "Σαν Μαρίνο"
-        },
-        {
-            "id": "Vatican City",
-            "message": "Vatican City",
-            "translation": "Βατικανό"
-        },
-        {
             "id": "Found a mistake or want to contribute missing information?",
             "message": "Found a mistake or want to contribute missing information?",
             "translation": ""
@@ -278,8 +278,89 @@
             "translation": ""
         },
         {
+            "id": "Additional Notes",
+            "message": "Additional Notes",
+            "translation": ""
+        },
+        {
+            "id": "Most coins from the years 2003–2016 are listed as NIFC coins while other popular sources such as Numista claim they were minted for circulation. For more information on why others are wrong, {MuntrolpakketLinkStart}click here{LinkEnd}.",
+            "message": "Most coins from the years 2003–2016 are listed as NIFC coins while other popular sources such as Numista claim they were minted for circulation. For more information on why others are wrong, {MuntrolpakketLinkStart}click here{LinkEnd}.",
+            "translation": "",
+            "placeholders": [
+                {
+                    "id": "MuntrolpakketLinkStart",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "muntrolpakketLinkStart"
+                },
+                {
+                    "id": "LinkEnd",
+                    "string": "%[2]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 2,
+                    "expr": "linkEnd"
+                }
+            ]
+        },
+        {
+            "id": "In 2003 Numista calculated a total of {217503} coins issued for coin sets per denomination. Our own calculations found only {177003}. Numista also forgot to include the many hundred thousand coins from the coin roll sets that were produced.",
+            "message": "In 2003 Numista calculated a total of {217503} coins issued for coin sets per denomination. Our own calculations found only {177003}. Numista also forgot to include the many hundred thousand coins from the coin roll sets that were produced.",
+            "translation": "",
+            "placeholders": [
+                {
+                    "id": "217503",
+                    "string": "%[1]d",
+                    "type": "int",
+                    "underlyingType": "int",
+                    "argNum": 1,
+                    "expr": "217503"
+                },
+                {
+                    "id": "177003",
+                    "string": "%[2]d",
+                    "type": "int",
+                    "underlyingType": "int",
+                    "argNum": 2,
+                    "expr": "177003"
+                }
+            ]
+        },
+        {
             "id": "Country",
             "message": "Country",
+            "translation": ""
+        },
+        {
+            "id": "Circulation Coins",
+            "message": "Circulation Coins",
+            "translation": ""
+        },
+        {
+            "id": "NIFC / BU Sets",
+            "message": "NIFC / BU Sets",
+            "translation": ""
+        },
+        {
+            "id": "Proof Coins",
+            "message": "Proof Coins",
+            "translation": ""
+        },
+        {
+            "id": "Filter",
+            "message": "Filter",
+            "translation": ""
+        },
+        {
+            "id": "Year",
+            "message": "Year",
+            "translation": ""
+        },
+        {
+            "id": "Unknown",
+            "message": "Unknown",
             "translation": ""
         },
         {

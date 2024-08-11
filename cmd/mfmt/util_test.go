@@ -6,7 +6,7 @@ package main
 import (
 	"testing"
 
-	"git.thomasvoss.com/euro-cash.eu/mintage"
+	"git.thomasvoss.com/euro-cash.eu/lib/mintage"
 )
 
 func TestFormatInt(t *testing.T) {

@@ -1,11 +1,11 @@
-package templates
+package template
 
-import "git.thomasvoss.com/euro-cash.eu/i18n"
+import "git.thomasvoss.com/euro-cash.eu/lib"
 
 const newsLinkStart = `<a href="/news">`
 
 templ Coins() {
-	{{ p := ctx.Value("printer").(i18n.Printer) }}
+	{{ p := ctx.Value("printer").(lib.Printer) }}
 	<header>
 		@navbar()
 		<h1>{ p.T("Euro Coins") }</h1>
@@ -27,7 +27,7 @@ templ Coins() {
 						</main>
 					</article>
 				</a>
-				<a class="no-deco" href="#TODO">
+				<a class="no-deco" href="/coins/mintages">
 					<article>
 						<header>
 							<h3>{ p.T("Mintages") }</h3>

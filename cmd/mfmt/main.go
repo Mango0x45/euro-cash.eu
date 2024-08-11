@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"unsafe"
 
-	"git.thomasvoss.com/euro-cash.eu/mintage"
+	"git.thomasvoss.com/euro-cash.eu/lib/mintage"
 )
 
 const cols = unsafe.Sizeof(mintage.Row{}.Cols) /

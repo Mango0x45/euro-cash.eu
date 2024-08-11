@@ -1,6 +1,6 @@
 euro-cash.eu
-i18n/catalog.go
 mfmt
 !cmd/mfmt
 out.gotext.json
+*.gen.*
 *_templ.go

@@ -1,21 +1,21 @@
-package templates
+package template
 
 import (
 	"fmt"
 	"strings"
 
-	"git.thomasvoss.com/euro-cash.eu/i18n"
+	"git.thomasvoss.com/euro-cash.eu/lib"
 )
 
 var varietiesLinkStart = `<a href="/coins/varieties">`
 
-func makeURL(c country) templ.SafeURL {
-	url := fmt.Sprintf("/coins/designs/%s", strings.ToLower(c.code))
+func makeURL(c lib.Country) templ.SafeURL {
+	url := fmt.Sprintf("/coins/designs/%s", c.Code)
 	return templ.SafeURL(url)
 }
 
 templ CoinsDesigns() {
-	{{ p := ctx.Value("printer").(i18n.Printer) }}
+	{{ p := ctx.Value("printer").(lib.Printer) }}
 	<header>
 		@navbar()
 		<h1>{ p.T("Euro Coin Designs") }</h1>
@@ -26,14 +26,14 @@ templ CoinsDesigns() {
 		</p>
 		<hr/>
 		<div class="country-grid">
-			for _, c := range countries(p, sortByName) {
+			for _, c := range lib.SortedCountries(p) {
 				<a
 					role="button"
 					class="outline"
-					data-code={ c.code }
+					data-code={ strings.ToUpper(c.Code) }
 					href={ makeURL(c) }
 				>
-					{ p.T(c.name) }
+					{ p.T(c.Name) }
 				</a>
 			}
 		</div>

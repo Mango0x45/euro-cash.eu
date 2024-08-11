@@ -2,32 +2,36 @@ package main
 
 import (
 	"cmp"
+	"context"
 	"errors"
 	"flag"
 	"fmt"
 	"log"
 	"math"
 	"net/http"
+	"os"
+	"path/filepath"
 	"strconv"
 	"strings"
 
-	"git.thomasvoss.com/euro-cash.eu/i18n"
-	"git.thomasvoss.com/euro-cash.eu/middleware"
-	"git.thomasvoss.com/euro-cash.eu/templates"
+	"git.thomasvoss.com/euro-cash.eu/lib"
+	"git.thomasvoss.com/euro-cash.eu/lib/mintage"
+	"git.thomasvoss.com/euro-cash.eu/template"
 	"github.com/a-h/templ"
 )
 
 var components = map[string]templ.Component{
-	"/":                 templates.Root(),
-	"/about":            templates.About(),
-	"/coins":            templates.Coins(),
-	"/coins/designs":    templates.CoinsDesigns(),
-	"/coins/designs/nl": templates.CoinsDesignsNl(),
-	"/language":         templates.Language(),
+	"/":                 template.Root(),
+	"/about":            template.About(),
+	"/coins":            template.Coins(),
+	"/coins/designs":    template.CoinsDesigns(),
+	"/coins/designs/nl": template.CoinsDesignsNl(),
+	"/coins/mintages":   template.CoinsMintages(),
+	"/language":         template.Language(),
 }
 
 func main() {
-	i18n.InitPrinters()
+	lib.InitPrinters()
 
 	port := flag.Int("port", 8080, "port number")
 	flag.Parse()
@@ -38,7 +42,8 @@ func main() {
 	mux.Handle("GET /favicon.ico", fs)
 	mux.Handle("GET /fonts/", fs)
 	mux.Handle("GET /style.css", fs)
-	mux.Handle("GET /", middleware.I18n(http.HandlerFunc(finalHandler)))
+	mux.Handle("GET /coins/mintages", i18nHandler(mintageHandler(http.HandlerFunc(finalHandler))))
+	mux.Handle("GET /", i18nHandler(http.HandlerFunc(finalHandler)))
 	mux.Handle("POST /language", http.HandlerFunc(setUserLanguage))
 
 	portStr := ":" + strconv.Itoa(*port)
@@ -47,7 +52,7 @@ func main() {
 }
 
 func finalHandler(w http.ResponseWriter, r *http.Request) {
-	p := r.Context().Value("printer").(i18n.Printer)
+	p := r.Context().Value("printer").(lib.Printer)
 
 	/* Strip trailing slash from the URL */
 	path := r.URL.Path
@@ -69,15 +74,62 @@ func finalHandler(w http.ResponseWriter, r *http.Request) {
 				Value: cmp.Or(r.Referer(), "/"),
 			})
 		}
-		templates.Base(nil, c).Render(r.Context(), w)
+		template.Base(c).Render(r.Context(), w)
 	}
+}
+
+func i18nHandler(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		var p, pZero lib.Printer
+
+		if c, err := r.Cookie("locale"); errors.Is(err, http.ErrNoCookie) {
+			log.Println("Language cookie not set")
+		} else {
+			var ok bool
+			p, ok = lib.Printers[strings.ToLower(c.Value)]
+			if !ok {
+				log.Printf("Language ‘%s’ is unsupported\n", c.Value)
+			}
+		}
+
+		ctx := context.WithValue(
+			r.Context(), "printer", cmp.Or(p, lib.DefaultPrinter))
+
+		if p == pZero {
+			http.SetCookie(w, &http.Cookie{
+				Name:  "redirect",
+				Value: r.URL.Path,
+			})
+			template.Base(template.Language()).Render(ctx, w)
+		} else {
+			next.ServeHTTP(w, r.WithContext(ctx))
+		}
+	})
+}
+
+func mintageHandler(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		countries := lib.SortedCountries(
+			r.Context().Value("printer").(lib.Printer))
+		code := cmp.Or(r.FormValue("c"), countries[0].Code)
+
+		path := filepath.Join("data", "mintages", code)
+		f, _ := os.Open(path) // TODO: Handle error
+		defer f.Close()
+		set, _ := mintage.Parse(f, path) // TODO: Handle error
+
+		ctx := context.WithValue(r.Context(), "code", code)
+		ctx = context.WithValue(ctx, "set", set)
+		ctx = context.WithValue(ctx, "countries", countries)
+		next.ServeHTTP(w, r.WithContext(ctx))
+	})
 }
 
 func setUserLanguage(w http.ResponseWriter, r *http.Request) {
 	loc := r.FormValue("locale")
-	_, ok := i18n.Printers[strings.ToLower(loc)]
+	_, ok := lib.Printers[strings.ToLower(loc)]
 	if !ok {
-		w.WriteHeader(http.StatusBadRequest)
+		w.WriteHeader(http.StatusUnprocessableEntity)
 		fmt.Fprintf(w, "Locale ‘%s’ is invalid or unsupported", loc)
 		return
 	}

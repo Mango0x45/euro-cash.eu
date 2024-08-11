@@ -1,9 +1,9 @@
-package templates
+package template
 
-import "git.thomasvoss.com/euro-cash.eu/i18n"
+import "git.thomasvoss.com/euro-cash.eu/lib"
 
 templ navbar() {
-	{{ p := ctx.Value("printer").(i18n.Printer) }}
+	{{ p := ctx.Value("printer").(lib.Printer) }}
 	<nav>
 		<menu>
 			<li><a href="/">{ p.T("Home") }</a></li>

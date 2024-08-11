@@ -1,13 +1,13 @@
-package templates
+package template
 
 import (
 	"strings"
 
-	"git.thomasvoss.com/euro-cash.eu/i18n"
+	"git.thomasvoss.com/euro-cash.eu/lib"
 )
 
 templ Language() {
-	{{ p := ctx.Value("printer").(i18n.Printer) }}
+	{{ p := ctx.Value("printer").(lib.Printer) }}
 	<header>
 		@navbar()
 		<h1>{ p.T("Select Your Language") }</h1>
@@ -32,7 +32,7 @@ templ Language() {
 templ languageGrid(eurozone bool) {
 	<form action="/language" method="POST">
 		<div class="lang-grid">
-			for _, loc := range i18n.Locales {
+			for _, loc := range lib.Locales {
 				if loc.Eurozone == eurozone {
 					<button
 						type="submit"

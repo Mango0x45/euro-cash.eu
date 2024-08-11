@@ -1,9 +1,9 @@
-package templates
+package template
 
-import "git.thomasvoss.com/euro-cash.eu/i18n"
+import "git.thomasvoss.com/euro-cash.eu/lib"
 
-templ Base(head, body templ.Component) {
-	{{ p := ctx.Value("printer").(i18n.Printer) }}
+templ Base(body templ.Component) {
+	{{ p := ctx.Value("printer").(lib.Printer) }}
 	<!DOCTYPE html>
 	<html lang={ p.Locale.Bcp }>
 		<head>
@@ -12,40 +12,32 @@ templ Base(head, body templ.Component) {
 			<link rel="stylesheet" type="text/css" href="/style.css"/>
 			<title>Euro Cash</title>
 			<script type="text/javascript">
+				const $  = q => document.querySelector(q);
+				const $$ = q => document.querySelectorAll(q);
+
 				const validate = theme =>
 					["light", "dark"].includes(theme) ? theme : "light";
-
 				const toggle = theme =>
 					theme == "light" ? "dark" : "light";
 
 				const setTheme = theme => {
 					localStorage.setItem("theme", theme);
-					document
-						.getElementsByTagName("html")[0]
-						.setAttribute("data-theme", theme);
-					document
-						.getElementById(`nav-icon-theme-${theme}`)
-						.style.display = '';
-					document
-						.getElementById(`nav-icon-theme-${toggle(theme)}`)
-						.style.display = 'none';
+					$("html").setAttribute("data-theme", theme);
+					$(`#nav-icon-theme-${theme}`)
+						.style.display = "";
+					$(`#nav-icon-theme-${toggle(theme)}`)
+						.style.display = "none";
 				};
 
 				document.addEventListener('DOMContentLoaded', _ => {
-					document.getElementById("theme-button").onclick = () => {
+					$("#theme-button").onclick = () =>
 						setTheme(toggle(validate(localStorage.getItem("theme"))));
-					};
 					setTheme(validate(localStorage.getItem("theme")));
 				});
 			</script>
-			if head != nil {
-				@head
-			}
 		</head>
 		<body>
-			if body != nil {
-				@body
-			}
+			@body
 			<footer>
 				<p>
 					<small>

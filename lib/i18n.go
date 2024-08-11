@@ -1,4 +1,6 @@
-package i18n
+//go:generate gotext -srclang=en update -out=catalog.gen.go -lang=bg,el,en,nl git.thomasvoss.com/euro-cash.eu
+
+package lib
 
 import (
 	"fmt"
@@ -9,20 +11,15 @@ import (
 	"golang.org/x/text/message"
 )
 
-//go:generate gotext -srclang=en update -out=catalog.go -lang=bg,el,en,nl git.thomasvoss.com/euro-cash.eu
-
 type Printer struct {
-	Locale  Locale
-	printer *message.Printer
+	Locale Locale
+	inner  *message.Printer
 }
 
 type Locale struct {
-	Bcp      string
-	Name     string
-	dateFmt  string
-	moneyFmt string
-	Eurozone bool
-	Enabled  bool
+	Bcp, Name         string
+	dateFmt, moneyFmt string
+	Eurozone, Enabled bool
 }
 
 var (
@@ -191,7 +188,7 @@ var (
 			Enabled:  false,
 		},
 	}
-	/* Map of language codes to printers.  We do this instead of just
+	/* Map of language codes to Printers.  We do this instead of just
 	   using language.MustParse() directly so that we can easily see if a
 	   language is supported or not. */
 	Printers       map[string]Printer = make(map[string]Printer, len(Locales))
@@ -203,8 +200,8 @@ func InitPrinters() {
 		if loc.Enabled {
 			lang := language.MustParse(loc.Bcp)
 			Printers[strings.ToLower(loc.Bcp)] = Printer{
-				Locale:  loc,
-				printer: message.NewPrinter(lang),
+				Locale: loc,
+				inner:  message.NewPrinter(lang),
 			}
 		}
 	}
@@ -212,7 +209,11 @@ func InitPrinters() {
 }
 
 func (p Printer) T(fmt string, args ...any) string {
-	return p.printer.Sprintf(fmt, args...)
+	return p.inner.Sprintf(fmt, args...)
+}
+
+func (p Printer) N(n int) string {
+	return p.inner.Sprint(n)
 }
 
 func (p Printer) Date(d time.Time) string {
@@ -225,7 +226,7 @@ func (p Printer) Money(val float64, round bool) string {
 
 	/* Hack to avoid gotext writing these two ‘translations’ into the
 	   translations file */
-	f := p.printer.Sprintf
+	f := p.inner.Sprintf
 	if round {
 		valstr = f("%d", int(val))
 	} else {

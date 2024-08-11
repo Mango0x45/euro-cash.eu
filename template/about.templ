@@ -1,6 +1,6 @@
-package templates
+package template
 
-import "git.thomasvoss.com/euro-cash.eu/i18n"
+import "git.thomasvoss.com/euro-cash.eu/lib"
 
 const (
 	contactEmail  = `<a href="mailto:mail@euro-cash.eu">mail@euro-cash.eu</a>`
@@ -9,7 +9,7 @@ const (
 )
 
 templ About() {
-	{{ p := ctx.Value("printer").(i18n.Printer) }}
+	{{ p := ctx.Value("printer").(lib.Printer) }}
 	<header>
 		@navbar()
 		<h1>{ p.T("About Us") }</h1>

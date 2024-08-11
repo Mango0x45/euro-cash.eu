@@ -9,111 +9,6 @@
             "fuzzy": true
         },
         {
-            "id": "About Us",
-            "message": "About Us",
-            "translation": "About Us",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "Open Source",
-            "message": "Open Source",
-            "translation": "Open Source",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found {RepoLinkStart}here{LinkEnd}. This site is licensed under the BSD 0-Clause license giving you the full freedom to do whatever you would like with any of the content on this site.",
-            "message": "This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found {RepoLinkStart}here{LinkEnd}. This site is licensed under the BSD 0-Clause license giving you the full freedom to do whatever you would like with any of the content on this site.",
-            "translation": "This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found {RepoLinkStart}here{LinkEnd}. This site is licensed under the BSD 0-Clause license giving you the full freedom to do whatever you would like with any of the content on this site.",
-            "translatorComment": "Copied from source.",
-            "placeholders": [
-                {
-                    "id": "RepoLinkStart",
-                    "string": "%[1]s",
-                    "type": "string",
-                    "underlyingType": "string",
-                    "argNum": 1,
-                    "expr": "repoLinkStart"
-                },
-                {
-                    "id": "LinkEnd",
-                    "string": "%[2]s",
-                    "type": "string",
-                    "underlyingType": "string",
-                    "argNum": 2,
-                    "expr": "linkEnd"
-                }
-            ],
-            "fuzzy": true
-        },
-        {
-            "id": "Contact Us",
-            "message": "Contact Us",
-            "translation": "Contact Us",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "While we try to stay as up-to-date as possible and to fact check our information, it is always possible that we get something wrong, lack a translation, or are missing some piece of data you may have. In such a case don’t hesitate to contact us; we’ll try to get the site updated or fixed as soon as possible. You are always free to contribute via a git patch if you are more technically included, but if not you can always send an email to {ContactEmail} or contact ‘@onetruemangoman’ on Discord.",
-            "message": "While we try to stay as up-to-date as possible and to fact check our information, it is always possible that we get something wrong, lack a translation, or are missing some piece of data you may have. In such a case don’t hesitate to contact us; we’ll try to get the site updated or fixed as soon as possible. You are always free to contribute via a git patch if you are more technically included, but if not you can always send an email to {ContactEmail} or contact ‘@onetruemangoman’ on Discord.",
-            "translation": "While we try to stay as up-to-date as possible and to fact check our information, it is always possible that we get something wrong, lack a translation, or are missing some piece of data you may have. In such a case don’t hesitate to contact us; we’ll try to get the site updated or fixed as soon as possible. You are always free to contribute via a git patch if you are more technically included, but if not you can always send an email to {ContactEmail} or contact ‘@onetruemangoman’ on Discord.",
-            "translatorComment": "Copied from source.",
-            "placeholders": [
-                {
-                    "id": "ContactEmail",
-                    "string": "%[1]s",
-                    "type": "string",
-                    "underlyingType": "string",
-                    "argNum": 1,
-                    "expr": "contactEmail"
-                }
-            ],
-            "fuzzy": true
-        },
-        {
-            "id": "Special Thanks",
-            "message": "Special Thanks",
-            "translation": "Special Thanks",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "Development",
-            "message": "Development",
-            "translation": "Development",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "Research",
-            "message": "Research",
-            "translation": "Research",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "Translations",
-            "message": "Translations",
-            "translation": "Translations",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "British- \u0026 American English",
-            "message": "British- \u0026 American English",
-            "translation": "British- \u0026 American English",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "Icelandic",
-            "message": "Icelandic",
-            "translation": "Icelandic",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
             "id": "Andorra",
             "message": "Andorra",
             "translation": "Andorra",
@@ -282,6 +177,111 @@
             "fuzzy": true
         },
         {
+            "id": "About Us",
+            "message": "About Us",
+            "translation": "About Us",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Open Source",
+            "message": "Open Source",
+            "translation": "Open Source",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found {RepoLinkStart}here{LinkEnd}. This site is licensed under the BSD 0-Clause license giving you the full freedom to do whatever you would like with any of the content on this site.",
+            "message": "This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found {RepoLinkStart}here{LinkEnd}. This site is licensed under the BSD 0-Clause license giving you the full freedom to do whatever you would like with any of the content on this site.",
+            "translation": "This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found {RepoLinkStart}here{LinkEnd}. This site is licensed under the BSD 0-Clause license giving you the full freedom to do whatever you would like with any of the content on this site.",
+            "translatorComment": "Copied from source.",
+            "placeholders": [
+                {
+                    "id": "RepoLinkStart",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "repoLinkStart"
+                },
+                {
+                    "id": "LinkEnd",
+                    "string": "%[2]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 2,
+                    "expr": "linkEnd"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "Contact Us",
+            "message": "Contact Us",
+            "translation": "Contact Us",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "While we try to stay as up-to-date as possible and to fact check our information, it is always possible that we get something wrong, lack a translation, or are missing some piece of data you may have. In such a case don’t hesitate to contact us; we’ll try to get the site updated or fixed as soon as possible. You are always free to contribute via a git patch if you are more technically included, but if not you can always send an email to {ContactEmail} or contact ‘@onetruemangoman’ on Discord.",
+            "message": "While we try to stay as up-to-date as possible and to fact check our information, it is always possible that we get something wrong, lack a translation, or are missing some piece of data you may have. In such a case don’t hesitate to contact us; we’ll try to get the site updated or fixed as soon as possible. You are always free to contribute via a git patch if you are more technically included, but if not you can always send an email to {ContactEmail} or contact ‘@onetruemangoman’ on Discord.",
+            "translation": "While we try to stay as up-to-date as possible and to fact check our information, it is always possible that we get something wrong, lack a translation, or are missing some piece of data you may have. In such a case don’t hesitate to contact us; we’ll try to get the site updated or fixed as soon as possible. You are always free to contribute via a git patch if you are more technically included, but if not you can always send an email to {ContactEmail} or contact ‘@onetruemangoman’ on Discord.",
+            "translatorComment": "Copied from source.",
+            "placeholders": [
+                {
+                    "id": "ContactEmail",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "contactEmail"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "Special Thanks",
+            "message": "Special Thanks",
+            "translation": "Special Thanks",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Development",
+            "message": "Development",
+            "translation": "Development",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Research",
+            "message": "Research",
+            "translation": "Research",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Translations",
+            "message": "Translations",
+            "translation": "Translations",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "British- \u0026 American English",
+            "message": "British- \u0026 American English",
+            "translation": "British- \u0026 American English",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Icelandic",
+            "message": "Icelandic",
+            "translation": "Icelandic",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
             "id": "Found a mistake or want to contribute missing information?",
             "message": "Found a mistake or want to contribute missing information?",
             "translation": "Found a mistake or want to contribute missing information?",
@@ -370,9 +370,108 @@
             "fuzzy": true
         },
         {
+            "id": "Additional Notes",
+            "message": "Additional Notes",
+            "translation": "Additional Notes",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Most coins from the years 2003–2016 are listed as NIFC coins while other popular sources such as Numista claim they were minted for circulation. For more information on why others are wrong, {MuntrolpakketLinkStart}click here{LinkEnd}.",
+            "message": "Most coins from the years 2003–2016 are listed as NIFC coins while other popular sources such as Numista claim they were minted for circulation. For more information on why others are wrong, {MuntrolpakketLinkStart}click here{LinkEnd}.",
+            "translation": "Most coins from the years 2003–2016 are listed as NIFC coins while other popular sources such as Numista claim they were minted for circulation. For more information on why others are wrong, {MuntrolpakketLinkStart}click here{LinkEnd}.",
+            "translatorComment": "Copied from source.",
+            "placeholders": [
+                {
+                    "id": "MuntrolpakketLinkStart",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "muntrolpakketLinkStart"
+                },
+                {
+                    "id": "LinkEnd",
+                    "string": "%[2]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 2,
+                    "expr": "linkEnd"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "In 2003 Numista calculated a total of {217503} coins issued for coin sets per denomination. Our own calculations found only {177003}. Numista also forgot to include the many hundred thousand coins from the coin roll sets that were produced.",
+            "message": "In 2003 Numista calculated a total of {217503} coins issued for coin sets per denomination. Our own calculations found only {177003}. Numista also forgot to include the many hundred thousand coins from the coin roll sets that were produced.",
+            "translation": "In 2003 Numista calculated a total of {217503} coins issued for coin sets per denomination. Our own calculations found only {177003}. Numista also forgot to include the many hundred thousand coins from the coin roll sets that were produced.",
+            "translatorComment": "Copied from source.",
+            "placeholders": [
+                {
+                    "id": "217503",
+                    "string": "%[1]d",
+                    "type": "int",
+                    "underlyingType": "int",
+                    "argNum": 1,
+                    "expr": "217503"
+                },
+                {
+                    "id": "177003",
+                    "string": "%[2]d",
+                    "type": "int",
+                    "underlyingType": "int",
+                    "argNum": 2,
+                    "expr": "177003"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
             "id": "Country",
             "message": "Country",
             "translation": "Country",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Circulation Coins",
+            "message": "Circulation Coins",
+            "translation": "Circulation Coins",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "NIFC / BU Sets",
+            "message": "NIFC / BU Sets",
+            "translation": "NIFC / BU Sets",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Proof Coins",
+            "message": "Proof Coins",
+            "translation": "Proof Coins",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Filter",
+            "message": "Filter",
+            "translation": "Filter",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Year",
+            "message": "Year",
+            "translation": "Year",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Unknown",
+            "message": "Unknown",
+            "translation": "Unknown",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
