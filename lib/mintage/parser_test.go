@@ -28,7 +28,7 @@ func TestParserComplete(t *testing.T) {
 			data.StartYear)
 	}
 
-	for i, row := range data.Circ {
+	for i, row := range data.Tables[TypeCirculated] {
 		for j, col := range row.Cols {
 			var n int
 			if i == 1 && j == 1 {
@@ -37,12 +37,12 @@ func TestParserComplete(t *testing.T) {
 				n = 1000*i + j + 1000
 			}
 			if col != n {
-				t.Fatalf("Expected data.Circ[i][j]=%d; got %d", n, col)
+				t.Fatalf("Expected data.Tables[TypeCirculated][i][j]=%d; got %d", n, col)
 			}
 		}
 	}
 
-	for i, row := range data.BU {
+	for i, row := range data.Tables[TypeNIFC] {
 		for j, col := range row.Cols {
 			var n int
 			if i == 1 && j == 1 {
@@ -51,12 +51,12 @@ func TestParserComplete(t *testing.T) {
 				n = 1000*i + j + 1100
 			}
 			if col != n {
-				t.Fatalf("Expected data.BU[i][j]=%d; got %d", n, col)
+				t.Fatalf("Expected data.Tables[TypeNIFC][i][j]=%d; got %d", n, col)
 			}
 		}
 	}
 
-	for i, row := range data.Proof {
+	for i, row := range data.Tables[TypeProof] {
 		for j, col := range row.Cols {
 			var n int
 			if i == 1 && j == 1 {
@@ -65,19 +65,19 @@ func TestParserComplete(t *testing.T) {
 				n = 1000*i + j + 1200
 			}
 			if col != n {
-				t.Fatalf("Expected data.Proof[i][j]=%d; got %d", n, col)
+				t.Fatalf("Expected data.Tables[TypeProof][i][j]=%d; got %d", n, col)
 			}
 		}
 	}
 
-	if len(data.Circ) != 2 {
-		t.Fatalf("Expected len(data.Circ)=2; got %d", len(data.Circ))
+	if len(data.Tables[TypeCirculated]) != 2 {
+		t.Fatalf("Expected len(data.Tables[TypeCirculated])=2; got %d", len(data.Tables[TypeCirculated]))
 	}
-	if len(data.BU) != 2 {
-		t.Fatalf("Expected len(data.BU)=2; got %d", len(data.BU))
+	if len(data.Tables[TypeNIFC]) != 2 {
+		t.Fatalf("Expected len(data.Tables[TypeNIFC])=2; got %d", len(data.Tables[TypeNIFC]))
 	}
-	if len(data.Proof) != 2 {
-		t.Fatalf("Expected len(data.Proof)=2; got %d", len(data.Proof))
+	if len(data.Tables[TypeProof]) != 2 {
+		t.Fatalf("Expected len(data.Tables[TypeProof])=2; got %d", len(data.Tables[TypeProof]))
 	}
 }
 
@@ -96,8 +96,8 @@ func TestParserNoProof(t *testing.T) {
 		t.Fatalf(`Expected err=nil; got "%s"`, err)
 	}
 
-	if len(data.Proof) != 0 {
-		t.Fatalf("Expected len(data.Proof)=0; got %d", len(data.Proof))
+	if len(data.Tables[TypeProof]) != 0 {
+		t.Fatalf("Expected len(data.Tables[TypeProof])=0; got %d", len(data.Tables[TypeProof]))
 	}
 }
 
@@ -114,7 +114,7 @@ func TestParserMintmarks(t *testing.T) {
 		t.Fatalf(`Expected err=nil; got "%s"`, err)
 	}
 
-	for i, row := range data.Circ {
+	for i, row := range data.Tables[TypeCirculated] {
 		for j, col := range row.Cols {
 			var n int
 			if i > 0 && j == 1 {
@@ -123,21 +123,21 @@ func TestParserMintmarks(t *testing.T) {
 				n = 1000*i + j + 1000
 			}
 			if col != n {
-				t.Fatalf("Expected data.Circ[i][j]=%d; got %d", n, col)
+				t.Fatalf("Expected data.Tables[TypeCirculated][i][j]=%d; got %d", n, col)
 			}
 		}
 	}
 
 	for i, y := range [...]int{2020, 2021, 2021} {
-		if data.Circ[i].Year != y {
-			t.Fatalf("Expected data.Circ[%d].Year=%d; got %d",
-				i, y, data.Circ[i].Year)
+		if data.Tables[TypeCirculated][i].Year != y {
+			t.Fatalf("Expected data.Tables[TypeCirculated][%d].Year=%d; got %d",
+				i, y, data.Tables[TypeCirculated][i].Year)
 		}
 	}
 	for i, s := range [...]string{"", "KNM", "MdP"} {
-		if data.Circ[i].Mintmark != s {
-			t.Fatalf(`Expected data.Circ[%d].Mintmark="%s"; got "%s"`,
-				i, s, data.Circ[i].Mintmark)
+		if data.Tables[TypeCirculated][i].Mintmark != s {
+			t.Fatalf(`Expected data.Tables[TypeCirculated][%d].Mintmark="%s"; got "%s"`,
+				i, s, data.Tables[TypeCirculated][i].Mintmark)
 		}
 	}
 }

@@ -50,17 +50,20 @@ func mfmt(path string, in io.Reader, out io.Writer) error {
 	}
 
 	fmt.Fprintf(out, `BEGIN %d`, data.StartYear)
-	if len(data.Circ) != 0 {
-		fmt.Fprintln(out, "\n\nBEGIN CIRC")
-		formatSection(out, data.Circ)
-	}
-	if len(data.BU) != 0 {
-		fmt.Fprintln(out, "\n\nBEGIN BU")
-		formatSection(out, data.BU)
-	}
-	if len(data.Proof) != 0 {
-		fmt.Fprintln(out, "\n\nBEGIN PROOF")
-		formatSection(out, data.Proof)
+	for i, tbl := range data.Tables {
+		if len(tbl) != 0 {
+			var section string
+			switch mintage.CoinType(i) {
+			case mintage.TypeCirculated:
+				section = "CIRC"
+			case mintage.TypeNIFC:
+				section = "BU"
+			case mintage.TypeProof:
+				section = "PROOF"
+			}
+			fmt.Fprintf(out, "\n\nBEGIN %s\n", section)
+			formatSection(out, tbl)
+		}
 	}
 	fmt.Fprintln(out, "")
 

@@ -9,6 +9,15 @@ import (
 	"unicode"
 )
 
+type CoinType int
+
+const (
+	TypeCirculated CoinType = iota
+	TypeNIFC
+	TypeProof
+	coinTypes
+)
+
 const (
 	_       = -iota
 	Unknown // Unknown mintage
@@ -33,8 +42,8 @@ type Row struct {
 }
 
 type Set struct {
-	StartYear       int
-	Circ, BU, Proof []Row
+	StartYear int
+	Tables    [coinTypes][]Row
 }
 
 func (r Row) Label() string {
@@ -46,8 +55,8 @@ func (r Row) Label() string {
 
 func Parse(reader io.Reader, file string) (Set, error) {
 	var (
-		data  Set    // Our data struct
-		slice *[]Row // Where to append mintages
+		data  Set
+		ctype CoinType = -1
 	)
 
 	scanner := bufio.NewScanner(reader)
@@ -77,11 +86,11 @@ func Parse(reader io.Reader, file string) (Set, error) {
 
 			switch arg {
 			case "CIRC":
-				slice = &data.Circ
+				ctype = TypeCirculated
 			case "BU":
-				slice = &data.BU
+				ctype = TypeNIFC
 			case "PROOF":
-				slice = &data.Proof
+				ctype = TypeProof
 			default:
 				if !isNumeric(arg, false) {
 					return Set{}, SyntaxError{
@@ -113,7 +122,7 @@ func Parse(reader io.Reader, file string) (Set, error) {
 			fallthrough
 		case isNumeric(tokens[0], true), tokens[0] == "?":
 			switch {
-			case slice == nil:
+			case ctype == -1:
 				return Set{}, SyntaxError{
 					expected: "coin type declaration",
 					got:      tokens[0],
@@ -146,10 +155,11 @@ func Parse(reader io.Reader, file string) (Set, error) {
 			}
 
 			row := Row{Mintmark: mintmark.s}
-			if len(*slice) == 0 {
+			if len(data.Tables[ctype]) == 0 {
 				row.Year = data.StartYear
 			} else {
-				row.Year = (*slice)[len(*slice)-1].Year
+				rows := data.Tables[ctype]
+				row.Year = rows[len(rows)-1].Year
 				if row.Mintmark == "" || mintmark.star {
 					row.Year++
 				}
@@ -162,7 +172,7 @@ func Parse(reader io.Reader, file string) (Set, error) {
 					row.Cols[i] = atoiWithDots(tok)
 				}
 			}
-			*slice = append(*slice, row)
+			data.Tables[ctype] = append(data.Tables[ctype], row)
 		default:
 			return Set{}, SyntaxError{
 				expected: "‘BEGIN’ directive or mintage row",

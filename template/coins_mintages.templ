@@ -17,7 +17,7 @@ var denoms = [...]float64{
 templ CoinsMintages() {
 	{{
 		code := ctx.Value("code").(string)
-		set := ctx.Value("set").(mintage.Set)
+		table := ctx.Value("table").([]mintage.Row)
 		p := ctx.Value("printer").(lib.Printer)
 	}}
 	<header>
@@ -45,7 +45,7 @@ templ CoinsMintages() {
 				<div class="grid">
 					<label for="country-dd">
 						{ p.T("Country") }
-						<select id="country-dd" name="c">
+						<select id="country-dd" name="code">
 							for _, c := range ctx.Value("countries").
 								([]lib.Country) {
 								<option
@@ -58,18 +58,9 @@ templ CoinsMintages() {
 						</select>
 					</label>
 					<fieldset>
-						<label for="compact-circ">
-							<input id="compact-circ" type="checkbox" name="circ" checked/>
-							{ p.T("Circulation Coins") }
-						</label>
-						<label for="compact-nifc">
-							<input id="compact-nifc" type="checkbox" name="nifc"/>
-							{ p.T("NIFC / BU Sets") }
-						</label>
-						<label for="compact-proof">
-							<input id="compact-proof" type="checkbox" name="proof"/>
-							{ p.T("Proof Coins") }
-						</label>
+						@coinTypeRadio("circ", p.T("Circulation Coins"))
+						@coinTypeRadio("nifc", p.T("NIFC / BU Sets"))
+						@coinTypeRadio("proof", p.T("Proof Coins"))
 					</fieldset>
 				</div>
 				<button type="submit">{ p.T("Filter") }</button>
@@ -83,7 +74,7 @@ templ CoinsMintages() {
 						}
 					</thead>
 					<tbody>
-						for _, row := range set.Circ {
+						for _, row := range table {
 							<tr>
 								<th scope="col">
 									if row.Mintmark != "" {
@@ -109,4 +100,17 @@ templ CoinsMintages() {
 			</figure>
 		</section>
 	</main>
+}
+
+templ coinTypeRadio(short, long string) {
+	<label for={ "compact-" + short }>
+		<input
+			id={ "compact-" + short }
+			type="radio"
+			name="type"
+			value={ short }
+			checked?={ ctx.Value("type").(string) == short }
+		/>
+		{ long }
+	</label>
 }

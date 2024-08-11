@@ -111,15 +111,27 @@ func mintageHandler(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		countries := lib.SortedCountries(
 			r.Context().Value("printer").(lib.Printer))
-		code := cmp.Or(r.FormValue("c"), countries[0].Code)
+		code := strings.ToLower(cmp.Or(r.FormValue("code"), countries[0].Code))
+		ctype := strings.ToLower(cmp.Or(r.FormValue("type"), "circ"))
 
 		path := filepath.Join("data", "mintages", code)
 		f, _ := os.Open(path) // TODO: Handle error
 		defer f.Close()
 		set, _ := mintage.Parse(f, path) // TODO: Handle error
 
+		var idx mintage.CoinType
+		switch ctype {
+		case "circ":
+			idx = mintage.TypeCirculated
+		case "nifc":
+			idx = mintage.TypeNIFC
+		case "proof":
+			idx = mintage.TypeProof
+		}
+
 		ctx := context.WithValue(r.Context(), "code", code)
-		ctx = context.WithValue(ctx, "set", set)
+		ctx = context.WithValue(ctx, "type", ctype)
+		ctx = context.WithValue(ctx, "table", set.Tables[idx])
 		ctx = context.WithValue(ctx, "countries", countries)
 		next.ServeHTTP(w, r.WithContext(ctx))
 	})
