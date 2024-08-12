@@ -62,6 +62,7 @@ func finalHandler(w http.ResponseWriter, r *http.Request) {
 
 	if c, ok := components[path]; !ok {
 		w.WriteHeader(http.StatusNotFound)
+		/* TODO: Create a 404 page */
 		fmt.Fprintln(w, p.T("Page not found"))
 	} else {
 		/* When a user clicks on the language button to be taken to the
