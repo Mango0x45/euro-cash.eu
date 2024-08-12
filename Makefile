@@ -9,6 +9,6 @@ all-i18n:
 	go build
 
 watch:
-	ls euro-cash.eu | entr -r ./euro-cash.eu -port $${PORT:-8080}
+	ls euro-cash.eu | entr -r ./euro-cash.eu -no-email -port $${PORT:-8080}
 
 .PHONY: watch

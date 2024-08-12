@@ -11,14 +11,18 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"slices"
 	"strconv"
 	"strings"
 
 	"git.thomasvoss.com/euro-cash.eu/lib"
+	"git.thomasvoss.com/euro-cash.eu/lib/email"
 	"git.thomasvoss.com/euro-cash.eu/lib/mintage"
 	"git.thomasvoss.com/euro-cash.eu/template"
 	"github.com/a-h/templ"
 )
+
+var emailDisabled bool
 
 var components = map[string]templ.Component{
 	"/":                 template.Root(),
@@ -34,6 +38,18 @@ func main() {
 	lib.InitPrinters()
 
 	port := flag.Int("port", 8080, "port number")
+	flag.BoolVar(&emailDisabled, "no-email", false,
+		"disables email support")
+	flag.StringVar(&email.Config.Host, "smtp-host", "smtp.migadu.com",
+		"SMTP server hostname")
+	flag.IntVar(&email.Config.Port, "smtp-port", 465,
+		"SMTP server port number")
+	flag.StringVar(&email.Config.ToAddr, "email-to", "bugs@euro-cash.eu",
+		"address to send error messages to")
+	flag.StringVar(&email.Config.FromAddr, "email-from", "noreply@euro-cash.eu",
+		"address to send error messages from")
+	flag.StringVar(&email.Config.Password, "email-password", "",
+		"password to authenticate the email client")
 	flag.Parse()
 
 	fs := http.FileServer(http.Dir("static"))
@@ -106,18 +122,33 @@ func mintageHandler(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		countries := lib.SortedCountries(
 			r.Context().Value("printer").(lib.Printer))
-		code := strings.ToLower(cmp.Or(r.FormValue("code"), countries[0].Code))
+
+		code := strings.ToLower(r.FormValue("code"))
+		if !slices.ContainsFunc(countries, func(c lib.Country) bool {
+			return c.Code == code
+		}) {
+			code = countries[0].Code
+		}
+
 		ctype := strings.ToLower(r.FormValue("type"))
-
-		path := filepath.Join("data", "mintages", code)
-		f, _ := os.Open(path) // TODO: Handle error
-		defer f.Close()
-		data, _ := mintage.Parse(f, path) // TODO: Handle error
-
 		switch ctype {
 		case "circ", "nifc", "proof":
 		default:
 			ctype = "circ"
+		}
+
+		path := filepath.Join("data", "mintages", code)
+		f, err := os.Open(path)
+		if err != nil {
+			throwError(http.StatusInternalServerError, err, w, r)
+			return
+		}
+		defer f.Close()
+
+		data, err := mintage.Parse(f, path)
+		if err != nil {
+			throwError(http.StatusInternalServerError, err, w, r)
+			return
 		}
 
 		ctx := context.WithValue(r.Context(), "code", code)
@@ -151,4 +182,18 @@ func setUserLanguage(w http.ResponseWriter, r *http.Request) {
 		})
 		http.Redirect(w, r, c.Value, http.StatusFound)
 	}
+}
+
+func throwError(status int, err error, w http.ResponseWriter, r *http.Request) {
+	w.WriteHeader(status)
+	if emailDisabled {
+		log.Print(err)
+	} else {
+		go func() {
+			if err := email.ServerError(err); err != nil {
+				log.Print(err)
+			}
+		}()
+	}
+	template.Base(template.Error(status)).Render(r.Context(), w)
 }

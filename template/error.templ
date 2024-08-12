@@ -1,0 +1,24 @@
+package template
+
+import (
+	"net/http"
+	"strconv"
+
+	"git.thomasvoss.com/euro-cash.eu/lib"
+)
+
+templ Error(status int) {
+	{{ p := ctx.Value("printer").(lib.Printer) }}
+	<header>
+		@navbar()
+		<h1>{ strconv.Itoa(status) } { http.StatusText(status) }</h1>
+	</header>
+	<main>
+		<p>
+			{ p.T("If you’re seeing this page, it means that something went wrong on our end that we need to fix. Our team has been notified of this error, and we apologise for the inconvenience.") }
+		</p>
+		<p>
+			@templ.Raw(p.T("If this issue persists, don’t hesitate to contact @onetruemangoman on Discord or to email us at %s.", contactEmail))
+		</p>
+	</main>
+}
