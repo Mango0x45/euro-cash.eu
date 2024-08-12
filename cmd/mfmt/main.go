@@ -15,16 +15,14 @@ import (
 	"strings"
 )
 
-const (
-	ws         = " \t"
-	longestNum = len("1.000.000.000")
-)
+const ws = " \t"
 
 var (
 	rv int
 
 	reMintageYear = regexp.MustCompile(`^\d{4}(-[^ \t]+)?`)
-	reMintageRow  = regexp.MustCompile(`^(([0-9.]+|\?)[ \t]+)*([0-9.]+|\?)$`)
+	reMintageRowC = regexp.MustCompile(`^[ \t]*(([0-9.]+|\?)[ \t]+){2}([0-9.]+|\?)$`)
+	reMintageRowS = regexp.MustCompile(`^[ \t]*(([0-9.]+|\?)[ \t]+){7}([0-9.]+|\?)$`)
 )
 
 func main() {
@@ -44,6 +42,12 @@ func main() {
 }
 
 func mfmt(file string, r io.Reader, w io.Writer) {
+	var (
+		buf         [3]string
+		bufsz       int
+		longestNums [8]int
+	)
+
 	scanner := bufio.NewScanner(r)
 	for linenr := 1; scanner.Scan(); linenr++ {
 		line := strings.Trim(scanner.Text(), ws)
@@ -53,12 +57,39 @@ func mfmt(file string, r io.Reader, w io.Writer) {
 			fmt.Fprintln(w, line)
 		case reMintageYear.MatchString(line):
 			fmtMintageYear(line, w)
-		case reMintageRow.MatchString(line):
-			fmtMintageRow(line, w)
+		case reMintageRowS.MatchString(line):
+			switch bufsz {
+			case len(buf):
+				bufsz = 0
+				clear(longestNums[:])
+				fallthrough
+			default:
+				setLongestNum(longestNums[:], line)
+				buf[bufsz] = line
+				if bufsz++; bufsz == len(buf) {
+					fmtMintageRow(buf[0], longestNums[:], w)
+					fmtMintageRow(buf[1], longestNums[:], w)
+					fmtMintageRow(buf[2], longestNums[:], w)
+				}
+			}
+		case reMintageRowC.MatchString(line):
+			var ns [3]int
+			setLongestNum(ns[:], line)
+			fmtMintageRow(line, ns[:], w)
 		default:
 			warn(fmt.Sprintf("%s:%d: potential syntax error", file, linenr))
 			fmt.Fprintln(w, line)
 		}
+	}
+}
+
+func setLongestNum(longest []int, line string) {
+	for i, x := range strings.FieldsFunc(line, func(r rune) bool {
+		return strings.ContainsRune(ws, r)
+	}) {
+		n := len(strings.ReplaceAll(x, ".", ""))
+		n += (n - 1) / 3 // Thousands separators
+		longest[i] = max(longest[i], n)
 	}
 }
 
@@ -71,7 +102,7 @@ func fmtMintageYear(line string, w io.Writer) {
 	}
 }
 
-func fmtMintageRow(line string, w io.Writer) {
+func fmtMintageRow(line string, longest []int, w io.Writer) {
 	tokens := strings.FieldsFunc(line, func(r rune) bool {
 		return strings.ContainsRune(ws, r)
 	})
@@ -80,9 +111,9 @@ func fmtMintageRow(line string, w io.Writer) {
 		s := formatMintage(tok)
 
 		if i == 0 {
-			fmt.Fprintf(w, "\t%*s", longestNum, s)
+			fmt.Fprintf(w, "\t%*s", longest[i], s)
 		} else {
-			fmt.Fprintf(w, "%*s", longestNum+1, s)
+			fmt.Fprintf(w, "%*s", longest[i]+1, s)
 		}
 	}
 
