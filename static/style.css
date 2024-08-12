@@ -2311,12 +2311,12 @@ textarea,
 	white-space: nowrap;
 }
 
-.mintage-table tr :where(th, td):first-child {
-	text-align: left;
+.mintage-table .mintage-table-cc {
+	white-space: nowrap;
 }
 
-.mintage-table :where(th, td) {
-	white-space: nowrap;
+.mintage-table tr :is(th, td):not(:first-child),
+.mintage-table-cc tr :is(th, td):last-child {
 	text-align: right;
 }
 
