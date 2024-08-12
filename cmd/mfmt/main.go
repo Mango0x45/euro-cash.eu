@@ -7,6 +7,7 @@ package main
 
 import (
 	"bufio"
+	"bytes"
 	"fmt"
 	"io"
 	"os"
@@ -36,7 +37,23 @@ func main() {
 			continue
 		}
 		defer f.Close()
-		mfmt(arg, f, f)
+
+		buf := bytes.NewBuffer(make([]byte, 0, 8192))
+		mfmt(arg, f, buf)
+
+		if _, err = f.Seek(0, io.SeekStart); err != nil {
+			warn(err)
+			continue
+		}
+
+		if _, err = f.Write(buf.Bytes()); err != nil {
+			warn(err)
+			continue
+		}
+
+		if err = f.Truncate(int64(buf.Len())); err != nil {
+			warn(err)
+		}
 	}
 	os.Exit(rv)
 }
