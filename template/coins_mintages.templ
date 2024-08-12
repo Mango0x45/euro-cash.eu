@@ -100,16 +100,41 @@ templ CoinsMintages() {
 					</tbody>
 				</table>
 			</figure>
-			<figure>
-				<figcaption>{ p.T("Commemorative Coins") }</figcaption>
-				<table class="mintage-table" role="grid">
-					<thead>
-						<th>{ p.T("Year") }</th>
-						<th>{ p.T("Commemorated Issue") }</th>
-						<th>{ p.T("Mintage") }</th>
-					</thead>
-				</table>
-			</figure>
+			if len(data.Commemorative) != 0 {
+				<figure>
+					<figcaption>{ p.T("Commemorative Coins") }</figcaption>
+					<table class="mintage-table-cc" role="grid">
+						<thead>
+							<th>{ p.T("Year") }</th>
+							<th>{ p.T("Commemorated Issue") }</th>
+							<th>{ p.T("Mintage") }</th>
+						</thead>
+						<tbody>
+							for _, row := range data.Commemorative {
+								<tr>
+									<th scope="col">
+										if len(row.Mintmark) != 0 {
+											{ strconv.Itoa(row.Year) }&nbsp;<sub><small>{ row.Mintmark }</small></sub>
+										} else {
+											{ strconv.Itoa(row.Year) }
+										}
+									</th>
+									<!-- TODO: Translate commemorative names! -->
+									<td>{ row.Name }</td>
+									switch row.Mintage[strToCtype(ctype)] {
+										case mintage.Unknown:
+											<td>{ p.T("Unknown") }</td>
+										case 0:
+											<td>—</td>
+										default:
+											<td>{ p.N(row.Mintage[strToCtype(ctype)]) }</td>
+									}
+								</tr>
+							}
+						</tbody>
+					</table>
+				</figure>
+			}
 		</section>
 	</main>
 }
