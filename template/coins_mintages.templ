@@ -17,7 +17,8 @@ var denoms = [...]float64{
 templ CoinsMintages() {
 	{{
 		code := ctx.Value("code").(string)
-		table := ctx.Value("table").([]mintage.Row)
+		data := ctx.Value("mintages").(mintage.Data)
+		ctype := ctx.Value("type").(string)
 		p := ctx.Value("printer").(lib.Printer)
 	}}
 	<header>
@@ -58,14 +59,15 @@ templ CoinsMintages() {
 						</select>
 					</label>
 					<fieldset>
-						@coinTypeRadio("circ", p.T("Circulation Coins"))
-						@coinTypeRadio("nifc", p.T("NIFC / BU Sets"))
-						@coinTypeRadio("proof", p.T("Proof Coins"))
+						@coinTypeRadio(ctype, "circ", p.T("Circulation Coins"))
+						@coinTypeRadio(ctype, "nifc", p.T("NIFC / BU Sets"))
+						@coinTypeRadio(ctype, "proof", p.T("Proof Coins"))
 					</fieldset>
 				</div>
 				<button type="submit">{ p.T("Filter") }</button>
 			</form>
 			<figure>
+				<figcaption>{ p.T("Standard Issue Coins") }</figcaption>
 				<table class="mintage-table" role="grid">
 					<thead>
 						<th>{ p.T("Year") }</th>
@@ -74,16 +76,16 @@ templ CoinsMintages() {
 						}
 					</thead>
 					<tbody>
-						for _, row := range table {
+						for _, row := range data.Standard {
 							<tr>
 								<th scope="col">
-									if row.Mintmark != "" {
+									if len(row.Mintmark) != 0 {
 										{ strconv.Itoa(row.Year) }&nbsp;<sub><small>{ row.Mintmark }</small></sub>
 									} else {
 										{ strconv.Itoa(row.Year) }
 									}
 								</th>
-								for _, col := range row.Cols {
+								for _, col := range row.Mintages[strToCtype(ctype)] {
 									switch col {
 										case mintage.Unknown:
 											<td>{ p.T("Unknown") }</td>
@@ -98,19 +100,43 @@ templ CoinsMintages() {
 					</tbody>
 				</table>
 			</figure>
+			<figure>
+				<figcaption>{ p.T("Commemorative Coins") }</figcaption>
+				<table class="mintage-table" role="grid">
+					<thead>
+						<th>{ p.T("Year") }</th>
+						<th>{ p.T("Commemorated Issue") }</th>
+						<th>{ p.T("Mintage") }</th>
+					</thead>
+				</table>
+			</figure>
 		</section>
 	</main>
 }
 
-templ coinTypeRadio(short, long string) {
+templ coinTypeRadio(ctype, short, long string) {
 	<label for={ "compact-" + short }>
 		<input
 			id={ "compact-" + short }
 			type="radio"
 			name="type"
 			value={ short }
-			checked?={ ctx.Value("type").(string) == short }
+			checked?={ ctype == short }
 		/>
 		{ long }
 	</label>
+}
+
+func strToCtype(s string) int {
+	switch s {
+	case "circ":
+		return mintage.TypeCirc
+	case "nifc":
+		return mintage.TypeNIFC
+	case "proof":
+		return mintage.TypeProof
+	}
+
+	/* Should never happen, but just incase */
+	return mintage.TypeCirc
 }

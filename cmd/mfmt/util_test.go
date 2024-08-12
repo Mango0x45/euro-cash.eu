@@ -3,26 +3,19 @@
 
 package main
 
-import (
-	"testing"
-
-	"git.thomasvoss.com/euro-cash.eu/lib/mintage"
-)
+import "testing"
 
 func TestFormatInt(t *testing.T) {
-	for _, x := range [...]struct {
-		n int
-		s string
-	}{
-		{0, "0"},
-		{123, "123"},
-		{81758, "81.758"},
-		{752759237528, "752.759.237.528"},
-		{mintage.Unknown, "?"},
+	for _, x := range [...]struct{ x, y string }{
+		{"?", "?"},
+		{"0", "0"},
+		{"123", "123"},
+		{"81758", "81.758"},
+		{"752759237528", "752.759.237.528"},
 	} {
-		s := formatInt(x.n)
-		if s != x.s {
-			t.Fatalf(`Expected s="%s"; got "%s"`, x.s, s)
+		s := formatMintage(x.x)
+		if s != x.y {
+			t.Fatalf(`Expected s="%s"; got "%s"`, x.y, s)
 		}
 	}
 }
@@ -33,7 +26,6 @@ func TestIntLen(t *testing.T) {
 		{123, len("123")},
 		{81758, len("81758")},
 		{752759237528, len("752759237528")},
-		{mintage.Unknown, len("?")},
 	} {
 		n := intlen(x.x)
 		if n != x.y {

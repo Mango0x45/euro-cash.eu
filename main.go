@@ -82,14 +82,8 @@ func i18nHandler(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		var p, pZero lib.Printer
 
-		if c, err := r.Cookie("locale"); errors.Is(err, http.ErrNoCookie) {
-			log.Println("Language cookie not set")
-		} else {
-			var ok bool
-			p, ok = lib.Printers[strings.ToLower(c.Value)]
-			if !ok {
-				log.Printf("Language ‘%s’ is unsupported\n", c.Value)
-			}
+		if c, err := r.Cookie("locale"); err == nil {
+			p = lib.Printers[strings.ToLower(c.Value)]
 		}
 
 		ctx := context.WithValue(
@@ -112,26 +106,22 @@ func mintageHandler(next http.Handler) http.Handler {
 		countries := lib.SortedCountries(
 			r.Context().Value("printer").(lib.Printer))
 		code := strings.ToLower(cmp.Or(r.FormValue("code"), countries[0].Code))
-		ctype := strings.ToLower(cmp.Or(r.FormValue("type"), "circ"))
+		ctype := strings.ToLower(r.FormValue("type"))
 
 		path := filepath.Join("data", "mintages", code)
 		f, _ := os.Open(path) // TODO: Handle error
 		defer f.Close()
-		set, _ := mintage.Parse(f, path) // TODO: Handle error
+		data, _ := mintage.Parse(f, path) // TODO: Handle error
 
-		var idx mintage.CoinType
 		switch ctype {
-		case "circ":
-			idx = mintage.TypeCirculated
-		case "nifc":
-			idx = mintage.TypeNIFC
-		case "proof":
-			idx = mintage.TypeProof
+		case "circ", "nifc", "proof":
+		default:
+			ctype = "circ"
 		}
 
 		ctx := context.WithValue(r.Context(), "code", code)
 		ctx = context.WithValue(ctx, "type", ctype)
-		ctx = context.WithValue(ctx, "table", set.Tables[idx])
+		ctx = context.WithValue(ctx, "mintages", data)
 		ctx = context.WithValue(ctx, "countries", countries)
 		next.ServeHTTP(w, r.WithContext(ctx))
 	})
