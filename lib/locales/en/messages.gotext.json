@@ -462,6 +462,13 @@
             "fuzzy": true
         },
         {
+            "id": "Standard Issue Coins",
+            "message": "Standard Issue Coins",
+            "translation": "Standard Issue Coins",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
             "id": "Year",
             "message": "Year",
             "translation": "Year",
@@ -472,6 +479,27 @@
             "id": "Unknown",
             "message": "Unknown",
             "translation": "Unknown",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Commemorative Coins",
+            "message": "Commemorative Coins",
+            "translation": "Commemorative Coins",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Commemorated Issue",
+            "message": "Commemorated Issue",
+            "translation": "Commemorated Issue",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Mintage",
+            "message": "Mintage",
+            "translation": "Mintage",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },

@@ -354,6 +354,11 @@
             "translation": ""
         },
         {
+            "id": "Standard Issue Coins",
+            "message": "Standard Issue Coins",
+            "translation": ""
+        },
+        {
             "id": "Year",
             "message": "Year",
             "translation": ""
@@ -361,6 +366,21 @@
         {
             "id": "Unknown",
             "message": "Unknown",
+            "translation": ""
+        },
+        {
+            "id": "Commemorative Coins",
+            "message": "Commemorative Coins",
+            "translation": ""
+        },
+        {
+            "id": "Commemorated Issue",
+            "message": "Commemorated Issue",
+            "translation": ""
+        },
+        {
+            "id": "Mintage",
+            "message": "Mintage",
             "translation": ""
         },
         {
