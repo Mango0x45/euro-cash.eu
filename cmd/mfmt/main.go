@@ -72,8 +72,6 @@ func mfmt(file string, r io.Reader, w io.Writer) {
 		switch {
 		case len(line) == 0, line[0] == '#':
 			fmt.Fprintln(w, line)
-		case reMintageYear.MatchString(line):
-			fmtMintageYear(line, w)
 		case reMintageRowS.MatchString(line):
 			switch bufsz {
 			case len(buf):
@@ -93,6 +91,8 @@ func mfmt(file string, r io.Reader, w io.Writer) {
 			var ns [3]int
 			setLongestNum(ns[:], line)
 			fmtMintageRow(line, ns[:], w)
+		case reMintageYear.MatchString(line):
+			fmtMintageYear(line, w)
 		default:
 			warn(fmt.Sprintf("%s:%d: potential syntax error", file, linenr))
 			fmt.Fprintln(w, line)
