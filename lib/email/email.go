@@ -3,7 +3,7 @@ package email
 import (
 	"crypto/tls"
 	"fmt"
-	"math/rand"
+	"math/rand/v2"
 	"net/smtp"
 	"strconv"
 	"time"
@@ -27,8 +27,7 @@ Message-ID: <%s>
 %s`
 
 func ServerError(fault error) error {
-	r := rand.New(rand.NewSource(time.Now().UnixNano()))
-	msgid := strconv.FormatInt(r.Int63(), 10) + "@" + Config.Host
+	msgid := strconv.FormatInt(rand.Int64(), 10) + "@" + Config.Host
 	msg := fmt.Sprintf(emailTemplate, Config.FromAddr, Config.ToAddr,
 		"Error Report", time.Now().Format(time.RFC1123Z), msgid, fault)
 
