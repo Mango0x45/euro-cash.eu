@@ -1,7 +1,7 @@
 if exists('b:current_syntax')
 	finish
 endif
-let b:current_syntax = 'mintage2'
+let b:current_syntax = 'mintage'
 
 syntax match Comment    /^\s*#.*/
 syntax match Number     /[0-9.]\+/
