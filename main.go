@@ -24,15 +24,18 @@ import (
 
 var emailDisabled bool
 
-var components = map[string]templ.Component{
-	"/":                 template.Root(),
-	"/about":            template.About(),
-	"/coins":            template.Coins(),
-	"/coins/designs":    template.CoinsDesigns(),
-	"/coins/designs/nl": template.CoinsDesignsNl(),
-	"/coins/mintages":   template.CoinsMintages(),
-	"/language":         template.Language(),
-}
+var (
+	notFound   = template.NotFound()
+	components = map[string]templ.Component{
+		"/":                 template.Root(),
+		"/about":            template.About(),
+		"/coins":            template.Coins(),
+		"/coins/designs":    template.CoinsDesigns(),
+		"/coins/designs/nl": template.CoinsDesignsNl(),
+		"/coins/mintages":   template.CoinsMintages(),
+		"/language":         template.Language(),
+	}
+)
 
 func main() {
 	lib.InitPrinters()
@@ -68,31 +71,29 @@ func main() {
 }
 
 func finalHandler(w http.ResponseWriter, r *http.Request) {
-	p := r.Context().Value("printer").(lib.Printer)
-
 	/* Strip trailing slash from the URL */
 	path := r.URL.Path
 	if path != "/" && path[len(path)-1] == '/' {
 		path = path[:len(path)-1]
 	}
 
-	if c, ok := components[path]; !ok {
+	c, ok := components[path]
+	if !ok {
 		w.WriteHeader(http.StatusNotFound)
-		/* TODO: Create a 404 page */
-		fmt.Fprintln(w, p.T("Page not found"))
-	} else {
-		/* When a user clicks on the language button to be taken to the
-		   language selection page, we need to set a redirect cookie so
-		   that after selecting a language they are taken back to the
-		   original page they came from. */
-		if path == "/language" {
-			http.SetCookie(w, &http.Cookie{
-				Name:  "redirect",
-				Value: cmp.Or(r.Referer(), "/"),
-			})
-		}
-		template.Base(c).Render(r.Context(), w)
+		c = notFound
 	}
+
+	/* When a user clicks on the language button to be taken to the
+	   language selection page, we need to set a redirect cookie so
+	   that after selecting a language they are taken back to the
+	   original page they came from. */
+	if path == "/language" {
+		http.SetCookie(w, &http.Cookie{
+			Name:  "redirect",
+			Value: cmp.Or(r.Referer(), "/"),
+		})
+	}
+	template.Base(c).Render(r.Context(), w)
 }
 
 func i18nHandler(next http.Handler) http.Handler {

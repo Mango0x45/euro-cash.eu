@@ -1,0 +1,16 @@
+package template
+
+import "git.thomasvoss.com/euro-cash.eu/lib"
+
+templ NotFound() {
+	{{ p := ctx.Value("printer").(lib.Printer) }}
+	<header>
+		@navbar()
+		<h1>{ p.T("Page Not Found") }</h1>
+	</header>
+	<main>
+		<p>
+			@templ.Raw(p.T("The page you were looking for does not exist. If you believe this is a mistake then don’t hesitate to contact @onetruemangoman on Discord or to email us at %s.", contactEmail))
+		</p>
+	</main>
+}
