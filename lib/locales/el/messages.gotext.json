@@ -2,11 +2,6 @@
     "language": "el",
     "messages": [
         {
-            "id": "Page not found",
-            "message": "Page not found",
-            "translation": ""
-        },
-        {
             "id": "Andorra",
             "message": "Andorra",
             "translation": "Ανδόρα"
@@ -125,6 +120,26 @@
             "id": "Vatican City",
             "message": "Vatican City",
             "translation": "Βατικανό"
+        },
+        {
+            "id": "Page Not Found",
+            "message": "Page Not Found",
+            "translation": ""
+        },
+        {
+            "id": "The page you were looking for does not exist. If you believe this is a mistake then don’t hesitate to contact @onetruemangoman on Discord or to email us at {ContactEmail}.",
+            "message": "The page you were looking for does not exist. If you believe this is a mistake then don’t hesitate to contact @onetruemangoman on Discord or to email us at {ContactEmail}.",
+            "translation": "",
+            "placeholders": [
+                {
+                    "id": "ContactEmail",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "contactEmail"
+                }
+            ]
         },
         {
             "id": "About Us",
@@ -440,6 +455,26 @@
             "id": "View all the known Euro varieties!",
             "message": "View all the known Euro varieties!",
             "translation": ""
+        },
+        {
+            "id": "If you’re seeing this page, it means that something went wrong on our end that we need to fix. Our team has been notified of this error, and we apologise for the inconvenience.",
+            "message": "If you’re seeing this page, it means that something went wrong on our end that we need to fix. Our team has been notified of this error, and we apologise for the inconvenience.",
+            "translation": ""
+        },
+        {
+            "id": "If this issue persists, don’t hesitate to contact @onetruemangoman on Discord or to email us at {ContactEmail}.",
+            "message": "If this issue persists, don’t hesitate to contact @onetruemangoman on Discord or to email us at {ContactEmail}.",
+            "translation": "",
+            "placeholders": [
+                {
+                    "id": "ContactEmail",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "contactEmail"
+                }
+            ]
         },
         {
             "id": "Select Your Language",

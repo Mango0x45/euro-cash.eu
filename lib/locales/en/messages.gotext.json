@@ -2,13 +2,6 @@
     "language": "en",
     "messages": [
         {
-            "id": "Page not found",
-            "message": "Page not found",
-            "translation": "Page not found",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
             "id": "Andorra",
             "message": "Andorra",
             "translation": "Andorra",
@@ -174,6 +167,30 @@
             "message": "Vatican City",
             "translation": "Vatican City",
             "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Page Not Found",
+            "message": "Page Not Found",
+            "translation": "Page Not Found",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "The page you were looking for does not exist. If you believe this is a mistake then don’t hesitate to contact @onetruemangoman on Discord or to email us at {ContactEmail}.",
+            "message": "The page you were looking for does not exist. If you believe this is a mistake then don’t hesitate to contact @onetruemangoman on Discord or to email us at {ContactEmail}.",
+            "translation": "The page you were looking for does not exist. If you believe this is a mistake then don’t hesitate to contact @onetruemangoman on Discord or to email us at {ContactEmail}.",
+            "translatorComment": "Copied from source.",
+            "placeholders": [
+                {
+                    "id": "ContactEmail",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "contactEmail"
+                }
+            ],
             "fuzzy": true
         },
         {
@@ -575,6 +592,30 @@
             "message": "View all the known Euro varieties!",
             "translation": "View all the known Euro varieties!",
             "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "If you’re seeing this page, it means that something went wrong on our end that we need to fix. Our team has been notified of this error, and we apologise for the inconvenience.",
+            "message": "If you’re seeing this page, it means that something went wrong on our end that we need to fix. Our team has been notified of this error, and we apologise for the inconvenience.",
+            "translation": "If you’re seeing this page, it means that something went wrong on our end that we need to fix. Our team has been notified of this error, and we apologise for the inconvenience.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "If this issue persists, don’t hesitate to contact @onetruemangoman on Discord or to email us at {ContactEmail}.",
+            "message": "If this issue persists, don’t hesitate to contact @onetruemangoman on Discord or to email us at {ContactEmail}.",
+            "translation": "If this issue persists, don’t hesitate to contact @onetruemangoman on Discord or to email us at {ContactEmail}.",
+            "translatorComment": "Copied from source.",
+            "placeholders": [
+                {
+                    "id": "ContactEmail",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "contactEmail"
+                }
+            ],
             "fuzzy": true
         },
         {
