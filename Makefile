@@ -10,5 +10,3 @@ all-i18n:
 
 watch:
 	ls euro-cash.eu | entr -r ./euro-cash.eu -no-email -port $${PORT:-8080}
-
-.PHONY: watch
