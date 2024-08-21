@@ -33,6 +33,7 @@ var (
 		"/coins/designs":    template.CoinsDesigns(),
 		"/coins/designs/nl": template.CoinsDesignsNl(),
 		"/coins/mintages":   template.CoinsMintages(),
+		"/jargon":           template.Jargon(),
 		"/language":         template.Language(),
 	}
 )

@@ -2360,28 +2360,20 @@ div.grid:not(:first-of-type) {
 	margin-top: var(--grid-spacing-vertical);
 }
 
-@media (min-width: 576px) {
-	dl {
-		display: grid;
-		grid-template-columns: max-content auto;
-		row-gap: var(--spacing);
-	}
-
-	dt {
-		grid-column-start: 1;
-	}
-
-	dd {
-		grid-column-start: 2;
-	}
+dl.unix-style {
+	display: grid;
+	grid-template-columns: max-content auto;
+	row-gap: var(--spacing);
 }
 
-@media (max-width: 575px) {
-	dt {
-		text-decoration: underline;
-	}
+dl.unix-style dt {
+	grid-column-start: 1;
+}
 
-	dl dt:not(:first-child) {
-		margin-top: var(--block-spacing-vertical);
-	}
+dl.unix-style dd {
+	grid-column-start: 2;
+}
+
+dl dt:not(:first-child) {
+	margin-top: var(--block-spacing-vertical);
 }
