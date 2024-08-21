@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+/* TODO: Refactor this file when enough people are on browser versions
+   that support nested CSS */
+
 /* Our form of Pico CSS v1.5.10 (https://picocss.com)
  *
  * Copyright © 2019–2023 Pico

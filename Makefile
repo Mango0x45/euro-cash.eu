@@ -12,6 +12,7 @@ watch:
 	ls euro-cash.eu | entr -r ./euro-cash.eu -no-email -port $${PORT:-8080}
 
 # Build a release tarball for easy deployment
+# TODO: Minify CSS
 release: all-i18n
 	[ -n "$$GOOS" -a -n "$$GOARCH" ]
 	tar -cf euro-cash.eu-$$GOOS-$$GOARCH.tar.gz euro-cash.eu data/ static/
