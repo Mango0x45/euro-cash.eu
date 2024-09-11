@@ -16,7 +16,7 @@ type SyntaxError struct {
 }
 
 func (e SyntaxError) Error() string {
-	return fmt.Sprintf("%s:%d: syntax error: expected %s but got %s",
+	return fmt.Sprintf("%s:%d: syntax error: expected %s but got %s",
 		e.file, e.linenr, e.expected, e.got)
 }
 
