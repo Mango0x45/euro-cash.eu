@@ -1,4 +1,4 @@
-set runtimepath+=contrib
+set runtimepath+=contrib/vim
 
 " We make use of this feature, so set this in the environment so that all
 " Ex-calls to templ are aware of this
