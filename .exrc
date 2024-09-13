@@ -13,6 +13,8 @@ endfunction
 autocmd BufNewFile,BufRead */data/mintages/*
 	\   setfiletype mintage
 	\ | setlocal nowrap
+autocmd BufNewFile,BufRead */cmd/exttmpl/*
+	\ setlocal makeprg=go\ build\ ./cmd/exttmpl
 autocmd BufNewFile,BufRead */cmd/mfmt/*
 	\ setlocal makeprg=go\ build\ ./cmd/mfmt
 

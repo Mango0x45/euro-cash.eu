@@ -1,0 +1,48 @@
+{{ define "content" }}
+<header>
+	{{ template "navbar" . }}
+	<h1>{{ .T "Select Your Language" }}</h1>
+</header>
+<main>
+	<p>
+		{{ .T "Select your preferred language to use on the site." }}
+	</p>
+	<p>
+		If you are an American user, it’s suggested that you select
+		American English instead of British English. This will ensure that
+		dates will be formatted with the month before the day. 
+	</p>
+	<hr/>
+	<h2>{{ .T "Eurozone Languages" }}</h2>
+	{{ template "langgrid" true }}
+	<h2>{{ .T "Other Languages" }}</h2>
+	{{ template "langgrid" false }}
+</main>
+{{ end }}
+
+{{ define "langgrid" }}
+{{ $ez := . }}
+<form action="/language" method="POST">
+	<div class="lang-grid">
+		{{ range locales }}
+			{{ if eq $ez .Eurozone }}
+				<button
+					type="submit"
+					name="locale"
+					value={{ .Bcp }}
+					{{ if not .Enabled }}
+					disabled
+					{{ end }}
+				>
+					<span
+						lang={{ .Bcp }}
+						data-code={{ .Language | toUpper}}
+					>
+						{{ .Name }}
+					</span>
+				</button>
+			{{ end }}
+		{{ end }}
+	</div>
+</form>
+{{ end }}

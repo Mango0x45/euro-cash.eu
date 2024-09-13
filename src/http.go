@@ -1,0 +1,190 @@
+package src
+
+import (
+	"cmp"
+	"context"
+	"errors"
+	"fmt"
+	"log"
+	"math"
+	"net/http"
+	"os"
+	"path/filepath"
+	"slices"
+	"strconv"
+	"strings"
+
+	"git.thomasvoss.com/euro-cash.eu/src/email"
+	"git.thomasvoss.com/euro-cash.eu/src/mintage"
+)
+
+type middleware = func(http.Handler) http.Handler
+
+func Run(port int) {
+	fs := http.FileServer(http.Dir("static"))
+	final := http.HandlerFunc(finalHandler)
+	mux := http.NewServeMux()
+	mux.Handle("GET /designs/", fs)
+	mux.Handle("GET /favicon.ico", fs)
+	mux.Handle("GET /fonts/", fs)
+	mux.Handle("GET /style.css", fs)
+	mux.Handle("GET /coins/mintages", chain(
+		firstHandler,
+		i18nHandler,
+		mintageHandler,
+	)(final))
+	mux.Handle("GET /", chain(
+		firstHandler,
+		i18nHandler,
+	)(final))
+	mux.Handle("POST /language", http.HandlerFunc(setUserLanguage))
+
+	portStr := ":" + strconv.Itoa(port)
+	log.Println("Listening on", portStr)
+	log.Fatal(http.ListenAndServe(portStr, mux))
+}
+
+func chain(xs ...middleware) middleware {
+	return func(next http.Handler) http.Handler {
+		for i := len(xs) - 1; i >= 0; i-- {
+			next = xs[i](next)
+		}
+		return next
+	}
+}
+
+func firstHandler(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		ctx := context.WithValue(r.Context(), "td", &templateData{})
+		next.ServeHTTP(w, r.WithContext(ctx))
+	})
+}
+
+func finalHandler(w http.ResponseWriter, r *http.Request) {
+	/* Strip trailing slash from the URL */
+	path := r.URL.Path
+	if path != "/" && path[len(path)-1] == '/' {
+		path = path[:len(path)-1]
+	}
+
+	t, ok := templates[path]
+	if !ok {
+		w.WriteHeader(http.StatusNotFound)
+		t = notFoundTmpl
+	}
+
+	/* When a user clicks on the language button to be taken to the
+	   language selection page, we need to set a redirect cookie so
+	   that after selecting a language they are taken back to the
+	   original page they came from. */
+	if path == "/language" {
+		http.SetCookie(w, &http.Cookie{
+			Name:  "redirect",
+			Value: cmp.Or(r.Referer(), "/"),
+		})
+	}
+
+	data := r.Context().Value("td").(*templateData)
+	t.Execute(w, data)
+}
+
+func i18nHandler(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		var p, pZero Printer
+
+		if c, err := r.Cookie("locale"); err == nil {
+			p = printers[strings.ToLower(c.Value)]
+		}
+
+		td := r.Context().Value("td").(*templateData)
+		td.Printer = cmp.Or(p, defaultPrinter)
+
+		if p == pZero {
+			http.SetCookie(w, &http.Cookie{
+				Name:  "redirect",
+				Value: r.URL.Path,
+			})
+			templates["/language"].Execute(w, td)
+		} else {
+			next.ServeHTTP(w, r)
+		}
+	})
+}
+
+func mintageHandler(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		td := r.Context().Value("td").(*templateData)
+		td.Countries = sortedCountries(td.Printer)
+
+		td.Code = strings.ToLower(r.FormValue("code"))
+		if !slices.ContainsFunc(td.Countries, func(c country) bool {
+			return c.code == td.Code
+		}) {
+			td.Code = td.Countries[0].code
+		}
+
+		td.Type = strings.ToLower(r.FormValue("type"))
+		switch td.Type {
+		case "circ", "nifc", "proof":
+		default:
+			td.Type = "circ"
+		}
+
+		path := filepath.Join("data", "mintages", td.Code)
+		f, err := os.Open(path)
+		if err != nil {
+			throwError(http.StatusInternalServerError, err, w, r)
+			return
+		}
+		defer f.Close()
+
+		td.Mintages, err = mintage.Parse(f, path)
+		if err != nil {
+			throwError(http.StatusInternalServerError, err, w, r)
+			return
+		}
+
+		next.ServeHTTP(w, r)
+	})
+}
+
+func setUserLanguage(w http.ResponseWriter, r *http.Request) {
+	loc := r.FormValue("locale")
+	_, ok := printers[strings.ToLower(loc)]
+	if !ok {
+		w.WriteHeader(http.StatusUnprocessableEntity)
+		fmt.Fprintf(w, "Locale ‘%s’ is invalid or unsupported", loc)
+		return
+	}
+	http.SetCookie(w, &http.Cookie{
+		Name:   "locale",
+		Value:  loc,
+		MaxAge: math.MaxInt32,
+	})
+
+	if c, err := r.Cookie("redirect"); errors.Is(err, http.ErrNoCookie) {
+		http.Redirect(w, r, "/", http.StatusFound)
+	} else {
+		http.SetCookie(w, &http.Cookie{
+			Name:   "redirect",
+			MaxAge: -1,
+		})
+		http.Redirect(w, r, c.Value, http.StatusFound)
+	}
+}
+
+func throwError(status int, err error, w http.ResponseWriter, r *http.Request) {
+	w.WriteHeader(status)
+	go func() {
+		if err := email.ServerError(err); err != nil {
+			log.Print(err)
+		}
+	}()
+	errorTmpl.Execute(w, struct {
+		Code int
+		Msg  string
+	}{
+		Code: status,
+		Msg:  http.StatusText(status),
+	})
+}

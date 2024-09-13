@@ -1,12 +1,25 @@
-# Generating translations is rather slow; so don’t do that by default
-all:
-	TEMPL_EXPERIMENT=rawgo go generate ./template
+templates = $(shell find src/templates -name '*.tmpl')
+gofiles = $(shell find main.go src -name '*.go')
+
+exttmpl = $(wildcard cmd/exttmpl/*.go)
+mfmt = $(wildcard cmd/mfmt/*.go)
+
+all: euro-cash.eu exttmpl mfmt
+
+euro-cash.eu: $(templates) $(gofiles)
 	go build
 
-all-i18n:
-	TEMPL_EXPERIMENT=rawgo go generate ./template ./lib
+# Generating translations is rather slow; so don’t do that by default
+all-i18n: exttmpl
+	go generate ./src
 	find . -name out.gotext.json | mcp -b sed s/out/messages/
 	go build
+
+exttmpl: $(exttmpl)
+	go build ./cmd/exttmpl
+
+mfmt: $(mfmt)
+	go build ./cmd/mfmt
 
 watch:
 	ls euro-cash.eu | entr -r ./euro-cash.eu -no-email -port $${PORT:-8080}
@@ -16,3 +29,6 @@ watch:
 release: all-i18n
 	[ -n "$$GOOS" -a -n "$$GOARCH" ]
 	tar -cf euro-cash.eu-$$GOOS-$$GOARCH.tar.gz euro-cash.eu data/ static/
+
+clean:
+	rm -f euro-cash.eu

@@ -1,0 +1,285 @@
+{
+    "language": "nl",
+    "messages": [
+        {
+            "id": "Andorra",
+            "message": "Andorra",
+            "translation": "Andorra"
+        },
+        {
+            "id": "Austria",
+            "message": "Austria",
+            "translation": "Oostenrijk"
+        },
+        {
+            "id": "Belgium",
+            "message": "Belgium",
+            "translation": "België"
+        },
+        {
+            "id": "Cyprus",
+            "message": "Cyprus",
+            "translation": "Cyprus"
+        },
+        {
+            "id": "Germany",
+            "message": "Germany",
+            "translation": "Duitsland"
+        },
+        {
+            "id": "Estonia",
+            "message": "Estonia",
+            "translation": "Estland"
+        },
+        {
+            "id": "Spain",
+            "message": "Spain",
+            "translation": "Spanje"
+        },
+        {
+            "id": "Finland",
+            "message": "Finland",
+            "translation": "Finland"
+        },
+        {
+            "id": "France",
+            "message": "France",
+            "translation": "Frankrijk"
+        },
+        {
+            "id": "Greece",
+            "message": "Greece",
+            "translation": "Griekenland"
+        },
+        {
+            "id": "Croatia",
+            "message": "Croatia",
+            "translation": "Kroatië"
+        },
+        {
+            "id": "Ireland",
+            "message": "Ireland",
+            "translation": "Ierland"
+        },
+        {
+            "id": "Italy",
+            "message": "Italy",
+            "translation": "Italië"
+        },
+        {
+            "id": "Lithuania",
+            "message": "Lithuania",
+            "translation": "Litouwen"
+        },
+        {
+            "id": "Luxembourg",
+            "message": "Luxembourg",
+            "translation": "Luxemburg"
+        },
+        {
+            "id": "Latvia",
+            "message": "Latvia",
+            "translation": "Letland"
+        },
+        {
+            "id": "Monaco",
+            "message": "Monaco",
+            "translation": "Monaco"
+        },
+        {
+            "id": "Malta",
+            "message": "Malta",
+            "translation": "Malta"
+        },
+        {
+            "id": "Netherlands",
+            "message": "Netherlands",
+            "translation": "Nederland"
+        },
+        {
+            "id": "Portugal",
+            "message": "Portugal",
+            "translation": "Portugal"
+        },
+        {
+            "id": "Slovenia",
+            "message": "Slovenia",
+            "translation": "Slovenië"
+        },
+        {
+            "id": "Slovakia",
+            "message": "Slovakia",
+            "translation": "Slowakije"
+        },
+        {
+            "id": "San Marino",
+            "message": "San Marino",
+            "translation": "San Marino"
+        },
+        {
+            "id": "Vatican City",
+            "message": "Vatican City",
+            "translation": "Vaticaanstad"
+        },
+        {
+            "id": "Page Not Found",
+            "message": "Page Not Found",
+            "translation": ""
+        },
+        {
+            "id": "The page you were looking for does not exist. If you believe this is a mistake then don’t hesitate to contact @onetruemangoman on Discord or email us at %s.",
+            "message": "The page you were looking for does not exist. If you believe this is a mistake then don’t hesitate to contact @onetruemangoman on Discord or email us at %s.",
+            "translation": ""
+        },
+        {
+            "id": "\u003ca href=\"mailto:mail@euro-cash.eu\"\u003email@euro-cash.eu\u003c/a\u003e",
+            "message": "\u003ca href=\"mailto:mail@euro-cash.eu\"\u003email@euro-cash.eu\u003c/a\u003e",
+            "translation": ""
+        },
+        {
+            "id": "About Us",
+            "message": "About Us",
+            "translation": ""
+        },
+        {
+            "id": "Open Source",
+            "message": "Open Source",
+            "translation": ""
+        },
+        {
+            "id": "This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found %shere%s. This site is licensed under the BSD 0-Clause license giving you the full freedom to do whatever you would like with anyof the content on this site.",
+            "message": "This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found %shere%s. This site is licensed under the BSD 0-Clause license giving you the full freedom to do whatever you would like with anyof the content on this site.",
+            "translation": ""
+        },
+        {
+            "id": "\u003ca href=\"https://git.thomasvoss.com/www.euro-cash.eu\" target=\"_blank\"\u003e",
+            "message": "\u003ca href=\"https://git.thomasvoss.com/www.euro-cash.eu\" target=\"_blank\"\u003e",
+            "translation": ""
+        },
+        {
+            "id": "\u003c/a\u003e",
+            "message": "\u003c/a\u003e",
+            "translation": ""
+        },
+        {
+            "id": "Contact Us",
+            "message": "Contact Us",
+            "translation": ""
+        },
+        {
+            "id": "While we try to stay as up-to-date as possible and to fact check our information, it is always possible that we get something wrong, lack a translation, or are missing some piece of data you may have. In such a case don’t hesitate to contact us; we’ll try to get the site updated or fixed as soon as possible. You are always free to contribute via a git patch if you are more technically included, but if not you can always send an email to %s or contact ‘@onetruemangoman’ on Discord.",
+            "message": "While we try to stay as up-to-date as possible and to fact check our information, it is always possible that we get something wrong, lack a translation, or are missing some piece of data you may have. In such a case don’t hesitate to contact us; we’ll try to get the site updated or fixed as soon as possible. You are always free to contribute via a git patch if you are more technically included, but if not you can always send an email to %s or contact ‘@onetruemangoman’ on Discord.",
+            "translation": ""
+        },
+        {
+            "id": "Special Thanks",
+            "message": "Special Thanks",
+            "translation": ""
+        },
+        {
+            "id": "Development",
+            "message": "Development",
+            "translation": ""
+        },
+        {
+            "id": "Research",
+            "message": "Research",
+            "translation": ""
+        },
+        {
+            "id": "Translations",
+            "message": "Translations",
+            "translation": ""
+        },
+        {
+            "id": "British- \u0026 American English",
+            "message": "British- \u0026 American English",
+            "translation": ""
+        },
+        {
+            "id": "Icelandic",
+            "message": "Icelandic",
+            "translation": ""
+        },
+        {
+            "id": "Found a mistake or want to contribute missing information?",
+            "message": "Found a mistake or want to contribute missing information?",
+            "translation": ""
+        },
+        {
+            "id": "Feel free to contact us!",
+            "message": "Feel free to contact us!",
+            "translation": ""
+        },
+        {
+            "id": "The Euro Cash Compendium",
+            "message": "The Euro Cash Compendium",
+            "translation": ""
+        },
+        {
+            "id": "United in",
+            "message": "United in",
+            "translation": ""
+        },
+        {
+            "id": "diversity",
+            "message": "diversity",
+            "translation": ""
+        },
+        {
+            "id": "cash",
+            "message": "cash",
+            "translation": ""
+        },
+        {
+            "id": "Welcome to the Euro Cash Compendium. This sites aims to be a resource for you to discover everything there is to know about the coins and banknotes of the Euro, a currency that spans 26 countries and 350 million people. We also have dedicated sections of the site for collectors.",
+            "message": "Welcome to the Euro Cash Compendium. This sites aims to be a resource for you to discover everything there is to know about the coins and banknotes of the Euro, a currency that spans 26 countries and 350 million people. We also have dedicated sections of the site for collectors.",
+            "translation": ""
+        },
+        {
+            "id": "Home",
+            "message": "Home",
+            "translation": ""
+        },
+        {
+            "id": "News",
+            "message": "News",
+            "translation": ""
+        },
+        {
+            "id": "Coin Collecting",
+            "message": "Coin Collecting",
+            "translation": ""
+        },
+        {
+            "id": "Coins",
+            "message": "Coins",
+            "translation": ""
+        },
+        {
+            "id": "Banknotes",
+            "message": "Banknotes",
+            "translation": ""
+        },
+        {
+            "id": "Jargon",
+            "message": "Jargon",
+            "translation": ""
+        },
+        {
+            "id": "Discord",
+            "message": "Discord",
+            "translation": ""
+        },
+        {
+            "id": "About",
+            "message": "About",
+            "translation": ""
+        },
+        {
+            "id": "Language",
+            "message": "Language",
+            "translation": ""
+        }
+    ]
+}
