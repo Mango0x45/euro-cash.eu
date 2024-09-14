@@ -282,6 +282,13 @@
             "fuzzy": true
         },
         {
+            "id": "Euro Cash",
+            "message": "Euro Cash",
+            "translation": "Euro Cash",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
             "id": "Found a mistake or want to contribute missing information?",
             "message": "Found a mistake or want to contribute missing information?",
             "translation": "Found a mistake or want to contribute missing information?",
