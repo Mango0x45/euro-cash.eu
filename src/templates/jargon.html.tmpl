@@ -23,29 +23,6 @@
 	<hr/>
 	<h2>{{ .T "General Terms" }}</h2>
 	<dl>
-		{{ template "jargon/dt" (tuple "nifc" (.T "NIFC — Not Intended For Circulation")) }}
-		<dd>
-			<p>
-				{{ .T `
-					NIFC coins are coins minted without the intention of being put
-					into general circulation.  These coins are typically minted with
-					the purpose of being put into coincards or coin-sets to be sold
-					to collectors.  Occasionally they are also handed out to
-					collectors for face value at banks.
-				` }}
-			</p>
-			<p>
-				{{ .T `
-					While uncommon, NIFC coins are occasionally found in
-					circulation.  This can happen for a variety of reasons such as
-					someone depositing their coin collection (known as a
-					‘collection dump’), or a collector’s child spending their rare
-					coins on an ice cream.  Some coin mints have also been known to
-					put NIFC coins that have gone unsold for multiple years into
-					circulation.
-				` }}
-			</p>
-		</dd>
 		{{ template "jargon/dt" (tuple "au" (.T "AU — Almost Uncirculated")) }}
 		<dd>
 			{{ .T `
@@ -68,6 +45,29 @@
 				also see these coins referred to by the French term ‘fleur de
 				coin’.
 			` }}
+		</dd>
+		{{ template "jargon/dt" (tuple "nifc" (.T "NIFC — Not Intended For Circulation")) }}
+		<dd>
+			<p>
+				{{ .T `
+					NIFC coins are coins minted without the intention of being put
+					into general circulation.  These coins are typically minted with
+					the purpose of being put into coincards or coin-sets to be sold
+					to collectors.  Occasionally they are also handed out to
+					collectors for face value at banks.
+				` }}
+			</p>
+			<p>
+				{{ .T `
+					While uncommon, NIFC coins are occasionally found in
+					circulation.  This can happen for a variety of reasons such as
+					someone depositing their coin collection (known as a
+					‘collection dump’), or a collector’s child spending their rare
+					coins on an ice cream.  Some coin mints have also been known to
+					put NIFC coins that have gone unsold for multiple years into
+					circulation.
+				` }}
+			</p>
 		</dd>
 		{{ template "jargon/dt" (tuple "pmd" (.T "PMD — Post-Mint Damage")) }}
 		<dd>
