@@ -1,0 +1,143 @@
+{{ define "content" }}
+<header>
+	{{ template "navbar" . }}
+	<h1>{{ .T "Euro Coin Mintages" }}</h1>
+</header>
+<main>
+	<p>
+		{{ .T "Here you’ll be able to view all the known mintages for all coins. You’ll also be able to filter on country, denomination, etc. If you have any mintage data that’s missing from our site, feel free to contact us." }}
+	</p>
+	<hr />
+	{{ if eq .Code "nl" }}
+		<h2>{{ .T "Additional Notes" }}</h2>
+		<ul>
+			<li>
+				{{ .T "Most coins from the years 2003–2016 are listed as NIFC coins while other popular sources such as Numista claim they were minted for circulation. For more information on why others are wrong, %sclick here%s." `<a href="#TODO">` `</a>` }}
+			</li>
+			<li>
+				{{ .T "In 2003 Numista calculated a total of %d coins issued for coin sets per denomination. Our own calculations found only %d. Numista also forgot to include the many hundred thousand coins from the coin roll sets that were produced." 217503 177003 }}
+			</li>
+		</ul>
+	{{ end }}
+	<section>
+		<form>
+			<div class="grid">
+				<label for="country-dd">
+					{{ .T "Country" }}
+					<select id="country-dd" name="code">
+						{{ $code := .Code }}
+						{{ range .Countries }}
+							<option
+								value={{ .Code }}
+								{{ if eq .Code $code }}
+									selected
+								{{ end }}
+							>
+								{{ .Name }}
+							</option>
+						{{ end }}
+					</select>
+				</label>
+				<fieldset>
+					{{ template "coin-type-radio"
+					   (tuple .Type "circ" (.T "Circulation Coins")) }}
+					{{ template "coin-type-radio"
+					   (tuple .Type "nifc" (.T "NIFC / BU Sets")) }}
+					{{ template "coin-type-radio"
+					   (tuple .Type "proof" (.T "Proof Coins")) }}
+				</fieldset>
+			</div>
+			<button type="submit">{{ .T "Filter" }}</button>
+		</form>
+		<figure>
+			<figcaption>{{ .T "Standard Issue Coins" }}</figcaption>
+			<table class="mintage-table" role="grid">
+				<thead>
+					<th>{{ .T "Year" }}</th>
+					{{ with $p := .Printer }}
+						{{ range denoms }}
+							<th>{{ $p.Money . false }}</th>
+						{{ end }}
+					{{ end }}
+				</thead>
+				<tbody>
+					{{ $p := .Printer }}
+					{{ $type := .Type }}
+					{{ range .Mintages.Standard }}
+						<tr>
+							<th scope="col">
+								{{- .Year -}}
+								{{- if ne .Mintmark "" -}}
+									&nbsp;<sub><small>{{ .Mintmark }}</small></sub>
+								{{- end -}}
+							</th>
+							{{ range (index .Mintages (strToCtype $type)) }}
+								{{ if eq . -1 }}
+									<td>{{ $p.T "Unknown" }}</td>
+								{{ else if eq . 0 }}
+									<td>—</td>
+								{{ else }}
+									<td>{{ $p.N . }}</td>
+								{{ end }}
+								</td>
+							{{ end }}
+						</tr>
+					{{ end }}
+				</tbody>
+			</table>
+		</figure>
+		{{ if ne (len .Mintages.Commemorative) 0 }}
+			<figure>
+				<figcaption>{{ .T "Commemorative Coins" }}</figcaption>
+				<table class="mintage-table-cc" role="grid">
+					<thead>
+						<th>{{ .T "Year" }}</th>
+						<th>{{ .T "Commemorated Issue" }}</th>
+						<th>{{ .T "Mintage" }}</th>
+					</thead>
+					<tbody>
+						{{ $p := .Printer }}
+						{{ $type := .Type }}
+						{{ range .Mintages.Commemorative }}
+							<tr>
+								<th scope="col">
+									{{- .Year -}}
+									{{- if ne .Mintmark "" -}}
+										&nbsp;<sub><small>{{ .Mintmark }}</small></sub>
+									{{- end -}}
+								</th>
+								<!-- TODO: Translate commemorative names -->
+								<td>{{ .Name }}</td>
+								{{ with (index .Mintage (strToCtype $type)) }}
+									{{ if eq . -1 }}
+										<td>{{ $p.T "Unknown" }}</td>
+									{{ else if eq . 0 }}
+										<td>—</td>
+									{{ else }}
+										<td>{{ $p.N . }}</td>
+									{{ end }}
+								{{ end }}
+							</tr>
+						{{ end }}
+					</tbody>
+				</table>
+			</figure>
+		{{ end }}
+	</section>
+</main>
+{{ end }}
+
+{{ define "coin-type-radio" }}
+<label for=compact-{{ index . 1 }}>
+	<input
+		id=compact-{{ index . 1 }}
+		name="type"
+		type="radio"
+		value={{ index . 1 }}
+		{{ if eq (index . 0) (index . 1) }}
+			checked
+		{{ end }}
+	/>
+	{{ index . 2 }}
+</label>
+{{ end }}

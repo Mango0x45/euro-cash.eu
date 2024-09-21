@@ -24,12 +24,15 @@ var (
 		"/":         buildTemplate("index"),
 		"/about":    buildTemplate("about"),
 		"/coins":    buildTemplate("coins"),
+		"/coins/mintages": buildTemplate("coins-mintages"),
 		"/jargon":   buildTemplate("jargon"),
 		"/language": buildTemplate("language"),
 	}
 	funcmap = map[string]any{
-		"safe":    asHTML,
+		"denoms":  denoms,
 		"locales": locales,
+		"safe":    asHTML,
+		"strToCtype": strToCtype,
 		"toUpper": strings.ToUpper,
 		"tuple":   templateMakeTuple,
 	}
@@ -50,12 +53,30 @@ func asHTML(s string) template.HTML {
 	return template.HTML(s)
 }
 
+func denoms() [8]float64 {
+	return [8]float64{
+		0.01, 0.02, 0.05, 0.10,
+		0.20, 0.50, 1.00, 2.00,
+	}
+}
+
 func locales() []locale {
 	return Locales[:]
 }
 
 func templateMakeTuple(args ...any) []any {
 	return args
+}
+
+func strToCtype(s string) int {
+	switch s {
+	case "nifc":
+		return mintage.TypeNIFC
+	case "proof":
+		return mintage.TypeProof
+	default:
+		return mintage.TypeCirc
+	}
 }
 
 func (td templateData) T(fmt string, args ...any) string {

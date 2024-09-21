@@ -118,9 +118,9 @@ func mintageHandler(next http.Handler) http.Handler {
 
 		td.Code = strings.ToLower(r.FormValue("code"))
 		if !slices.ContainsFunc(td.Countries, func(c country) bool {
-			return c.code == td.Code
+			return c.Code == td.Code
 		}) {
-			td.Code = td.Countries[0].code
+			td.Code = td.Countries[0].Code
 		}
 
 		td.Type = strings.ToLower(r.FormValue("type"))

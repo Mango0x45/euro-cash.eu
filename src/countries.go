@@ -8,39 +8,39 @@ import (
 )
 
 type country struct {
-	code, name string
+	Code, Name string
 }
 
 func sortedCountries(p Printer) []country {
 	xs := []country{
-		{code: "ad", name: p.T("Andorra")},
-		{code: "at", name: p.T("Austria")},
-		{code: "be", name: p.T("Belgium")},
-		{code: "cy", name: p.T("Cyprus")},
-		{code: "de", name: p.T("Germany")},
-		{code: "ee", name: p.T("Estonia")},
-		{code: "es", name: p.T("Spain")},
-		{code: "fi", name: p.T("Finland")},
-		{code: "fr", name: p.T("France")},
-		{code: "gr", name: p.T("Greece")},
-		{code: "hr", name: p.T("Croatia")},
-		{code: "ie", name: p.T("Ireland")},
-		{code: "it", name: p.T("Italy")},
-		{code: "lt", name: p.T("Lithuania")},
-		{code: "lu", name: p.T("Luxembourg")},
-		{code: "lv", name: p.T("Latvia")},
-		{code: "mc", name: p.T("Monaco")},
-		{code: "mt", name: p.T("Malta")},
-		{code: "nl", name: p.T("Netherlands")},
-		{code: "pt", name: p.T("Portugal")},
-		{code: "si", name: p.T("Slovenia")},
-		{code: "sk", name: p.T("Slovakia")},
-		{code: "sm", name: p.T("San Marino")},
-		{code: "va", name: p.T("Vatican City")},
+		{Code: "ad", Name: p.T("Andorra")},
+		{Code: "at", Name: p.T("Austria")},
+		{Code: "be", Name: p.T("Belgium")},
+		{Code: "cy", Name: p.T("Cyprus")},
+		{Code: "de", Name: p.T("Germany")},
+		{Code: "ee", Name: p.T("Estonia")},
+		{Code: "es", Name: p.T("Spain")},
+		{Code: "fi", Name: p.T("Finland")},
+		{Code: "fr", Name: p.T("France")},
+		{Code: "gr", Name: p.T("Greece")},
+		{Code: "hr", Name: p.T("Croatia")},
+		{Code: "ie", Name: p.T("Ireland")},
+		{Code: "it", Name: p.T("Italy")},
+		{Code: "lt", Name: p.T("Lithuania")},
+		{Code: "lu", Name: p.T("Luxembourg")},
+		{Code: "lv", Name: p.T("Latvia")},
+		{Code: "mc", Name: p.T("Monaco")},
+		{Code: "mt", Name: p.T("Malta")},
+		{Code: "nl", Name: p.T("Netherlands")},
+		{Code: "pt", Name: p.T("Portugal")},
+		{Code: "si", Name: p.T("Slovenia")},
+		{Code: "sk", Name: p.T("Slovakia")},
+		{Code: "sm", Name: p.T("San Marino")},
+		{Code: "va", Name: p.T("Vatican City")},
 	}
 	c := collate.New(language.MustParse(p.Locale.Bcp))
 	slices.SortFunc(xs, func(x, y country) int {
-		return c.CompareString(x.name, y.name)
+		return c.CompareString(x.Name, y.Name)
 	})
 	return xs
 }
