@@ -31,4 +31,10 @@ release: all-i18n
 	tar -cf euro-cash.eu-$$GOOS-$$GOARCH.tar.gz euro-cash.eu data/ static/
 
 clean:
-	rm -f euro-cash.eu
+	find . -type f \( \
+		-name euro-cash.eu \
+		-or -name exttmpl \
+		-or -name mfmt \
+		-or -name '*.min.css' \
+		-or -name '*.tar.gz' \
+	\) -delete
