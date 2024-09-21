@@ -17,18 +17,20 @@ type templateData struct {
 
 var (
 	//go:embed templates/*.html.tmpl
-	templateFS embed.FS
+	templateFS   embed.FS
 	notFoundTmpl = buildTemplate("404")
 	errorTmpl    = buildTemplate("error")
 	templates    = map[string]*template.Template{
 		"/":         buildTemplate("index"),
 		"/about":    buildTemplate("about"),
+		"/jargon":   buildTemplate("jargon"),
 		"/language": buildTemplate("language"),
 	}
 	funcmap = map[string]any{
 		"safe":    asHTML,
 		"locales": locales,
 		"toUpper": strings.ToUpper,
+		"tuple":   templateMakeTuple,
 	}
 )
 
@@ -49,6 +51,10 @@ func asHTML(s string) template.HTML {
 
 func locales() []locale {
 	return Locales[:]
+}
+
+func templateMakeTuple(args ...any) []any {
+	return args
 }
 
 func (td templateData) T(fmt string, args ...any) string {
