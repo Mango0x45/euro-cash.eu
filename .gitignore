@@ -9,3 +9,7 @@ mfmt
 out.gotext.json
 *.gen.*
 *_templ.go
+
+# Build artifacts
+*.min.css
+*.tar.gz
