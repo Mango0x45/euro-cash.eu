@@ -1,0 +1,46 @@
+{{ define "content" }}
+<header>
+	{{ template "navbar" . }}
+	<h1>{{ .T "Euro Coins" }}</h1>
+</header>
+<main>
+	<p>
+		{{ .T "On this section of the site you can find everything there is to know about the coins of the Eurozone." }}
+	</p>
+	<hr />
+	<section>
+		<div class="grid">
+			<a class="no-deco" href="/coins/designs">
+				<article>
+					<header>
+						<h3>{{ .T "Designs" }}</h3>
+					</header>
+					<main>
+						{{ .T "View the 600+ different Euro-coin designs!" }}
+					</main>
+				</article>
+			</a>
+			<a class="no-deco" href="/coins/mintages">
+				<article>
+					<header>
+						<h3>{{ .T "Mintages" }}</h3>
+					</header>
+					<main>
+						{{ .T "View the mintage figures of all the Euro coins!" }}
+					</main>
+				</article>
+			</a>
+			<a class="no-deco" href="/coins/varieties">
+				<article>
+					<header>
+						<h3>{{ .T "Varieties" }}</h3>
+					</header>
+					<main>
+						{{ .T "View all the known Euro varieties!" }}
+					</main>
+				</article>
+			</a>
+		</div>
+	</section>
+</main>
+{{ end }}

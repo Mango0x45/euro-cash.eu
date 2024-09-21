@@ -23,6 +23,7 @@ var (
 	templates    = map[string]*template.Template{
 		"/":         buildTemplate("index"),
 		"/about":    buildTemplate("about"),
+		"/coins":    buildTemplate("coins"),
 		"/jargon":   buildTemplate("jargon"),
 		"/language": buildTemplate("language"),
 	}
