@@ -21,6 +21,8 @@
 		` }}
 	</p>
 	<hr/>
+	<!-- TODO: Sort these jargon entires in alphabetical order according to
+		   the users locale -->
 	<h2>{{ .T "General Terms" }}</h2>
 	<dl>
 		{{ template "jargon/dt" (tuple "au" (.T "AU — Almost Uncirculated")) }}
@@ -75,6 +77,15 @@
 				Post-mint damage is any damage that a coin has sustained outside
 				of the minting process, such as through being dropped on the
 				ground, hit against a table, etc.
+			` }}
+		</dd>
+		{{ template "jargon/dt" (tuple "relief" (.T "Relief")) }}
+		<dd>
+			{{ `
+				Relief is a term that is used to describe how 3-dimensional a
+				coin is.  Coins with a higher relief have designs that make
+				greater use of the 3rd dimension while coins with lower relief
+				have designs that appear more flat.
 			` }}
 		</dd>
 		{{ template "jargon/dt" (tuple "unc" (.T "UNC — Uncirculated")) }}

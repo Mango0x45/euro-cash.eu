@@ -44,13 +44,13 @@
 		` }}
 	</p>
 	<p>
-		<!-- TODO: Link to the relief description in the Jargon page -->
 		{{ .T `
 			The €1 and €2 coins featuring King Willem-Alexander were minted
-			with a much lower relief than most euro coins of the same
+			with a much lower %srelief%s than most euro coins of the same
 			denomination.  As a result it is not uncommon for these coins to
-			appear worn after little use in circulation.
-		` }}
+			appear worn after little use in circulation.`
+			`<a href="/jargon#relief">` `</a>` | safe
+		}}
 	</p>
 </main>
 {{ end }}
