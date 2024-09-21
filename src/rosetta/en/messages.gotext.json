@@ -303,6 +303,160 @@
             "fuzzy": true
         },
         {
+            "id": "Euro Coin Mintages",
+            "message": "Euro Coin Mintages",
+            "translation": "Euro Coin Mintages",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Here you’ll be able to view all the known mintages for all coins. You’ll also be able to filter on country, denomination, etc. If you have any mintage data that’s missing from our site, feel free to contact us.",
+            "message": "Here you’ll be able to view all the known mintages for all coins. You’ll also be able to filter on country, denomination, etc. If you have any mintage data that’s missing from our site, feel free to contact us.",
+            "translation": "Here you’ll be able to view all the known mintages for all coins. You’ll also be able to filter on country, denomination, etc. If you have any mintage data that’s missing from our site, feel free to contact us.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Additional Notes",
+            "message": "Additional Notes",
+            "translation": "Additional Notes",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Most coins from the years 2003–2016 are listed as NIFC coins while other popular sources such as Numista claim they were minted for circulation. For more information on why others are wrong, %sclick here%s.",
+            "message": "Most coins from the years 2003–2016 are listed as NIFC coins while other popular sources such as Numista claim they were minted for circulation. For more information on why others are wrong, %sclick here%s.",
+            "translation": "Most coins from the years 2003–2016 are listed as NIFC coins while other popular sources such as Numista claim they were minted for circulation. For more information on why others are wrong, %sclick here%s.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "\u003ca href=\"#TODO\"\u003e",
+            "message": "\u003ca href=\"#TODO\"\u003e",
+            "translation": "\u003ca href=\"#TODO\"\u003e",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "In 2003 Numista calculated a total of %d coins issued for coin sets per denomination. Our own calculations found only %d. Numista also forgot to include the many hundred thousand coins from the coin roll sets that were produced.",
+            "message": "In 2003 Numista calculated a total of %d coins issued for coin sets per denomination. Our own calculations found only %d. Numista also forgot to include the many hundred thousand coins from the coin roll sets that were produced.",
+            "translation": "In 2003 Numista calculated a total of %d coins issued for coin sets per denomination. Our own calculations found only %d. Numista also forgot to include the many hundred thousand coins from the coin roll sets that were produced.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Country",
+            "message": "Country",
+            "translation": "Country",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Filter",
+            "message": "Filter",
+            "translation": "Filter",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Standard Issue Coins",
+            "message": "Standard Issue Coins",
+            "translation": "Standard Issue Coins",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Year",
+            "message": "Year",
+            "translation": "Year",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Unknown",
+            "message": "Unknown",
+            "translation": "Unknown",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Commemorative Coins",
+            "message": "Commemorative Coins",
+            "translation": "Commemorative Coins",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Commemorated Issue",
+            "message": "Commemorated Issue",
+            "translation": "Commemorated Issue",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Mintage",
+            "message": "Mintage",
+            "translation": "Mintage",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Euro Coins",
+            "message": "Euro Coins",
+            "translation": "Euro Coins",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "On this section of the site you can find everything there is to know about the coins of the Eurozone.",
+            "message": "On this section of the site you can find everything there is to know about the coins of the Eurozone.",
+            "translation": "On this section of the site you can find everything there is to know about the coins of the Eurozone.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Designs",
+            "message": "Designs",
+            "translation": "Designs",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "View the 600+ different Euro-coin designs!",
+            "message": "View the 600+ different Euro-coin designs!",
+            "translation": "View the 600+ different Euro-coin designs!",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Mintages",
+            "message": "Mintages",
+            "translation": "Mintages",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "View the mintage figures of all the Euro coins!",
+            "message": "View the mintage figures of all the Euro coins!",
+            "translation": "View the mintage figures of all the Euro coins!",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Varieties",
+            "message": "Varieties",
+            "translation": "Varieties",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "View all the known Euro varieties!",
+            "message": "View all the known Euro varieties!",
+            "translation": "View all the known Euro varieties!",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
             "id": "If you’re seeing this page, it means that something went wrong on our end that we need to fix. Our team has been notified of this error, and we apologise for the inconvenience.",
             "message": "If you’re seeing this page, it means that something went wrong on our end that we need to fix. Our team has been notified of this error, and we apologise for the inconvenience.",
             "translation": "If you’re seeing this page, it means that something went wrong on our end that we need to fix. Our team has been notified of this error, and we apologise for the inconvenience.",
@@ -348,6 +502,90 @@
             "id": "Welcome to the Euro Cash Compendium. This sites aims to be a resource for you to discover everything there is to know about the coins and banknotes of the Euro, a currency that spans 26 countries and 350 million people. We also have dedicated sections of the site for collectors.",
             "message": "Welcome to the Euro Cash Compendium. This sites aims to be a resource for you to discover everything there is to know about the coins and banknotes of the Euro, a currency that spans 26 countries and 350 million people. We also have dedicated sections of the site for collectors.",
             "translation": "Welcome to the Euro Cash Compendium. This sites aims to be a resource for you to discover everything there is to know about the coins and banknotes of the Euro, a currency that spans 26 countries and 350 million people. We also have dedicated sections of the site for collectors.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Euro Cash Jargon",
+            "message": "Euro Cash Jargon",
+            "translation": "Euro Cash Jargon",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Both on this website and in other euro-cash-related forums there are many terms you will come across that you may not immediately understand. This page will hopefully get you up to speed with the most important and frequently-used terminology.",
+            "message": "Both on this website and in other euro-cash-related forums there are many terms you will come across that you may not immediately understand. This page will hopefully get you up to speed with the most important and frequently-used terminology.",
+            "translation": "Both on this website and in other euro-cash-related forums there are many terms you will come across that you may not immediately understand. This page will hopefully get you up to speed with the most important and frequently-used terminology.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "All terms defined below can be used as clickable links which highlight the selected term. It is recommended to use these links when sharing this page with others, so that the relevant terms are highlighted.",
+            "message": "All terms defined below can be used as clickable links which highlight the selected term. It is recommended to use these links when sharing this page with others, so that the relevant terms are highlighted.",
+            "translation": "All terms defined below can be used as clickable links which highlight the selected term. It is recommended to use these links when sharing this page with others, so that the relevant terms are highlighted.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "General Terms",
+            "message": "General Terms",
+            "translation": "General Terms",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "NIFC coins are coins minted without the intention of being put into general circulation. These coins are typically minted with the purpose of being put into coincards or coin-sets to be sold to collectors.  Occasionally they are also handed out to collectors for face value at banks.",
+            "message": "NIFC coins are coins minted without the intention of being put into general circulation. These coins are typically minted with the purpose of being put into coincards or coin-sets to be sold to collectors.  Occasionally they are also handed out to collectors for face value at banks.",
+            "translation": "NIFC coins are coins minted without the intention of being put into general circulation. These coins are typically minted with the purpose of being put into coincards or coin-sets to be sold to collectors.  Occasionally they are also handed out to collectors for face value at banks.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "While uncommon, NIFC coins are occasionally found in circulation. This can happen for a variety of reasons such as someone depositing their coin collection (known as a ‘collection dump’), or a collector’s child spending their rare coins on an ice cream. Some coin mints have also been known to put NIFC coins that have gone unsold for multiple years into circulation.",
+            "message": "While uncommon, NIFC coins are occasionally found in circulation. This can happen for a variety of reasons such as someone depositing their coin collection (known as a ‘collection dump’), or a collector’s child spending their rare coins on an ice cream. Some coin mints have also been known to put NIFC coins that have gone unsold for multiple years into circulation.",
+            "translation": "While uncommon, NIFC coins are occasionally found in circulation. This can happen for a variety of reasons such as someone depositing their coin collection (known as a ‘collection dump’), or a collector’s child spending their rare coins on an ice cream. Some coin mints have also been known to put NIFC coins that have gone unsold for multiple years into circulation.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "AU coins are coins that are in extremely good condition as a result of limited use in circulation. Unlike the term ‘UNC’, this term is a description of the coins quality, not its usage. AU coins often appear to retain most of their original luster as well as possessing little-to-no scratches or other forms of post-mint damage (PMD).",
+            "message": "AU coins are coins that are in extremely good condition as a result of limited use in circulation. Unlike the term ‘UNC’, this term is a description of the coins quality, not its usage. AU coins often appear to retain most of their original luster as well as possessing little-to-no scratches or other forms of post-mint damage (PMD).",
+            "translation": "AU coins are coins that are in extremely good condition as a result of limited use in circulation. Unlike the term ‘UNC’, this term is a description of the coins quality, not its usage. AU coins often appear to retain most of their original luster as well as possessing little-to-no scratches or other forms of post-mint damage (PMD).",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "BU is a general term to refer to coins from coincards and -sets. These are different from UNC coins in that they are typically handled with more care during the minting process and are struck with higher-quality dies than the coins minted for coin rolls resulting in a higher-quality end product. You may also see these coins referred to by the French term ‘fleur de coin’.",
+            "message": "BU is a general term to refer to coins from coincards and -sets. These are different from UNC coins in that they are typically handled with more care during the minting process and are struck with higher-quality dies than the coins minted for coin rolls resulting in a higher-quality end product. You may also see these coins referred to by the French term ‘fleur de coin’.",
+            "translation": "BU is a general term to refer to coins from coincards and -sets. These are different from UNC coins in that they are typically handled with more care during the minting process and are struck with higher-quality dies than the coins minted for coin rolls resulting in a higher-quality end product. You may also see these coins referred to by the French term ‘fleur de coin’.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Post-mint damage is any damage that a coin has sustained outside of the minting process, such as through being dropped on the ground, hit against a table, etc.",
+            "message": "Post-mint damage is any damage that a coin has sustained outside of the minting process, such as through being dropped on the ground, hit against a table, etc.",
+            "translation": "Post-mint damage is any damage that a coin has sustained outside of the minting process, such as through being dropped on the ground, hit against a table, etc.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Uncirculated coins are coins that have never been used in a monetary exchange. The term ‘UNC’ is often mistakenly used to refer to coins in very good condition, but this is incorrect. A coin in poor condition that has never been circulated is still considered an ‘UNC’ coin.",
+            "message": "Uncirculated coins are coins that have never been used in a monetary exchange. The term ‘UNC’ is often mistakenly used to refer to coins in very good condition, but this is incorrect. A coin in poor condition that has never been circulated is still considered an ‘UNC’ coin.",
+            "translation": "Uncirculated coins are coins that have never been used in a monetary exchange. The term ‘UNC’ is often mistakenly used to refer to coins in very good condition, but this is incorrect. A coin in poor condition that has never been circulated is still considered an ‘UNC’ coin.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Collector-Specific Terms",
+            "message": "Collector-Specific Terms",
+            "translation": "Collector-Specific Terms",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Coin roll hunting is a general term for the activity of searching through coin rolls and -bags to find coins for a collection. Coin rolls and bags are often obtained at banks or coin roll machines.",
+            "message": "Coin roll hunting is a general term for the activity of searching through coin rolls and -bags to find coins for a collection. Coin rolls and bags are often obtained at banks or coin roll machines.",
+            "translation": "Coin roll hunting is a general term for the activity of searching through coin rolls and -bags to find coins for a collection. Coin rolls and bags are often obtained at banks or coin roll machines.",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
