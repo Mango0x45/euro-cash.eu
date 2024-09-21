@@ -123,8 +123,8 @@ func process(tmplMsgs *[]pipeline.Message, node parse.Node) {
 				if sn, ok := arg.(*parse.StringNode); ok {
 					txt := collapse(sn.Text)
 					*tmplMsgs = append(*tmplMsgs, pipeline.Message{
-						ID:  pipeline.IDList{txt},
-						Key: txt,
+						ID:      pipeline.IDList{txt},
+						Key:     txt,
 						Message: pipeline.Text{Msg: txt},
 					})
 				}
