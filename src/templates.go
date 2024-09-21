@@ -24,6 +24,7 @@ var (
 		"/":               buildTemplate("index"),
 		"/about":          buildTemplate("about"),
 		"/coins":          buildTemplate("coins"),
+		"/coins/designs":  buildTemplate("coins-designs"),
 		"/coins/mintages": buildTemplate("coins-mintages"),
 		"/jargon":         buildTemplate("jargon"),
 		"/language":       buildTemplate("language"),

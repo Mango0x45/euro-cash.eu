@@ -31,7 +31,13 @@ func Run(port int) {
 	mux.Handle("GET /coins/mintages", chain(
 		firstHandler,
 		i18nHandler,
+		countryHandler,
 		mintageHandler,
+	)(final))
+	mux.Handle("GET /coins/designs", chain(
+		firstHandler,
+		i18nHandler,
+		countryHandler,
 	)(final))
 	mux.Handle("GET /", chain(
 		firstHandler,
@@ -111,11 +117,17 @@ func i18nHandler(next http.Handler) http.Handler {
 	})
 }
 
-func mintageHandler(next http.Handler) http.Handler {
+func countryHandler(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		td := r.Context().Value("td").(*templateData)
 		td.Countries = sortedCountries(td.Printer)
+		next.ServeHTTP(w, r)
+	})
+}
 
+func mintageHandler(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		td := r.Context().Value("td").(*templateData)
 		td.Code = strings.ToLower(r.FormValue("code"))
 		if !slices.ContainsFunc(td.Countries, func(c country) bool {
 			return c.Code == td.Code

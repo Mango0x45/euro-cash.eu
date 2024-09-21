@@ -303,6 +303,27 @@
             "fuzzy": true
         },
         {
+            "id": "Euro Coin Designs",
+            "message": "Euro Coin Designs",
+            "translation": "Euro Coin Designs",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Here you’ll be able to view all the coin designs for each country in the Eurozone. This section of the site doesn’t include minor varieties such as different mintmarks or errors; those are on the %svarieties%s page.",
+            "message": "Here you’ll be able to view all the coin designs for each country in the Eurozone. This section of the site doesn’t include minor varieties such as different mintmarks or errors; those are on the %svarieties%s page.",
+            "translation": "Here you’ll be able to view all the coin designs for each country in the Eurozone. This section of the site doesn’t include minor varieties such as different mintmarks or errors; those are on the %svarieties%s page.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "\u003ca href=\"/coins/varieties\"\u003e",
+            "message": "\u003ca href=\"/coins/varieties\"\u003e",
+            "translation": "\u003ca href=\"/coins/varieties\"\u003e",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
             "id": "Euro Coin Mintages",
             "message": "Euro Coin Mintages",
             "translation": "Euro Coin Mintages",
