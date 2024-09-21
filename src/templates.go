@@ -21,13 +21,14 @@ var (
 	notFoundTmpl = buildTemplate("404")
 	errorTmpl    = buildTemplate("error")
 	templates    = map[string]*template.Template{
-		"/":               buildTemplate("index"),
-		"/about":          buildTemplate("about"),
-		"/coins":          buildTemplate("coins"),
-		"/coins/designs":  buildTemplate("coins-designs"),
-		"/coins/mintages": buildTemplate("coins-mintages"),
-		"/jargon":         buildTemplate("jargon"),
-		"/language":       buildTemplate("language"),
+		"/":                 buildTemplate("index"),
+		"/about":            buildTemplate("about"),
+		"/coins":            buildTemplate("coins"),
+		"/coins/designs":    buildTemplate("coins-designs"),
+		"/coins/designs/nl": buildTemplate("coins-designs-nl"),
+		"/coins/mintages":   buildTemplate("coins-mintages"),
+		"/jargon":           buildTemplate("jargon"),
+		"/language":         buildTemplate("language"),
 	}
 	funcmap = map[string]any{
 		"denoms":     denoms,
