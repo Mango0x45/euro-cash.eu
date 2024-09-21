@@ -5,7 +5,12 @@
 </header>
 <main>
 	<p>
-		{{ .T "The page you were looking for does not exist. If you believe this is a mistake then don’t hesitate to contact @onetruemangoman on Discord or email us at %s." `<a href="mailto:mail@euro-cash.eu">mail@euro-cash.eu</a>` | safe }}
+		{{ .T `
+			The page you were looking for does not exist.  If you believe this
+			is a mistake then don’t hesitate to contact @onetruemangoman on
+			Discord or email us at %s.`
+			`<a href="mailto:mail@euro-cash.eu">mail@euro-cash.eu</a>` | safe
+		}}
 	</p>
 </main>
 {{ end }}

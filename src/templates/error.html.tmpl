@@ -5,10 +5,19 @@
 </header>
 <main>
 	<p>
-		{{ .T "If you’re seeing this page, it means that something went wrong on our end that we need to fix. Our team has been notified of this error, and we apologise for the inconvenience." }}
+		{{ .T `
+			If you’re seeing this page, it means that something went wrong on
+			our end that we need to fix.  Our team has been notified of this
+			error, and we apologise for the inconvenience.
+		` }}
 	</p>
 	<p>
-		{{ .T "If this issue persists, don’t hesitate to contact @onetruemangoman on Discord or to email us at %s." `<a href="https://git.thomasvoss.com/www.euro-cash.eu" target="_blank">` | safe }}
+		{{ .T `
+			If this issue persists, don’t hesitate to contact @onetruemangoman
+			on Discord or to email us at %s.`
+			`<a href="https://git.thomasvoss.com/www.euro-cash.eu"
+					target="_blank">` | safe
+		}}
 	</p>
 </main>
 {{ end }}

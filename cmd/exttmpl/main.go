@@ -5,6 +5,7 @@ import (
 	"os"
 	"path/filepath"
 	"slices"
+	"strings"
 	"text/template/parse"
 
 	"golang.org/x/text/language"
@@ -120,12 +121,11 @@ func process(tmplMsgs *[]pipeline.Message, node parse.Node) {
 					continue
 				}
 				if sn, ok := arg.(*parse.StringNode); ok {
+					txt := collapse(sn.Text)
 					*tmplMsgs = append(*tmplMsgs, pipeline.Message{
-						ID:  pipeline.IDList{sn.Text},
-						Key: sn.Text,
-						Message: pipeline.Text{
-							Msg: sn.Text,
-						},
+						ID:  pipeline.IDList{txt},
+						Key: txt,
+						Message: pipeline.Text{Msg: txt},
 					})
 				}
 			}
@@ -175,6 +175,29 @@ func languages() []language.Tag {
 		tags[i] = language.MustParse(e.Name())
 	}
 	return tags
+}
+
+func collapse(s string) string {
+	var (
+		sb   strings.Builder
+		prev bool
+	)
+	const spc = " \t\n"
+
+	for _, ch := range strings.Trim(s, spc) {
+		if strings.ContainsRune(spc, ch) {
+			if prev {
+				continue
+			}
+			ch = ' '
+			prev = true
+		} else {
+			prev = false
+		}
+		sb.WriteRune(ch)
+	}
+
+	return sb.String()
 }
 
 func try(err error) {
