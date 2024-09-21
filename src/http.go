@@ -27,7 +27,7 @@ func Run(port int) {
 	mux.Handle("GET /designs/", fs)
 	mux.Handle("GET /favicon.ico", fs)
 	mux.Handle("GET /fonts/", fs)
-	mux.Handle("GET /style.css", fs)
+	mux.Handle("GET /style.min.css", fs)
 	mux.Handle("GET /coins/mintages", chain(
 		firstHandler,
 		i18nHandler,

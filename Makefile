@@ -1,15 +1,16 @@
-templates = $(shell find src/templates -name '*.tmpl')
-gofiles = $(shell find main.go src -name '*.go')
+cssfiles  := $(shell find static -name '*.css' -not -name '*.min.css')
+cssfiles  := $(cssfiles:.css=.min.css)
+gofiles   := $(shell find main.go src -name '*.go')
+templates := $(shell find src/templates -name '*.tmpl')
 
-exttmpl = $(wildcard cmd/exttmpl/*.go)
-mfmt = $(wildcard cmd/mfmt/*.go)
+exttmpl := $(wildcard cmd/exttmpl/*.go)
+mfmt    := $(wildcard cmd/mfmt/*.go)
 
 all: euro-cash.eu exttmpl mfmt
 
-euro-cash.eu: $(templates) $(gofiles)
+euro-cash.eu: $(cssfiles) $(templates) $(gofiles)
 	go build
 
-# Generating translations is rather slow; so don’t do that by default
 all-i18n: exttmpl
 	go generate ./src
 	find . -name out.gotext.json | mcp -b sed s/out/messages/
@@ -21,14 +22,17 @@ exttmpl: $(exttmpl)
 mfmt: $(mfmt)
 	go build ./cmd/mfmt
 
+%.min.css: %.css
+	lightningcss -m $< -o $@
+
 watch:
 	ls euro-cash.eu | entr -r ./euro-cash.eu -no-email -port $${PORT:-8080}
 
-# Build a release tarball for easy deployment
-# TODO: Minify CSS
 release: all-i18n
 	[ -n "$$GOOS" -a -n "$$GOARCH" ]
-	tar -cf euro-cash.eu-$$GOOS-$$GOARCH.tar.gz euro-cash.eu data/ static/
+	find data static -type f \
+		\( -not -name '*.css' -or -name '*.min.css' \) \
+		-exec tar -cf euro-cash.eu-$$GOOS-$$GOARCH.tar.gz euro-cash.eu {} +
 
 clean:
 	find . -type f \( \
