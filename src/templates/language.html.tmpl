@@ -31,12 +31,12 @@
 					name="locale"
 					value={{ .Bcp }}
 					{{ if not .Enabled }}
-					disabled
+						disabled
 					{{ end }}
 				>
 					<span
 						lang={{ .Bcp }}
-						data-code={{ .Language | toUpper}}
+						data-code={{ .Language | toUpper }}
 					>
 						{{ .Name }}
 					</span>
