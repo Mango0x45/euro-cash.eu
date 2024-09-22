@@ -7,14 +7,6 @@ import (
 	"git.thomasvoss.com/euro-cash.eu/src/email"
 )
 
-// components = map[string]templ.Component{
-// 	"/coins":            template.Coins(),
-// 	"/coins/designs":    template.CoinsDesigns(),
-// 	"/coins/designs/nl": template.CoinsDesignsNl(),
-// 	"/coins/mintages":   template.CoinsMintages(),
-// 	"/jargon":           template.Jargon(),
-// }
-
 func main() {
 	port := flag.Int("port", 8080, "port number")
 	flag.BoolVar(&email.Config.Disabled, "no-email", false,
