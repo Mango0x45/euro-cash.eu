@@ -3,6 +3,8 @@ package src
 import (
 	"embed"
 	"html/template"
+	"log"
+	"os"
 	"strings"
 
 	"git.thomasvoss.com/euro-cash.eu/src/mintage"
@@ -18,18 +20,9 @@ type templateData struct {
 var (
 	//go:embed templates/*.html.tmpl
 	templateFS   embed.FS
-	notFoundTmpl = buildTemplate("404")
-	errorTmpl    = buildTemplate("error")
-	templates    = map[string]*template.Template{
-		"/":                 buildTemplate("index"),
-		"/about":            buildTemplate("about"),
-		"/coins":            buildTemplate("coins"),
-		"/coins/designs":    buildTemplate("coins-designs"),
-		"/coins/designs/nl": buildTemplate("coins-designs-nl"),
-		"/coins/mintages":   buildTemplate("coins-mintages"),
-		"/jargon":           buildTemplate("jargon"),
-		"/language":         buildTemplate("language"),
-	}
+	notFoundTmpl = buildTemplate("-404")
+	errorTmpl    = buildTemplate("-error")
+	templates map[string]*template.Template
 	funcmap = map[string]any{
 		"denoms":     denoms,
 		"locales":    locales,
@@ -40,15 +33,35 @@ var (
 	}
 )
 
-func buildTemplate(names ...string) *template.Template {
-	names = append([]string{"base", "navbar"}, names...)
+func init() {
+	ents, err := os.ReadDir("src/templates")
+	if err != nil {
+		log.Fatalln(err)
+	}
+	templates = make(map[string]*template.Template, len(ents))
+	for _, e := range ents {
+		path := "/"
+		name, _ := strings.CutSuffix(e.Name(), ".html.tmpl")
+		switch {
+		case name[0] == '-':
+			continue
+		case name == "index":
+		default:
+			path += strings.ReplaceAll(name, "-", "/")
+		}
+		templates[path] = buildTemplate(name)
+	}
+}
+
+func buildTemplate(name string) *template.Template {
+	names := [...]string{"-base", "-navbar", name}
 	for i, s := range names {
 		names[i] = "templates/" + s + ".html.tmpl"
 	}
 	return template.Must(template.
-		New("base.html.tmpl").
+		New("-base.html.tmpl").
 		Funcs(funcmap).
-		ParseFS(templateFS, names...))
+		ParseFS(templateFS, names[:]...))
 }
 
 func asHTML(s string) template.HTML {
