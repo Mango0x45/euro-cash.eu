@@ -1,0 +1,59 @@
+{{ define "content" }}
+<header>
+	{{ template "navbar" . }}
+  <h1>{{ .T "Austrian Euro Coin Designs" }}</h1>
+</header>
+<main>
+	<p>
+		{{ .T `
+			The Austrian euro coins can be grouped into three different themes.
+			The bronze coins feature Austrian flowers, the gold coins feature
+			Austrian architecture, and the bimetalic coins feature famous
+			Austrian people.  All coins also feature an Austrian flag as well
+			as the coins denomination.  These coins together with the %sGreek
+			euro coins%s are the only coins that feature the denomination on both
+			the common- and national-sides of the coin.`
+			`<a href="gr">` `</a>` | safe
+		}}
+	</p>
+	<div class="design-container">
+		<img alt="Austrian 1 euro cent coin" src="/designs/at-001.avif">
+		<img alt="Austrian 2 euro cent coin" src="/designs/at-002.avif">
+		<img alt="Austrian 5 euro cent coin" src="/designs/at-005.avif">
+	</div>
+	<p>
+		{{ .T `
+			The bronze coins feature the Alpine gentian, -edelweiss, and
+			-primrose respectively, and were chosen to symbolize the role that
+			Austria played in the development of EU environmental policy.
+		` }}
+	</p>
+	<div class="design-container">
+		<img alt="Austrian 10 euro cent coin" src="/designs/at-010.avif">
+		<img alt="Austrian 20 euro cent coin" src="/designs/at-020.avif">
+		<img alt="Austrian 50 euro cent coin" src="/designs/at-050.avif">
+	</div>
+	<p>
+		{{ .T `
+			The €0.10 coin features St. Stephen’s Cathedral.  It symbolises the
+			Viennese Gothic architectural style dating to around the year 1160.
+			The €0.20 coin features Belvedere Palace.  This is an example of
+			Baroque architecture and symbolises the national freedom and
+			sovereignty of Austria.  The final gold coin — the €0.50 coin —
+			features the Secession Building: an exhibition hall in the Art
+			Nouveau style.
+		` }}
+	</p>
+	<div class="design-container">
+		<img alt="Austrian 1 euro coin" src="/designs/at-100.avif">
+		<img alt="Austrian 2 euro coin" src="/designs/at-200.avif">
+	</div>
+	<p>
+		{{ .T `
+			The two bimetallic coins feature the busts of the musical composer
+			Wolfgang Amadeus Mozarts on the €1 coin, and the Austrian pacifist
+			and Nobel Peace Prize winner Bertha von Suttner.
+		` }}
+	</p>
+</main>
+{{ end }}
