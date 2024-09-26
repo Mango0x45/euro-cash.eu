@@ -222,7 +222,7 @@ func (p Printer) Date(d time.Time) string {
 }
 
 /* TODO: Try to use a decimal type here */
-func (p Printer) Money(val float64, round bool) string {
+func (p Printer) M(val float64, round bool) string {
 	var valstr string
 
 	/* Hack to avoid gotext writing these two ‘translations’ into the
