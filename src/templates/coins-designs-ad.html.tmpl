@@ -1,0 +1,91 @@
+{{ define "content" }}
+<header>
+	{{ template "navbar" . }}
+	<h1>{{ .T "Andorran Euro Coin Designs" }}</h1>
+</header>
+<main>
+	<div class="design-container">
+	<img alt="Andorran 1 euro cent coin"  src="/designs/ad-001.avif"/>
+	<img alt="Andorran 50 euro cent coin" src="/designs/ad-050.avif"/>
+	</div>
+	<div class="design-container">
+	<img alt="Andorran 1 euro coin" src="/designs/ad-100.avif"/>
+	<img alt="Andorran 2 euro coin" src="/designs/ad-200.avif"/>
+	</div>
+	<p>
+		{{ .T `
+			On March of 2013 Andorra held a public design competition for all
+			denominations except for the €2 denomination which the government
+			pre-decided would bear the coat of arms of Andorra.  Each set of
+			denominations had a theme that participants had to center their
+			designs around.  These themes were:
+		` }}
+	</p>
+	<dl>
+	<dt>{{ .T "%s, %s, and %s"
+			(.Printer.M 0.01 false)
+			(.Printer.M 0.02 false)
+			(.Printer.M 0.05 false) }}</dt>
+	<dd>{{ .T "Andorran landscapes, nature, fauna, and flora" }}</dd>
+	<dt>{{ .T "%s, %s, and %s"
+			(.Printer.M 0.10 false)
+			(.Printer.M 0.20 false)
+			(.Printer.M 0.50 false) }}</dt>
+	<dd>{{ .T "Andorra’s Romanesque art" }}</dd>
+	<dt>{{ .Printer.M 1.00 false }}</dt>
+	<dd>{{ .T "Casa de la Vall" }}</dd>
+	</dl>
+	<p>
+		{{ .T `
+			The results of the design contest with a few modifications are what
+			became the coins that entered circulation in 2014.  While each set
+			of denomations has its own design, all four designs promenantly
+			feature the country name ‘ANDORRA’ along the outer portion of the
+			design with the year of issue written underneath.
+		` }}
+	</p>
+	<p>
+		{{ .T `
+			The Andorran 1-, 2-, and 5 euro cent coins all feature the same
+			design of a Pyrenean chamois in the center of the coin with a
+			golden eagle flying above.  Both animals are native to Andorra as
+			well as the surrounding regions of France and Spain.
+		` }}
+	</p>
+	<p>
+		<!-- TODO: Can we find a photo of the rejected design with a source? -->
+		{{ .T `
+			The Andorran golden cents feature the Romanesque church of Santa
+			Coloma.  The church is the oldest in Andorra, dating back to the
+			9th century and is a UNESCO World Heratige site.  Originally these
+			coins were planned to depict an image of Christ, but that plan
+			failed to go through after objections from the European Commission
+			on grounds of religious neutrality on August 2013.
+		` }}
+	</p>
+	<p>
+		{{ .T `
+			The 1 Euro coin features the Case de la Vall: the former
+			headquarters of the General Council of Andorra.  It was constructed
+			in 1580 as a manor and tower defense by the Busquets family.
+		` }}
+	</p>
+	<p>
+		{{ .T `
+			Finally, the 2 Euro coin features the coat of arms of Andorra.  The
+			Andorran coat of arms is a grid of 4 other coats of arms which from
+			top-to-bottom, left-to-right are:
+		` }}
+		<ul>
+			<li>The arms of the Bishop of Urgell</li>
+			<li>The arms of the Count of Foix</li>
+			<li>The arms of Catalonia</li>
+			<li>The arms of the Viscounts of Béarn</li>
+		</ul>
+		{{ .T `
+			The bottom of the coat of arms has the motto ‘VIRTVS VNITA FORTIOR’
+			(‘UNITED VIRTUE IS STRONGER’).
+		` }}
+	</p>
+</main>
+{{ end }}
