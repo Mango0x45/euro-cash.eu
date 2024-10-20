@@ -30,15 +30,16 @@ watch:
 
 release: all-i18n
 	[ -n "$$GOOS" -a -n "$$GOARCH" ]
-	find data static -type f \
-		\( -not -name '*.css' -or -name '*.min.css' \) \
-		-exec tar -cf euro-cash.eu-$$GOOS-$$GOARCH.tar.gz euro-cash.eu {} +
+	find data static -type f \(                                                 \
+		-not -name '*.css'                                                      \
+		-or -name '*.min.css'                                                   \
+	\) -exec tar -cf euro-cash.eu-$$GOOS-$$GOARCH.tar.gz euro-cash.eu {} +
 
 clean:
-	find . -type f \( \
-		-name euro-cash.eu \
-		-or -name exttmpl \
-		-or -name mfmt \
-		-or -name '*.min.css' \
-		-or -name '*.tar.gz' \
+	find . -type f \(                                                           \
+		-name euro-cash.eu                                                      \
+		-or -name exttmpl                                                       \
+		-or -name mfmt                                                          \
+		-or -name '*.min.css'                                                   \
+		-or -name '*.tar.gz'                                                    \
 	\) -delete
