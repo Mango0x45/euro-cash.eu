@@ -221,7 +221,6 @@ func (p Printer) Date(d time.Time) string {
 	return d.Format(p.Locale.dateFmt)
 }
 
-/* TODO: Try to use a decimal type here */
 func (p Printer) M(val float64, round bool) string {
 	var valstr string
 
