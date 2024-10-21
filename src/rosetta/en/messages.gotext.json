@@ -184,9 +184,100 @@
             "fuzzy": true
         },
         {
-            "id": "\u003ca href=\"mailto:mail@euro-cash.eu\"\u003email@euro-cash.eu\u003c/a\u003e",
-            "message": "\u003ca href=\"mailto:mail@euro-cash.eu\"\u003email@euro-cash.eu\u003c/a\u003e",
-            "translation": "\u003ca href=\"mailto:mail@euro-cash.eu\"\u003email@euro-cash.eu\u003c/a\u003e",
+            "id": "Euro Cash",
+            "message": "Euro Cash",
+            "translation": "Euro Cash",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Found a mistake or want to contribute missing information?",
+            "message": "Found a mistake or want to contribute missing information?",
+            "translation": "Found a mistake or want to contribute missing information?",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Feel free to contact us!",
+            "message": "Feel free to contact us!",
+            "translation": "Feel free to contact us!",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "If you’re seeing this page, it means that something went wrong on our end that we need to fix. Our team has been notified of this error, and we apologise for the inconvenience.",
+            "message": "If you’re seeing this page, it means that something went wrong on our end that we need to fix. Our team has been notified of this error, and we apologise for the inconvenience.",
+            "translation": "If you’re seeing this page, it means that something went wrong on our end that we need to fix. Our team has been notified of this error, and we apologise for the inconvenience.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "If this issue persists, don’t hesitate to contact @onetruemangoman on Discord or to email us at %s.",
+            "message": "If this issue persists, don’t hesitate to contact @onetruemangoman on Discord or to email us at %s.",
+            "translation": "If this issue persists, don’t hesitate to contact @onetruemangoman on Discord or to email us at %s.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Home",
+            "message": "Home",
+            "translation": "Home",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "News",
+            "message": "News",
+            "translation": "News",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Coin Collecting",
+            "message": "Coin Collecting",
+            "translation": "Coin Collecting",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Coins",
+            "message": "Coins",
+            "translation": "Coins",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Banknotes",
+            "message": "Banknotes",
+            "translation": "Banknotes",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Jargon",
+            "message": "Jargon",
+            "translation": "Jargon",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Discord",
+            "message": "Discord",
+            "translation": "Discord",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "About",
+            "message": "About",
+            "translation": "About",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Language",
+            "message": "Language",
+            "translation": "Language",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
@@ -208,20 +299,6 @@
             "id": "This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found %shere%s. This site is licensed under the BSD 0-Clause license giving you the full freedom to do whatever you would like with anyof the content on this site.",
             "message": "This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found %shere%s. This site is licensed under the BSD 0-Clause license giving you the full freedom to do whatever you would like with anyof the content on this site.",
             "translation": "This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found %shere%s. This site is licensed under the BSD 0-Clause license giving you the full freedom to do whatever you would like with anyof the content on this site.",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "\u003ca href=\"https://git.thomasvoss.com/www.euro-cash.eu\" target=\"_blank\"\u003e",
-            "message": "\u003ca href=\"https://git.thomasvoss.com/www.euro-cash.eu\" target=\"_blank\"\u003e",
-            "translation": "\u003ca href=\"https://git.thomasvoss.com/www.euro-cash.eu\" target=\"_blank\"\u003e",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "\u003c/a\u003e",
-            "message": "\u003c/a\u003e",
-            "translation": "\u003c/a\u003e",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
@@ -282,23 +359,191 @@
             "fuzzy": true
         },
         {
-            "id": "Euro Cash",
-            "message": "Euro Cash",
-            "translation": "Euro Cash",
+            "id": "Andorran Euro Coin Designs",
+            "message": "Andorran Euro Coin Designs",
+            "translation": "Andorran Euro Coin Designs",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
         {
-            "id": "Found a mistake or want to contribute missing information?",
-            "message": "Found a mistake or want to contribute missing information?",
-            "translation": "Found a mistake or want to contribute missing information?",
+            "id": "On March of 2013 Andorra held a public design competition for all denominations except for the €2 denomination which the government pre-decided would bear the coat of arms of Andorra. Each set of denominations had a theme that participants had to center their designs around. These themes were:",
+            "message": "On March of 2013 Andorra held a public design competition for all denominations except for the €2 denomination which the government pre-decided would bear the coat of arms of Andorra. Each set of denominations had a theme that participants had to center their designs around. These themes were:",
+            "translation": "On March of 2013 Andorra held a public design competition for all denominations except for the €2 denomination which the government pre-decided would bear the coat of arms of Andorra. Each set of denominations had a theme that participants had to center their designs around. These themes were:",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
         {
-            "id": "Feel free to contact us!",
-            "message": "Feel free to contact us!",
-            "translation": "Feel free to contact us!",
+            "id": "%s, %s, and %s",
+            "message": "%s, %s, and %s",
+            "translation": "%s, %s, and %s",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Andorran landscapes, nature, fauna, and flora",
+            "message": "Andorran landscapes, nature, fauna, and flora",
+            "translation": "Andorran landscapes, nature, fauna, and flora",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Andorra’s Romanesque art",
+            "message": "Andorra’s Romanesque art",
+            "translation": "Andorra’s Romanesque art",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Casa de la Vall",
+            "message": "Casa de la Vall",
+            "translation": "Casa de la Vall",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "The results of the design contest with a few modifications are what became the coins that entered circulation in 2014. While each set of denominations has its own design, all four designs prominently feature the country name ‘ANDORRA’ along the outer portion of the design with the year of issue written underneath.",
+            "message": "The results of the design contest with a few modifications are what became the coins that entered circulation in 2014. While each set of denominations has its own design, all four designs prominently feature the country name ‘ANDORRA’ along the outer portion of the design with the year of issue written underneath.",
+            "translation": "The results of the design contest with a few modifications are what became the coins that entered circulation in 2014. While each set of denominations has its own design, all four designs prominently feature the country name ‘ANDORRA’ along the outer portion of the design with the year of issue written underneath.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "The Andorran 1-, 2-, and 5 euro cent coins all feature the same design of a Pyrenean chamois in the center of the coin with a golden eagle flying above. Both animals are native to Andorra as well as the surrounding regions of France and Spain.",
+            "message": "The Andorran 1-, 2-, and 5 euro cent coins all feature the same design of a Pyrenean chamois in the center of the coin with a golden eagle flying above. Both animals are native to Andorra as well as the surrounding regions of France and Spain.",
+            "translation": "The Andorran 1-, 2-, and 5 euro cent coins all feature the same design of a Pyrenean chamois in the center of the coin with a golden eagle flying above. Both animals are native to Andorra as well as the surrounding regions of France and Spain.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "The Andorran golden cents feature the Romanesque church of Santa Coloma. The church is the oldest in Andorra, dating back to the 9th century and is a UNESCO World Heritage site. Originally these coins were planned to depict an image of Christ, but that plan failed to go through after objections from the European Commission on grounds of religious neutrality on August 2013.",
+            "message": "The Andorran golden cents feature the Romanesque church of Santa Coloma. The church is the oldest in Andorra, dating back to the 9th century and is a UNESCO World Heritage site. Originally these coins were planned to depict an image of Christ, but that plan failed to go through after objections from the European Commission on grounds of religious neutrality on August 2013.",
+            "translation": "The Andorran golden cents feature the Romanesque church of Santa Coloma. The church is the oldest in Andorra, dating back to the 9th century and is a UNESCO World Heritage site. Originally these coins were planned to depict an image of Christ, but that plan failed to go through after objections from the European Commission on grounds of religious neutrality on August 2013.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "The 1 Euro coin features the Case de la Vall: the former headquarters of the General Council of Andorra. It was constructed in 1580 as a manor and tower defense by the Busquets family.",
+            "message": "The 1 Euro coin features the Case de la Vall: the former headquarters of the General Council of Andorra. It was constructed in 1580 as a manor and tower defense by the Busquets family.",
+            "translation": "The 1 Euro coin features the Case de la Vall: the former headquarters of the General Council of Andorra. It was constructed in 1580 as a manor and tower defense by the Busquets family.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Finally, the 2 Euro coin features the coat of arms of Andorra. The Andorran coat of arms is a grid of 4 other coats of arms which from top-to-bottom, left-to-right are:",
+            "message": "Finally, the 2 Euro coin features the coat of arms of Andorra. The Andorran coat of arms is a grid of 4 other coats of arms which from top-to-bottom, left-to-right are:",
+            "translation": "Finally, the 2 Euro coin features the coat of arms of Andorra. The Andorran coat of arms is a grid of 4 other coats of arms which from top-to-bottom, left-to-right are:",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "The bottom of the coat of arms has the motto ‘%sVIRTVS VNITA FORTIOR%s’ (‘UNITED VIRTUE IS STRONGER’).",
+            "message": "The bottom of the coat of arms has the motto ‘%sVIRTVS VNITA FORTIOR%s’ (‘UNITED VIRTUE IS STRONGER’).",
+            "translation": "The bottom of the coat of arms has the motto ‘%sVIRTVS VNITA FORTIOR%s’ (‘UNITED VIRTUE IS STRONGER’).",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Austrian Euro Coin Designs",
+            "message": "Austrian Euro Coin Designs",
+            "translation": "Austrian Euro Coin Designs",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "The Austrian euro coins can be grouped into three different themes. The bronze coins feature Austrian flowers, the gold coins feature Austrian architecture, and the bimetalic coins feature famous Austrian people. All coins also feature an Austrian flag as well as the coins denomination. These coins together with the %sGreek euro coins%s are the only coins that feature the denomination on both the common- and national-sides of the coin.",
+            "message": "The Austrian euro coins can be grouped into three different themes. The bronze coins feature Austrian flowers, the gold coins feature Austrian architecture, and the bimetalic coins feature famous Austrian people. All coins also feature an Austrian flag as well as the coins denomination. These coins together with the %sGreek euro coins%s are the only coins that feature the denomination on both the common- and national-sides of the coin.",
+            "translation": "The Austrian euro coins can be grouped into three different themes. The bronze coins feature Austrian flowers, the gold coins feature Austrian architecture, and the bimetalic coins feature famous Austrian people. All coins also feature an Austrian flag as well as the coins denomination. These coins together with the %sGreek euro coins%s are the only coins that feature the denomination on both the common- and national-sides of the coin.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "The bronze coins feature the Alpine gentian, -edelweiss, and -primrose respectively, and were chosen to symbolize the role that Austria played in the development of EU environmental policy.",
+            "message": "The bronze coins feature the Alpine gentian, -edelweiss, and -primrose respectively, and were chosen to symbolize the role that Austria played in the development of EU environmental policy.",
+            "translation": "The bronze coins feature the Alpine gentian, -edelweiss, and -primrose respectively, and were chosen to symbolize the role that Austria played in the development of EU environmental policy.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "The €0.10 coin features St. Stephen’s Cathedral. It symbolises the Viennese Gothic architectural style dating to around the year 1160. The €0.20 coin features Belvedere Palace. This is an example of Baroque architecture and symbolises the national freedom and sovereignty of Austria. The final gold coin — the €0.50 coin — features the Secession Building: an exhibition hall in the Art Nouveau style.",
+            "message": "The €0.10 coin features St. Stephen’s Cathedral. It symbolises the Viennese Gothic architectural style dating to around the year 1160. The €0.20 coin features Belvedere Palace. This is an example of Baroque architecture and symbolises the national freedom and sovereignty of Austria. The final gold coin — the €0.50 coin — features the Secession Building: an exhibition hall in the Art Nouveau style.",
+            "translation": "The €0.10 coin features St. Stephen’s Cathedral. It symbolises the Viennese Gothic architectural style dating to around the year 1160. The €0.20 coin features Belvedere Palace. This is an example of Baroque architecture and symbolises the national freedom and sovereignty of Austria. The final gold coin — the €0.50 coin — features the Secession Building: an exhibition hall in the Art Nouveau style.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "The two bimetallic coins feature the busts of the musical composer Wolfgang Amadeus Mozarts on the €1 coin, and the Austrian pacifist and Nobel Peace Prize winner Bertha von Suttner.",
+            "message": "The two bimetallic coins feature the busts of the musical composer Wolfgang Amadeus Mozarts on the €1 coin, and the Austrian pacifist and Nobel Peace Prize winner Bertha von Suttner.",
+            "translation": "The two bimetallic coins feature the busts of the musical composer Wolfgang Amadeus Mozarts on the €1 coin, and the Austrian pacifist and Nobel Peace Prize winner Bertha von Suttner.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Croatian Euro Coin Designs",
+            "message": "Croatian Euro Coin Designs",
+            "translation": "Croatian Euro Coin Designs",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "The Croatian euro coins feature four different themes, with each design featuring the Croatian checkerboard and the countries name in Croatian (‘%sHRVATSKA%s’). All designs were selected after voting in a public design competition.",
+            "message": "The Croatian euro coins feature four different themes, with each design featuring the Croatian checkerboard and the countries name in Croatian (‘%sHRVATSKA%s’). All designs were selected after voting in a public design competition.",
+            "translation": "The Croatian euro coins feature four different themes, with each design featuring the Croatian checkerboard and the countries name in Croatian (‘%sHRVATSKA%s’). All designs were selected after voting in a public design competition.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "The 1-, 2-, and 5 euro cent coins were designed by Maja Škripelj and feature a motif of the letters ‘HR’ in the %sGlagolitic script%s — an old Slavic script that saw use in Croatia up until the 19th century — with ‘HR’ representing Croatia’s country code.",
+            "message": "The 1-, 2-, and 5 euro cent coins were designed by Maja Škripelj and feature a motif of the letters ‘HR’ in the %sGlagolitic script%s — an old Slavic script that saw use in Croatia up until the 19th century — with ‘HR’ representing Croatia’s country code.",
+            "translation": "The 1-, 2-, and 5 euro cent coins were designed by Maja Škripelj and feature a motif of the letters ‘HR’ in the %sGlagolitic script%s — an old Slavic script that saw use in Croatia up until the 19th century — with ‘HR’ representing Croatia’s country code.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "The 10-, 20-, and 50 euro cent coins were designed by Ivan Domagoj Račić and feature the portrait of the inventor and engineer %sNikola Tesla%s. The design of these coins caused controversy when they were first announced with the National Bank of Serbia claiming that it would be an appropriation of the cultural and scientific heritage of the Serbian people to feature the portrait of someone who ‘declared himself to be Serbian by origin’.",
+            "message": "The 10-, 20-, and 50 euro cent coins were designed by Ivan Domagoj Račić and feature the portrait of the inventor and engineer %sNikola Tesla%s. The design of these coins caused controversy when they were first announced with the National Bank of Serbia claiming that it would be an appropriation of the cultural and scientific heritage of the Serbian people to feature the portrait of someone who ‘declared himself to be Serbian by origin’.",
+            "translation": "The 10-, 20-, and 50 euro cent coins were designed by Ivan Domagoj Račić and feature the portrait of the inventor and engineer %sNikola Tesla%s. The design of these coins caused controversy when they were first announced with the National Bank of Serbia claiming that it would be an appropriation of the cultural and scientific heritage of the Serbian people to feature the portrait of someone who ‘declared himself to be Serbian by origin’.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "The 1 euro coin was designed by Jagor Šunde, David Čemeljić and Fran Zekan and features a marten. The marten is the semi-official national animal of Croatia and the Kuna — their pre-Euro currency — was named after the marten (‘%skuna zlatica%s’ in Croatian).",
+            "message": "The 1 euro coin was designed by Jagor Šunde, David Čemeljić and Fran Zekan and features a marten. The marten is the semi-official national animal of Croatia and the Kuna — their pre-Euro currency — was named after the marten (‘%skuna zlatica%s’ in Croatian).",
+            "translation": "The 1 euro coin was designed by Jagor Šunde, David Čemeljić and Fran Zekan and features a marten. The marten is the semi-official national animal of Croatia and the Kuna — their pre-Euro currency — was named after the marten (‘%skuna zlatica%s’ in Croatian).",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "The 2 euro coin was designed by Ivan Šivak and features the map of Croatia. The coin also has an edge-inscription that reads ‘%sO LIJEPA O DRAGA O SLATKA SLOBODO%s’ (‘OH BEAUTIFUL, OH DEAR, OH SWEET FREEDOM’) which is a line from the play %sDubravka%s by Ivan Gundulić.",
+            "message": "The 2 euro coin was designed by Ivan Šivak and features the map of Croatia. The coin also has an edge-inscription that reads ‘%sO LIJEPA O DRAGA O SLATKA SLOBODO%s’ (‘OH BEAUTIFUL, OH DEAR, OH SWEET FREEDOM’) which is a line from the play %sDubravka%s by Ivan Gundulić.",
+            "translation": "The 2 euro coin was designed by Ivan Šivak and features the map of Croatia. The coin also has an edge-inscription that reads ‘%sO LIJEPA O DRAGA O SLATKA SLOBODO%s’ (‘OH BEAUTIFUL, OH DEAR, OH SWEET FREEDOM’) which is a line from the play %sDubravka%s by Ivan Gundulić.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Dutch Euro Coin Designs",
+            "message": "Dutch Euro Coin Designs",
+            "translation": "Dutch Euro Coin Designs",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "From the years 1999–2013 all Dutch euro coins featured the portrait of Queen Beatrix of the Netherlands. After her abdication from the throne in 2013 the designs of all denominations were changed to feature the portrait of the new King Willem-Alexander. After her abdication the direction in which the monarchs portrait faced was flipped; a tradition dating back to the earliest coins of the Kingdom of the Netherlands.",
+            "message": "From the years 1999–2013 all Dutch euro coins featured the portrait of Queen Beatrix of the Netherlands. After her abdication from the throne in 2013 the designs of all denominations were changed to feature the portrait of the new King Willem-Alexander. After her abdication the direction in which the monarchs portrait faced was flipped; a tradition dating back to the earliest coins of the Kingdom of the Netherlands.",
+            "translation": "From the years 1999–2013 all Dutch euro coins featured the portrait of Queen Beatrix of the Netherlands. After her abdication from the throne in 2013 the designs of all denominations were changed to feature the portrait of the new King Willem-Alexander. After her abdication the direction in which the monarchs portrait faced was flipped; a tradition dating back to the earliest coins of the Kingdom of the Netherlands.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Coins featuring both monarchs contain text reading ‘%sBEATRIX KONINGIN DER NEDERLANDEN%s’ (‘BEATRIX QUEEN OF THE NETHERLANDS’) and ‘%sWillem-Alexander Koning der Nederlanden%s’ (‘Willem-Alexander King of the Netherlands’) respectively. The €2 coins also feature an edge-inscription reading ‘%sGOD ⋆ ZIJ ⋆ MET ⋆ ONS ⋆%s’ (‘GOD ⋆ IS ⋆ WITH ⋆ US ⋆’).",
+            "message": "Coins featuring both monarchs contain text reading ‘%sBEATRIX KONINGIN DER NEDERLANDEN%s’ (‘BEATRIX QUEEN OF THE NETHERLANDS’) and ‘%sWillem-Alexander Koning der Nederlanden%s’ (‘Willem-Alexander King of the Netherlands’) respectively. The €2 coins also feature an edge-inscription reading ‘%sGOD ⋆ ZIJ ⋆ MET ⋆ ONS ⋆%s’ (‘GOD ⋆ IS ⋆ WITH ⋆ US ⋆’).",
+            "translation": "Coins featuring both monarchs contain text reading ‘%sBEATRIX KONINGIN DER NEDERLANDEN%s’ (‘BEATRIX QUEEN OF THE NETHERLANDS’) and ‘%sWillem-Alexander Koning der Nederlanden%s’ (‘Willem-Alexander King of the Netherlands’) respectively. The €2 coins also feature an edge-inscription reading ‘%sGOD ⋆ ZIJ ⋆ MET ⋆ ONS ⋆%s’ (‘GOD ⋆ IS ⋆ WITH ⋆ US ⋆’).",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "The €1 and €2 coins featuring King Willem-Alexander were minted with a much lower %srelief%s than most euro coins of the same denomination. As a result it is not uncommon for these coins to appear worn after little use in circulation.",
+            "message": "The €1 and €2 coins featuring King Willem-Alexander were minted with a much lower %srelief%s than most euro coins of the same denomination. As a result it is not uncommon for these coins to appear worn after little use in circulation.",
+            "translation": "The €1 and €2 coins featuring King Willem-Alexander were minted with a much lower %srelief%s than most euro coins of the same denomination. As a result it is not uncommon for these coins to appear worn after little use in circulation.",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
@@ -313,13 +558,6 @@
             "id": "Here you’ll be able to view all the coin designs for each country in the Eurozone. This section of the site doesn’t include minor varieties such as different mintmarks or errors; those are on the %svarieties%s page.",
             "message": "Here you’ll be able to view all the coin designs for each country in the Eurozone. This section of the site doesn’t include minor varieties such as different mintmarks or errors; those are on the %svarieties%s page.",
             "translation": "Here you’ll be able to view all the coin designs for each country in the Eurozone. This section of the site doesn’t include minor varieties such as different mintmarks or errors; those are on the %svarieties%s page.",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "\u003ca href=\"/coins/varieties\"\u003e",
-            "message": "\u003ca href=\"/coins/varieties\"\u003e",
-            "translation": "\u003ca href=\"/coins/varieties\"\u003e",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
@@ -348,13 +586,6 @@
             "id": "Most coins from the years 2003–2016 are listed as NIFC coins while other popular sources such as Numista claim they were minted for circulation. For more information on why others are wrong, %sclick here%s.",
             "message": "Most coins from the years 2003–2016 are listed as NIFC coins while other popular sources such as Numista claim they were minted for circulation. For more information on why others are wrong, %sclick here%s.",
             "translation": "Most coins from the years 2003–2016 are listed as NIFC coins while other popular sources such as Numista claim they were minted for circulation. For more information on why others are wrong, %sclick here%s.",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "\u003ca href=\"#TODO\"\u003e",
-            "message": "\u003ca href=\"#TODO\"\u003e",
-            "translation": "\u003ca href=\"#TODO\"\u003e",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
@@ -478,20 +709,6 @@
             "fuzzy": true
         },
         {
-            "id": "If you’re seeing this page, it means that something went wrong on our end that we need to fix. Our team has been notified of this error, and we apologise for the inconvenience.",
-            "message": "If you’re seeing this page, it means that something went wrong on our end that we need to fix. Our team has been notified of this error, and we apologise for the inconvenience.",
-            "translation": "If you’re seeing this page, it means that something went wrong on our end that we need to fix. Our team has been notified of this error, and we apologise for the inconvenience.",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "If this issue persists, don’t hesitate to contact @onetruemangoman on Discord or to email us at %s.",
-            "message": "If this issue persists, don’t hesitate to contact @onetruemangoman on Discord or to email us at %s.",
-            "translation": "If this issue persists, don’t hesitate to contact @onetruemangoman on Discord or to email us at %s.",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
             "id": "The Euro Cash Compendium",
             "message": "The Euro Cash Compendium",
             "translation": "The Euro Cash Compendium",
@@ -555,20 +772,6 @@
             "fuzzy": true
         },
         {
-            "id": "NIFC coins are coins minted without the intention of being put into general circulation. These coins are typically minted with the purpose of being put into coincards or coin-sets to be sold to collectors. Occasionally they are also handed out to collectors for face value at banks.",
-            "message": "NIFC coins are coins minted without the intention of being put into general circulation. These coins are typically minted with the purpose of being put into coincards or coin-sets to be sold to collectors. Occasionally they are also handed out to collectors for face value at banks.",
-            "translation": "NIFC coins are coins minted without the intention of being put into general circulation. These coins are typically minted with the purpose of being put into coincards or coin-sets to be sold to collectors. Occasionally they are also handed out to collectors for face value at banks.",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "While uncommon, NIFC coins are occasionally found in circulation. This can happen for a variety of reasons such as someone depositing their coin collection (known as a ‘collection dump’), or a collector’s child spending their rare coins on an ice cream. Some coin mints have also been known to put NIFC coins that have gone unsold for multiple years into circulation.",
-            "message": "While uncommon, NIFC coins are occasionally found in circulation. This can happen for a variety of reasons such as someone depositing their coin collection (known as a ‘collection dump’), or a collector’s child spending their rare coins on an ice cream. Some coin mints have also been known to put NIFC coins that have gone unsold for multiple years into circulation.",
-            "translation": "While uncommon, NIFC coins are occasionally found in circulation. This can happen for a variety of reasons such as someone depositing their coin collection (known as a ‘collection dump’), or a collector’s child spending their rare coins on an ice cream. Some coin mints have also been known to put NIFC coins that have gone unsold for multiple years into circulation.",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
             "id": "AU coins are coins that are in extremely good condition as a result of limited use in circulation. Unlike the term ‘UNC’, this term is a description of the coins quality, not its usage. AU coins often appear to retain most of their original luster as well as possessing little-to-no scratches or other forms of post-mint damage (PMD).",
             "message": "AU coins are coins that are in extremely good condition as a result of limited use in circulation. Unlike the term ‘UNC’, this term is a description of the coins quality, not its usage. AU coins often appear to retain most of their original luster as well as possessing little-to-no scratches or other forms of post-mint damage (PMD).",
             "translation": "AU coins are coins that are in extremely good condition as a result of limited use in circulation. Unlike the term ‘UNC’, this term is a description of the coins quality, not its usage. AU coins often appear to retain most of their original luster as well as possessing little-to-no scratches or other forms of post-mint damage (PMD).",
@@ -579,6 +782,20 @@
             "id": "BU is a general term to refer to coins from coincards and -sets. These are different from UNC coins in that they are typically handled with more care during the minting process and are struck with higher-quality dies than the coins minted for coin rolls resulting in a higher-quality end product. You may also see these coins referred to by the French term ‘fleur de coin’.",
             "message": "BU is a general term to refer to coins from coincards and -sets. These are different from UNC coins in that they are typically handled with more care during the minting process and are struck with higher-quality dies than the coins minted for coin rolls resulting in a higher-quality end product. You may also see these coins referred to by the French term ‘fleur de coin’.",
             "translation": "BU is a general term to refer to coins from coincards and -sets. These are different from UNC coins in that they are typically handled with more care during the minting process and are struck with higher-quality dies than the coins minted for coin rolls resulting in a higher-quality end product. You may also see these coins referred to by the French term ‘fleur de coin’.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "NIFC coins are coins minted without the intention of being put into general circulation. These coins are typically minted with the purpose of being put into coincards or coin-sets to be sold to collectors. Occasionally they are also handed out to collectors for face value at banks.",
+            "message": "NIFC coins are coins minted without the intention of being put into general circulation. These coins are typically minted with the purpose of being put into coincards or coin-sets to be sold to collectors. Occasionally they are also handed out to collectors for face value at banks.",
+            "translation": "NIFC coins are coins minted without the intention of being put into general circulation. These coins are typically minted with the purpose of being put into coincards or coin-sets to be sold to collectors. Occasionally they are also handed out to collectors for face value at banks.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "While uncommon, NIFC coins are occasionally found in circulation. This can happen for a variety of reasons such as someone depositing their coin collection (known as a ‘collection dump’), or a collector’s child spending their rare coins on an ice cream. Some coin mints have also been known to put NIFC coins that have gone unsold for multiple years into circulation.",
+            "message": "While uncommon, NIFC coins are occasionally found in circulation. This can happen for a variety of reasons such as someone depositing their coin collection (known as a ‘collection dump’), or a collector’s child spending their rare coins on an ice cream. Some coin mints have also been known to put NIFC coins that have gone unsold for multiple years into circulation.",
+            "translation": "While uncommon, NIFC coins are occasionally found in circulation. This can happen for a variety of reasons such as someone depositing their coin collection (known as a ‘collection dump’), or a collector’s child spending their rare coins on an ice cream. Some coin mints have also been known to put NIFC coins that have gone unsold for multiple years into circulation.",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
@@ -635,69 +852,6 @@
             "id": "Other Languages",
             "message": "Other Languages",
             "translation": "Other Languages",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "Home",
-            "message": "Home",
-            "translation": "Home",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "News",
-            "message": "News",
-            "translation": "News",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "Coin Collecting",
-            "message": "Coin Collecting",
-            "translation": "Coin Collecting",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "Coins",
-            "message": "Coins",
-            "translation": "Coins",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "Banknotes",
-            "message": "Banknotes",
-            "translation": "Banknotes",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "Jargon",
-            "message": "Jargon",
-            "translation": "Jargon",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "Discord",
-            "message": "Discord",
-            "translation": "Discord",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "About",
-            "message": "About",
-            "translation": "About",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "Language",
-            "message": "Language",
-            "translation": "Language",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         }
