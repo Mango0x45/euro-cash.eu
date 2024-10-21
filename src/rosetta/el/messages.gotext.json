@@ -342,6 +342,26 @@
             "translation": ""
         },
         {
+            "id": "Belgian Euro Coin Designs",
+            "message": "Belgian Euro Coin Designs",
+            "translation": ""
+        },
+        {
+            "id": "Since 1999 Belgium has released three series of euro coins, which each series having a single design repeated on all denominations. Starting in 1999 the Belgian euro coins featured the portrait of King Albert II with the %sroyal monogram%s in the outer ring of the coins.",
+            "message": "Since 1999 Belgium has released three series of euro coins, which each series having a single design repeated on all denominations. Starting in 1999 the Belgian euro coins featured the portrait of King Albert II with the %sroyal monogram%s in the outer ring of the coins.",
+            "translation": ""
+        },
+        {
+            "id": "In 2008 a second series of coins was released featuring a slightly-modified design in which the royal monogram was moved to the inner portion of the coin along with the year of mintage in order to comply with the European Commission’s guidelines. The country code ‘BE’ was also added to the design underneath the royal monogram.",
+            "message": "In 2008 a second series of coins was released featuring a slightly-modified design in which the royal monogram was moved to the inner portion of the coin along with the year of mintage in order to comply with the European Commission’s guidelines. The country code ‘BE’ was also added to the design underneath the royal monogram.",
+            "translation": ""
+        },
+        {
+            "id": "After his accession to the throne Belgium began a third series of coins in 2014 featuring the portrait of King Philippe. As is customary with coins bearing the portraits of monarchs, the direction in which the portrait faces was flipped to face right instead of left.",
+            "message": "After his accession to the throne Belgium began a third series of coins in 2014 featuring the portrait of King Philippe. As is customary with coins bearing the portraits of monarchs, the direction in which the portrait faces was flipped to face right instead of left.",
+            "translation": ""
+        },
+        {
             "id": "Croatian Euro Coin Designs",
             "message": "Croatian Euro Coin Designs",
             "translation": ""

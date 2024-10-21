@@ -1,0 +1,47 @@
+{{ define "content" }}
+<header>
+	{{ template "navbar" . }}
+    <h1>{{ .T "Belgian Euro Coin Designs" }}</h1>
+</header>
+<main>
+    <div class="design-container">
+        <img alt="Belgian 1 euro coin" src="/designs/be-100-albert-1.avif">
+        <img alt="Belgian 1 euro coin" src="/designs/be-100-albert-2.avif">
+        <img alt="Belgian 1 euro coin" src="/designs/be-100-philippe.avif">
+    </div>
+	<p>
+		{{ .T `
+			Since 1999 Belgium has released three series of euro coins,
+			which each series having a single design repeated on all
+			denominations.  Starting in 1999 the Belgian euro coins
+			featured the portrait of King Albert II with the %sroyal
+			monogram%s in the outer ring of the coins.
+		`
+		`<a
+			 target="_blank"
+			 href="https://www.wikipedia.org/wiki/Royal_cypher"
+		>`
+		`</a>`
+		}}
+	</p>
+	<p>
+		{{ .T `
+			In 2008 a second series of coins was released featuring a
+			slightly-modified design in which the royal monogram was
+			moved to the inner portion of the coin along with the year of
+			mintage in order to comply with the European Commission’s
+			guidelines.  The country code ‘BE’ was also added to the
+			design underneath the royal monogram.
+		` }}
+	</p>
+	<p>
+		{{ .T `
+			After his accession to the throne Belgium began a third
+			series of coins in 2014 featuring the portrait of King
+			Philippe.  As is customary with coins bearing the portraits
+			of monarchs, the direction in which the portrait faces was
+			flipped to face right instead of left.
+		` }}
+	</p>
+</main>
+{{ end }}
