@@ -4,6 +4,8 @@
 	<h1>{{ .T "Dutch Euro Coin Designs" }}</h1>
 </header>
 <main>
+	{{ $dutchStart := `<span lang="nl">` }}
+	{{ $dutchEnd := `</span>` }}
 	<div class="design-container">
 		<img
 			alt="Dutch 50 euro cent coin (Beatrix)"
@@ -38,13 +40,17 @@
 	<p>
 		<!-- TODO: Get a picture of the edge-inscription -->
 		{{ .T `
-			Coins featuring both monarchs contain text reading ‘BEATRIX
-			KONINGIN DER NEDERLANDEN’ (‘BEATRIX QUEEN OF THE
-			NETHERLANDS’) and ‘Willem-Alexander Koning der Nederlanden’
-			(‘Willem-Alexander King of the Netherlands’) respectively.
-			The €2 coins also feature an edge-inscription reading
-			‘%sGOD ⋆ ZIJ ⋆ MET ⋆ ONS ⋆%s’ (‘GOD ⋆ IS ⋆ WITH ⋆ US ⋆’).
-		` `<span lang="nl">` `</span>` | safe }}
+			Coins featuring both monarchs contain text reading ‘%sBEATRIX
+			KONINGIN DER NEDERLANDEN%s’ (‘BEATRIX QUEEN OF THE
+			NETHERLANDS’) and ‘%sWillem-Alexander Koning der
+			Nederlanden%s’ (‘Willem-Alexander King of the Netherlands’)
+			respectively. The €2 coins also feature an edge-inscription
+			reading ‘%sGOD ⋆ ZIJ ⋆ MET ⋆ ONS ⋆%s’
+			(‘GOD ⋆ IS ⋆ WITH ⋆ US ⋆’).
+		`
+		$dutchStart $dutchEnd
+		$dutchStart $dutchEnd
+		$dutchStart $dutchEnd | safe }}
 	</p>
 	<p>
 		{{ .T `

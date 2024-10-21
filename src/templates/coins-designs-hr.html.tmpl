@@ -4,6 +4,9 @@
 	<h1>{{ .T "Croatian Euro Coin Designs" }}</h1>
 </header>
 <main>
+	{{ $croatianStart := `<span lang="hr">` }}
+	{{ $croatianEnd := `</span>` }}
+
 	<div class="design-container">
 		<img alt="Croatian 1 euro cent coin"  src="/designs/hr-001.avif" />
 		<img alt="Croatian 50 euro cent coin" src="/designs/hr-050.avif" />
@@ -18,7 +21,7 @@
 			each design featuring the Croatian checkerboard and the
 			countries name in Croatian (‘%sHRVATSKA%s’).  All designs
 			were selected after voting in a public design competition.
-		` `<span lang="hr">` `</span>` | safe }}
+		` $croatianStart $croatianEnd | safe }}
 	</p>
 	<p>
 		{{ .T `
@@ -58,7 +61,7 @@
 			semi-official national animal of Croatia and the Kuna —
 			their pre-Euro currency — was named after the marten (‘%skuna
 			zlatica%s’ in Croatian).
-		` `<span lang="hr">` `</span>` | safe }}
+		` $croatianStart $croatianEnd | safe }}
 	</p>
 	<p>
 		<!-- TODO: Include a photo of the edge inscription -->
@@ -68,7 +71,7 @@
 			reads ‘%sO LIJEPA O DRAGA O SLATKA SLOBODO%s’ (‘OH BEAUTIFUL,
 			OH DEAR, OH SWEET FREEDOM’) which is a line from the play
 			%sDubravka%s by Ivan Gundulić.
-		` `<span lang="hr">` `</span>`
+		` $croatianStart $croatianEnd
 		`<a
 			 target="_blank"
 			 href="https://www.wikipedia.org/wiki/Dubravka_(drama)"
