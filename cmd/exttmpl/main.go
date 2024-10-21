@@ -127,6 +127,7 @@ func process(tmplMsgs *[]pipeline.Message, node parse.Node) {
 						Key:     txt,
 						Message: pipeline.Text{Msg: txt},
 					})
+					break
 				}
 			}
 		}
