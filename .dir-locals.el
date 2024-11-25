@@ -4,4 +4,5 @@
                     (expand-file-name
                      "contrib/emacs"
                      (locate-dominating-file default-directory "contrib/emacs")))
-                   (require 'mintage-mode))))))
+                   (require 'mintage-mode)))))
+ (go-ts-mode . ((require-final-newline . t))))
