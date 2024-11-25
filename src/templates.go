@@ -22,8 +22,8 @@ var (
 	templateFS   embed.FS
 	notFoundTmpl = buildTemplate("-404")
 	errorTmpl    = buildTemplate("-error")
-	templates map[string]*template.Template
-	funcmap = map[string]any{
+	templates    map[string]*template.Template
+	funcmap      = map[string]any{
 		"denoms":     denoms,
 		"locales":    locales,
 		"safe":       asHTML,
