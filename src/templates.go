@@ -41,7 +41,7 @@ func init() {
 	templates = make(map[string]*template.Template, len(ents))
 	for _, e := range ents {
 		path := "/"
-		name, _ := strings.CutSuffix(e.Name(), ".html.tmpl")
+		name := strings.TrimSuffix(e.Name(), ".html.tmpl")
 		switch {
 		case name[0] == '-':
 			continue
