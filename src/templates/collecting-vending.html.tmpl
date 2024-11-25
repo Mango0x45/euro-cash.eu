@@ -1,0 +1,163 @@
+{{ define "content" }}
+<header>
+	{{ template "navbar" . }}
+	<h1>{{ .T "Euro Coin Collecting" }}</h1>
+</header>
+<main>
+	<h2>{{ .T "What is Vending Machine Hunting?" }}</h2>
+	<p>
+		{{ .T `
+			‘Vending machine hunting’ is a strategy of collecting coins
+			whereby you continuously insert coins into a vending machine
+			and cancel the transaction by pressing the return button.
+			When the vending machine returns your coins to you, you will
+			often get different coins from the ones you put in, and you
+			can repeat this process until you’ve searched through every
+			coin in the machine.
+		` }}
+	</p>
+
+	<h2>{{ .T "The Test Coins" }}</h2>
+	<p>
+		{{ .T `
+			First, you want to make sure the vending machine you come
+			across actually gives back change — sometimes they don’t!
+			Throw in a 10 cent coin and press the return button.  If it
+			doesn’t give the coin back, you can move on to the next
+			machine; there’s a high chance it won’t return higher
+			denominations either.  Next throw in a random 2 euro coin and
+			press the return button.  You should do this because vending
+			machines may not return 2 euro coins, but rather 1 euro- or
+			50 cent coins instead.  It’s better to find out immediately
+			as opposed to later once you’ve already put in all of your 2
+			euro coins.
+		` }}
+	</p>
+
+	<h2>{{ .T "The Stopper" }}</h2>
+	<p>
+		{{ .T `
+			We want to be able to know when we’ve gone through all the
+			coins in the vending machine.  To do this, take out a coin
+			and mark it with something (drawing on it with a Sharpie
+			works well), then put it into the machine.  Next time you get
+			the same coin back, you know you’ve gone through everything.
+		` }}
+	</p>
+
+	<h2>{{ .T "Rejected Stoppers and Coins" }}</h2>
+	<p>
+		{{ .T `
+			Sometimes you may throw a stopper in, but you hear a ‘clunk’
+			sound, as if the coin was dropped into a box (normally adding
+			a coin should be silent after you throw it in).  This means
+			the coin was not added to the stack properly, and so it will
+			not be returned.  Pay attention to this noise, because you
+			won’t be getting the stopper back!  Throw in another marked
+			coin instead until the machine accepts the coin.
+		` }}
+	</p>
+
+	<h2>{{ .T "(Non-)Merging Machines" }}</h2>
+	<p>
+		{{ .T `
+			We generally identify between two main types of vending
+			machines.
+		` }}
+	</p>
+	<dl>
+		<dt>{{ .T "Merging" }}</dt>
+		<dd>
+			{{ .T `
+				The vending machine merges change together.  For example
+				if you throw in five 50 cent coins, the machine returns
+				either two 1 euro coins and one 50 cent coin or one 2
+				euro and one 50 cent coin.  This usually means you can
+				hunt 2 euro coins very quickly but other denominations
+				only once at a time.  A good tip is to throw in an odd
+				number of euros and 80 cents if you want to search
+				through all denominations.
+			` }}
+		</dd>
+		<dt>{{ .T "Non-Merging" }}</dt>
+		<dd>
+			{{ .T `
+				The vending machine does not merge change together.  This
+				means if you throw in five 50 cent coins it will return
+				five 50 cent coins.  This makes it very easy to hunt a
+				large amount of a specific denomination.
+			` }}
+		</dd>
+	</dl>
+
+	<h2>{{ .T "Limits" }}</h2>
+	<p>
+		{{ .T `
+			There are some limits to vending machine hunts which you need
+			to be aware of.
+		` }}
+	</p>
+	<dl>
+		<dt>{{ .T "Maximum Input Limit" }}</dt>
+		<dd>
+			{{ .T `
+				Some machines have a maximum amount you can throw in, and
+				will reject anything higher.  For example machines with a
+				max limit of five euros will reject any additional coins
+				if you throw in five euros.  You can try to go above the
+				limit if you throw in, say, %s and then another one- or
+				two euro coin; the machine will probably accept it.
+			` (.Printer.M 4.80 false) }}
+		</dd>
+		<dt>{{ .T "Maximum Change Limit" }}</dt>
+		<dd>
+			<p>
+				{{ .T `
+					Some machines will either give back large amounts of
+					change in bills or will not give back large amounts
+					of change at all (usually cigarette machines).  Read
+					the labels on all machines carefully since these
+					limits are usually written there.
+				` }}
+			</p>
+			<p>
+				{{ .T `
+					Even if no limits are listed, it’s still advised that
+					you exercise caution: it is not uncommon for a
+					vending machine to steal your money.  In the case
+					that a vending machine does steal your money, look
+					for a label on the machine that contains a support
+					number.
+				` }}
+			</p>
+			<p>
+				{{ .T `
+					For information on Austrian cigarette machines, see
+					the ‘%sCigarette Machines%s’ section.
+				` `<a href="#ciggy">` `</a>` | safe }}
+			</p>
+		</dd>
+	</dl>
+
+	<h2 id="ciggy">{{ .T "Cigarette Machines" }}</h2>
+	<p>
+		{{ .T `
+			In some countries where cigarette machines are legal, you can
+			hunt through them as well.  Unless you’re in Malta, you must
+			verify your age on them by either sliding an ID card through
+			a sensor or holding a debit card on an RFID scanner; you must
+			do this for every cycle.  Sometimes you must also select
+			something to purchase, throw in less money than the cost, and
+			then cancel the purchase.  Note that most cigarette machines
+			in Austria have a %s max change limit.
+		` (.Printer.M 4.90 false) }}
+	</p>
+	<p>
+		{{ .T `
+			For RFID scanner machines it helps to wear a glove and slide
+			a debit card into the back of it so you can easily use both
+			hands and don’t have to fumble with a card and coins.
+		` }}
+	</p>
+</main>
+{{ end }}
