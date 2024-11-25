@@ -45,8 +45,7 @@ func init() {
 		switch {
 		case name[0] == '-':
 			continue
-		case name == "index":
-		default:
+		case name != "index":
 			path += strings.ReplaceAll(name, "-", "/")
 		}
 		templates[path] = buildTemplate(name)
