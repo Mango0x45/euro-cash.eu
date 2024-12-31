@@ -89,13 +89,6 @@ var (
 			Enabled:  false,
 		},
 		{
-			Bcp:      "hr",
-			Name:     "hrvatski",
-			dateFmt:  "02. 01. 2006.",
-			Eurozone: true,
-			Enabled:  false,
-		},
-		{
 			Bcp:      "it",
 			Name:     "italiano",
 			dateFmt:  "02/01/2006",
@@ -145,6 +138,20 @@ var (
 			Enabled:  false,
 		},
 		{
+			Bcp:      "sh",
+			Name:     "srpskohrvatski",
+			dateFmt:  "02. 01. 2006.",
+			Eurozone: true,
+			Enabled:  false,
+		},
+		{
+			Bcp:      "sh-Cyrl",
+			Name:     "српскохрватски",
+			dateFmt:  "02. 01. 2006.",
+			Eurozone: true,
+			Enabled:  false,
+		},
+		{
 			Bcp:      "sk",
 			Name:     "slovenčina",
 			dateFmt:  "2. 1. 2006",
@@ -178,6 +185,13 @@ var (
 			Bcp:      "ro",
 			Name:     "română",
 			dateFmt:  "02.01.2006",
+			Eurozone: false,
+			Enabled:  false,
+		},
+		{
+			Bcp:      "sq",
+			Name:     "Shqip",
+			dateFmt:  "2.1.2006",
 			Eurozone: false,
 			Enabled:  false,
 		},
