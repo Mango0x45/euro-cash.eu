@@ -1,0 +1,163 @@
+{{ define "content" }}
+<header>
+	{{ template "navbar" . }}
+	<h1>{{ .T "Coin Storage" }}</h1>
+</header>
+<main>
+	<p>
+		{{ .T `
+			There are many different methods of storing your collecting,
+			each with their own benefits and drawbacks.  This page will
+			describe the most common methods collectors use to store
+			their coins, as well as the pros and cons of each method.
+		` }}
+	</p>
+
+	<h2>{{ .T "Coin Albums" }}</h2>
+	<p>
+		{{ .T `
+			Coin albums are one of the most popular ways of storing
+			coins.  In a coin album you will have multiple coin sheets.
+			These sheets are plastic pages with slots that you can put
+			your coin in to keep them protected.  When searching for
+			sheets for your album it is very important to ensure that
+			they do not contain any PVC, which will damage your coins.
+			Some albums will come with sheets already included.
+		` }}
+	</p>
+
+	<p>
+		{{ .T `
+			Albums can be an affordable way to store your coins, but
+			higher-end albums can be a bit expensive.  Also remember
+			to always ensure that your albums do not contain any PVC!
+		` }}
+	</p>
+
+	<h2>{{ .T "Coin Boxes" }}</h2>
+	<p>
+		{{ .T `
+			Coin boxes are to many people the most aesthetic way to store
+			your coins.  A coin box is comprised of various layers which
+			can be stacked ontop of each other.  Each layer has various
+			holes where you can insert your coins.  Typically you are
+			meant to store your coins in a layer encased in a coin
+			capsule.
+		` }}
+	</p>
+
+	<p>
+		{{ .T `
+			Boxes are quite space-inefficient and are one of the most
+			expensive ways to store your coins, but at the same time they
+			offer a great visual appeal.
+		` }}
+	</p>
+
+	<h2>{{ .T "Coin Capsules" }}</h2>
+	<p>
+		{{ .T `
+			Coin capsules are plastic capsules you can put your coin in.
+			They offer good protection to your coins, while still
+			allowing you to view all parts of your coin easily, including
+			the edge engravings and -inscriptions.  Capsules are also far
+			more durable than flips, and can be opened and closed
+			repeatedly allowing for them to be reused.  This isn’t really
+			possible with flips.
+		` }}
+	</p>
+
+	<p>
+		{{ .T `
+			Capsules can be a bit pricey, but are reusable and are very
+			durable.  They also come in different sizes, so make sure you
+			get the right size for your coins.
+		` }}
+	</p>
+
+	<h2>{{ .T "Coin Flips" }}</h2>
+	<p>
+		{{ .T `
+			Coin flips, also known as ‘2x2’ flips by some Americans are
+			small cardboard flips with a plastic covered hole in the
+			middle for viewing.  Most coin flips are stapled, meaning you
+			put your coin in the flip and staple it shut.  These kinds of
+			flips are very cheap, and you can buy stacks of a few hundred
+			for only a few euros.  If you don’t like the staples though,
+			you can also buy adhesive-flips that glue themselves shut.
+			These flips are more expensive, but also look better than
+			their stapled equivalents.
+		` }}
+	</p>
+
+	<p>
+		{{ .T `
+			Coin slips are also pretty space efficient, and can be easily
+			stacked in boxes for compact storage.  Many collectors also
+			like to write notes about their coins on the flips.  There
+			also exist special sheets for coin albums that allow you to
+			put in flipped coins, but this is more expensive and less
+			space-efficient than simply using flips or an album without
+			flips.
+		` }}
+	</p>
+
+	<h2>{{ .T "Coin Rolls" }}</h2>
+	<p>
+		{{ .T `
+			This is probably the most inexpensive way to store your
+			coins.  If you take good care of the paper when opening your
+			coin rolls, you can simply reuse them for storage.  Just roll
+			your coins back up and put some rubber bands on the ends.
+			You can also get reusable plastic rolls that can be opened
+			and closed.  You will need different rolls based on the
+			denomination you want to store, but they are very
+			space-efficient.
+		` }}
+	</p>
+
+	<h2>{{ .T "Examples" }}</h2>
+	<p>
+		{{ .T `
+			In case you’re looking for some inspiration on how to store
+			your collections, here are some examples.
+		` }}
+	</p>
+
+	<!-- TODO: Can we use an AVIF here? -->
+	{{ template "example-image"
+	   (tuple (.T "Flips in a case")
+	          "/storage/flips-in-case.jpg") }}
+	{{ template "example-image"
+	   (tuple (.T "Capsules in a case")
+	          "/storage/random-in-box.avif") }}
+	<!-- {{ template "example-image"
+	        (tuple (.T "Flips and capsules in a box")
+	               "/storage/coins-in-album.avif") }} -->
+	{{ template "example-image"
+	   (tuple (.T "Coins in an album")
+	          "/storage/coins-in-album-labeled.avif") }}
+	{{ template "example-image"
+	   (tuple (.T "Coins in an album with labels")
+	          "/storage/coins-in-album-labeled.avif") }}
+	{{ template "example-image"
+	   (tuple (.T "Coins in a reusable roll")
+	          "/storage/coins-in-roll.avif") }}
+	{{ template "example-image"
+	   (tuple (.T "Flips in an album")
+	          "/storage/flips-in-album.avif" )}}
+</main>
+{{ end }}
+
+{{ define "example-image" }}
+<details>
+    <summary>{{ index . 0 }}</summary>
+    <div class="design-container">
+        <img
+			class="big"
+			src={{ index . 1 }}
+			alt={{ index . 0 }}
+		>
+    </div>
+</details>
+{{ end }}
