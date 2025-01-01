@@ -24,26 +24,20 @@ func Run(port int) {
 	fs := http.FileServer(http.Dir("static"))
 	final := http.HandlerFunc(finalHandler)
 	mux := http.NewServeMux()
+
+	mwareB := chain(firstHandler, i18nHandler) // [B]asic
+	mwareC := chain(mwareB, countryHandler)    // [C]ountry
+	mwareM := chain(mwareC, mintageHandler)    // [M]intage
+
 	mux.Handle("GET /designs/", fs)
 	mux.Handle("GET /favicon.ico", fs)
 	mux.Handle("GET /fonts/", fs)
 	mux.Handle("GET /storage/", fs)
 	mux.Handle("GET /style.min.css", fs)
-	mux.Handle("GET /coins/mintages", chain(
-		firstHandler,
-		i18nHandler,
-		countryHandler,
-		mintageHandler,
-	)(final))
-	mux.Handle("GET /coins/designs", chain(
-		firstHandler,
-		i18nHandler,
-		countryHandler,
-	)(final))
-	mux.Handle("GET /", chain(
-		firstHandler,
-		i18nHandler,
-	)(final))
+	mux.Handle("GET /coins/designs", mwareC(final))
+	mux.Handle("GET /coins/mintages", mwareM(final))
+	mux.Handle("GET /collecting/crh", mwareC(final))
+	mux.Handle("GET /", mwareB(final))
 	mux.Handle("POST /language", http.HandlerFunc(setUserLanguage))
 
 	portStr := ":" + strconv.Itoa(port)

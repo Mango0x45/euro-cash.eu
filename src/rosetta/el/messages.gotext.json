@@ -527,6 +527,681 @@
             "translation": ""
         },
         {
+            "id": "Coin Roll Hunting",
+            "message": "Coin Roll Hunting",
+            "translation": ""
+        },
+        {
+            "id": "What is Coin Roll Hunting?",
+            "message": "What is Coin Roll Hunting?",
+            "translation": ""
+        },
+        {
+            "id": "Coin roll hunting is a popular method of coin collecting in which you withdrawal cash from your bank in the form of coins which you then search through to find new additions to your collection. Once you’ve searched through all your coins, you will typically deposit your left over coins at the bank and withdrawal new coins.",
+            "message": "Coin roll hunting is a popular method of coin collecting in which you withdrawal cash from your bank in the form of coins which you then search through to find new additions to your collection. Once you’ve searched through all your coins, you will typically deposit your left over coins at the bank and withdrawal new coins.",
+            "translation": ""
+        },
+        {
+            "id": "This type of coin collecting is often called ‘Coin Roll Hunting’ due to the fact that coins are often withdrawn in paper-wrapped rolls. You may however find that your coins come in plastic bags instead (common in countries like Ireland).",
+            "message": "This type of coin collecting is often called ‘Coin Roll Hunting’ due to the fact that coins are often withdrawn in paper-wrapped rolls. You may however find that your coins come in plastic bags instead (common in countries like Ireland).",
+            "translation": ""
+        },
+        {
+            "id": "Depending on your bank and branch, the process of obtaining coins may differ. Some banks require you speak to a teller, others have coin machines. Some banks may also require that you are a customer or even to have a business account. If you aren’t sure about if you can get coins we suggest you contact your bank, although further down this page we also have information about the withdrawal of coins in various countries and major banks.",
+            "message": "Depending on your bank and branch, the process of obtaining coins may differ. Some banks require you speak to a teller, others have coin machines. Some banks may also require that you are a customer or even to have a business account. If you aren’t sure about if you can get coins we suggest you contact your bank, although further down this page we also have information about the withdrawal of coins in various countries and major banks.",
+            "translation": ""
+        },
+        {
+            "id": "Getting Started",
+            "message": "Getting Started",
+            "translation": ""
+        },
+        {
+            "id": "To get started with coin roll hunting you should first contact your bank or check their website to find details regarding coin withdrawal. You will then typically need to go to the bank to pick up your coins. Depending on your bank you may be able to withdrawal coins from a machine, although often you can pick up your coins from the banks tellers. You will also often need to pay a small fee for each roll, although some banks don’t charge fees.",
+            "message": "To get started with coin roll hunting you should first contact your bank or check their website to find details regarding coin withdrawal. You will then typically need to go to the bank to pick up your coins. Depending on your bank you may be able to withdrawal coins from a machine, although often you can pick up your coins from the banks tellers. You will also often need to pay a small fee for each roll, although some banks don’t charge fees.",
+            "translation": ""
+        },
+        {
+            "id": "It is also important to find details regarding the deposit of coins. Depositing coins often also requires the payment of a fee — one which is typically more expensive than the withdrawal fees. If depositing your coins is too expensive you can always exchange your left over coins at shops for banknotes. It is often cheaper (or even free) to deposit banknotes.",
+            "message": "It is also important to find details regarding the deposit of coins. Depositing coins often also requires the payment of a fee — one which is typically more expensive than the withdrawal fees. If depositing your coins is too expensive you can always exchange your left over coins at shops for banknotes. It is often cheaper (or even free) to deposit banknotes.",
+            "translation": ""
+        },
+        {
+            "id": "In some countries such as Austria it is even common to be able to withdrawal new coins from your account by exchanging the left over coins you already have.",
+            "message": "In some countries such as Austria it is even common to be able to withdrawal new coins from your account by exchanging the left over coins you already have.",
+            "translation": ""
+        },
+        {
+            "id": "Country-Specific Details",
+            "message": "Country-Specific Details",
+            "translation": ""
+        },
+        {
+            "id": "Below you can find all sorts of country-specific information we have regarding obtaining coin rolls. We lack a lot of information for many of the countries, so if you have any additional information such as your banks fees, the availability of coin roll machines, etc. feel free to contact us! You can find our contact information %shere%s.",
+            "message": "Below you can find all sorts of country-specific information we have regarding obtaining coin rolls. We lack a lot of information for many of the countries, so if you have any additional information such as your banks fees, the availability of coin roll machines, etc. feel free to contact us! You can find our contact information %shere%s.",
+            "translation": ""
+        },
+        {
+            "id": "Be aware of the face that the information below is prone to being outdated, and as such may not reflect the current reality.",
+            "message": "Be aware of the face that the information below is prone to being outdated, and as such may not reflect the current reality.",
+            "translation": ""
+        },
+        {
+            "id": "Coin rolls can be obtained from Andbank, Crèdit Andorrà, and MoraBanc. All three of these banks require that you are a customer to get rolls. There have however been reports of individuals managing to get rolls without any fees and without being a customer by simply asking kindly at the bank.",
+            "message": "Coin rolls can be obtained from Andbank, Crèdit Andorrà, and MoraBanc. All three of these banks require that you are a customer to get rolls. There have however been reports of individuals managing to get rolls without any fees and without being a customer by simply asking kindly at the bank.",
+            "translation": ""
+        },
+        {
+            "id": "The Austrian National Bank does not distribute circulated rolls but sells rolls of commemorative coins at face value on release as well as uncirculated rolls for all denominations.",
+            "message": "The Austrian National Bank does not distribute circulated rolls but sells rolls of commemorative coins at face value on release as well as uncirculated rolls for all denominations.",
+            "translation": ""
+        },
+        {
+            "id": "There is a fee of %s per roll. Rolls can be purchased with cash at machines. These machines are available to everyone, but not in all branches. Look for the ‘Münzrollengeber’ filter option %shere%s.",
+            "message": "There is a fee of %s per roll. Rolls can be purchased with cash at machines. These machines are available to everyone, but not in all branches. Look for the ‘Münzrollengeber’ filter option %shere%s.",
+            "translation": ""
+        },
+        {
+            "id": "There is a fee of %s per roll. You must be a customer to use machines to get rolls. Rolls have no fees when purchased at counters, but counters redirect you to machines if they work; counters accept cash. You must present an Erste Bank card to buy rolls from machines, but you can pay with cash.",
+            "message": "There is a fee of %s per roll. You must be a customer to use machines to get rolls. Rolls have no fees when purchased at counters, but counters redirect you to machines if they work; counters accept cash. You must present an Erste Bank card to buy rolls from machines, but you can pay with cash.",
+            "translation": ""
+        },
+        {
+            "id": "Depositing coins is free for up to %s a day, at which point you pay 1%% for any additional deposited coins. You must also be a customer. Depositing coins is free for all Erste Bank customers at Dornbirner Sparkasse with no limit.",
+            "message": "Depositing coins is free for up to %s a day, at which point you pay 1%% for any additional deposited coins. You must also be a customer. Depositing coins is free for all Erste Bank customers at Dornbirner Sparkasse with no limit.",
+            "translation": ""
+        },
+        {
+            "id": "There is a fee of %s per roll if you aren’t a customer, and %s otherwise. Coin deposits are free if you’re a customer.",
+            "message": "There is a fee of %s per roll if you aren’t a customer, and %s otherwise. Coin deposits are free if you’re a customer.",
+            "translation": ""
+        },
+        {
+            "id": "Reportedly fee-less with no need of being a customer, but this is unconfirmed.",
+            "message": "Reportedly fee-less with no need of being a customer, but this is unconfirmed.",
+            "translation": ""
+        },
+        {
+            "id": "There is a %s fee with no limit on the number of rolls.",
+            "message": "There is a %s fee with no limit on the number of rolls.",
+            "translation": ""
+        },
+        {
+            "id": "Belgian Central Bank",
+            "message": "Belgian Central Bank",
+            "translation": ""
+        },
+        {
+            "id": "You can visit the Belgian Central Bank in Brussels as an EU citizen. You can order coin rolls for no fee up to %s in value. They seem to distribute uncirculated coins (no commemoratives).",
+            "message": "You can visit the Belgian Central Bank in Brussels as an EU citizen. You can order coin rolls for no fee up to %s in value. They seem to distribute uncirculated coins (no commemoratives).",
+            "translation": ""
+        },
+        {
+            "id": "Free for customers but getting coin rolls is still difficult sometimes. Non-customers cannot get rolls.",
+            "message": "Free for customers but getting coin rolls is still difficult sometimes. Non-customers cannot get rolls.",
+            "translation": ""
+        },
+        {
+            "id": "Free for customers when you order through their online platform.",
+            "message": "Free for customers when you order through their online platform.",
+            "translation": ""
+        },
+        {
+            "id": "Bank of Cyprus",
+            "message": "Bank of Cyprus",
+            "translation": ""
+        },
+        {
+            "id": "At the Bank of Cyprus it is possible to buy bags of coins without being a customer, and without paying any additional fees. Depending on the branch you visit you may have coin roll machine available. Do note that the bags provided by the Bank of Cyprus are around twice as large as usual with %s bags containing 50 coins and the other denomination bags containing 100 coins.",
+            "message": "At the Bank of Cyprus it is possible to buy bags of coins without being a customer, and without paying any additional fees. Depending on the branch you visit you may have coin roll machine available. Do note that the bags provided by the Bank of Cyprus are around twice as large as usual with %s bags containing 50 coins and the other denomination bags containing 100 coins.",
+            "translation": ""
+        },
+        {
+            "id": "Coin roll availability may vary across banks and branches, as well as the price. You must be a customer to purchase coin rolls unless specified otherwise.",
+            "message": "Coin roll availability may vary across banks and branches, as well as the price. You must be a customer to purchase coin rolls unless specified otherwise.",
+            "translation": ""
+        },
+        {
+            "id": "German Federal Bank (Deutsche Bundesbank)",
+            "message": "German Federal Bank (Deutsche Bundesbank)",
+            "translation": ""
+        },
+        {
+            "id": "You can obtain regular- and commemorative coins for face value including 5-, 10-, and 20 euro coins. You do not need to be a customer although depending on your branch you may need to make an appointment. The purchase of coins can only be done with cash.",
+            "message": "You can obtain regular- and commemorative coins for face value including 5-, 10-, and 20 euro coins. You do not need to be a customer although depending on your branch you may need to make an appointment. The purchase of coins can only be done with cash.",
+            "translation": ""
+        },
+        {
+            "id": "Hand-rolled coin rolls can be obtained with no additional fees.",
+            "message": "Hand-rolled coin rolls can be obtained with no additional fees.",
+            "translation": ""
+        },
+        {
+            "id": "Coin rolls can be obtained for a fee of %s–%s per roll. The amount varies per branch.",
+            "message": "Coin rolls can be obtained for a fee of %s–%s per roll. The amount varies per branch.",
+            "translation": ""
+        },
+        {
+            "id": "Coin rolls can be obtained for a fee of %s per roll.",
+            "message": "Coin rolls can be obtained for a fee of %s per roll.",
+            "translation": ""
+        },
+        {
+            "id": "Obtaining coin rolls in Estonia is typically quite difficult, and often expensive. You also often need to make an appointment in advance.",
+            "message": "Obtaining coin rolls in Estonia is typically quite difficult, and often expensive. You also often need to make an appointment in advance.",
+            "translation": ""
+        },
+        {
+            "id": "Central Bank of Estonia Museum",
+            "message": "Central Bank of Estonia Museum",
+            "translation": ""
+        },
+        {
+            "id": "You can purchase commemorative coins (even those released years ago) at face value. It is also an interesting museum to visit in general.",
+            "message": "You can purchase commemorative coins (even those released years ago) at face value. It is also an interesting museum to visit in general.",
+            "translation": ""
+        },
+        {
+            "id": "Coin rolls are free but you must be a customer.",
+            "message": "Coin rolls are free but you must be a customer.",
+            "translation": ""
+        },
+        {
+            "id": "Bank of Spain",
+            "message": "Bank of Spain",
+            "translation": ""
+        },
+        {
+            "id": "You can purchase individual coins and commemorative coin rolls (even those of other countries). You can watch %shere%s to see how to do it.",
+            "message": "You can purchase individual coins and commemorative coin rolls (even those of other countries). You can watch %shere%s to see how to do it.",
+            "translation": ""
+        },
+        {
+            "id": "Coin rolls have a fee of %s for 5 rolls. This seems to vary by region.",
+            "message": "Coin rolls have a fee of %s for 5 rolls. This seems to vary by region.",
+            "translation": ""
+        },
+        {
+            "id": "Coin rolls have no fees.",
+            "message": "Coin rolls have no fees.",
+            "translation": ""
+        },
+        {
+            "id": "La Caixa",
+            "message": "La Caixa",
+            "translation": ""
+        },
+        {
+            "id": "Coin rolls have no fees and can be purchased with cash. You do not need to be a customer, although this needs to be re-verified.",
+            "message": "Coin rolls have no fees and can be purchased with cash. You do not need to be a customer, although this needs to be re-verified.",
+            "translation": ""
+        },
+        {
+            "id": "Finland has no coin roll machines, but you can find vending machines or coin exchange machines (albeit they are rare).",
+            "message": "Finland has no coin roll machines, but you can find vending machines or coin exchange machines (albeit they are rare).",
+            "translation": ""
+        },
+        {
+            "id": "Coin rolls can be obtained with no fees.",
+            "message": "Coin rolls can be obtained with no fees.",
+            "translation": ""
+        },
+        {
+            "id": "Bank of Finland",
+            "message": "Bank of Finland",
+            "translation": ""
+        },
+        {
+            "id": "It is probably not possible to obtain coin rolls, but this is not confirmed.",
+            "message": "It is probably not possible to obtain coin rolls, but this is not confirmed.",
+            "translation": ""
+        },
+        {
+            "id": "Coin roll machines are uncommon, only some banks have them and you need to be a customer. You may also need to order them in advance.",
+            "message": "Coin roll machines are uncommon, only some banks have them and you need to be a customer. You may also need to order them in advance.",
+            "translation": ""
+        },
+        {
+            "id": "Coin rolls can be obtained with no fee. You must be a customer.",
+            "message": "Coin rolls can be obtained with no fee. You must be a customer.",
+            "translation": ""
+        },
+        {
+            "id": "and",
+            "message": "and",
+            "translation": ""
+        },
+        {
+            "id": "Free coin rolls if you are a customer or %s per roll if you are not a customer. There are coin roll machines.",
+            "message": "Free coin rolls if you are a customer or %s per roll if you are not a customer. There are coin roll machines.",
+            "translation": ""
+        },
+        {
+            "id": "There are coin roll machines but it is not yet known if you need to be a customer or if there are fees.",
+            "message": "There are coin roll machines but it is not yet known if you need to be a customer or if there are fees.",
+            "translation": ""
+        },
+        {
+            "id": "Bank of Greece (Τράπεζα της Ελλάδος)",
+            "message": "Bank of Greece (Τράπεζα της Ελλάδος)",
+            "translation": ""
+        },
+        {
+            "id": "Fee-less coin rolls for everyone (you will need to show ID). The latest commemorative coins are also sold for face value.",
+            "message": "Fee-less coin rolls for everyone (you will need to show ID). The latest commemorative coins are also sold for face value.",
+            "translation": ""
+        },
+        {
+            "id": "Fee-less coin bags for everyone (no ID necessary). Smaller denominations are often not given out, and the coin bags you recieve are very large (there are reports of %s bags containing 250 coins).",
+            "message": "Fee-less coin bags for everyone (no ID necessary). Smaller denominations are often not given out, and the coin bags you recieve are very large (there are reports of %s bags containing 250 coins).",
+            "translation": ""
+        },
+        {
+            "id": "In general, coin rolls are available at banks with a fee of %s per roll; rolls could potentially have no fee if you only need a few.",
+            "message": "In general, coin rolls are available at banks with a fee of %s per roll; rolls could potentially have no fee if you only need a few.",
+            "translation": ""
+        },
+        {
+            "id": "There are coin roll machines but it is unknown if you need to be a customer or if there are additional fees.",
+            "message": "There are coin roll machines but it is unknown if you need to be a customer or if there are additional fees.",
+            "translation": ""
+        },
+        {
+            "id": "Bank of Italy",
+            "message": "Bank of Italy",
+            "translation": ""
+        },
+        {
+            "id": "Coin rolls are available to everyone.",
+            "message": "Coin rolls are available to everyone.",
+            "translation": ""
+        },
+        {
+            "id": "Works, but with very high fees (5%% of cost).",
+            "message": "Works, but with very high fees (5%% of cost).",
+            "translation": ""
+        },
+        {
+            "id": "Fee of %s per roll of 2 euro coins.",
+            "message": "Fee of %s per roll of 2 euro coins.",
+            "translation": ""
+        },
+        {
+            "id": "As far as we are aware, Lietuvos Bankas only distributes coin rolls to businesses.",
+            "message": "As far as we are aware, Lietuvos Bankas only distributes coin rolls to businesses.",
+            "translation": ""
+        },
+        {
+            "id": "It may be worth checking out payout machines to exchange banknotes into coins.",
+            "message": "It may be worth checking out payout machines to exchange banknotes into coins.",
+            "translation": ""
+        },
+        {
+            "id": "Luxembourgish Central Bank (Banque Centrale du Luxembourg)",
+            "message": "Luxembourgish Central Bank (Banque Centrale du Luxembourg)",
+            "translation": ""
+        },
+        {
+            "id": "We currently have no information regarding regular coins, however their webshop sells commemorative coins (for a high premium, but better than most resellers). Commemorative coins are also available for purchase in-person.",
+            "message": "We currently have no information regarding regular coins, however their webshop sells commemorative coins (for a high premium, but better than most resellers). Commemorative coins are also available for purchase in-person.",
+            "translation": ""
+        },
+        {
+            "id": "You should be able to get coin rolls with no additional fees.",
+            "message": "You should be able to get coin rolls with no additional fees.",
+            "translation": ""
+        },
+        {
+            "id": "In general coin rolls are sold with a fee of %s per roll, but we’re lacking a lot of information.",
+            "message": "In general coin rolls are sold with a fee of %s per roll, but we’re lacking a lot of information.",
+            "translation": ""
+        },
+        {
+            "id": "Bank of Valletta and HSBC Bank Malta",
+            "message": "Bank of Valletta and HSBC Bank Malta",
+            "translation": ""
+        },
+        {
+            "id": "You can get rolls for a fee of %s per roll. You must order coin rolls through their online platform, and you must be a customer.",
+            "message": "You can get rolls for a fee of %s per roll. You must order coin rolls through their online platform, and you must be a customer.",
+            "translation": ""
+        },
+        {
+            "id": "Banks in the Netherlands do not carry cash, and as such it’s not possible to obtain rolls from bank tellers. Obtaining coins from the Dutch Central Bank (De Nederlandsche Bank) is also not possible. If you want to obtain coin rolls you need to use a Geldmaat coin roll machine which can be found in specific branches of GAMMA and Karwei. Geldmaat offers a map on their website where you can search for branches with these machines; you can find that map %shere%s.",
+            "message": "Banks in the Netherlands do not carry cash, and as such it’s not possible to obtain rolls from bank tellers. Obtaining coins from the Dutch Central Bank (De Nederlandsche Bank) is also not possible. If you want to obtain coin rolls you need to use a Geldmaat coin roll machine which can be found in specific branches of GAMMA and Karwei. Geldmaat offers a map on their website where you can search for branches with these machines; you can find that map %shere%s.",
+            "translation": ""
+        },
+        {
+            "id": "In order to be able to use a Geldmaat coin machine, you must be a customer of either ABN AMRO, ING, or Rabobank. You also cannot pay by cash, only card payments are allowed. All three banks charge a withdrawal fee for getting coin rolls, which are detailed in the list below.",
+            "message": "In order to be able to use a Geldmaat coin machine, you must be a customer of either ABN AMRO, ING, or Rabobank. You also cannot pay by cash, only card payments are allowed. All three banks charge a withdrawal fee for getting coin rolls, which are detailed in the list below.",
+            "translation": ""
+        },
+        {
+            "id": "%s per roll.",
+            "message": "%s per roll.",
+            "translation": ""
+        },
+        {
+            "id": "Base fee of %s + %s per roll.",
+            "message": "Base fee of %s + %s per roll.",
+            "translation": ""
+        },
+        {
+            "id": "One- and two-cent coins have been removed from circulation and cannot be obtained.",
+            "message": "One- and two-cent coins have been removed from circulation and cannot be obtained.",
+            "translation": ""
+        },
+        {
+            "id": "Coin bags are sold with no additional fees to bank customers.",
+            "message": "Coin bags are sold with no additional fees to bank customers.",
+            "translation": ""
+        },
+        {
+            "id": "Bank of Portugal (Banco de Portugal)",
+            "message": "Bank of Portugal (Banco de Portugal)",
+            "translation": ""
+        },
+        {
+            "id": "Coin bags are sold with no additional fees to everyone.",
+            "message": "Coin bags are sold with no additional fees to everyone.",
+            "translation": ""
+        },
+        {
+            "id": "In general there is a %s fee for coin rolls.",
+            "message": "In general there is a %s fee for coin rolls.",
+            "translation": ""
+        },
+        {
+            "id": "Bank of Slovenia (Banka Slovenije)",
+            "message": "Bank of Slovenia (Banka Slovenije)",
+            "translation": ""
+        },
+        {
+            "id": "You can purchase commemorative coins for face value, and coin rolls are sold with no fees to everyone.",
+            "message": "You can purchase commemorative coins for face value, and coin rolls are sold with no fees to everyone.",
+            "translation": ""
+        },
+        {
+            "id": "National Bank of Slovakia (Národná banka Slovenska)",
+            "message": "National Bank of Slovakia (Národná banka Slovenska)",
+            "translation": ""
+        },
+        {
+            "id": "You may be able to get uncirculated rolls, but this is not yet confirmed.",
+            "message": "You may be able to get uncirculated rolls, but this is not yet confirmed.",
+            "translation": ""
+        },
+        {
+            "id": "You can get an unlimited number of rolls for a %s fee. You must be a customer of the bank.",
+            "message": "You can get an unlimited number of rolls for a %s fee. You must be a customer of the bank.",
+            "translation": ""
+        },
+        {
+            "id": "Ask the Pope nicely and he’ll probably give you some Vatican coins for free.",
+            "message": "Ask the Pope nicely and he’ll probably give you some Vatican coins for free.",
+            "translation": ""
+        },
+        {
+            "id": "We currently have no information regarding coin roll hunting in %s.",
+            "message": "We currently have no information regarding coin roll hunting in %s.",
+            "translation": ""
+        },
+        {
+            "id": "Coin Storage",
+            "message": "Coin Storage",
+            "translation": ""
+        },
+        {
+            "id": "There are many different methods of storing your collecting, each with their own benefits and drawbacks. This page will describe the most common methods collectors use to store their coins, as well as the pros and cons of each method.",
+            "message": "There are many different methods of storing your collecting, each with their own benefits and drawbacks. This page will describe the most common methods collectors use to store their coins, as well as the pros and cons of each method.",
+            "translation": ""
+        },
+        {
+            "id": "Coin Albums",
+            "message": "Coin Albums",
+            "translation": ""
+        },
+        {
+            "id": "Coin albums are one of the most popular ways of storing coins. In a coin album you will have multiple coin sheets. These sheets are plastic pages with slots that you can put your coin in to keep them protected. When searching for sheets for your album it is very important to ensure that they do not contain any PVC, which will damage your coins. Some albums will come with sheets already included.",
+            "message": "Coin albums are one of the most popular ways of storing coins. In a coin album you will have multiple coin sheets. These sheets are plastic pages with slots that you can put your coin in to keep them protected. When searching for sheets for your album it is very important to ensure that they do not contain any PVC, which will damage your coins. Some albums will come with sheets already included.",
+            "translation": ""
+        },
+        {
+            "id": "Albums can be an affordable way to store your coins, but higher-end albums can be a bit expensive. Also remember to always ensure that your albums do not contain any PVC!",
+            "message": "Albums can be an affordable way to store your coins, but higher-end albums can be a bit expensive. Also remember to always ensure that your albums do not contain any PVC!",
+            "translation": ""
+        },
+        {
+            "id": "Coin Boxes",
+            "message": "Coin Boxes",
+            "translation": ""
+        },
+        {
+            "id": "Coin boxes are to many people the most aesthetic way to store your coins. A coin box is comprised of various layers which can be stacked ontop of each other. Each layer has various holes where you can insert your coins. Typically you are meant to store your coins in a layer encased in a coin capsule.",
+            "message": "Coin boxes are to many people the most aesthetic way to store your coins. A coin box is comprised of various layers which can be stacked ontop of each other. Each layer has various holes where you can insert your coins. Typically you are meant to store your coins in a layer encased in a coin capsule.",
+            "translation": ""
+        },
+        {
+            "id": "Boxes are quite space-inefficient and are one of the most expensive ways to store your coins, but at the same time they offer a great visual appeal.",
+            "message": "Boxes are quite space-inefficient and are one of the most expensive ways to store your coins, but at the same time they offer a great visual appeal.",
+            "translation": ""
+        },
+        {
+            "id": "Coin Capsules",
+            "message": "Coin Capsules",
+            "translation": ""
+        },
+        {
+            "id": "Coin capsules are plastic capsules you can put your coin in. They offer good protection to your coins, while still allowing you to view all parts of your coin easily, including the edge engravings and -inscriptions. Capsules are also far more durable than flips, and can be opened and closed repeatedly allowing for them to be reused. This isn’t really possible with flips.",
+            "message": "Coin capsules are plastic capsules you can put your coin in. They offer good protection to your coins, while still allowing you to view all parts of your coin easily, including the edge engravings and -inscriptions. Capsules are also far more durable than flips, and can be opened and closed repeatedly allowing for them to be reused. This isn’t really possible with flips.",
+            "translation": ""
+        },
+        {
+            "id": "Capsules can be a bit pricey, but are reusable and are very durable. They also come in different sizes, so make sure you get the right size for your coins.",
+            "message": "Capsules can be a bit pricey, but are reusable and are very durable. They also come in different sizes, so make sure you get the right size for your coins.",
+            "translation": ""
+        },
+        {
+            "id": "Coin Flips",
+            "message": "Coin Flips",
+            "translation": ""
+        },
+        {
+            "id": "Coin flips, also known as ‘2x2’ flips by some Americans are small cardboard flips with a plastic covered hole in the middle for viewing. Most coin flips are stapled, meaning you put your coin in the flip and staple it shut. These kinds of flips are very cheap, and you can buy stacks of a few hundred for only a few euros. If you don’t like the staples though, you can also buy adhesive-flips that glue themselves shut. These flips are more expensive, but also look better than their stapled equivalents.",
+            "message": "Coin flips, also known as ‘2x2’ flips by some Americans are small cardboard flips with a plastic covered hole in the middle for viewing. Most coin flips are stapled, meaning you put your coin in the flip and staple it shut. These kinds of flips are very cheap, and you can buy stacks of a few hundred for only a few euros. If you don’t like the staples though, you can also buy adhesive-flips that glue themselves shut. These flips are more expensive, but also look better than their stapled equivalents.",
+            "translation": ""
+        },
+        {
+            "id": "Coin slips are also pretty space efficient, and can be easily stacked in boxes for compact storage. Many collectors also like to write notes about their coins on the flips. There also exist special sheets for coin albums that allow you to put in flipped coins, but this is more expensive and less space-efficient than simply using flips or an album without flips.",
+            "message": "Coin slips are also pretty space efficient, and can be easily stacked in boxes for compact storage. Many collectors also like to write notes about their coins on the flips. There also exist special sheets for coin albums that allow you to put in flipped coins, but this is more expensive and less space-efficient than simply using flips or an album without flips.",
+            "translation": ""
+        },
+        {
+            "id": "Coin Rolls",
+            "message": "Coin Rolls",
+            "translation": ""
+        },
+        {
+            "id": "This is probably the most inexpensive way to store your coins. If you take good care of the paper when opening your coin rolls, you can simply reuse them for storage. Just roll your coins back up and put some rubber bands on the ends. You can also get reusable plastic rolls that can be opened and closed. You will need different rolls based on the denomination you want to store, but they are very space-efficient.",
+            "message": "This is probably the most inexpensive way to store your coins. If you take good care of the paper when opening your coin rolls, you can simply reuse them for storage. Just roll your coins back up and put some rubber bands on the ends. You can also get reusable plastic rolls that can be opened and closed. You will need different rolls based on the denomination you want to store, but they are very space-efficient.",
+            "translation": ""
+        },
+        {
+            "id": "Examples",
+            "message": "Examples",
+            "translation": ""
+        },
+        {
+            "id": "In case you’re looking for some inspiration on how to store your collections, here are some examples.",
+            "message": "In case you’re looking for some inspiration on how to store your collections, here are some examples.",
+            "translation": ""
+        },
+        {
+            "id": "Euro Coin Collecting",
+            "message": "Euro Coin Collecting",
+            "translation": ""
+        },
+        {
+            "id": "What is Vending Machine Hunting?",
+            "message": "What is Vending Machine Hunting?",
+            "translation": ""
+        },
+        {
+            "id": "‘Vending machine hunting’ is a strategy of collecting coins whereby you continuously insert coins into a vending machine and cancel the transaction by pressing the return button. When the vending machine returns your coins to you, you will often get different coins from the ones you put in, and you can repeat this process until you’ve searched through every coin in the machine.",
+            "message": "‘Vending machine hunting’ is a strategy of collecting coins whereby you continuously insert coins into a vending machine and cancel the transaction by pressing the return button. When the vending machine returns your coins to you, you will often get different coins from the ones you put in, and you can repeat this process until you’ve searched through every coin in the machine.",
+            "translation": ""
+        },
+        {
+            "id": "The Test Coins",
+            "message": "The Test Coins",
+            "translation": ""
+        },
+        {
+            "id": "First, you want to make sure the vending machine you come across actually gives back change — sometimes they don’t! Throw in a 10 cent coin and press the return button. If it doesn’t give the coin back, you can move on to the next machine; there’s a high chance it won’t return higher denominations either. Next throw in a random 2 euro coin and press the return button. You should do this because vending machines may not return 2 euro coins, but rather 1 euro- or 50 cent coins instead. It’s better to find out immediately as opposed to later once you’ve already put in all of your 2 euro coins.",
+            "message": "First, you want to make sure the vending machine you come across actually gives back change — sometimes they don’t! Throw in a 10 cent coin and press the return button. If it doesn’t give the coin back, you can move on to the next machine; there’s a high chance it won’t return higher denominations either. Next throw in a random 2 euro coin and press the return button. You should do this because vending machines may not return 2 euro coins, but rather 1 euro- or 50 cent coins instead. It’s better to find out immediately as opposed to later once you’ve already put in all of your 2 euro coins.",
+            "translation": ""
+        },
+        {
+            "id": "The Stopper",
+            "message": "The Stopper",
+            "translation": ""
+        },
+        {
+            "id": "We want to be able to know when we’ve gone through all the coins in the vending machine. To do this, take out a coin and mark it with something (drawing on it with a Sharpie works well), then put it into the machine. Next time you get the same coin back, you know you’ve gone through everything.",
+            "message": "We want to be able to know when we’ve gone through all the coins in the vending machine. To do this, take out a coin and mark it with something (drawing on it with a Sharpie works well), then put it into the machine. Next time you get the same coin back, you know you’ve gone through everything.",
+            "translation": ""
+        },
+        {
+            "id": "Rejected Stoppers and Coins",
+            "message": "Rejected Stoppers and Coins",
+            "translation": ""
+        },
+        {
+            "id": "Sometimes you may throw a stopper in, but you hear a ‘clunk’ sound, as if the coin was dropped into a box (normally adding a coin should be silent after you throw it in). This means the coin was not added to the stack properly, and so it will not be returned. Pay attention to this noise, because you won’t be getting the stopper back! Throw in another marked coin instead until the machine accepts the coin.",
+            "message": "Sometimes you may throw a stopper in, but you hear a ‘clunk’ sound, as if the coin was dropped into a box (normally adding a coin should be silent after you throw it in). This means the coin was not added to the stack properly, and so it will not be returned. Pay attention to this noise, because you won’t be getting the stopper back! Throw in another marked coin instead until the machine accepts the coin.",
+            "translation": ""
+        },
+        {
+            "id": "(Non-)Merging Machines",
+            "message": "(Non-)Merging Machines",
+            "translation": ""
+        },
+        {
+            "id": "We generally identify between two main types of vending machines.",
+            "message": "We generally identify between two main types of vending machines.",
+            "translation": ""
+        },
+        {
+            "id": "Merging",
+            "message": "Merging",
+            "translation": ""
+        },
+        {
+            "id": "The vending machine merges change together. For example if you throw in five 50 cent coins, the machine returns either two 1 euro coins and one 50 cent coin or one 2 euro and one 50 cent coin. This usually means you can hunt 2 euro coins very quickly but other denominations only once at a time. A good tip is to throw in an odd number of euros and 80 cents if you want to search through all denominations.",
+            "message": "The vending machine merges change together. For example if you throw in five 50 cent coins, the machine returns either two 1 euro coins and one 50 cent coin or one 2 euro and one 50 cent coin. This usually means you can hunt 2 euro coins very quickly but other denominations only once at a time. A good tip is to throw in an odd number of euros and 80 cents if you want to search through all denominations.",
+            "translation": ""
+        },
+        {
+            "id": "Non-Merging",
+            "message": "Non-Merging",
+            "translation": ""
+        },
+        {
+            "id": "The vending machine does not merge change together. This means if you throw in five 50 cent coins it will return five 50 cent coins. This makes it very easy to hunt a large amount of a specific denomination.",
+            "message": "The vending machine does not merge change together. This means if you throw in five 50 cent coins it will return five 50 cent coins. This makes it very easy to hunt a large amount of a specific denomination.",
+            "translation": ""
+        },
+        {
+            "id": "Limits",
+            "message": "Limits",
+            "translation": ""
+        },
+        {
+            "id": "There are some limits to vending machine hunts which you need to be aware of.",
+            "message": "There are some limits to vending machine hunts which you need to be aware of.",
+            "translation": ""
+        },
+        {
+            "id": "Maximum Input Limit",
+            "message": "Maximum Input Limit",
+            "translation": ""
+        },
+        {
+            "id": "Some machines have a maximum amount you can throw in, and will reject anything higher. For example machines with a max limit of five euros will reject any additional coins if you throw in five euros. You can try to go above the limit if you throw in, say, %s and then another one- or two euro coin; the machine will probably accept it.",
+            "message": "Some machines have a maximum amount you can throw in, and will reject anything higher. For example machines with a max limit of five euros will reject any additional coins if you throw in five euros. You can try to go above the limit if you throw in, say, %s and then another one- or two euro coin; the machine will probably accept it.",
+            "translation": ""
+        },
+        {
+            "id": "Maximum Change Limit",
+            "message": "Maximum Change Limit",
+            "translation": ""
+        },
+        {
+            "id": "Some machines will either give back large amounts of change in bills or will not give back large amounts of change at all (usually cigarette machines). Read the labels on all machines carefully since these limits are usually written there.",
+            "message": "Some machines will either give back large amounts of change in bills or will not give back large amounts of change at all (usually cigarette machines). Read the labels on all machines carefully since these limits are usually written there.",
+            "translation": ""
+        },
+        {
+            "id": "Even if no limits are listed, it’s still advised that you exercise caution: it is not uncommon for a vending machine to steal your money. In the case that a vending machine does steal your money, look for a label on the machine that contains a support number.",
+            "message": "Even if no limits are listed, it’s still advised that you exercise caution: it is not uncommon for a vending machine to steal your money. In the case that a vending machine does steal your money, look for a label on the machine that contains a support number.",
+            "translation": ""
+        },
+        {
+            "id": "For information on Austrian cigarette machines, see the ‘%sCigarette Machines%s’ section.",
+            "message": "For information on Austrian cigarette machines, see the ‘%sCigarette Machines%s’ section.",
+            "translation": ""
+        },
+        {
+            "id": "Cigarette Machines",
+            "message": "Cigarette Machines",
+            "translation": ""
+        },
+        {
+            "id": "In some countries where cigarette machines are legal, you can hunt through them as well. Unless you’re in Malta, you must verify your age on them by either sliding an ID card through a sensor or holding a debit card on an RFID scanner; you must do this for every cycle. Sometimes you must also select something to purchase, throw in less money than the cost, and then cancel the purchase. Note that most cigarette machines in Austria have a %s max change limit.",
+            "message": "In some countries where cigarette machines are legal, you can hunt through them as well. Unless you’re in Malta, you must verify your age on them by either sliding an ID card through a sensor or holding a debit card on an RFID scanner; you must do this for every cycle. Sometimes you must also select something to purchase, throw in less money than the cost, and then cancel the purchase. Note that most cigarette machines in Austria have a %s max change limit.",
+            "translation": ""
+        },
+        {
+            "id": "For RFID scanner machines it helps to wear a glove and slide a debit card into the back of it so you can easily use both hands and don’t have to fumble with a card and coins.",
+            "message": "For RFID scanner machines it helps to wear a glove and slide a debit card into the back of it so you can easily use both hands and don’t have to fumble with a card and coins.",
+            "translation": ""
+        },
+        {
+            "id": "On this section of the site you can find everything there is to know about collecting Euro coins. If this is a hobby that interests you, join the Discord server linked at the top of the page!",
+            "message": "On this section of the site you can find everything there is to know about collecting Euro coins. If this is a hobby that interests you, join the Discord server linked at the top of the page!",
+            "translation": ""
+        },
+        {
+            "id": "Learn about collecting coins from coin rolls!",
+            "message": "Learn about collecting coins from coin rolls!",
+            "translation": ""
+        },
+        {
+            "id": "Learn about the different methods to storing your collection!",
+            "message": "Learn about the different methods to storing your collection!",
+            "translation": ""
+        },
+        {
+            "id": "Shop Hunting",
+            "message": "Shop Hunting",
+            "translation": ""
+        },
+        {
+            "id": "Learn about how to collect coins from shop-keepers and other people who deal in cash!",
+            "message": "Learn about how to collect coins from shop-keepers and other people who deal in cash!",
+            "translation": ""
+        },
+        {
+            "id": "Vending Machine Hunting",
+            "message": "Vending Machine Hunting",
+            "translation": ""
+        },
+        {
+            "id": "Learn about collecting coins from vending machines!",
+            "message": "Learn about collecting coins from vending machines!",
+            "translation": ""
+        },
+        {
             "id": "The Euro Cash Compendium",
             "message": "The Euro Cash Compendium",
             "translation": ""
