@@ -1,5 +1,8 @@
 package main
 
+/* TODO: Customize logger format when running in a debug state */
+/* TODO: Set production logger to the syslog */
+
 import (
 	"flag"
 

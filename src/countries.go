@@ -12,6 +12,7 @@ type country struct {
 }
 
 func sortedCountries(p Printer) []country {
+	/* TODO: Add Kosovo and Montenegro */
 	xs := []country{
 		{Code: "ad", Name: p.T("Andorra")},
 		{Code: "at", Name: p.T("Austria")},
