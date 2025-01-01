@@ -73,7 +73,7 @@
 					<th>{{ .T "Year" }}</th>
 					{{ with $p := .Printer }}
 						{{ range denoms }}
-							<th>{{ $p.M . false }}</th>
+							<th>{{ $p.M . }}</th>
 						{{ end }}
 					{{ end }}
 				</thead>
