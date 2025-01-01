@@ -148,13 +148,6 @@ var (
 			Enabled:  false,
 		},
 		{
-			Bcp:      "sh-Cyrl",
-			Name:     "српскохрватски",
-			dateFmt:  "02. 01. 2006.",
-			Eurozone: true,
-			Enabled:  false,
-		},
-		{
 			Bcp:      "sk",
 			Name:     "slovenčina",
 			dateFmt:  "2. 1. 2006",
