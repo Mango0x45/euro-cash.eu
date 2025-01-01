@@ -4,7 +4,7 @@
 	<h1>{{ .T "Euro Coin Designs" }}</h1>
 </header>
 <main>
-  <p>
+	<p>
 		{{ .T `
 			Here you’ll be able to view all the coin designs for each country
 			in the Eurozone.  This section of the site doesn’t include minor
@@ -13,19 +13,19 @@
 			`<a href="/coins/varieties">` `</a>` | safe
 		}}
 	</p>
-  <hr />
-  <div class="country-grid">
+	<hr />
+	<div class="country-grid">
 		{{ $p := .Printer }}
 		{{ range .Countries }}
-			<a
-				class="outline"
-				data-code={{ toUpper .Code }}
-				role="button"
-				href=/coins/designs/{{ .Code }}
-			>
-				{{ $p.T .Name }}
-			</a>
+		<a
+			class="outline"
+			data-code={{ toUpper .Code }}
+			role="button"
+			href=/coins/designs/{{ .Code }}
+		>
+			{{ $p.T .Name }}
+		</a>
 		{{ end }}
-  </div>
+	</div>
 </main>
 {{ end }}
