@@ -5,4 +5,7 @@
                      "contrib/emacs"
                      (locate-dominating-file default-directory "contrib/emacs")))
                    (require 'mintage-mode)))))
- (go-ts-mode . ((require-final-newline . t))))
+ (go-ts-mode . ((comment-start . "/* ")
+                (comment-end . " */")
+                (require-final-newline . t)))
+ (mhtml-mode . ((fill-column . 79))))
