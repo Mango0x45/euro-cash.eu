@@ -4,7 +4,6 @@ import (
 	"embed"
 	"html/template"
 	"log"
-	"os"
 	"strings"
 
 	"git.thomasvoss.com/euro-cash.eu/src/mintage"
@@ -34,7 +33,7 @@ var (
 )
 
 func init() {
-	ents, err := os.ReadDir("src/templates")
+	ents, err := templateFS.ReadDir("templates")
 	if err != nil {
 		log.Fatalln(err)
 	}
