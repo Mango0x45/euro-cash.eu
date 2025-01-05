@@ -244,9 +244,11 @@ func (p Printer) M(val any) string {
 	case float64:
 		vstr = f("%.2f", val)
 	default:
-		if err := email.ServerError(badMType{"TODO"}); err != nil {
-			log.Print(err)
-		}
+		go func() {
+			if err := email.ServerError(badMType{"TODO"}); err != nil {
+				log.Print(err)
+			}
+		}()
 		/* Hopefully this never happens */
 		vstr = "ERROR"
 	}
