@@ -2,6 +2,7 @@ package src
 
 import (
 	"embed"
+	"fmt"
 	"html/template"
 	"log"
 	"strings"
@@ -26,6 +27,7 @@ var (
 		"denoms":     denoms,
 		"locales":    locales,
 		"safe":       asHTML,
+		"sprintf":    fmt.Sprintf,
 		"strToCtype": strToCtype,
 		"toUpper":    strings.ToUpper,
 		"tuple":      templateMakeTuple,

@@ -1,0 +1,352 @@
+{{ define "content" }}
+<header>
+	{{ template "navbar" . }}
+	<h1>{{ .T "Location Codes" }}</h1>
+</header>
+<main>
+	<p>
+		{{ .T `
+			Euro banknotes have two codes on them: a printer code and a serial
+			number.  The printer code tells you where a given note was printed,
+			while the serial number tells you which country issues the banknote
+			(for the 2002 series) or where the banknote was printed (for the
+			Europa series).
+		` }}
+	</p>
+
+	<h2>{{ .T "Printer Code" }}</h2>
+	<p>
+		{{ .T `
+			The printer code (not to be confused with the serial number) is a
+			small code printed on banknotes with information about where the
+			banknote was printed.  All printer codes take the form of ‘X000X0’
+			— or in other words — a letter followed by 3 numbers, a letter
+			and a final number.
+		` }}
+	</p>
+	<p>
+		{{ .T `
+			The printer code can be a bit tricky to find.  The following
+			dropdowns will show you where to find the printer code on each
+			note.
+		` }}
+	</p>
+	<details>
+		<summary>{{ .T "2002 Series Printer Codes" }}</summary>
+		<p>
+			{{ .T `
+				All these images are taken from %seurobilltracker.com%s.`
+				`<a href="https://eurobilltracker.com" target="_blank">`
+				`</a>` | safe
+			}}
+		</p>
+		{{ template "banknotes/codes/code-pos" (tuple .Printer   5 "2002") }}
+		{{ template "banknotes/codes/code-pos" (tuple .Printer  10 "2002") }}
+		{{ template "banknotes/codes/code-pos" (tuple .Printer  20 "2002") }}
+		{{ template "banknotes/codes/code-pos" (tuple .Printer  50 "2002") }}
+		{{ template "banknotes/codes/code-pos" (tuple .Printer 100 "2002") }}
+		{{ template "banknotes/codes/code-pos" (tuple .Printer 200 "2002") }}
+		{{ template "banknotes/codes/code-pos" (tuple .Printer 500 "2002") }}
+	</details>
+	<details>
+		<summary>{{ .T "Europa Series Printer Codes" }}</summary>
+		{{ template "banknotes/codes/code-pos" (tuple .Printer   5 "europa") }}
+		{{ template "banknotes/codes/code-pos" (tuple .Printer  10 "europa") }}
+		{{ template "banknotes/codes/code-pos" (tuple .Printer  20 "europa") }}
+		{{ template "banknotes/codes/code-pos" (tuple .Printer  50 "europa") }}
+		{{ template "banknotes/codes/code-pos" (tuple .Printer 100 "europa") }}
+		{{ template "banknotes/codes/code-pos" (tuple .Printer 200 "europa") }}
+	</details>
+
+	<p>
+		{{ .T `
+			The first letter in the printer code identifies the specific
+			printer at which the banknote was printed.  The tables below will
+			tell you which letters correspond to which printers.  The final
+			letter and number form a pair (such as ‘A2’ or ‘D6’).  This pair
+			acts as a set of coordinates telling you where on the sheet of
+			paper the banknote was located.  During printing, banknotes will be
+			printed multiple times on a large sheet of paper which is later cut
+			into smaller individual banknotes.  A note with the pair ‘A1’ will
+			have been at the upper-left corner of the printing sheet, with ‘A2’
+			to it’s right and ‘B1’ below it.
+		` }}
+	</p>
+
+	<h2>{{ .T "2002 Series" }}</h2>
+	<p>
+		{{ .T `
+			In the 2002 series, the first letter of the serial number can be
+			used to identify the country that issued the banknote.  The
+			following table shows which countries map to which codes.
+		` }}
+	</p>
+
+	<table role="grid">
+		<thead>
+			<tr>
+				<th>{{ .T "Code" }}</th>
+				<th>{{ .T "Country" }}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>D</td>
+				<td>{{ .T "Estonia" }}</td>
+			</tr>
+			<tr>
+				<td>E</td>
+				<td>{{ .T "Slovakia" }}</td>
+			</tr>
+			<tr>
+				<td>F</td>
+				<td>{{ .T "Malta" }}</td>
+			</tr>
+			<tr>
+				<td>G</td>
+				<td>{{ .T "Cyprus" }}</td>
+			</tr>
+			<tr>
+				<td>H</td>
+				<td>{{ .T "Slovenia" }}</td>
+			</tr>
+			<tr>
+				<td>L</td>
+				<td>{{ .T "Finland" }}</td>
+			</tr>
+			<tr>
+				<td>M</td>
+				<td>{{ .T "Portugal" }}</td>
+			</tr>
+			<tr>
+				<td>N</td>
+				<td>{{ .T "Austria" }}</td>
+			</tr>
+			<tr>
+				<td>P</td>
+				<td>{{ .T "Netherlands" }}</td>
+			</tr>
+			<tr>
+				<td>S</td>
+				<td>{{ .T "Italy" }}</td>
+			</tr>
+			<tr>
+				<td>T</td>
+				<td>{{ .T "Ireland" }}</td>
+			</tr>
+			<tr>
+				<td>U</td>
+				<td>{{ .T "France" }}</td>
+			</tr>
+			<tr>
+				<td>V</td>
+				<td>{{ .T "Spain" }}</td>
+			</tr>
+			<tr>
+				<td>X</td>
+				<td>{{ .T "Germany" }}</td>
+			</tr>
+			<tr>
+				<td>Y</td>
+				<td>{{ .T "Greece" }}</td>
+			</tr>
+			<tr>
+				<td>Z</td>
+				<td>{{ .T "Belgium" }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<p>
+		{{ .T `
+			The first letter of the printer code can also be used to identify
+			the specific printer at which the banknote was printed.  The
+			printer- and country codes do not need to line up; a banknote
+			issued by a country will often be printed in another.
+		` }}
+	</p>
+
+	<table role="grid">
+		<thead>
+			<tr>
+				<th>{{ .T "Code" }}</th>
+				<th>{{ .T "Country" }}</th>
+				<th>{{ .T "Printer" }}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>D</td>
+				<td>{{ .T "Finland" }}</td>
+				<td>SETEC</td>
+			</tr>
+			<tr>
+				<td>E</td>
+				<td>{{ .T "France" }}</td>
+				<td>Oberthur</td>
+			</tr>
+			<tr>
+				<td>F</td>
+				<td>{{ .T "Austria" }}</td>
+				<td>Österreichische Banknoten‐ und Sicherheitsdruck GmbH</td>
+			</tr>
+			<tr>
+				<td>G</td>
+				<td>{{ .T "Netherlands" }}</td>
+				<td>Koninklijke Joh. Enschede</td>
+			</tr>
+			<tr>
+				<td>H</td>
+				<td>{{ .T "United Kingdom" }}</td>
+				<td>Thomas de la Rue</td>
+			</tr>
+			<tr>
+				<td>J</td>
+				<td>{{ .T "Italy" }}</td>
+				<td>Banca d’ Italia</td>
+			</tr>
+			<tr>
+				<td>K</td>
+				<td>{{ .T "Ireland" }}</td>
+				<td>{{ .T "Central Bank of Ireland" }}</td>
+			</tr>
+			<tr>
+				<td>L</td>
+				<td>{{ .T "France" }}</td>
+				<td>Banque de France</td>
+			</tr>
+			<tr>
+				<td>M</td>
+				<td>{{ .T "Spain" }}</td>
+				<td>Fábrica Nacional de Moneda y Timbre</td>
+			</tr>
+			<tr>
+				<td>N</td>
+				<td>{{ .T "Greece" }}</td>
+				<td>{{ .T "Bank of Greece" }}</td>
+			</tr>
+			<tr>
+				<td>P</td>
+				<td>{{ .T "Germany" }}</td>
+				<td>Giesecke &amp; Devrient</td>
+			</tr>
+			<tr>
+				<td>R</td>
+				<td>{{ .T "Germany" }}</td>
+				<td>Bundesdruckerei Berlin</td>
+			</tr>
+			<tr>
+				<td>T</td>
+				<td>{{ .T "Belgium" }}</td>
+				<td>{{ .T "National Bank of Belgium" }}</td>
+			</tr>
+			<tr>
+				<td>U</td>
+				<td>{{ .T "Portugal" }}</td>
+				<td>Valora S.A.</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<h2>{{ .T "Europa Series" }}</h2>
+	<p>
+		{{ .T `
+			In the Europa series the first letter of the serial number can be
+			used to identify the printer that printed the banknote, just like
+			the printer code.  The following table shows which countries map to
+			which codes.
+		` }}
+	</p>
+	<table role="grid">
+		<thead>
+			<tr>
+				<th>{{ .T "Code" }}</th>
+				<th>{{ .T "Country" }}</th>
+				<th>{{ .T "Printer" }}</th>
+			</tr>
+		</thead>
+		<tr>
+			<td>E</td>
+			<td>{{ .T "France" }}</td>
+			<td>Oberthur</td>
+		</tr>
+		<tr>
+			<td>F</td>
+			<td>{{ .T "Bulgaria" }}</td>
+			<td>Oberthur Fiduciaire AD</td>
+		</tr>
+		<tr>
+			<td>M</td>
+			<td>{{ .T "Portugal" }}</td>
+			<td>Valora S.A.</td>
+		</tr>
+		<tr>
+			<td>N</td>
+			<td>{{ .T "Austria" }}</td>
+			<td>Österreichische Banknoten‐ und Sicherheitsdruck GmbH</td>
+		</tr>
+		<tr>
+			<td>P</td>
+			<td>{{ .T "Netherlands" }}</td>
+			<td>Koninklijke Joh. Enschedé</td>
+		</tr>
+		<tr>
+			<td>R</td>
+			<td>{{ .T "Germany" }}</td>
+			<td>Bundesdruckerei Berlin</td>
+		</tr>
+		<tr>
+			<td>S</td>
+			<td>{{ .T "Italy" }}</td>
+			<td>Banca d’Italia</td>
+		</tr>
+		<tr>
+			<td>T</td>
+			<td>{{ .T "Ireland" }}</td>
+			<td>{{ .T "Central Bank of Ireland" }}</td>
+		</tr>
+		<tr>
+			<td>U</td>
+			<td>{{ .T "France" }}</td>
+			<td>Banque de France</td>
+		</tr>
+		<tr>
+			<td>V</td>
+			<td>{{ .T "Spain" }}</td>
+			<td>Fábrica Nacional de Moneda y Timbre</td>
+		</tr>
+		<tr>
+			<td>W</td>
+			<td>{{ .T "Germany" }}</td>
+			<td>Giesecke &amp; Devrient Leipzig</td>
+		</tr>
+		<tr>
+			<td>X</td>
+			<td>{{ .T "Germany" }}</td>
+			<td>Giesecke &amp; Devrient Munich</td>
+		</tr>
+		<tr>
+			<td>Y</td>
+			<td>{{ .T "Greece" }}</td>
+			<td>{{ .T "Bank of Greece" }}</td>
+		</tr>
+		<tr>
+			<td>Z</td>
+			<td>{{ .T "Belgium" }}</td>
+			<td>{{ .T "National Bank of Belgium" }}</td>
+		</tr>
+	</table>
+</main>
+{{ end }}
+
+{{ define "banknotes/codes/code-pos" }}
+{{ $p := (index . 0) }}
+<details>
+	<summary>{{ $p.T "%d Euro" (index . 1) }}</summary>
+	<img
+		class="big"
+		src={{ sprintf "/codes/%s-%03d.jpg" (index . 2) (index . 1) }}
+		alt={{ $p.T "Printer code on a %d euro bill" (index . 1) }}
+	>
+</details>
+{{ end }}
