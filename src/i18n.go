@@ -161,6 +161,13 @@ var (
 			Eurozone: true,
 			Enabled:  false,
 		},
+		{
+			Bcp:      "sv",
+			Name:     "svenska",
+			dateFmt:  "2006-01-02",
+			Eurozone: true,
+			Enabled:  false,
+		},
 
 		/* Non-Eurozone locales */
 		{
