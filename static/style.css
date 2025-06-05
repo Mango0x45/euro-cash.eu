@@ -2377,3 +2377,7 @@ dl.unix-style dd {
 dl dt:not(:first-child) {
 	margin-top: var(--block-spacing-vertical);
 }
+
+.error {
+	color: var(--del-color);
+}

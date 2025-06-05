@@ -66,6 +66,7 @@
 			</div>
 			<button type="submit">{{ .T "Filter" }}</button>
 		</form>
+		{{ $data := (index .Mintages (strToCtype .Type)) }}
 		<figure>
 			<figcaption>{{ .T "Standard Issue Coins" }}</figcaption>
 			<table class="mintage-table" role="grid">
@@ -80,7 +81,7 @@
 				<tbody>
 					{{ $p := .Printer }}
 					{{ $type := .Type }}
-					{{ range .Mintages.Standard }}
+					{{ range $data.Standard }}
 						<tr>
 							<th scope="col">
 								{{- .Year -}}
@@ -88,9 +89,11 @@
 									&nbsp;<sub><small>{{ .Mintmark }}</small></sub>
 								{{- end -}}
 							</th>
-							{{ range (index .Mintages (strToCtype $type)) }}
+							{{ range .Mintages }}
 								{{ if eq . -1 }}
 									<td>{{ $p.T "Unknown" }}</td>
+								{{ else if eq . -2 }}
+									<td class="error">{{ $p.T "Error" }}</td>
 								{{ else if eq . 0 }}
 									<td>—</td>
 								{{ else }}
@@ -103,7 +106,7 @@
 				</tbody>
 			</table>
 		</figure>
-		{{ if ne (len .Mintages.Commemorative) 0 }}
+		{{ if ne (len $data.Commemorative) 0 }}
 			<figure>
 				<figcaption>{{ .T "Commemorative Coins" }}</figcaption>
 				<table class="mintage-table-cc" role="grid">
@@ -115,7 +118,7 @@
 					<tbody>
 						{{ $p := .Printer }}
 						{{ $type := .Type }}
-						{{ range .Mintages.Commemorative }}
+						{{ range $data.Commemorative }}
 							<tr>
 								<th scope="col">
 									{{- .Year -}}
@@ -125,9 +128,11 @@
 								</th>
 								<!-- TODO: Translate commemorative names -->
 								<td>{{ .Name }}</td>
-								{{ with (index .Mintage (strToCtype $type)) }}
+								{{ with .Mintage }}
 									{{ if eq . -1 }}
 										<td>{{ $p.T "Unknown" }}</td>
+									{{ else if eq . -2 }}
+										<td class="error">{{ $p.T "Error" }}</td>
 									{{ else if eq . 0 }}
 										<td>—</td>
 									{{ else }}

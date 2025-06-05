@@ -13,7 +13,7 @@ import (
 type templateData struct {
 	Printer    Printer
 	Code, Type string
-	Mintages   mintage.Data
+	Mintages   [3]mintage.Data
 	Countries  []country
 }
 
@@ -86,7 +86,7 @@ func templateMakeTuple(args ...any) []any {
 func strToCtype(s string) int {
 	switch s {
 	case "nifc":
-		return mintage.TypeNIFC
+		return mintage.TypeNifc
 	case "proof":
 		return mintage.TypeProof
 	default:

@@ -8,8 +8,6 @@ import (
 	"log"
 	"math"
 	"net/http"
-	"os"
-	"path/filepath"
 	"slices"
 	"strconv"
 	"strings"
@@ -139,15 +137,8 @@ func mintageHandler(next http.Handler) http.Handler {
 			td.Type = "circ"
 		}
 
-		path := filepath.Join("data", "mintages", td.Code)
-		f, err := os.Open(path)
-		if err != nil {
-			throwError(http.StatusInternalServerError, err, w, r)
-			return
-		}
-		defer f.Close()
-
-		td.Mintages, err = mintage.Parse(f, path)
+		var err error
+		td.Mintages, err = mintage.Parse(td.Code)
 		if err != nil {
 			throwError(http.StatusInternalServerError, err, w, r)
 			return

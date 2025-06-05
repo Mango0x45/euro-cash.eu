@@ -4,9 +4,8 @@ gofiles   := $(shell find main.go src -name '*.go')
 templates := $(shell find src/templates -name '*.tmpl')
 
 exttmpl := $(wildcard cmd/exttmpl/*.go)
-mfmt    := $(wildcard cmd/mfmt/*.go)
 
-all: euro-cash.eu exttmpl mfmt
+all: euro-cash.eu exttmpl
 
 euro-cash.eu: $(cssfiles) $(templates) $(gofiles)
 	go build
@@ -18,9 +17,6 @@ all-i18n: exttmpl
 
 exttmpl: $(exttmpl)
 	go build ./cmd/exttmpl
-
-mfmt: $(mfmt)
-	go build ./cmd/mfmt
 
 %.min.css: %.css
 	lightningcss -m $< -o $@
@@ -39,7 +35,6 @@ clean:
 	find . -type f \(                                                           \
 		-name euro-cash.eu                                                      \
 		-or -name exttmpl                                                       \
-		-or -name mfmt                                                          \
 		-or -name '*.min.css'                                                   \
 		-or -name '*.tar.gz'                                                    \
 	\) -delete
