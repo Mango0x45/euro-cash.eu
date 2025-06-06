@@ -27,6 +27,8 @@ type locale struct {
 }
 
 var (
+    /* To determine the correct date format to use, use the ‘datefmt’ script in
+       the repository root */
 	Locales = [...]locale{
 		{
 			Bcp:      "ca",
