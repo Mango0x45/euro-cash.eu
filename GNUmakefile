@@ -35,3 +35,5 @@ clean:
 		-or -name '*.min.css'                                                   \
 		-or -name '*.tar.gz'                                                    \
 	\) -delete
+
+.PHONY: all-i18n clean release
