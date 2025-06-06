@@ -19,7 +19,12 @@ exttmpl: $(exttmpl)
 	go build ./cmd/exttmpl
 
 %.min.css: %.css
-	lightningcss -m $< -o $@
+	if command -v lightningcss >/dev/null;                                      \
+	then                                                                        \
+		lightningcss -m $< -o $@;                                               \
+	else                                                                        \
+		cp $< $@;                                                               \
+	fi
 
 clean:
 	find . -type f \(                                                           \
