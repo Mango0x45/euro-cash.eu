@@ -40,31 +40,26 @@ func main() {
 func watch() {
 	path, err := os.Executable()
 	if err != nil {
-		die(err)
+		log.Fatal(err)
 	}
 
 	ostat, err := os.Stat(path)
 	if err != nil {
-		die(err)
+		log.Fatal(err)
 	}
 
 	for {
 		nstat, err := os.Stat(path)
 		if err != nil {
-			die(err)
+			log.Fatal(err)
 		}
 
 		if nstat.ModTime() != ostat.ModTime() {
 			if err := syscall.Exec(path, os.Args, os.Environ()); err != nil {
-				die(err)
+				log.Fatal(err)
 			}
 		}
 
 		time.Sleep(1 * time.Second)
 	}
-}
-
-func die(err error) {
-	log.Fatal(err)
-	os.Exit(1)
 }
