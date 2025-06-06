@@ -113,7 +113,7 @@ func process(tmplMsgs *[]pipeline.Message, node parse.Node) {
 		}
 
 		for _, cmd := range an.Pipe.Cmds {
-			if !hasIndent(cmd, transfn) {
+			if !hasIdent(cmd, transfn) {
 				continue
 			}
 			for _, arg := range cmd.Args {
@@ -134,7 +134,7 @@ func process(tmplMsgs *[]pipeline.Message, node parse.Node) {
 	}
 }
 
-func hasIndent(cmd *parse.CommandNode, s string) bool {
+func hasIdent(cmd *parse.CommandNode, s string) bool {
 	if len(cmd.Args) == 0 {
 		return false
 	}
