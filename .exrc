@@ -13,5 +13,6 @@ autocmd FileType go autocmd BufWritePre <buffer>
 nnoremap <silent> gM :wall \| make all-i18n<CR>
 nnoremap <silent> <LocalLeader>t :vimgrep /\CTODO/ **/*<CR>
 
+runtime plugin/netrwPlugin.vim
 let &wildignore = netrw_gitignore#Hide() . ',.git/*,vendor/*'
 let g:netrw_list_hide .= ',.*\\.gen\\..*'
