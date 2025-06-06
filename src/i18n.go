@@ -92,6 +92,13 @@ var (
 			Enabled:  false,
 		},
 		{
+			Bcp:      "hr",
+			Name:     "hrvatski",
+			dateFmt:  "02. 01. 2006.",
+			Eurozone: true,
+			Enabled:  false,
+		},
+		{
 			Bcp:      "it",
 			Name:     "italiano",
 			dateFmt:  "02/01/2006",
@@ -137,13 +144,6 @@ var (
 			Bcp:      "pt",
 			Name:     "português",
 			dateFmt:  "02/01/2006",
-			Eurozone: true,
-			Enabled:  false,
-		},
-		{
-			Bcp:      "sh",
-			Name:     "srpskohrvatski",
-			dateFmt:  "02. 01. 2006.",
 			Eurozone: true,
 			Enabled:  false,
 		},
