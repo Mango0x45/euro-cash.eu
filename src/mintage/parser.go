@@ -6,6 +6,7 @@ import (
 	"os"
 	"path/filepath"
 	"strconv"
+	"time"
 )
 
 func Parse(country string) ([3]Data, error) {
@@ -47,7 +48,7 @@ func Parse(country string) ([3]Data, error) {
 }
 
 func parseS(path string) ([]SRow, error) {
-	rows := make([]SRow, 0, 69) /* TODO: Compute number of rows */
+	rows := make([]SRow, 0, guessRows(false))
 
 	f, err := os.Open(path)
 	if err != nil {
@@ -102,7 +103,7 @@ func parseS(path string) ([]SRow, error) {
 }
 
 func parseC(path string) ([]CRow, error) {
-	rows := make([]CRow, 0, 69) /* TODO: Compute number of rows */
+	rows := make([]CRow, 0, guessRows(true))
 
 	f, err := os.Open(path)
 	if err != nil {
@@ -154,4 +155,14 @@ func parseC(path string) ([]CRow, error) {
 	}
 
 	return rows, nil
+}
+
+func guessRows(commemorativep bool) int {
+	/* Try to guess the number of rows for Germany, because nobody needs more
+	   rows than Germany. */
+	n := (time.Now().Year() - 2002) * 5
+	if commemorativep {
+		return n * 2
+	}
+	return n
 }
