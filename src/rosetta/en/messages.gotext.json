@@ -359,6 +359,223 @@
             "fuzzy": true
         },
         {
+            "id": "Location Codes",
+            "message": "Location Codes",
+            "translation": "Location Codes",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Euro banknotes have two codes on them: a printer code and a serial number. The printer code tells you where a given note was printed, while the serial number tells you which country issues the banknote (for the 2002 series) or where the banknote was printed (for the Europa series).",
+            "message": "Euro banknotes have two codes on them: a printer code and a serial number. The printer code tells you where a given note was printed, while the serial number tells you which country issues the banknote (for the 2002 series) or where the banknote was printed (for the Europa series).",
+            "translation": "Euro banknotes have two codes on them: a printer code and a serial number. The printer code tells you where a given note was printed, while the serial number tells you which country issues the banknote (for the 2002 series) or where the banknote was printed (for the Europa series).",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Printer Code",
+            "message": "Printer Code",
+            "translation": "Printer Code",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "The printer code (not to be confused with the serial number) is a small code printed on banknotes with information about where the banknote was printed. All printer codes take the form of ‘X000X0’ — or in other words — a letter followed by 3 numbers, a letter and a final number.",
+            "message": "The printer code (not to be confused with the serial number) is a small code printed on banknotes with information about where the banknote was printed. All printer codes take the form of ‘X000X0’ — or in other words — a letter followed by 3 numbers, a letter and a final number.",
+            "translation": "The printer code (not to be confused with the serial number) is a small code printed on banknotes with information about where the banknote was printed. All printer codes take the form of ‘X000X0’ — or in other words — a letter followed by 3 numbers, a letter and a final number.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "The printer code can be a bit tricky to find. The following dropdowns will show you where to find the printer code on each note.",
+            "message": "The printer code can be a bit tricky to find. The following dropdowns will show you where to find the printer code on each note.",
+            "translation": "The printer code can be a bit tricky to find. The following dropdowns will show you where to find the printer code on each note.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "2002 Series Printer Codes",
+            "message": "2002 Series Printer Codes",
+            "translation": "2002 Series Printer Codes",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "All these images are taken from %seurobilltracker.com%s.",
+            "message": "All these images are taken from %seurobilltracker.com%s.",
+            "translation": "All these images are taken from %seurobilltracker.com%s.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Europa Series Printer Codes",
+            "message": "Europa Series Printer Codes",
+            "translation": "Europa Series Printer Codes",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "The first letter in the printer code identifies the specific printer at which the banknote was printed. The tables below will tell you which letters correspond to which printers. The final letter and number form a pair (such as ‘A2’ or ‘D6’). This pair acts as a set of coordinates telling you where on the sheet of paper the banknote was located. During printing, banknotes will be printed multiple times on a large sheet of paper which is later cut into smaller individual banknotes. A note with the pair ‘A1’ will have been at the upper-left corner of the printing sheet, with ‘A2’ to it’s right and ‘B1’ below it.",
+            "message": "The first letter in the printer code identifies the specific printer at which the banknote was printed. The tables below will tell you which letters correspond to which printers. The final letter and number form a pair (such as ‘A2’ or ‘D6’). This pair acts as a set of coordinates telling you where on the sheet of paper the banknote was located. During printing, banknotes will be printed multiple times on a large sheet of paper which is later cut into smaller individual banknotes. A note with the pair ‘A1’ will have been at the upper-left corner of the printing sheet, with ‘A2’ to it’s right and ‘B1’ below it.",
+            "translation": "The first letter in the printer code identifies the specific printer at which the banknote was printed. The tables below will tell you which letters correspond to which printers. The final letter and number form a pair (such as ‘A2’ or ‘D6’). This pair acts as a set of coordinates telling you where on the sheet of paper the banknote was located. During printing, banknotes will be printed multiple times on a large sheet of paper which is later cut into smaller individual banknotes. A note with the pair ‘A1’ will have been at the upper-left corner of the printing sheet, with ‘A2’ to it’s right and ‘B1’ below it.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "2002 Series",
+            "message": "2002 Series",
+            "translation": "2002 Series",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "In the 2002 series, the first letter of the serial number can be used to identify the country that issued the banknote. The following table shows which countries map to which codes.",
+            "message": "In the 2002 series, the first letter of the serial number can be used to identify the country that issued the banknote. The following table shows which countries map to which codes.",
+            "translation": "In the 2002 series, the first letter of the serial number can be used to identify the country that issued the banknote. The following table shows which countries map to which codes.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Code",
+            "message": "Code",
+            "translation": "Code",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Country",
+            "message": "Country",
+            "translation": "Country",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "The first letter of the printer code can also be used to identify the specific printer at which the banknote was printed. The printer- and country codes do not need to line up; a banknote issued by a country will often be printed in another.",
+            "message": "The first letter of the printer code can also be used to identify the specific printer at which the banknote was printed. The printer- and country codes do not need to line up; a banknote issued by a country will often be printed in another.",
+            "translation": "The first letter of the printer code can also be used to identify the specific printer at which the banknote was printed. The printer- and country codes do not need to line up; a banknote issued by a country will often be printed in another.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Printer",
+            "message": "Printer",
+            "translation": "Printer",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "United Kingdom",
+            "message": "United Kingdom",
+            "translation": "United Kingdom",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Central Bank of Ireland",
+            "message": "Central Bank of Ireland",
+            "translation": "Central Bank of Ireland",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Bank of Greece",
+            "message": "Bank of Greece",
+            "translation": "Bank of Greece",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "National Bank of Belgium",
+            "message": "National Bank of Belgium",
+            "translation": "National Bank of Belgium",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Europa Series",
+            "message": "Europa Series",
+            "translation": "Europa Series",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "In the Europa series the first letter of the serial number can be used to identify the printer that printed the banknote, just like the printer code. The following table shows which countries map to which codes.",
+            "message": "In the Europa series the first letter of the serial number can be used to identify the printer that printed the banknote, just like the printer code. The following table shows which countries map to which codes.",
+            "translation": "In the Europa series the first letter of the serial number can be used to identify the printer that printed the banknote, just like the printer code. The following table shows which countries map to which codes.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Bulgaria",
+            "message": "Bulgaria",
+            "translation": "Bulgaria",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "%d Euro",
+            "message": "%d Euro",
+            "translation": "%d Euro",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Printer code on a %d euro bill",
+            "message": "Printer code on a %d euro bill",
+            "translation": "Printer code on a %d euro bill",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Euro Banknotes",
+            "message": "Euro Banknotes",
+            "translation": "Euro Banknotes",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "On this section of the site you can find everything there is to know about the banknotes of the Eurozone.",
+            "message": "On this section of the site you can find everything there is to know about the banknotes of the Eurozone.",
+            "translation": "On this section of the site you can find everything there is to know about the banknotes of the Eurozone.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Designs",
+            "message": "Designs",
+            "translation": "Designs",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "View the different Euro-note designs!",
+            "message": "View the different Euro-note designs!",
+            "translation": "View the different Euro-note designs!",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Find out where your notes were printed!",
+            "message": "Find out where your notes were printed!",
+            "translation": "Find out where your notes were printed!",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Test Notes",
+            "message": "Test Notes",
+            "translation": "Test Notes",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Learn about the special test notes!",
+            "message": "Learn about the special test notes!",
+            "translation": "Learn about the special test notes!",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
             "id": "Andorran Euro Coin Designs",
             "message": "Andorran Euro Coin Designs",
             "translation": "Andorran Euro Coin Designs",
@@ -625,13 +842,6 @@
             "fuzzy": true
         },
         {
-            "id": "Country",
-            "message": "Country",
-            "translation": "Country",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
             "id": "Filter",
             "message": "Filter",
             "translation": "Filter",
@@ -656,6 +866,13 @@
             "id": "Unknown",
             "message": "Unknown",
             "translation": "Unknown",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Error",
+            "message": "Error",
+            "translation": "Error",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
@@ -691,13 +908,6 @@
             "id": "On this section of the site you can find everything there is to know about the coins of the Eurozone.",
             "message": "On this section of the site you can find everything there is to know about the coins of the Eurozone.",
             "translation": "On this section of the site you can find everything there is to know about the coins of the Eurozone.",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "Designs",
-            "message": "Designs",
-            "translation": "Designs",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
