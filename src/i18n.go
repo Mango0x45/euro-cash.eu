@@ -174,7 +174,7 @@ var (
 			Bcp:      "bg",
 			Name:     "български",
 			dateFmt:  "2.01.2006 г.",
-			Eurozone: false,
+			Eurozone: false,    /* TODO(2026): Set to true */
 			Enabled:  true,
 		},
 		{
