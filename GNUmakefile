@@ -21,13 +21,6 @@ exttmpl: $(exttmpl)
 %.min.css: %.css
 	lightningcss -m $< -o $@
 
-release: all-i18n
-	[ -n "$$GOOS" -a -n "$$GOARCH" ]
-	find data static -type f \(                                                 \
-		-not -name '*.css'                                                      \
-		-or -name '*.min.css'                                                   \
-	\) -exec tar -cf euro-cash.eu-$$GOOS-$$GOARCH.tar.gz euro-cash.eu {} +
-
 clean:
 	find . -type f \(                                                           \
 		-name euro-cash.eu                                                      \
