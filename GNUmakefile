@@ -21,9 +21,6 @@ exttmpl: $(exttmpl)
 %.min.css: %.css
 	lightningcss -m $< -o $@
 
-watch:
-	ls euro-cash.eu | entr -r ./euro-cash.eu -no-email -port $${PORT:-8080}
-
 release: all-i18n
 	[ -n "$$GOOS" -a -n "$$GOARCH" ]
 	find data static -type f \(                                                 \
