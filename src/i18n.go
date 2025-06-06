@@ -23,7 +23,7 @@ type Printer struct {
 type locale struct {
 	Bcp, Name         string
 	Eurozone, Enabled bool
-	dateFmt, moneyFmt string
+	dateFmt           string
 }
 
 var (
