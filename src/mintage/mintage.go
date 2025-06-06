@@ -6,16 +6,18 @@ type Data struct {
 }
 
 type SRow struct {
-	Year     int
-	Mintmark string
-	Mintages [denoms]int
+	Year      int
+	Mintmark  string
+	Mintages  [denoms]int
+	Reference string
 }
 
 type CRow struct {
-	Year     int
-	Name     string
-	Mintmark string
-	Mintage  int
+	Year      int
+	Name      string
+	Mintmark  string
+	Mintage   int
+	Reference string
 }
 
 const (

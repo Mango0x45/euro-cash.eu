@@ -57,7 +57,7 @@ func parseS(path string) ([]SRow, error) {
 
 	r := csv.NewReader(f)
 	r.Comment = '#'
-	r.FieldsPerRecord = 10
+	r.FieldsPerRecord = 11
 	r.ReuseRecord = true
 
 	/* Skip header */
@@ -74,14 +74,17 @@ func parseS(path string) ([]SRow, error) {
 			return nil, err
 		}
 
-		data := SRow{Mintmark: record[1]}
+		data := SRow{
+			Mintmark:  record[1],
+			Reference: record[10],
+		}
 
 		data.Year, err = strconv.Atoi(record[0])
 		if err != nil {
 			return nil, err
 		}
 
-		for i, s := range record[2:] {
+		for i, s := range record[2:10] {
 			if s == "" {
 				data.Mintages[i] = Unknown
 			} else {
@@ -109,7 +112,7 @@ func parseC(path string) ([]CRow, error) {
 
 	r := csv.NewReader(f)
 	r.Comment = '#'
-	r.FieldsPerRecord = 4
+	r.FieldsPerRecord = 5
 	r.ReuseRecord = true
 
 	/* Skip header */
@@ -127,8 +130,9 @@ func parseC(path string) ([]CRow, error) {
 		}
 
 		data := CRow{
-			Name:     record[1],
-			Mintmark: record[2],
+			Name:      record[1],
+			Mintmark:  record[2],
+			Reference: record[4],
 		}
 
 		data.Year, err = strconv.Atoi(record[0])
