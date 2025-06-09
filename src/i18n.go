@@ -27,8 +27,8 @@ type locale struct {
 }
 
 var (
-    /* To determine the correct date format to use, use the ‘datefmt’ script in
-       the repository root */
+	/* To determine the correct date format to use, use the ‘datefmt’ script in
+	   the repository root */
 	Locales = [...]locale{
 		{
 			Bcp:      "ca",
@@ -176,7 +176,7 @@ var (
 			Bcp:      "bg",
 			Name:     "български",
 			dateFmt:  "2.01.2006 г.",
-			Eurozone: false,    /* TODO(2026): Set to true */
+			Eurozone: false, /* TODO(2026): Set to true */
 			Enabled:  true,
 		},
 		{

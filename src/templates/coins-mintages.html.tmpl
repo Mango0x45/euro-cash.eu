@@ -66,7 +66,6 @@
 			</div>
 			<button type="submit">{{ .T "Filter" }}</button>
 		</form>
-		{{ $data := (index .Mintages (strToCtype .Type)) }}
 		<figure>
 			<figcaption>{{ .T "Standard Issue Coins" }}</figcaption>
 			<table class="mintage-table" role="grid">
@@ -81,7 +80,7 @@
 				<tbody>
 					{{ $p := .Printer }}
 					{{ $type := .Type }}
-					{{ range $data.Standard }}
+					{{ range .Mintages.Standard }}
 						<tr>
 							<th scope="col">
 								{{- .Year -}}
@@ -106,7 +105,7 @@
 				</tbody>
 			</table>
 		</figure>
-		{{ if ne (len $data.Commemorative) 0 }}
+		{{ if ne (len .Mintages.Commemorative) 0 }}
 			<figure>
 				<figcaption>{{ .T "Commemorative Coins" }}</figcaption>
 				<table class="mintage-table-cc" role="grid">
@@ -118,7 +117,7 @@
 					<tbody>
 						{{ $p := .Printer }}
 						{{ $type := .Type }}
-						{{ range $data.Commemorative }}
+						{{ range .Mintages.Commemorative }}
 							<tr>
 								<th scope="col">
 									{{- .Year -}}

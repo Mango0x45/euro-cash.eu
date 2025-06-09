@@ -11,6 +11,7 @@ import (
 	"time"
 
 	"git.thomasvoss.com/euro-cash.eu/src"
+	"git.thomasvoss.com/euro-cash.eu/src/dbx"
 	"git.thomasvoss.com/euro-cash.eu/src/email"
 )
 
@@ -29,11 +30,14 @@ func main() {
 		"address to send error messages from")
 	flag.StringVar(&email.Config.Password, "email-password", "",
 		"password to authenticate the email client")
+	flag.StringVar(&dbx.DBName, "db-name", "eurocash.db",
+		"database name or ‘:memory:’ for an in-memory database")
 	flag.Parse()
 
 	if *debugp {
 		go watch()
 	}
+	dbx.Init()
 	src.Run(*port)
 }
 
@@ -55,6 +59,7 @@ func watch() {
 		}
 
 		if nstat.ModTime() != ostat.ModTime() {
+			dbx.DB.Close()
 			if err := syscall.Exec(path, os.Args, os.Environ()); err != nil {
 				log.Fatal(err)
 			}

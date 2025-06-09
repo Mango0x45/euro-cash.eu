@@ -1,0 +1,64 @@
+package dbx
+
+import (
+	"database/sql"
+	"errors"
+
+	"golang.org/x/crypto/bcrypt"
+	"golang.org/x/text/unicode/norm"
+)
+
+type User struct {
+	Email    string
+	Username string
+	Password string
+	AdminP   bool
+}
+
+var LoginFailed = errors.New("No user with the given username and password")
+
+func CreateUser(user User) error {
+	user.Username = norm.NFC.String(user.Username)
+	user.Password = norm.NFC.String(user.Password)
+
+	hash, err := bcrypt.GenerateFromPassword([]byte(user.Password), 15)
+	if err != nil {
+		return err
+	}
+
+	_, err = DB.Exec(`
+		INSERT INTO users (
+			email,
+			username,
+			password,
+			adminp
+		) VALUES (?, ?, ?, ?)
+	`, user.Email, user.Username, string(hash), user.AdminP)
+	return err
+}
+
+func Login(username, password string) (User, error) {
+	username = norm.NFC.String(username)
+	password = norm.NFC.String(password)
+
+	u := User{}
+	/* TODO: Pass a context here? */
+	err := DB.QueryRow(`SELECT * FROM users WHERE username = ?`, username).
+		Scan(&u.Email, &u.Username, &u.Password, &u.AdminP)
+
+	switch {
+	case errors.Is(err, sql.ErrNoRows):
+		return User{}, LoginFailed
+	case err != nil:
+		return User{}, err
+	}
+
+	err = bcrypt.CompareHashAndPassword([]byte(u.Password), []byte(password))
+	switch {
+	case errors.Is(err, bcrypt.ErrMismatchedHashAndPassword):
+		return User{}, LoginFailed
+	case err != nil:
+		return User{}, err
+	}
+	return u, nil
+}

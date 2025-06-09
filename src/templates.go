@@ -7,13 +7,13 @@ import (
 	"log"
 	"strings"
 
-	"git.thomasvoss.com/euro-cash.eu/src/mintage"
+	"git.thomasvoss.com/euro-cash.eu/src/dbx"
 )
 
 type templateData struct {
 	Printer    Printer
 	Code, Type string
-	Mintages   [3]mintage.Data
+	Mintages   dbx.MintageData
 	Countries  []country
 }
 
@@ -24,13 +24,12 @@ var (
 	errorTmpl    = buildTemplate("-error")
 	templates    map[string]*template.Template
 	funcmap      = map[string]any{
-		"denoms":     denoms,
-		"locales":    locales,
-		"safe":       asHTML,
-		"sprintf":    fmt.Sprintf,
-		"strToCtype": strToCtype,
-		"toUpper":    strings.ToUpper,
-		"tuple":      templateMakeTuple,
+		"denoms":  denoms,
+		"locales": locales,
+		"safe":    asHTML,
+		"sprintf": fmt.Sprintf,
+		"toUpper": strings.ToUpper,
+		"tuple":   templateMakeTuple,
 	}
 )
 
@@ -81,17 +80,6 @@ func locales() []locale {
 
 func templateMakeTuple(args ...any) []any {
 	return args
-}
-
-func strToCtype(s string) int {
-	switch s {
-	case "nifc":
-		return mintage.TypeNifc
-	case "proof":
-		return mintage.TypeProof
-	default:
-		return mintage.TypeCirc
-	}
 }
 
 func (td templateData) T(fmt string, args ...any) string {

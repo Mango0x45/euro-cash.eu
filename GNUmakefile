@@ -1,13 +1,14 @@
 cssfiles  := $(shell find static -name '*.css' -not -name '*.min.css')
 cssfiles  := $(cssfiles:.css=.min.css)
 gofiles   := $(shell find main.go src -name '*.go')
+sqlfiles  := $(shell find src/dbx/sql -name '*.sql')
 templates := $(shell find src/templates -name '*.tmpl')
 
 exttmpl := $(wildcard cmd/exttmpl/*.go)
 
 all: euro-cash.eu exttmpl
 
-euro-cash.eu: $(cssfiles) $(templates) $(gofiles)
+euro-cash.eu: $(cssfiles) $(templates) $(gofiles) $(sqlfiles)
 	go build
 
 all-i18n: exttmpl

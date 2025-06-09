@@ -12,8 +12,8 @@ import (
 	"strconv"
 	"strings"
 
+	"git.thomasvoss.com/euro-cash.eu/src/dbx"
 	"git.thomasvoss.com/euro-cash.eu/src/email"
-	"git.thomasvoss.com/euro-cash.eu/src/mintage"
 )
 
 type middleware = func(http.Handler) http.Handler
@@ -42,7 +42,9 @@ func Run(port int) {
 
 	portStr := ":" + strconv.Itoa(port)
 	log.Println("Listening on", portStr)
-	log.Fatal(http.ListenAndServe(portStr, mux))
+	err := http.ListenAndServe(portStr, mux)
+	dbx.DB.Close()
+	log.Fatal(err)
 }
 
 func chain(xs ...middleware) middleware {
@@ -138,12 +140,13 @@ func mintageHandler(next http.Handler) http.Handler {
 		}
 
 		var err error
-		td.Mintages, err = mintage.Parse(td.Code)
+		td.Mintages, err = dbx.GetMintages(td.Code)
 		if err != nil {
 			throwError(http.StatusInternalServerError, err, w, r)
 			return
 		}
 
+		processMintages(&td.Mintages, td.Type)
 		next.ServeHTTP(w, r)
 	})
 }
@@ -186,5 +189,37 @@ func throwError(status int, err error, w http.ResponseWriter, r *http.Request) {
 	}{
 		Code: status,
 		Msg:  http.StatusText(status),
+	})
+}
+
+func processMintages(md *dbx.MintageData, typeStr string) {
+	var typ int
+	switch typeStr {
+	case "nifc":
+		typ = dbx.TypeNifc
+	case "proof":
+		typ = dbx.TypeProof
+	default:
+		typ = dbx.TypeCirc
+	}
+
+	md.Standard = slices.DeleteFunc(md.Standard,
+		func(x dbx.MSRow) bool { return x.Type != typ })
+	md.Commemorative = slices.DeleteFunc(md.Commemorative,
+		func(x dbx.MCRow) bool { return x.Type != typ })
+	slices.SortFunc(md.Standard, func(x, y dbx.MSRow) int {
+		if x.Year != y.Year {
+			return x.Year - y.Year
+		}
+		return strings.Compare(x.Mintmark, y.Mintmark)
+	})
+	slices.SortFunc(md.Commemorative, func(x, y dbx.MCRow) int {
+		if x.Year != y.Year {
+			return x.Year - y.Year
+		}
+		if x.Number != y.Number {
+			return x.Number - y.Number
+		}
+		return strings.Compare(x.Mintmark, y.Mintmark)
 	})
 }
