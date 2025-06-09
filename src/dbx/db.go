@@ -176,12 +176,7 @@ func scanToStruct[T any](rs *sql.Rows) (T, error) {
 		}
 
 		if strings.Contains(tag, ";") {
-			parts := strings.Split(tag, ";")
-			tag, dbcols := parts[0], parts[1:]
-			if tag != "array" {
-				/* TODO: This is bad… it should log something */
-				return zero, fmt.Errorf("invalid `db:\"…\"` tag ‘%s’", tag)
-			}
+			dbcols := strings.Split(tag, ";")
 			fv := v.Field(i)
 			if fv.Kind() != reflect.Array {
 				return zero, fmt.Errorf("field ‘%s’ is not array",

@@ -9,7 +9,7 @@ type MSRow struct {
 	Type      int          `db:"type"`
 	Year      int          `db:"year"`
 	Mintmark  string       `db:"mintmark"`
-	Mintages  [ndenoms]int `db:"array;€0,01;€0,02;€0,05;€0,10;€0,20;€0,50;€1,00;€2,00"`
+	Mintages  [ndenoms]int `db:"€0,01;€0,02;€0,05;€0,10;€0,20;€0,50;€1,00;€2,00"`
 	Reference string       `db:"reference"`
 }
 
