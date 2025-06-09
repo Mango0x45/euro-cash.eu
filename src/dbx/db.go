@@ -160,6 +160,10 @@ func scanToStruct[T any](rs *sql.Rows) (T, error) {
 		rawValues[i] = &zero
 	}
 
+	rs.Next()
+	if err := rs.Err(); err != nil {
+		return zero, err
+	}
 	if err := rs.Scan(rawValues...); err != nil {
 		return zero, err
 	}

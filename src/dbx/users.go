@@ -9,10 +9,10 @@ import (
 )
 
 type User struct {
-	Email    string
-	Username string
-	Password string
-	AdminP   bool
+	Email    string `db:"email"`
+	Username string `db:"username"`
+	Password string `db:"password"`
+	AdminP   bool   `db:"adminp"`
 }
 
 var LoginFailed = errors.New("No user with the given username and password")
@@ -41,10 +41,12 @@ func Login(username, password string) (User, error) {
 	username = norm.NFC.String(username)
 	password = norm.NFC.String(password)
 
-	u := User{}
 	/* TODO: Pass a context here? */
-	err := DB.QueryRow(`SELECT * FROM users WHERE username = ?`, username).
-		Scan(&u.Email, &u.Username, &u.Password, &u.AdminP)
+	rs, err := DB.Query(`SELECT * FROM users WHERE username = ?`, username)
+	if err != nil {
+		return User{}, err
+	}
+	u, err := scanToStruct[User](rs)
 
 	switch {
 	case errors.Is(err, sql.ErrNoRows):
