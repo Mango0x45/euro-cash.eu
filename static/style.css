@@ -27,22 +27,22 @@
  */
 
 @font-face {
-	font-family: 'Ysabeau';
-	src: url('/fonts/ysabeau-regular.woff2') format('woff2');
+	font-family: 'Ysabeau Office';
+	src: url('/fonts/ysabeau-office-regular.otf') format('opentype');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
-	font-family: 'Ysabeau';
-	src: url('/fonts/ysabeau-regular-italic.woff2') format('woff2');
+	font-family: 'Ysabeau Office';
+	src: url('/fonts/ysabeau-office-regular-italic.otf') format('opentype');
 	font-weight: normal;
 	font-style: italic;
 }
 
 :root {
-	--font-family: "Ysabeau", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-	               "Segoe UI Symbol", "Noto Color Emoji";
+	--font-family: "Ysabeau Office", sans-serif, "Apple Color Emoji",
+	               "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 	--line-height: 1.5;
 	--font-weight: 400;
 	--font-size: 16px;
