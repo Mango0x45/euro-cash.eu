@@ -242,14 +242,6 @@ func init() {
 	defaultPrinter = printers["en"]
 }
 
-func (p Printer) T(fmt string, args ...any) string {
-	return p.inner.Sprintf(fmt, args...)
-}
-
-func (p Printer) N(n int) string {
-	return p.inner.Sprint(n)
-}
-
 func (p Printer) D(d time.Time) string {
 	return d.Format(p.Locale.dateFmt)
 }
@@ -287,6 +279,14 @@ func (p Printer) M(val any) string {
 	default:
 		return fmt.Sprintf("%s €", vstr)
 	}
+}
+
+func (p Printer) N(n int) string {
+	return p.inner.Sprint(n)
+}
+
+func (p Printer) T(fmt string, args ...any) string {
+	return p.inner.Sprintf(fmt, args...)
 }
 
 /* Transform ‘en-US’ to ‘en’ */
