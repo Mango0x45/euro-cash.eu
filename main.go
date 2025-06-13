@@ -5,16 +5,15 @@ package main
 
 import (
 	"flag"
-	"log"
 	"os"
 	"path/filepath"
 	"syscall"
-	"time"
 
 	"git.thomasvoss.com/euro-cash.eu/src"
 	"git.thomasvoss.com/euro-cash.eu/src/dbx"
 	"git.thomasvoss.com/euro-cash.eu/src/email"
 	. "git.thomasvoss.com/euro-cash.eu/src/try"
+	"git.thomasvoss.com/euro-cash.eu/src/watch"
 )
 
 func main() {
@@ -39,24 +38,14 @@ func main() {
 	flag.Parse()
 
 	if *debugp {
-		go watch()
-	}
-
-	dbx.Init(Try2(os.OpenRoot("src/dbx/sql")).FS())
-	app.BuildTemplates(Try2(os.OpenRoot("src/templates")).FS())
-	app.Run(*port)
-}
-
-func watch() {
-	path := Try2(os.Executable())
-	ostat := Try2(os.Stat(path))
-
-	for {
-		nstat := Try2(os.Stat(path))
-		if nstat.ModTime() != ostat.ModTime() {
-			dbx.Close()
+		path := Try2(os.Executable())
+		go watch.File(path, func() {
 			Try(syscall.Exec(path, os.Args, os.Environ()))
-		}
-		time.Sleep(1 * time.Second)
+		})
 	}
+
+	tmplFS := Try2(os.OpenRoot("src/templates")).FS()
+	dbx.Init(Try2(os.OpenRoot("src/dbx/sql")).FS())
+	app.BuildTemplates(tmplFS, *debugp)
+	app.Run(*port)
 }

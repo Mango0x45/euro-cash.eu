@@ -8,6 +8,8 @@ import (
 	"strings"
 
 	"git.thomasvoss.com/euro-cash.eu/src/dbx"
+	. "git.thomasvoss.com/euro-cash.eu/src/try"
+	"git.thomasvoss.com/euro-cash.eu/src/watch"
 )
 
 type templateData struct {
@@ -31,27 +33,34 @@ var (
 	}
 )
 
-func BuildTemplates(dir fs.FS) {
-	ents, err := fs.ReadDir(dir, ".")
-	if err != nil {
-		log.Fatal(err)
-	}
-
+func BuildTemplates(dir fs.FS, debugp bool) {
+	ents := Try2(fs.ReadDir(dir, "."))
 	notFoundTmpl = buildTemplate(dir, "-404")
 	errorTmpl = buildTemplate(dir, "-error")
-
 	templates = make(map[string]*template.Template, len(ents))
+
 	for _, e := range ents {
-		path := "/"
-		name := strings.TrimSuffix(e.Name(), ".html.tmpl")
-		switch {
-		case name[0] == '-':
-			continue
-		case name != "index":
-			path += strings.ReplaceAll(name, "-", "/")
+		name := e.Name()
+		buildAndSetTemplate(dir, name)
+		if debugp {
+			go watch.FileFS(dir, name, func() {
+				buildAndSetTemplate(dir, name)
+				log.Printf("Template ‘%s’ updated\n", name)
+			})
 		}
-		templates[path] = buildTemplate(dir, name)
 	}
+}
+
+func buildAndSetTemplate(dir fs.FS, name string) {
+	path := "/"
+	name = strings.TrimSuffix(name, ".html.tmpl")
+	switch {
+	case name[0] == '-':
+		return
+	case name != "index":
+		path += strings.ReplaceAll(name, "-", "/")
+	}
+	templates[path] = buildTemplate(dir, name)
 }
 
 func buildTemplate(dir fs.FS, name string) *template.Template {
