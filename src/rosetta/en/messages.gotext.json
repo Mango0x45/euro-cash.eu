@@ -359,6 +359,20 @@
             "fuzzy": true
         },
         {
+            "id": "%d Euro",
+            "message": "%d Euro",
+            "translation": "%d Euro",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Printer code on a %d euro bill",
+            "message": "Printer code on a %d euro bill",
+            "translation": "Printer code on a %d euro bill",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
             "id": "Location Codes",
             "message": "Location Codes",
             "translation": "Location Codes",
@@ -509,20 +523,6 @@
             "id": "Bulgaria",
             "message": "Bulgaria",
             "translation": "Bulgaria",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "%d Euro",
-            "message": "%d Euro",
-            "translation": "%d Euro",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "Printer code on a %d euro bill",
-            "message": "Printer code on a %d euro bill",
-            "translation": "Printer code on a %d euro bill",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },

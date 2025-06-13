@@ -1,4 +1,4 @@
-//go:generate go tool gotext -srclang=en -dir=rosetta extract -lang=bg,el,en,nl .
+//go:generate go tool gotext -srclang=en -dir=rosetta update -lang=bg,el,en,nl .
 //go:generate ../exttmpl
 
 package app

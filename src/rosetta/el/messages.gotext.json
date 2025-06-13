@@ -257,6 +257,16 @@
             "translation": ""
         },
         {
+            "id": "%d Euro",
+            "message": "%d Euro",
+            "translation": ""
+        },
+        {
+            "id": "Printer code on a %d euro bill",
+            "message": "Printer code on a %d euro bill",
+            "translation": ""
+        },
+        {
             "id": "Location Codes",
             "message": "Location Codes",
             "translation": ""
@@ -364,16 +374,6 @@
         {
             "id": "Bulgaria",
             "message": "Bulgaria",
-            "translation": ""
-        },
-        {
-            "id": "%d Euro",
-            "message": "%d Euro",
-            "translation": ""
-        },
-        {
-            "id": "Printer code on a %d euro bill",
-            "message": "Printer code on a %d euro bill",
             "translation": ""
         },
         {
