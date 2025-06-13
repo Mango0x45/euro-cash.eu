@@ -154,10 +154,14 @@ func applyMigrations(dir string) error {
 	return nil
 }
 
+func scanToStruct[T any](rs *sql.Rows) (T, error) {
+	return scanToStruct2[T](rs, true)
+}
+
 func scanToStructs[T any](rs *sql.Rows) ([]T, error) {
 	xs := []T{}
 	for rs.Next() {
-		x, err := scanToStruct[T](rs)
+		x, err := scanToStruct2[T](rs, false)
 		if err != nil {
 			return nil, err
 		}
@@ -166,7 +170,7 @@ func scanToStructs[T any](rs *sql.Rows) ([]T, error) {
 	return xs, rs.Err()
 }
 
-func scanToStruct[T any](rs *sql.Rows) (T, error) {
+func scanToStruct2[T any](rs *sql.Rows, callNextP bool) (T, error) {
 	var t, zero T
 
 	cols, err := rs.Columns()
@@ -183,9 +187,11 @@ func scanToStruct[T any](rs *sql.Rows) (T, error) {
 		rawValues[i] = &zero
 	}
 
-	rs.Next()
-	if err := rs.Err(); err != nil {
-		return zero, err
+	if callNextP {
+		rs.Next()
+		if err := rs.Err(); err != nil {
+			return zero, err
+		}
 	}
 	if err := rs.Scan(rawValues...); err != nil {
 		return zero, err
