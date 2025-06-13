@@ -38,8 +38,9 @@ CREATE TABLE mintages_c (
 );
 
 CREATE TABLE users (
-	email    TEXT COLLATE BINARY,
-	username TEXT COLLATE BINARY,
-	password TEXT COLLATE BINARY,
-	adminp   INTEGER
+	email      TEXT COLLATE BINARY,
+	username   TEXT COLLATE BINARY,
+	password   TEXT COLLATE BINARY,
+	adminp     INTEGER,
+	translates TEXT COLLATE BINARY,
 );

@@ -9,10 +9,11 @@ import (
 )
 
 type User struct {
-	Email    string `db:"email"`
-	Username string `db:"username"`
-	Password string `db:"password"`
-	AdminP   bool   `db:"adminp"`
+	Email      string `db:"email"`
+	Username   string `db:"username"`
+	Password   string `db:"password"`
+	AdminP     bool   `db:"adminp"`
+	Translates string `db:"translates"`
 }
 
 var LoginFailed = errors.New("No user with the given username and password")
@@ -31,9 +32,10 @@ func CreateUser(user User) error {
 			email,
 			username,
 			password,
-			adminp
-		) VALUES (?, ?, ?, ?)
-	`, user.Email, user.Username, string(hash), user.AdminP)
+			adminp,
+			translates
+		) VALUES (?, ?, ?, ?, ?)
+	`, user.Email, user.Username, string(hash), user.AdminP, user.Translates)
 	return err
 }
 
