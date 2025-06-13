@@ -8,8 +8,8 @@ import (
 
 func Try(e error) {
 	if e != nil {
-		log.Fatal(e)
 		atexit.Exec()
+		log.Fatalln(e)
 	}
 }
 

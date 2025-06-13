@@ -261,7 +261,7 @@ func (p Printer) M(val any) string {
 	default:
 		go func() {
 			if err := email.ServerError(badMType{"TODO"}); err != nil {
-				log.Print(err)
+				log.Println(err)
 			}
 		}()
 		/* Hopefully this never happens */

@@ -179,7 +179,7 @@ func throwError(status int, err error, w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(status)
 	go func() {
 		if err := email.ServerError(err); err != nil {
-			log.Print(err)
+			log.Println(err)
 		}
 	}()
 	errorTmpl.Execute(w, struct {
