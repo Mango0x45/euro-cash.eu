@@ -47,8 +47,7 @@ func main() {
 		})
 	}
 
-	tmplFS := Try2(os.OpenRoot("src/templates")).FS()
 	dbx.Init(Try2(os.OpenRoot("src/dbx/sql")).FS())
-	app.BuildTemplates(tmplFS, *debugp)
+	app.BuildTemplates(Try2(os.OpenRoot("src/templates")).FS(), *debugp)
 	app.Run(*port)
 }
