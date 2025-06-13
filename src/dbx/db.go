@@ -95,9 +95,17 @@ func applyMigrations(dir string) error {
 		return err
 	}
 
-	scripts := []string{}
+	var (
+		last    string
+		scripts []string
+	)
+
 	for _, f := range files {
-		scripts = append(scripts, f.Name())
+		if n := f.Name(); n == "last.sql" {
+			last = n
+		} else {
+			scripts = append(scripts, f.Name())
+		}
 	}
 
 	sort.Strings(scripts)
@@ -130,6 +138,17 @@ func applyMigrations(dir string) error {
 			return err
 		}
 		log.Printf("Applied database migration ‘%s’", f)
+	}
+
+	if last != "" {
+		qry, err := migrations.ReadFile(filepath.Join(dir, last))
+		if err != nil {
+			return err
+		}
+		if _, err := db.Exec(string(qry)); err != nil {
+			return fmt.Errorf("error in ‘%s’: %w", last, err)
+		}
+		log.Printf("Ran ‘%s’\n", last)
 	}
 
 	return nil
