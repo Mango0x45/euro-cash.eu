@@ -48,29 +48,15 @@ func main() {
 }
 
 func watch() {
-	path, err := os.Executable()
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	ostat, err := os.Stat(path)
-	if err != nil {
-		log.Fatal(err)
-	}
+	path := Try2(os.Executable())
+	ostat := Try2(os.Stat(path))
 
 	for {
-		nstat, err := os.Stat(path)
-		if err != nil {
-			log.Fatal(err)
-		}
-
+		nstat := Try2(os.Stat(path))
 		if nstat.ModTime() != ostat.ModTime() {
 			dbx.Close()
-			if err := syscall.Exec(path, os.Args, os.Environ()); err != nil {
-				log.Fatal(err)
-			}
+			Try(syscall.Exec(path, os.Args, os.Environ()))
 		}
-
 		time.Sleep(1 * time.Second)
 	}
 }
