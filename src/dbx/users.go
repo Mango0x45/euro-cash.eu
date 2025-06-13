@@ -26,7 +26,7 @@ func CreateUser(user User) error {
 		return err
 	}
 
-	_, err = DB.Exec(`
+	_, err = db.Exec(`
 		INSERT INTO users (
 			email,
 			username,
@@ -42,7 +42,7 @@ func Login(username, password string) (User, error) {
 	password = norm.NFC.String(password)
 
 	/* TODO: Pass a context here? */
-	rs, err := DB.Query(`SELECT * FROM users WHERE username = ?`, username)
+	rs, err := db.Query(`SELECT * FROM users WHERE username = ?`, username)
 	if err != nil {
 		return User{}, err
 	}

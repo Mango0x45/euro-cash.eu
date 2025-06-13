@@ -15,19 +15,19 @@ import (
 )
 
 var (
-	DB     *sql.DB
 	DBName string
 
+	db *sql.DB
 	//go:embed "sql/*.sql"
 	migrations embed.FS
 )
 
 func Init() {
 	var err error
-	if DB, err = sql.Open("sqlite3", DBName); err != nil {
+	if db, err = sql.Open("sqlite3", DBName); err != nil {
 		log.Fatal(err)
 	}
-	if err = DB.Ping(); err != nil {
+	if err = db.Ping(); err != nil {
 		log.Fatal(err)
 	}
 
@@ -57,11 +57,15 @@ func Init() {
 	}
 }
 
+func Close() {
+	db.Close()
+}
+
 func applyMigrations(dir string) error {
 	var latest int
 	migratedp := true
 
-	rows, err := DB.Query("SELECT latest FROM migration")
+	rows, err := db.Query("SELECT latest FROM migration")
 	if err != nil {
 		e, ok := err.(sqlite3.Error)
 		/* IDK if there is a better way to do this… lol */
@@ -103,7 +107,7 @@ func applyMigrations(dir string) error {
 			return err
 		}
 
-		tx, err := DB.Begin()
+		tx, err := db.Begin()
 		if err != nil {
 			return err
 		}

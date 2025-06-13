@@ -41,7 +41,7 @@ const ndenoms = 8
 func GetMintages(country string) (MintageData, error) {
 	var zero MintageData
 
-	srows, err := DB.Query(`SELECT * FROM mintages_s WHERE country = ?`, country)
+	srows, err := db.Query(`SELECT * FROM mintages_s WHERE country = ?`, country)
 	if err != nil {
 		return zero, err
 	}
@@ -51,7 +51,7 @@ func GetMintages(country string) (MintageData, error) {
 		return zero, err
 	}
 
-	crows, err := DB.Query(`SELECT * FROM mintages_c WHERE country = ?`, country)
+	crows, err := db.Query(`SELECT * FROM mintages_c WHERE country = ?`, country)
 	if err != nil {
 		return zero, err
 	}

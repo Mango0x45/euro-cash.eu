@@ -59,7 +59,7 @@ func watch() {
 		}
 
 		if nstat.ModTime() != ostat.ModTime() {
-			dbx.DB.Close()
+			dbx.Close()
 			if err := syscall.Exec(path, os.Args, os.Environ()); err != nil {
 				log.Fatal(err)
 			}
