@@ -250,7 +250,7 @@ func (p Printer) N(n int) string {
 	return p.inner.Sprint(n)
 }
 
-func (p Printer) Date(d time.Time) string {
+func (p Printer) D(d time.Time) string {
 	return d.Format(p.Locale.dateFmt)
 }
 
