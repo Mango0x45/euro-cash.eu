@@ -6,6 +6,7 @@ package main
 import (
 	"flag"
 	"os"
+	"os/signal"
 	"path/filepath"
 	"syscall"
 
@@ -38,6 +39,14 @@ func main() {
 	flag.StringVar(&dbx.DBName, "db-name", "eurocash.db",
 		"database name or ‘:memory:’ for an in-memory database")
 	flag.Parse()
+
+	sigs := make(chan os.Signal, 1)
+	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
+	go func() {
+		<-sigs
+		atexit.Exec()
+		os.Exit(0)
+	}()
 
 	if *debugp {
 		path := Try2(os.Executable())
