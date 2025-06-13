@@ -11,6 +11,7 @@ import (
 
 	"git.thomasvoss.com/euro-cash.eu/src"
 	"git.thomasvoss.com/euro-cash.eu/src/dbx"
+	"git.thomasvoss.com/euro-cash.eu/src/atexit"
 	"git.thomasvoss.com/euro-cash.eu/src/email"
 	. "git.thomasvoss.com/euro-cash.eu/src/try"
 	"git.thomasvoss.com/euro-cash.eu/src/watch"
@@ -40,6 +41,7 @@ func main() {
 	if *debugp {
 		path := Try2(os.Executable())
 		go watch.File(path, func() {
+			atexit.Exec()
 			Try(syscall.Exec(path, os.Args, os.Environ()))
 		})
 	}

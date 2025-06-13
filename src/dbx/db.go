@@ -11,6 +11,7 @@ import (
 
 	"github.com/mattn/go-sqlite3"
 
+	"git.thomasvoss.com/euro-cash.eu/src/atexit"
 	. "git.thomasvoss.com/euro-cash.eu/src/try"
 )
 
@@ -22,6 +23,7 @@ var (
 func Init(sqlDir fs.FS) {
 	db = Try2(sql.Open("sqlite3", DBName))
 	Try(db.Ping())
+	atexit.Register(Close)
 	Try(applyMigrations(sqlDir))
 
 	/* TODO: Remove debug code */
@@ -120,7 +122,7 @@ func applyMigrations(dir fs.FS) error {
 		if err := tx.Commit(); err != nil {
 			return err
 		}
-		log.Printf("Applied database migration ‘%s’", f)
+		log.Printf("Applied database migration ‘%s’\n", f)
 	}
 
 	if last != "" {
