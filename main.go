@@ -7,6 +7,7 @@ import (
 	"flag"
 	"log"
 	"os"
+	"path/filepath"
 	"syscall"
 	"time"
 
@@ -17,6 +18,8 @@ import (
 )
 
 func main() {
+	Try(os.Chdir(filepath.Dir(os.Args[0])))
+
 	port := flag.Int("port", 8080, "port number")
 	debugp := flag.Bool("debug", false, "run in debug mode")
 	flag.BoolVar(&email.Config.Disabled, "no-email", false,
