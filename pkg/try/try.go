@@ -3,7 +3,7 @@ package try
 import (
 	"log"
 
-	"git.thomasvoss.com/euro-cash.eu/src/atexit"
+	"git.thomasvoss.com/euro-cash.eu/pkg/atexit"
 )
 
 func Try(e error) {

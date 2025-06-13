@@ -7,7 +7,7 @@ import (
 	"os"
 	"time"
 
-	. "git.thomasvoss.com/euro-cash.eu/src/try"
+	. "git.thomasvoss.com/euro-cash.eu/pkg/try"
 )
 
 func File(path string, f func()) {

@@ -7,9 +7,10 @@ import (
 	"log"
 	"strings"
 
+	. "git.thomasvoss.com/euro-cash.eu/pkg/try"
+	"git.thomasvoss.com/euro-cash.eu/pkg/watch"
+
 	"git.thomasvoss.com/euro-cash.eu/src/dbx"
-	. "git.thomasvoss.com/euro-cash.eu/src/try"
-	"git.thomasvoss.com/euro-cash.eu/src/watch"
 )
 
 type templateData struct {

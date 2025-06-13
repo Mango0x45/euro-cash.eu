@@ -9,10 +9,9 @@ import (
 	"sort"
 	"strings"
 
+	"git.thomasvoss.com/euro-cash.eu/pkg/atexit"
+	. "git.thomasvoss.com/euro-cash.eu/pkg/try"
 	"github.com/mattn/go-sqlite3"
-
-	"git.thomasvoss.com/euro-cash.eu/src/atexit"
-	. "git.thomasvoss.com/euro-cash.eu/src/try"
 )
 
 var (

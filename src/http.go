@@ -12,9 +12,10 @@ import (
 	"strconv"
 	"strings"
 
+	. "git.thomasvoss.com/euro-cash.eu/pkg/try"
+
 	"git.thomasvoss.com/euro-cash.eu/src/dbx"
 	"git.thomasvoss.com/euro-cash.eu/src/email"
-	. "git.thomasvoss.com/euro-cash.eu/src/try"
 )
 
 type middleware = func(http.Handler) http.Handler
