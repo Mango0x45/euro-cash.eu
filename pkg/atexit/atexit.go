@@ -7,7 +7,7 @@ func Register(f func()) {
 }
 
 func Exec() {
-	for i := len(hooks)-1; i >= 0; i-- {
+	for i := len(hooks) - 1; i >= 0; i-- {
 		hooks[i]()
 	}
 }
