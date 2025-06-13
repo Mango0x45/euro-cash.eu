@@ -1,4 +1,4 @@
-package src
+package app
 
 import (
 	"cmp"
@@ -43,7 +43,7 @@ func Run(port int) {
 	portStr := ":" + strconv.Itoa(port)
 	log.Println("Listening on", portStr)
 	err := http.ListenAndServe(portStr, mux)
-	dbx.DB.Close()
+	dbx.Close()
 	log.Fatal(err)
 }
 

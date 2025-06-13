@@ -38,7 +38,7 @@ func main() {
 		go watch()
 	}
 	dbx.Init()
-	src.Run(*port)
+	app.Run(*port)
 }
 
 func watch() {
