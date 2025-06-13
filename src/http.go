@@ -14,6 +14,7 @@ import (
 
 	"git.thomasvoss.com/euro-cash.eu/src/dbx"
 	"git.thomasvoss.com/euro-cash.eu/src/email"
+	. "git.thomasvoss.com/euro-cash.eu/src/try"
 )
 
 type middleware = func(http.Handler) http.Handler
@@ -41,9 +42,7 @@ func Run(port int) {
 
 	portStr := ":" + strconv.Itoa(port)
 	log.Println("Listening on", portStr)
-	err := http.ListenAndServe(portStr, mux)
-	dbx.Close()
-	log.Fatal(err)
+	Try(http.ListenAndServe(portStr, mux))
 }
 
 func chain(xs ...middleware) middleware {
