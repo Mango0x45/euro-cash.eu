@@ -1,9 +1,9 @@
 package app
 
 import (
-	"embed"
 	"fmt"
 	"html/template"
+	"io/fs"
 	"log"
 	"strings"
 
@@ -18,10 +18,8 @@ type templateData struct {
 }
 
 var (
-	//go:embed templates/*.html.tmpl
-	templateFS   embed.FS
-	notFoundTmpl = buildTemplate("-404")
-	errorTmpl    = buildTemplate("-error")
+	notFoundTmpl *template.Template
+	errorTmpl    *template.Template
 	templates    map[string]*template.Template
 	funcmap      = map[string]any{
 		"denoms":  denoms,
@@ -33,11 +31,15 @@ var (
 	}
 )
 
-func init() {
-	ents, err := templateFS.ReadDir("templates")
+func BuildTemplates(dir fs.FS) {
+	ents, err := fs.ReadDir(dir, ".")
 	if err != nil {
-		log.Fatalln(err)
+		log.Fatal(err)
 	}
+
+	notFoundTmpl = buildTemplate(dir, "-404")
+	errorTmpl = buildTemplate(dir, "-error")
+
 	templates = make(map[string]*template.Template, len(ents))
 	for _, e := range ents {
 		path := "/"
@@ -48,19 +50,19 @@ func init() {
 		case name != "index":
 			path += strings.ReplaceAll(name, "-", "/")
 		}
-		templates[path] = buildTemplate(name)
+		templates[path] = buildTemplate(dir, name)
 	}
 }
 
-func buildTemplate(name string) *template.Template {
+func buildTemplate(dir fs.FS, name string) *template.Template {
 	names := [...]string{"-base", "-navbar", name}
 	for i, s := range names {
-		names[i] = "templates/" + s + ".html.tmpl"
+		names[i] = s + ".html.tmpl"
 	}
 	return template.Must(template.
 		New("-base.html.tmpl").
 		Funcs(funcmap).
-		ParseFS(templateFS, names[:]...))
+		ParseFS(dir, names[:]...))
 }
 
 func asHTML(s string) template.HTML {

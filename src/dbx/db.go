@@ -2,66 +2,49 @@ package dbx
 
 import (
 	"database/sql"
-	"embed"
 	"fmt"
 	"io/fs"
 	"log"
-	"path/filepath"
 	"reflect"
 	"sort"
 	"strings"
 
 	"github.com/mattn/go-sqlite3"
+
+	. "git.thomasvoss.com/euro-cash.eu/src/try"
 )
 
 var (
+	db     *sql.DB
 	DBName string
-
-	db *sql.DB
-	//go:embed "sql/*.sql"
-	migrations embed.FS
 )
 
-func Init() {
-	var err error
-	if db, err = sql.Open("sqlite3", DBName); err != nil {
-		log.Fatal(err)
-	}
-	if err = db.Ping(); err != nil {
-		log.Fatal(err)
-	}
-
-	if err := applyMigrations("sql"); err != nil {
-		log.Fatal(err)
-	}
+func Init(sqlDir fs.FS) {
+	db = Try2(sql.Open("sqlite3", DBName))
+	Try(db.Ping())
+	Try(applyMigrations(sqlDir))
 
 	/* TODO: Remove debug code */
-	if err := CreateUser(User{
+	Try(CreateUser(User{
 		Email:    "mail@thomasvoss.com",
 		Username: "Thomas",
 		Password: "69",
 		AdminP:   true,
-	}); err != nil {
-		log.Fatal(err)
-	}
-	if err := CreateUser(User{
+	}))
+	Try(CreateUser(User{
 		Email:    "foo@BAR.baz",
 		Username: "Foobar",
 		Password: "420",
 		AdminP:   false,
-	}); err != nil {
-		log.Fatal(err)
-	}
-	if _, err := GetMintages("ad"); err != nil {
-		log.Fatal(err)
-	}
+	}))
+	Try2(GetMintages("ad"))
 }
 
 func Close() {
 	db.Close()
 }
 
-func applyMigrations(dir string) error {
+func applyMigrations(dir fs.FS) error {
 	var latest int
 	migratedp := true
 
@@ -90,7 +73,7 @@ func applyMigrations(dir string) error {
 		latest = -1
 	}
 
-	files, err := fs.ReadDir(migrations, dir)
+	files, err := fs.ReadDir(dir, ".")
 	if err != nil {
 		return err
 	}
@@ -110,7 +93,7 @@ func applyMigrations(dir string) error {
 
 	sort.Strings(scripts)
 	for _, f := range scripts[latest+1:] {
-		qry, err := migrations.ReadFile(filepath.Join(dir, f))
+		qry, err := fs.ReadFile(dir, f)
 		if err != nil {
 			return err
 		}
@@ -141,7 +124,7 @@ func applyMigrations(dir string) error {
 	}
 
 	if last != "" {
-		qry, err := migrations.ReadFile(filepath.Join(dir, last))
+		qry, err := fs.ReadFile(dir, last)
 		if err != nil {
 			return err
 		}

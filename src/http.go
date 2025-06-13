@@ -27,7 +27,6 @@ func Run(port int) {
 	mwareC := chain(mwareB, countryHandler)    // [C]ountry
 	mwareM := chain(mwareC, mintageHandler)    // [M]intage
 
-	/* TODO: Put this all in an embed.FS */
 	mux.Handle("GET /codes/", fs)
 	mux.Handle("GET /designs/", fs)
 	mux.Handle("GET /favicon.ico", fs)

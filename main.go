@@ -13,6 +13,7 @@ import (
 	"git.thomasvoss.com/euro-cash.eu/src"
 	"git.thomasvoss.com/euro-cash.eu/src/dbx"
 	"git.thomasvoss.com/euro-cash.eu/src/email"
+	. "git.thomasvoss.com/euro-cash.eu/src/try"
 )
 
 func main() {
@@ -37,7 +38,9 @@ func main() {
 	if *debugp {
 		go watch()
 	}
-	dbx.Init()
+
+	dbx.Init(Try2(os.OpenRoot("src/dbx/sql")).FS())
+	app.BuildTemplates(Try2(os.OpenRoot("src/templates")).FS())
 	app.Run(*port)
 }
 
