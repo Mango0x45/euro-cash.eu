@@ -42,5 +42,5 @@ CREATE TABLE users (
 	username   TEXT COLLATE BINARY,
 	password   TEXT COLLATE BINARY,
 	adminp     INTEGER,
-	translates TEXT COLLATE BINARY,
+	translates TEXT COLLATE BINARY
 );
