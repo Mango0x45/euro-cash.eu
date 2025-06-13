@@ -1,3 +1,4 @@
 *.avif  binary
 *.jpg   binary
+*.otf   binary
 vendor/ linguist-vendored
