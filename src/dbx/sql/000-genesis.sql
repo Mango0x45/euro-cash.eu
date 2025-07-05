@@ -7,30 +7,26 @@ CREATE TABLE migration (
 INSERT INTO migration (id, latest) VALUES (1, -1);
 
 CREATE TABLE mintages_s (
-	country   CHAR(2) NOT NULL COLLATE BINARY
+	country      CHAR(2) NOT NULL COLLATE BINARY
 		CHECK(length(country) = 2),
-	type      INTEGER NOT NULL  -- Codes correspond to contants in mintages.go
+	-- Codes correspond to contants in mintages.go
+	type         INTEGER NOT NULL
 		CHECK(type BETWEEN 0 AND 2),
-	year      INTEGER NOT NULL,
-	mintmark  TEXT,
-	[€0,01]   INTEGER,
-	[€0,02]   INTEGER,
-	[€0,05]   INTEGER,
-	[€0,10]   INTEGER,
-	[€0,20]   INTEGER,
-	[€0,50]   INTEGER,
-	[€1,00]   INTEGER,
-	[€2,00]   INTEGER,
-	reference TEXT
+	year         INTEGER NOT NULL,
+	denomination REAL NOT NULL,
+	mintmark     TEXT,
+	mintage      INTEGER,
+	reference    TEXT
 );
 
 CREATE TABLE mintages_c (
 	country   CHAR(2) NOT NULL COLLATE BINARY
 		CHECK(length(country) = 2),
-	type      INTEGER NOT NULL  -- Codes correspond to contants in mintages.go
+	-- Codes correspond to contants in mintages.go
+	type      INTEGER NOT NULL
 		CHECK(type BETWEEN 0 AND 2),
-	name      TEXT NOT NULL,
 	year      INTEGER NOT NULL,
+	name      TEXT NOT NULL,
 	number    INTEGER NOT NULL,
 	mintmark  TEXT,
 	mintage   INTEGER,

@@ -71,15 +71,17 @@
 			<table class="mintage-table" role="grid">
 				<thead>
 					<th>{{ .T "Year" }}</th>
-					{{ with $p := .Printer }}
-						{{ range denoms }}
-							<th>{{ $p.M . }}</th>
-						{{ end }}
-					{{ end }}
+					<th>{{ .M 0.01 }}</th>
+					<th>{{ .M 0.02 }}</th>
+					<th>{{ .M 0.05 }}</th>
+					<th>{{ .M 0.10 }}</th>
+					<th>{{ .M 0.20 }}</th>
+					<th>{{ .M 0.50 }}</th>
+					<th>{{ .M 1.00 }}</th>
+					<th>{{ .M 2.00 }}</th>
 				</thead>
 				<tbody>
 					{{ $p := .Printer }}
-					{{ $type := .Type }}
 					{{ range .Mintages.Standard }}
 						<tr>
 							<th scope="col">
@@ -116,7 +118,6 @@
 					</thead>
 					<tbody>
 						{{ $p := .Printer }}
-						{{ $type := .Type }}
 						{{ range .Mintages.Commemorative }}
 							<tr>
 								<th scope="col">
@@ -149,9 +150,9 @@
 {{ end }}
 
 {{ define "coin-type-radio" }}
-<label for=compact-{{ index . 1 }}>
+<label for={{ index . 1 }}>
 	<input
-		id=compact-{{ index . 1 }}
+		id={{ index . 1 }}
 		name="type"
 		type="radio"
 		value={{ index . 1 }}

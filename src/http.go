@@ -139,13 +139,13 @@ func mintageHandler(next http.Handler) http.Handler {
 		}
 
 		var err error
-		td.Mintages, err = dbx.GetMintages(td.Code)
+		td.Mintages, err = dbx.GetMintages(td.Code, dbx.NewMintageType(td.Type))
 		if err != nil {
 			throwError(http.StatusInternalServerError, err, w, r)
 			return
 		}
 
-		processMintages(&td.Mintages, td.Type)
+		/* processMintages(&td.Mintages, td.Type) */
 		next.ServeHTTP(w, r)
 	})
 }
@@ -191,7 +191,7 @@ func throwError(status int, err error, w http.ResponseWriter, r *http.Request) {
 	})
 }
 
-func processMintages(md *dbx.MintageData, typeStr string) {
+/* func processMintages(md *dbx.MintageData, typeStr string) {
 	var typ int
 	switch typeStr {
 	case "nifc":
@@ -221,4 +221,4 @@ func processMintages(md *dbx.MintageData, typeStr string) {
 		}
 		return strings.Compare(x.Mintmark, y.Mintmark)
 	})
-}
+} */

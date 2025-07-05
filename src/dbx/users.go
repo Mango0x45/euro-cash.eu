@@ -44,13 +44,13 @@ func Login(username, password string) (User, error) {
 	password = norm.NFC.String(password)
 
 	/* TODO: Pass a context here? */
-	rs, err := db.Query(`SELECT * FROM users WHERE username = ?`, username)
+	rs, err := db.Queryx(`SELECT * FROM users WHERE username = ?`, username)
 	if err != nil {
 		return User{}, err
 	}
-	u, err := scanToStruct[User](rs)
 
-	switch {
+	var u User
+	switch err = rs.Scan(&u); {
 	case errors.Is(err, sql.ErrNoRows):
 		return User{}, LoginFailed
 	case err != nil:
