@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# https://github.com/unicode-org/cldr-json/blob/main/cldr-json/cldr-numbers-full/main/$1/numbers.json
+
+usage()
+{
+	echo "Usage: getfmt currency|date|number locale..." >&2
+	exit 1
+}
+
+[ $# -lt 2 ] && usage
+
+mode="$1"
+shift
+
+case "$mode" in
+currency)
+	url='https://raw.githubusercontent.com/unicode-org/cldr-json/refs/heads/main/cldr-json/cldr-numbers-full/main/$l/numbers.json'
+	qry='.main.[$l].numbers.["currencyFormats-numberSystem-latn"].standard'
+	;;
+date)
+	url='https://raw.githubusercontent.com/unicode-org/cldr-json/refs/heads/main/cldr-json/cldr-dates-full/main/$l/ca-gregorian.json'
+	qry='.main.[$l].dates.calendars.gregorian.dateFormats.short'
+	;;
+number)
+	url='https://raw.githubusercontent.com/unicode-org/cldr-json/refs/heads/main/cldr-json/cldr-numbers-full/main/$l/numbers.json'
+	qry='.main.[$l].numbers.["decimalFormats-numberSystem-latn"].standard'
+	;;
+*)
+	usage
+esac
+
+for l in "$@"
+do
+	[ $# -gt 1 ] && printf '%s:\t' "$l"
+	curl -s "$(eval echo "$url")" | jq -r --arg l "$l" "$qry"
+done
