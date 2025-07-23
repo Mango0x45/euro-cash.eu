@@ -10,4 +10,4 @@
    (comment-continue . "   ")
    (require-final-newline . t)))
  (mhtml-mode
-  ((eval . (add-hook 'mhtml-mode-hook (lambda () (auto-fill-mode -1)))))))
+  ((eval . (auto-fill-mode -1)))))
