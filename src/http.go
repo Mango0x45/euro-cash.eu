@@ -10,12 +10,12 @@ import (
 	"net/http"
 	"slices"
 	"strconv"
-	"strings"
 
 	. "git.thomasvoss.com/euro-cash.eu/pkg/try"
 
 	"git.thomasvoss.com/euro-cash.eu/src/dbx"
 	"git.thomasvoss.com/euro-cash.eu/src/email"
+	"git.thomasvoss.com/euro-cash.eu/src/i18n"
 )
 
 type middleware = func(http.Handler) http.Handler
@@ -87,19 +87,21 @@ func finalHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	data := r.Context().Value("td").(*templateData)
-	t.Execute(w, data)
+	if err := t.Execute(w, data); err != nil {
+		log.Println(err)
+	}
 }
 
 func i18nHandler(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		var p, pZero Printer
+		var p, pZero i18n.Printer
 
 		if c, err := r.Cookie("locale"); err == nil {
-			p = printers[strings.ToLower(c.Value)]
+			p = i18n.Printers[c.Value]
 		}
 
 		td := r.Context().Value("td").(*templateData)
-		td.Printer = cmp.Or(p, defaultPrinter)
+		td.Printer = cmp.Or(p, i18n.DefaultPrinter)
 
 		if p == pZero {
 			http.SetCookie(w, &http.Cookie{
@@ -124,14 +126,14 @@ func countryHandler(next http.Handler) http.Handler {
 func mintageHandler(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		td := r.Context().Value("td").(*templateData)
-		td.Code = strings.ToLower(r.FormValue("code"))
+		td.Code = r.FormValue("code")
 		if !slices.ContainsFunc(td.Countries, func(c country) bool {
 			return c.Code == td.Code
 		}) {
 			td.Code = td.Countries[0].Code
 		}
 
-		td.Type = strings.ToLower(r.FormValue("type"))
+		td.Type = r.FormValue("type")
 		switch td.Type {
 		case "circ", "nifc", "proof":
 		default:
@@ -152,7 +154,7 @@ func mintageHandler(next http.Handler) http.Handler {
 
 func setUserLanguage(w http.ResponseWriter, r *http.Request) {
 	loc := r.FormValue("locale")
-	_, ok := printers[strings.ToLower(loc)]
+	_, ok := i18n.Printers[loc]
 	if !ok {
 		w.WriteHeader(http.StatusUnprocessableEntity)
 		fmt.Fprintf(w, "Locale ‘%s’ is invalid or unsupported", loc)

@@ -17,6 +17,7 @@ import (
 	"git.thomasvoss.com/euro-cash.eu/src"
 	"git.thomasvoss.com/euro-cash.eu/src/dbx"
 	"git.thomasvoss.com/euro-cash.eu/src/email"
+	"git.thomasvoss.com/euro-cash.eu/src/i18n"
 )
 
 func main() {
@@ -56,6 +57,7 @@ func main() {
 		})
 	}
 
+	i18n.Init()
 	dbx.Init(Try2(os.OpenRoot("src/dbx/sql")).FS())
 	app.BuildTemplates(Try2(os.OpenRoot("src/templates")).FS(), *debugp)
 	app.Run(*port)

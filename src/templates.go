@@ -11,10 +11,11 @@ import (
 	"git.thomasvoss.com/euro-cash.eu/pkg/watch"
 
 	"git.thomasvoss.com/euro-cash.eu/src/dbx"
+	"git.thomasvoss.com/euro-cash.eu/src/i18n"
 )
 
 type templateData struct {
-	Printer    Printer
+	Printer    i18n.Printer
 	Code, Type string
 	Mintages   dbx.MintageData
 	Countries  []country
@@ -25,11 +26,12 @@ var (
 	errorTmpl    *template.Template
 	templates    map[string]*template.Template
 	funcmap      = map[string]any{
-		"locales": locales,
+		"locales": i18n.Locales,
 		"safe":    asHTML,
 		"sprintf": fmt.Sprintf,
 		"toUpper": strings.ToUpper,
 		"tuple":   templateMakeTuple,
+		"map":     templateMakeMap,
 	}
 )
 
@@ -78,18 +80,31 @@ func asHTML(s string) template.HTML {
 	return template.HTML(s)
 }
 
-func locales() []locale {
-	return Locales[:]
-}
-
 func templateMakeTuple(args ...any) []any {
 	return args
 }
 
-func (td templateData) T(fmt string, args ...any) string {
-	return td.Printer.T(fmt, args...)
+func templateMakeMap(args ...any) map[string]any {
+	if len(args)&1 != 0 {
+		/* TODO: Handle error */
+		args = args[:len(args)-1]
+	}
+	m := make(map[string]any, len(args)/2)
+	for i := 0; i < len(args); i += 2 {
+		k, ok := args[i].(string)
+		if !ok {
+			/* TODO: Handle error */
+			continue
+		}
+		m[k] = args[i+1]
+	}
+	return m
 }
 
-func (td templateData) M(n float64) string {
-	return td.Printer.M(n)
+func (td templateData) Get(fmt string, args ...map[string]any) template.HTML {
+	return template.HTML(td.Printer.Get(fmt, args...))
+}
+
+func (td templateData) GetN(fmtS, fmtP string, n int, args map[string]any) template.HTML {
+	return template.HTML(td.Printer.GetN(fmtS, fmtP, n, args))
 }

@@ -1,16 +1,12 @@
 {{ define "content" }}
 <header>
 	{{ template "navbar" . }}
-	<h1>{{ .T "Page Not Found" }}</h1>
+	<h1>{{ .Get "Page Not Found" }}</h1>
 </header>
 <main>
 	<p>
-		{{ .T `
-			The page you were looking for does not exist.  If you believe this
-			is a mistake then don’t hesitate to contact @onetruemangoman on
-			Discord or email us at %s.`
-			`<a href="mailto:mail@euro-cash.eu">mail@euro-cash.eu</a>` | safe
-		}}
+		{{ .Get "The page you were looking for does not exist. If you believe this is a mistake then don’t hesitate to contact ‘@onetruemangoman’ on Discord or email us at %(Email:e)."
+			(map "Email" "mail@euro-cash.eu") }}
 	</p>
 </main>
 {{ end }}

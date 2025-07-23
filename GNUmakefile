@@ -12,8 +12,12 @@ euro-cash.eu: $(cssfiles) $(templates) $(gofiles) $(sqlfiles)
 	go build
 
 all-i18n: exttmpl
-	go generate ./src
-	find . -name out.gotext.json | mcp -b sed s/out/messages/
+	find . -name '*.html.tmpl' -exec ./exttmpl -out po/templates.pot {} +
+	for bcp in en en-US nl;                                                     \
+	do                                                                          \
+		mkdir -p "po/$$bcp";                                                    \
+		msgmerge --update "po/$$bcp/messages.po" po/templates.pot;              \
+	done
 	go build
 
 exttmpl: $(exttmpl)

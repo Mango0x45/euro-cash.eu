@@ -1,20 +1,20 @@
 {{ define "navbar" }}
 <nav>
 	<menu>
-		<li><a href="/">{{ .T "Home" }}</a></li>
-		<li><a href="#TODO">{{ .T "News" }}</a></li>
-		<li><a href="/collecting">{{ .T "Coin Collecting" }}</a></li>
-		<li><a href="/coins">{{ .T "Coins" }}</a></li>
-		<li><a href="/banknotes">{{ .T "Banknotes" }}</a></li>
-		<li><a href="/jargon">{{ .T "Jargon" }}</a></li>
+		<li><a href="/">{{ .Get "Home" }}</a></li>
+		<li><a href="#TODO">{{ .Get "News" }}</a></li>
+		<li><a href="/collecting">{{ .Get "Coin Collecting" }}</a></li>
+		<li><a href="/coins">{{ .Get "Coins" }}</a></li>
+		<li><a href="/banknotes">{{ .Get "Banknotes" }}</a></li>
+		<li><a href="/jargon">{{ .Get "Jargon" }}</a></li>
 	</menu>
 	<menu>
 		<li>
 			<a href="https://discord.gg/DCaXfRcy9C" target="_blank">
-				{{ .T "Discord" }}
+				{{ .Get "Discord" }}
 			</a>
 		</li>
-		<li><a href="/about">{{ .T "About" }}</a></li>
+		<li><a href="/about">{{ .Get "About" }}</a></li>
 		<li id="nav-icon-lang">
 			<a href="/language">
 				<svg
@@ -55,7 +55,7 @@
 					<path d="M 17.0  5.0 H  2.0" stroke-linejoin="round"></path>
 					<path d="M 17.0 14.0 H  2.0" stroke-linejoin="round"></path>
 				</svg>
-				{{ .T "Language" }}
+				{{ .Get "Language" }}
 			</a>
 		</li>
 		<li id="nav-icon-theme">

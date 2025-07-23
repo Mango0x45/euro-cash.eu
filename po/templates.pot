@@ -1,0 +1,277 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0.0\n"
+"PO-Revision-Date: 2025-07-17 00:14+0200\n"
+"Last-Translator: Thomas Voss <mail@thomasvoss.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ./src/templates/about.html.tmpl:7
+msgid "Open Source"
+msgstr ""
+
+#: ./src/templates/about.html.tmpl:18
+msgid "Special Thanks"
+msgstr ""
+
+#: ./src/templates/about.html.tmpl:38
+msgid "British- & American English"
+msgstr ""
+
+#: ./src/templates/about.html.tmpl:39
+msgid "Icelandic"
+msgstr ""
+
+#: ./src/templates/-404.html.tmpl:4
+msgid "Page Not Found"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:21
+msgid "All these images are taken from %(Link:r)."
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:48
+msgid "In the 2002 series, the first letter of the serial number can be used to identify the country that issued the banknote. The following table shows which countries map to which codes."
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:61
+msgid "Estonia"
+msgstr ""
+
+#: ./src/templates/about.html.tmpl:4
+msgid "About Us"
+msgstr ""
+
+#: ./src/templates/about.html.tmpl:13
+msgid "Contact Us"
+msgstr ""
+
+#: ./src/templates/about.html.tmpl:15
+msgid "While we try to stay as up-to-date as possible and to fact check our information, it is always possible that we get something wrong, lack a translation, or are missing some piece of data you may have. Should that be the case, don’t hesitate to contact us; we’ll try to get the site updated or fixed as soon as possible. You are always free to contribute via a git patch if you are more technically inclined, but if not you can always send an email to %(Email:e) or contact ‘@onetruemangoman’ on Discord."
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:65
+msgid "Slovakia"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:73
+msgid "Cyprus"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:101
+#: ./src/templates/banknotes-codes.html.tmpl:175
+#: ./src/templates/banknotes-codes.html.tmpl:269
+msgid "Ireland"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:113
+#: ./src/templates/banknotes-codes.html.tmpl:195
+#: ./src/templates/banknotes-codes.html.tmpl:200
+#: ./src/templates/banknotes-codes.html.tmpl:259
+#: ./src/templates/banknotes-codes.html.tmpl:284
+#: ./src/templates/banknotes-codes.html.tmpl:289
+msgid "Germany"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:135
+#: ./src/templates/banknotes-codes.html.tmpl:225
+msgid "Printer"
+msgstr ""
+
+#: ./src/templates/about.html.tmpl:23
+msgid "Research"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:8
+msgid "Euro banknotes have two codes on them: a printer code and a serial number. The printer code tells you where a given note was printed, while the serial number tells you which country issued the banknote (for the 2002 series) or where the banknote was printed (for the Europa series)."
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:13
+msgid "The printer code (not to be confused with the serial number) is a small code printed on banknotes with information about where the banknote was printed. All printer codes have the form ‘X000X0’ — or in other words — a letter followed by 3 numbers, a letter and a final number."
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:46
+msgid "2002 Series"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:77
+msgid "Slovenia"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:81
+#: ./src/templates/banknotes-codes.html.tmpl:141
+msgid "Finland"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:93
+#: ./src/templates/banknotes-codes.html.tmpl:160
+#: ./src/templates/banknotes-codes.html.tmpl:254
+msgid "Netherlands"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:117
+#: ./src/templates/banknotes-codes.html.tmpl:190
+#: ./src/templates/banknotes-codes.html.tmpl:294
+msgid "Greece"
+msgstr ""
+
+#: ./src/templates/about.html.tmpl:9
+msgid "This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found %(LinkGit:L)here%(LinkEnd). This site is licensed under the %(LinkBSD:L)BSD Zero Clause License%(LinkEnd) giving you the full freedom to do whatever you would like with any of the content on this site."
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:16
+msgid "The printer code can be a bit tricky to find. The following dropdown menus will show you where to find the printer code on each note."
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:109
+#: ./src/templates/banknotes-codes.html.tmpl:185
+#: ./src/templates/banknotes-codes.html.tmpl:279
+msgid "Spain"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:191
+#: ./src/templates/banknotes-codes.html.tmpl:295
+msgid "Bank of Greece"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:218
+msgid "In the Europa series the first letter of the serial number can be used to identify the printer that printed the banknote, just like the printer code. The following table shows which countries map to which codes."
+msgstr ""
+
+#: ./src/templates/-404.html.tmpl:8
+msgid "The page you were looking for does not exist. If you believe this is a mistake then don’t hesitate to contact ‘@onetruemangoman’ on Discord or email us at %(Email:r)."
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:19
+msgid "2002 Series Printer Codes"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:33
+msgid "Europa Series Printer Codes"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:55
+#: ./src/templates/banknotes-codes.html.tmpl:134
+#: ./src/templates/banknotes-codes.html.tmpl:224
+msgid "Country"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:69
+msgid "Malta"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:85
+#: ./src/templates/banknotes-codes.html.tmpl:210
+#: ./src/templates/banknotes-codes.html.tmpl:240
+msgid "Portugal"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:105
+#: ./src/templates/banknotes-codes.html.tmpl:146
+#: ./src/templates/banknotes-codes.html.tmpl:180
+#: ./src/templates/banknotes-codes.html.tmpl:230
+#: ./src/templates/banknotes-codes.html.tmpl:274
+msgid "France"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:171
+#: ./src/templates/banknotes-codes.html.tmpl:265
+msgid "Bank of Italy"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:127
+msgid "The first letter of the printer code can be used to identify the specific printer at which the banknote was printed. The printer- and country codes do not need to line up; a banknote issued by a country will often be printed in another."
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:176
+#: ./src/templates/banknotes-codes.html.tmpl:270
+msgid "Central Bank of Ireland"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:206
+#: ./src/templates/banknotes-codes.html.tmpl:300
+msgid "National Bank of Belgium"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:216
+msgid "Europa Series"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:285
+msgid "Leipzig"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:290
+msgid "Munich"
+msgstr ""
+
+#: ./src/templates/about.html.tmpl:24
+msgid "Translations"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:11
+msgid "Printer Code"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:54
+#: ./src/templates/banknotes-codes.html.tmpl:133
+#: ./src/templates/banknotes-codes.html.tmpl:223
+msgid "Code"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:89
+#: ./src/templates/banknotes-codes.html.tmpl:151
+#: ./src/templates/banknotes-codes.html.tmpl:245
+msgid "Austria"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:165
+msgid "United Kingdom"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:186
+#: ./src/templates/banknotes-codes.html.tmpl:280
+msgid "Royal Mint of Spain"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:235
+msgid "Bulgaria"
+msgstr ""
+
+#. TRANSLATORS: As in ‘Development of the site’
+#: ./src/templates/about.html.tmpl:22
+msgid "Development"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:4
+msgid "Location Codes"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:43
+msgid "The first letter in the printer code identifies the specific printer at which the banknote was printed. The tables below will tell you which letters correspond to which printers. The final letter and number form a pair (such as ‘A2’ or ‘D6’) — this pair acts as a set of coordinates telling you where on the sheet of paper the banknote was located. During printing, banknotes are printed in a grid on a large sheet of paper which is then cut into individual banknotes. A note with the pair ‘A1’ will have been at the upper-left corner of the printing sheet, with ‘A2’ to its right and ‘B1’ below it."
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:97
+#: ./src/templates/banknotes-codes.html.tmpl:170
+#: ./src/templates/banknotes-codes.html.tmpl:264
+msgid "Italy"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:121
+#: ./src/templates/banknotes-codes.html.tmpl:205
+#: ./src/templates/banknotes-codes.html.tmpl:299
+msgid "Belgium"
+msgstr ""
+
+#: ./src/templates/banknotes-codes.html.tmpl:181
+#: ./src/templates/banknotes-codes.html.tmpl:275
+msgid "Bank of France"
+msgstr ""
+

@@ -2,23 +2,19 @@
 <header>
 	{{ template "navbar" . }}
 	<hgroup>
-		<h1>{{ .T "The Euro Cash Compendium" }}</h1>
+		<h1>{{ .Get "The Euro Cash Wiki" }}</h1>
 		<p>
-			{{ .T "United in" }}
-			<del>{{ .T "diversity" }}</del>
-			<ins>{{ .T "cash" }}</ins>
+			{{/* TRANSLATORS: Beginning of sentence, as in ‘United in …’ */}}
+			{{ .Get "United in" }}
+			<del>{{ .Get "diversity" }}</del>
+			<ins>{{ .Get "cash" }}</ins>
 		</p>
 	</hgroup>
 </header>
 <main>
+	<!-- TODO(2026): s/26/27/; Welcome Bulgaria! -->
 	<p>
-		{{ .T `
-			Welcome to the Euro Cash Compendium.  This sites aims to be a
-			resource for you to discover everything there is to know about the
-			coins and banknotes of the Euro, a currency that spans 26 countries
-			and 350 million people. We also have dedicated sections of the site
-			for collectors.
-		` }}
+		{{ .Get "Welcome to the Euro Cash Wiki! This sites aims to be a resource for you to discover everything there is to know about the coins and banknotes of the Euro, a currency that spans 26 countries and 350 million people. We also have dedicated sections of the site for collectors." }}
 	</p>
 </main>
 {{ end }}

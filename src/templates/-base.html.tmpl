@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang={{ .Printer.Locale.Bcp }}>
+<html lang={{ .Printer.Bcp }}>
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="/style.min.css" type="text/css" rel="stylesheet">
-		<title>{{ .T "Euro Cash" }}</title>
+		<title>{{ .Get "Euro Cash" }}</title>
 		<script type="text/javascript">
 			const $  = q => document.querySelector(q);
 			const $$ = q => document.querySelectorAll(q);
@@ -33,8 +33,8 @@
 		<footer>
 			<p>
 				<small>
-					{{ .T "Found a mistake or want to contribute missing information?" }}
-					<a href="/about">{{ .T "Feel free to contact us!" }}</a>
+					{{ .Get "Found a mistake or want to contribute missing information?" }}
+					<a href="/about">{{ .Get "Feel free to contact us!" }}</a>
 				</small>
 			</p>
 		</footer>

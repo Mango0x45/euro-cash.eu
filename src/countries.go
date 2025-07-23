@@ -5,42 +5,44 @@ import (
 
 	"golang.org/x/text/collate"
 	"golang.org/x/text/language"
+
+	"git.thomasvoss.com/euro-cash.eu/src/i18n"
 )
 
 type country struct {
 	Code, Name string
 }
 
-func sortedCountries(p Printer) []country {
+func sortedCountries(p i18n.Printer) []country {
 	xs := []country{
-		{Code: "ad", Name: p.T("Andorra")},
-		{Code: "at", Name: p.T("Austria")},
-		{Code: "be", Name: p.T("Belgium")},
+		{Code: "ad", Name: p.Get("Andorra")},
+		{Code: "at", Name: p.Get("Austria")},
+		{Code: "be", Name: p.Get("Belgium")},
 		/* TODO(2026): Add Bulgaria */
-		/* {Code: "bg", Name: p.T("Bulgaria")}, */
-		{Code: "cy", Name: p.T("Cyprus")},
-		{Code: "de", Name: p.T("Germany")},
-		{Code: "ee", Name: p.T("Estonia")},
-		{Code: "es", Name: p.T("Spain")},
-		{Code: "fi", Name: p.T("Finland")},
-		{Code: "fr", Name: p.T("France")},
-		{Code: "gr", Name: p.T("Greece")},
-		{Code: "hr", Name: p.T("Croatia")},
-		{Code: "ie", Name: p.T("Ireland")},
-		{Code: "it", Name: p.T("Italy")},
-		{Code: "lt", Name: p.T("Lithuania")},
-		{Code: "lu", Name: p.T("Luxembourg")},
-		{Code: "lv", Name: p.T("Latvia")},
-		{Code: "mc", Name: p.T("Monaco")},
-		{Code: "mt", Name: p.T("Malta")},
-		{Code: "nl", Name: p.T("Netherlands")},
-		{Code: "pt", Name: p.T("Portugal")},
-		{Code: "si", Name: p.T("Slovenia")},
-		{Code: "sk", Name: p.T("Slovakia")},
-		{Code: "sm", Name: p.T("San Marino")},
-		{Code: "va", Name: p.T("Vatican City")},
+		/* {Code: "bg", Name: p.Get("Bulgaria")}, */
+		{Code: "cy", Name: p.Get("Cyprus")},
+		{Code: "de", Name: p.Get("Germany")},
+		{Code: "ee", Name: p.Get("Estonia")},
+		{Code: "es", Name: p.Get("Spain")},
+		{Code: "fi", Name: p.Get("Finland")},
+		{Code: "fr", Name: p.Get("France")},
+		{Code: "gr", Name: p.Get("Greece")},
+		{Code: "hr", Name: p.Get("Croatia")},
+		{Code: "ie", Name: p.Get("Ireland")},
+		{Code: "it", Name: p.Get("Italy")},
+		{Code: "lt", Name: p.Get("Lithuania")},
+		{Code: "lu", Name: p.Get("Luxembourg")},
+		{Code: "lv", Name: p.Get("Latvia")},
+		{Code: "mc", Name: p.Get("Monaco")},
+		{Code: "mt", Name: p.Get("Malta")},
+		{Code: "nl", Name: p.Get("Netherlands")},
+		{Code: "pt", Name: p.Get("Portugal")},
+		{Code: "si", Name: p.Get("Slovenia")},
+		{Code: "sk", Name: p.Get("Slovakia")},
+		{Code: "sm", Name: p.Get("San Marino")},
+		{Code: "va", Name: p.Get("Vatican City")},
 	}
-	c := collate.New(language.MustParse(p.Locale.Bcp))
+	c := collate.New(language.MustParse(p.Bcp))
 	slices.SortFunc(xs, func(x, y country) int {
 		return c.CompareString(x.Name, y.Name)
 	})
