@@ -147,7 +147,6 @@ func mintageHandler(next http.Handler) http.Handler {
 			return
 		}
 
-		/* processMintages(&td.Mintages, td.Type) */
 		next.ServeHTTP(w, r)
 	})
 }
@@ -192,35 +191,3 @@ func throwError(status int, err error, w http.ResponseWriter, r *http.Request) {
 		Msg:  http.StatusText(status),
 	})
 }
-
-/* func processMintages(md *dbx.MintageData, typeStr string) {
-	var typ int
-	switch typeStr {
-	case "nifc":
-		typ = dbx.TypeNifc
-	case "proof":
-		typ = dbx.TypeProof
-	default:
-		typ = dbx.TypeCirc
-	}
-
-	md.Standard = slices.DeleteFunc(md.Standard,
-		func(x dbx.MSRow) bool { return x.Type != typ })
-	md.Commemorative = slices.DeleteFunc(md.Commemorative,
-		func(x dbx.MCRow) bool { return x.Type != typ })
-	slices.SortFunc(md.Standard, func(x, y dbx.MSRow) int {
-		if x.Year != y.Year {
-			return x.Year - y.Year
-		}
-		return strings.Compare(x.Mintmark, y.Mintmark)
-	})
-	slices.SortFunc(md.Commemorative, func(x, y dbx.MCRow) int {
-		if x.Year != y.Year {
-			return x.Year - y.Year
-		}
-		if x.Number != y.Number {
-			return x.Number - y.Number
-		}
-		return strings.Compare(x.Mintmark, y.Mintmark)
-	})
-} */
