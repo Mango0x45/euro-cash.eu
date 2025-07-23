@@ -1,13 +1,13 @@
 ((csv-mode
-  ((number-format-predicate
-    . (lambda (beg end)
-        (save-excursion
-          (goto-char beg)
-          (not (bolp)))))))
+  (number-format-predicate
+   . (lambda (beg end)
+       (save-excursion
+         (goto-char beg)
+         (not (bolp))))))
  (go-ts-mode
-  ((comment-start . "/* ")
-   (comment-end . " */")
-   (comment-continue . "   ")
-   (require-final-newline . t)))
+  (comment-start . "/* ")
+  (comment-end . " */")
+  (comment-continue . "   ")
+  (require-final-newline . t))
  (mhtml-mode
-  ((eval . (auto-fill-mode -1)))))
+  (eval . (auto-fill-mode -1))))
