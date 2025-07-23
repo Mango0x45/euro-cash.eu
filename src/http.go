@@ -155,6 +155,7 @@ func setUserLanguage(w http.ResponseWriter, r *http.Request) {
 	loc := r.FormValue("locale")
 	_, ok := i18n.Printers[loc]
 	if !ok {
+		/* TODO: Make this page pretty? */
 		w.WriteHeader(http.StatusUnprocessableEntity)
 		fmt.Fprintf(w, "Locale ‘%s’ is invalid or unsupported", loc)
 		return
