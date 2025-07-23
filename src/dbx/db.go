@@ -23,19 +23,19 @@ func Init(sqlDir fs.FS) {
 	Try(applyMigrations(sqlDir))
 
 	/* TODO: Remove debug code */
-	Try(CreateUser(User{
-		Email:    "mail@thomasvoss.com",
-		Username: "Thomas",
-		Password: "69",
-		AdminP:   true,
-	}))
-	Try(CreateUser(User{
-		Email:    "foo@BAR.baz",
-		Username: "Foobar",
-		Password: "420",
-		AdminP:   false,
-	}))
-	Try2(GetMintages("ad", TypeCirc))
+	/* Try(CreateUser(User{
+	   	Email:    "mail@thomasvoss.com",
+	   	Username: "Thomas",
+	   	Password: "69",
+	   	AdminP:   true,
+	   }))
+	   Try(CreateUser(User{
+	   	Email:    "foo@BAR.baz",
+	   	Username: "Foobar",
+	   	Password: "420",
+	   	AdminP:   false,
+	   }))
+	   Try2(GetMintages("ad", TypeCirc)) */
 }
 
 func Close() {
