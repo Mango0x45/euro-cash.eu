@@ -120,7 +120,7 @@ func process(path string) {
 	currentPath = path
 	currentFile = try2(os.ReadFile(path))
 	trees := make(map[string]*parse.Tree)
-	t := parse.New("name")
+	t := parse.New(path)
 	t.Mode |= parse.ParseComments | parse.SkipFuncCheck
 	try2(t.Parse(string(currentFile), "", "", trees))
 	for _, t := range trees {
