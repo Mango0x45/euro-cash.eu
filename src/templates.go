@@ -105,6 +105,6 @@ func (td templateData) Get(fmt string, args ...map[string]any) template.HTML {
 	return template.HTML(td.Printer.Get(fmt, args...))
 }
 
-func (td templateData) GetN(fmtS, fmtP string, n int, args map[string]any) template.HTML {
-	return template.HTML(td.Printer.GetN(fmtS, fmtP, n, args))
+func (td templateData) GetN(fmtS, fmtP string, n int, args ...map[string]any) template.HTML {
+	return template.HTML(td.Printer.GetN(fmtS, fmtP, n, args...))
 }
