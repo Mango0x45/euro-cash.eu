@@ -1,65 +1,41 @@
 {{ define "content" }}
 <header>
 	{{ template "navbar" . }}
-	<h1>{{ .T "Dutch Euro Coin Designs" }}</h1>
+	<h1>{{ .Get "Dutch Euro Coin Designs" }}</h1>
 </header>
 <main>
-	{{ $dutchStart := `<span lang="nl">` }}
-	{{ $dutchEnd := `</span>` }}
+	{{ $nlargs := (map "DutchStart" `<span lang="nl"><em>` "DutchEnd" `</em></span>`) }}
 	<div class="design-container">
 		<img
-			alt="Dutch 50 euro cent coin (Beatrix)"
+			alt="Dutch €0.50 coin (Queen Beatrix)"
 			src="/designs/nl-050-beatrix.avif"
 		/>
 		<img
-			alt="Dutch 50 euro cent coin (Willem-Alexander)"
+			alt="Dutch €0.50 coin (King Willem-Alexander)"
 			src="/designs/nl-050-willem-alexander.avif"
 		/>
 	</div>
 	<div class="design-container">
 		<img
-			alt="Dutch 1 euro coin (Beatrix)"
+			alt="Dutch €1 coin (Queen Beatrix)"
 			src="/designs/nl-100-beatrix.avif"
 		/>
 		<img
-			alt="Dutch 1 euro coin (Willem-Alexander)"
+			alt="Dutch €1 coin (King Willem-Alexander)"
 			src="/designs/nl-100-willem-alexander.avif"
 		/>
 	</div>
 	<p>
-		{{ .T `
-			From the years 1999–2013 all Dutch euro coins featured the portrait
-			of Queen Beatrix of the Netherlands.  After her abdication from the
-			throne in 2013 the designs of all denominations were changed to
-			feature the portrait of the new King Willem-Alexander.  After her
-			abdication the direction in which the monarchs portrait faced was
-			flipped; a tradition dating back to the earliest coins of the
-			Kingdom of the Netherlands.
-		` }}
+		{{ .Get "From the years 1999–2013 all Dutch euro coins featured the portrait of Queen Beatrix of the Netherlands. After her abdication from the throne in 2013 the designs of all denominations were changed to feature the portrait of the new King Willem-Alexander. After her abdication the direction in which the monarchs portrait faced was flipped; a tradition shared by the coins of many monarchies around the world." }}
 	</p>
 	<p>
 		<!-- TODO: Get a picture of the edge-inscription -->
-		{{ .T `
-			Coins featuring both monarchs contain text reading ‘%sBEATRIX
-			KONINGIN DER NEDERLANDEN%s’ (‘BEATRIX QUEEN OF THE
-			NETHERLANDS’) and ‘%sWillem-Alexander Koning der
-			Nederlanden%s’ (‘Willem-Alexander King of the Netherlands’)
-			respectively. The €2 coins also feature an edge-inscription
-			reading ‘%sGOD ⋆ ZIJ ⋆ MET ⋆ ONS ⋆%s’
-			(‘GOD ⋆ IS ⋆ WITH ⋆ US ⋆’).
-		`
-		$dutchStart $dutchEnd
-		$dutchStart $dutchEnd
-		$dutchStart $dutchEnd | safe }}
+		{{ .Get "Coins featuring both monarchs contain text reading ‘{DutchStart:r}BEATRIX KONINGIN DER NEDERLANDEN{DutchEnd:r}’ (English: ‘BEATRIX QUEEN OF THE NETHERLANDS’) and ‘{DutchStart:r}Willem-Alexander Koning der Nederlanden{DutchEnd:r}’ (English: ‘Willem-Alexander King of the Netherlands’) respectively. The €2 coins also feature an edge-inscription reading ‘{DutchStart:r}GOD ⋆ ZIJ ⋆ MET ⋆ ONS ⋆{DutchEnd:r}’ (English: ‘GOD ⋆ IS ⋆ WITH ⋆ US ⋆’)."
+		$nlargs }}
 	</p>
 	<p>
-		{{ .T `
-			The €1 and €2 coins featuring King Willem-Alexander were minted
-			with a much lower %srelief%s than most euro coins of the same
-			denomination.  As a result it is not uncommon for these coins to
-			appear worn after little use in circulation.`
-			`<a href="/jargon#relief">` `</a>` | safe
-		}}
+		{{ .Get "The €1 and €2 coins featuring King Willem-Alexander were minted with a much lower {Link:l}relief{-:E} than most euro coins of the same denomination. As a result it is not uncommon for these coins to appear worn after little use in circulation."
+		(map "Link" "/jargon#relief") }}
 	</p>
 </main>
 {{ end }}
