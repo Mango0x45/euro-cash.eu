@@ -1,3 +1,5 @@
+GO := go
+
 cssfiles  := $(shell find static -name '*.css' -not -name '*.min.css')
 cssfiles  := $(cssfiles:.css=.min.css)
 gofiles   := $(shell find main.go src -name '*.go')
@@ -9,7 +11,7 @@ exttmpl := $(wildcard cmd/exttmpl/*.go)
 all: euro-cash.eu exttmpl
 
 euro-cash.eu: $(cssfiles) $(templates) $(gofiles) $(sqlfiles)
-	go build
+	$(GO) build
 
 all-i18n: exttmpl
 	find . -name '*.html.tmpl' -exec ./exttmpl -out po/templates.pot {} +
@@ -18,10 +20,10 @@ all-i18n: exttmpl
 		mkdir -p "po/$$bcp";                                                    \
 		msgmerge --update "po/$$bcp/messages.po" po/templates.pot;              \
 	done
-	go build
+	$(GO) build
 
 exttmpl: $(exttmpl)
-	go build ./cmd/exttmpl
+	$(GO) build ./cmd/exttmpl
 
 %.min.css: %.css
 	if command -v lightningcss >/dev/null;                                      \
