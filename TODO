@@ -14,3 +14,18 @@ Before private release:
 
 Before public release:
 — Get up-to-date CRH info
+
+Notes for translation system:
+1. Fetch translation
+2. Apply variable substitutions
+  — Syntax is %(Name:flags)
+    — Flags are optional
+  — Flags are:
+  1. ‘e’: [e]mail → <a href="mailto:mail@domain.eu">mail@domain.eu</a>
+  2. ‘L’: [L]ink external → <a href="https://foo.com" target="_blank">
+  3. ‘l’: [l]ink internal → <a href="https://foo.com">
+  4. ‘m’: [m]onetary → €1.234,56
+    — Only show decimals if the arg is a float
+  5. ‘r’: [r]aw: Put content in literally; no HTML escaping
+  6. ‘E’: Link [E]nd → </a>
+3. HTML escape everything if we’re in the template wrappers
