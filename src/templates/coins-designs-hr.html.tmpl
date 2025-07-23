@@ -1,83 +1,38 @@
 {{ define "content" }}
 <header>
 	{{ template "navbar" . }}
-	<h1>{{ .T "Croatian Euro Coin Designs" }}</h1>
+	<h1>{{ .Get "Croatian Euro Coin Designs" }}</h1>
 </header>
 <main>
-	{{ $croatianStart := `<span lang="hr">` }}
-	{{ $croatianEnd := `</span>` }}
-
+	{{ $hrargs := (map "CroatianStart" `<span lang="hr"><em>` "CroatianEnd" `</em></span>`) }}
 	<div class="design-container">
-		<img alt="Croatian 1 euro cent coin"  src="/designs/hr-001.avif" />
-		<img alt="Croatian 50 euro cent coin" src="/designs/hr-050.avif" />
+		<img alt="{{ .Get `Croatian €0.01 coin` }}" src="/designs/hr-001.avif" />
+		<img alt="{{ .Get `Croatian €0.50 coin` }}" src="/designs/hr-050.avif" />
 	</div>
 	<div class="design-container">
-		<img alt="Croatian 1 euro coin" src="/designs/hr-100.avif" />
-		<img alt="Croatian 2 euro coin" src="/designs/hr-200.avif" />
+		<img alt="{{ .Get `Croatian €1 coin` }}" src="/designs/hr-100.avif" />
+		<img alt="{{ .Get `Croatian €2 coin` }}" src="/designs/hr-200.avif" />
 	</div>
 	<p>
-		{{ .T `
-			The Croatian euro coins feature four different themes, with
-			each design featuring the Croatian checkerboard and the
-			countries name in Croatian (‘%sHRVATSKA%s’).  All designs
-			were selected after voting in a public design competition.
-		` $croatianStart $croatianEnd | safe }}
+		{{ .Get "The Croatian euro coins feature four different themes, with each design featuring the Croatian checkerboard and the country’s name in Croatian (‘{CroatianStart:r}HRVATSKA{CroatianEnd:r}’). All designs were selected after voting in a public design competition."
+		$hrargs }}
 	</p>
 	<p>
-		{{ .T `
-			The 1-, 2-, and 5 euro cent coins were designed by Maja
-			Škripelj and feature a motif of the letters ‘ⰘⰓ’ from the
-			%sGlagolitic script%s — an old Slavic script that saw use in
-			Croatia up until the 19th century — representing Croatia’s country
-			code (‘HR’ in the Latin alphabet).`
-			`<a
-				target="_blank"
-				href="https://www.wikipedia.org/wiki/Glagolitic_script"
-			>`
-			`</a>` | safe
-		}}
+		{{ .Get "The 1-, 2- and 5 euro cent coins were designed by Maja Škripelj and feature a motif of the letters ‘ⰘⰓ’ from the {Link:L}Glagolitic script{-:E} — an old Slavic script that saw use in Croatia up until the 19th century — representing Croatia’s country code (‘HR’ in the Latin alphabet)."
+		(map "Link" "https://www.wikipedia.org/wiki/Glagolitic_script") }}
 	</p>
 	<p>
-		{{ .T `
-			The 10-, 20-, and 50 euro cent coins were designed by Ivan
-			Domagoj Račić and feature the portrait of the inventor and
-			engineer %sNikola Tesla%s.  The design of these coins caused
-			controversy when they were first announced with the National
-			Bank of Serbia claiming that it would be an appropriation of
-			the cultural and scientific heritage of the Serbian people to
-			feature the portrait of someone who ‘declared himself to be
-			Serbian by origin’.`
-			`<a
-				 target="_blank"
-				 href="https://www.wikipedia.org/wiki/Nikola_Tesla"
-			>`
-			`</a>` | safe
-		}}
+		{{ .Get "The 10-, 20- and 50 euro cent coins were designed by Ivan Domagoj Račić and feature the portrait of the inventor and engineer {Link:L}Nikola Tesla{-:E}. The design of these coins caused controversy when they were first announced with the National Bank of Serbia claiming that it would be an appropriation of the cultural and scientific heritage of the Serbian people to feature the portrait of someone who ‘declared himself to be Serbian by origin’."
+		(map "Link" "https://www.wikipedia.org/wiki/Nikola_Tesla") }}
 	</p>
 	<p>
-		{{ .T `
-			The 1 euro coin was designed by Jagor Šunde, David Čemeljić
-			and Fran Zekan and features a marten.  The marten is the
-			semi-official national animal of Croatia and the Kuna —
-			their pre-Euro currency — was named after the marten (‘%skuna
-			zlatica%s’ in Croatian).
-		` $croatianStart $croatianEnd | safe }}
+		{{ .Get "The 1 euro coin was designed by Jagor Šunde, David Čemeljić and Fran Zekan and features a marten. The marten is the semi-official national animal of Croatia and the Kuna — their pre-Euro currency — was named after the marten (‘{CroatianStart:r}kuna zlatica{CroatianEnd:r}’ in Croatian)."
+		$hrargs }}
 	</p>
 	<p>
 		<!-- TODO: Include a photo of the edge inscription -->
-		{{ .T `
-			The 2 euro coin was designed by Ivan Šivak and features the
-			map of Croatia.  The coin also has an edge-inscription that
-			reads ‘%sO LIJEPA O DRAGA O SLATKA SLOBODO%s’ (‘OH BEAUTIFUL,
-			OH DEAR, OH SWEET FREEDOM’) which is a line from the play
-			%sDubravka%s by Ivan Gundulić.
-		` $croatianStart $croatianEnd
-		`<a
-			 target="_blank"
-			 href="https://www.wikipedia.org/wiki/Dubravka_(drama)"
-			 lang="hr"
-		>`
-		`</a>` | safe }}
+		{{ .Get "The 2 euro coin was designed by Ivan Šivak and features the map of Croatia. The coin also has an edge-inscription that reads ‘{CroatianStart:r}O LIJEPA O DRAGA O SLATKA SLOBODO{CroatianEnd:r}’ (English: ‘OH BEAUTIFUL, OH DEAR, OH SWEET FREEDOM’) which is a line from the play {Link:L}Dubravka{-:E} by Ivan Gundulić."
+		$hrargs (map "Link" "https://www.wikipedia.org/wiki/Dubravka_(drama)") }}
 	</p>
 </main>
 {{ end }}

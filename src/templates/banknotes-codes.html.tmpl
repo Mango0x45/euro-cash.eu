@@ -18,8 +18,8 @@
 	<details>
 		<summary>{{ .Get "2002 Series Printer Codes" }}</summary>
 		<p>
-			{{ .Get "All these images are taken from %(Link:r)."
-			(map "Link" `<a href="https://eurobilltracker.com" target="_blank">eurobilltracker.com</a>`) }}
+			{{ .Get "All these images are taken from {Link:L}eurobilltracker.com{-:E}."
+			(map "Link" "https://eurobilltracker.com") }}
 		</p>
 		{{ template "banknotes/codes/code-pos" (tuple .Printer   5 "2002") }}
 		{{ template "banknotes/codes/code-pos" (tuple .Printer  10 "2002") }}
@@ -309,11 +309,11 @@
 {{ $args := (map "N" $d) }}
 <details>
 	{{/* TRANSLATORS: As in ‘5 Euro Banknote’ */}}
-	<summary>{{ $p.GetN "%(N) Euro" "%(N) Euro" $d $args }}</summary>
+	<summary>{{ $p.GetN "{N} Euro" "{N} Euro" $d $args }}</summary>
 	<img
 		class="big"
 		src={{ sprintf "/codes/%s-%03d.jpg" (index . 2) $d }}
-		alt={{ $p.GetN "Printer code on a %(N) euro bill" "Printer code on a %(N) euro bill" $d $args }}
+		alt={{ $p.GetN "Printer code on a {N} euro bill" "Printer code on a {N} euro bill" $d $args }}
 	>
 </details>
 {{ end }}

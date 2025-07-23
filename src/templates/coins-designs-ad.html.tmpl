@@ -1,91 +1,51 @@
 {{ define "content" }}
 <header>
 	{{ template "navbar" . }}
-	<h1>{{ .T "Andorran Euro Coin Designs" }}</h1>
+	<h1>{{ .Get "Andorran Euro Coin Designs" }}</h1>
 </header>
 <main>
 	<div class="design-container">
-		<img alt="Andorran 1 euro cent coin"  src="/designs/ad-001.avif" />
-		<img alt="Andorran 50 euro cent coin" src="/designs/ad-050.avif" />
+		<img alt="{{ .Get `Andorran €0.01 coin` }}" src="/designs/ad-001.avif" />
+		<img alt="{{ .Get `Andorran €0.50 coin` }}" src="/designs/ad-050.avif" />
 	</div>
 	<div class="design-container">
-		<img alt="Andorran 1 euro coin" src="/designs/ad-100.avif" />
-		<img alt="Andorran 2 euro coin" src="/designs/ad-200.avif" />
+		<img alt="{{ .Get `Andorran €1 coin` }}" src="/designs/ad-100.avif" />
+		<img alt="{{ .Get `Andorran €2 coin` }}" src="/designs/ad-200.avif" />
 	</div>
 	<p>
-		{{ .T `
-			On March of 2013 Andorra held a public design competition for all
-			denominations except for the €2 denomination which the government
-			pre-decided would bear the coat of arms of Andorra.  Each set of
-			denominations had a theme that participants had to center their
-			designs around.  These themes were:
-		` }}
+		{{ .Get "On March of 2013 Andorra held a public design competition for all denominations except for the €2 denomination which the government pre-decided would bear the coat of arms of Andorra. Each set of denominations had a theme that participants had to center their designs around. These themes were:" }}
 	</p>
 	<dl>
-		<dt>{{ .T "%s, %s, and %s"
-				(.Printer.M 0.01)
-				(.Printer.M 0.02)
-				(.Printer.M 0.05) }}</dt>
-		<dd>{{ .T "Andorran landscapes, nature, fauna, and flora" }}</dd>
-		<dt>{{ .T "%s, %s, and %s"
-				(.Printer.M 0.10)
-				(.Printer.M 0.20)
-				(.Printer.M 0.50) }}</dt>
-		<dd>{{ .T "Andorra’s Romanesque art" }}</dd>
-		<dt>{{ .Printer.M 1.00 }}</dt>
-		<dd>{{ .T "Casa de la Vall" }}</dd>
+		<dt>{{ .Get "€0.01, €0.02 and €0.05" }}</dt>
+		<dd>{{ .Get "Andorran landscapes, nature, fauna and flora" }}</dd>
+		<dt>{{ .Get "€0.10, €0.20 and €0.50" }}</dt>
+		<dd>{{ .Get "Andorra’s Romanesque art" }}</dd>
+		<dt>{{ .Printer.Sprintf "{1e:m}" (map "1e" 1.00) }}</dt>
+		<dd>{{ .Get "Casa de la Vall" }}</dd>
 	</dl>
 	<p>
-		{{ .T `
-			The results of the design contest with a few modifications are what
-			became the coins that entered circulation in 2014.  While each set
-			of denominations has its own design, all four designs prominently
-			feature the country name ‘ANDORRA’ along the outer portion of the
-			design with the year of issue written underneath.
-		` }}
+		{{ .Get "The results of the design contest with a few modifications are what became the coins that entered circulation in 2014. While each set of denominations has its own design, all four designs prominently feature the country name ‘ANDORRA’ along the outer portion of the design with the year of issue written underneath." }}
 	</p>
 	<p>
-		{{ .T `
-			The Andorran 1-, 2-, and 5 euro cent coins all feature the same
-			design of a Pyrenean chamois in the center of the coin with a
-			golden eagle flying above.  Both animals are native to Andorra as
-			well as the surrounding regions of France and Spain.
-		` }}
+		{{ .Get "The Andorran 1-, 2-, and 5 euro cent coins all feature the same design of a Pyrenean chamois in the center of the coin with a golden eagle flying above. Both animals are native to Andorra as well as the surrounding regions of France and Spain." }}
 	</p>
 	<p>
 		<!-- TODO: Can we find a photo of the rejected design with a source? -->
-		{{ .T `
-			The Andorran golden cents feature the Romanesque church of Santa
-			Coloma.  The church is the oldest in Andorra, dating back to the
-			9th century and is a UNESCO World Heritage site.  Originally these
-			coins were planned to depict an image of Christ, but that plan
-			failed to go through after objections from the European Commission
-			on grounds of religious neutrality on August 2013.
-		` }}
+		{{ .Get "The Andorran golden cents feature the Romanesque church of Santa Coloma. The church is the oldest in Andorra, dating back to the 9th century and is a UNESCO World Heritage site. Originally these coins were planned to depict an image of Christ, but that plan failed to go through after objections from the European Commission on grounds of religious neutrality on August 2013." }}
 	</p>
 	<p>
-		{{ .T `
-			The 1 Euro coin features the Case de la Vall: the former
-			headquarters of the General Council of Andorra.  It was constructed
-			in 1580 as a manor and tower defense by the Busquets family.
-		` }}
+		{{ .Get "The 1 Euro coin features the Case de la Vall: the former headquarters of the General Council of Andorra. It was constructed in 1580 as a manor and tower defense by the Busquets family." }}
 	</p>
 	<p>
-		{{ .T `
-			Finally, the 2 Euro coin features the coat of arms of Andorra.  The
-			Andorran coat of arms is a grid of 4 other coats of arms which from
-			top-to-bottom, left-to-right are:
-		` }}
+		{{ .Get "Finally, the 2 Euro coin features the coat of arms of Andorra. The Andorran coat of arms is a grid of 4 other coats of arms which from top-to-bottom, left-to-right are:" }}
 		<ul>
-			<li>The arms of the Bishop of Urgell</li>
-			<li>The arms of the Count of Foix</li>
-			<li>The arms of Catalonia</li>
-			<li>The arms of the Viscounts of Béarn</li>
+			<li>{{ .Get "The arms of the Bishop of Urgell" }}</li>
+			<li>{{ .Get "The arms of the Count of Foix" }}</li>
+			<li>{{ .Get "The arms of Catalonia" }}</li>
+			<li>{{ .Get "The arms of the Viscounts of Béarn" }}</li>
 		</ul>
-		{{ .T `
-			The bottom of the coat of arms has the motto ‘%sVIRTVS VNITA
-			FORTIOR%s’ (‘UNITED VIRTUE IS STRONGER’).
-		` `<span lang="la">` `</span>` | safe }}
+		{{ .Get "The bottom of the coat of arms has the motto ‘{LatinStart:r}VIRTVS VNITA FORTIOR{LatinEnd:r}’ (English: ‘UNITED VIRTUE IS STRONGER’)."
+		(map "LatinStart" `<span lang="la"><em>` "LatinEnd" `</em></span>`) }}
 	</p>
 </main>
 {{ end }}

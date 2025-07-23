@@ -1,17 +1,12 @@
 {{ define "content" }}
 <header>
 	{{ template "navbar" . }}
-	<h1>{{ .T "Euro Coin Designs" }}</h1>
+	<h1>{{ .Get "Euro Coin Designs" }}</h1>
 </header>
 <main>
 	<p>
-		{{ .T `
-			Here you’ll be able to view all the coin designs for each country
-			in the Eurozone.  This section of the site doesn’t include minor
-			varieties such as different mintmarks or errors; those are on the
-			%svarieties%s page.`
-			`<a href="/coins/varieties">` `</a>` | safe
-		}}
+		{{ .Get "Here you’ll be able to view all the coin designs for each country in the Eurozone. This section of the site doesn’t include minor varieties such as different mintmarks or errors; those are on the {Link:l}varieties{-:E} page."
+		(map "Link" "/coins/varieties") }}
 	</p>
 	<hr />
 	<div class="country-grid">
@@ -19,11 +14,11 @@
 		{{ range .Countries }}
 		<a
 			class="outline"
-			data-code={{ toUpper .Code }}
+			data-code="{{ toUpper .Code }}"
 			role="button"
-			href=/coins/designs/{{ .Code }}
+			href="/coins/designs/{{ .Code }}"
 		>
-			{{ $p.T .Name }}
+			{{ $p.Get .Name }}
 		</a>
 		{{ end }}
 	</div>

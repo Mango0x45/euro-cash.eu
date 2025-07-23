@@ -1,21 +1,21 @@
 {{ define "content" }}
 <header>
 	{{ template "navbar" . }}
-	<h1>{{ .T "Select Your Language" }}</h1>
+	<h1>{{ .Get "Select Your Language" }}</h1>
 </header>
 <main>
 	<p>
-		{{ .T "Select your preferred language to use on the site." }}
+		{{ .Get "Select your preferred language to use on the site." }}
 	</p>
 	<p>
 		If you are an American user, it’s suggested that you select
 		American English instead of British English. This will ensure that
-		dates will be formatted with the month before the day. 
+		dates will be formatted with the month before the day.
 	</p>
 	<hr />
-	<h2>{{ .T "Eurozone Languages" }}</h2>
+	<h2>{{ .Get "Eurozone Languages" }}</h2>
 	{{ template "langgrid" true }}
-	<h2>{{ .T "Other Languages" }}</h2>
+	<h2>{{ .Get "Other Languages" }}</h2>
 	{{ template "langgrid" false }}
 </main>
 {{ end }}

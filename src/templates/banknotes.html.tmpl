@@ -1,14 +1,11 @@
 {{ define "content" }}
 <header>
 	{{ template "navbar" . }}
-	<h1>{{ .T "Euro Banknotes" }}</h1>
+	<h1>{{ .Get "Euro Banknotes" }}</h1>
 </header>
 <main>
 	<p>
-		{{ .T `
-			On this section of the site you can find everything there is to
-			know about the banknotes of the Eurozone.
-		` }}
+		{{ .Get "On this section of the site you can find everything there is to know about the banknotes of the Eurozone." }}
 	</p>
 	<hr>
 	<section>
@@ -16,30 +13,30 @@
 			<a class="no-deco" href="/banknotes/designs">
 				<article>
 					<header>
-						<h3>{{ .T "Designs" }}</h3>
+						<h3>{{ .Get "Designs" }}</h3>
 					</header>
 					<main>
-						{{ .T "View the different Euro-note designs!" }}
+						{{ .Get "View the different Euro-note designs!" }}
 					</main>
 				</article>
 			</a>
 			<a class="no-deco" href="/banknotes/codes">
 				<article>
 					<header>
-						<h3>{{ .T "Location Codes" }}</h3>
+						<h3>{{ .Get "Location Codes" }}</h3>
 					</header>
 					<main>
-						{{ .T "Find out where your notes were printed!" }}
+						{{ .Get "Find out where your notes were printed!" }}
 					</main>
 				</article>
 			</a>
 			<a class="no-deco" href="/banknotes/test">
 				<article>
 					<header>
-						<h3>{{ .T "Test Notes" }}</h3>
+						<h3>{{ .Get "Test Notes" }}</h3>
 					</header>
 					<main>
-						{{ .T "Learn about the special test notes!" }}
+						{{ .Get "Learn about the special test notes!" }}
 					</main>
 				</article>
 			</a>

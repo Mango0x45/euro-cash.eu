@@ -6,13 +6,13 @@
 <main>
 	<h2>{{ .Get "Open Source" }}</h2>
 	<p>
-		{{ .Get "This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found %(LinkGit:L)here%(-:E). This site is licensed under the %(LinkBSD:L)BSD Zero Clause License%(-:E) giving you the full freedom to do whatever you would like with any of the content on this site."
+		{{ .Get "This website is an open project, and a collaboration between developers, translators, and researchers. All source code, data, images, and more for the website are open source and can be found {LinkGit:L}here{-:E}. This site is licensed under the {LinkBSD:L}BSD Zero Clause License{-:E} giving you the full freedom to do whatever you would like with any of the content on this site."
 		(map "LinkGit" "https://git.thomasvoss.com/www.euro-cash.eu"
 			"LinkBSD" "https://opensource.org/license/0bsd") }}
 	</p>
 	<h2>{{ .Get "Contact Us" }}</h2>
 	<p>
-		{{ .Get "While we try to stay as up-to-date as possible and to fact check our information, it is always possible that we get something wrong, lack a translation, or are missing some piece of data you may have. Should that be the case, don’t hesitate to contact us; we’ll try to get the site updated or fixed as soon as possible. You are always free to contribute via a git patch if you are more technically inclined, but if not you can always send an email to %(Email:e) or contact ‘@onetruemangoman’ on Discord."
+		{{ .Get "While we try to stay as up-to-date as possible and to fact check our information, it is always possible that we get something wrong, lack a translation, or are missing some piece of data you may have. Should that be the case, don’t hesitate to contact us; we’ll try to get the site updated or fixed as soon as possible. You are always free to contribute via a git patch if you are more technically inclined, but if not you can always send an email to {Email:e} or contact ‘@onetruemangoman’ on Discord."
 		(map "Email" "mail@euro-cash.eu") }}
 	</p>
 	<h2>{{ .Get "Special Thanks" }}</h2>
