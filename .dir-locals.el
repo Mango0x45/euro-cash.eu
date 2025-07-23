@@ -7,4 +7,4 @@
                 (comment-end . " */")
                 (comment-continue . "   ")
                 (require-final-newline . t)))
- (mhtml-mode . ((fill-column . 79))))
+ (mhtml-mode . ((auto-fill-mode . nil))))
