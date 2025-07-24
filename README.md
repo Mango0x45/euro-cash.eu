@@ -10,4 +10,4 @@ For translators:
 - [Notes When Translating Pages](#)
 
 For programmers:
-- [The Internationalization System](docs/i18n.md)
+- [The Internationalization System](doc/i18n.md)
