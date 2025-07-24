@@ -24,7 +24,7 @@ date)
 	;;
 number)
 	url='https://raw.githubusercontent.com/unicode-org/cldr-json/refs/heads/main/cldr-json/cldr-numbers-full/main/$l/numbers.json'
-	qry='.main.[$l].numbers.["decimalFormats-numberSystem-latn"].standard'
+	qry='"1\(.main.[$l].numbers.["symbols-numberSystem-latn"].group)234\(.main.[$l].numbers.["symbols-numberSystem-latn"].decimal)00"'
 	;;
 *)
 	usage
