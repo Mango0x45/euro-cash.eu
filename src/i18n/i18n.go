@@ -21,7 +21,8 @@ type LocaleInfo struct {
 	Eurozone, Enabled                bool
 	DateFormat                       string
 	GroupSeparator, DecimalSeparator rune
-	MonetaryPre, MonetaryPost        [2]string
+	MonetaryPre                      [2]string
+	MonetaryPost                     string
 }
 
 type number interface {
@@ -53,7 +54,7 @@ var (
 			GroupSeparator:   '.',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     [2]string{" €", " €"},
+			MonetaryPost:     " €",
 		},
 		{
 			Bcp:              "de",
@@ -64,7 +65,7 @@ var (
 			GroupSeparator:   '.',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     [2]string{" €", " €"},
+			MonetaryPost:     " €",
 		},
 		{
 			Bcp:              "el",
@@ -75,7 +76,7 @@ var (
 			GroupSeparator:   '.',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     [2]string{" €", " €"},
+			MonetaryPost:     " €",
 		},
 		{
 			Bcp:              "en",
@@ -96,7 +97,7 @@ var (
 			GroupSeparator:   '.',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     [2]string{" €", " €"},
+			MonetaryPost:     " €",
 		},
 		{
 			Bcp:              "et",
@@ -107,7 +108,7 @@ var (
 			GroupSeparator:   ' ',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     [2]string{" €", " €"},
+			MonetaryPost:     " €",
 		},
 		{
 			Bcp:              "fi",
@@ -118,7 +119,7 @@ var (
 			GroupSeparator:   ' ',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     [2]string{" €", " €"},
+			MonetaryPost:     " €",
 		},
 		{
 			Bcp:              "fr",
@@ -129,7 +130,7 @@ var (
 			GroupSeparator:   ' ',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     [2]string{" €", " €"},
+			MonetaryPost:     " €",
 		},
 		{
 			Bcp:              "ga",
@@ -150,7 +151,7 @@ var (
 			GroupSeparator:   '.',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     [2]string{" €", " €"},
+			MonetaryPost:     " €",
 		},
 		{
 			Bcp:              "it",
@@ -161,7 +162,7 @@ var (
 			GroupSeparator:   '.',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     [2]string{" €", " €"},
+			MonetaryPost:     " €",
 		},
 		{
 			Bcp:              "lb",
@@ -172,7 +173,7 @@ var (
 			GroupSeparator:   '.',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     [2]string{" €", " €"},
+			MonetaryPost:     " €",
 		},
 		{
 			Bcp:              "lt",
@@ -183,7 +184,7 @@ var (
 			GroupSeparator:   ' ',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     [2]string{" €", " €"},
+			MonetaryPost:     " €",
 		},
 		{
 			Bcp:              "lv",
@@ -194,7 +195,7 @@ var (
 			GroupSeparator:   ' ',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     [2]string{" €", " €"},
+			MonetaryPost:     " €",
 		},
 		{
 			Bcp:              "mt",
@@ -235,7 +236,7 @@ var (
 			GroupSeparator:   ' ',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     [2]string{" €", " €"},
+			MonetaryPost:     " €",
 		},
 		{
 			Bcp:              "sl",
@@ -246,7 +247,7 @@ var (
 			GroupSeparator:   '.',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     [2]string{" €", " €"},
+			MonetaryPost:     " €",
 		},
 		{
 			Bcp:              "sv",
@@ -257,7 +258,7 @@ var (
 			GroupSeparator:   ' ',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     [2]string{" €", " €"},
+			MonetaryPost:     " €",
 		},
 		/* Non-Eurozone locales */
 		{
@@ -269,7 +270,7 @@ var (
 			GroupSeparator:   ' ',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     [2]string{" €", " €"},
+			MonetaryPost:     " €",
 		},
 		{
 			Bcp:        "en-US",
@@ -287,7 +288,7 @@ var (
 			GroupSeparator:   '.',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     [2]string{" €", " €"},
+			MonetaryPost:     " €",
 		},
 		{
 			Bcp:              "uk",
@@ -298,7 +299,7 @@ var (
 			GroupSeparator:   ' ',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     [2]string{" €", " €"},
+			MonetaryPost:     " €",
 		},
 	}
 	/* Map of language codes to printers.  We do this instead of just
@@ -469,16 +470,14 @@ func sprintfm(li LocaleInfo, bob *strings.Builder, v any) error {
 	switch v.(type) {
 	case int:
 		n := v.(int)
-		i := btoi(n >= 0)
-		htmlesc(bob, li.MonetaryPre[i])
+		htmlesc(bob, li.MonetaryPre[btoi(n >= 0)])
 		writeInt(bob, abs(n), li.GroupSeparator)
-		htmlesc(bob, li.MonetaryPost[i])
+		htmlesc(bob, li.MonetaryPost)
 	case float64:
 		n := v.(float64)
-		i := btoi(n >= 0)
-		htmlesc(bob, li.MonetaryPre[i])
+		htmlesc(bob, li.MonetaryPre[btoi(n >= 0)])
 		writeFloat(bob, abs(n), li.GroupSeparator, li.DecimalSeparator)
-		htmlesc(bob, li.MonetaryPost[i])
+		htmlesc(bob, li.MonetaryPost)
 	default:
 		return errors.New("TODO")
 	}
