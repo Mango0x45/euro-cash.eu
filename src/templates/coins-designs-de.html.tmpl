@@ -1,39 +1,63 @@
 {{ define "content" }}
 <header>
 	{{ template "navbar" . }}
-    <h1>{{ .Get "German Euro Coin Designs" }}</h1>
+	<h1>{{ .Get "German Euro Coin Designs" }}</h1>
 </header>
 <main>
-  <p>
-    {{ .Get "The German euro coins feature three different designs. A unique feature of German euro coins are the mint marks on each coin. German has five active mints today: Berlin (A), Munich (D), Stuttgart (F), Karlsruhe (G), and Hamburg (J)." }}
-  </p>
-  <p>
-    {{ .Get "The bronze coins display an oak twig which is similar to the one found on the old Pfennig coins from the D-Mark era. The mint mark is located on the left hand side of the stem of the oak twig." }}
-  </p>
-    <div class="design-container">
-        <img
-			alt="{{ .Get `German €0.01 coin` }}"
-			src="/designs/de-001.avif"
-		>
-    </div>
+	{{ $deargs := (map "GermanStart" `<span lang="de"><em>` "GermanEnd" `</em></span>`) }}
+
+	<div class="design-container">
+		<img alt="{{ .Get `German €0.01 coin` }}" src="/designs/de-001.avif">
+		<img alt="{{ .Get `German €0.10 coin` }}" src="/designs/de-010.avif">
+		<img alt="{{ .Get `German €1 coin` }}"    src="/designs/de-100.avif">
+	</div>
 	<p>
-    {{ .Get "The bronze coins feature the Brandenburg Gate, a symbol of Berlin and Germany as a whole as it is inextricably linked with German division and subsequent reunification. The mint mark is located below the year." }}
+		{{ .Get "The German euro coins feature three different designs. A unique feature of German euro coins are the mint marks on each coin that denote in which city a given coin was minted. Germany has five active mints that produce Euro coins, which are denoted in the table below." }}
 	</p>
-    <div class="design-container">
-        <img
-			alt="{{ .Get `German €0.10 coin` }}"
-			src="/designs/de-010.avif"
-		>
-    </div>
+
+	<table>
+		<thead>
+			<tr>
+				<th>{{ .Get "City" }}</th>
+				<th>{{ .Get "Mintmark" }}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>{{ .Get "Berlin" }}</td>
+				<td>A</td>
+			</tr>
+			<tr>
+				<td>{{ .Get "Munich" }}</td>
+				<td>D</td>
+			</tr>
+			<tr>
+				<td>{{ .Get "Stuttgart" }}</td>
+				<td>F</td>
+			</tr>
+			<tr>
+				<td>{{ .Get "Karlsruhe" }}</td>
+				<td>G</td>
+			</tr>
+			<tr>
+				<td>{{ .Get "Hamburg" }}</td>
+				<td>J</td>
+			</tr>
+		</tbody>
+	</table>
+
 	<p>
-  {{ .Get "The bimetallic coins feature the German eagle. The eagle is a common motif in German heraldry and represents strength and freedom. The mint mark is located to the right of the year." }}
+		{{ .Get "The bronze coins display an oak twig which is similar to the one found on the former Pfennig coins from the German Mark. The mint mark and year are located on the left- and right-hand sides of the stem." }}
 	</p>
-    <div class="design-container">
-      <img
-      alt="{{ .Get `German €1 coin` }}"
-      src="/designs/de-100.avif"
-    >
-    </div>
+	<p>
+		{{ .Get "The gold coins feature the Brandenburg Gate, a symbol of Berlin and Germany as a whole, but also a symbol of German division and unity. The mint mark is located below the year." }}
+	</p>
+	<p>
+		{{ .Get "The bimetallic coins feature an interpretation of the German Federal Eagle (German: ‘{GermanStart:r}Bundesadler{GermanEnd:r}’). The eagle is a common motif in German heraldry — including in the German coat of arms — and represents strength and freedom. The mint mark is located to the right of the year." $deargs }}
+	</p>
+	<p>
+		<!-- TODO: Get a picture of the edge-inscription -->
+		{{ .Get "The €2 coin also features an edge-inscription of Germany’s national motto and incipit of Germany’s national anthem. It reads ‘{GermanStart:r}EINIGKEIT UND RECHT UND FREIHEIT{GermanEnd:r}’ (English: ‘UNITY AND JUSTICE AND FREEDOM’)." $deargs }}
+	</p>
 </main>
 {{ end }}
-
