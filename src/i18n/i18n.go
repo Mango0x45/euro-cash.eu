@@ -41,8 +41,8 @@ var (
 		'r': sprintfr,
 	}
 
-	/* To determine the correct date format to use, use the ‘datefmt’ script in
-	   the repository root */
+	/* To determine the correct currency-, date-, and number formats to
+	   use, use the ‘getfmt’ script in the repository root */
 	locales = [...]LocaleInfo{
 		{
 			Bcp:              "ca",
