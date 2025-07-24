@@ -44,8 +44,8 @@
 			<li>{{ .Get "The arms of Catalonia" }}</li>
 			<li>{{ .Get "The arms of the Viscounts of Béarn" }}</li>
 		</ul>
-		{{ .Get "The bottom of the coat of arms has the motto ‘{LatinStart:r}VIRTVS VNITA FORTIOR{LatinEnd:r}’ (English: ‘UNITED VIRTUE IS STRONGER’)."
-		(map "LatinStart" `<span lang="la"><em>` "LatinEnd" `</em></span>`) }}
+		{{ .Get "The bottom of the coat of arms has the motto ‘{LatinStart:r}VIRTVS VNITA FORTIOR{LatinEnd:E}’ (English: ‘UNITED VIRTUE IS STRONGER’)."
+		(map "LatinStart" `<span lang="la"><em>` "LatinEnd" "em,span") }}
 	</p>
 </main>
 {{ end }}

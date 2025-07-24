@@ -4,7 +4,7 @@
 	<h1>{{ .Get "Croatian Euro Coin Designs" }}</h1>
 </header>
 <main>
-	{{ $hrargs := (map "CroatianStart" `<span lang="hr"><em>` "CroatianEnd" `</em></span>`) }}
+	{{ $hrargs := (map "CroatianStart" `<span lang="hr"><em>` "CroatianEnd" "em,span") }}
 	<div class="design-container">
 		<img alt="{{ .Get `Croatian €0.01 coin` }}" src="/designs/hr-001.avif" />
 		<img alt="{{ .Get `Croatian €0.50 coin` }}" src="/designs/hr-050.avif" />
@@ -14,7 +14,7 @@
 		<img alt="{{ .Get `Croatian €2 coin` }}" src="/designs/hr-200.avif" />
 	</div>
 	<p>
-		{{ .Get "The Croatian euro coins feature four different themes, with each design featuring the Croatian checkerboard and the country’s name in Croatian (‘{CroatianStart:r}HRVATSKA{CroatianEnd:r}’). All designs were selected after voting in a public design competition."
+		{{ .Get "The Croatian euro coins feature four different themes, with each design featuring the Croatian checkerboard and the country’s name in Croatian (‘{CroatianStart:r}HRVATSKA{CroatianEnd:E}’). All designs were selected after voting in a public design competition."
 		$hrargs }}
 	</p>
 	<p>
@@ -26,12 +26,12 @@
 		(map "Link" "https://www.wikipedia.org/wiki/Nikola_Tesla") }}
 	</p>
 	<p>
-		{{ .Get "The 1 euro coin was designed by Jagor Šunde, David Čemeljić and Fran Zekan and features a marten. The marten is the semi-official national animal of Croatia and the Kuna — their pre-Euro currency — was named after the marten (‘{CroatianStart:r}kuna zlatica{CroatianEnd:r}’ in Croatian)."
+		{{ .Get "The 1 euro coin was designed by Jagor Šunde, David Čemeljić and Fran Zekan and features a marten. The marten is the semi-official national animal of Croatia and the Kuna — their pre-Euro currency — was named after the marten (‘{CroatianStart:r}kuna zlatica{CroatianEnd:E}’ in Croatian)."
 		$hrargs }}
 	</p>
 	<p>
 		<!-- TODO: Include a photo of the edge inscription -->
-		{{ .Get "The 2 euro coin was designed by Ivan Šivak and features the map of Croatia. The coin also has an edge-inscription that reads ‘{CroatianStart:r}O LIJEPA O DRAGA O SLATKA SLOBODO{CroatianEnd:r}’ (English: ‘OH BEAUTIFUL, OH DEAR, OH SWEET FREEDOM’) which is a line from the play {Link:L}Dubravka{-:E} by Ivan Gundulić."
+		{{ .Get "The 2 euro coin was designed by Ivan Šivak and features the map of Croatia. The coin also has an edge-inscription that reads ‘{CroatianStart:r}O LIJEPA O DRAGA O SLATKA SLOBODO{CroatianEnd:E}’ (English: ‘OH BEAUTIFUL, OH DEAR, OH SWEET FREEDOM’) which is a line from the play {Link:L}Dubravka{-:E} by Ivan Gundulić."
 		$hrargs (map "Link" "https://www.wikipedia.org/wiki/Dubravka_(drama)") }}
 	</p>
 </main>

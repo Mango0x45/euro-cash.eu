@@ -4,7 +4,7 @@
 	<h1>{{ .Get "Dutch Euro Coin Designs" }}</h1>
 </header>
 <main>
-	{{ $nlargs := (map "DutchStart" `<span lang="nl"><em>` "DutchEnd" `</em></span>`) }}
+	{{ $nlargs := (map "DutchStart" `<span lang="nl"><em>` "DutchEnd" "em,span") }}
 	<div class="design-container">
 		<img
 			alt="Dutch €0.50 coin (Queen Beatrix)"
@@ -30,7 +30,7 @@
 	</p>
 	<p>
 		<!-- TODO: Get a picture of the edge-inscription -->
-		{{ .Get "Coins featuring both monarchs contain text reading ‘{DutchStart:r}BEATRIX KONINGIN DER NEDERLANDEN{DutchEnd:r}’ (English: ‘BEATRIX QUEEN OF THE NETHERLANDS’) and ‘{DutchStart:r}Willem-Alexander Koning der Nederlanden{DutchEnd:r}’ (English: ‘Willem-Alexander King of the Netherlands’) respectively. The €2 coins also feature an edge-inscription reading ‘{DutchStart:r}GOD ⋆ ZIJ ⋆ MET ⋆ ONS ⋆{DutchEnd:r}’ (English: ‘GOD ⋆ IS ⋆ WITH ⋆ US ⋆’)."
+		{{ .Get "Coins featuring both monarchs contain text reading ‘{DutchStart:r}BEATRIX KONINGIN DER NEDERLANDEN{DutchEnd:E}’ (English: ‘BEATRIX QUEEN OF THE NETHERLANDS’) and ‘{DutchStart:r}Willem-Alexander Koning der Nederlanden{DutchEnd:E}’ (English: ‘Willem-Alexander King of the Netherlands’) respectively. The €2 coins also feature an edge-inscription reading ‘{DutchStart:r}GOD ⋆ ZIJ ⋆ MET ⋆ ONS ⋆{DutchEnd:E}’ (English: ‘GOD ⋆ IS ⋆ WITH ⋆ US ⋆’)."
 		$nlargs }}
 	</p>
 	<p>

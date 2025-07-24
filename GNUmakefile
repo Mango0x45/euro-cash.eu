@@ -13,14 +13,13 @@ all: euro-cash.eu exttmpl
 euro-cash.eu: $(cssfiles) $(templates) $(gofiles) $(sqlfiles)
 	$(GO) build
 
-all-i18n: exttmpl
+po: exttmpl
 	find . -name '*.html.tmpl' -exec ./exttmpl -out po/templates.pot {} +
 	for bcp in en en-US nl;                                                     \
 	do                                                                          \
 		mkdir -p "po/$$bcp";                                                    \
 		msgmerge --update "po/$$bcp/messages.po" po/templates.pot;              \
 	done
-	$(GO) build
 
 exttmpl: $(exttmpl)
 	$(GO) build ./cmd/exttmpl
@@ -41,4 +40,4 @@ clean:
 		-or -name '*.tar.gz'                                                    \
 	\) -delete
 
-.PHONY: all-i18n clean release
+.PHONY: clean po release

@@ -339,7 +339,7 @@ func (l LocaleInfo) Language() string {
 func (p Printer) Sprintf(format string, args ...map[string]any) string {
 	var bob strings.Builder
 	vars := map[string]any{
-		"-": "",
+		"-": "a",
 	}
 	for _, arg := range args {
 		maps.Copy(vars, arg)
@@ -430,8 +430,16 @@ func sprintfe(li LocaleInfo, bob *strings.Builder, v any) error {
 	return nil
 }
 
-func sprintfE(li LocaleInfo, bob *strings.Builder, _ any) error {
-	bob.WriteString("</a>")
+func sprintfE(li LocaleInfo, bob *strings.Builder, v any) error {
+	s, ok := v.(string)
+	if !ok {
+		return errors.New("TODO")
+	}
+	for tag := range strings.SplitSeq(s, ",") {
+		bob.WriteString("</")
+		bob.WriteString(tag)
+		bob.WriteByte('>')
+	}
 	return nil
 }
 

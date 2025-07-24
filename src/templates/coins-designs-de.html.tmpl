@@ -4,7 +4,7 @@
 	<h1>{{ .Get "German Euro Coin Designs" }}</h1>
 </header>
 <main>
-	{{ $deargs := (map "GermanStart" `<span lang="de"><em>` "GermanEnd" `</em></span>`) }}
+	{{ $deargs := (map "GermanStart" `<span lang="de"><em>` "GermanEnd" "em,span") }}
 
 	<div class="design-container">
 		<img alt="{{ .Get `German €0.01 coin` }}" src="/designs/de-001.avif">
@@ -53,11 +53,11 @@
 		{{ .Get "The gold coins feature the Brandenburg Gate, a symbol of Berlin and Germany as a whole, but also a symbol of German division and unity. The mint mark is located below the year." }}
 	</p>
 	<p>
-		{{ .Get "The bimetallic coins feature an interpretation of the German Federal Eagle (German: ‘{GermanStart:r}Bundesadler{GermanEnd:r}’). The eagle is a common motif in German heraldry — including in the German coat of arms — and represents strength and freedom. The mint mark is located to the right of the year." $deargs }}
+		{{ .Get "The bimetallic coins feature an interpretation of the German Federal Eagle (German: ‘{GermanStart:r}Bundesadler{GermanEnd:E}’). The eagle is a common motif in German heraldry — including in the German coat of arms — and represents strength and freedom. The mint mark is located to the right of the year." $deargs }}
 	</p>
 	<p>
 		<!-- TODO: Get a picture of the edge-inscription -->
-		{{ .Get "The €2 coin also features an edge-inscription of Germany’s national motto and incipit of Germany’s national anthem. It reads ‘{GermanStart:r}EINIGKEIT UND RECHT UND FREIHEIT{GermanEnd:r}’ (English: ‘UNITY AND JUSTICE AND FREEDOM’)." $deargs }}
+		{{ .Get "The €2 coin also features an edge-inscription of Germany’s national motto and incipit of Germany’s national anthem. It reads ‘{GermanStart:r}EINIGKEIT UND RECHT UND FREIHEIT{GermanEnd:E}’ (English: ‘UNITY AND JUSTICE AND FREEDOM’)." $deargs }}
 	</p>
 </main>
 {{ end }}
