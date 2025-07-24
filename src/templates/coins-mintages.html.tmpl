@@ -1,38 +1,19 @@
 {{ define "content" }}
 <header>
 	{{ template "navbar" . }}
-	<h1>{{ .T "Euro Coin Mintages" }}</h1>
+	<h1>{{ .Get "Euro Coin Mintages" }}</h1>
 </header>
 <main>
 	<p>
-		{{ .T `
-			Here you’ll be able to view all the known mintages for all
-			coins. You’ll also be able to filter on country, denomination,
-			etc. If you have any mintage data that’s missing from our site,
-			feel free to contact us.
-		` }}
+		{{ .Get "Here you’ll be able to view all the known mintages for all coins. You’ll also be able to filter on country, denomination, etc. If you have any mintage data that’s missing from our site, feel free to contact us." }}
 	</p>
 	<hr />
 	{{ if eq .Code "nl" }}
-		<h2>{{ .T "Additional Notes" }}</h2>
+		<h2>{{ .Get "Additional Notes" }}</h2>
 		<ul>
 			<li>
-				{{ .T `
-					Most coins from the years 2003–2016 are listed as NIFC coins
-					while other popular sources such as Numista claim they were
-					minted for circulation.  For more information on why others are
-					wrong, %sclick here%s.`
-					`<a href="#TODO">` `</a>` | safe
-				}}
-			</li>
-			<li>
-				{{ .T `
-					In 2003 Numista calculated a total of %d coins issued for coin
-					sets per denomination.  Our own calculations found only
-					%d.  Numista also forgot to include the many hundred thousand
-					coins from the coin roll sets that were produced.`
-					217503 177003
-				}}
+				{{ .Get "Most coins from the years 2003–2016 are listed as NIFC coins while other popular sources such as Numista claim they were minted for circulation. For more information on why others are wrong, {Link:l}click here{-:E}."
+				(map "Link" "#TODO") }}
 			</li>
 		</ul>
 	{{ end }}
@@ -40,12 +21,12 @@
 		<form>
 			<div class="grid">
 				<label for="country-dd">
-					{{ .T "Country" }}
+					{{ .Get "Country" }}
 					<select id="country-dd" name="code">
 						{{ $code := .Code }}
 						{{ range .Countries }}
 							<option
-								value={{ .Code }}
+								value="{{ .Code }}"
 								{{ if eq .Code $code }}
 									selected
 								{{ end }}
@@ -57,28 +38,28 @@
 				</label>
 				<fieldset>
 					{{ template "coin-type-radio"
-					   (tuple .Type "circ" (.T "Circulation Coins")) }}
+					   (tuple .Type "circ" (.Get "Circulation Coins")) }}
 					{{ template "coin-type-radio"
-					   (tuple .Type "nifc" (.T "NIFC / BU Sets")) }}
+					   (tuple .Type "nifc" (.Get "NIFC / BU Sets")) }}
 					{{ template "coin-type-radio"
-					   (tuple .Type "proof" (.T "Proof Coins")) }}
+					   (tuple .Type "proof" (.Get "Proof Coins")) }}
 				</fieldset>
 			</div>
-			<button type="submit">{{ .T "Filter" }}</button>
+			<button type="submit">{{ .Get "Filter" }}</button>
 		</form>
 		<figure>
-			<figcaption>{{ .T "Standard Issue Coins" }}</figcaption>
+			<figcaption>{{ .Get "Standard Issue Coins" }}</figcaption>
 			<table class="mintage-table" role="grid">
 				<thead>
-					<th>{{ .T "Year" }}</th>
-					<th>{{ .M 0.01 }}</th>
-					<th>{{ .M 0.02 }}</th>
-					<th>{{ .M 0.05 }}</th>
-					<th>{{ .M 0.10 }}</th>
-					<th>{{ .M 0.20 }}</th>
-					<th>{{ .M 0.50 }}</th>
-					<th>{{ .M 1.00 }}</th>
-					<th>{{ .M 2.00 }}</th>
+					<th>{{ .Get "Year" }}</th>
+					<th>{{ .Printer.Sprintf "{N:m}" (map "N" 0.01) }}</th>
+					<th>{{ .Printer.Sprintf "{N:m}" (map "N" 0.02) }}</th>
+					<th>{{ .Printer.Sprintf "{N:m}" (map "N" 0.05) }}</th>
+					<th>{{ .Printer.Sprintf "{N:m}" (map "N" 0.10) }}</th>
+					<th>{{ .Printer.Sprintf "{N:m}" (map "N" 0.20) }}</th>
+					<th>{{ .Printer.Sprintf "{N:m}" (map "N" 0.50) }}</th>
+					<th>{{ .Printer.Sprintf "{N:m}" (map "N" 1.00) }}</th>
+					<th>{{ .Printer.Sprintf "{N:m}" (map "N" 2.00) }}</th>
 				</thead>
 				<tbody>
 					{{ $p := .Printer }}
@@ -92,13 +73,13 @@
 							</th>
 							{{ range .Mintages }}
 								{{ if eq . -1 }}
-									<td>{{ $p.T "Unknown" }}</td>
+									<td>{{ $p.Get "Unknown" }}</td>
 								{{ else if eq . -2 }}
-									<td class="error">{{ $p.T "Error" }}</td>
+									<td class="error">{{ $p.Get "Error" }}</td>
 								{{ else if eq . 0 }}
 									<td>—</td>
 								{{ else }}
-									<td>{{ $p.N . }}</td>
+									<td>{{ $p.Sprintf "{N}" (map "N" .) }}</td>
 								{{ end }}
 								</td>
 							{{ end }}
@@ -109,12 +90,12 @@
 		</figure>
 		{{ if ne (len .Mintages.Commemorative) 0 }}
 			<figure>
-				<figcaption>{{ .T "Commemorative Coins" }}</figcaption>
+				<figcaption>{{ .Get "Commemorative Coins" }}</figcaption>
 				<table class="mintage-table-cc" role="grid">
 					<thead>
-						<th>{{ .T "Year" }}</th>
-						<th>{{ .T "Commemorated Issue" }}</th>
-						<th>{{ .T "Mintage" }}</th>
+						<th>{{ .Get "Year" }}</th>
+						<th>{{ .Get "Commemorated Issue" }}</th>
+						<th>{{ .Get "Mintage" }}</th>
 					</thead>
 					<tbody>
 						{{ $p := .Printer }}
@@ -130,13 +111,13 @@
 								<td>{{ .Name }}</td>
 								{{ with .Mintage }}
 									{{ if eq . -1 }}
-										<td>{{ $p.T "Unknown" }}</td>
+										<td>{{ $p.Get "Unknown" }}</td>
 									{{ else if eq . -2 }}
-										<td class="error">{{ $p.T "Error" }}</td>
+										<td class="error">{{ $p.Get "Error" }}</td>
 									{{ else if eq . 0 }}
 										<td>—</td>
 									{{ else }}
-										<td>{{ $p.N . }}</td>
+										<td>{{ $p.Sprintf "{N}" (map "N" .) }}</td>
 									{{ end }}
 								{{ end }}
 							</tr>
@@ -150,12 +131,12 @@
 {{ end }}
 
 {{ define "coin-type-radio" }}
-<label for={{ index . 1 }}>
+<label for="{{ index . 1 }}">
 	<input
-		id={{ index . 1 }}
+		id="{{ index . 1 }}"
 		name="type"
 		type="radio"
-		value={{ index . 1 }}
+		value="{{ index . 1 }}"
 		{{ if eq (index . 0) (index . 1) }}
 			checked
 		{{ end }}
