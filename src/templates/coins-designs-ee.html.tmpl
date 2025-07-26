@@ -1,0 +1,18 @@
+{{ define "content" }}
+<header>
+	{{ template "navbar" . }}
+    <h1>{{ .Get "German Euro Coin Designs" }}</h1>
+</header>
+<main>
+  <p>
+    {{ .Get "The Estonian euro coins all feature the same design across all eight denominations. The country’s outline is displayed above the text “EESTI”, the country’s name in its own language." }}
+  </p>
+    <div class="design-container">
+        <img
+			alt="{{ .Get `Estonian €1 coin` }}"
+			src="/designs/ee-100-1.avif"
+		>
+    </div>
+</main>
+{{ end }}
+
