@@ -46,6 +46,12 @@ func BuildTemplates(dir fs.FS, debugp bool) {
 		buildAndSetTemplate(dir, name)
 		if debugp {
 			go watch.FileFS(dir, name, func() {
+				defer func() {
+					if p := recover(); p != nil {
+						log.Print(p)
+					}
+				}()
+
 				buildAndSetTemplate(dir, name)
 				log.Printf("Template ‘%s’ updated\n", name)
 			})

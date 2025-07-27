@@ -5,10 +5,13 @@ package main
 
 import (
 	"flag"
+	"fmt"
+	"log"
 	"os"
 	"os/signal"
 	"path/filepath"
 	"syscall"
+	"time"
 
 	"git.thomasvoss.com/euro-cash.eu/pkg/atexit"
 	. "git.thomasvoss.com/euro-cash.eu/pkg/try"
@@ -41,6 +44,17 @@ func main() {
 		"database name or ‘:memory:’ for an in-memory database")
 	flag.Parse()
 
+	defer func() {
+		if p := recover(); p != nil {
+			if *debugp {
+				log.Print(p)
+				time.Sleep(1 * time.Second)
+				app.Restart()
+			}
+			email.Send("URGENT: Server Panicked", fmt.Sprint(p))
+		}
+	}()
+
 	sigs := make(chan os.Signal, 1)
 	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
 	go func() {
@@ -50,11 +64,7 @@ func main() {
 	}()
 
 	if *debugp {
-		path := Try2(os.Executable())
-		go watch.File(path, func() {
-			atexit.Exec()
-			Try(syscall.Exec(path, os.Args, os.Environ()))
-		})
+		go watch.File(Try2(os.Executable()), app.Restart)
 	}
 
 	i18n.Init()
