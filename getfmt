@@ -4,7 +4,7 @@
 
 usage()
 {
-	echo "Usage: getfmt currency|date|number locale..." >&2
+	echo "Usage: getfmt currency|date|number|percent locale..." >&2
 	exit 1
 }
 
@@ -25,6 +25,10 @@ date)
 number)
 	url='https://raw.githubusercontent.com/unicode-org/cldr-json/refs/heads/main/cldr-json/cldr-numbers-full/main/$l/numbers.json'
 	qry='"1\(.main.[$l].numbers.["symbols-numberSystem-latn"].group)234\(.main.[$l].numbers.["symbols-numberSystem-latn"].decimal)00"'
+	;;
+percent)
+	url='https://raw.githubusercontent.com/unicode-org/cldr-json/refs/heads/main/cldr-json/cldr-numbers-full/main/$l/numbers.json'
+	qry='.main.[$l].numbers.["percentFormats-numberSystem-latn"].standard'
 	;;
 *)
 	usage
