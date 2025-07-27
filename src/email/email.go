@@ -6,6 +6,8 @@ import (
 	"crypto/tls"
 	"fmt"
 	"math/rand/v2"
+	"log"
+	"errors"
 	"net/smtp"
 	"strconv"
 	"time"
@@ -29,14 +31,20 @@ Message-ID: <%s>
 
 %s`
 
-func ServerError(fault error) error {
+func Send(subject, body string) {
+	if err := send(subject, body); err != nil {
+		log.Print(err)
+	}
+}
+
+func send(subject, body string) error {
 	if Config.Disabled {
-		return fault
+		return errors.New(body)
 	}
 
 	msgid := strconv.FormatInt(rand.Int64(), 10) + "@" + Config.Host
 	msg := fmt.Sprintf(emailTemplate, Config.FromAddr, Config.ToAddr,
-		"Error Report", time.Now().Format(time.RFC1123Z), msgid, fault)
+		subject, time.Now().Format(time.RFC1123Z), msgid, body)
 
 	tlsConfig := &tls.Config{
 		InsecureSkipVerify: false,

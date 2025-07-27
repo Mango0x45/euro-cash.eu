@@ -179,11 +179,7 @@ func setUserLanguage(w http.ResponseWriter, r *http.Request) {
 
 func throwError(status int, err error, w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(status)
-	go func() {
-		if err := email.ServerError(err); err != nil {
-			log.Println(err)
-		}
-	}()
+	go email.Send("Server Error", err.Error())
 	errorTmpl.Execute(w, struct {
 		Code int
 		Msg  string
