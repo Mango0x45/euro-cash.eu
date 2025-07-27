@@ -2197,6 +2197,10 @@ textarea,
 	fill: var(--primary);
 }
 
+:is(td, th)[data-numeric] {
+	text-align: right;
+}
+
 #article-list td:first-child {
 	text-align: right;
 	width: 14ch;
