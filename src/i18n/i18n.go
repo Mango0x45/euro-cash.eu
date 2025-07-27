@@ -399,9 +399,9 @@ func sprintfGeneric(li LocaleInfo, bob *strings.Builder, v any) error {
 	case time.Time:
 		htmlesc(bob, v.(time.Time).Format(li.DateFormat))
 	case int:
-		writeInt(bob, v.(int), li.GroupSeparator)
+		writeInt(bob, v.(int), li)
 	case float64:
-		writeFloat(bob, v.(float64), li.GroupSeparator, li.DecimalSeparator)
+		writeFloat(bob, v.(float64), li)
 	case string:
 		htmlesc(bob, v.(string))
 	default:
@@ -463,12 +463,12 @@ func sprintfm(li LocaleInfo, bob *strings.Builder, v any) error {
 	case int:
 		n := v.(int)
 		htmlesc(bob, li.MonetaryPre[btoi(n >= 0)])
-		writeInt(bob, abs(n), li.GroupSeparator)
+		writeInt(bob, abs(n), li)
 		htmlesc(bob, li.MonetaryPost)
 	case float64:
 		n := v.(float64)
 		htmlesc(bob, li.MonetaryPre[btoi(n >= 0)])
-		writeFloat(bob, abs(n), li.GroupSeparator, li.DecimalSeparator)
+		writeFloat(bob, abs(n), li)
 		htmlesc(bob, li.MonetaryPost)
 	default:
 		return errors.New("TODO")
@@ -485,7 +485,7 @@ func sprintfr(li LocaleInfo, bob *strings.Builder, v any) error {
 	return nil
 }
 
-func writeInt(bob *strings.Builder, num int, sep rune) {
+func writeInt(bob *strings.Builder, num int, li LocaleInfo) {
 	s := fmt.Sprintf("%d", num)
 	if s[0] == '-' {
 		bob.WriteByte('-')
@@ -500,13 +500,13 @@ func writeInt(bob *strings.Builder, num int, sep rune) {
 		c++
 		bob.WriteByte(s[i])
 		if c == 3 && i+1 < n {
-			bob.WriteRune(sep)
+			bob.WriteRune(li.GroupSeparator)
 			c = 0
 		}
 	}
 }
 
-func writeFloat(bob *strings.Builder, num float64, tsep, dsep rune) {
+func writeFloat(bob *strings.Builder, num float64, li LocaleInfo) {
 	s := fmt.Sprintf("%.2f", num)
 	if s[0] == '-' {
 		bob.WriteByte('-')
@@ -522,12 +522,12 @@ func writeFloat(bob *strings.Builder, num float64, tsep, dsep rune) {
 		c++
 		bob.WriteByte(s[i])
 		if c == 3 && i+1 < n {
-			bob.WriteRune(tsep)
+			bob.WriteRune(li.GroupSeparator)
 			c = 0
 		}
 	}
 
-	bob.WriteRune(dsep)
+	bob.WriteRune(li.DecimalSeparator)
 	bob.WriteString(s[n+1:])
 }
 
