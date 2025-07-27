@@ -254,7 +254,7 @@ var (
 			Name:             "Svenska",
 			DateFormat:       "2006-01-02",
 			Eurozone:         true,
-			Enabled:          false,
+			Enabled:          true,
 			GroupSeparator:   ' ',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
@@ -304,7 +304,9 @@ func Init() {
 		if !li.Enabled {
 			continue
 		}
-		Printers[li.Bcp] = Printer{li, gotext.NewLocale("po", li.Bcp)}
+		gl := gotext.NewLocale("po", li.Bcp)
+		gl.AddDomain("messages")
+		Printers[li.Bcp] = Printer{li, gl}
 	}
 
 	DefaultPrinter = Printers["en"]
