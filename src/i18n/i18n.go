@@ -295,9 +295,6 @@ var (
 			MonetaryPost:     " €",
 		},
 	}
-	/* Map of language codes to printers.  We do this instead of just
-	   using language.MustParse() directly so that we can easily see if a
-	   language is supported or not. */
 	Printers       map[string]Printer = make(map[string]Printer, len(locales))
 	DefaultPrinter Printer
 )
