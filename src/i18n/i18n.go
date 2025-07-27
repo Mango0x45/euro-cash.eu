@@ -329,10 +329,35 @@ func (l LocaleInfo) Language() string {
 	return l.Bcp[:2]
 }
 
+func (p Printer) Itoa(n int) string {
+	var bob strings.Builder
+	writeInt(&bob, n, p.LocaleInfo)
+	return bob.String()
+}
+
+func (p Printer) Ftoa(n float64) string {
+	var bob strings.Builder
+	writeFloat(&bob, n, p.LocaleInfo)
+	return bob.String()
+}
+
+func (p Printer) Mitoa(n int) string {
+	var bob strings.Builder
+	sprintfm(p.LocaleInfo, &bob, n)
+	return bob.String()
+}
+
+func (p Printer) Mftoa(n float64) string {
+	var bob strings.Builder
+	sprintfm(p.LocaleInfo, &bob, n)
+	return bob.String()
+}
+
 func (p Printer) Sprintf(format string, args ...map[string]any) string {
 	var bob strings.Builder
 	vars := map[string]any{
 		"-": "a",
+		"Null": "",
 	}
 	for _, arg := range args {
 		maps.Copy(vars, arg)
