@@ -21,13 +21,19 @@
 		const Δt = 5000; /* Total time a text is shown */
 		const Δf = 1000; /* Fade duration */
 		const texts = [
-			// ["en", "Select Your Language",    "Eurozone Languages",  "Other Languages"],
-			["nl", "Kies uw taal",            "Eurozone talen",      "Andere talen"],
-			["sv", "Välj ditt språk",         "Eurozonens språk",    "Andra språk"],
-			["fi", "Valitse kieli",           "Euroalueen kielet",   "Muut kielet"],
-			["de", "Wählen Sie Ihre Sprache", "Eurozone Sprachen",   "Weitere Sprachen"],
-			["el", "Επιλέξτε τη γλώσσα σας",  "Γλώσσες Ευρωζώνης",   "Άλλες γλώσσες"],
-			["bg", "Изберете език",           "Езици на еврозоната", "Други езици"],
+			{{ $save := . }}
+			{{ $ps := .Printers }}
+			{{ range locales }}
+				{{ if (and .Enabled (ne .Bcp $save.Printer.Bcp)) }}
+					[
+						"{{ .Bcp }}",
+						{{ $p := (index $ps .Bcp) }}
+						"{{ $p.Get `Select Your Language` }}",
+						"{{ $p.Get `Eurozone Languages` }}",
+						"{{ $p.Get `Other Languages` }}",
+					],
+				{{ end }}
+			{{ end }}
 		];
 
 		const updateTexts = () => {

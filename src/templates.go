@@ -17,6 +17,7 @@ import (
 type templateData struct {
 	Debugp     bool
 	Printer    i18n.Printer
+	Printers   map[string]i18n.Printer
 	Code, Type string
 	Mintages   dbx.MintageData
 	Countries  []country
@@ -27,11 +28,11 @@ var (
 	errorTmpl    *template.Template
 	templates    map[string]*template.Template
 	funcmap      = map[string]any{
-		"locales": i18n.Locales,
-		"map":     templateMakeMap,
-		"safe":    asHTML,
-		"toUpper": strings.ToUpper,
-		"tuple":   templateMakeTuple,
+		"locales":  i18n.Locales,
+		"map":      templateMakeMap,
+		"safe":     asHTML,
+		"toUpper":  strings.ToUpper,
+		"tuple":    templateMakeTuple,
 	}
 )
 
