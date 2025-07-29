@@ -10,6 +10,7 @@ import (
 	"net/http"
 	"slices"
 	"strconv"
+	"strings"
 	"time"
 
 	. "git.thomasvoss.com/euro-cash.eu/pkg/try"
@@ -110,15 +111,16 @@ func i18nHandler(next http.Handler) http.Handler {
 		}
 
 		td := r.Context().Value("td").(*templateData)
-		td.Printer = cmp.Or(p, i18n.DefaultPrinter)
 
 		if p == pZero {
+			td.Printer = bestFitLanguage(r.Header.Get("Accept-Language"))
 			http.SetCookie(w, &http.Cookie{
 				Name:  "redirect",
 				Value: r.URL.Path,
 			})
 			templates["/language"].Execute(w, td)
 		} else {
+			td.Printer = p
 			next.ServeHTTP(w, r)
 		}
 	})
@@ -196,4 +198,40 @@ func throwError(status int, err error, w http.ResponseWriter, r *http.Request) {
 		Code: status,
 		Msg:  http.StatusText(status),
 	})
+}
+
+func bestFitLanguage(qry string) i18n.Printer {
+	type option struct {
+		bcp     string
+		quality float64
+	}
+	var xs []option
+
+	for subqry := range strings.SplitSeq(qry, ",") {
+		var o option
+		subqry = strings.TrimSpace(subqry)
+		parts := strings.Split(subqry, ";")
+		o.bcp = strings.ToLower(parts[0])
+		if len(parts) == 1 {
+			o.quality = 1
+		} else {
+			n, err := fmt.Sscanf(parts[1], "q=%f", &o.quality)
+			if n != 1 || err != nil {
+				/* Malformed query string; just give up */
+				return i18n.DefaultPrinter
+			}
+		}
+		xs = append(xs, o)
+	}
+
+	slices.SortFunc(xs, func(x, y option) int {
+		return cmp.Compare(y.quality, x.quality)
+	})
+
+	for _, x := range xs {
+		if p, ok := i18n.Printers[x.bcp]; ok {
+			return p
+		}
+	}
+	return i18n.DefaultPrinter
 }
