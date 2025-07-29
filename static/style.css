@@ -40,9 +40,21 @@
 	font-style: italic;
 }
 
+@font-face {
+	font-family: 'Source Sans 3';
+	src: url('/fonts/source-sans-3-regular.otf') format('opentype');
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Source Sans 3';
+	src: url('/fonts/source-sans-3-italic.otf') format('opentype');
+	font-style: italic;
+}
+
 :root {
-	--font-family: "Ysabeau Office", sans-serif, "Apple Color Emoji",
-	               "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--font-family: 'Source Sans 3', sans-serif, 'Apple Color Emoji',
+	               'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 	--line-height: 1.5;
 	--font-weight: 400;
 	--font-size: 16px;
@@ -78,12 +90,12 @@
 }
 @media (min-width: 992px) {
 	:root {
-		--font-size: 19px;
+		--font-size: 20px;
 	}
 }
 @media (min-width: 1200px) {
 	:root {
-		--font-size: 20px;
+		--font-size: 22px;
 	}
 }
 
@@ -140,7 +152,7 @@ h3,
 h4,
 h5,
 h6 {
-	--font-weight: 700;
+	--font-weight: 500;
 }
 
 h1 {
