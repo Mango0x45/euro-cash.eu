@@ -204,7 +204,6 @@ func processNode(node parse.Node) {
 				ti.comment = lastComment
 				lastComment = ""
 			}
-			/* FIXME: Add filename and line number */
 			ti.locs = append(ti.locs, loc{currentPath, linenr})
 			translations[tl] = ti
 		}
