@@ -1,6 +1,7 @@
 package app
 
 import (
+	"bytes"
 	"html/template"
 	"io/fs"
 	"log"
@@ -75,10 +76,9 @@ func buildTemplate(dir fs.FS, name string) *template.Template {
 	for i, s := range names {
 		names[i] = s + ".html.tmpl"
 	}
-	return template.Must(template.
-		New("-base.html.tmpl").
-		Funcs(funcmap).
-		ParseFS(dir, names[:]...))
+	t := template.New("-base.html.tmpl").Funcs(funcmap)
+	t = t.Funcs(includeIfExists(t))
+	return template.Must(t.ParseFS(dir, names[:]...))
 }
 
 func asHTML(s string) template.HTML {
@@ -104,6 +104,20 @@ func templateMakeMap(args ...any) map[string]any {
 		m[k] = args[i+1]
 	}
 	return m
+}
+
+func includeIfExists(tmpl *template.Template) template.FuncMap {
+	return template.FuncMap{
+		"includeIfExists": func(name string, data any) (template.HTML, error) {
+			t := tmpl.Lookup(name)
+			if t == nil {
+				return "", nil
+			}
+			var buf bytes.Buffer
+			err := t.Execute(&buf, data)
+			return template.HTML(buf.String()), err
+		},
+	}
 }
 
 func (td templateData) Get(fmt string, args ...map[string]any) template.HTML {
