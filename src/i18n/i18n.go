@@ -356,7 +356,7 @@ func (p Printer) Mftoa(n float64) string {
 func (p Printer) Sprintf(format string, args ...map[string]any) string {
 	var bob strings.Builder
 	vars := map[string]any{
-		"-": "a",
+		"-":    "a",
 		"Null": "",
 	}
 	for _, arg := range args {

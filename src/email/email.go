@@ -4,10 +4,10 @@ package email
 
 import (
 	"crypto/tls"
-	"fmt"
-	"math/rand/v2"
-	"log"
 	"errors"
+	"fmt"
+	"log"
+	"math/rand/v2"
 	"net/smtp"
 	"strconv"
 	"time"
