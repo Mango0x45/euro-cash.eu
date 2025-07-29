@@ -309,7 +309,8 @@ func Init() {
 		Printers[li.Bcp] = Printer{li, gl}
 	}
 
-	DefaultPrinter = Printers["en"]
+	gotext.FallbackLocale = "en"
+	DefaultPrinter = Printers[gotext.FallbackLocale]
 }
 
 func Locales() []LocaleInfo {
