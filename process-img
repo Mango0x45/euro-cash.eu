@@ -1,0 +1,36 @@
+#!/bin/bash
+
+usage()
+{
+	echo 'Usage: process-img [-f fuzz] file...' >&2
+	exit 1
+}
+
+while getopts 'f:' opt
+do
+	case "$opt" in
+	f)
+		fuzz="$optarg"
+		;;
+	*)
+		usage
+	esac
+done
+
+shift $(($OPTIND - 1))
+[ "$#" -eq 0 ] && usage
+
+for img in "$@"
+do
+	(
+		read w h < <(identify -format "%w %h" "$img")
+		magick "$img"                                       \
+			   -alpha on -fuzz ${fuzz:-3%} -fill none       \
+			   -draw "color 0,0 floodfill"                  \
+			   -draw "color 0,$((h-1)) floodfill"           \
+			   -draw "color $((w-1)),0 floodfill"           \
+			   -draw "color $((w-1)),$((h-1)) floodfill"    \
+			   "${img%.*}.avif"
+	) &
+done
+wait
