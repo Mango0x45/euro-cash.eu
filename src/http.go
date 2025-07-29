@@ -10,6 +10,7 @@ import (
 	"net/http"
 	"slices"
 	"strconv"
+	"time"
 
 	. "git.thomasvoss.com/euro-cash.eu/pkg/try"
 
@@ -88,8 +89,9 @@ func finalHandler(w http.ResponseWriter, r *http.Request) {
 	   original page they came from. */
 	if path == "/language" {
 		http.SetCookie(w, &http.Cookie{
-			Name:  "redirect",
-			Value: cmp.Or(r.Referer(), "/"),
+			Name:    "redirect",
+			Value:   cmp.Or(r.Referer(), "/"),
+			Expires: time.Now().Add(24 * time.Hour),
 		})
 	}
 
