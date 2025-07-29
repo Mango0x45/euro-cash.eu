@@ -28,11 +28,11 @@ var (
 	templates    map[string]*template.Template
 	funcmap      = map[string]any{
 		"locales": i18n.Locales,
+		"map":     templateMakeMap,
 		"safe":    asHTML,
 		"sprintf": fmt.Sprintf,
 		"toUpper": strings.ToUpper,
 		"tuple":   templateMakeTuple,
-		"map":     templateMakeMap,
 	}
 )
 
