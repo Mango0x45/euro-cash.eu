@@ -15,6 +15,7 @@ import (
 )
 
 type templateData struct {
+	Debugp     bool
 	Printer    i18n.Printer
 	Code, Type string
 	Mintages   dbx.MintageData
@@ -35,7 +36,7 @@ var (
 	}
 )
 
-func BuildTemplates(dir fs.FS, debugp bool) {
+func BuildTemplates(dir fs.FS) {
 	ents := Try2(fs.ReadDir(dir, "."))
 	notFoundTmpl = buildTemplate(dir, "-404")
 	errorTmpl = buildTemplate(dir, "-error")
@@ -44,7 +45,7 @@ func BuildTemplates(dir fs.FS, debugp bool) {
 	for _, e := range ents {
 		name := e.Name()
 		buildAndSetTemplate(dir, name)
-		if debugp {
+		if Debugp {
 			go watch.FileFS(dir, name, func() {
 				defer func() {
 					if p := recover(); p != nil {

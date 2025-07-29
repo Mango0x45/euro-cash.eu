@@ -27,7 +27,8 @@ func main() {
 	Try(os.Chdir(filepath.Dir(os.Args[0])))
 
 	port := flag.Int("port", 8080, "port number")
-	debugp := flag.Bool("debug", false, "run in debug mode")
+	flag.BoolVar(&app.Debugp, "debug", false,
+		"run in debug mode")
 	flag.BoolVar(&email.Config.Disabled, "no-email", false,
 		"disables email support")
 	flag.StringVar(&email.Config.Host, "smtp-host", "smtp.migadu.com",
@@ -46,7 +47,7 @@ func main() {
 
 	defer func() {
 		if p := recover(); p != nil {
-			if *debugp {
+			if app.Debugp {
 				log.Print(p)
 				time.Sleep(1 * time.Second)
 				app.Restart()
@@ -63,12 +64,12 @@ func main() {
 		os.Exit(0)
 	}()
 
-	if *debugp {
+	if app.Debugp {
 		go watch.File(Try2(os.Executable()), app.Restart)
 	}
 
 	i18n.Init()
 	dbx.Init(Try2(os.OpenRoot("src/dbx/sql")).FS())
-	app.BuildTemplates(Try2(os.OpenRoot("src/templates")).FS(), *debugp)
+	app.BuildTemplates(Try2(os.OpenRoot("src/templates")).FS())
 	app.Run(*port)
 }

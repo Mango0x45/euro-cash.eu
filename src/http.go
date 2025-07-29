@@ -34,7 +34,11 @@ func Run(port int) {
 	mux.Handle("GET /favicon.ico", fs)
 	mux.Handle("GET /fonts/", fs)
 	mux.Handle("GET /storage/", fs)
-	mux.Handle("GET /style.min.css", fs)
+	if Debugp {
+		mux.Handle("GET /style.css", fs)
+	} else {
+		mux.Handle("GET /style.min.css", fs)
+	}
 	mux.Handle("GET /coins/designs", mwareC(final))
 	mux.Handle("GET /coins/mintages", mwareM(final))
 	mux.Handle("GET /collecting/crh", mwareC(final))
@@ -57,7 +61,8 @@ func chain(xs ...middleware) middleware {
 
 func firstHandler(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		ctx := context.WithValue(r.Context(), "td", &templateData{})
+		ctx := context.WithValue(r.Context(), "td",
+			&templateData{Debugp: Debugp})
 		next.ServeHTTP(w, r.WithContext(ctx))
 	})
 }

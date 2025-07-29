@@ -8,6 +8,8 @@ import (
 	. "git.thomasvoss.com/euro-cash.eu/pkg/try"
 )
 
+var Debugp bool
+
 func Restart() {
 	path := Try2(os.Executable())
 	atexit.Exec()

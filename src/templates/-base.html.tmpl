@@ -3,8 +3,12 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		{{ if .Debugp }}
+		<link href="/style.css" type="text/css" rel="stylesheet">
+		{{ else }}
 		<link href="/style.min.css" type="text/css" rel="stylesheet">
-		<title>{{ .Get "Euro Cash" }}</title>
+		{{ end }}
+		<title>{{ .Get "Euro Cash Wiki" }}</title>
 		<script type="text/javascript">
 			const $  = q => document.querySelector(q);
 			const $$ = q => document.querySelectorAll(q);
