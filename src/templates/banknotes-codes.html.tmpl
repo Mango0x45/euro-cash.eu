@@ -312,7 +312,7 @@
 	<summary>{{ $p.GetN "{N} Euro" "{N} Euro" $d $args }}</summary>
 	<img
 		class="big"
-		src={{ sprintf "/codes/%s-%03d.jpg" (index . 2) $d }}
+		src={{ printf "/codes/%s-%03d.jpg" (index . 2) $d }}
 		alt={{ $p.GetN "Printer code on a {N} euro bill" "Printer code on a {N} euro bill" $d $args }}
 	>
 </details>

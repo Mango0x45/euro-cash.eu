@@ -1,7 +1,6 @@
 package app
 
 import (
-	"fmt"
 	"html/template"
 	"io/fs"
 	"log"
@@ -30,7 +29,6 @@ var (
 		"locales": i18n.Locales,
 		"map":     templateMakeMap,
 		"safe":    asHTML,
-		"sprintf": fmt.Sprintf,
 		"toUpper": strings.ToUpper,
 		"tuple":   templateMakeTuple,
 	}
