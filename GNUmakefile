@@ -15,7 +15,7 @@ all: euro-cash.eu exttmpl
 euro-cash.eu: $(cssfiles) $(templates) $(gofiles) $(sqlfiles)
 	$(GO) build
 
-po: exttmpl
+extract: exttmpl
 	find . -name '*.go' -exec xgettext -Lgo --force-po --from-code=UTF-8 \
 		-o po/backend.pot {} +
 	find . -name '*.html.tmpl' -exec ./exttmpl {} + \
@@ -32,6 +32,12 @@ po: exttmpl
 		msgmerge --update "po/$$bcp/messages.po" po/messages.pot;               \
 	done
 	find po -name '*~' -delete
+
+po:
+	for po in po/*/*.po;                                                        \
+	do                                                                          \
+		msgfmt "$$po" -o "$${po%.*}.mo";                                        \
+	done
 
 exttmpl: $(exttmpl)
 	$(GO) build ./cmd/exttmpl
@@ -52,4 +58,4 @@ clean:
 		-or -name '*.tar.gz'                                                    \
 	\) -delete
 
-.PHONY: clean po release
+.PHONY: clean extract po release
