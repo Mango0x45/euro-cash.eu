@@ -212,7 +212,7 @@ var (
 			Name:             "Nederlands",
 			DateFormat:       "2-1-2006",
 			Eurozone:         true,
-			Enabled:          false,
+			Enabled:          true,
 			GroupSeparator:   '.',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"€ ", "€ -"},
