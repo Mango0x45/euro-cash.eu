@@ -1,114 +1,61 @@
 {{ define "content" }}
 <header>
 	{{ template "navbar" . }}
-	<h1>{{ .T "Euro Cash Jargon" }}</h1>
+	<h1>{{ .Get "Euro Cash Jargon" }}</h1>
 </header>
 <main>
 	<p>
-		{{ .T `
-			Both on this website and in other euro-cash-related forums there
-			are many terms you will come across that you may not immediately
-			understand.  This page will hopefully get you up to speed with the
-			most important and frequently-used terminology.
-		` }}
+		{{ .Get "Both on this website and in other related forums you will come across many terms that you may not be familiar with. This page will hopefully get you up to speed with the most important and frequently-used terminology." }}
 	</p>
 	<p>
-		{{ .T `
-			All terms defined below can be used as clickable links which
-			highlight the selected term.  It is recommended to use these links
-			when sharing this page with others, so that the relevant terms are
-			highlighted.
-		` }}
+		{{ .Get "All terms defined below can be used as clickable links which highlight the selected term. It is recommended to use these links when sharing this page with others, so that the relevant terms are highlighted." }}
 	</p>
 	<hr />
-	<!-- TODO: Sort these jargon entries in alphabetical order according to
-	           the users locale -->
-	<h2>{{ .T "General Terms" }}</h2>
+	<!-- TODO: Sort these jargon entries in alphabetical order according
+	     to the users locale -->
+	<h2>{{ .Get "General Terms" }}</h2>
 	<dl>
-		{{ template "jargon/dt" (tuple "au" (.T "AU — Almost Uncirculated")) }}
+		{{ template "jargon/dt" (tuple "au" (.Get "AU — Almost Uncirculated")) }}
 		<dd>
-			{{ .T `
-				AU coins are coins that are in extremely good condition as a
-				result of limited use in circulation.  Unlike the term ‘UNC’, this
-				term is a description of the coins quality, not its usage.  AU
-				coins often appear to retain most of their original luster as
-				well as possessing little-to-no scratches or other forms of
-				post-mint damage (PMD).
-			` }}
+			{{ .Get "AU coins are coins that are in extremely good condition as a result of limited use in circulation. Unlike the term ‘UNC’, this term is a description of the coins quality, not its usage. AU coins often appear to retain most of their original luster as well as possessing little to no scratches or other forms of post-mint damage (PMD)." }}
 		</dd>
-		{{ template "jargon/dt" (tuple "bu" (.T "BU — Brilliantly Uncirculated")) }}
+
+		{{ template "jargon/dt" (tuple "bu" (.Get "BU — Brilliantly Uncirculated")) }}
 		<dd>
-			{{ .T `
-				BU is a general term to refer to coins from coincards and
-				-sets.  These are different from UNC coins in that they are
-				typically handled with more care during the minting process and
-				are struck with higher-quality dies than the coins minted for
-				coin rolls resulting in a higher-quality end product.  You may
-				also see these coins referred to by the French term ‘fleur de
-				coin’.
-			` }}
+			{{ .Get "BU is a general term to refer to coins from coincards and sets. These are different from UNC coins in that they are typically handled with more care during the minting process and are struck with higher-quality dies than coins minted for general circulation, resulting in a higher-quality coin." }}
 		</dd>
-		{{ template "jargon/dt" (tuple "nifc" (.T "NIFC — Not Intended For Circulation")) }}
+
+		{{ template "jargon/dt" (tuple "nifc" (.Get "NIFC — Not Intended For Circulation")) }}
 		<dd>
 			<p>
-				{{ .T `
-					NIFC coins are coins minted without the intention of being put
-					into general circulation.  These coins are typically minted with
-					the purpose of being put into coincards or coin-sets to be sold
-					to collectors.  Occasionally they are also handed out to
-					collectors for face value at banks.
-				` }}
+				{{ .Get "NIFC coins are coins minted without the intention of being put into general circulation. These coins are typically minted with the purpose of being put into coincards or sets to be sold to collectors. Occasionally they are also handed out to collectors for face value at banks." }}
 			</p>
 			<p>
-				{{ .T `
-					While uncommon, NIFC coins are occasionally found in
-					circulation.  This can happen for a variety of reasons such as
-					someone depositing their coin collection (known as a
-					‘collection dump’), or a collector’s child spending their rare
-					coins on an ice cream.  Some coin mints have also been known to
-					put NIFC coins that have gone unsold for multiple years into
-					circulation.
-				` }}
+				{{ .Get "While uncommon, NIFC coins are occasionally found in circulation. This can happen for a variety of reasons such as someone depositing their coin collection (known as a ‘collection dump’) or a collector’s child spending their rare coins on an ice cream. Some coin mints have also been known to put NIFCs that have gone unsold for multiple years into circulation." }}
 			</p>
 		</dd>
-		{{ template "jargon/dt" (tuple "pmd" (.T "PMD — Post-Mint Damage")) }}
+
+		{{ template "jargon/dt" (tuple "pmd" (.Get "PMD — Post-Mint Damage")) }}
 		<dd>
-			{{ .T `
-				Post-mint damage is any damage that a coin has sustained outside
-				of the minting process, such as through being dropped on the
-				ground, hit against a table, etc.
-			` }}
+			{{ .Get "Post-mint damage is any damage that a coin has sustained outside of the minting process, such as through being dropped on the ground, hit against a table, etc." }}
 		</dd>
-		{{ template "jargon/dt" (tuple "relief" (.T "Relief")) }}
+
+		{{ template "jargon/dt" (tuple "relief" (.Get "Relief")) }}
 		<dd>
-			{{ `
-				Relief is a term that is used to describe how 3-dimensional a
-				coin is.  Coins with a higher relief have designs that make
-				greater use of the 3rd dimension while coins with lower relief
-				have designs that appear more flat.
-			` }}
+			{{ "Relief is a term that is used to describe how 3-dimensional a coin is. Coins with a higher relief have designs that make greater use of the 3rd dimension while coins with lower relief have designs that appear more flat." }}
 		</dd>
-		{{ template "jargon/dt" (tuple "unc" (.T "UNC — Uncirculated")) }}
+
+		{{ template "jargon/dt" (tuple "unc" (.Get "UNC — Uncirculated")) }}
 		<dd>
-			{{ .T `
-				Uncirculated coins are coins that have never been used in a
-				monetary exchange.  The term ‘UNC’ is often mistakenly used to
-				refer to coins in very good condition, but this is incorrect.  A
-				coin in poor condition that has never been circulated is still
-				considered an ‘UNC’ coin.
-			` }}
+			{{ .Get "Uncirculated coins are coins that have never been used in a monetary exchange. The term ‘UNC’ is often mistakenly used to refer to coins in very good condition, but this is incorrect. A coin in poor condition that has never been circulated is still considered an ‘UNC’ coin." }}
 		</dd>
 	</dl>
-	<h2>{{ .T "Collector-Specific Terms" }}</h2>
+
+	<h2>{{ .Get "Collector-Specific Terms" }}</h2>
 	<dl>
-		{{ template "jargon/dt" (tuple "crh" (.T "CRH — Coin Roll Hunting")) }}
+		{{ template "jargon/dt" (tuple "crh" (.Get "CRH — Coin Roll Hunting")) }}
 		<dd>
-			{{ .T `
-				Coin roll hunting is a general term for the activity of searching
-				through coin rolls and -bags to find coins for a collection.  Coin
-				rolls and bags are often obtained at banks or coin roll
-				machines.
-			` }}
+			{{ .Get "Coin roll hunting is a general term for the activity of collecting coins by searching through coin rolls and -bags. Coin rolls and -bags are often obtained at banks or coin roll machines." }}
 		</dd>
 	</dl>
 </main>
@@ -116,7 +63,7 @@
 
 {{ define "jargon/dt" }}
 <dt>
-	<a id={{ index . 0 }} href=#{{ index . 0 }}>
+	<a id="{{ index . 0 }}" href="#{{ index . 0 }}">
 		 {{ index . 1 }}
 	</a>
 </dt>
