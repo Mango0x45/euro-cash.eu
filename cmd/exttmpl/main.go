@@ -162,18 +162,35 @@ func processNode(node parse.Node) {
 	case *parse.WithNode:
 		processBranch(n.BranchNode)
 	case *parse.ActionNode:
-		for _, cmd := range n.Pipe.Cmds {
+		processNode(n.Pipe)
+	case *parse.PipeNode:
+		for _, cmd := range n.Cmds {
 			if len(cmd.Args) == 0 {
 				continue
 			}
 
+			var funcname string
 			f, ok := cmd.Args[0].(*parse.FieldNode)
 			if !ok || len(f.Ident) == 0 {
-				continue
+				ff, ok := cmd.Args[0].(*parse.VariableNode)
+				if !ok || len(ff.Ident) == 0 {
+					fff, ok := cmd.Args[0].(*parse.IdentifierNode)
+					if !ok {
+						continue
+					}
+					funcname = fff.Ident
+				} else {
+					funcname = ff.Ident[len(ff.Ident)-1]
+				}
+			} else {
+				funcname = f.Ident[len(f.Ident)-1]
 			}
 
-			cfg, ok := configs[f.Ident[len(f.Ident)-1]]
+			cfg, ok := configs[funcname]
 			if !ok {
+				for _, pipe := range cmd.Args {
+					processNode(pipe)
+				}
 				continue
 			}
 
@@ -184,6 +201,7 @@ func processNode(node parse.Node) {
 
 			if sn, ok := cmd.Args[cfg.arg].(*parse.StringNode); ok {
 				tl.msgid = sn.Text
+				/* println(sn.Text) */
 				linenr = getlinenr(sn.Pos.Position())
 			} else {
 				continue
