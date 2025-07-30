@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-30 02:37+0200\n"
-"PO-Revision-Date: 2025-07-30 02:23+0200\n"
+"PO-Revision-Date: 2025-07-30 02:38+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -196,9 +196,8 @@ msgid "About"
 msgstr "About"
 
 #: src/templates/coins-mintages.html.tmpl:45
-#, fuzzy
 msgid "Proof Coins"
-msgstr "Euro Coins"
+msgstr "Proof Coins"
 
 #: src/templates/coins-mintages.html.tmpl:98
 msgid "Mintage"
@@ -1080,9 +1079,8 @@ msgid "Mintages"
 msgstr "Mintages"
 
 #: src/templates/jargon.html.tmpl:104
-#, fuzzy
 msgid "CRH — Coin Roll Hunting"
-msgstr "Coin Roll Hunting"
+msgstr "CRH — Coin Roll Hunting"
 
 #: src/templates/banknotes.html.tmpl:36
 msgid "Test Notes"
@@ -1485,9 +1483,8 @@ msgid "View the 600+ different Euro-coin designs"
 msgstr "View the 600+ different Euro-coin designs"
 
 #: src/templates/jargon.html.tmpl:4
-#, fuzzy
 msgid "Euro Cash Jargon"
-msgstr "Euro Cash"
+msgstr "Euro Cash Jargon"
 
 #: src/templates/collecting-crh.html.tmpl:22
 msgid ""
@@ -2042,9 +2039,8 @@ msgid "Finland"
 msgstr "Finland"
 
 #: src/templates/coins-mintages.html.tmpl:41
-#, fuzzy
 msgid "Circulation Coins"
-msgstr "Location Codes"
+msgstr "Circulation Coins"
 
 #: src/templates/collecting-crh.html.tmpl:292
 msgid ""
