@@ -1,16 +1,11 @@
 {{ define "content" }}
 <header>
 	{{ template "navbar" . }}
-	<h1>{{ .T "Euro Coin Collecting" }}</h1>
+	<h1>{{ .Get "Euro Coin Collecting" }}</h1>
 </header>
 <main>
 	<p>
-		{{ .T `
-			On this section of the site you can find everything there is
-			to know about collecting Euro coins.  If this is a hobby that
-			interests you, join the Discord server linked at the top of
-			the page!
-		` }}
+		{{ .Get "On this section of the site you can find everything there is to know about collecting Euro coins. If this is a hobby that interests you, join the Discord server linked at the top of the page!" }}
 	</p>
 	<hr>
 	<section>
@@ -18,25 +13,20 @@
 			<a class="no-deco" href="/collecting/crh">
 				<article>
 					<header>
-						<h3>{{ .T "Coin Roll Hunting" }}</h3>
+						<h3>{{ .Get "Coin Roll Hunting" }}</h3>
 					</header>
 					<main>
-						{{ .T `
-							Learn about collecting coins from coin rolls!
-						` }}
+						{{ .Get "Learn about collecting coins from coin rolls" }}
 					</main>
 				</article>
 			</a>
 			<a class="no-deco" href="/collecting/storage">
 				<article>
 					<header>
-						<h3>{{ .T "Coin Storage" }}</h3>
+						<h3>{{ .Get "Coin Storage" }}</h3>
 					</header>
 					<main>
-						{{ .T `
-							Learn about the different methods to storing
-							your collection!
-						`}}
+						{{ .Get "Learn about the different methods to storing your collection" }}
 					</main>
 				</article>
 			</a>
@@ -44,14 +34,10 @@
 			<a class="no-deco" href="#">
 				<article>
 					<header>
-						<h3>{{ .T "Shop Hunting" }}</h3>
+						<h3>{{ .Get "Shop Hunting" }}</h3>
 					</header>
 					<main>
-						{{ .T `
-							Learn about how to collect coins from
-							shop-keepers and other people who deal in
-							cash!
-						` }}
+						{{ .Get "Learn about how to collect coins from shops" }}
 					</main>
 				</article>
 			</a>
@@ -60,13 +46,10 @@
 			<a class="no-deco" href="/collecting/vending">
 				<article>
 					<header>
-						<h3>{{ .T "Vending Machine Hunting" }}</h3>
+						<h3>{{ .Get "Vending Machine Hunting" }}</h3>
 					</header>
 					<main>
-						{{ .T `
-							Learn about collecting coins from vending
-							machines!
-						` }}
+						{{ .Get "Learn about collecting coins from vending machines" }}
 					</main>
 				</article>
 			</a>
