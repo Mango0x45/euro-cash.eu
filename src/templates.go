@@ -28,11 +28,13 @@ var (
 	errorTmpl    *template.Template
 	templates    map[string]*template.Template
 	funcmap      = map[string]any{
-		"locales": i18n.Locales,
-		"map":     templateMakeMap,
-		"safe":    asHTML,
-		"toUpper": strings.ToUpper,
-		"tuple":   templateMakeTuple,
+		"ifElse":                     ifElse,
+		"locales":                    i18n.Locales,
+		"map":                        templateMakeMap,
+		"safe":                       asHTML,
+		"toUpper":                    strings.ToUpper,
+		"tuple":                      templateMakeTuple,
+		"makeHeaderWithTranslations": makeHeaderWithTranslations,
 	}
 )
 
@@ -119,6 +121,44 @@ func includeIfExists(tmpl *template.Template) template.FuncMap {
 			return template.HTML(buf.String()), err
 		},
 	}
+}
+
+func ifElse(b bool, x, y any) any {
+	if b {
+		return x
+	}
+	return y
+}
+
+func makeHeaderWithTranslations(tag string, text string,
+	translations ...[]any) template.HTML {
+	var bob strings.Builder
+	bob.WriteByte('<')
+	bob.WriteString(tag)
+	bob.WriteByte('>')
+	bob.WriteString(text)
+
+	/* TODO: Assert that the pairs are [2]string */
+	for _, pair := range translations {
+		if text == pair[1] {
+			continue
+		}
+		bob.WriteString(`<br><span class="translation"`)
+		if pair[0].(string) != "" {
+			bob.WriteString(` lang="`)
+			bob.WriteString(pair[0].(string))
+			bob.WriteString(`">`)
+		} else {
+			bob.WriteByte('>')
+		}
+		bob.WriteString(pair[1].(string))
+		bob.WriteString("</span>")
+	}
+
+	bob.WriteString("</")
+	bob.WriteString(tag)
+	bob.WriteByte('>')
+	return template.HTML(bob.String())
 }
 
 func (td templateData) Get(fmt string, args ...map[string]any) template.HTML {
