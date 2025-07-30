@@ -155,76 +155,84 @@ func processNode(node parse.Node) {
 		for _, m := range n.Nodes {
 			processNode(m)
 		}
+	case *parse.PipeNode:
+		for _, m := range n.Cmds {
+			processNode(m)
+		}
+	case *parse.TemplateNode:
+		processNode(n.Pipe)
 	case *parse.IfNode:
 		processBranch(n.BranchNode)
 	case *parse.RangeNode:
 		processBranch(n.BranchNode)
 	case *parse.WithNode:
 		processBranch(n.BranchNode)
+	case *parse.BranchNode:
+		processBranch(*n)
 	case *parse.ActionNode:
 		processNode(n.Pipe)
-	case *parse.PipeNode:
-		for _, cmd := range n.Cmds {
-			if len(cmd.Args) == 0 {
-				continue
-			}
-
-			var funcname string
-			f, ok := cmd.Args[0].(*parse.FieldNode)
-			if !ok || len(f.Ident) == 0 {
-				ff, ok := cmd.Args[0].(*parse.VariableNode)
-				if !ok || len(ff.Ident) == 0 {
-					fff, ok := cmd.Args[0].(*parse.IdentifierNode)
-					if !ok {
-						continue
-					}
-					funcname = fff.Ident
-				} else {
-					funcname = ff.Ident[len(ff.Ident)-1]
-				}
-			} else {
-				funcname = f.Ident[len(f.Ident)-1]
-			}
-
-			cfg, ok := configs[funcname]
-			if !ok {
-				for _, pipe := range cmd.Args {
-					processNode(pipe)
-				}
-				continue
-			}
-
-			var (
-				tl     translation
-				linenr int
-			)
-
-			if sn, ok := cmd.Args[cfg.arg].(*parse.StringNode); ok {
-				tl.msgid = sn.Text
-				/* println(sn.Text) */
-				linenr = getlinenr(sn.Pos.Position())
-			} else {
-				continue
-			}
-			if cfg.plural != -1 {
-				if sn, ok := cmd.Args[cfg.plural].(*parse.StringNode); ok {
-					tl.msgidPlural = sn.Text
-				}
-			}
-			if cfg.context != -1 {
-				if sn, ok := cmd.Args[cfg.context].(*parse.StringNode); ok {
-					tl.msgctx = sn.Text
-				}
-			}
-
-			ti := translations[tl]
-			if lastComment != "" {
-				ti.comment = lastComment
-				lastComment = ""
-			}
-			ti.locs = append(ti.locs, loc{currentPath, linenr})
-			translations[tl] = ti
+	case *parse.CommandNode:
+		if len(n.Args) == 0 {
+			break
 		}
+
+		var funcname string
+		f, ok := n.Args[0].(*parse.FieldNode)
+		if !ok || len(f.Ident) == 0 {
+			ff, ok := n.Args[0].(*parse.VariableNode)
+			if !ok || len(ff.Ident) == 0 {
+				fff, ok := n.Args[0].(*parse.IdentifierNode)
+				if !ok {
+					for _, pipe := range n.Args {
+						processNode(pipe)
+					}
+					break
+				}
+				funcname = fff.Ident
+			} else {
+				funcname = ff.Ident[len(ff.Ident)-1]
+			}
+		} else {
+			funcname = f.Ident[len(f.Ident)-1]
+		}
+
+		cfg, ok := configs[funcname]
+		if !ok {
+			for _, pipe := range n.Args {
+				processNode(pipe)
+			}
+			break
+		}
+
+		var (
+			tl     translation
+			linenr int
+		)
+
+		if sn, ok := n.Args[cfg.arg].(*parse.StringNode); ok {
+			tl.msgid = sn.Text
+			linenr = getlinenr(sn.Pos.Position())
+		} else {
+			break
+		}
+		if cfg.plural != -1 {
+			if sn, ok := n.Args[cfg.plural].(*parse.StringNode); ok {
+				tl.msgidPlural = sn.Text
+			}
+		}
+		if cfg.context != -1 {
+			if sn, ok := n.Args[cfg.context].(*parse.StringNode); ok {
+				tl.msgctx = sn.Text
+			}
+		}
+
+		ti := translations[tl]
+		if lastComment != "" {
+			ti.comment = lastComment
+			lastComment = ""
+		}
+		ti.locs = append(ti.locs, loc{currentPath, linenr})
+		translations[tl] = ti
 	case *parse.CommentNode:
 		if strings.HasPrefix(n.Text, "/* TRANSLATORS:") {
 			lastComment = strings.TrimSpace(n.Text[2 : len(n.Text)-2])
