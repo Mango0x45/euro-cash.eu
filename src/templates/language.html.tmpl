@@ -11,7 +11,7 @@
 
 <script>
 	(() => {
-		let i = 0;
+		let i = -1;
 		let nodes;
 		const Δt = 5000; /* Total time a text is shown */
 		const Δf = 1000; /* Fade duration */
@@ -31,32 +31,23 @@
 			{{ end }}
 		];
 
-		const updateTexts = () => {
-			nodes.forEach((n, j) => {
-				const [lang, ...strs] = texts[i];
-				n.lang = lang;
-				n.textContent = strs[j];
-				n.classList.remove("hide");
-			});
-		};
-
 		const change = () => {
 			nodes.forEach(n => n.classList.add("hide"));
 			setTimeout(() => {
 				i = (i + 1) % texts.length;
-				updateTexts();
+				nodes.forEach((n, j) => {
+					const [lang, ...strs] = texts[i];
+					n.lang = lang;
+					n.textContent = strs[j];
+					n.classList.remove("hide");
+				});
 			}, Δf);
 		};
 
 		document.addEventListener("DOMContentLoaded", _ => {
 			nodes = $$('.lang-fade-in-out');
-			updateTexts();
-			/* When you first do a page load there is no fade-in for the initial
-			   text, so we want to trigger a fade-out Δf milliseconds earlier */
-			setTimeout(() => {
-				change();
-				setInterval(change, Δt);
-			}, Δt - Δf);
+			change();
+			setInterval(change, Δt);
 		});
 	})();
 </script>
@@ -67,18 +58,18 @@
 	{{ template "navbar" . }}
 	<h1>
 		{{ .Get "Select Your Language" }}
-		<br><span class="lang-fade-in-out translation"></span>
+		<br><span class="lang-fade-in-out translation">&nbsp;</span>
 	</h1>
 </header>
 <main>
 	<h2>
 		{{ .Get "Eurozone Languages" }}
-		<br><span class="lang-fade-in-out translation"></span>
+		<br><span class="lang-fade-in-out translation">&nbsp;</span>
 	</h2>
 	{{ template "langgrid" true }}
 	<h2>
 		{{ .Get "Other Languages" }}
-		<br><span class="lang-fade-in-out translation"></span>
+		<br><span class="lang-fade-in-out translation">&nbsp;</span>
 	</h2>
 	{{ template "langgrid" false }}
 </main>
