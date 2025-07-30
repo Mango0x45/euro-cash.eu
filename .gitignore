@@ -15,3 +15,6 @@ po/templates.pot
 # Build artifacts
 *.min.css
 *.tar.gz
+
+# Misc
+test/
