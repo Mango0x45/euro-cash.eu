@@ -2289,3 +2289,18 @@ dl dt:not(:first-child) {
 .error {
 	color: var(--del-color);
 }
+
+/* Intended for use in constructions such as:
+ *     <h3>
+ *         Austrian National Bank<br>
+ *         <span lang="de">Oesterreichische Nationalbank</span>
+ *     </h3>
+ */
+
+*:has(> .translation) {
+	line-height: 1.1;
+}
+
+.translation {
+	opacity: 0.5;
+}

@@ -1,11 +1,6 @@
 {{ define "header" }}
 <style>
-	*:has(> .lang-fade-in-out) {
-		line-height: 1.1;
-	}
-
 	.lang-fade-in-out {
-		opacity: 0.5;
 		transition: opacity 1s;
 
 		&.hide {
@@ -72,18 +67,18 @@
 	{{ template "navbar" . }}
 	<h1>
 		{{ .Get "Select Your Language" }}
-		<br><span class="lang-fade-in-out"></span>
+		<br><span class="lang-fade-in-out translation"></span>
 	</h1>
 </header>
 <main>
 	<h2>
 		{{ .Get "Eurozone Languages" }}
-		<br><span class="lang-fade-in-out"></span>
+		<br><span class="lang-fade-in-out translation"></span>
 	</h2>
 	{{ template "langgrid" true }}
 	<h2>
 		{{ .Get "Other Languages" }}
-		<br><span class="lang-fade-in-out"></span>
+		<br><span class="lang-fade-in-out translation"></span>
 	</h2>
 	{{ template "langgrid" false }}
 </main>
