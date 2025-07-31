@@ -45,6 +45,9 @@ func BuildTemplates(dir fs.FS) {
 	templates = make(map[string]*template.Template, len(ents))
 
 	for _, e := range ents {
+		if e.IsDir() {
+			continue
+		}
 		name := e.Name()
 		buildAndSetTemplate(dir, name)
 		if Debugp {
