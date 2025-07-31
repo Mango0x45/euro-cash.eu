@@ -260,6 +260,16 @@ var (
 			MonetaryPre:      [2]string{"", "-"},
 			MonetaryPost:     " €",
 		},
+		{
+			Bcp:              "tr",
+			Name:             "Türkçe",
+			DateFormat:       "2.01.2006",
+			Eurozone:         true,
+			Enabled:          false,
+			GroupSeparator:   '.',
+			DecimalSeparator: ',',
+			MonetaryPre:      [2]string{"€", "-€"},
+		},
 		/* Non-Eurozone locales */
 		{
 			Bcp:              "bg",
