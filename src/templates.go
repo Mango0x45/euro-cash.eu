@@ -28,13 +28,13 @@ var (
 	errorTmpl    *template.Template
 	templates    map[string]*template.Template
 	funcmap      = map[string]any{
-		"ifElse":                     ifElse,
-		"locales":                    i18n.Locales,
-		"map":                        templateMakeMap,
-		"safe":                       asHTML,
-		"toUpper":                    strings.ToUpper,
-		"tuple":                      templateMakeTuple,
-		"makeHeaderWithTranslations": makeHeaderWithTranslations,
+		"ifElse":           ifElse,
+		"locales":          i18n.Locales,
+		"map":              templateMakeMap,
+		"safe":             asHTML,
+		"toUpper":          strings.ToUpper,
+		"tuple":            templateMakeTuple,
+		"withTranslations": withTranslations,
 	}
 )
 
@@ -133,8 +133,7 @@ func ifElse(b bool, x, y any) any {
 	return y
 }
 
-func makeHeaderWithTranslations(tag string, text string,
-	translations ...[]any) template.HTML {
+func withTranslations(tag string, text string, translations ...[]any) template.HTML {
 	var bob strings.Builder
 	bob.WriteByte('<')
 	bob.WriteString(tag)
@@ -166,6 +165,10 @@ func makeHeaderWithTranslations(tag string, text string,
 
 func (td templateData) Get(fmt string, args ...map[string]any) template.HTML {
 	return template.HTML(td.Printer.Get(fmt, args...))
+}
+
+func (td templateData) GetC(fmt, ctx string, args ...map[string]any) template.HTML {
+	return template.HTML(td.Printer.GetC(fmt, ctx, args...))
 }
 
 func (td templateData) GetN(fmtS, fmtP string, n int, args ...map[string]any) template.HTML {

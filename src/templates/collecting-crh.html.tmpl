@@ -49,14 +49,14 @@
 		</p>
 		{{ else if eq .Code "at" }}
 		{{/* TRANSLATORS: The OeNB prefers ‘Oe’ over ‘Ö’ */}}
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Austrian National Bank")
 			(tuple "de" "Oesterreichische Nationalbank") }}
 		<p>
 			{{ $p.Get "The Austrian National Bank does not distribute circulated rolls but sells rolls of commemorative coins at face value on release as well as uncirculated rolls for all denominations." }}
 		</p>
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Bank Austria")
 			(tuple "de" "Bank Austria") }}
 		<p>
@@ -69,7 +69,7 @@
 				`<span lang="en"><em>` "EnglishEnd" "em,span") | safe }}
 		</p>
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Erste Bank")
 			(tuple "de" "Erste Bank") }}
 		<p>
@@ -82,7 +82,7 @@
 			(map "€100" 100) }}
 		</p>
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Raiffeisen Bank")
 			(tuple "de" "Raiffeisen Bank") }}
 		<p>
@@ -91,14 +91,14 @@
 		</p>
 
 		{{/*
-			{{ makeHeaderWithTranslations "h3"
+			{{ withTranslations "h3"
 				($p.Get "Volksbank")
 				(tuple "de" "Volksbank") }}
 		*/}}
 
 		{{ else if eq .Code "be" }}
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "National Bank of Belgium")
 			(tuple "nl" "Nationale Bank van België")
 			(tuple "fr" "Banque nationale de Belgique")
@@ -109,7 +109,7 @@
 		</p>
 
 		{{/* TRANSLATORS: Name of a bank */}}
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Argenta")
 			(tuple "" "Argenta") }}
 		<p>
@@ -117,7 +117,7 @@
 			(map "€1,50" 1.50) }}
 		</p>
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "KBC Bank")
 			(tuple "" "KBC Bank") }}
 		<p>
@@ -125,7 +125,7 @@
 		</p>
 
 		{{/* TRANSLATORS: Name of a bank */}}
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Belfius")
 			(tuple "" "Belfius") }}
 		<p>
@@ -134,7 +134,7 @@
 
 		{{ else if eq .Code "cy" }}
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Bank of Cyprus")
 			(tuple "el" "Τράπεζα Κύπρου")
 			(tuple "tr" "Kıbrıs Bankası") }}
@@ -149,21 +149,21 @@
 			{{ $p.Get "Coin roll availability and their related fees may vary across banks and branches. Unless specified otherwise, you must be a customer to purchase coin rolls." }}
 		</p>
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "German Federal Bank")
 			(tuple "de" "Deutsche Bundesbank") }}
 		<p>
 			{{ $p.Get "You can obtain regular- and commemorative coins for face value including 5-, 10- and 20 euro coins. You do not need to be a customer although depending on your branch you may need to make an appointment. The purchase of coins can only be done with cash." }}
 		</p>
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "German Post")
 			(tuple "de" "Deutsche Post") }}
 		<p>
 			{{ $p.Get "Hand-rolled coin rolls can be obtained with no additional fees." }}
 		</p>
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Sparkasse")
 			(tuple "de" "Sparkasse") }}
 		<p>
@@ -171,7 +171,7 @@
 				(map "€0,50" 0.50 "€1,50" 1.50) }}
 		</p>
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Volksbank")
 			(tuple "de" "Volksbank") }}
 		<p>
@@ -185,7 +185,7 @@
 			{{ $p.Get "Obtaining coin rolls in Estonia is typically quite difficult and often expensive. You also generally need to make an appointment in advance." }}
 		</p>
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Bank of Estonia Museum")
 			(tuple "et" "Eesti Panga muuseum") }}
 		<p>
@@ -194,7 +194,7 @@
 
 		{{ else if eq .Code "es" }}
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Bank of Spain")
 			(tuple "es" "Banco de España") }}
 		<p>
@@ -202,13 +202,13 @@
 			(map "Link" "https://youtu.be/QRFuD6olH80?t=135") }}
 		</p>
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Santander Bank")
 			(tuple "es" "Banco Santander") }}
 		<p>{{ $p.Get "Coin rolls are free but you must be a customer." }}</p>
 
 		{{/* TRANSLATORS: Name of a bank */}}
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "BBVA")
 			(tuple "es" "BBVA") }}
 		<dl>
@@ -223,7 +223,7 @@
 		</dl>
 
 		{{/* TRANSLATORS: Name of a bank */}}
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "La Caixa")
 			(tuple "es" "La Caixa") }}
 		<p>
@@ -236,7 +236,7 @@
 			{{ $p.Get "Finland has no coin roll machines, but you can find vending machines or coin exchange machines that accept cash (although they can be rather rare)." }}
 		</p>
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Bank of Finland")
 			(tuple "fi" "Suomen Pankki")
 			(tuple "sv" "Finlands Bank") }}
@@ -244,14 +244,14 @@
 			{{ $p.Get "It is probably not possible to obtain coin rolls, but this is not confirmed." }}
 		</p>
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Mint of Finland")
 			(tuple "fi" "Suomen Rahapaja")
 			(tuple "sv" "Myntverket i Finland") }}
 		<p>{{ $p.Get "The Mint of Finland ceased all operations in late 2024 but still sells coins on their website." }}</p>
 
 		{{/* TRANSLATORS: Name of a bank */}}
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Aktia Bank")
 			(tuple "fi" "Aktia Pankki")
 			(tuple "sv" "Aktia Bank") }}
@@ -263,19 +263,19 @@
 			{{ $p.Get "Coin roll machines are uncommon, only some banks have them and you typically need to be a customer. You may also need to order coin rolls in advance." }}
 		</p>
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Bank of France")
 			(tuple "fr" "Banque du France") }}
 		<p>TODO</p>
 
 		{{/* TRANSLATORS: Name of a bank */}}
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Caisse d’Épargne")
 			(tuple "fr" "Caisse d’Épargne") }}
 		<p>{{ $p.Get "Coin rolls can be obtained with no fee. You must be a customer." }}</p>
 
 		{{/* TRANSLATORS: Name of a bank */}}
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "CIC")
 			(tuple "fr" "CIC") }}
 		<p>
@@ -284,7 +284,7 @@
 		</p>
 
 		{{/* TRANSLATORS: Name of a bank */}}
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Crédit Mutuel")
 			(tuple "fr" "Crédit Mutuel") }}
 		<p>
@@ -293,13 +293,13 @@
 		</p>
 
 		{{/* TRANSLATORS: Name of a bank */}}
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Crédit Agricole")
 			(tuple "fr" "Crédit Agricole") }}
 		<p>{{ $p.Get "Coin rolls can be obtained with no fee. You must be a customer." }}</p>
 
 		{{/* TRANSLATORS: Name of a bank */}}
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "LCL")
 			(tuple "fr" "LCL") }}
 		<p>
@@ -308,7 +308,7 @@
 
 		{{ else if eq .Code "gr" }}
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Bank of Greece")
 			(tuple "gr" "Τράπεζα της Ελλάδος") }}
 		<p>
@@ -319,7 +319,7 @@
 			{{ $p.Get "Coin rolls can be obtained with no fee, but you may need to present your ID. The latest commemorative coins are also sold for face value." }}
 		</p>
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Piraeus Bank")
 			(tuple "gr" "Τράπεζα Πειραιώς") }}
 		<p>
@@ -334,21 +334,21 @@
 				(map "€1,00" 1.00) }}
 		</p>
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Central Bank of Ireland")
 			(tuple "ga" "Banc Ceannais na hÉireann") }}
 		<p>TODO</p>
 
 		{{ else if eq .Code "it" }}
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Bank of Italy")
 			(tuple "it" "Banca d’Italia") }}
 		<p>
 			{{ $p.Get "Coin rolls are available to everyone." }}
 		</p>
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Banca di Cambiano")
 			(tuple "it" "Banca di Cambiano") }}
 		<p>
@@ -357,21 +357,21 @@
 
 		{{ else if eq .Code "lt" }}
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Bank of Lithuania")
 			(tuple "en" "Lietuvos bankas") }}
 		<p>
 			{{ $p.Get "Allegedly, coin rolls are only available for businesses, but this needs additional confirmation." }}
 		</p>
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "ExchangeLT")
 			(tuple "en" "ExchangeLT") }}
 		<p>
 			{{ $p.Get "Coin rolls are available with a fee of 5%." }}
 		</p>
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Top Exchange")
 			(tuple "en" "Top Exchange") }}
 		<p>
@@ -380,7 +380,7 @@
 
 		{{ else if eq .Code "lu" }}
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Central Bank of Luxembourg")
 			(tuple "lb" "Zentralbank vu Lëtzebuerg")
 			(tuple "fr" "Banque centrale du Luxembourg")
@@ -390,7 +390,7 @@
 		</p>
 
 		{{/* TRANSLATORS: Name of a bank */}}
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Dexia")
 			(tuple "fr" "Dexia") }}
 		<p>
@@ -406,12 +406,12 @@
 
 		{{ else if eq .Code "mt" }}
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Central Bank of Malta")
 			(tuple "mt" "Bank Ċentrali ta’ Malta") }}
 		<p>TODO</p>
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Bank of Valletta")
 			(tuple "en" "Bank of Valletta") }}
 		<p>
@@ -419,7 +419,7 @@
 				(map "€0,30" 0.30) }}
 		</p>
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "HSBC Bank Malta")
 			(tuple "en" "HSBC Bank Malta") }}
 		<p>
@@ -442,7 +442,7 @@
 			{{ $p.Get "1- and 2 cent coins have been removed from circulation and cannot be obtained." }}
 		</p>
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "The Dutch Central Bank")
 			(tuple "nl" "De Nederlandsche Bank") }}
 		<p>
@@ -450,7 +450,7 @@
 		</p>
 
 		{{/* TRANSLATORS: Name of a bank */}}
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "ABN AMRO")
 			(tuple "nl" "ABN AMRO") }}
 		<p>
@@ -459,7 +459,7 @@
 		</p>
 
 		{{/* TRANSLATORS: Name of a bank */}}
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "ING")
 			(tuple "nl" "ING") }}
 		<p>
@@ -467,7 +467,7 @@
 			(map "€7" 7 "€0,35" 0.35) }}
 		</p>
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Rabobank")
 			(tuple "nl" "Rabobank") }}
 		<p>
@@ -477,14 +477,14 @@
 
 		{{ else if eq .Code "pt" }}
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Bank of Portugal")
 			(tuple "pt" "Banco de Portugal") }}
 		<p>
 			{{ $p.Get "Coin bags are sold with no additional fees to everyone." }}
 		</p>
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Banco Comercial Português")
 			(tuple "pt" "Banco Comercial Português") }}
 		<p>
@@ -497,7 +497,7 @@
 			{{ $p.Get "In general there is a {€1,20:m} fee for coin rolls." (map "€1,20" 1.20) }}
 		</p>
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Bank of Slovenia")
 			(tuple "sl" "Banka Slovenije") }}
 		<p>
@@ -506,14 +506,14 @@
 
 		{{ else if eq .Code "sk" }}
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "National Bank of Slovakia")
 			(tuple "sk" "Národná banka Slovenska") }}
 		<p>
 			{{ $p.Get "You may be able to get uncirculated rolls, but this is not yet confirmed." }}
 		</p>
 
-		{{ makeHeaderWithTranslations "h3"
+		{{ withTranslations "h3"
 			($p.Get "Tatra banka")
 			(tuple "sk" "Tatra banka") }}
 		<p>
