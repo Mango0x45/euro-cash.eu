@@ -47,7 +47,7 @@ var (
 	locales = [...]LocaleInfo{
 		{
 			Bcp:              "ca",
-			Name:             "Català",
+			Name:             gotext.GetC("Català", "Language Name"),
 			DateFormat:       "2/1/2006",
 			Eurozone:         true,
 			Enabled:          false,
@@ -58,7 +58,7 @@ var (
 		},
 		{
 			Bcp:              "de",
-			Name:             "Deutsch",
+			Name:             gotext.GetC("Deutsch", "Language Name"),
 			DateFormat:       "2.1.2006",
 			Eurozone:         true,
 			Enabled:          false,
@@ -69,7 +69,7 @@ var (
 		},
 		{
 			Bcp:              "el",
-			Name:             "Ελληνικά",
+			Name:             gotext.GetC("Ελληνικά", "Language Name"),
 			DateFormat:       "2/1/2006",
 			Eurozone:         true,
 			Enabled:          false,
@@ -80,7 +80,7 @@ var (
 		},
 		{
 			Bcp:              "en",
-			Name:             "English",
+			Name:             gotext.GetC("English", "Language Name"),
 			DateFormat:       "02/01/2006",
 			Eurozone:         true,
 			Enabled:          true,
@@ -90,7 +90,7 @@ var (
 		},
 		{
 			Bcp:              "es",
-			Name:             "Español",
+			Name:             gotext.GetC("Español", "Language Name"),
 			DateFormat:       "2/1/2006",
 			Eurozone:         true,
 			Enabled:          false,
@@ -101,7 +101,7 @@ var (
 		},
 		{
 			Bcp:              "et",
-			Name:             "Eesti",
+			Name:             gotext.GetC("Eesti", "Language Name"),
 			DateFormat:       "2.1.2006",
 			Eurozone:         true,
 			Enabled:          false,
@@ -112,7 +112,7 @@ var (
 		},
 		{
 			Bcp:              "fi",
-			Name:             "Suomi",
+			Name:             gotext.GetC("Suomi", "Language Name"),
 			DateFormat:       "2.1.2006",
 			Eurozone:         true,
 			Enabled:          false,
@@ -123,7 +123,7 @@ var (
 		},
 		{
 			Bcp:              "fr",
-			Name:             "Français",
+			Name:             gotext.GetC("Français", "Language Name"),
 			DateFormat:       "02/01/2006",
 			Eurozone:         true,
 			Enabled:          false,
@@ -134,7 +134,7 @@ var (
 		},
 		{
 			Bcp:              "ga",
-			Name:             "Gaeilge",
+			Name:             gotext.GetC("Gaeilge", "Language Name"),
 			DateFormat:       "02/01/2006",
 			Eurozone:         true,
 			Enabled:          false,
@@ -144,7 +144,7 @@ var (
 		},
 		{
 			Bcp:              "hr",
-			Name:             "Hrvatski",
+			Name:             gotext.GetC("Hrvatski", "Language Name"),
 			DateFormat:       "02. 01. 2006.",
 			Eurozone:         true,
 			Enabled:          false,
@@ -155,7 +155,7 @@ var (
 		},
 		{
 			Bcp:              "it",
-			Name:             "Italiano",
+			Name:             gotext.GetC("Italiano", "Language Name"),
 			DateFormat:       "02/01/2006",
 			Eurozone:         true,
 			Enabled:          false,
@@ -166,7 +166,7 @@ var (
 		},
 		{
 			Bcp:              "lb",
-			Name:             "Lëtzebuergesch",
+			Name:             gotext.GetC("Lëtzebuergesch", "Language Name"),
 			DateFormat:       "2.1.2006",
 			Eurozone:         true,
 			Enabled:          false,
@@ -177,7 +177,7 @@ var (
 		},
 		{
 			Bcp:              "lt",
-			Name:             "Lietuvių",
+			Name:             gotext.GetC("Lietuvių", "Language Name"),
 			DateFormat:       "2006-01-02",
 			Eurozone:         true,
 			Enabled:          false,
@@ -188,7 +188,7 @@ var (
 		},
 		{
 			Bcp:              "lv",
-			Name:             "Latviešu",
+			Name:             gotext.GetC("Latviešu", "Language Name"),
 			DateFormat:       "2.01.2006.",
 			Eurozone:         true,
 			Enabled:          false,
@@ -199,7 +199,7 @@ var (
 		},
 		{
 			Bcp:              "mt",
-			Name:             "Malti",
+			Name:             gotext.GetC("Malti", "Language Name"),
 			DateFormat:       "2/1/2006",
 			Eurozone:         true,
 			Enabled:          false,
@@ -209,7 +209,7 @@ var (
 		},
 		{
 			Bcp:              "nl",
-			Name:             "Nederlands",
+			Name:             gotext.GetC("Nederlands", "Language Name"),
 			DateFormat:       "2-1-2006",
 			Eurozone:         true,
 			Enabled:          true,
@@ -219,7 +219,7 @@ var (
 		},
 		{
 			Bcp:              "pt",
-			Name:             "Português",
+			Name:             gotext.GetC("Português", "Language Name"),
 			DateFormat:       "02/01/2006",
 			Eurozone:         true,
 			Enabled:          false,
@@ -229,7 +229,7 @@ var (
 		},
 		{
 			Bcp:              "sk",
-			Name:             "Slovenčina",
+			Name:             gotext.GetC("Slovenčina", "Language Name"),
 			DateFormat:       "2. 1. 2006",
 			Eurozone:         true,
 			Enabled:          false,
@@ -240,7 +240,7 @@ var (
 		},
 		{
 			Bcp:              "sl",
-			Name:             "Slovenščina",
+			Name:             gotext.GetC("Slovenščina", "Language Name"),
 			DateFormat:       "2. 1. 2006",
 			Eurozone:         true,
 			Enabled:          false,
@@ -251,7 +251,7 @@ var (
 		},
 		{
 			Bcp:              "sv",
-			Name:             "Svenska",
+			Name:             gotext.GetC("Svenska", "Language Name"),
 			DateFormat:       "2006-01-02",
 			Eurozone:         true,
 			Enabled:          true,
@@ -262,7 +262,7 @@ var (
 		},
 		{
 			Bcp:              "tr",
-			Name:             "Türkçe",
+			Name:             gotext.GetC("Türkçe", "Language Name"),
 			DateFormat:       "2.01.2006",
 			Eurozone:         true,
 			Enabled:          false,
@@ -273,7 +273,7 @@ var (
 		/* Non-Eurozone locales */
 		{
 			Bcp:              "bg",
-			Name:             "Български",
+			Name:             gotext.GetC("Български", "Language Name"),
 			DateFormat:       "2.01.2006 г.",
 			Eurozone:         false, /* TODO(2026): Set to true */
 			Enabled:          false,
@@ -284,7 +284,7 @@ var (
 		},
 		{
 			Bcp:              "ro",
-			Name:             "Română",
+			Name:             gotext.GetC("Română", "Language Name"),
 			DateFormat:       "02.01.2006",
 			Eurozone:         false,
 			Enabled:          false,
@@ -295,7 +295,7 @@ var (
 		},
 		{
 			Bcp:              "uk",
-			Name:             "Yкраїнська",
+			Name:             gotext.GetC("Yкраїнська", "Language Name"),
 			DateFormat:       "02.01.2006",
 			Eurozone:         false,
 			Enabled:          false,
@@ -329,6 +329,10 @@ func Locales() []LocaleInfo {
 
 func (p Printer) Get(fmt string, args ...map[string]any) string {
 	return p.Sprintf(p.inner.Get(fmt), args...)
+}
+
+func (p Printer) GetC(fmt, ctx string, args ...map[string]any) string {
+	return p.Sprintf(p.inner.GetC(fmt, ctx), args...)
 }
 
 func (p Printer) GetN(fmtS, fmtP string, n int, args ...map[string]any) string {

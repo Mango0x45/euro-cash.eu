@@ -2166,15 +2166,33 @@ textarea,
 	column-gap: var(--grid-spacing-horizontal);
 }
 
-.country-grid a, .lang-grid button {
-	text-align: left;
+.lang-grid {
+	button {
+		display: flex;
+		align-items: center;
+		padding-left: 0;
+
+		> :first-child {
+			font-size: 2em;
+			width: calc(var(--form-element-spacing-horizontal) * 2 + 2ch);
+		}
+		> :nth-child(2) {
+			text-align: left;
+		}
+	}
 }
 
-.country-grid a::before, .lang-grid span::before {
-	display: inline-block;
+.country-grid a {
+	display: flex;
+	align-items: center;
+	padding-left: 0;
+}
+
+.country-grid a::before {
 	content: attr(data-code);
 	font-weight: bold;
-	width: 4ch;
+	width: 2ch;
+	width: calc(var(--form-element-spacing-horizontal) * 2 + 2ch);
 }
 
 #nav-icon-lang a {

@@ -66,17 +66,18 @@
 		{{ .Get "Eurozone Languages" }}
 		<br><span class="lang-fade-in-out translation">&nbsp;</span>
 	</h2>
-	{{ template "langgrid" true }}
+	{{ template "langgrid" (tuple .Printer true) }}
 	<h2>
 		{{ .Get "Other Languages" }}
 		<br><span class="lang-fade-in-out translation">&nbsp;</span>
 	</h2>
-	{{ template "langgrid" false }}
+	{{ template "langgrid" (tuple .Printer false) }}
 </main>
 {{ end }}
 
 {{ define "langgrid" }}
-{{ $ez := . }}
+{{ $p  := index . 0 }}
+{{ $ez := index . 1 }}
 <form action="/language" method="POST">
 	<div class="lang-grid">
 		{{ range locales }}
@@ -84,16 +85,17 @@
 				<button
 					type="submit"
 					name="locale"
-					value={{ .Bcp }}
+					value="{{ .Bcp }}"
 					{{ if not .Enabled }}
 						disabled
 					{{ end }}
 				>
-					<span
-						lang={{ .Bcp }}
-						data-code={{ .Language | toUpper }}
-					>
-						{{ .Name }}
+					<span>{{ .Language | toUpper }}</span>
+					<span lang="{{ .Bcp }}">
+						{{ .Name }}<br>
+						<span lang="{{ $p.Bcp }}" class="translation">
+							{{ $p.GetC .Name "Language Name" }}
+						</span>
 					</span>
 				</button>
 			{{ end }}
