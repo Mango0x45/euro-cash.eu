@@ -15,31 +15,5 @@
 		{{ .Get "While we try to stay as up-to-date as possible and to fact check our information, it is always possible that we get something wrong, lack a translation, or are missing some piece of data you may have. Should that be the case, don’t hesitate to contact us; we’ll try to get the site updated or fixed as soon as possible. You are always free to contribute via a git patch if you are more technically inclined, but if not you can always send an email to {Email:e} or contact ‘@onetruemangoman’ on Discord."
 		(map "Email" "mail@euro-cash.eu") }}
 	</p>
-	<h2>{{ .Get "Special Thanks" }}</h2>
-	<table>
-		<thead>
-			{{/* TRANSLATORS: As in ‘Development of the site’ */}}
-			<th scope="col">{{ .Get "Development" }}</th>
-			<th scope="col">{{ .Get "Research" }}</th>
-			<th scope="col">{{ .Get "Translations" }}</th>
-		</thead>
-		<tbody>
-			<tr>
-				<td>
-					Jessika Wexler,
-					Lyyli Savolainen,
-					Ralf Nadel
-				</td>
-				<td>
-					Elín Hjartardóttir,
-					Storm Sørensen
-				</td>
-				<td>
-					<span data-tooltip={{ .Get "British- & American English" }}>Thomas Voss</span>,
-					<span data-tooltip={{ .Get "Icelandic" }}>Védís Indriðadóttir</span>
-				</td>
-			</tr>
-		</tbody>
-	</table>
 </main>
 {{ end }}
