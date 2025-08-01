@@ -68,8 +68,8 @@
 				"https://filialen.bankaustria.at/de"
 				"https://filialen.bankaustria.at/en" }}
 			{{/* TRANSLATORS: On the German page the filter is called ‘Münzrollengeber’. For other languages we link to the English site, so mention the English filter name surrounded by ‘{EnglishStart:r}’ and ‘{EnglishEnd:E}’, and also translate it in parenthesis to your language. For example the Swedish page might say: ‘”{EnglishStart:r}coin roll dispenser{EnglishEnd:E}” (svenska: ”myntrullsautomat”)’ */}}
-			{{ $p.Get "There is a fee of {€0,20:m} per roll which can be purchased with cash at machines. These machines are available to everyone but not in all branches. Look for the ‘coin roll dispenser’ filter option {Link:L}here{-:E}."
-			(map "€0,20" 0.20 "Link" $link "EnglishStart"
+			{{ $p.Get "There is a fee of €0.20 per roll which can be purchased with cash at machines. These machines are available to everyone but not in all branches. Look for the ‘coin roll dispenser’ filter option {Link:L}here{-:E}."
+			(map "Link" $link "EnglishStart"
 				`<span lang="en"><em>` "EnglishEnd" "em,span") | safe }}
 		</p>
 
@@ -77,28 +77,19 @@
 			($p.Get "Erste Bank")
 			(tuple "de" "Erste Bank") }}
 		<p>
-			{{ $p.Get "There is a fee of {€0,10:m} per roll. You must be a customer to use machines to get rolls. Rolls have no fees when purchased at counters, but you will probably be redirected to the machines if they work. You must present an Erste Bank card to buy rolls from machines, however payment in cash is still accepted."
-				(map "€0,10" 0.10) }}
+			{{ $p.Get "There is a fee of €0.10 per roll. You must be a customer to use machines to get rolls. Rolls have no fees when purchased at counters, but you will probably be redirected to the machines if they work. You must present an Erste Bank card to buy rolls from machines, however payment in cash is still accepted." }}
 		</p>
 
 		<p>
-			{{ $p.Get "Depositing coins is free up to {€100:m} a day, at which point you pay 1% for any additionally deposited coins. You must also be a customer. Depositing coins is free for all Erste Bank customers at Dornbirner Sparkasse with no limit."
-			(map "€100" 100) }}
+			{{ $p.Get "Depositing coins is free up to €100 a day, at which point you pay 1% for any additionally deposited coins. You must also be a customer. Depositing coins is free for all Erste Bank customers at Dornbirner Sparkasse with no limit." }}
 		</p>
 
 		{{ withTranslations "h3"
 			($p.Get "Raiffeisen Bank")
 			(tuple "de" "Raiffeisen Bank") }}
 		<p>
-			{{ $p.Get "There is a fee of {€1:m} per roll if you aren’t a customer and {€0,30:m} otherwise. Coin deposits are free for customers."
-			(map "€1" 1 "€0,30" 0.30) }}
+			{{ $p.Get "There is a fee of €1 per roll if you aren’t a customer and €0.30 otherwise. Coin deposits are free for customers." }}
 		</p>
-
-		{{/*
-			{{ withTranslations "h3"
-				($p.Get "Volksbank")
-				(tuple "de" "Volksbank") }}
-		*/}}
 
 		{{ else if eq .Code "be" }}
 
@@ -108,8 +99,7 @@
 			(tuple "fr" "Banque nationale de Belgique")
 			(tuple "de" "Belgische Nationalbank") }}
 		<p>
-			{{ $p.Get "You can visit the National Bank of Belgium in Brussels as an EU citizen. You can order coin rolls for no fee up to {€2000:m} in value. They seem to distribute only uncirculated coins and no commemoratives."
-				(map "€2000" 2000) }}
+			{{ $p.Get "You can visit the National Bank of Belgium in Brussels as an EU citizen. You can order coin rolls for no fee up to €2000 in value. They seem to distribute only uncirculated coins and no commemoratives." }}
 		</p>
 
 		{{/* TRANSLATORS: Name of a bank */}}
@@ -117,8 +107,7 @@
 			($p.Get "Argenta")
 			(tuple "" "Argenta") }}
 		<p>
-			{{ $p.Get "There is a {€1,50:m} fee per transaction with no limit on the number of rolls you may take."
-			(map "€1,50" 1.50) }}
+			{{ $p.Get "There is a €1.50 fee per transaction with no limit on the number of rolls you may take." }}
 		</p>
 
 		{{ withTranslations "h3"
@@ -143,8 +132,7 @@
 			(tuple "el" "Τράπεζα Κύπρου")
 			(tuple "tr" "Kıbrıs Bankası") }}
 		<p>
-			{{ $p.Get "At the Bank of Cyprus it is possible to buy bags of coins without being a customer, and without paying any additional fees. Depending on the branch you visit there may be a coin roll machine available. Do note that the bags provided by the Bank of Cyprus are much larger than what is typically found elsewhere in the Eurozone with {€2,00:m} bags containing 50 coins and the other denomination bags containing 100 coins."
-			(map "€2,00" 2.00) }}
+			{{ $p.Get "At the Bank of Cyprus it is possible to buy bags of coins without being a customer, and without paying any additional fees. Depending on the branch you visit there may be a coin roll machine available. Do note that the bags provided by the Bank of Cyprus are much larger than what is typically found elsewhere in the Eurozone with €2.00 bags containing 50 coins and the other denomination bags containing 100 coins." }}
 		</p>
 
 		{{ else if eq .Code "de" }}
@@ -171,16 +159,14 @@
 			($p.Get "Sparkasse")
 			(tuple "de" "Sparkasse") }}
 		<p>
-			{{ $p.Get "Coin rolls can be obtained for a fee of {€0,50:m}–{€1,50:m} per roll. The amount varies per branch."
-				(map "€0,50" 0.50 "€1,50" 1.50) }}
+			{{ $p.Get "Coin rolls can be obtained for a fee of €0.50–€1.50 per roll. The amount varies per branch." }}
 		</p>
 
 		{{ withTranslations "h3"
 			($p.Get "Volksbank")
 			(tuple "de" "Volksbank") }}
 		<p>
-			{{ $p.Get "Coin rolls can be obtained for a fee of {€0,25:m} per roll."
-				(map "€0,25" 0.25) }}
+			{{ $p.Get "Coin rolls can be obtained for a fee of €0.25 per roll." }}
 		</p>
 
 		{{ else if eq .Code "ee" }}
@@ -219,8 +205,7 @@
 			{{/* TRANSLATORS: City in Spain */}}
 			<dt>{{ $p.Get "Alicante" }}</dt>
 			<dd>
-				{{ $p.Get "Coin rolls have a fee of {€2,00:m} for 5 rolls. This seems to vary by location."
-					(map "€2,00" 2.00) }}
+				{{ $p.Get "Coin rolls have a fee of €2 for 5 rolls. This seems to vary by location." }}
 			</dd>
 			<dt>{{ $p.Get "Madrid" }}</dt>
 			<dd>{{ $p.Get "Coin rolls have no fees." }}</dd>
@@ -283,8 +268,7 @@
 			($p.Get "CIC")
 			(tuple "fr" "CIC") }}
 		<p>
-			{{ $p.Get "Free coin rolls if you are a customer or {€1,00:m} per roll if you are not a customer. There are coin roll machines."
-				(map "€1,00" 1.00) }}
+			{{ $p.Get "Free coin rolls if you are a customer or €1 per roll if you are not a customer. There are coin roll machines." }}
 		</p>
 
 		{{/* TRANSLATORS: Name of a bank */}}
@@ -292,8 +276,7 @@
 			($p.Get "Crédit Mutuel")
 			(tuple "fr" "Crédit Mutuel") }}
 		<p>
-			{{ $p.Get "Free coin rolls if you are a customer or {€1,00:m} per roll if you are not a customer. There are coin roll machines."
-				(map "€1,00" 1.00) }}
+			{{ $p.Get "Free coin rolls if you are a customer or €1 per roll if you are not a customer. There are coin roll machines." }}
 		</p>
 
 		{{/* TRANSLATORS: Name of a bank */}}
@@ -327,15 +310,13 @@
 			($p.Get "Piraeus Bank")
 			(tuple "gr" "Τράπεζα Πειραιώς") }}
 		<p>
-			{{ $p.Get "Coin bags are available without fees for everyone. Smaller denominations are often not given out, and the coin bags you recieve are very large (there are reports of {€1,00:m} bags containing 250 coins)."
-			(map "€1,00" 1.00) }}
+			{{ $p.Get "Coin bags are available without fees for everyone. Smaller denominations are often not given out, and the coin bags you recieve are very large (there are reports of €1 bags containing 250 coins)." }}
 		</p>
 
 		{{ else if eq .Code "ie" }}
 
 		<p>
-			{{ $p.Get "In general, coin rolls are available at banks with a fee of {€1,00:m} per roll; rolls could potentially have no fee if you only need a few."
-				(map "€1,00" 1.00) }}
+			{{ $p.Get "In general, coin rolls are available at banks with a fee of €1 per roll; rolls could potentially have no fee if you only need a few." }}
 		</p>
 
 		{{ withTranslations "h3"
@@ -379,7 +360,7 @@
 			($p.Get "Top Exchange")
 			(tuple "en" "Top Exchange") }}
 		<p>
-			{{ $p.Get "Fee of {€2,00:m} per roll of 2 euro coins." (map "€2,00" 2.00) }}
+			{{ $p.Get "Fee of €2 per roll of 2 euro coins." }}
 		</p>
 
 		{{ else if eq .Code "lu" }}
@@ -404,8 +385,7 @@
 		{{ else if eq .Code "lv" }}
 
 		<p>
-			{{ $p.Get "In general coin rolls are sold with for fee of {€0,60:m} per roll, but we’re lacking a lot of information."
-				(map "€0,60" 0.60) }}
+			{{ $p.Get "In general coin rolls are sold with for fee of €0.60 per roll, but we’re lacking a lot of information." }}
 		</p>
 
 		{{ else if eq .Code "mt" }}
@@ -419,16 +399,14 @@
 			($p.Get "Bank of Valletta")
 			(tuple "en" "Bank of Valletta") }}
 		<p>
-			{{ $p.Get "You can get rolls for a fee of {€0,30:m} per roll. You must order coin rolls through their online platform, and you must be a customer."
-				(map "€0,30" 0.30) }}
+			{{ $p.Get "You can get rolls for a fee of €0.30 per roll. You must order coin rolls through their online platform, and you must be a customer." }}
 		</p>
 
 		{{ withTranslations "h3"
 			($p.Get "HSBC Bank Malta")
 			(tuple "en" "HSBC Bank Malta") }}
 		<p>
-			{{ $p.Get "You can get rolls for a fee of {€0,30:m} per roll. You must order coin rolls through their online platform, and you must be a customer."
-				(map "€0,30" 0.30) }}
+			{{ $p.Get "You can get rolls for a fee of €0.30 per roll. You must order coin rolls through their online platform, and you must be a customer." }}
 		</p>
 
 		{{ else if eq .Code "nl" }}
@@ -458,8 +436,7 @@
 			($p.Get "ABN AMRO")
 			(tuple "nl" "ABN AMRO") }}
 		<p>
-			{{ $p.Get "Coin rolls are available for a fee of {€0,30:m} per roll. You must withdraw between 10–20 rolls."
-			(map "€0,30" 0.30) }}
+			{{ $p.Get "Coin rolls are available for a fee of €0.30 per roll. You must withdraw between 10–20 rolls." }}
 		</p>
 
 		{{/* TRANSLATORS: Name of a bank */}}
@@ -467,16 +444,14 @@
 			($p.Get "ING")
 			(tuple "nl" "ING") }}
 		<p>
-			{{ $p.Get "Coin rolls are available for a fee of {€7:m} + {€0,35:m} per roll."
-			(map "€7" 7 "€0,35" 0.35) }}
+			{{ $p.Get "Coin rolls are available for a fee of €7 + €0.35 per roll." }}
 		</p>
 
 		{{ withTranslations "h3"
 			($p.Get "Rabobank")
 			(tuple "nl" "Rabobank") }}
 		<p>
-			{{ $p.Get "Coin rolls are available for a fee of {€7:m} + {€0,50:m} per roll."
-			(map "€7" 7 "€0,50" 0.50) }}
+			{{ $p.Get "Coin rolls are available for a fee of €7 + €0.50 per roll." }}
 		</p>
 
 		{{ else if eq .Code "pt" }}
@@ -498,7 +473,7 @@
 		{{ else if eq .Code "si" }}
 
 		<p>
-			{{ $p.Get "In general there is a {€1,20:m} fee for coin rolls." (map "€1,20" 1.20) }}
+			{{ $p.Get "In general there is a €1.20 fee for coin rolls." }}
 		</p>
 
 		{{ withTranslations "h3"
@@ -521,7 +496,7 @@
 			($p.Get "Tatra banka")
 			(tuple "sk" "Tatra banka") }}
 		<p>
-			{{ $p.Get "You can get an unlimited number of rolls for a {€5} fee. You must be a customer of the bank." (map "€5" 5) }}
+			{{ $p.Get "You can get an unlimited number of rolls for a €5 fee. You must be a customer of the bank." }}
 		</p>
 
 		{{ else if eq .Code "va" }}
