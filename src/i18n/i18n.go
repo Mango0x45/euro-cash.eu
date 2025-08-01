@@ -27,7 +27,8 @@ type LocaleInfo struct {
 	DateFormat                       string
 	GroupSeparator, DecimalSeparator rune
 	MonetaryPre                      [2]string
-	MonetaryPost                     string
+	MonetarySuf                      string
+	PercentPre, PercentSuf           string
 }
 
 type number interface {
@@ -39,11 +40,12 @@ type sprintfFunc func(LocaleInfo, *strings.Builder, any) error
 var (
 	handlers map[rune]sprintfFunc = map[rune]sprintfFunc{
 		-1:  sprintfGeneric,
-		'e': sprintfe,
 		'E': sprintfE,
-		'l': sprintfl,
 		'L': sprintfL,
+		'e': sprintfe,
+		'l': sprintfl,
 		'm': sprintfm,
+		'p': sprintfp,
 		'r': sprintfr,
 	}
 
@@ -59,7 +61,8 @@ var (
 			GroupSeparator:   '.',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     " €",
+			MonetarySuf:      " €",
+			PercentSuf:       " %",
 		},
 		{
 			Bcp:              "de",
@@ -70,7 +73,8 @@ var (
 			GroupSeparator:   '.',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     " €",
+			MonetarySuf:      " €",
+			PercentSuf:       " %",
 		},
 		{
 			Bcp:              "el",
@@ -81,7 +85,8 @@ var (
 			GroupSeparator:   '.',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     " €",
+			MonetarySuf:      " €",
+			PercentSuf:       "%",
 		},
 		{
 			Bcp:              "en",
@@ -92,6 +97,7 @@ var (
 			GroupSeparator:   ',',
 			DecimalSeparator: '.',
 			MonetaryPre:      [2]string{"€", "-€"},
+			PercentSuf:       "%",
 		},
 		{
 			Bcp:              "es",
@@ -102,7 +108,8 @@ var (
 			GroupSeparator:   '.',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     " €",
+			MonetarySuf:      " €",
+			PercentSuf:       " %",
 		},
 		{
 			Bcp:              "et",
@@ -113,7 +120,8 @@ var (
 			GroupSeparator:   ' ',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     " €",
+			MonetarySuf:      " €",
+			PercentSuf:       "%",
 		},
 		{
 			Bcp:              "fi",
@@ -124,7 +132,8 @@ var (
 			GroupSeparator:   ' ',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     " €",
+			MonetarySuf:      " €",
+			PercentSuf:       " %",
 		},
 		{
 			Bcp:              "fr",
@@ -135,7 +144,8 @@ var (
 			GroupSeparator:   ' ',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     " €",
+			MonetarySuf:      " €",
+			PercentSuf:       " %",
 		},
 		{
 			Bcp:              "ga",
@@ -146,6 +156,7 @@ var (
 			GroupSeparator:   ',',
 			DecimalSeparator: '.',
 			MonetaryPre:      [2]string{"€", "-€"},
+			PercentSuf:       "%",
 		},
 		{
 			Bcp:              "hr",
@@ -156,7 +167,8 @@ var (
 			GroupSeparator:   '.',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     " €",
+			MonetarySuf:      " €",
+			PercentSuf:       " %",
 		},
 		{
 			Bcp:              "it",
@@ -167,7 +179,8 @@ var (
 			GroupSeparator:   '.',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     " €",
+			MonetarySuf:      " €",
+			PercentSuf:       "%",
 		},
 		{
 			Bcp:              "lb",
@@ -178,7 +191,8 @@ var (
 			GroupSeparator:   '.',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     " €",
+			MonetarySuf:      " €",
+			PercentSuf:       " %",
 		},
 		{
 			Bcp:              "lt",
@@ -189,7 +203,8 @@ var (
 			GroupSeparator:   ' ',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     " €",
+			MonetarySuf:      " €",
+			PercentSuf:       " %",
 		},
 		{
 			Bcp:              "lv",
@@ -200,7 +215,8 @@ var (
 			GroupSeparator:   ' ',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     " €",
+			MonetarySuf:      " €",
+			PercentSuf:       "%",
 		},
 		{
 			Bcp:              "mt",
@@ -211,6 +227,7 @@ var (
 			GroupSeparator:   ',',
 			DecimalSeparator: '.',
 			MonetaryPre:      [2]string{"€", "-€"},
+			PercentSuf:       "%",
 		},
 		{
 			Bcp:              "nl",
@@ -221,6 +238,7 @@ var (
 			GroupSeparator:   '.',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"€ ", "€ -"},
+			PercentSuf:       "%",
 		},
 		{
 			Bcp:              "pt",
@@ -231,6 +249,7 @@ var (
 			GroupSeparator:   '.',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"€ ", "€ -"},
+			PercentSuf:       "%",
 		},
 		{
 			Bcp:              "sk",
@@ -241,7 +260,8 @@ var (
 			GroupSeparator:   ' ',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     " €",
+			MonetarySuf:      " €",
+			PercentSuf:       " %",
 		},
 		{
 			Bcp:              "sl",
@@ -252,7 +272,8 @@ var (
 			GroupSeparator:   '.',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     " €",
+			MonetarySuf:      " €",
+			PercentSuf:       " %",
 		},
 		{
 			Bcp:              "sv",
@@ -263,7 +284,8 @@ var (
 			GroupSeparator:   ' ',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     " €",
+			MonetarySuf:      " €",
+			PercentSuf:       " %",
 		},
 		{
 			Bcp:              "tr",
@@ -274,6 +296,7 @@ var (
 			GroupSeparator:   '.',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"€", "-€"},
+			PercentPre:       "%",
 		},
 		/* Non-Eurozone locales */
 		{
@@ -285,7 +308,8 @@ var (
 			GroupSeparator:   ' ',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     " €",
+			MonetarySuf:      " €",
+			PercentSuf:       "%",
 		},
 		{
 			Bcp:              "ro",
@@ -296,7 +320,8 @@ var (
 			GroupSeparator:   '.',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     " €",
+			MonetarySuf:      " €",
+			PercentSuf:       " %",
 		},
 		{
 			Bcp:              "uk",
@@ -307,7 +332,8 @@ var (
 			GroupSeparator:   ' ',
 			DecimalSeparator: ',',
 			MonetaryPre:      [2]string{"", "-"},
-			MonetaryPost:     " €",
+			MonetarySuf:      " €",
+			PercentSuf:       "%",
 		},
 	}
 	Printers       map[string]Printer = make(map[string]Printer, len(locales))
@@ -394,13 +420,25 @@ func (p Printer) Ftoa(n float64) string {
 	return bob.String()
 }
 
-func (p Printer) Mitoa(n int) string {
+func (p Printer) Itop(n int) string {
+	var bob strings.Builder
+	sprintfp(p.LocaleInfo, &bob, n)
+	return bob.String()
+}
+
+func (p Printer) Ftop(n float64) string {
+	var bob strings.Builder
+	sprintfp(p.LocaleInfo, &bob, n)
+	return bob.String()
+}
+
+func (p Printer) Itom(n int) string {
 	var bob strings.Builder
 	sprintfm(p.LocaleInfo, &bob, n)
 	return bob.String()
 }
 
-func (p Printer) Mftoa(n float64) string {
+func (p Printer) Ftom(n float64) string {
 	var bob strings.Builder
 	sprintfm(p.LocaleInfo, &bob, n)
 	return bob.String()
@@ -542,12 +580,30 @@ func sprintfm(li LocaleInfo, bob *strings.Builder, v any) error {
 		n := v.(int)
 		htmlesc(bob, li.MonetaryPre[btoi(n >= 0)])
 		writeInt(bob, abs(n), li)
-		htmlesc(bob, li.MonetaryPost)
+		htmlesc(bob, li.MonetarySuf)
 	case float64:
 		n := v.(float64)
 		htmlesc(bob, li.MonetaryPre[btoi(n >= 0)])
 		writeFloat(bob, abs(n), li)
-		htmlesc(bob, li.MonetaryPost)
+		htmlesc(bob, li.MonetarySuf)
+	default:
+		return errors.New("TODO")
+	}
+	return nil
+}
+
+func sprintfp(li LocaleInfo, bob *strings.Builder, v any) error {
+	switch v.(type) {
+	case int:
+		n := v.(int)
+		htmlesc(bob, li.PercentPre)
+		writeInt(bob, n, li)
+		htmlesc(bob, li.PercentSuf)
+	case float64:
+		n := v.(float64)
+		htmlesc(bob, li.PercentPre)
+		writeFloat(bob, n, li)
+		htmlesc(bob, li.PercentSuf)
 	default:
 		return errors.New("TODO")
 	}
