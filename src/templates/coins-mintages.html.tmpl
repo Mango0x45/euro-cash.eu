@@ -56,14 +56,14 @@
 			<table class="mintage-table" role="grid">
 				<thead>
 					<th>{{ .Get "Year" }}</th>
-					<th>{{ .Printer.Sprintf "{N:m}" (map "N" 0.01) }}</th>
-					<th>{{ .Printer.Sprintf "{N:m}" (map "N" 0.02) }}</th>
-					<th>{{ .Printer.Sprintf "{N:m}" (map "N" 0.05) }}</th>
-					<th>{{ .Printer.Sprintf "{N:m}" (map "N" 0.10) }}</th>
-					<th>{{ .Printer.Sprintf "{N:m}" (map "N" 0.20) }}</th>
-					<th>{{ .Printer.Sprintf "{N:m}" (map "N" 0.50) }}</th>
-					<th>{{ .Printer.Sprintf "{N:m}" (map "N" 1.00) }}</th>
-					<th>{{ .Printer.Sprintf "{N:m}" (map "N" 2.00) }}</th>
+					<th>{{ .Printer.Ftom 0.01 }}</th>
+					<th>{{ .Printer.Ftom 0.02 }}</th>
+					<th>{{ .Printer.Ftom 0.05 }}</th>
+					<th>{{ .Printer.Ftom 0.10 }}</th>
+					<th>{{ .Printer.Ftom 0.20 }}</th>
+					<th>{{ .Printer.Ftom 0.50 }}</th>
+					<th>{{ .Printer.Ftom 1.00 }}</th>
+					<th>{{ .Printer.Ftom 2.00 }}</th>
 				</thead>
 				<tbody>
 					{{ $p := .Printer }}
