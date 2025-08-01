@@ -51,8 +51,7 @@
 }
 
 :root {
-	--font-family: 'Source Sans 3', sans-serif, 'Apple Color Emoji',
-	               'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+	--font-family: 'Source Sans 3', sans-serif;
 	--line-height: 1.5;
 	--font-weight: 400;
 	--font-size: 16px;
