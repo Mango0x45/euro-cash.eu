@@ -2157,7 +2157,7 @@ textarea,
 	margin-top: var(--block-spacing-vertical);
 }
 
-.country-grid, .series-grid, .lang-grid {
+.button-grid {
 	display: grid;
 	grid-template-columns: repeat(
 		auto-fit,
