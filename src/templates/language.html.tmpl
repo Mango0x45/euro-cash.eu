@@ -9,6 +9,8 @@
 	}
 
 	.lang-grid {
+		--button-min-width: 22ch;
+
 		button {
 			display: flex;
 			align-items: center;
@@ -18,7 +20,7 @@
 			> :first-child {
 				font-size: 2em;
 				font-weight: 600; /* Between normal and bold */
-				width: calc(var(--form-element-spacing-horizontal) * 2 + 2ch);
+				min-width: calc(var(--form-element-spacing-horizontal) * 2 + 2ch);
 			}
 			> :nth-child(2) {
 				text-align: left;

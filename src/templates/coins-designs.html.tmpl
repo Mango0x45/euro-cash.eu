@@ -1,3 +1,24 @@
+{{ define "header" }}
+<style>
+	.country-grid {
+		--button-min-width: 20ch;
+
+		row-gap: var(--spacing);
+
+		a {
+			display: flex;
+			padding-left: 0;
+			padding-block: 1ch;
+
+			> :first-child {
+				font-weight: bold;
+				width: calc(var(--form-element-spacing-horizontal) * 2 + 2ch);
+			}
+		}
+	}
+</style>
+{{ end }}
+
 {{ define "content" }}
 <header>
 	{{ template "navbar" . }}
@@ -17,7 +38,8 @@
 			role="button"
 			href="/coins/designs/{{ .Code }}"
 		>
-			{{ .Name }}
+			<span>{{ .Code | toUpper }}</span>
+			<span>{{ .Name }}</span>
 		</a>
 		{{ end }}
 	</div>
