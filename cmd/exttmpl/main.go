@@ -22,7 +22,7 @@ type config struct {
 type translation struct {
 	msgid       string
 	msgidPlural string
-	msgctx      string
+	msgctxt     string
 	domain      string
 }
 
@@ -122,8 +122,8 @@ msgstr ""
 			fmt.Fprintln(outfile, "#:", x)
 		}
 
-		if tl.msgctx != "" {
-			writeField(outfile, "msgctx", tl.msgctx)
+		if tl.msgctxt != "" {
+			writeField(outfile, "msgctxt", tl.msgctxt)
 		}
 		writeField(outfile, "msgid", tl.msgid)
 		if tl.msgidPlural != "" {
@@ -222,7 +222,7 @@ func processNode(node parse.Node) {
 		}
 		if cfg.context != -1 {
 			if sn, ok := n.Args[cfg.context].(*parse.StringNode); ok {
-				tl.msgctx = sn.Text
+				tl.msgctxt = sn.Text
 			}
 		}
 
