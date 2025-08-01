@@ -68,7 +68,7 @@ func main() {
 		go watch.File(Try2(os.Executable()), app.Restart)
 	}
 
-	i18n.Init()
+	i18n.Init(Try2(os.OpenRoot("po")).FS(), app.Debugp)
 	dbx.Init(Try2(os.OpenRoot("src/dbx/sql")).FS())
 	app.BuildTemplates(Try2(os.OpenRoot("src/templates")).FS())
 	app.Run(*port)

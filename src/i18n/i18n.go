@@ -3,11 +3,16 @@ package i18n
 import (
 	"errors"
 	"fmt"
+	"io/fs"
+	"log"
 	"maps"
+	"slices"
 	"strings"
 	"time"
 	"unicode/utf8"
 
+	"git.thomasvoss.com/euro-cash.eu/pkg/atexit"
+	"git.thomasvoss.com/euro-cash.eu/pkg/watch"
 	"github.com/leonelquinteros/gotext"
 )
 
@@ -309,18 +314,51 @@ var (
 	DefaultPrinter Printer
 )
 
-func Init() {
-	for _, li := range locales {
-		if !li.Enabled {
-			continue
-		}
-		gl := gotext.NewLocale("po", li.Bcp)
-		gl.AddDomain("messages")
-		Printers[li.Bcp] = Printer{li, gl}
+func Init(dir fs.FS, debugp bool) {
+	gotext.FallbackLocale = "en"
+	i := slices.IndexFunc(locales[:], func(li LocaleInfo) bool {
+		return li.Bcp == gotext.FallbackLocale
+	})
+	if i == -1 {
+		atexit.Exec()
+		log.Fatalf("No translation file default locale ‘%s’\n",
+			gotext.FallbackLocale)
+	}
+	if !locales[i].Enabled {
+		atexit.Exec()
+		log.Fatalf("Default locale ‘%s’ is not enabled\n",
+			locales[i].Name)
 	}
 
-	gotext.FallbackLocale = "en"
+	initLocale(dir, locales[i], locales[i].Name, debugp)
 	DefaultPrinter = Printers[gotext.FallbackLocale]
+
+	for j, li := range locales {
+		if li.Enabled && i != j {
+			name := DefaultPrinter.GetC(li.Name, "Language Name")
+			initLocale(dir, li, name, debugp)
+		}
+	}
+}
+
+func initLocale(dir fs.FS, li LocaleInfo, name string, debugp bool) {
+	gl := gotext.NewLocaleFS(li.Bcp, dir)
+	gl.AddDomain("messages")
+	Printers[li.Bcp] = Printer{li, gl}
+
+	if debugp {
+		subdir, err := fs.Sub(dir, li.Bcp)
+		if err != nil {
+			log.Printf("No translations directory for ‘%s’\n", name)
+			return
+		}
+		go watch.FileFS(subdir, "messages.po", func() {
+			Printers[li.Bcp].inner.AddDomain("messages")
+			log.Printf("Translations for ‘%s’ updated\n", name)
+		})
+	}
+
+	log.Printf("Initialized printer for ‘%s’\n", name)
 }
 
 func Locales() []LocaleInfo {
