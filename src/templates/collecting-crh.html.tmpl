@@ -42,7 +42,7 @@
 	{{ $p := .Printer }}
 	{{ range .Countries }}
 	<details id="{{ .Code }}">
-		<summary>{{ $p.Get .Name }}</summary>
+		<summary>{{ .Name }}</summary>
 		{{ if eq .Code "ad" }}
 		<p>
 			{{ $p.Get "Coin rolls can be obtained from Andbank, Creand and MoraBanc. All three of these banks require that you are a customer to get rolls, however there have been reports of individuals managing to get rolls without any fees and without being a customer by simply asking kindly at the bank." }}
@@ -530,7 +530,7 @@
 
 		<p>
 			{{ $p.Get "We currently have no information regarding coin roll hunting in {Country}."
-				(map "Country" ($p.Get .Name)) }}
+				(map "Country" .Name) }}
 		</p>
 		{{ end }}
 	</details>

@@ -10,7 +10,6 @@
 	</p>
 	<hr />
 	<div class="button-grid country-grid">
-		{{ $p := .Printer }}
 		{{ range .Countries }}
 		<a
 			class="outline"
@@ -18,7 +17,7 @@
 			role="button"
 			href="/coins/designs/{{ .Code }}"
 		>
-			{{ $p.Get .Name }}
+			{{ .Name }}
 		</a>
 		{{ end }}
 	</div>
