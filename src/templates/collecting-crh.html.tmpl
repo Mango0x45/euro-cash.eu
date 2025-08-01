@@ -313,6 +313,12 @@
 			{{ $p.Get "Coin bags are available without fees for everyone. Smaller denominations are often not given out, and the coin bags you recieve are very large (there are reports of €1 bags containing 250 coins)." }}
 		</p>
 
+		{{ else if eq .Code "hr" }}
+
+		<p>
+			{{ $p.Get "We currently have no information regarding coin roll hunting in Croatia." }}
+		</p>
+
 		{{ else if eq .Code "ie" }}
 
 		<p>
@@ -386,6 +392,12 @@
 
 		<p>
 			{{ $p.Get "In general coin rolls are sold with for fee of €0.60 per roll, but we’re lacking a lot of information." }}
+		</p>
+
+		{{ else if eq .Code "mc" }}
+
+		<p>
+			{{ $p.Get "We currently have no information regarding coin roll hunting in Monaco." }}
 		</p>
 
 		{{ else if eq .Code "mt" }}
@@ -499,18 +511,18 @@
 			{{ $p.Get "You can get an unlimited number of rolls for a €5 fee. You must be a customer of the bank." }}
 		</p>
 
+		{{ else if eq .Code "sm" }}
+
+		<p>
+			{{ $p.Get "We currently have no information regarding coin roll hunting in San Marino." }}
+		</p>
+
 		{{ else if eq .Code "va" }}
 
 		<p>
 			{{ $p.Get "Ask the Pope nicely and he’ll probably give you some Vatican coins for free." }}
 		</p>
 
-		{{ else }}
-
-		<p>
-			{{ $p.Get "We currently have no information regarding coin roll hunting in {Country}."
-				(map "Country" .Name) }}
-		</p>
 		{{ end }}
 	</details>
 	{{ end }}
