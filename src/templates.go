@@ -33,6 +33,7 @@ var (
 		"safe":             asHTML,
 		"toUpper":          strings.ToUpper,
 		"tuple":            templateMakeTuple,
+		"withTranslation":  withTranslation,
 		"withTranslations": withTranslations,
 	}
 )
@@ -117,6 +118,28 @@ func ifElse(b bool, x, y any) any {
 		return x
 	}
 	return y
+}
+
+func withTranslation(tag, bcp, text string, trans template.HTML) template.HTML {
+	var bob strings.Builder
+	bob.WriteByte('<')
+	bob.WriteString(tag)
+	bob.WriteString(`><span lang="`)
+	bob.WriteString(bcp)
+	bob.WriteString(`">`)
+	bob.WriteString(text)
+	bob.WriteString("</span>")
+
+	if text != string(trans) {
+		bob.WriteString(`<br><span class="translation">`)
+		bob.WriteString(string(trans))
+		bob.WriteString("</span>")
+	}
+
+	bob.WriteString("</")
+	bob.WriteString(tag)
+	bob.WriteByte('>')
+	return template.HTML(bob.String())
 }
 
 func withTranslations(tag string, text string, translations ...[]any) template.HTML {

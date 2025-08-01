@@ -36,122 +36,106 @@
 		<thead>
 			<tr>
 				<th data-numeric style="width: 1%">{{ .Get "Position" }}</th>
-				<th>{{ .Get "Name" }}<br>{{ .Get "Translation" }}</th>
+				<th>
+					{{ .Get "Name" }}<br>
+					<span class="translation">{{ .Get "Translation" }}</span>
+				</th>
 				<th>{{ .Get "Author(s)" }}</th>
 				<th data-numeric>{{ .Get "Votes" }}</th>
 				<th data-numeric>{{ .Get "Votes (%)" }}</th>
 			</tr>
 		</thead>
 		<tbody>
-			{{ $args := (map "Break" "<br>") }}
+			{{ $args := map "Break" "<br>" }}
 			<tr>
 				<td data-numeric>1</td>
-				{{/* TRANSLATORS: This is a place name. If you’re translating for a latin-script language, translate this to ‘{Null}’, otherwise transliterate this into your respective alphabet. */}}
-				<td>Hara 2{{ .Get "{Break:r}Hara 2" $args }}</td>
+				{{/* TRANSLATORS: Name of a coin design. Don’t translate unless you use a non-latin script */}}
+				{{ withTranslation "td" "et" "Hara 2"
+					(.Get "Hara 2") }}
 				<td>{{ .Get "Lembit Lõhmus" }}</td>
 				<td data-numeric>{{ .Printer.Itoa 12482 }}</td>
-				<td data-numeric>{{ .Printer.Ftoa 27.46 }}</td>
+				<td data-numeric>{{ .Printer.Ftop 27.46 }}</td>
 			</tr>
 			<tr>
 				<td data-numeric>2</td>
-				<td>
-					<span lang="et">Järjepidevus</span>
-					{{/* TRANSLATORS: Estonian translators should replace the entire translation with ‘{Null}’ */}}
-					{{ .Get "{Break:r}Consistency" $args }}
-				</td>
+				{{ withTranslation "td" "et" "Järjepidevus"
+					(.Get "Consistency") }}
 				<td>{{ .Get "Tiit Jürna" }}</td>
 				<td data-numeric>{{ .Printer.Itoa 7477 }}</td>
-				<td data-numeric>{{ .Printer.Ftoa 16.45 }}</td>
+				<td data-numeric>{{ .Printer.Ftop 16.45 }}</td>
 			</tr>
 			<tr>
 				<td data-numeric>3</td>
-				<td>
-					<span lang="la">In corpore</span>
-					{{ .Get "{Break:r}In the Body" $args }}
-				</td>
+				{{ withTranslation "td" "la" "In corpore"
+					(.Get "In the Body") }}
 				<td>{{ .Get "Jaan Meristo" }}</td>
 				<td data-numeric>{{ .Printer.Itoa 7284 }}</td>
-				<td data-numeric>{{ .Printer.Ftoa 16.03 }}</td>
+				<td data-numeric>{{ .Printer.Ftop 16.03 }}</td>
 			</tr>
 			<tr>
 				<td data-numeric>4</td>
-				<td>
-					Tomson 5791
-					{{/* TRANSLATORS: This name. If you’re translating for a latin-script language, translate this to ‘{Null}’, otherwise transliterate this into your respective alphabet. */}}
-					{{ .Get "{Break:r}Tomson 5791" $args }}
-				</td>
+				{{/* TRANSLATORS: Name of a coin design. Don’t translate unless you use a non-latin script */}}
+				{{ withTranslation "td" "et" "Tomson 5791"
+					(.Get "Tomson 5791") }}
 				<td>{{ .Get "Taavi Torim" }}</td>
 				<td data-numeric>{{ .Printer.Itoa 6219 }}</td>
-				<td data-numeric>{{ .Printer.Ftoa 13.68 }}</td>
+				<td data-numeric>{{ .Printer.Ftop 13.68 }}</td>
 			</tr>
 			<tr>
 				<td data-numeric>5</td>
-				<td>
-					<span lang="et">Eesti keel</span>
-					{{/* TRANSLATORS: Estonian translators should replace the entire translation with ‘{Null}’ */}}
-					{{ .Get "{Break:r}Estonian" $args }}
-				</td>
+				{{/* TRANSLATORS: Name of a coin design. Don’t translate unless you use a non-latin script */}}
+				{{ withTranslation "td" "et" "Eesti keel"
+					(.GetC "Estonian" "Language Name") }}
 				<td>{{ .Get "Jaak Peep, Villem Valme" }}</td>
 				<td data-numeric>{{ .Printer.Itoa 5997 }}</td>
-				<td data-numeric>{{ .Printer.Ftoa 13.19 }}</td>
+				<td data-numeric>{{ .Printer.Ftop 13.19 }}</td>
 			</tr>
 			<tr>
 				<td data-numeric>6</td>
 				<td>261948</td>
 				<td>{{ .Get "Mai Järmut, Villu Järmut" }}</td>
 				<td data-numeric>{{ .Printer.Itoa 3036 }}</td>
-				<td data-numeric>{{ .Printer.Ftoa 6.68 }}</td>
+				<td data-numeric>{{ .Printer.Ftop 6.68 }}</td>
 			</tr>
 			<tr>
 				<td data-numeric>7</td>
-				<td>
-					<span lang="et">Linnutee</span>
-					{{/* TRANSLATORS: Estonian translators should replace the entire translation with ‘{Null}’ */}}
-					{{ .Get "{Break:r}Bird Road" $args }}
-				</td>
+				{{ withTranslation "td" "et" "Linnutee"
+					(.Get "Bird Road") }}
 				<td>{{ .Get "Tiit Jürna" }}</td>
 				<td data-numeric>{{ .Printer.Itoa 1323 }}</td>
-				<td data-numeric>{{ .Printer.Ftoa 2.91 }}</td>
+				<td data-numeric>{{ .Printer.Ftop 2.91 }}</td>
 			</tr>
 			<tr>
 				<td data-numeric>8</td>
-				<td>
-					<span lang="et">Leopardid-2</span>
-					{{/* TRANSLATORS: Estonian translators should replace the entire translation with ‘{Null}’ */}}
-					{{ .Get "{Break:r}Leopards-2" $args }}
-				</td>
+				{{ withTranslation "td" "et" "Leopardid-2"
+					(.Get "Leopards-2") }}
 				<td>{{ .Get "Jaarno Ester" }}</td>
 				<td data-numeric>{{ .Printer.Itoa 759 }}</td>
-				<td data-numeric>{{ .Printer.Ftoa 1.67 }}</td>
+				<td data-numeric>{{ .Printer.Ftop 1.67 }}</td>
 			</tr>
 			<tr>
 				<td data-numeric>9</td>
-				<td>
-					Nova
-					{{/* TRANSLATORS: This name. If you’re translating for a latin-script language, translate this to ‘{Null}’, otherwise transliterate this into your respective alphabet. */}}
-					{{ .Get "{Break:r}Nova" $args }}
-				</td>
+				{{/* TRANSLATORS: Name of a coin design. Don’t translate unless you use a non-latin script */}}
+				{{ withTranslation "td" "et" "Nova"
+					(.Get "Nova") }}
 				<td>{{ .Get "Rene Haljasmäe" }}</td>
 				<td data-numeric>{{ .Printer.Itoa 498 }}</td>
-				<td data-numeric>{{ .Printer.Ftoa 1.1 }}</td>
+				<td data-numeric>{{ .Printer.Ftop 1.1 }}</td>
 			</tr>
 			<tr>
 				<td data-numeric>10</td>
-				<td>
-					<span lang="et">Lill rukkis</span>
-					{{/* TRANSLATORS: Estonian translators should replace the entire translation with ‘{Null}’ */}}
-					{{ .Get "{Break:r}A Flower in the Rye" $args }}
-				</td>
+				{{ withTranslation "td" "et" "Lill rukkis"
+					(.Get "A Flower in the Rye") }}
 				<td>{{ .Get "Margus Kadarik" }}</td>
 				<td data-numeric>{{ .Printer.Itoa 378 }}</td>
-				<td data-numeric>{{ .Printer.Ftoa 0.83 }}</td>
+				<td data-numeric>{{ .Printer.Ftop 0.83 }}</td>
 			</tr>
 		</tbody>
 		<tfoot>
 			<tr>
 				<th colspan="3">{{ .Get "Total" }}</th>
 				<th data-numeric>{{ .Printer.Itoa 45453 }}</th>
-				<th data-numeric>{{ .Printer.Ftoa 100.0 }}</th>
+				<th data-numeric>{{ .Printer.Ftop 100.0 }}</th>
 			</tr>
 		</tfoot>
 	</table>
