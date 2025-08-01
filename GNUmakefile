@@ -57,4 +57,7 @@ clean:
 		-or -name '*.tar.gz'                                                    \
 	\) -delete
 
-.PHONY: clean extract po release
+debug:
+	./euro-cash.eu -debug -no-email -db-name :memory:
+
+.PHONY: clean debug extract po release
