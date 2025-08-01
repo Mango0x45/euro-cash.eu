@@ -1,4 +1,8 @@
+{{ define "header" }}
+{{ template "header-navbar" . }}
+{{ end }}
 {{ define "content" }}
+
 <header>
 	{{ template "navbar" . }}
 	<h1>{{ .Get "Euro Cash Jargon" }}</h1>

@@ -2156,38 +2156,6 @@ textarea,
 	column-gap: var(--grid-spacing-horizontal);
 }
 
-#nav-icon-lang a {
-	display: flex;
-	align-items: center;
-	gap: .5ch;
-}
-
-#nav-icon-lang svg {
-	stroke: var(--color);
-	height: 1rem;
-}
-
-#nav-icon-theme button {
-	background-color: unset;
-	margin: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 1.5rem;
-}
-
-#nav-icon-theme svg {
-	--size: 1.2rem;
-	stroke: var(--primary);
-	stroke-width: .1;
-	height: var(--size);
-	width: var(--size);
-}
-
-[data-theme="light"] #nav-icon-theme svg {
-	fill: var(--primary);
-}
-
 :is(td, th)[data-numeric] {
 	text-align: right;
 }

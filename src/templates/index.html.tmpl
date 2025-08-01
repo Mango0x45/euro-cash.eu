@@ -1,9 +1,14 @@
+{{ define "header" }}
+{{ template "header-navbar" . }}
+{{ end }}
+
 {{ define "content" }}
 <header>
 	{{ template "navbar" . }}
 	<hgroup>
 		<h1>{{ .Get "The Euro Cash Wiki" }}</h1>
 		<p>
+			<!-- TODO: Just make this one translation -->
 			{{/* TRANSLATORS: Beginning of sentence, as in ‘United in …’ */}}
 			{{ .Get "United in" }}
 			<del>{{ .Get "diversity" }}</del>
