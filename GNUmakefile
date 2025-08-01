@@ -16,7 +16,7 @@ euro-cash.eu: $(cssfiles) $(templates) $(gofiles) $(sqlfiles)
 	$(GO) build
 
 extract: exttmpl
-	find . -name '*.go' -exec xgotext -o po/backend.pot {} +
+	find . -name '*.go' -exec xgotext --foreign-user -o po/backend.pot {} +
 	find . -name '*.html.tmpl' -exec ./exttmpl {} + \
 		| msgcat po/backend.pot - -o po/messages.pot
 	for bcp in $(ENABLED_LANGUAGES);                                            \
@@ -28,7 +28,7 @@ extract: exttmpl
 			msginit -i po/messages.pot -o "$$dir/messages.po" -l$$bcp.UTF-8     \
 				--no-translator;                                                \
 		fi;                                                                     \
-		msgmerge --update "po/$$bcp/messages.po" po/messages.pot;               \
+		msgmerge -UN "po/$$bcp/messages.po" po/messages.pot;                    \
 	done
 	find po -name '*~' -delete
 

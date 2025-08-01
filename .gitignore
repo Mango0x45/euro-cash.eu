@@ -8,6 +8,7 @@ exttmpl
 out.gotext.json
 *.db
 *.gen.*
+*.pot
 *~
 po/backend.pot
 po/templates.pot
