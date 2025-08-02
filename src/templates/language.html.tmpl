@@ -38,7 +38,7 @@
 			{{ $save := . }}
 			{{ $ps := .Printers }}
 			{{ range locales }}
-				{{ if (and .Enabled (ne .Bcp $save.Printer.Bcp)) }}
+				{{ if (and .Enabledp (ne .Bcp $save.Printer.Bcp)) }}
 					[
 						"{{ .Bcp }}",
 						{{ $p := (index $ps .Bcp) }}
@@ -100,12 +100,12 @@
 <form action="/language" method="POST">
 	<div class="button-grid lang-grid">
 		{{ range locales }}
-			{{ if eq $ez .Eurozone }}
+			{{ if eq $ez .Eurozonep }}
 				<button
 					type="submit"
 					name="locale"
 					value="{{ .Bcp }}"
-					{{ if not .Enabled }}
+					{{ if not .Enabledp }}
 						disabled
 					{{ end }}
 				>

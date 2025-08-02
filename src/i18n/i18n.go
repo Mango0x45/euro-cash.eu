@@ -55,7 +55,7 @@ func Init(dir fs.FS, debugp bool) {
 		log.Fatalf("No translation file default locale ‘%s’\n",
 			gotext.FallbackLocale)
 	}
-	if !locales[i].Enabled {
+	if !locales[i].Enabledp {
 		atexit.Exec()
 		log.Fatalf("Default locale ‘%s’ is not enabled\n",
 			locales[i].Name)
@@ -65,7 +65,7 @@ func Init(dir fs.FS, debugp bool) {
 	DefaultPrinter = Printers[gotext.FallbackLocale]
 
 	for j, li := range locales {
-		if li.Enabled && i != j {
+		if li.Enabledp && i != j {
 			name := DefaultPrinter.GetC(li.Name, "Language Name")
 			initLocale(dir, li, name, debugp)
 		}

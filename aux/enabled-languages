@@ -8,4 +8,4 @@ sys.path.append("..")
 
 import src.i18n.gen
 
-print(" ".join(x.bcp for x in src.i18n.gen.LOCALES if x.enabled))
+print(" ".join(x.bcp for x in src.i18n.gen.LOCALES if x.enabledp))

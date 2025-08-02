@@ -21,8 +21,8 @@ class Rune(int):
 @dataclass
 class Locale:
 	bcp: str
-	eurozone: bool
-	enabled: bool
+	eurozonep: bool
+	enabledp: bool
 	territory: str | None             = dataclasses.field(default=None)
 	name: str                         = dataclasses.field(init=False)
 	date_format: str                  = dataclasses.field(init=False)
@@ -33,30 +33,30 @@ class Locale:
 
 
 LOCALES = (
-	Locale(bcp="ca", eurozone=True,  enabled=False),
-	Locale(bcp="de", eurozone=True,  enabled=False),
-	Locale(bcp="el", eurozone=True,  enabled=False),
-	Locale(bcp="en", eurozone=True,  enabled=True,  territory="GB"),
-	Locale(bcp="es", eurozone=True,  enabled=False),
-	Locale(bcp="et", eurozone=True,  enabled=False),
-	Locale(bcp="fi", eurozone=True,  enabled=False),
-	Locale(bcp="fr", eurozone=True,  enabled=False),
-	Locale(bcp="ga", eurozone=True,  enabled=False),
-	Locale(bcp="hr", eurozone=True,  enabled=False),
-	Locale(bcp="it", eurozone=True,  enabled=False),
-	Locale(bcp="lb", eurozone=True,  enabled=False),
-	Locale(bcp="lt", eurozone=True,  enabled=False),
-	Locale(bcp="lv", eurozone=True,  enabled=False),
-	Locale(bcp="mt", eurozone=True,  enabled=False),
-	Locale(bcp="nl", eurozone=True,  enabled=True),
-	Locale(bcp="pt", eurozone=True,  enabled=False, territory="PT"),
-	Locale(bcp="sk", eurozone=True,  enabled=False),
-	Locale(bcp="sl", eurozone=True,  enabled=False),
-	Locale(bcp="sv", eurozone=True,  enabled=True),
-	Locale(bcp="tr", eurozone=True,  enabled=False),
-	Locale(bcp="bg", eurozone=False, enabled=False),
-	Locale(bcp="ro", eurozone=False, enabled=False),
-	Locale(bcp="uk", eurozone=False, enabled=False),
+	Locale(bcp="ca", eurozonep=True,  enabledp=False),
+	Locale(bcp="de", eurozonep=True,  enabledp=False),
+	Locale(bcp="el", eurozonep=True,  enabledp=False),
+	Locale(bcp="en", eurozonep=True,  enabledp=True,  territory="GB"),
+	Locale(bcp="es", eurozonep=True,  enabledp=False),
+	Locale(bcp="et", eurozonep=True,  enabledp=False),
+	Locale(bcp="fi", eurozonep=True,  enabledp=False),
+	Locale(bcp="fr", eurozonep=True,  enabledp=False),
+	Locale(bcp="ga", eurozonep=True,  enabledp=False),
+	Locale(bcp="hr", eurozonep=True,  enabledp=False),
+	Locale(bcp="it", eurozonep=True,  enabledp=False),
+	Locale(bcp="lb", eurozonep=True,  enabledp=False),
+	Locale(bcp="lt", eurozonep=True,  enabledp=False),
+	Locale(bcp="lv", eurozonep=True,  enabledp=False),
+	Locale(bcp="mt", eurozonep=True,  enabledp=False),
+	Locale(bcp="nl", eurozonep=True,  enabledp=True),
+	Locale(bcp="pt", eurozonep=True,  enabledp=False, territory="PT"),
+	Locale(bcp="sk", eurozonep=True,  enabledp=False),
+	Locale(bcp="sl", eurozonep=True,  enabledp=False),
+	Locale(bcp="sv", eurozonep=True,  enabledp=True),
+	Locale(bcp="tr", eurozonep=True,  enabledp=False),
+	Locale(bcp="bg", eurozonep=False, enabledp=False),
+	Locale(bcp="ro", eurozonep=False, enabledp=False),
+	Locale(bcp="uk", eurozonep=False, enabledp=False),
 )
 
 BASELINK = "https://raw.githubusercontent.com/unicode-org/cldr-json/refs/heads/main/cldr-json/%s/main/%%s/%s"
@@ -87,7 +87,7 @@ import "github.com/leonelquinteros/gotext"
 
 type LocaleInfo struct {
 	Bcp, Name                        string
-	Eurozone, Enabled                bool
+	Eurozonep, Enabledp              bool
 	DateFormat                       string
 	GroupSeparator, DecimalSeparator rune
 	MonetaryFormats                  [2]string

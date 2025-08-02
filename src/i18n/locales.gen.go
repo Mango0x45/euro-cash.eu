@@ -6,7 +6,7 @@ import "github.com/leonelquinteros/gotext"
 
 type LocaleInfo struct {
 	Bcp, Name                        string
-	Eurozone, Enabled                bool
+	Eurozonep, Enabledp              bool
 	DateFormat                       string
 	GroupSeparator, DecimalSeparator rune
 	MonetaryFormats                  [2]string
@@ -16,7 +16,7 @@ type LocaleInfo struct {
 var locales = [...]LocaleInfo{
 	{
 		Bcp:              "ca",
-		Eurozone:         true,
+		Eurozonep:        true,
 		Name:             gotext.GetC("Català", "Language Name"),
 		GroupSeparator:   '.',
 		DecimalSeparator: ',',
@@ -26,7 +26,7 @@ var locales = [...]LocaleInfo{
 	},
 	{
 		Bcp:              "de",
-		Eurozone:         true,
+		Eurozonep:        true,
 		Name:             gotext.GetC("Deutsch", "Language Name"),
 		GroupSeparator:   '.',
 		DecimalSeparator: ',',
@@ -36,7 +36,7 @@ var locales = [...]LocaleInfo{
 	},
 	{
 		Bcp:              "el",
-		Eurozone:         true,
+		Eurozonep:        true,
 		Name:             gotext.GetC("Ελληνικά", "Language Name"),
 		GroupSeparator:   '.',
 		DecimalSeparator: ',',
@@ -46,8 +46,8 @@ var locales = [...]LocaleInfo{
 	},
 	{
 		Bcp:              "en",
-		Eurozone:         true,
-		Enabled:          true,
+		Eurozonep:        true,
+		Enabledp:         true,
 		Name:             gotext.GetC("English", "Language Name"),
 		GroupSeparator:   ',',
 		DecimalSeparator: '.',
@@ -57,7 +57,7 @@ var locales = [...]LocaleInfo{
 	},
 	{
 		Bcp:              "es",
-		Eurozone:         true,
+		Eurozonep:        true,
 		Name:             gotext.GetC("Español", "Language Name"),
 		GroupSeparator:   '.',
 		DecimalSeparator: ',',
@@ -67,7 +67,7 @@ var locales = [...]LocaleInfo{
 	},
 	{
 		Bcp:              "et",
-		Eurozone:         true,
+		Eurozonep:        true,
 		Name:             gotext.GetC("Eesti", "Language Name"),
 		GroupSeparator:   ' ',
 		DecimalSeparator: ',',
@@ -77,7 +77,7 @@ var locales = [...]LocaleInfo{
 	},
 	{
 		Bcp:              "fi",
-		Eurozone:         true,
+		Eurozonep:        true,
 		Name:             gotext.GetC("Suomi", "Language Name"),
 		GroupSeparator:   ' ',
 		DecimalSeparator: ',',
@@ -87,7 +87,7 @@ var locales = [...]LocaleInfo{
 	},
 	{
 		Bcp:              "fr",
-		Eurozone:         true,
+		Eurozonep:        true,
 		Name:             gotext.GetC("Français", "Language Name"),
 		GroupSeparator:   ' ',
 		DecimalSeparator: ',',
@@ -97,7 +97,7 @@ var locales = [...]LocaleInfo{
 	},
 	{
 		Bcp:              "ga",
-		Eurozone:         true,
+		Eurozonep:        true,
 		Name:             gotext.GetC("Gaeilge", "Language Name"),
 		GroupSeparator:   ',',
 		DecimalSeparator: '.',
@@ -107,7 +107,7 @@ var locales = [...]LocaleInfo{
 	},
 	{
 		Bcp:              "hr",
-		Eurozone:         true,
+		Eurozonep:        true,
 		Name:             gotext.GetC("Hrvatski", "Language Name"),
 		GroupSeparator:   '.',
 		DecimalSeparator: ',',
@@ -117,7 +117,7 @@ var locales = [...]LocaleInfo{
 	},
 	{
 		Bcp:              "it",
-		Eurozone:         true,
+		Eurozonep:        true,
 		Name:             gotext.GetC("Italiano", "Language Name"),
 		GroupSeparator:   '.',
 		DecimalSeparator: ',',
@@ -127,7 +127,7 @@ var locales = [...]LocaleInfo{
 	},
 	{
 		Bcp:              "lb",
-		Eurozone:         true,
+		Eurozonep:        true,
 		Name:             gotext.GetC("Lëtzebuergesch", "Language Name"),
 		GroupSeparator:   '.',
 		DecimalSeparator: ',',
@@ -137,7 +137,7 @@ var locales = [...]LocaleInfo{
 	},
 	{
 		Bcp:              "lt",
-		Eurozone:         true,
+		Eurozonep:        true,
 		Name:             gotext.GetC("Lietuvių", "Language Name"),
 		GroupSeparator:   ' ',
 		DecimalSeparator: ',',
@@ -147,7 +147,7 @@ var locales = [...]LocaleInfo{
 	},
 	{
 		Bcp:              "lv",
-		Eurozone:         true,
+		Eurozonep:        true,
 		Name:             gotext.GetC("Latviešu", "Language Name"),
 		GroupSeparator:   ' ',
 		DecimalSeparator: ',',
@@ -157,7 +157,7 @@ var locales = [...]LocaleInfo{
 	},
 	{
 		Bcp:              "mt",
-		Eurozone:         true,
+		Eurozonep:        true,
 		Name:             gotext.GetC("Malti", "Language Name"),
 		GroupSeparator:   ',',
 		DecimalSeparator: '.',
@@ -167,8 +167,8 @@ var locales = [...]LocaleInfo{
 	},
 	{
 		Bcp:              "nl",
-		Eurozone:         true,
-		Enabled:          true,
+		Eurozonep:        true,
+		Enabledp:         true,
 		Name:             gotext.GetC("Nederlands", "Language Name"),
 		GroupSeparator:   '.',
 		DecimalSeparator: ',',
@@ -178,7 +178,7 @@ var locales = [...]LocaleInfo{
 	},
 	{
 		Bcp:              "pt",
-		Eurozone:         true,
+		Eurozonep:        true,
 		Name:             gotext.GetC("Português", "Language Name"),
 		GroupSeparator:   ' ',
 		DecimalSeparator: ',',
@@ -188,7 +188,7 @@ var locales = [...]LocaleInfo{
 	},
 	{
 		Bcp:              "sk",
-		Eurozone:         true,
+		Eurozonep:        true,
 		Name:             gotext.GetC("Slovenčina", "Language Name"),
 		GroupSeparator:   ' ',
 		DecimalSeparator: ',',
@@ -198,7 +198,7 @@ var locales = [...]LocaleInfo{
 	},
 	{
 		Bcp:              "sl",
-		Eurozone:         true,
+		Eurozonep:        true,
 		Name:             gotext.GetC("Slovenščina", "Language Name"),
 		GroupSeparator:   '.',
 		DecimalSeparator: ',',
@@ -208,8 +208,8 @@ var locales = [...]LocaleInfo{
 	},
 	{
 		Bcp:              "sv",
-		Eurozone:         true,
-		Enabled:          true,
+		Eurozonep:        true,
+		Enabledp:         true,
 		Name:             gotext.GetC("Svenska", "Language Name"),
 		GroupSeparator:   ' ',
 		DecimalSeparator: ',',
@@ -219,7 +219,7 @@ var locales = [...]LocaleInfo{
 	},
 	{
 		Bcp:              "tr",
-		Eurozone:         true,
+		Eurozonep:        true,
 		Name:             gotext.GetC("Türkçe", "Language Name"),
 		GroupSeparator:   '.',
 		DecimalSeparator: ',',
