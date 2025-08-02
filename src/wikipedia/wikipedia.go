@@ -95,11 +95,11 @@ func Init(locale string) {
 }
 
 func Url(title, locale string) string {
+	base := "https://%s.wikipedia.org/wiki/%s"
 	title = url.PathEscape(title)
 	t, ok := titlemap[title][locale]
 	if !ok {
-		return fmt.Sprintf("https://%s.wikipedia.org/wiki/%s",
-			defaultLocale, title)
+		t, locale = title, defaultLocale
 	}
-	return fmt.Sprintf("https://%s.wikipedia.org/wiki/%s", locale, t)
+	return fmt.Sprintf(base, locale, t)
 }
