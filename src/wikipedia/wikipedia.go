@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"log"
 	"net/http"
 	"net/url"
 	"strconv"
@@ -17,13 +16,12 @@ var (
 	titlemap      = make(map[string]map[string]string)
 )
 
-func Init(locale string) {
+func Init(locale string) error {
 	defaultLocale = locale
 	base := fmt.Sprintf("https://%s.wikipedia.org/w/api.php", defaultLocale)
 	u, err := url.Parse(base)
 	if err != nil {
-		log.Println(err)
-		return
+		return err
 	}
 
 	var resp APIResponse
@@ -46,13 +44,11 @@ func Init(locale string) {
 
 		respjson, err := http.Get(u.String())
 		if err != nil {
-			log.Println(err)
-			return
+			return err
 		}
 		if respjson.StatusCode >= 400 &&
 			respjson.StatusCode != http.StatusTooManyRequests {
-			log.Printf("Failed to GET %s: %s\n", u, respjson.Status)
-			return
+			return fmt.Errorf("Failed to GET %s: %s", u, respjson.Status)
 		}
 		defer respjson.Body.Close()
 
@@ -63,14 +59,12 @@ func Init(locale string) {
 
 		body, err := io.ReadAll(respjson.Body)
 		if err != nil {
-			log.Println(err)
-			return
+			return err
 		}
 
 		resp = APIResponse{}
 		if err = json.Unmarshal(body, &resp); err != nil {
-			log.Println(err)
-			return
+			return err
 		}
 
 		for _, page := range resp.Query.Pages {
@@ -89,7 +83,7 @@ func Init(locale string) {
 		}
 
 		if resp.Continue == nil {
-			break
+			return nil
 		}
 	}
 }

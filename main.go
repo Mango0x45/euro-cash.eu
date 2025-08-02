@@ -70,7 +70,9 @@ func main() {
 	}
 
 	i18n.Init(Try2(os.OpenRoot("po")).FS(), app.Debugp)
-	wikipedia.Init(i18n.DefaultPrinter.Bcp)
+	if err := wikipedia.Init(i18n.DefaultPrinter.Bcp); err != nil {
+		log.Println(err)
+	}
 	dbx.Init(Try2(os.OpenRoot("src/dbx/sql")).FS())
 	app.BuildTemplates(Try2(os.OpenRoot("src/templates")).FS())
 	app.Run(*port)
