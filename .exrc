@@ -6,6 +6,8 @@ endfunction
 
 autocmd BufNewFile,BufRead */cmd/extpo/*
 	\ setlocal makeprg=go\ build\ ./cmd/extpo
+autocmd BufNewFile,BufRead */cmd/extwiki/*
+	\ setlocal makeprg=go\ build\ ./cmd/extwiki
 
 autocmd FileType go autocmd BufWritePre <buffer>
 	\ call s:SaveExcursion('gofmt -s')

@@ -7,6 +7,7 @@ sqlfiles  := $(shell find src/dbx/sql -name '*.sql')
 templates := $(shell find src/templates -name '*.tmpl')
 
 extpo   := $(wildcard cmd/extpo/*.go)
+extwiki := $(wildcard cmd/extwiki/*.go)
 
 ENABLED_LANGUAGES := $(shell ./aux/enabled-languages)
 
@@ -15,9 +16,11 @@ all: euro-cash.eu extpo
 euro-cash.eu: $(cssfiles) $(templates) $(gofiles) $(sqlfiles)
 	$(GO) build
 
-extract: extpo
+extract: extpo extwiki
 	find . -name '*.go' -exec xgotext --foreign-user -o po/backend.pot {} +
-	find . -name '*.html.tmpl' -exec ./extpo {} + \
+	find . -name '*.html.tmpl' -exec ./extwiki {} +                             \
+		| gofmt >src/wikipedia/links.gen.go
+	find . -name '*.html.tmpl' -exec ./extpo {} +                               \
 		| msgcat po/backend.pot - -o po/messages.pot
 	for bcp in $(ENABLED_LANGUAGES);                                            \
 	do                                                                          \
@@ -41,6 +44,9 @@ po:
 extpo: $(extpo)
 	$(GO) build ./cmd/extpo
 
+extwiki: $(extwiki)
+	$(GO) build ./cmd/extwiki
+
 %.min.css: %.css
 	if command -v lightningcss >/dev/null;                                      \
 	then                                                                        \
@@ -53,6 +59,7 @@ clean:
 	find . -type f \(                                                           \
 		-name euro-cash.eu                                                      \
 		-or -name extpo                                                         \
+		-or -name extwiki                                                       \
 		-or -name '*.min.css'                                                   \
 		-or -name '*.tar.gz'                                                    \
 	\) -delete
