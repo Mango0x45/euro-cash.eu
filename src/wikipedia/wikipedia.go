@@ -7,7 +7,9 @@ import (
 	"log"
 	"net/http"
 	"net/url"
+	"strconv"
 	"strings"
+	"time"
 )
 
 var (
@@ -47,7 +49,17 @@ func Init(locale string) {
 			log.Println(err)
 			return
 		}
+		if respjson.StatusCode >= 400 &&
+			respjson.StatusCode != http.StatusTooManyRequests {
+			log.Printf("Failed to GET %s: %s\n", u, respjson.Status)
+			return
+		}
 		defer respjson.Body.Close()
+
+		secs, err := strconv.Atoi(respjson.Header.Get("Retry-After"))
+		if err != nil {
+			time.Sleep(time.Duration(secs) * time.Second)
+		}
 
 		body, err := io.ReadAll(respjson.Body)
 		if err != nil {
