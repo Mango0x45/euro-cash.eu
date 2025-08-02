@@ -2244,7 +2244,7 @@ dl dt:not(:first-child) {
  *     </h3>
  */
 
-*:has(> .translation) {
+:has(> .translation) {
 	line-height: 1.1;
 }
 
