@@ -1,9 +1,0 @@
-#!/bin/sh
-
-grab '
-	x/^\s*locales\s*=.*?LocaleInfo(?<c>\{(\g<c>|[^}{]+)*\})/
-	x/(^|\n)\s*{.*?\n\s*\}/
-	g/Enabled:\s*true,/
-	x/(?<=Bcp:)[^\n]+/
-	x/\w+/
-' <src/i18n/i18n.go

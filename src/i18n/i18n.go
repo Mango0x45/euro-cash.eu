@@ -1,3 +1,5 @@
+//go:generate ./gen.py
+
 package i18n
 
 import (
@@ -21,16 +23,6 @@ type Printer struct {
 	inner *gotext.Locale
 }
 
-type LocaleInfo struct {
-	Bcp, Name                        string
-	Eurozone, Enabled                bool
-	DateFormat                       string
-	GroupSeparator, DecimalSeparator rune
-	MonetaryPre                      [2]string
-	MonetarySuf                      string
-	PercentPre, PercentSuf           string
-}
-
 type number interface {
 	int | float64
 }
@@ -49,293 +41,6 @@ var (
 		'r': sprintfr,
 	}
 
-	/* To determine the correct currency-, date-, and number formats to
-	   use, use the ‘getfmt’ script in the repository root */
-	locales = [...]LocaleInfo{
-		{
-			Bcp:              "ca",
-			Name:             gotext.GetC("Català", "Language Name"),
-			DateFormat:       "2/1/2006",
-			Eurozone:         true,
-			Enabled:          false,
-			GroupSeparator:   '.',
-			DecimalSeparator: ',',
-			MonetaryPre:      [2]string{"", "-"},
-			MonetarySuf:      " €",
-			PercentSuf:       " %",
-		},
-		{
-			Bcp:              "de",
-			Name:             gotext.GetC("Deutsch", "Language Name"),
-			DateFormat:       "2.1.2006",
-			Eurozone:         true,
-			Enabled:          false,
-			GroupSeparator:   '.',
-			DecimalSeparator: ',',
-			MonetaryPre:      [2]string{"", "-"},
-			MonetarySuf:      " €",
-			PercentSuf:       " %",
-		},
-		{
-			Bcp:              "el",
-			Name:             gotext.GetC("Ελληνικά", "Language Name"),
-			DateFormat:       "2/1/2006",
-			Eurozone:         true,
-			Enabled:          false,
-			GroupSeparator:   '.',
-			DecimalSeparator: ',',
-			MonetaryPre:      [2]string{"", "-"},
-			MonetarySuf:      " €",
-			PercentSuf:       "%",
-		},
-		{
-			Bcp:              "en",
-			Name:             gotext.GetC("English", "Language Name"),
-			DateFormat:       "02/01/2006",
-			Eurozone:         true,
-			Enabled:          true,
-			GroupSeparator:   ',',
-			DecimalSeparator: '.',
-			MonetaryPre:      [2]string{"€", "-€"},
-			PercentSuf:       "%",
-		},
-		{
-			Bcp:              "es",
-			Name:             gotext.GetC("Español", "Language Name"),
-			DateFormat:       "2/1/2006",
-			Eurozone:         true,
-			Enabled:          false,
-			GroupSeparator:   '.',
-			DecimalSeparator: ',',
-			MonetaryPre:      [2]string{"", "-"},
-			MonetarySuf:      " €",
-			PercentSuf:       " %",
-		},
-		{
-			Bcp:              "et",
-			Name:             gotext.GetC("Eesti", "Language Name"),
-			DateFormat:       "2.1.2006",
-			Eurozone:         true,
-			Enabled:          false,
-			GroupSeparator:   ' ',
-			DecimalSeparator: ',',
-			MonetaryPre:      [2]string{"", "-"},
-			MonetarySuf:      " €",
-			PercentSuf:       "%",
-		},
-		{
-			Bcp:              "fi",
-			Name:             gotext.GetC("Suomi", "Language Name"),
-			DateFormat:       "2.1.2006",
-			Eurozone:         true,
-			Enabled:          false,
-			GroupSeparator:   ' ',
-			DecimalSeparator: ',',
-			MonetaryPre:      [2]string{"", "-"},
-			MonetarySuf:      " €",
-			PercentSuf:       " %",
-		},
-		{
-			Bcp:              "fr",
-			Name:             gotext.GetC("Français", "Language Name"),
-			DateFormat:       "02/01/2006",
-			Eurozone:         true,
-			Enabled:          false,
-			GroupSeparator:   ' ',
-			DecimalSeparator: ',',
-			MonetaryPre:      [2]string{"", "-"},
-			MonetarySuf:      " €",
-			PercentSuf:       " %",
-		},
-		{
-			Bcp:              "ga",
-			Name:             gotext.GetC("Gaeilge", "Language Name"),
-			DateFormat:       "02/01/2006",
-			Eurozone:         true,
-			Enabled:          false,
-			GroupSeparator:   ',',
-			DecimalSeparator: '.',
-			MonetaryPre:      [2]string{"€", "-€"},
-			PercentSuf:       "%",
-		},
-		{
-			Bcp:              "hr",
-			Name:             gotext.GetC("Hrvatski", "Language Name"),
-			DateFormat:       "02. 01. 2006.",
-			Eurozone:         true,
-			Enabled:          false,
-			GroupSeparator:   '.',
-			DecimalSeparator: ',',
-			MonetaryPre:      [2]string{"", "-"},
-			MonetarySuf:      " €",
-			PercentSuf:       " %",
-		},
-		{
-			Bcp:              "it",
-			Name:             gotext.GetC("Italiano", "Language Name"),
-			DateFormat:       "02/01/2006",
-			Eurozone:         true,
-			Enabled:          false,
-			GroupSeparator:   '.',
-			DecimalSeparator: ',',
-			MonetaryPre:      [2]string{"", "-"},
-			MonetarySuf:      " €",
-			PercentSuf:       "%",
-		},
-		{
-			Bcp:              "lb",
-			Name:             gotext.GetC("Lëtzebuergesch", "Language Name"),
-			DateFormat:       "2.1.2006",
-			Eurozone:         true,
-			Enabled:          false,
-			GroupSeparator:   '.',
-			DecimalSeparator: ',',
-			MonetaryPre:      [2]string{"", "-"},
-			MonetarySuf:      " €",
-			PercentSuf:       " %",
-		},
-		{
-			Bcp:              "lt",
-			Name:             gotext.GetC("Lietuvių", "Language Name"),
-			DateFormat:       "2006-01-02",
-			Eurozone:         true,
-			Enabled:          false,
-			GroupSeparator:   ' ',
-			DecimalSeparator: ',',
-			MonetaryPre:      [2]string{"", "-"},
-			MonetarySuf:      " €",
-			PercentSuf:       " %",
-		},
-		{
-			Bcp:              "lv",
-			Name:             gotext.GetC("Latviešu", "Language Name"),
-			DateFormat:       "2.01.2006.",
-			Eurozone:         true,
-			Enabled:          false,
-			GroupSeparator:   ' ',
-			DecimalSeparator: ',',
-			MonetaryPre:      [2]string{"", "-"},
-			MonetarySuf:      " €",
-			PercentSuf:       "%",
-		},
-		{
-			Bcp:              "mt",
-			Name:             gotext.GetC("Malti", "Language Name"),
-			DateFormat:       "2/1/2006",
-			Eurozone:         true,
-			Enabled:          false,
-			GroupSeparator:   ',',
-			DecimalSeparator: '.',
-			MonetaryPre:      [2]string{"€", "-€"},
-			PercentSuf:       "%",
-		},
-		{
-			Bcp:              "nl",
-			Name:             gotext.GetC("Nederlands", "Language Name"),
-			DateFormat:       "2-1-2006",
-			Eurozone:         true,
-			Enabled:          true,
-			GroupSeparator:   '.',
-			DecimalSeparator: ',',
-			MonetaryPre:      [2]string{"€ ", "€ -"},
-			PercentSuf:       "%",
-		},
-		{
-			Bcp:              "pt",
-			Name:             gotext.GetC("Português", "Language Name"),
-			DateFormat:       "02/01/2006",
-			Eurozone:         true,
-			Enabled:          false,
-			GroupSeparator:   '.',
-			DecimalSeparator: ',',
-			MonetaryPre:      [2]string{"€ ", "€ -"},
-			PercentSuf:       "%",
-		},
-		{
-			Bcp:              "sk",
-			Name:             gotext.GetC("Slovenčina", "Language Name"),
-			DateFormat:       "2. 1. 2006",
-			Eurozone:         true,
-			Enabled:          false,
-			GroupSeparator:   ' ',
-			DecimalSeparator: ',',
-			MonetaryPre:      [2]string{"", "-"},
-			MonetarySuf:      " €",
-			PercentSuf:       " %",
-		},
-		{
-			Bcp:              "sl",
-			Name:             gotext.GetC("Slovenščina", "Language Name"),
-			DateFormat:       "2. 1. 2006",
-			Eurozone:         true,
-			Enabled:          false,
-			GroupSeparator:   '.',
-			DecimalSeparator: ',',
-			MonetaryPre:      [2]string{"", "-"},
-			MonetarySuf:      " €",
-			PercentSuf:       " %",
-		},
-		{
-			Bcp:              "sv",
-			Name:             gotext.GetC("Svenska", "Language Name"),
-			DateFormat:       "2006-01-02",
-			Eurozone:         true,
-			Enabled:          true,
-			GroupSeparator:   ' ',
-			DecimalSeparator: ',',
-			MonetaryPre:      [2]string{"", "-"},
-			MonetarySuf:      " €",
-			PercentSuf:       " %",
-		},
-		{
-			Bcp:              "tr",
-			Name:             gotext.GetC("Türkçe", "Language Name"),
-			DateFormat:       "2.01.2006",
-			Eurozone:         true,
-			Enabled:          false,
-			GroupSeparator:   '.',
-			DecimalSeparator: ',',
-			MonetaryPre:      [2]string{"€", "-€"},
-			PercentPre:       "%",
-		},
-		/* Non-Eurozone locales */
-		{
-			Bcp:              "bg",
-			Name:             gotext.GetC("Български", "Language Name"),
-			DateFormat:       "2.01.2006 г.",
-			Eurozone:         false, /* TODO(2026): Set to true */
-			Enabled:          false,
-			GroupSeparator:   ' ',
-			DecimalSeparator: ',',
-			MonetaryPre:      [2]string{"", "-"},
-			MonetarySuf:      " €",
-			PercentSuf:       "%",
-		},
-		{
-			Bcp:              "ro",
-			Name:             gotext.GetC("Română", "Language Name"),
-			DateFormat:       "02.01.2006",
-			Eurozone:         false,
-			Enabled:          false,
-			GroupSeparator:   '.',
-			DecimalSeparator: ',',
-			MonetaryPre:      [2]string{"", "-"},
-			MonetarySuf:      " €",
-			PercentSuf:       " %",
-		},
-		{
-			Bcp:              "uk",
-			Name:             gotext.GetC("Yкраїнська", "Language Name"),
-			DateFormat:       "02.01.2006",
-			Eurozone:         false,
-			Enabled:          false,
-			GroupSeparator:   ' ',
-			DecimalSeparator: ',',
-			MonetaryPre:      [2]string{"", "-"},
-			MonetarySuf:      " €",
-			PercentSuf:       "%",
-		},
-	}
 	Printers       map[string]Printer = make(map[string]Printer, len(locales))
 	DefaultPrinter Printer
 )
@@ -593,20 +298,16 @@ func sprintfm(li LocaleInfo, bob *strings.Builder, v any) error {
 }
 
 func sprintfp(li LocaleInfo, bob *strings.Builder, v any) error {
+	var bob2 strings.Builder
 	switch v.(type) {
 	case int:
-		n := v.(int)
-		htmlesc(bob, li.PercentPre)
-		writeInt(bob, n, li)
-		htmlesc(bob, li.PercentSuf)
+		writeInt(&bob2, v.(int), li)
 	case float64:
-		n := v.(float64)
-		htmlesc(bob, li.PercentPre)
-		writeFloat(bob, n, li)
-		htmlesc(bob, li.PercentSuf)
+		writeFloat(&bob2, v.(float64), li)
 	default:
 		return errors.New("TODO")
 	}
+	bob.WriteString(fmt.Sprintf(li.PercentFormat, bob2.String()))
 	return nil
 }
 

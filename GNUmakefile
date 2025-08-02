@@ -8,7 +8,7 @@ templates := $(shell find src/templates -name '*.tmpl')
 
 exttmpl := $(wildcard cmd/exttmpl/*.go)
 
-ENABLED_LANGUAGES := $(shell ./enabled-languages)
+ENABLED_LANGUAGES := $(shell ./aux/enabled-languages)
 
 all: euro-cash.eu exttmpl
 
