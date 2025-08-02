@@ -12,125 +12,125 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/i18n/i18n.go:55
+#: src/i18n/locales.gen.go:21
 msgctxt "Language Name"
 msgid "Català"
 msgstr "Catalaans"
 
-#: src/i18n/i18n.go:66
+#: src/i18n/locales.gen.go:32
 msgctxt "Language Name"
 msgid "Deutsch"
 msgstr "Duits"
 
-#: src/i18n/i18n.go:77
+#: src/i18n/locales.gen.go:43
 msgctxt "Language Name"
 msgid "Ελληνικά"
 msgstr "Grieks"
 
-#: src/i18n/i18n.go:88
+#: src/i18n/locales.gen.go:55
 msgctxt "Language Name"
 msgid "English"
 msgstr "Engels"
 
-#: src/i18n/i18n.go:98
+#: src/i18n/locales.gen.go:65
 msgctxt "Language Name"
 msgid "Español"
 msgstr "Spaans"
 
-#: src/i18n/i18n.go:109
+#: src/i18n/locales.gen.go:76
 msgctxt "Language Name"
 msgid "Eesti"
 msgstr "Estisch"
 
-#: src/i18n/i18n.go:120
+#: src/i18n/locales.gen.go:87
 msgctxt "Language Name"
 msgid "Suomi"
 msgstr "Fins"
 
-#: src/i18n/i18n.go:131
+#: src/i18n/locales.gen.go:98
 msgctxt "Language Name"
 msgid "Français"
 msgstr "Frans"
 
-#: src/i18n/i18n.go:142
+#: src/i18n/locales.gen.go:109
 msgctxt "Language Name"
 msgid "Gaeilge"
 msgstr "Iers"
 
-#: src/i18n/i18n.go:152
+#: src/i18n/locales.gen.go:119
 msgctxt "Language Name"
 msgid "Hrvatski"
 msgstr "Kroatisch"
 
-#: src/i18n/i18n.go:163
+#: src/i18n/locales.gen.go:130
 msgctxt "Language Name"
 msgid "Italiano"
 msgstr "Italiaans"
 
-#: src/i18n/i18n.go:174
+#: src/i18n/locales.gen.go:141
 msgctxt "Language Name"
 msgid "Lëtzebuergesch"
 msgstr "Luxemburgs"
 
-#: src/i18n/i18n.go:185
+#: src/i18n/locales.gen.go:152
 msgctxt "Language Name"
 msgid "Lietuvių"
 msgstr "Litouws"
 
-#: src/i18n/i18n.go:196
+#: src/i18n/locales.gen.go:163
 msgctxt "Language Name"
 msgid "Latviešu"
 msgstr "Lets"
 
-#: src/i18n/i18n.go:207
+#: src/i18n/locales.gen.go:174
 msgctxt "Language Name"
 msgid "Malti"
 msgstr "Maltees"
 
-#: src/i18n/i18n.go:217
+#: src/i18n/locales.gen.go:185
 msgctxt "Language Name"
 msgid "Nederlands"
 msgstr "Nederlands"
 
-#: src/i18n/i18n.go:227
+#: src/i18n/locales.gen.go:195
 msgctxt "Language Name"
 msgid "Português"
 msgstr "Portugees"
 
-#: src/i18n/i18n.go:237
+#: src/i18n/locales.gen.go:206
 msgctxt "Language Name"
 msgid "Slovenčina"
 msgstr "Slowaaks"
 
-#: src/i18n/i18n.go:248
+#: src/i18n/locales.gen.go:217
 msgctxt "Language Name"
 msgid "Slovenščina"
 msgstr "Sloveens"
 
-#: src/i18n/i18n.go:259
+#: src/i18n/locales.gen.go:229
 msgctxt "Language Name"
 msgid "Svenska"
 msgstr "Zweeds"
 
-#: src/i18n/i18n.go:270
+#: src/i18n/locales.gen.go:240
 msgctxt "Language Name"
 msgid "Türkçe"
 msgstr "Turks"
 
-#: src/i18n/i18n.go:281
+#: src/i18n/locales.gen.go:249
 msgctxt "Language Name"
 msgid "Български"
 msgstr "Bulgaars"
 
-#: src/i18n/i18n.go:292
+#: src/i18n/locales.gen.go:259
 msgctxt "Language Name"
 msgid "Română"
 msgstr "Roemeens"
 
-#: src/i18n/i18n.go:303
+#: src/i18n/locales.gen.go:269
 msgctxt "Language Name"
-msgid "Yкраїнська"
-msgstr "Oekraïens"
+msgid "Українська"
+msgstr ""
 
 #: src/countries.go:18
 msgctxt "Country Name"
@@ -278,846 +278,14 @@ msgctxt "Country Name"
 msgid "Vatican City"
 msgstr "Vaticaanstad"
 
-#: src/templates/coins-designs-de.html.tmpl:8
-msgid "German Euro Coin Designs"
-msgstr ""
-
-#: src/templates/coins-designs-hr.html.tmpl:21
-msgid ""
-"The Croatian euro coins feature four different themes, with each design "
-"featuring the Croatian checkerboard and the country’s name in Croatian "
-"(‘{CroatianStart:r}HRVATSKA{CroatianEnd:E}’). All designs were selected "
-"after voting in a public design competition."
-msgstr ""
-
-#: src/templates/coins-designs-be.html.tmpl:33
-msgid ""
-"After his accession to the throne, Belgium began a third series of coins in "
-"2014 featuring the portrait of King Philippe. As is customary with coins "
-"bearing the portraits of monarchs, the direction in which the portrait faces "
-"was flipped to face right instead of left."
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:262
-msgid ""
-"Coin rolls used to be obtainable without fees, however you can no longer "
-"obtain rolls."
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:461
-msgid ""
-"Coin rolls are available for a fee of {€0,30:m} per roll. You must withdraw "
-"between 10–20 rolls."
-msgstr ""
-
-#: src/templates/jargon.html.tmpl:29
-msgid ""
-"BU is a general term to refer to coins from coincards and sets. These are "
-"different from UNC coins in that they are typically handled with more care "
-"during the minting process and are struck with higher-quality dies than "
-"coins minted for general circulation, resulting in a higher-quality coin."
-msgstr ""
-
-#: src/templates/jargon.html.tmpl:47
-msgid "Relief"
-msgstr ""
-
-#: src/templates/coins-designs-at.html.tmpl:18
-msgid "Austrian €0.02 coin"
-msgstr ""
-
-#: src/templates/coins-designs-at.html.tmpl:30
-msgid ""
-"The €0.10 coin features St. Stephen’s Cathedral. It symbolises the Viennese "
-"Gothic architectural style dating to around the year 1160. The €0.20 coin "
-"features Belvedere Palace. This is an example of Baroque architecture and "
-"symbolises the national freedom and sovereignty of Austria. The final gold "
-"coin — the €0.50 coin — features the Secession Building: an exhibition hall "
-"in the Art Nouveau style."
-msgstr ""
-
-#. TRANSLATORS: The OeNB prefers ‘Oe’ over ‘Ö’
-#: src/templates/collecting-crh.html.tmpl:57
-msgid "Austrian National Bank"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:244
-msgid "Bank of Finland"
-msgstr ""
-
-#: src/templates/banknotes-codes.html.tmpl:222
-msgid ""
-"In the Europa series the first letter of the serial number can be used to "
-"identify the printer that printed the banknote, just like the printer code. "
-"The following table shows which countries map to which codes."
-msgstr ""
-
-#: src/templates/coins-designs-ee.html.tmpl:18
-msgid ""
-"The Estonian euro coins feature the same design across all eight "
-"denominations. The country’s outline is prominently displayed above the "
-"country’s name in Estonian (‘{EstonianStart:r}EESTI{EstonianEnd:E}’)."
-msgstr ""
-
-#: src/templates/coins.html.tmpl:43
-msgid "View all the known Euro varieties"
-msgstr ""
-
-#: src/templates/coins-mintages.html.tmpl:8
-msgid "Euro Coin Mintages"
-msgstr ""
-
-#: src/templates/coins-mintages.html.tmpl:47
-msgid "NIFC / BU Sets"
-msgstr ""
-
-#: src/templates/coins-designs-de.html.tmpl:47
-msgid "Hamburg"
-msgstr ""
-
-#: src/templates/coins-designs-at.html.tmpl:19
-msgid "Austrian €0.05 coin"
-msgstr ""
-
-#. TRANSLATORS: Name of a bank
-#: src/templates/collecting-crh.html.tmpl:133
-msgid "Belfius"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:240
-msgid ""
-"Finland has no coin roll machines, but you can find vending machines or coin "
-"exchange machines that accept cash (although they can be rather rare)."
-msgstr ""
-
-#: src/templates/coins-designs-be.html.tmpl:13
-msgid "Belgian €1 coin (King Albert; Series 1)"
-msgstr ""
-
-#: src/templates/coins-designs-ee.html.tmpl:94
-msgid "Jaak Peep, Villem Valme"
-msgstr ""
-
-#: src/templates/coins-designs-at.html.tmpl:12
-msgid ""
-"The Austrian euro coins can be grouped into three different themes. The "
-"bronze coins feature Austrian flowers, the gold coins feature Austrian "
-"architecture, and the bimetalic coins feature famous Austrian people. All "
-"coins also feature an Austrian flag as well as the coins denomination. These "
-"coins together with the {Link:l}Greek euro coins{-:E} are the only coins "
-"that feature the denomination on both the common and national sides of the "
-"coin."
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:255
-msgid ""
-"The Mint of Finland ceased all operations in late 2024 but still sells coins "
-"on their website."
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:359
-msgid ""
-"There are coin roll machines but it is unknown if you need to be a customer "
-"or if there are additional fees."
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:521
-msgid "Tatra banka"
-msgstr ""
-
-#: src/templates/banknotes-codes.html.tmpl:15
-msgid "Printer Code"
-msgstr ""
-
-#: src/templates/banknotes-codes.html.tmpl:190
-#: src/templates/banknotes-codes.html.tmpl:284
-msgid "Royal Mint of Spain"
-msgstr ""
-
-#: src/templates/coins-mintages.html.tmpl:12
-msgid ""
-"Here you’ll be able to view all the known mintages for all coins. You’ll "
-"also be able to filter on country, denomination, etc. If you have any "
-"mintage data that’s missing from our site, feel free to contact us."
-msgstr ""
-
-#: src/templates/banknotes-codes.html.tmpl:59
-#: src/templates/banknotes-codes.html.tmpl:138
-#: src/templates/banknotes-codes.html.tmpl:228
-#: src/templates/coins-mintages.html.tmpl:28
-msgid "Country"
-msgstr ""
-
-#. TRANSLATORS: On the German page the filter is called ‘Münzrollengeber’. For other languages we link to the English site, so mention the English filter name surrounded by ‘{EnglishStart:r}’ and ‘{EnglishEnd:E}’, and also translate it in parenthesis to your language. For example the Swedish page might say: ‘”{EnglishStart:r}coin roll dispenser{EnglishEnd:E}” (svenska: ”myntrullsautomat”)’
-#: src/templates/collecting-crh.html.tmpl:71
-msgid ""
-"There is a fee of {€0,20:m} per roll which can be purchased with cash at "
-"machines. These machines are available to everyone but not in all branches. "
-"Look for the ‘coin roll dispenser’ filter option {Link:L}here{-:E}."
-msgstr ""
-
-#. TRANSLATORS: Name of a bank
-#: src/templates/collecting-crh.html.tmpl:307
-msgid "LCL"
-msgstr ""
-
-#: src/templates/jargon.html.tmpl:52
-msgid "UNC — Uncirculated"
-msgstr ""
-
-#: src/templates/coins.html.tmpl:30
-msgid "Mintages"
-msgstr ""
-
-#: src/templates/coins-mintages.html.tmpl:49
-msgid "Proof Coins"
-msgstr ""
-
-#: src/templates/coins-designs-hr.html.tmpl:8
-msgid "Croatian Euro Coin Designs"
-msgstr ""
-
-#. TRANSLATORS: This name. If you’re translating for a latin-script language, translate this to ‘{Null}’, otherwise transliterate this into your respective alphabet.
-#: src/templates/coins-designs-ee.html.tmpl:132
-msgid "{Break:r}Nova"
-msgstr ""
-
-#: src/templates/banknotes-codes.html.tmpl:239
-msgctxt "Country Name"
-msgid "Bulgaria"
-msgstr ""
-
-#: src/templates/coins-designs.html.tmpl:27
-msgid "Euro Coin Designs"
-msgstr "Euromuntontwerpen"
-
-#: src/templates/collecting.html.tmpl:41
-msgid "Shop Hunting"
-msgstr ""
-
-#: src/templates/coins-designs-de.html.tmpl:19
-msgid ""
-"The German euro coins feature three different designs. A unique feature of "
-"German euro coins are the mint marks on each coin that denote in which city "
-"a given coin was minted. Germany has five active mints that produce Euro "
-"coins, which are denoted in the table below."
-msgstr ""
-
-#: src/templates/coins-designs-ee.html.tmpl:38
-msgid "Position"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:248
-msgid ""
-"It is probably not possible to obtain coin rolls, but this is not confirmed."
-msgstr ""
-
-#: src/templates/jargon.html.tmpl:62
-msgid ""
-"Coin roll hunting is a general term for the activity of collecting coins by "
-"searching through coin rolls and bags. Coin rolls and bags are often "
-"obtained at banks or coin roll machines."
-msgstr ""
-
-#: src/templates/-navbar.html.tmpl:47
-msgid "Coins"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:164
-msgid "German Post"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:475
-msgid "Rabobank"
-msgstr ""
-
-#: src/templates/coins-designs-at.html.tmpl:33
-msgid "Austrian €1 coin"
-msgstr ""
-
-#: src/templates/collecting.html.tmpl:8
-msgid "Euro Coin Collecting"
-msgstr ""
-
-#: src/templates/coins-mintages.html.tmpl:19
-msgid ""
-"Most coins from the years 2003–2016 are listed as NIFC coins while other "
-"popular sources such as Numista claim they were minted for circulation. For "
-"more information on why others are wrong, {Link:l}click here{-:E}."
-msgstr ""
-
-#: src/templates/coins-designs-ad.html.tmpl:12
-msgid "Andorran €0.01 coin"
-msgstr ""
-
-#: src/templates/coins-designs-ad.html.tmpl:17
-msgid "Andorran €2 coin"
-msgstr ""
-
-#: src/templates/coins-designs-ad.html.tmpl:25
-msgid "€0.10, €0.20 and €0.50"
-msgstr ""
-
-#: src/templates/banknotes-codes.html.tmpl:17
-msgid ""
-"The printer code (not to be confused with the serial number) is a small code "
-"printed on banknotes with information about where the banknote was printed. "
-"All printer codes have the form ‘X000X0’ — or in other words — a letter "
-"followed by 3 numbers, a letter and a final number."
-msgstr ""
-
-#: src/templates/collecting.html.tmpl:44
-msgid "Learn about how to collect coins from shops"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:21
-msgid ""
-"Depending on your bank and branch, the process of obtaining coins may "
-"differ. Some banks require you speak to a teller while others have coin "
-"machines. Some banks may also require that you are a customer or even that "
-"you have a business account. If you aren’t sure about if you can get coins "
-"we suggest you contact your bank, although further down this page we also "
-"have additional information about the withdrawal of coins in various "
-"countries and major banks."
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:252
-msgid "Mint of Finland"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:495
-msgid "Coin bags are sold with no additional fees to bank customers."
-msgstr ""
-
-#: src/templates/coins-designs-ad.html.tmpl:26
-msgid "Andorra’s Romanesque art"
-msgstr ""
-
-#: src/templates/coins-designs-ad.html.tmpl:38
-msgid ""
-"The Andorran golden cents feature the Romanesque church of Santa Coloma. The "
-"church is the oldest in Andorra, dating back to the 9th century and is a "
-"UNESCO World Heritage site. Originally these coins were planned to depict an "
-"image of Christ, but that plan failed to go through after objections from "
-"the European Commission on grounds of religious neutrality on August 2013."
-msgstr ""
-
-#: src/templates/jargon.html.tmpl:58
-msgid "Collector-Specific Terms"
-msgstr ""
-
-#: src/templates/index.html.tmpl:22
-msgid ""
-"Welcome to the Euro Cash Wiki! This sites aims to be a resource for you to "
-"discover everything there is to know about the coins and banknotes of the "
-"Euro, a currency that spans 26 countries and 350 million people. We also "
-"have dedicated sections of the site for collectors."
-msgstr ""
-
-#: src/templates/coins-designs-ee.html.tmpl:134
-msgid "Rene Haljasmäe"
-msgstr ""
-
-#: src/templates/banknotes-codes.html.tmpl:12
-msgid ""
-"Euro banknotes have two codes on them: a printer code and a serial number. "
-"The printer code tells you where a given note was printed, while the serial "
-"number tells you which country issued the banknote (for the 2002 series) or "
-"where the banknote was printed (for the Europa series)."
-msgstr ""
-
-#: src/templates/-base.html.tmpl:44
-msgid "Found a mistake or want to contribute missing information?"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:160
-msgid ""
-"You can obtain regular and commemorative coins for face value including 5-, "
-"10- and 20 euro coins. You do not need to be a customer although depending "
-"on your branch you may need to make an appointment. The purchase of coins "
-"can only be done with cash."
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:365
-msgid "Bank of Lithuania"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:488
-msgid "Coin bags are sold with no additional fees to everyone."
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:517
-msgid ""
-"You may be able to get uncirculated rolls, but this is not yet confirmed."
-msgstr ""
-
-#: src/templates/-base.html.tmpl:45
-msgid "Feel free to contact us!"
-msgstr ""
-
-#: src/templates/coins-designs-de.html.tmpl:26
-msgid "Mintmark"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:34
-msgid ""
-"In some countries such as Austria it is even common to be able to withdraw "
-"new coins from your account using other coins."
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:64
-msgid "Bank Austria"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:393
-msgid ""
-"We currently have no information regarding regular coins, however their "
-"webshop sells commemorative coins. Commemorative coins are also available "
-"for purchase in-person."
-msgstr ""
-
-#: src/templates/coins-designs-de.html.tmpl:64
-msgid ""
-"The €2 coin also features an edge-inscription of Germany’s national motto "
-"and incipit of Germany’s national anthem. It reads ‘{GermanStart:r}EINIGKEIT "
-"UND RECHT UND FREIHEIT{GermanEnd:E}’ (English: ‘UNITY AND JUSTICE AND "
-"FREEDOM’)."
-msgstr ""
-
-#: src/templates/coins-designs-ee.html.tmpl:70
-msgid "{Break:r}In the Body"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:225
+#: src/templates/collecting-crh.html.tmpl:210
 msgid "Madrid"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:536
-msgid ""
-"We currently have no information regarding coin roll hunting in {Country}."
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:193
-msgid "Bank of Estonia Museum"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:226
-msgid "Coin rolls have no fees."
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:352
-msgid "Coin rolls are available to everyone."
-msgstr ""
-
-#. TRANSLATORS: Name of a bank
-#: src/templates/collecting-crh.html.tmpl:398
-msgid "Dexia"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:485
-msgid "Bank of Portugal"
-msgstr ""
-
-#: src/templates/-navbar.html.tmpl:57
-msgid "About"
-msgstr ""
-
-#: src/templates/coins-designs-ee.html.tmpl:62
-#: src/templates/coins-designs-ee.html.tmpl:112
-msgid "Tiit Jürna"
-msgstr ""
-
-#: src/templates/banknotes.html.tmpl:23
-msgid "View the different Euro banknote designs"
-msgstr ""
-
-#: src/templates/banknotes.html.tmpl:33
-msgid "Find out where your notes were printed"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:11
-msgid "What is Coin Roll Hunting?"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:372
-msgid "ExchangeLT"
-msgstr ""
-
-#: src/templates/coins-designs-hr.html.tmpl:29
-msgid ""
-"The 10-, 20- and 50 euro cent coins were designed by Ivan Domagoj Račić and "
-"feature the portrait of the inventor and engineer {Link:L}Nikola Tesla{-:E}. "
-"The design of these coins caused controversy when they were first announced "
-"with the National Bank of Serbia claiming that it would be an appropriation "
-"of the cultural and scientific heritage of the Serbian people to feature the "
-"portrait of someone who ‘declared himself to be Serbian by origin’."
-msgstr ""
-
-#: src/templates/coins-designs-at.html.tmpl:37
-msgid ""
-"The two bimetallic coins feature the busts of the musical composer Wolfgang "
-"Amadeus Mozarts on the €1 coin, and the Austrian pacifist and Nobel Peace "
-"Prize winner Bertha von Suttner."
-msgstr ""
-
-#: src/templates/jargon.html.tmpl:35
-msgid ""
-"NIFC coins are coins minted without the intention of being put into general "
-"circulation. These coins are typically minted with the purpose of being put "
-"into coincards or sets to be sold to collectors. Occasionally they are also "
-"handed out to collectors for face value at banks."
-msgstr ""
-
-#. TRANSLATORS: Name of a bank
-#: src/templates/collecting-crh.html.tmpl:301
-msgid "Crédit Agricole"
-msgstr ""
-
-#: src/templates/coins-designs-be.html.tmpl:8
-msgid "Belgian Euro Coin Designs"
-msgstr ""
-
-#: src/templates/collecting.html.tmpl:30
-msgid "Coin Storage"
-msgstr ""
-
-#: src/templates/coins-designs-de.html.tmpl:14
-msgid "German €0.01 coin"
-msgstr ""
-
-#: src/templates/coins-designs-hr.html.tmpl:13
-msgid "Croatian €0.01 coin"
-msgstr ""
-
-#: src/templates/coins-designs-hr.html.tmpl:38
-msgid ""
-"The 2 euro coin was designed by Ivan Šivak and features the map of Croatia. "
-"The coin also has an edge-inscription that reads ‘{CroatianStart:r}O LIJEPA "
-"O DRAGA O SLATKA SLOBODO{CroatianEnd:E}’ (English: ‘OH BEAUTIFUL, OH DEAR, "
-"OH SWEET FREEDOM’) which is a line from the play {Link:L}Dubravka{-:E} by "
-"Ivan Gundulić."
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:174
-msgid ""
-"Coin rolls can be obtained for a fee of {€0,50:m}–{€1,50:m} per roll. The "
-"amount varies per branch."
-msgstr ""
-
-#: src/templates/language.html.tmpl:50 src/templates/language.html.tmpl:93
-msgid "Other Languages"
-msgstr "Andere talen"
-
-#: src/templates/coins-mintages.html.tmpl:16
-msgid "Additional Notes"
-msgstr ""
-
-#: src/templates/coins-designs-at.html.tmpl:34
-msgid "Austrian €2 coin"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:30
-msgid ""
-"It is also important to find details regarding the deposit of coins. "
-"Depositing coins often also requires the payment of a fee — one which is "
-"typically more expensive than the withdrawal fees. If depositing your coins "
-"is too expensive you can always exchange your left over coins at shops for "
-"banknotes. It is often cheaper (or even free) to deposit banknotes."
-msgstr ""
-
-#: src/templates/banknotes-codes.html.tmpl:210
-#: src/templates/banknotes-codes.html.tmpl:304
-#: src/templates/collecting-crh.html.tmpl:106
-msgid "National Bank of Belgium"
-msgstr ""
-
-#: src/templates/jargon.html.tmpl:54
-msgid ""
-"Uncirculated coins are coins that have never been used in a monetary "
-"exchange. The term ‘UNC’ is often mistakenly used to refer to coins in very "
-"good condition, but this is incorrect. A coin in poor condition that has "
-"never been circulated is still considered an ‘UNC’ coin."
-msgstr ""
-
-#: src/templates/coins-designs-nl.html.tmpl:37
-msgid ""
-"Coins featuring both monarchs contain text reading ‘{DutchStart:r}BEATRIX "
-"KONINGIN DER NEDERLANDEN{DutchEnd:E}’ (English: ‘BEATRIX QUEEN OF THE "
-"NETHERLANDS’) and ‘{DutchStart:r}Willem-Alexander Koning der "
-"Nederlanden{DutchEnd:E}’ (English: ‘Willem-Alexander King of the "
-"Netherlands’) respectively. The €2 coins also feature an edge-inscription "
-"reading ‘{DutchStart:r}GOD ⋆ ZIJ ⋆ MET ⋆ ONS ⋆{DutchEnd:E}’ (English: "
-"‘GOD ⋆ IS ⋆ WITH ⋆ US ⋆’)."
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:125
-msgid "KBC Bank"
-msgstr ""
-
-#: src/templates/coins.html.tmpl:23
-msgid "View the 600+ different Euro-coin designs"
-msgstr ""
-
-#: src/templates/coins-designs-at.html.tmpl:8
-msgid "Austrian Euro Coin Designs"
-msgstr ""
-
-#: src/templates/coins-designs-ad.html.tmpl:8
-msgid "Andorran Euro Coin Designs"
-msgstr ""
-
-#: src/templates/collecting.html.tmpl:23
-msgid "Learn about collecting coins from coin rolls"
-msgstr ""
-
-#: src/templates/banknotes-codes.html.tmpl:37
-msgid "Europa Series Printer Codes"
-msgstr ""
-
-#. TRANSLATORS: As in ‘5 Euro Banknote’
-#: src/templates/banknotes-codes.html.tmpl:316
-msgid "{N} Euro"
-msgid_plural "{N} Euro"
-msgstr[0] ""
-msgstr[1] ""
-
-#: src/templates/index.html.tmpl:9
-msgid "The Euro Cash Wiki"
-msgstr ""
-
-#: src/templates/about.html.tmpl:13
-msgid ""
-"This website is an open project, and a collaboration between developers, "
-"translators, and researchers. All source code, data, images, and more for "
-"the website are open source and can be found {LinkGit:L}here{-:E}. This site "
-"is licensed under the {LinkBSD:L}BSD Zero Clause License{-:E} giving you the "
-"full freedom to do whatever you would like with any of the content on this "
-"site."
-msgstr ""
-
-#: src/templates/-navbar.html.tmpl:98
-msgid "Language"
-msgstr ""
-
-#: src/templates/coins-designs-de.html.tmpl:31
-msgid "Berlin"
-msgstr ""
-
-#: src/templates/coins-designs-be.html.tmpl:17
-msgid "Belgian €1 coin (King Albert; Series 2)"
-msgstr ""
-
-#: src/templates/coins-designs-ee.html.tmpl:39
-msgid "Name"
-msgstr ""
-
-#. TRANSLATORS: Name of a bank
-#: src/templates/collecting-crh.html.tmpl:216
-msgid "BBVA"
-msgstr ""
-
-#. TRANSLATORS: City in Spain
-#: src/templates/collecting-crh.html.tmpl:220
-msgid "Alicante"
-msgstr ""
-
-#: src/templates/-404.html.tmpl:12
-msgid ""
-"The page you were looking for does not exist. If you believe this is a "
-"mistake then don’t hesitate to contact ‘@onetruemangoman’ on Discord or "
-"email us at {Email:e}."
-msgstr ""
-
-#: src/templates/collecting.html.tmpl:56
-msgid "Learn about collecting coins from vending machines"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:267
-msgid ""
-"Coin roll machines are uncommon, only some banks have them and you typically "
-"need to be a customer. You may also need to order coin rolls in advance."
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:375
-msgid "Coin rolls are available with a fee of 5%."
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:478
-msgid "Coin rolls are available for a fee of {€7:m} + {€0,50:m} per roll."
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:514
-msgid "National Bank of Slovakia"
-msgstr ""
-
-#: src/templates/jargon.html.tmpl:20
-msgid "General Terms"
-msgstr ""
-
-#: src/templates/index.html.tmpl:15
-msgid "cash"
-msgstr ""
-
-#: src/templates/banknotes.html.tmpl:20 src/templates/coins.html.tmpl:20
-msgid "Designs"
-msgstr ""
-
-#: src/templates/coins-designs-hr.html.tmpl:14
-msgid "Croatian €0.50 coin"
-msgstr ""
-
-#: src/templates/coins-designs-be.html.tmpl:26
-msgid ""
-"Since 1999 Belgium has released three series of euro coins, with each series "
-"having a single design repeated on all denominations. Starting in 1999 the "
-"Belgian euro coins featured the portrait of King Albert II with the {Link:L}"
-"royal monogram{-:E} in the outer ring of the coins."
-msgstr ""
-
-#: src/templates/coins-designs-at.html.tmpl:25
-msgid "Austrian €0.10 coin"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:205
-msgid ""
-"You can purchase individual coins and commemorative coin rolls (even those "
-"of other countries). You can watch a video {Link:L}here{-:E} to see how to "
-"do it."
-msgstr ""
-
-#. TRANSLATORS: Name of a bank
-#: src/templates/collecting-crh.html.tmpl:283
-msgid "CIC"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:450
-msgid "The Dutch Central Bank"
-msgstr ""
-
-#. TRANSLATORS: Beginning of sentence, as in ‘United in …’
-#: src/templates/index.html.tmpl:13
-msgid "United in"
-msgstr ""
-
-#: src/templates/coins.html.tmpl:33
-msgid "View the mintage figures of all the Euro coins"
-msgstr ""
-
-#: src/templates/coins.html.tmpl:40
-msgid "Varieties"
-msgstr ""
-
-#: src/templates/collecting.html.tmpl:33
-msgid "Learn about the different methods to storing your collection"
-msgstr ""
-
-#. TRANSLATORS: Estonian translators should replace the entire translation with ‘{Null}’
-#: src/templates/coins-designs-ee.html.tmpl:110
-msgid "{Break:r}Bird Road"
 msgstr ""
 
 #: src/templates/banknotes-codes.html.tmpl:185
 #: src/templates/banknotes-codes.html.tmpl:279
-#: src/templates/collecting-crh.html.tmpl:271
+#: src/templates/collecting-crh.html.tmpl:256
 msgid "Bank of France"
-msgstr ""
-
-#. TRANSLATORS: Name of a bank
-#: src/templates/collecting-crh.html.tmpl:277
-msgid "Caisse d’Épargne"
-msgstr ""
-
-#: src/templates/banknotes-codes.html.tmpl:195
-#: src/templates/banknotes-codes.html.tmpl:299
-#: src/templates/collecting-crh.html.tmpl:316
-msgid "Bank of Greece"
-msgstr ""
-
-#: src/templates/coins-mintages.html.tmpl:102
-msgid "Mintage"
-msgstr ""
-
-#: src/templates/-error.html.tmpl:15
-msgid ""
-"If this issue persists, don’t hesitate to contact ‘@onetruemangoman’ on "
-"Discord or to email us at {Email:e}"
-msgstr ""
-
-#: src/templates/about.html.tmpl:19
-msgid ""
-"While we try to stay as up-to-date as possible and to fact check our "
-"information, it is always possible that we get something wrong, lack a "
-"translation, or are missing some piece of data you may have. Should that be "
-"the case, don’t hesitate to contact us; we’ll try to get the site updated or "
-"fixed as soon as possible. You are always free to contribute via a git patch "
-"if you are more technically inclined, but if not you can always send an "
-"email to {Email:e} or contact ‘@onetruemangoman’ on Discord."
-msgstr ""
-
-#: src/templates/-error.html.tmpl:12
-msgid ""
-"If you’re seeing this page, it means that something went wrong on our end "
-"that we need to fix. Our team has been notified of this error, and we "
-"apologise for the inconvenience."
-msgstr ""
-
-#: src/templates/coins-designs-de.html.tmpl:60
-msgid ""
-"The bimetallic coins feature an interpretation of the German Federal Eagle "
-"(German: ‘{GermanStart:r}Bundesadler{GermanEnd:E}’). The eagle is a common "
-"motif in German heraldry — including in the German coat of arms — and "
-"represents strength and freedom. The mint mark is located to the right of "
-"the year."
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:146
-msgid ""
-"At the Bank of Cyprus it is possible to buy bags of coins without being a "
-"customer, and without paying any additional fees. Depending on the branch "
-"you visit there may be a coin roll machine available. Do note that the bags "
-"provided by the Bank of Cyprus are much larger than what is typically found "
-"elsewhere in the Eurozone with {€2,00:m} bags containing 50 coins and the "
-"other denomination bags containing 100 coins."
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:356
-msgid "Banca di Cambiano"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:368
-msgid ""
-"Allegedly, coin rolls are only available for businesses, but this needs "
-"additional confirmation."
-msgstr ""
-
-#: src/templates/coins-designs-ee.html.tmpl:8
-msgid "Estonian Euro Coin Designs"
-msgstr ""
-
-#: src/templates/coins-designs-ee.html.tmpl:51
-msgid "Lembit Lõhmus"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:37
-msgid "Country-Specific Details"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:189
-msgid ""
-"Obtaining coin rolls in Estonia is typically quite difficult and often "
-"expensive. You also generally need to make an appointment in advance."
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:524
-msgid ""
-"You can get an unlimited number of rolls for a {€5} fee. You must be a "
-"customer of the bank."
-msgstr ""
-
-#: src/templates/coins-designs-ad.html.tmpl:51
-msgid ""
-"The bottom of the coat of arms has the motto ‘{LatinStart:r}VIRTVS VNITA "
-"FORTIOR{LatinEnd:E}’ (English: ‘UNITED VIRTUE IS STRONGER’)."
 msgstr ""
 
 #: src/templates/banknotes-codes.html.tmpl:47
@@ -1132,144 +300,291 @@ msgid ""
 "left corner of the printing sheet, with ‘A2’ to its right and ‘B1’ below it."
 msgstr ""
 
-#: src/templates/banknotes-codes.html.tmpl:169
-msgctxt "Country Name"
-msgid "United Kingdom"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:13
+#: src/templates/coins-designs-de.html.tmpl:19
 msgid ""
-"Coin roll hunting is a popular method of coin collecting in which you "
-"withdraw cash from your bank in the form of coins and then search through "
-"those coins to find new additions to your collection. Once you’ve searched "
-"through all your coins, you will typically deposit your left over coins at "
-"the bank and withdraw new coins."
+"The German euro coins feature three different designs. A unique feature of "
+"German euro coins are the mint marks on each coin that denote in which city "
+"a given coin was minted. Germany has five active mints that produce Euro "
+"coins, which are denoted in the table below."
 msgstr ""
 
-#: src/templates/collecting-crh.html.tmpl:422
-#: src/templates/collecting-crh.html.tmpl:430
-msgid ""
-"You can get rolls for a fee of {€0,30:m} per roll. You must order coin rolls "
-"through their online platform, and you must be a customer."
+#: src/templates/coins-designs-at.html.tmpl:26
+msgid "Austrian €0.20 coin"
 msgstr ""
 
-#: src/templates/collecting-crh.html.tmpl:492
-msgid "Banco Comercial Português"
+#: src/templates/coins-designs-at.html.tmpl:34
+msgid "Austrian €2 coin"
 msgstr ""
 
-#: src/templates/banknotes-codes.html.tmpl:25
-msgid "All these images are taken from {Link:L}eurobilltracker.com{-:E}."
+#: src/templates/collecting-crh.html.tmpl:155
+msgid "Hand-rolled coin rolls can be obtained with no additional fees."
 msgstr ""
 
-#: src/templates/banknotes-codes.html.tmpl:220
-msgid "Europa Series"
+#: src/templates/-navbar.html.tmpl:46
+msgid "Coin Collecting"
 msgstr ""
 
-#: src/templates/jargon.html.tmpl:22
-msgid "AU — Almost Uncirculated"
+#: src/templates/-navbar.html.tmpl:98
+msgid "Language"
 msgstr ""
 
-#: src/templates/coins-mintages.html.tmpl:82
-#: src/templates/coins-mintages.html.tmpl:120
-msgid "Error"
+#: src/templates/coins-designs-de.html.tmpl:47
+msgid "Hamburg"
+msgstr ""
+
+#: src/templates/coins-designs-be.html.tmpl:17
+msgid "Belgian €1 coin (King Albert; Series 2)"
+msgstr ""
+
+#: src/templates/coins-designs-ee.html.tmpl:38
+msgid "Position"
+msgstr ""
+
+#: src/templates/coins-designs-ee.html.tmpl:41
+msgid "Translation"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:145
+msgid "German Federal Bank"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:179
+msgid "Bank of Estonia Museum"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:8
+#: src/templates/collecting.html.tmpl:20
+msgid "Coin Roll Hunting"
 msgstr ""
 
 #: src/templates/coins-mintages.html.tmpl:97
 msgid "Commemorative Coins"
 msgstr ""
 
-#: src/templates/collecting-crh.html.tmpl:453
-msgid "Obtaining coins from the Dutch Central Bank is not possible."
+#: src/templates/banknotes.html.tmpl:8
+msgid "Euro Banknotes"
 msgstr ""
 
-#: src/templates/collecting.html.tmpl:12
+#: src/templates/banknotes.html.tmpl:33
+msgid "Find out where your notes were printed"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:196
+msgid "Santander Bank"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:310
+msgid "Piraeus Bank"
+msgstr ""
+
+#: src/templates/jargon.html.tmpl:44
 msgid ""
-"On this section of the site you can find everything there is to know about "
-"collecting Euro coins. If this is a hobby that interests you, join the "
-"Discord server linked at the top of the page!"
+"Post-mint damage is any damage that a coin has sustained outside of the "
+"minting process, such as through being dropped on the ground, hit against a "
+"table, etc."
 msgstr ""
 
-#: src/templates/coins-designs-ee.html.tmpl:29
+#: src/templates/coins-designs-be.html.tmpl:30
 msgid ""
-"The winner of the contest was awarded 50,000 KR (€3,196) while the other "
-"finalists were each awarded 20,000 KR (€1,278)."
+"In 2008 a second series of coins was released featuring a slightly modified "
+"design in which the royal monogram was moved to the inner portion of the "
+"coin along with the year of mintage in order to comply with the European "
+"Commission’s guidelines. The country code ‘BE’ was also added to the design "
+"underneath the royal monogram."
 msgstr ""
 
-#: src/templates/banknotes.html.tmpl:43
-msgid "Learn about the special test notes"
+#: src/templates/coins-designs-at.html.tmpl:8
+msgid "Austrian Euro Coin Designs"
 msgstr ""
 
-#: src/templates/collecting-crh.html.tmpl:77
-msgid "Erste Bank"
+#. TRANSLATORS: The OeNB prefers ‘Oe’ over ‘Ö’
+#: src/templates/collecting-crh.html.tmpl:57
+msgid "Austrian National Bank"
 msgstr ""
 
-#: src/templates/collecting-crh.html.tmpl:441
+#. TRANSLATORS: On the German page the filter is called ‘Münzrollengeber’. For other languages we link to the English site, so mention the English filter name surrounded by ‘{EnglishStart:r}’ and ‘{EnglishEnd:E}’, and also translate it in parenthesis to your language. For example the Swedish page might say: ‘”{EnglishStart:r}coin roll dispenser{EnglishEnd:E}” (svenska: ”myntrullsautomat”)’
+#: src/templates/collecting-crh.html.tmpl:71
 msgid ""
-"Banks in the Netherlands do not carry cash, and as such it’s not possible to "
-"obtain rolls from bank tellers. If you want to obtain coin rolls you need to "
-"use a Geldmaat coin roll machine which can be found in specific branches of "
-"GAMMA and Karwei. Geldmaat offers a map on their website where you can "
-"search for branches with these machines; you can find that map {Link:L}"
-"here{-:E}. Coin rolls are only available to customers of the banks listed "
-"below."
+"There is a fee of €0.20 per roll which can be purchased with cash at "
+"machines. These machines are available to everyone but not in all branches. "
+"Look for the ‘coin roll dispenser’ filter option {Link:L}here{-:E}."
 msgstr ""
 
-#: src/templates/collecting-crh.html.tmpl:446
+#: src/templates/collecting-crh.html.tmpl:80
 msgid ""
-"1- and 2 cent coins have been removed from circulation and cannot be "
-"obtained."
+"There is a fee of €0.10 per roll. You must be a customer to use machines to "
+"get rolls. Rolls have no fees when purchased at counters, but you will "
+"probably be redirected to the machines if they work. You must present an "
+"Erste Bank card to buy rolls from machines, however payment in cash is still "
+"accepted."
 msgstr ""
 
-#: src/templates/banknotes-codes.html.tmpl:320
-msgid "Printer code on a {N} euro bill"
-msgid_plural "Printer code on a {N} euro bill"
-msgstr[0] ""
-msgstr[1] ""
+#: src/templates/collecting-crh.html.tmpl:406
+msgid "Central Bank of Malta"
+msgstr ""
 
-#: src/templates/jargon.html.tmpl:12
+#: src/templates/coins-designs-ee.html.tmpl:13
+msgid "Estonian €1 coin"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:110
 msgid ""
-"Both on this website and in other related forums you will come across many "
-"terms that you may not be familiar with. This page will hopefully get you up "
-"to speed with the most important and frequently-used terminology."
+"There is a €1.50 fee per transaction with no limit on the number of rolls "
+"you may take."
 msgstr ""
 
-#: src/templates/coins-designs-ee.html.tmpl:39
-msgid "Translation"
+#. TRANSLATORS: Name of a bank
+#: src/templates/collecting-crh.html.tmpl:268
+msgid "CIC"
 msgstr ""
 
-#: src/templates/collecting-crh.html.tmpl:52
+#: src/templates/-404.html.tmpl:12
 msgid ""
-"Coin rolls can be obtained from Andbank, Creand and MoraBanc. All three of "
-"these banks require that you are a customer to get rolls, however there have "
-"been reports of individuals managing to get rolls without any fees and "
-"without being a customer by simply asking kindly at the bank."
+"The page you were looking for does not exist. If you believe this is a "
+"mistake then don’t hesitate to contact ‘@onetruemangoman’ on Discord or "
+"email us at {Email:e}."
 msgstr ""
 
-#: src/templates/collecting-crh.html.tmpl:182
-msgid "Coin rolls can be obtained for a fee of {€0,25:m} per roll."
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:508
+#: src/templates/collecting-crh.html.tmpl:302
 msgid ""
-"You can purchase commemorative coins for face value, and coin rolls are sold "
-"with no fees to everyone."
+"{EmphStart:r}NOTE{EmphEnd:E}: The Bank of Greece (Greece’s central bank) is "
+"NOT the same as the National Bank of Greece (a commercial bank)."
 msgstr ""
 
-#: src/templates/jargon.html.tmpl:24
+#: src/templates/collecting-crh.html.tmpl:394
 msgid ""
-"AU coins are coins that are in extremely good condition as a result of "
-"limited use in circulation. Unlike the term ‘UNC’, this term is a "
-"description of the coins quality, not its usage. AU coins often appear to "
-"retain most of their original luster as well as possessing little to no "
-"scratches or other forms of post-mint damage (PMD)."
+"In general coin rolls are sold with for fee of €0.60 per roll, but we’re "
+"lacking a lot of information."
 msgstr ""
 
-#: src/templates/language.html.tmpl:49 src/templates/language.html.tmpl:88
-msgid "Eurozone Languages"
-msgstr "Talen van de eurozone"
+#: src/templates/banknotes-codes.html.tmpl:17
+msgid ""
+"The printer code (not to be confused with the serial number) is a small code "
+"printed on banknotes with information about where the banknote was printed. "
+"All printer codes have the form ‘X000X0’ — or in other words — a letter "
+"followed by 3 numbers, a letter and a final number."
+msgstr ""
 
-#: src/templates/-navbar.html.tmpl:44
-msgid "Home"
+#: src/templates/banknotes-codes.html.tmpl:8
+#: src/templates/banknotes.html.tmpl:30
+msgid "Location Codes"
+msgstr ""
+
+#: src/templates/index.html.tmpl:14
+msgid "diversity"
+msgstr ""
+
+#: src/templates/about.html.tmpl:13
+msgid ""
+"This website is an open project, and a collaboration between developers, "
+"translators, and researchers. All source code, data, images, and more for "
+"the website are open source and can be found {LinkGit:L}here{-:E}. This site "
+"is licensed under the {LinkBSD:L}BSD Zero Clause License{-:E} giving you the "
+"full freedom to do whatever you would like with any of the content on this "
+"site."
+msgstr ""
+
+#. TRANSLATORS: Name of a bank
+#: src/templates/collecting-crh.html.tmpl:244
+msgid "Aktia Bank"
+msgstr ""
+
+#: src/templates/coins-designs-ad.html.tmpl:26
+msgid "Andorra’s Romanesque art"
+msgstr ""
+
+#: src/templates/coins-designs-ad.html.tmpl:41
+msgid ""
+"The 1 Euro coin features the Case de la Vall: the former headquarters of the "
+"General Council of Andorra. It was constructed in 1580 as a manor and tower "
+"defense by the Busquets family."
+msgstr ""
+
+#: src/templates/jargon.html.tmpl:58
+msgid "Collector-Specific Terms"
+msgstr ""
+
+#: src/templates/-error.html.tmpl:12
+msgid ""
+"If you’re seeing this page, it means that something went wrong on our end "
+"that we need to fix. Our team has been notified of this error, and we "
+"apologise for the inconvenience."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:488
+msgid "In general there is a €1.20 fee for coin rolls."
+msgstr ""
+
+#: src/templates/coins-designs-hr.html.tmpl:18
+msgid "Croatian €2 coin"
+msgstr ""
+
+#: src/templates/coins-mintages.html.tmpl:58
+#: src/templates/coins-mintages.html.tmpl:100
+msgid "Year"
+msgstr ""
+
+#: src/templates/coins-designs-ee.html.tmpl:70
+msgid "In the Body"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:34
+msgid ""
+"In some countries such as Austria it is even common to be able to withdraw "
+"new coins from your account using other coins."
+msgstr ""
+
+#: src/templates/banknotes-codes.html.tmpl:131
+msgid ""
+"The first letter of the printer code can be used to identify the specific "
+"printer at which the banknote was printed. The printer and country codes do "
+"not need to line up; a banknote issued by a country will often be printed in "
+"another."
+msgstr ""
+
+#: src/templates/-base.html.tmpl:45
+msgid "Feel free to contact us!"
+msgstr ""
+
+#: src/templates/about.html.tmpl:19
+msgid ""
+"While we try to stay as up-to-date as possible and to fact check our "
+"information, it is always possible that we get something wrong, lack a "
+"translation, or are missing some piece of data you may have. Should that be "
+"the case, don’t hesitate to contact us; we’ll try to get the site updated or "
+"fixed as soon as possible. You are always free to contribute via a git patch "
+"if you are more technically inclined, but if not you can always send an "
+"email to {Email:e} or contact ‘@onetruemangoman’ on Discord."
+msgstr ""
+
+#: src/templates/coins-designs-de.html.tmpl:16
+msgid "German €1 coin"
+msgstr ""
+
+#: src/templates/index.html.tmpl:9
+msgid "The Euro Cash Wiki"
+msgstr ""
+
+#: src/templates/coins-designs-de.html.tmpl:15
+msgid "German €0.10 coin"
+msgstr ""
+
+#: src/templates/coins-designs-ee.html.tmpl:121
+msgid "Rene Haljasmäe"
+msgstr ""
+
+#: src/templates/coins-designs-at.html.tmpl:22
+msgid ""
+"The bronze coins feature the Alpine gentian, edelweiss and primrose "
+"respectively, and were chosen to symbolize the role that Austria played in "
+"the development of EU environmental policy."
+msgstr ""
+
+#: src/templates/coins-designs-at.html.tmpl:37
+msgid ""
+"The two bimetallic coins feature the busts of the musical composer Wolfgang "
+"Amadeus Mozarts on the €1 coin, and the Austrian pacifist and Nobel Peace "
+"Prize winner Bertha von Suttner."
 msgstr ""
 
 #: src/templates/collecting-crh.html.tmpl:39
@@ -1281,223 +596,107 @@ msgid ""
 "information {Link:l}here{-:E}."
 msgstr ""
 
-#. TRANSLATORS: Name of a bank
-#: src/templates/collecting-crh.html.tmpl:467
-msgid "ING"
+#: src/templates/collecting-crh.html.tmpl:114
+msgid "KBC Bank"
 msgstr ""
 
-#: src/templates/jargon.html.tmpl:38
-msgid ""
-"While uncommon, NIFC coins are occasionally found in circulation. This can "
-"happen for a variety of reasons such as someone depositing their coin "
-"collection (known as a ‘collection dump’) or a collector’s child spending "
-"their rare coins on an ice cream. Some coin mints have also been known to "
-"put NIFCs that have gone unsold for multiple years into circulation."
+#: src/templates/collecting-crh.html.tmpl:237
+msgid "Mint of Finland"
 msgstr ""
 
-#: src/templates/coins-designs-hr.html.tmpl:17
-msgid "Croatian €1 coin"
-msgstr ""
-
-#: src/templates/banknotes-codes.html.tmpl:289
-msgid "Leipzig"
-msgstr ""
-
-#: src/templates/about.html.tmpl:11
-msgid "Open Source"
-msgstr ""
-
-#: src/templates/coins-mintages.html.tmpl:52
-msgid "Filter"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:142
-msgid "Bank of Cyprus"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:222
-msgid ""
-"Coin rolls have a fee of {€2,00:m} for 5 rolls. This seems to vary by "
-"location."
-msgstr ""
-
-#: src/templates/index.html.tmpl:14
-msgid "diversity"
-msgstr ""
-
-#: src/templates/coins-designs-de.html.tmpl:39
-msgid "Stuttgart"
-msgstr ""
-
-#: src/templates/coins-designs-at.html.tmpl:26
-msgid "Austrian €0.20 coin"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:179
-msgid "Volksbank"
-msgstr ""
-
-#. TRANSLATORS: This name. If you’re translating for a latin-script language, translate this to ‘{Null}’, otherwise transliterate this into your respective alphabet.
-#: src/templates/coins-designs-ee.html.tmpl:81
-msgid "{Break:r}Tomson 5791"
-msgstr ""
-
-#: src/templates/banknotes.html.tmpl:40
-msgid "Test Notes"
-msgstr ""
-
-#: src/templates/banknotes-codes.html.tmpl:139
-#: src/templates/banknotes-codes.html.tmpl:229
-msgid "Printer"
-msgstr ""
-
-#: src/templates/-navbar.html.tmpl:45
-msgid "News"
+#: src/templates/coins-mintages.html.tmpl:8
+msgid "Euro Coin Mintages"
 msgstr ""
 
 #: src/templates/coins-mintages.html.tmpl:45
 msgid "Circulation Coins"
 msgstr ""
 
-#: src/templates/coins-designs-de.html.tmpl:54
+#. TRANSLATORS: City in Spain
+#: src/templates/collecting-crh.html.tmpl:206
+msgid "Alicante"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:229
+msgid "Bank of Finland"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:313
 msgid ""
-"The bronze coins display an oak twig which is similar to the one found on "
-"the former Pfennig coins from the German Mark. The mint mark and year are "
-"located on the left- and right-hand sides of the stem."
+"Coin bags are available without fees for everyone. Smaller denominations are "
+"often not given out, and the coin bags you recieve are very large (there are "
+"reports of €1 bags containing 250 coins)."
 msgstr ""
 
-#: src/templates/collecting-crh.html.tmpl:212
-msgid "Coin rolls are free but you must be a customer."
+#: src/templates/collecting-crh.html.tmpl:343
+msgid "Banca di Cambiano"
 msgstr ""
 
-#: src/templates/collecting-crh.html.tmpl:323
+#: src/templates/collecting-crh.html.tmpl:366
+msgid "Top Exchange"
+msgstr ""
+
+#: src/templates/jargon.html.tmpl:15
 msgid ""
-"Coin rolls can be obtained with no fee, but you may need to present your ID. "
-"The latest commemorative coins are also sold for face value."
+"All terms defined below can be used as clickable links which highlight the "
+"selected term. It is recommended to use these links when sharing this page "
+"with others, so that the relevant terms are highlighted."
 msgstr ""
 
-#: src/templates/coins-designs-ad.html.tmpl:44
+#: src/templates/-navbar.html.tmpl:44
+msgid "Home"
+msgstr ""
+
+#: src/templates/coins-mintages.html.tmpl:19
 msgid ""
-"Finally, the 2 Euro coin features the coat of arms of Andorra. The Andorran "
-"coat of arms is a grid of 4 other coats of arms which from top-to-bottom, "
-"left-to-right are:"
+"Most coins from the years 2003–2016 are listed as NIFC coins while other "
+"popular sources such as Numista claim they were minted for circulation. For "
+"more information on why others are wrong, {Link:l}click here{-:E}."
 msgstr ""
 
-#: src/templates/banknotes-codes.html.tmpl:52
+#: src/templates/coins-designs-de.html.tmpl:60
 msgid ""
-"In the 2002 series, the first letter of the serial number can be used to "
-"identify the country that issued the banknote. The following table shows "
-"which countries map to which codes."
+"The bimetallic coins feature an interpretation of the German Federal Eagle "
+"(German: ‘{GermanStart:r}Bundesadler{GermanEnd:E}’). The eagle is a common "
+"motif in German heraldry — including in the German coat of arms — and "
+"represents strength and freedom. The mint mark is located to the right of "
+"the year."
 msgstr ""
 
-#: src/templates/banknotes-codes.html.tmpl:58
-#: src/templates/banknotes-codes.html.tmpl:137
-#: src/templates/banknotes-codes.html.tmpl:227
-msgid "Code"
+#: src/templates/coins-designs-at.html.tmpl:33
+msgid "Austrian €1 coin"
 msgstr ""
 
-#: src/templates/coins-designs-ee.html.tmpl:123
-msgid "Jaarno Ester"
-msgstr ""
-
-#: src/templates/coins-designs-at.html.tmpl:27
-msgid "Austrian €0.50 coin"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:60
+#: src/templates/collecting-crh.html.tmpl:13
 msgid ""
-"The Austrian National Bank does not distribute circulated rolls but sells "
-"rolls of commemorative coins at face value on release as well as "
-"uncirculated rolls for all denominations."
+"Coin roll hunting is a popular method of coin collecting in which you "
+"withdraw cash from your bank in the form of coins and then search through "
+"those coins to find new additions to your collection. Once you’ve searched "
+"through all your coins, you will typically deposit your left over coins at "
+"the bank and withdraw new coins."
 msgstr ""
 
-#. TRANSLATORS: Name of a bank
-#: src/templates/collecting-crh.html.tmpl:259
-msgid "Aktia Bank"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:407
+#: src/templates/collecting-crh.html.tmpl:162
 msgid ""
-"In general coin rolls are sold with for fee of {€0,60:m} per roll, but we’re "
-"lacking a lot of information."
+"Coin rolls can be obtained for a fee of €0.50–€1.50 per roll. The amount "
+"varies per branch."
 msgstr ""
 
-#: src/templates/coins-designs-ad.html.tmpl:13
-msgid "Andorran €0.50 coin"
+#: src/templates/collecting-crh.html.tmpl:459
+msgid "Coin rolls are available for a fee of €7 + €0.35 per roll."
 msgstr ""
 
-#: src/templates/banknotes-codes.html.tmpl:20
+#: src/templates/collecting-crh.html.tmpl:517
 msgid ""
-"The printer code can be a bit tricky to find. The following dropdown menus "
-"will show you where to find the printer code on each note."
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:80
-msgid ""
-"There is a fee of {€0,10:m} per roll. You must be a customer to use machines "
-"to get rolls. Rolls have no fees when purchased at counters, but you will "
-"probably be redirected to the machines if they work. You must present an "
-"Erste Bank card to buy rolls from machines, however payment in cash is still "
-"accepted."
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:382
-msgid "Fee of {€2,00:m} per roll of 2 euro coins."
-msgstr ""
-
-#: src/templates/jargon.html.tmpl:32
-msgid "NIFC — Not Intended For Circulation"
-msgstr ""
-
-#: src/templates/jargon.html.tmpl:42
-msgid "PMD — Post-Mint Damage"
+"We currently have no information regarding coin roll hunting in San Marino."
 msgstr ""
 
 #: src/templates/-404.html.tmpl:8
 msgid "Page Not Found"
 msgstr ""
 
-#: src/templates/collecting-crh.html.tmpl:470
-msgid "Coin rolls are available for a fee of {€7:m} + {€0,35:m} per roll."
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:505
-msgid "Bank of Slovenia"
-msgstr ""
-
-#: src/templates/coins-designs-ad.html.tmpl:34
-msgid ""
-"The Andorran 1-, 2- and 5 euro cent coins all feature the same design of a "
-"Pyrenean chamois in the center of the coin with a golden eagle flying above. "
-"Both animals are native to Andorra as well as the surrounding regions of "
-"France and Spain."
-msgstr ""
-
-#: src/templates/coins-designs-ad.html.tmpl:46
-msgid "The arms of the Bishop of Urgell"
-msgstr ""
-
-#: src/templates/jargon.html.tmpl:60
-msgid "CRH — Coin Roll Hunting"
-msgstr ""
-
-#: src/templates/-navbar.html.tmpl:46
-msgid "Coin Collecting"
-msgstr ""
-
-#: src/templates/banknotes.html.tmpl:8
-msgid "Euro Banknotes"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:111
-msgid ""
-"You can visit the National Bank of Belgium in Brussels as an EU citizen. You "
-"can order coin rolls for no fee up to {€2000:m} in value. They seem to "
-"distribute only uncirculated coins and no commemoratives."
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:414
-msgid "Central Bank of Malta"
+#: src/templates/banknotes.html.tmpl:23
+msgid "View the different Euro banknote designs"
 msgstr ""
 
 #: src/templates/coins-designs-hr.html.tmpl:33
@@ -1508,28 +707,724 @@ msgid ""
 "(‘{CroatianStart:r}kuna zlatica{CroatianEnd:E}’ in Croatian)."
 msgstr ""
 
-#. TRANSLATORS: Estonian translators should replace the entire translation with ‘{Null}’
-#: src/templates/coins-designs-ee.html.tmpl:60
-msgid "{Break:r}Consistency"
+#: src/templates/collecting-crh.html.tmpl:21
+msgid ""
+"Depending on your bank and branch, the process of obtaining coins may "
+"differ. Some banks require you speak to a teller while others have coin "
+"machines. Some banks may also require that you are a customer or even that "
+"you have a business account. If you aren’t sure about if you can get coins "
+"we suggest you contact your bank, although further down this page we also "
+"have additional information about the withdrawal of coins in various "
+"countries and major banks."
 msgstr ""
 
-#. TRANSLATORS: Estonian translators should replace the entire translation with ‘{Null}’
-#: src/templates/coins-designs-ee.html.tmpl:143
-msgid "{Break:r}A Flower in the Rye"
+#: src/templates/collecting-crh.html.tmpl:26
+msgid ""
+"To get started with coin roll hunting you should first contact your bank or "
+"check their website to find details regarding coin withdrawal. You will then "
+"typically need to go to the bank to pick up your coins. Depending on your "
+"bank you may be able to withdraw coins from a machine. Most banks will "
+"charge you a small fee per roll and/or transaction."
 msgstr ""
 
-#: src/templates/collecting-crh.html.tmpl:210
-msgid "Santander Bank"
+#: src/templates/coins-designs-ad.html.tmpl:28
+msgid "Casa de la Vall"
 msgstr ""
 
-#: src/templates/coins.html.tmpl:12
+#: src/templates/jargon.html.tmpl:20
+msgid "General Terms"
+msgstr ""
+
+#: src/templates/-navbar.html.tmpl:57
+msgid "About"
+msgstr ""
+
+#: src/templates/coins-mintages.html.tmpl:49
+msgid "Proof Coins"
+msgstr ""
+
+#: src/templates/coins-designs-ee.html.tmpl:63
+#: src/templates/coins-designs-ee.html.tmpl:104
+msgid "Tiit Jürna"
+msgstr ""
+
+#: src/templates/coins-designs-ee.html.tmpl:80
+msgid "Taavi Torim"
+msgstr ""
+
+#: src/templates/coins-designs-ee.html.tmpl:112
+msgid "Jaarno Ester"
+msgstr ""
+
+#: src/templates/banknotes-codes.html.tmpl:210
+#: src/templates/banknotes-codes.html.tmpl:304
+#: src/templates/collecting-crh.html.tmpl:97
+msgid "National Bank of Belgium"
+msgstr ""
+
+#. TRANSLATORS: Name of a bank
+#: src/templates/collecting-crh.html.tmpl:276
+msgid "Crédit Mutuel"
+msgstr ""
+
+#: src/templates/coins-designs-ad.html.tmpl:51
+msgid ""
+"The bottom of the coat of arms has the motto ‘{LatinStart:r}VIRTVS VNITA "
+"FORTIOR{LatinEnd:E}’ (English: ‘UNITED VIRTUE IS STRONGER’)."
+msgstr ""
+
+#: src/templates/collecting.html.tmpl:23
+msgid "Learn about collecting coins from coin rolls"
+msgstr ""
+
+#. TRANSLATORS: Beginning of sentence, as in ‘United in …’
+#: src/templates/index.html.tmpl:13
+msgid "United in"
+msgstr ""
+
+#. TRANSLATORS: Name of a coin design. Don’t translate unless you use a non-latin script
+#: src/templates/coins-designs-ee.html.tmpl:120
+msgid "Nova"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:37
+msgid "Country-Specific Details"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:135
+msgid ""
+"At the Bank of Cyprus it is possible to buy bags of coins without being a "
+"customer, and without paying any additional fees. Depending on the branch "
+"you visit there may be a coin roll machine available. Do note that the bags "
+"provided by the Bank of Cyprus are much larger than what is typically found "
+"elsewhere in the Eurozone with €2.00 bags containing 50 coins and the other "
+"denomination bags containing 100 coins."
+msgstr ""
+
+#: src/templates/banknotes-codes.html.tmpl:12
+msgid ""
+"Euro banknotes have two codes on them: a printer code and a serial number. "
+"The printer code tells you where a given note was printed, while the serial "
+"number tells you which country issued the banknote (for the 2002 series) or "
+"where the banknote was printed (for the Europa series)."
+msgstr ""
+
+#: src/templates/-base.html.tmpl:44
+msgid "Found a mistake or want to contribute missing information?"
+msgstr ""
+
+#: src/templates/coins-designs-hr.html.tmpl:14
+msgid "Croatian €0.50 coin"
+msgstr ""
+
+#: src/templates/coins-designs-ee.html.tmpl:96
+msgid "Mai Järmut, Villu Järmut"
+msgstr ""
+
+#: src/templates/banknotes.html.tmpl:40
+msgid "Test Notes"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:88
+msgid "Raiffeisen Bank"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:169
+msgid "Coin rolls can be obtained for a fee of €0.25 per roll."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:264
+#: src/templates/collecting-crh.html.tmpl:286
+msgid "Coin rolls can be obtained with no fee. You must be a customer."
+msgstr ""
+
+#: src/templates/jargon.html.tmpl:47
+msgid "Relief"
+msgstr ""
+
+#: src/templates/-navbar.html.tmpl:45
+msgid "News"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:182
+msgid ""
+"You can purchase commemorative coins — including those released years ago — "
+"for face value."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:198
+msgid "Coin rolls are free but you must be a customer."
+msgstr ""
+
+#: src/templates/coins-designs-at.html.tmpl:18
+msgid "Austrian €0.02 coin"
+msgstr ""
+
+#: src/templates/banknotes-codes.html.tmpl:50
+msgid "2002 Series"
+msgstr ""
+
+#: src/templates/banknotes-codes.html.tmpl:190
+#: src/templates/banknotes-codes.html.tmpl:284
+msgid "Royal Mint of Spain"
+msgstr ""
+
+#. TRANSLATORS: Name of a bank
+#: src/templates/collecting-crh.html.tmpl:216
+msgid "La Caixa"
+msgstr ""
+
+#. TRANSLATORS: Name of a bank
+#: src/templates/collecting-crh.html.tmpl:262
+msgid "Caisse d’Épargne"
+msgstr ""
+
+#: src/templates/banknotes-codes.html.tmpl:37
+msgid "Europa Series Printer Codes"
+msgstr ""
+
+#: src/templates/banknotes-codes.html.tmpl:222
+msgid ""
+"In the Europa series the first letter of the serial number can be used to "
+"identify the printer that printed the banknote, just like the printer code. "
+"The following table shows which countries map to which codes."
+msgstr ""
+
+#: src/templates/coins-designs-hr.html.tmpl:21
+msgid ""
+"The Croatian euro coins feature four different themes, with each design "
+"featuring the Croatian checkerboard and the country’s name in Croatian "
+"(‘{CroatianStart:r}HRVATSKA{CroatianEnd:E}’). All designs were selected "
+"after voting in a public design competition."
+msgstr ""
+
+#: src/templates/coins-designs-be.html.tmpl:21
+msgid "Belgian €1 coin (King Philippe)"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:508
+msgid "Tatra banka"
+msgstr ""
+
+#: src/templates/coins-designs-ad.html.tmpl:44
+msgid ""
+"Finally, the 2 Euro coin features the coat of arms of Andorra. The Andorran "
+"coat of arms is a grid of 4 other coats of arms which from top-to-bottom, "
+"left-to-right are:"
+msgstr ""
+
+#: src/templates/language.html.tmpl:49 src/templates/language.html.tmpl:88
+msgid "Eurozone Languages"
+msgstr "Talen van de eurozone"
+
+#: src/templates/coins.html.tmpl:43
+msgid "View all the known Euro varieties"
+msgstr ""
+
+#: src/templates/coins-mintages.html.tmpl:101
+msgid "Commemorated Issue"
+msgstr ""
+
+#: src/templates/collecting.html.tmpl:56
+msgid "Learn about collecting coins from vending machines"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:141
+msgid ""
+"Coin roll availability and their related fees may vary across banks and "
+"branches. Unless specified otherwise, you must be a customer to purchase "
+"coin rolls."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:225
+msgid ""
+"Finland has no coin roll machines, but you can find vending machines or coin "
+"exchange machines that accept cash (although they can be rather rare)."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:482
+msgid "Coin bags are sold with no additional fees to bank customers."
+msgstr ""
+
+#: src/templates/banknotes-codes.html.tmpl:239
+msgctxt "Country Name"
+msgid "Bulgaria"
+msgstr ""
+
+#: src/templates/-navbar.html.tmpl:49
+msgid "Jargon"
+msgstr ""
+
+#: src/templates/collecting.html.tmpl:41
+msgid "Shop Hunting"
+msgstr ""
+
+#: src/templates/collecting.html.tmpl:53
+msgid "Vending Machine Hunting"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:148
+msgid ""
+"You can obtain regular and commemorative coins for face value including 5-, "
+"10- and 20 euro coins. You do not need to be a customer although depending "
+"on your branch you may need to make an appointment. The purchase of coins "
+"can only be done with cash."
+msgstr ""
+
+#: src/templates/banknotes-codes.html.tmpl:15
+msgid "Printer Code"
+msgstr ""
+
+#: src/templates/banknotes-codes.html.tmpl:320
+msgid "Printer code on a {N} euro bill"
+msgid_plural "Printer code on a {N} euro bill"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/templates/jargon.html.tmpl:8
+msgid "Euro Cash Jargon"
+msgstr ""
+
+#: src/templates/jargon.html.tmpl:22
+msgid "AU — Almost Uncirculated"
+msgstr ""
+
+#: src/templates/coins-designs-be.html.tmpl:33
+msgid ""
+"After his accession to the throne, Belgium began a third series of coins in "
+"2014 featuring the portrait of King Philippe. As is customary with coins "
+"bearing the portraits of monarchs, the direction in which the portrait faces "
+"was flipped to face right instead of left."
+msgstr ""
+
+#: src/templates/about.html.tmpl:8
+msgid "About Us"
+msgstr ""
+
+#: src/templates/coins-mintages.html.tmpl:16
+msgid "Additional Notes"
+msgstr ""
+
+#: src/templates/coins-designs-ad.html.tmpl:16
+msgid "Andorran €1 coin"
+msgstr ""
+
+#: src/templates/coins-designs-ad.html.tmpl:48
+msgid "The arms of Catalonia"
+msgstr ""
+
+#: src/templates/jargon.html.tmpl:12
+msgid ""
+"Both on this website and in other related forums you will come across many "
+"terms that you may not be familiar with. This page will hopefully get you up "
+"to speed with the most important and frequently-used terminology."
+msgstr ""
+
+#: src/templates/jargon.html.tmpl:62
+msgid ""
+"Coin roll hunting is a general term for the activity of collecting coins by "
+"searching through coin rolls and bags. Coin rolls and bags are often "
+"obtained at banks or coin roll machines."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:84
+msgid ""
+"Depositing coins is free up to €100 a day, at which point you pay 1% for any "
+"additionally deposited coins. You must also be a customer. Depositing coins "
+"is free for all Erste Bank customers at Dornbirner Sparkasse with no limit."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:91
+msgid ""
+"There is a fee of €1 per roll if you aren’t a customer and €0.30 otherwise. "
+"Coin deposits are free for customers."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:240
+msgid ""
+"The Mint of Finland ceased all operations in late 2024 but still sells coins "
+"on their website."
+msgstr ""
+
+#: src/templates/coins-designs-be.html.tmpl:13
+msgid "Belgian €1 coin (King Albert; Series 1)"
+msgstr ""
+
+#: src/templates/coins-designs-ee.html.tmpl:26
+msgid ""
+"In June 2004 a public design competition was announced with a deadline for "
+"the 19th of October. In total 134 designs were submitted by the deadline and "
+"10 designs were selected by a jury. These 10 designs were then voted on in a "
+"public vote over the course of one week. In total 45,453 people voted and "
+"the current design won with a total of 12,482 votes (27.46%)."
+msgstr ""
+
+#: src/templates/coins-designs-ee.html.tmpl:40
+msgid "Name"
+msgstr ""
+
+#: src/templates/language.html.tmpl:50 src/templates/language.html.tmpl:93
+msgid "Other Languages"
+msgstr "Andere talen"
+
+#: src/templates/coins-designs.html.tmpl:27
+msgid "Euro Coin Designs"
+msgstr "Euromuntontwerpen"
+
+#: src/templates/collecting-crh.html.tmpl:166
+msgid "Volksbank"
+msgstr ""
+
+#: src/templates/-navbar.html.tmpl:54
+msgid "Discord"
+msgstr ""
+
+#: src/templates/collecting.html.tmpl:12
 msgid ""
 "On this section of the site you can find everything there is to know about "
-"the coins of the Eurozone."
+"collecting Euro coins. If this is a hobby that interests you, join the "
+"Discord server linked at the top of the page!"
 msgstr ""
 
-#: src/templates/coins-designs-de.html.tmpl:15
-msgid "German €0.10 coin"
+#: src/templates/coins-designs-nl.html.tmpl:37
+msgid ""
+"Coins featuring both monarchs contain text reading ‘{DutchStart:r}BEATRIX "
+"KONINGIN DER NEDERLANDEN{DutchEnd:E}’ (English: ‘BEATRIX QUEEN OF THE "
+"NETHERLANDS’) and ‘{DutchStart:r}Willem-Alexander Koning der "
+"Nederlanden{DutchEnd:E}’ (English: ‘Willem-Alexander King of the "
+"Netherlands’) respectively. The €2 coins also feature an edge-inscription "
+"reading ‘{DutchStart:r}GOD ⋆ ZIJ ⋆ MET ⋆ ONS ⋆{DutchEnd:E}’ (English: "
+"‘GOD ⋆ IS ⋆ WITH ⋆ US ⋆’)."
+msgstr ""
+
+#: src/templates/collecting.html.tmpl:44
+msgid "Learn about how to collect coins from shops"
+msgstr ""
+
+#: src/templates/coins-designs-de.html.tmpl:31
+msgid "Berlin"
+msgstr ""
+
+#: src/templates/coins-designs-nl.html.tmpl:8
+msgid "Dutch Euro Coin Designs"
+msgstr ""
+
+#: src/templates/coins-designs-at.html.tmpl:17
+msgid "Austrian €0.01 coin"
+msgstr ""
+
+#: src/templates/language.html.tmpl:48 src/templates/language.html.tmpl:82
+msgid "Select Your Language"
+msgstr "Kies uw taal"
+
+#: src/templates/collecting-crh.html.tmpl:306
+msgid ""
+"Coin rolls can be obtained with no fee, but you may need to present your ID. "
+"The latest commemorative coins are also sold for face value."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:352
+msgid "Bank of Lithuania"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:475
+msgid "Coin bags are sold with no additional fees to everyone."
+msgstr ""
+
+#: src/templates/coins-designs-ad.html.tmpl:24
+msgid "Andorran landscapes, nature, fauna and flora"
+msgstr ""
+
+#: src/templates/coins-designs-ad.html.tmpl:25
+msgid "€0.10, €0.20 and €0.50"
+msgstr ""
+
+#: src/templates/banknotes-codes.html.tmpl:25
+msgid "All these images are taken from {Link:L}eurobilltracker.com{-:E}."
+msgstr ""
+
+#: src/templates/collecting.html.tmpl:30
+msgid "Coin Storage"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:52
+msgid ""
+"Coin rolls can be obtained from Andbank, Creand and MoraBanc. All three of "
+"these banks require that you are a customer to get rolls, however there have "
+"been reports of individuals managing to get rolls without any fees and "
+"without being a customer by simply asking kindly at the bank."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:131
+msgid "Bank of Cyprus"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:159
+msgid "Sparkasse"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:355
+msgid ""
+"Allegedly, coin rolls are only available for businesses, but this needs "
+"additional confirmation."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:466
+msgid "Coin rolls are available for a fee of €7 + €0.50 per roll."
+msgstr ""
+
+#: src/templates/coins-designs-ad.html.tmpl:47
+msgid "The arms of the Count of Foix"
+msgstr ""
+
+#: src/templates/coins-designs-ad.html.tmpl:49
+msgid "The arms of the Viscounts of Béarn"
+msgstr ""
+
+#: src/templates/coins.html.tmpl:40
+msgid "Varieties"
+msgstr ""
+
+#: src/templates/coins-designs-de.html.tmpl:39
+msgid "Stuttgart"
+msgstr ""
+
+#: src/templates/coins-designs-ee.html.tmpl:43
+msgid "Author(s)"
+msgstr ""
+
+#. TRANSLATORS: Name of a coin design. Don’t translate unless you use a non-latin script
+#: src/templates/coins-designs-ee.html.tmpl:88
+msgctxt "Language Name"
+msgid "Estonian"
+msgstr ""
+
+#: src/templates/coins-designs-ee.html.tmpl:111
+msgid "Leopards-2"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:117
+msgid "Rolls can be obtained with no fee by customers only"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:208
+msgid ""
+"Coin rolls have a fee of €2 for 5 rolls. This seems to vary by location."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:211
+msgid "Coin rolls have no fees."
+msgstr ""
+
+#: src/templates/coins-designs-de.html.tmpl:25
+msgid "City"
+msgstr ""
+
+#: src/templates/coins-designs-hr.html.tmpl:13
+msgid "Croatian €0.01 coin"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:17
+msgid ""
+"This type of coin collecting is often called ‘coin roll hunting’ "
+"(abbreviated to ‘CRH’) due to the fact that banks will often provide you "
+"with coins in the form of paper-wrapped rolls. You may however find that "
+"your coins come in plastic bags instead (common in countries like Ireland)."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:252
+msgid ""
+"Coin roll machines are uncommon, only some banks have them and you typically "
+"need to be a customer. You may also need to order coin rolls in advance."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:293
+msgid ""
+"There are coin roll machines but it is not yet known if you need to be a "
+"customer or if there are fees."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:188
+msgid "Bank of Spain"
+msgstr ""
+
+#: src/templates/banknotes-codes.html.tmpl:20
+msgid ""
+"The printer code can be a bit tricky to find. The following dropdown menus "
+"will show you where to find the printer code on each note."
+msgstr ""
+
+#: src/templates/coins-mintages.html.tmpl:47
+msgid "NIFC / BU Sets"
+msgstr ""
+
+#: src/templates/coins-designs-ad.html.tmpl:23
+msgid "€0.01, €0.02 and €0.05"
+msgstr ""
+
+#: src/templates/banknotes-codes.html.tmpl:139
+#: src/templates/banknotes-codes.html.tmpl:229
+msgid "Printer"
+msgstr ""
+
+#. TRANSLATORS: As in ‘5 Euro Banknote’
+#: src/templates/banknotes-codes.html.tmpl:316
+msgid "{N} Euro"
+msgid_plural "{N} Euro"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/templates/jargon.html.tmpl:24
+msgid ""
+"AU coins are coins that are in extremely good condition as a result of "
+"limited use in circulation. Unlike the term ‘UNC’, this term is a "
+"description of the coins quality, not its usage. AU coins often appear to "
+"retain most of their original luster as well as possessing little to no "
+"scratches or other forms of post-mint damage (PMD)."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:418
+msgid "HSBC Bank Malta"
+msgstr ""
+
+#: src/templates/banknotes-codes.html.tmpl:220
+msgid "Europa Series"
+msgstr ""
+
+#: src/templates/jargon.html.tmpl:52
+msgid "UNC — Uncirculated"
+msgstr ""
+
+#: src/templates/coins-designs.html.tmpl:31
+msgid ""
+"Here you’ll be able to view all the coin designs for each country in the "
+"Eurozone. This section of the site doesn’t include minor varieties such as "
+"different mintmarks or errors; those are on the {Link:l}varieties{-:E} page."
+msgstr ""
+
+#: src/templates/coins-designs-ee.html.tmpl:129
+msgid "Margus Kadarik"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:30
+msgid ""
+"It is also important to find details regarding the deposit of coins. "
+"Depositing coins often also requires the payment of a fee — one which is "
+"typically more expensive than the withdrawal fees. If depositing your coins "
+"is too expensive you can always exchange your left over coins at shops for "
+"banknotes. It is often cheaper (or even free) to deposit banknotes."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:362
+msgid "Coin rolls are available with a fee of 5%."
+msgstr ""
+
+#: src/templates/jargon.html.tmpl:54
+msgid ""
+"Uncirculated coins are coins that have never been used in a monetary "
+"exchange. The term ‘UNC’ is often mistakenly used to refer to coins in very "
+"good condition, but this is incorrect. A coin in poor condition that has "
+"never been circulated is still considered an ‘UNC’ coin."
+msgstr ""
+
+#: src/templates/coins-mintages.html.tmpl:80
+#: src/templates/coins-mintages.html.tmpl:118
+msgid "Unknown"
+msgstr ""
+
+#: src/templates/coins-designs-hr.html.tmpl:8
+msgid "Croatian Euro Coin Designs"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:191
+msgid ""
+"You can purchase individual coins and commemorative coin rolls (even those "
+"of other countries). You can watch a video {Link:L}here{-:E} to see how to "
+"do it."
+msgstr ""
+
+#: src/templates/jargon.html.tmpl:32
+msgid "NIFC — Not Intended For Circulation"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:125
+msgid ""
+"Rolls can be obtained with no fee when you order through their online "
+"platform."
+msgstr ""
+
+#: src/templates/banknotes-codes.html.tmpl:169
+msgctxt "Country Name"
+msgid "United Kingdom"
+msgstr ""
+
+#: src/templates/banknotes.html.tmpl:12
+msgid ""
+"On this section of the site you can find everything there is to know about "
+"the banknotes of the Eurozone."
+msgstr ""
+
+#: src/templates/banknotes.html.tmpl:43
+msgid "Learn about the special test notes"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:440
+msgid "The Dutch Central Bank"
+msgstr ""
+
+#: src/templates/coins-designs-de.html.tmpl:26
+msgid "Mintmark"
+msgstr ""
+
+#. TRANSLATORS: Name of a coin design. Don’t translate unless you use a non-latin script
+#: src/templates/coins-designs-ee.html.tmpl:54
+msgid "Hara 2"
+msgstr ""
+
+#: src/templates/coins-designs-at.html.tmpl:30
+msgid ""
+"The €0.10 coin features St. Stephen’s Cathedral. It symbolises the Viennese "
+"Gothic architectural style dating to around the year 1160. The €0.20 coin "
+"features Belvedere Palace. This is an example of Baroque architecture and "
+"symbolises the national freedom and sovereignty of Austria. The final gold "
+"coin — the €0.50 coin — features the Secession Building: an exhibition hall "
+"in the Art Nouveau style."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:60
+msgid ""
+"The Austrian National Bank does not distribute circulated rolls but sells "
+"rolls of commemorative coins at face value on release as well as "
+"uncirculated rolls for all denominations."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:431
+msgid ""
+"Banks in the Netherlands do not carry cash, and as such it’s not possible to "
+"obtain rolls from bank tellers. If you want to obtain coin rolls you need to "
+"use a Geldmaat coin roll machine which can be found in specific branches of "
+"GAMMA and Karwei. Geldmaat offers a map on their website where you can "
+"search for branches with these machines; you can find that map {Link:L}"
+"here{-:E}. Coin rolls are only available to customers of the banks listed "
+"below."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:472
+msgid "Bank of Portugal"
+msgstr ""
+
+#: src/templates/banknotes-codes.html.tmpl:289
+msgid "Leipzig"
+msgstr ""
+
+#: src/templates/banknotes-codes.html.tmpl:175
+#: src/templates/banknotes-codes.html.tmpl:269
+#: src/templates/collecting-crh.html.tmpl:336
+msgid "Bank of Italy"
+msgstr ""
+
+#: src/templates/about.html.tmpl:17
+msgid "Contact Us"
 msgstr ""
 
 #: src/templates/coins-designs-nl.html.tmpl:33
@@ -1542,283 +1437,174 @@ msgid ""
 "monarchies around the world."
 msgstr ""
 
-#: src/templates/coins-designs-ee.html.tmpl:22
+#: src/templates/coins-designs-ee.html.tmpl:44
+msgid "Votes"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:175
 msgid ""
-"The design of the Estonian euro coins was chosen as part of a {EVLink:L}"
-"Eurovision{-:E}-style public televote where it competed and won against 9 "
-"other designs."
+"Obtaining coin rolls in Estonia is typically quite difficult and often "
+"expensive. You also generally need to make an appointment in advance."
 msgstr ""
 
-#. TRANSLATORS: Estonian translators should replace the entire translation with ‘{Null}’
-#: src/templates/coins-designs-ee.html.tmpl:92
-msgid "{Break:r}Estonian"
-msgstr ""
-
-#: src/templates/coins-designs-ee.html.tmpl:152
-msgid "Total"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:279
-#: src/templates/collecting-crh.html.tmpl:303
-msgid "Coin rolls can be obtained with no fee. You must be a customer."
-msgstr ""
-
-#: src/templates/coins-designs-ad.html.tmpl:28
-msgid "Casa de la Vall"
-msgstr ""
-
-#: src/templates/coins-designs-ee.html.tmpl:101
-msgid "Mai Järmut, Villu Järmut"
-msgstr ""
-
-#: src/templates/banknotes-codes.html.tmpl:8
-#: src/templates/banknotes.html.tmpl:30
-msgid "Location Codes"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:419
-msgid "Bank of Valletta"
-msgstr ""
-
-#: src/templates/banknotes-codes.html.tmpl:50
-msgid "2002 Series"
-msgstr ""
-
-#: src/templates/coins-mintages.html.tmpl:101
-msgid "Commemorated Issue"
-msgstr ""
-
-#: src/templates/coins-designs-at.html.tmpl:22
+#: src/templates/collecting-crh.html.tmpl:233
 msgid ""
-"The bronze coins feature the Alpine gentian, edelweiss and primrose "
-"respectively, and were chosen to symbolize the role that Austria played in "
-"the development of EU environmental policy."
+"It is probably not possible to obtain coin rolls, but this is not confirmed."
 msgstr ""
 
-#: src/templates/collecting-crh.html.tmpl:24
-msgid "Getting Started"
+#: src/templates/banknotes-codes.html.tmpl:195
+#: src/templates/banknotes-codes.html.tmpl:299
+#: src/templates/collecting-crh.html.tmpl:299
+msgid "Bank of Greece"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:400
+msgid "We currently have no information regarding coin roll hunting in Monaco."
+msgstr ""
+
+#: src/templates/banknotes-codes.html.tmpl:23
+msgid "2002 Series Printer Codes"
+msgstr ""
+
+#: src/templates/coins-designs-hr.html.tmpl:29
+msgid ""
+"The 10-, 20- and 50 euro cent coins were designed by Ivan Domagoj Račić and "
+"feature the portrait of the inventor and engineer {Link:L}Nikola Tesla{-:E}. "
+"The design of these coins caused controversy when they were first announced "
+"with the National Bank of Serbia claiming that it would be an appropriation "
+"of the cultural and scientific heritage of the Serbian people to feature the "
+"portrait of someone who ‘declared himself to be Serbian by origin’."
+msgstr ""
+
+#: src/templates/-error.html.tmpl:15
+msgid ""
+"If this issue persists, don’t hesitate to contact ‘@onetruemangoman’ on "
+"Discord or to email us at {Email:e}"
+msgstr ""
+
+#: src/templates/index.html.tmpl:22
+msgid ""
+"Welcome to the Euro Cash Wiki! This sites aims to be a resource for you to "
+"discover everything there is to know about the coins and banknotes of the "
+"Euro, a currency that spans 26 countries and 350 million people. We also "
+"have dedicated sections of the site for collectors."
+msgstr ""
+
+#: src/templates/coins-designs-de.html.tmpl:8
+msgid "German Euro Coin Designs"
+msgstr ""
+
+#: src/templates/-navbar.html.tmpl:47
+msgid "Coins"
+msgstr ""
+
+#: src/templates/collecting.html.tmpl:8
+msgid "Euro Coin Collecting"
 msgstr ""
 
 #. TRANSLATORS: Name of a bank
-#: src/templates/collecting-crh.html.tmpl:117
+#: src/templates/collecting-crh.html.tmpl:107
 msgid "Argenta"
 msgstr ""
 
-#: src/templates/collecting-crh.html.tmpl:196
+#: src/templates/collecting-crh.html.tmpl:359
+msgid "ExchangeLT"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:443
+msgid "Obtaining coins from the Dutch Central Bank is not possible."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:451
 msgid ""
-"You can purchase commemorative coins — including those released years ago — "
-"for face value."
+"Coin rolls are available for a fee of €0.30 per roll. You must withdraw "
+"between 10–20 rolls."
 msgstr ""
 
-#: src/templates/collecting-crh.html.tmpl:319
-msgid ""
-"{EmphStart:r}NOTE{EmphEnd:E}: The Bank of Greece (Greece’s central bank) is "
-"NOT the same as the National Bank of Greece (a commercial bank)."
+#: src/templates/coins.html.tmpl:30
+msgid "Mintages"
 msgstr ""
 
-#: src/templates/coins-designs-ad.html.tmpl:48
-msgid "The arms of Catalonia"
+#: src/templates/collecting-crh.html.tmpl:64
+msgid "Bank Austria"
 msgstr ""
 
-#: src/templates/coins-designs-ad.html.tmpl:49
-msgid "The arms of the Viscounts of Béarn"
-msgstr ""
-
-#: src/templates/coins-mintages.html.tmpl:55
-msgid "Standard Issue Coins"
-msgstr ""
-
-#: src/templates/coins-designs-ee.html.tmpl:26
-msgid ""
-"In June 2004 a public design competition was announced with a deadline for "
-"the 19th of October. In total 134 designs were submitted by the deadline and "
-"10 designs were selected by a jury. These 10 designs were then voted on in a "
-"public vote over the course of one week. In total 45,453 people voted and "
-"the current design won with a total of 12,482 votes (27.46%)."
-msgstr ""
-
-#: src/templates/coins-designs-ee.html.tmpl:83
-msgid "Taavi Torim"
-msgstr ""
-
-#: src/templates/banknotes.html.tmpl:12
-msgid ""
-"On this section of the site you can find everything there is to know about "
-"the banknotes of the Eurozone."
-msgstr ""
-
-#. TRANSLATORS: Name of a bank
-#: src/templates/collecting-crh.html.tmpl:231
-msgid "La Caixa"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:234
+#: src/templates/collecting-crh.html.tmpl:219
 msgid ""
 "Coin rolls have no fees and can be purchased with cash. You allegedly do not "
 "need to be a customer, but this needs to be verified."
 msgstr ""
 
-#: src/templates/coins-designs-ad.html.tmpl:23
-msgid "€0.01, €0.02 and €0.05"
-msgstr ""
-
-#: src/templates/collecting.html.tmpl:53
-msgid "Vending Machine Hunting"
-msgstr ""
-
-#: src/templates/coins-designs-de.html.tmpl:25
-msgid "City"
-msgstr ""
-
-#: src/templates/coins-designs-hr.html.tmpl:18
-msgid "Croatian €2 coin"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:85
-msgid ""
-"Depositing coins is free up to {€100:m} a day, at which point you pay 1% for "
-"any additionally deposited coins. You must also be a customer. Depositing "
-"coins is free for all Erste Bank customers at Dornbirner Sparkasse with no "
-"limit."
+#. TRANSLATORS: Name of a bank
+#: src/templates/collecting-crh.html.tmpl:290
+msgid "LCL"
 msgstr ""
 
 #: src/templates/banknotes-codes.html.tmpl:180
 #: src/templates/banknotes-codes.html.tmpl:274
-#: src/templates/collecting-crh.html.tmpl:342
+#: src/templates/collecting-crh.html.tmpl:329
 msgid "Central Bank of Ireland"
 msgstr ""
 
-#: src/templates/banknotes-codes.html.tmpl:175
-#: src/templates/banknotes-codes.html.tmpl:269
-#: src/templates/collecting-crh.html.tmpl:349
-msgid "Bank of Italy"
+#: src/templates/collecting-crh.html.tmpl:339
+msgid "Coin rolls are available to everyone."
 msgstr ""
 
-#: src/templates/collecting-crh.html.tmpl:379
-msgid "Top Exchange"
+#: src/templates/collecting-crh.html.tmpl:375
+msgid "Central Bank of Luxembourg"
 msgstr ""
 
-#: src/templates/jargon.html.tmpl:8
-msgid "Euro Cash Jargon"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:120
+#: src/templates/collecting-crh.html.tmpl:380
 msgid ""
-"There is a {€1,50:m} fee per transaction with no limit on the number of "
-"rolls you may take."
+"We currently have no information regarding regular coins, however their "
+"webshop sells commemorative coins. Commemorative coins are also available "
+"for purchase in-person."
 msgstr ""
 
-#: src/templates/coins-designs-nl.html.tmpl:8
-msgid "Dutch Euro Coin Designs"
+#: src/templates/banknotes-codes.html.tmpl:294
+#: src/templates/coins-designs-de.html.tmpl:35
+msgid "Munich"
 msgstr ""
 
-#: src/templates/about.html.tmpl:8
-msgid "About Us"
+#: src/templates/coins-designs-be.html.tmpl:8
+msgid "Belgian Euro Coin Designs"
+msgstr ""
+
+#: src/templates/coins-designs-ee.html.tmpl:18
+msgid ""
+"The Estonian euro coins feature the same design across all eight "
+"denominations. The country’s outline is prominently displayed above the "
+"country’s name in Estonian (‘{EstonianStart:r}EESTI{EstonianEnd:E}’)."
+msgstr ""
+
+#: src/templates/coins-designs-ee.html.tmpl:55
+msgid "Lembit Lõhmus"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:436
+msgid ""
+"1- and 2 cent coins have been removed from circulation and cannot be "
+"obtained."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:463
+msgid "Rabobank"
+msgstr ""
+
+#: src/templates/coins-designs-ad.html.tmpl:12
+msgid "Andorran €0.01 coin"
+msgstr ""
+
+#: src/templates/index.html.tmpl:15
+msgid "cash"
 msgstr ""
 
 #: src/templates/coins-designs-de.html.tmpl:43
 msgid "Karlsruhe"
 msgstr ""
 
-#: src/templates/coins-designs-hr.html.tmpl:25
-msgid ""
-"The 1-, 2- and 5 euro cent coins were designed by Maja Škripelj and feature "
-"a motif of the letters ‘ⰘⰓ’ from the {Link:L}Glagolitic script{-:E} — an old "
-"Slavic script that saw use in Croatia up until the 19th century — "
-"representing Croatia’s country code (‘HR’ in the Latin alphabet)."
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:93
-msgid ""
-"There is a fee of {€1:m} per roll if you aren’t a customer and {€0,30:m} "
-"otherwise. Coin deposits are free for customers."
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:157
-msgid "German Federal Bank"
-msgstr ""
-
-#: src/templates/coins-designs-ee.html.tmpl:40
-msgid "Author(s)"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:327
-msgid "Piraeus Bank"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:43
-msgid ""
-"Be aware of the fact that the information below may be outdated or "
-"inaccurate. Many of the details are self-reported."
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:286
-#: src/templates/collecting-crh.html.tmpl:295
-msgid ""
-"Free coin rolls if you are a customer or {€1,00:m} per roll if you are not a "
-"customer. There are coin roll machines."
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:310
-msgid ""
-"There are coin roll machines but it is not yet known if you need to be a "
-"customer or if there are fees."
-msgstr ""
-
-#: src/templates/-base.html.tmpl:11
-msgid "Euro Cash Wiki"
-msgstr ""
-
-#: src/templates/coins-mintages.html.tmpl:58
-#: src/templates/coins-mintages.html.tmpl:100
-msgid "Year"
-msgstr ""
-
-#: src/templates/coins-designs-ee.html.tmpl:13
-msgid "Estonian €1 coin"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:167
-msgid "Hand-rolled coin rolls can be obtained with no additional fees."
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:171
-msgid "Sparkasse"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:202
-msgid "Bank of Spain"
-msgstr ""
-
-#: src/templates/coins-designs-ad.html.tmpl:20
-msgid ""
-"On March of 2013 Andorra held a public design competition for all "
-"denominations except for the €2 denomination which the government pre-"
-"decided would bear the coat of arms of Andorra. Each set of denominations "
-"had a theme that participants had to center their designs around. These "
-"themes were:"
-msgstr ""
-
-#: src/templates/-navbar.html.tmpl:49
-msgid "Jargon"
-msgstr ""
-
-#: src/templates/coins-designs-be.html.tmpl:21
-msgid "Belgian €1 coin (King Philippe)"
-msgstr ""
-
-#: src/templates/coins-designs-at.html.tmpl:17
-msgid "Austrian €0.01 coin"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:337
-msgid ""
-"In general, coin rolls are available at banks with a fee of {€1,00:m} per "
-"roll; rolls could potentially have no fee if you only need a few."
-msgstr ""
-
-#: src/templates/about.html.tmpl:17
-msgid "Contact Us"
+#: src/templates/jargon.html.tmpl:27
+msgid "BU — Brilliantly Uncirculated"
 msgstr ""
 
 #: src/templates/coins-designs-de.html.tmpl:57
@@ -1828,137 +1614,88 @@ msgid ""
 "located below the year."
 msgstr ""
 
-#: src/templates/coins-designs-ee.html.tmpl:42
+#: src/templates/coins-designs-at.html.tmpl:27
+msgid "Austrian €0.50 coin"
+msgstr ""
+
+#: src/templates/jargon.html.tmpl:29
+msgid ""
+"BU is a general term to refer to coins from coincards and sets. These are "
+"different from UNC coins in that they are typically handled with more care "
+"during the minting process and are struck with higher-quality dies than "
+"coins minted for general circulation, resulting in a higher-quality coin."
+msgstr ""
+
+#: src/templates/jargon.html.tmpl:38
+msgid ""
+"While uncommon, NIFC coins are occasionally found in circulation. This can "
+"happen for a variety of reasons such as someone depositing their coin "
+"collection (known as a ‘collection dump’) or a collector’s child spending "
+"their rare coins on an ice cream. Some coin mints have also been known to "
+"put NIFCs that have gone unsold for multiple years into circulation."
+msgstr ""
+
+#: src/templates/jargon.html.tmpl:60
+msgid "CRH — Coin Roll Hunting"
+msgstr ""
+
+#: src/templates/-navbar.html.tmpl:48
+msgid "Banknotes"
+msgstr ""
+
+#: src/templates/coins-designs-nl.html.tmpl:41
+msgid ""
+"The €1 and €2 coins featuring King Willem-Alexander were minted with a much "
+"lower {Link:l}relief{-:E} than most euro coins of the same denomination. As "
+"a result it is not uncommon for these coins to appear worn after little use "
+"in circulation."
+msgstr ""
+
+#: src/templates/coins-designs-ee.html.tmpl:45
 msgid "Votes (%)"
 msgstr ""
 
-#: src/templates/collecting-crh.html.tmpl:26
+#: src/templates/coins-designs-hr.html.tmpl:38
 msgid ""
-"To get started with coin roll hunting you should first contact your bank or "
-"check their website to find details regarding coin withdrawal. You will then "
-"typically need to go to the bank to pick up your coins. Depending on your "
-"bank you may be able to withdraw coins from a machine. Most banks will "
-"charge you a small fee per roll and/or transaction."
+"The 2 euro coin was designed by Ivan Šivak and features the map of Croatia. "
+"The coin also has an edge-inscription that reads ‘{CroatianStart:r}O LIJEPA "
+"O DRAGA O SLATKA SLOBODO{CroatianEnd:E}’ (English: ‘OH BEAUTIFUL, OH DEAR, "
+"OH SWEET FREEDOM’) which is a line from the play {Link:L}Dubravka{-:E} by "
+"Ivan Gundulić."
 msgstr ""
 
-#: src/templates/collecting-crh.html.tmpl:401
-msgid "You should be able to get coin rolls with no additional fees."
+#: src/templates/jargon.html.tmpl:42
+msgid "PMD — Post-Mint Damage"
+msgstr ""
+
+#: src/templates/coins-designs-ee.html.tmpl:71
+msgid "Jaan Meristo"
+msgstr ""
+
+#: src/templates/coins-designs-at.html.tmpl:12
+msgid ""
+"The Austrian euro coins can be grouped into three different themes. The "
+"bronze coins feature Austrian flowers, the gold coins feature Austrian "
+"architecture, and the bimetalic coins feature famous Austrian people. All "
+"coins also feature an Austrian flag as well as the coins denomination. These "
+"coins together with the {Link:l}Greek euro coins{-:E} are the only coins "
+"that feature the denomination on both the common and national sides of the "
+"coin."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:102
+msgid ""
+"You can visit the National Bank of Belgium in Brussels as an EU citizen. You "
+"can order coin rolls for no fee up to €2000 in value. They seem to "
+"distribute only uncirculated coins and no commemoratives."
 msgstr ""
 
 #: src/templates/collecting-crh.html.tmpl:501
-msgid "In general there is a {€1,20:m} fee for coin rolls."
+msgid "National Bank of Slovakia"
 msgstr ""
 
-#: src/templates/banknotes-codes.html.tmpl:294
-#: src/templates/coins-designs-de.html.tmpl:35
-msgid "Munich"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:388
-msgid "Central Bank of Luxembourg"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:427
-msgid "HSBC Bank Malta"
-msgstr ""
-
-#: src/templates/coins-designs-ad.html.tmpl:47
-msgid "The arms of the Count of Foix"
-msgstr ""
-
-#: src/templates/jargon.html.tmpl:44
-msgid ""
-"Post-mint damage is any damage that a coin has sustained outside of the "
-"minting process, such as through being dropped on the ground, hit against a "
-"table, etc."
-msgstr ""
-
-#: src/templates/language.html.tmpl:48 src/templates/language.html.tmpl:82
-msgid "Select Your Language"
-msgstr "Kies uw taal"
-
-#: src/templates/coins-designs.html.tmpl:31
-msgid ""
-"Here you’ll be able to view all the coin designs for each country in the "
-"Eurozone. This section of the site doesn’t include minor varieties such as "
-"different mintmarks or errors; those are on the {Link:l}varieties{-:E} page."
-msgstr ""
-
-#: src/templates/coins-designs-de.html.tmpl:16
-msgid "German €1 coin"
-msgstr ""
-
-#: src/templates/coins-designs-be.html.tmpl:30
-msgid ""
-"In 2008 a second series of coins was released featuring a slightly modified "
-"design in which the royal monogram was moved to the inner portion of the "
-"coin along with the year of mintage in order to comply with the European "
-"Commission’s guidelines. The country code ‘BE’ was also added to the design "
-"underneath the royal monogram."
-msgstr ""
-
-#: src/templates/coins-designs-ee.html.tmpl:145
-msgid "Margus Kadarik"
-msgstr ""
-
-#. TRANSLATORS: Name of a bank
-#: src/templates/collecting-crh.html.tmpl:292
-msgid "Crédit Mutuel"
-msgstr ""
-
-#: src/templates/jargon.html.tmpl:15
-msgid ""
-"All terms defined below can be used as clickable links which highlight the "
-"selected term. It is recommended to use these links when sharing this page "
-"with others, so that the relevant terms are highlighted."
-msgstr ""
-
-#: src/templates/coins-mintages.html.tmpl:80
-#: src/templates/coins-mintages.html.tmpl:118
-msgid "Unknown"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:530
-msgid ""
-"Ask the Pope nicely and he’ll probably give you some Vatican coins for free."
-msgstr ""
-
-#: src/templates/coins-designs-ee.html.tmpl:41
-msgid "Votes"
-msgstr ""
-
-#. TRANSLATORS: This is a place name. If you’re translating for a latin-script language, translate this to ‘{Null}’, otherwise transliterate this into your respective alphabet.
-#: src/templates/coins-designs-ee.html.tmpl:50
-msgid "{Break:r}Hara 2"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:136
-msgid ""
-"Rolls can be obtained with no fee when you order through their online "
-"platform."
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:330
-msgid ""
-"Coin bags are available without fees for everyone. Smaller denominations are "
-"often not given out, and the coin bags you recieve are very large (there are "
-"reports of {€1,00:m} bags containing 250 coins)."
-msgstr ""
-
-#: src/templates/coins-designs-ad.html.tmpl:16
-msgid "Andorran €1 coin"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:17
-msgid ""
-"This type of coin collecting is often called ‘coin roll hunting’ "
-"(abbreviated to ‘CRH’) due to the fact that banks will often provide you "
-"with coins in the form of paper-wrapped rolls. You may however find that "
-"your coins come in plastic bags instead (common in countries like Ireland)."
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:90
-msgid "Raiffeisen Bank"
+#: src/templates/coins-designs-ad.html.tmpl:17
+msgid "Andorran €2 coin"
 msgstr ""
 
 #: src/templates/coins-designs-ad.html.tmpl:31
@@ -1970,79 +1707,350 @@ msgid ""
 "written underneath."
 msgstr ""
 
-#: src/templates/coins-designs-ad.html.tmpl:41
+#: src/templates/coins-designs-ee.html.tmpl:29
 msgid ""
-"The 1 Euro coin features the Case de la Vall: the former headquarters of the "
-"General Council of Andorra. It was constructed in 1580 as a manor and tower "
-"defense by the Busquets family."
+"The winner of the contest was awarded 50,000 KR (€3,196) while the other "
+"finalists were each awarded 20,000 KR (€1,278)."
 msgstr ""
 
-#: src/templates/banknotes-codes.html.tmpl:23
-msgid "2002 Series Printer Codes"
+#: src/templates/coins-designs-at.html.tmpl:19
+msgid "Austrian €0.05 coin"
+msgstr ""
+
+#. TRANSLATORS: Name of a bank
+#: src/templates/collecting-crh.html.tmpl:385
+msgid "Dexia"
+msgstr ""
+
+#: src/templates/coins-designs-ad.html.tmpl:13
+msgid "Andorran €0.50 coin"
+msgstr ""
+
+#: src/templates/coins-designs-ee.html.tmpl:89
+msgid "Jaak Peep, Villem Valme"
+msgstr ""
+
+#: src/templates/coins-designs-ee.html.tmpl:128
+msgid "A Flower in the Rye"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:271
+#: src/templates/collecting-crh.html.tmpl:279
+msgid ""
+"Free coin rolls if you are a customer or €1 per roll if you are not a "
+"customer. There are coin roll machines."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:346
+msgid ""
+"There are coin roll machines but it is unknown if you need to be a customer "
+"or if there are additional fees."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:388
+msgid "You should be able to get coin rolls with no additional fees."
+msgstr ""
+
+#: src/templates/coins-designs-ad.html.tmpl:20
+msgid ""
+"On March of 2013 Andorra held a public design competition for all "
+"denominations except for the €2 denomination which the government pre-"
+"decided would bear the coat of arms of Andorra. Each set of denominations "
+"had a theme that participants had to center their designs around. These "
+"themes were:"
+msgstr ""
+
+#: src/templates/coins-designs-ee.html.tmpl:22
+msgid ""
+"The design of the Estonian euro coins was chosen as part of a {EVLink:L}"
+"Eurovision{-:E}-style public televote where it competed and won against 9 "
+"other designs."
+msgstr ""
+
+#: src/templates/coins-designs-ee.html.tmpl:136
+msgid "Total"
+msgstr ""
+
+#: src/templates/coins-designs-ad.html.tmpl:46
+msgid "The arms of the Bishop of Urgell"
+msgstr ""
+
+#: src/templates/banknotes-codes.html.tmpl:52
+msgid ""
+"In the 2002 series, the first letter of the serial number can be used to "
+"identify the country that issued the banknote. The following table shows "
+"which countries map to which codes."
+msgstr ""
+
+#: src/templates/-base.html.tmpl:11
+msgid "Euro Cash Wiki"
+msgstr ""
+
+#: src/templates/about.html.tmpl:11
+msgid "Open Source"
+msgstr ""
+
+#: src/templates/coins.html.tmpl:33
+msgid "View the mintage figures of all the Euro coins"
+msgstr ""
+
+#: src/templates/coins-mintages.html.tmpl:12
+msgid ""
+"Here you’ll be able to view all the known mintages for all coins. You’ll "
+"also be able to filter on country, denomination, etc. If you have any "
+"mintage data that’s missing from our site, feel free to contact us."
+msgstr ""
+
+#: src/templates/coins-mintages.html.tmpl:55
+msgid "Standard Issue Coins"
+msgstr ""
+
+#: src/templates/coins-designs-hr.html.tmpl:17
+msgid "Croatian €1 coin"
+msgstr ""
+
+#: src/templates/coins-designs-ee.html.tmpl:103
+msgid "Bird Road"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:24
+msgid "Getting Started"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:152
+msgid "German Post"
 msgstr ""
 
 #: src/templates/coins.html.tmpl:8
 msgid "Euro Coins"
 msgstr ""
 
-#: src/templates/-navbar.html.tmpl:48
-msgid "Banknotes"
+#: src/templates/banknotes.html.tmpl:20 src/templates/coins.html.tmpl:20
+msgid "Designs"
 msgstr ""
 
-#: src/templates/collecting-crh.html.tmpl:128
-msgid "Rolls can be obtained with no fee by customers only"
-msgstr ""
-
-#: src/templates/collecting-crh.html.tmpl:153
-msgid ""
-"Coin roll availability and their related fees may vary across banks and "
-"branches. Unless specified otherwise, you must be a customer to purchase "
-"coin rolls."
-msgstr ""
-
-#: src/templates/coins-designs-ad.html.tmpl:24
-msgid "Andorran landscapes, nature, fauna and flora"
-msgstr ""
-
-#: src/templates/coins-designs-nl.html.tmpl:41
-msgid ""
-"The €1 and €2 coins featuring King Willem-Alexander were minted with a much "
-"lower {Link:l}relief{-:E} than most euro coins of the same denomination. As "
-"a result it is not uncommon for these coins to appear worn after little use "
-"in circulation."
-msgstr ""
-
-#: src/templates/coins-designs-ee.html.tmpl:72
-msgid "Jaan Meristo"
-msgstr ""
-
-#. TRANSLATORS: Estonian translators should replace the entire translation with ‘{Null}’
-#: src/templates/coins-designs-ee.html.tmpl:121
-msgid "{Break:r}Leopards-2"
+#: src/templates/coins-mintages.html.tmpl:102
+msgid "Mintage"
 msgstr ""
 
 #. TRANSLATORS: Name of a bank
-#: src/templates/collecting-crh.html.tmpl:458
+#: src/templates/collecting-crh.html.tmpl:284
+msgid "Crédit Agricole"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:325
+msgid ""
+"In general, coin rolls are available at banks with a fee of €1 per roll; "
+"rolls could potentially have no fee if you only need a few."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:411
+msgid "Bank of Valletta"
+msgstr ""
+
+#. TRANSLATORS: Name of a bank
+#: src/templates/collecting-crh.html.tmpl:448
 msgid "ABN AMRO"
 msgstr ""
 
-#: src/templates/banknotes-codes.html.tmpl:131
+#: src/templates/collecting-crh.html.tmpl:492
+msgid "Bank of Slovenia"
+msgstr ""
+
+#: src/templates/coins.html.tmpl:12
 msgid ""
-"The first letter of the printer code can be used to identify the specific "
-"printer at which the banknote was printed. The printer and country codes do "
-"not need to line up; a banknote issued by a country will often be printed in "
-"another."
+"On this section of the site you can find everything there is to know about "
+"the coins of the Eurozone."
 msgstr ""
 
-#: src/templates/jargon.html.tmpl:27
-msgid "BU — Brilliantly Uncirculated"
+#: src/templates/coins-designs-ee.html.tmpl:62
+msgid "Consistency"
 msgstr ""
 
-#: src/templates/-navbar.html.tmpl:54
-msgid "Discord"
+#. TRANSLATORS: Name of a coin design. Don’t translate unless you use a non-latin script
+#: src/templates/coins-designs-ee.html.tmpl:79
+msgid "Tomson 5791"
 msgstr ""
 
-#: src/templates/collecting-crh.html.tmpl:8
-#: src/templates/collecting.html.tmpl:20
-msgid "Coin Roll Hunting"
+#: src/templates/collecting-crh.html.tmpl:77
+msgid "Erste Bank"
 msgstr ""
+
+#. TRANSLATORS: Name of a bank
+#: src/templates/collecting-crh.html.tmpl:122
+msgid "Belfius"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:369
+msgid "Fee of €2 per roll of 2 euro coins."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:495
+msgid ""
+"You can purchase commemorative coins for face value, and coin rolls are sold "
+"with no fees to everyone."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:504
+msgid ""
+"You may be able to get uncirculated rolls, but this is not yet confirmed."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:511
+msgid ""
+"You can get an unlimited number of rolls for a €5 fee. You must be a "
+"customer of the bank."
+msgstr ""
+
+#: src/templates/coins-designs-ad.html.tmpl:8
+msgid "Andorran Euro Coin Designs"
+msgstr ""
+
+#: src/templates/jargon.html.tmpl:35
+msgid ""
+"NIFC coins are coins minted without the intention of being put into general "
+"circulation. These coins are typically minted with the purpose of being put "
+"into coincards or sets to be sold to collectors. Occasionally they are also "
+"handed out to collectors for face value at banks."
+msgstr ""
+
+#: src/templates/banknotes-codes.html.tmpl:59
+#: src/templates/banknotes-codes.html.tmpl:138
+#: src/templates/banknotes-codes.html.tmpl:228
+#: src/templates/coins-mintages.html.tmpl:28
+msgid "Country"
+msgstr ""
+
+#: src/templates/coins-designs-de.html.tmpl:54
+msgid ""
+"The bronze coins display an oak twig which is similar to the one found on "
+"the former Pfennig coins from the German Mark. The mint mark and year are "
+"located on the left- and right-hand sides of the stem."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:414
+#: src/templates/collecting-crh.html.tmpl:421
+msgid ""
+"You can get rolls for a fee of €0.30 per roll. You must order coin rolls "
+"through their online platform, and you must be a customer."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:479
+msgid "Banco Comercial Português"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:523
+msgid ""
+"Ask the Pope nicely and he’ll probably give you some Vatican coins for free."
+msgstr ""
+
+#: src/templates/coins-designs-ad.html.tmpl:34
+msgid ""
+"The Andorran 1-, 2- and 5 euro cent coins all feature the same design of a "
+"Pyrenean chamois in the center of the coin with a golden eagle flying above. "
+"Both animals are native to Andorra as well as the surrounding regions of "
+"France and Spain."
+msgstr ""
+
+#: src/templates/coins-designs-ad.html.tmpl:38
+msgid ""
+"The Andorran golden cents feature the Romanesque church of Santa Coloma. The "
+"church is the oldest in Andorra, dating back to the 9th century and is a "
+"UNESCO World Heritage site. Originally these coins were planned to depict an "
+"image of Christ, but that plan failed to go through after objections from "
+"the European Commission on grounds of religious neutrality on August 2013."
+msgstr ""
+
+#: src/templates/coins-designs-hr.html.tmpl:25
+msgid ""
+"The 1-, 2- and 5 euro cent coins were designed by Maja Škripelj and feature "
+"a motif of the letters ‘ⰘⰓ’ from the {Link:L}Glagolitic script{-:E} — an old "
+"Slavic script that saw use in Croatia up until the 19th century — "
+"representing Croatia’s country code (‘HR’ in the Latin alphabet)."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:43
+msgid ""
+"Be aware of the fact that the information below may be outdated or "
+"inaccurate. Many of the details are self-reported."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:319
+msgid ""
+"We currently have no information regarding coin roll hunting in Croatia."
+msgstr ""
+
+#: src/templates/banknotes-codes.html.tmpl:58
+#: src/templates/banknotes-codes.html.tmpl:137
+#: src/templates/banknotes-codes.html.tmpl:227
+msgid "Code"
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:247
+msgid ""
+"Coin rolls used to be obtainable without fees, however you can no longer "
+"obtain rolls."
+msgstr ""
+
+#: src/templates/collecting.html.tmpl:33
+msgid "Learn about the different methods to storing your collection"
+msgstr ""
+
+#: src/templates/coins-designs-at.html.tmpl:25
+msgid "Austrian €0.10 coin"
+msgstr ""
+
+#: src/templates/coins-designs-de.html.tmpl:14
+msgid "German €0.01 coin"
+msgstr ""
+
+#: src/templates/coins.html.tmpl:23
+msgid "View the 600+ different Euro-coin designs"
+msgstr ""
+
+#: src/templates/coins-designs-ee.html.tmpl:8
+msgid "Estonian Euro Coin Designs"
+msgstr ""
+
+#. TRANSLATORS: Name of a bank
+#: src/templates/collecting-crh.html.tmpl:202
+msgid "BBVA"
+msgstr ""
+
+#. TRANSLATORS: Name of a bank
+#: src/templates/collecting-crh.html.tmpl:456
+msgid "ING"
+msgstr ""
+
+#: src/templates/coins-mintages.html.tmpl:52
+msgid "Filter"
+msgstr ""
+
+#: src/templates/coins-mintages.html.tmpl:82
+#: src/templates/coins-mintages.html.tmpl:120
+msgid "Error"
+msgstr ""
+
+#: src/templates/coins-designs-de.html.tmpl:64
+msgid ""
+"The €2 coin also features an edge-inscription of Germany’s national motto "
+"and incipit of Germany’s national anthem. It reads ‘{GermanStart:r}EINIGKEIT "
+"UND RECHT UND FREIHEIT{GermanEnd:E}’ (English: ‘UNITY AND JUSTICE AND "
+"FREEDOM’)."
+msgstr ""
+
+#: src/templates/coins-designs-be.html.tmpl:26
+msgid ""
+"Since 1999 Belgium has released three series of euro coins, with each series "
+"having a single design repeated on all denominations. Starting in 1999 the "
+"Belgian euro coins featured the portrait of King Albert II with the {Link:L}"
+"royal monogram{-:E} in the outer ring of the coins."
+msgstr ""
+
+#: src/templates/collecting-crh.html.tmpl:11
+msgid "What is Coin Roll Hunting?"
+msgstr ""
+
+#~ msgctxt "Language Name"
+#~ msgid "Yкраїнська"
+#~ msgstr "Oekraïens"
