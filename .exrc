@@ -4,8 +4,8 @@ function s:SaveExcursion(cmd)
 	call winrestview(l:win)
 endfunction
 
-autocmd BufNewFile,BufRead */cmd/exttmpl/*
-	\ setlocal makeprg=go\ build\ ./cmd/exttmpl
+autocmd BufNewFile,BufRead */cmd/extpo/*
+	\ setlocal makeprg=go\ build\ ./cmd/extpo
 
 autocmd FileType go autocmd BufWritePre <buffer>
 	\ call s:SaveExcursion('gofmt -s')

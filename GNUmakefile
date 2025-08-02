@@ -6,18 +6,18 @@ gofiles   := $(shell find main.go src -name '*.go')
 sqlfiles  := $(shell find src/dbx/sql -name '*.sql')
 templates := $(shell find src/templates -name '*.tmpl')
 
-exttmpl := $(wildcard cmd/exttmpl/*.go)
+extpo   := $(wildcard cmd/extpo/*.go)
 
 ENABLED_LANGUAGES := $(shell ./aux/enabled-languages)
 
-all: euro-cash.eu exttmpl
+all: euro-cash.eu extpo
 
 euro-cash.eu: $(cssfiles) $(templates) $(gofiles) $(sqlfiles)
 	$(GO) build
 
-extract: exttmpl
+extract: extpo
 	find . -name '*.go' -exec xgotext --foreign-user -o po/backend.pot {} +
-	find . -name '*.html.tmpl' -exec ./exttmpl {} + \
+	find . -name '*.html.tmpl' -exec ./extpo {} + \
 		| msgcat po/backend.pot - -o po/messages.pot
 	for bcp in $(ENABLED_LANGUAGES);                                            \
 	do                                                                          \
@@ -38,8 +38,8 @@ po:
 		msgfmt "$$po" -o "$${po%.*}.mo";                                        \
 	done
 
-exttmpl: $(exttmpl)
-	$(GO) build ./cmd/exttmpl
+extpo: $(extpo)
+	$(GO) build ./cmd/extpo
 
 %.min.css: %.css
 	if command -v lightningcss >/dev/null;                                      \
@@ -52,7 +52,7 @@ exttmpl: $(exttmpl)
 clean:
 	find . -type f \(                                                           \
 		-name euro-cash.eu                                                      \
-		-or -name exttmpl                                                       \
+		-or -name extpo                                                         \
 		-or -name '*.min.css'                                                   \
 		-or -name '*.tar.gz'                                                    \
 	\) -delete
