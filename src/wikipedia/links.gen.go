@@ -3,8 +3,11 @@ package wikipedia
 /* TODO: Extract these programmatically */
 
 var extractedTitles = [...]string{
-	"Coat_of_arms_of_Andorra",
-	"Coat_of_arms_of_Bulgaria",
-	"Coat_of_arms_of_Croatia",
-	"Coat_of_arms_of_Germany",
+	"Coat of arms of Andorra",
+	"Royal cypher",
+	"Coat of arms of Germany",
+	"Eurovision Song Contest",
+	"Nikola Tesla",
+	"Glagolitic script",
+	"Dubravka (drama)",
 }

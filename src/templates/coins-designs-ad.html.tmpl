@@ -54,7 +54,7 @@
 	</p>
 	<p>
 		{{ .Get "Finally, the €2 coin features the {Link:L}coat of arms of Andorra{-:E}."
-		(map "Link" "https://en.wikipedia.org/wiki/Coat_of_arms_of_Andorra") }}
+		(map "Link" (.Printer.Wikipedia "Coat of arms of Andorra")) }}
 	</p>
 </main>
 {{ end }}

@@ -16,6 +16,8 @@ import (
 	"git.thomasvoss.com/euro-cash.eu/pkg/atexit"
 	"git.thomasvoss.com/euro-cash.eu/pkg/watch"
 	"github.com/leonelquinteros/gotext"
+
+	"git.thomasvoss.com/euro-cash.eu/src/wikipedia"
 )
 
 type Printer struct {
@@ -94,6 +96,10 @@ func initLocale(dir fs.FS, li LocaleInfo, name string, debugp bool) {
 
 func Locales() []LocaleInfo {
 	return locales[:]
+}
+
+func (p Printer) Wikipedia(title string) string {
+	return wikipedia.Url(title, p.Bcp)
 }
 
 func (p Printer) Get(fmt string, args ...map[string]any) string {

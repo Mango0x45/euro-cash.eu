@@ -19,8 +19,8 @@
 		(map "EstonianStart" `<span lang="et"><em>` "EstonianEnd" "em,span") }}
 	</p>
 	<p>
-		{{ .Get "The design of the Estonian euro coins was chosen as part of a {EVLink:L}Eurovision{-:E}-style public televote where it competed and won against 9 other designs."
-		(map "EVLink" "https://en.wikipedia.org/wiki/Eurovision_Song_Contest" ) }}
+		{{ .Get "The design of the Estonian euro coins was chosen as part of a {Link:L}Eurovision{-:E}-style public televote where it competed and won against 9 other designs."
+		(map "Link" (.Printer.Wikipedia "Eurovision Song Contest")) }}
 	</p>
 	<p>
 		{{ .Get "In June 2004 a public design competition was announced with a deadline for the 19th of October. In total 134 designs were submitted by the deadline and 10 designs were selected by a jury. These 10 designs were then voted on in a public vote over the course of one week. In total 45,453 people voted and the current design won with a total of 12,482 votes (27.46%)." }}
