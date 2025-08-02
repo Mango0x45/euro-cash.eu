@@ -33,7 +33,7 @@ Message-ID: <%s>
 
 func Send(subject, body string) {
 	if err := send(subject, body); err != nil {
-		log.Print(err)
+		log.Println(err)
 	}
 }
 

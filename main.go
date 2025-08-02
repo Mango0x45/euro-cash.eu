@@ -48,7 +48,7 @@ func main() {
 	defer func() {
 		if p := recover(); p != nil {
 			if app.Debugp {
-				log.Print(p)
+				log.Println(p)
 				time.Sleep(1 * time.Second)
 				app.Restart()
 			}

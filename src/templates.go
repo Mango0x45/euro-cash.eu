@@ -54,7 +54,7 @@ func BuildTemplates(dir fs.FS) {
 			go watch.FileFS(dir, name, func() {
 				defer func() {
 					if p := recover(); p != nil {
-						log.Print(p)
+						log.Println(p)
 					}
 				}()
 
