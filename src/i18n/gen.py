@@ -9,24 +9,28 @@ import subprocess
 import sys
 import urllib.request
 from dataclasses import dataclass
-from typing import TextIO
+from typing import Any, TextIO
 
 
 FILENAME = "locales.gen.go"
+
+class Rune(int):
+	pass
+
 
 @dataclass
 class Locale:
 	bcp: str
 	eurozone: bool
 	enabled: bool
-	territory: str | None  = dataclasses.field(default=None)
-	name: str              = dataclasses.field(init=False)
-	date_format: str       = dataclasses.field(init=False)
-	group_separator: int   = dataclasses.field(init=False)
-	decimal_separator: int = dataclasses.field(init=False)
-	monetary_pre: str      = dataclasses.field(init=False)
-	monetary_suf: str      = dataclasses.field(init=False)
-	percent_format: str    = dataclasses.field(init=False)
+	territory: str | None             = dataclasses.field(default=None)
+	name: str                         = dataclasses.field(init=False)
+	date_format: str                  = dataclasses.field(init=False)
+	group_separator: Rune             = dataclasses.field(init=False)
+	decimal_separator: Rune           = dataclasses.field(init=False)
+	monetary_formats: tuple[str, str] = dataclasses.field(init=False)
+	percent_format: str               = dataclasses.field(init=False)
+
 
 LOCALES = (
 	Locale(bcp="ca", eurozone=True,  enabled=False),
@@ -86,8 +90,7 @@ type LocaleInfo struct {
 	Eurozone, Enabled                bool
 	DateFormat                       string
 	GroupSeparator, DecimalSeparator rune
-	MonetaryPre                      [2]string
-	MonetarySuf                      string
+	MonetaryFormats                  [2]string
 	PercentFormat                    string
 }
 
@@ -98,19 +101,10 @@ var locales = [...]LocaleInfo{
 			for k, v in x.__dict__.items():
 				if not v or k == "territory":
 					continue
-				f.write("%s: " % pascal(k))
-				match v:
-					case bool():
-						f.write("true" if v else "false")
-					case int():
-						f.write("'%s'" % chr(v))
-					case str() if not v.startswith("gotext"):
-						f.write('"%s"' % v)
-					case str():
-						f.write(v)
-					case [str(), str()]:
-						f.write('[2]string{"%s", "%s"}' % (v[0], v[1]))
-				f.write(",\n")
+				if k == "name":
+					f.write('Name: gotext.GetC(%s, "Language Name"),\n' % val_to_go(v))
+				else:
+					f.write("%s: %s,\n" % (pascal(k), val_to_go(v)))
 			f.write("},\n")
 		f.write("}")
 
@@ -125,15 +119,14 @@ def write_locale(l: Locale) -> None:
 		urllib.request.urlopen(DATES_LINK % bcp),
 		urllib.request.urlopen(LANGUAGES_LINK % bcp),
 	))
-	name = jl["main"][bcp]["localeDisplayNames"]["languages"][l.bcp].capitalize()
-	l.name = 'gotext.GetC("%s", "Language Name")' % name
+	name = jl["main"][bcp]["localeDisplayNames"]["languages"][l.bcp]
+	l.name = name.capitalize()
 	syms = jn["main"][bcp]["numbers"]["symbols-numberSystem-latn"]
-	l.group_separator = ord(syms["group"])
-	l.decimal_separator = ord(syms["decimal"])
+	l.group_separator   = Rune(ord(syms["group"]))
+	l.decimal_separator = Rune(ord(syms["decimal"]))
 
 	fmt = jn["main"][bcp]["numbers"]["percentFormats-numberSystem-latn"]["standard"]
-	fmt = fmt.replace("%", "%%")
-	l.percent_format = re.sub(r"[0#,.]+", "%s", fmt)
+	l.percent_format = numfmt_subst(fmt)
 
 	fmt = jd["main"][bcp]["dates"]["calendars"]["gregorian"]["dateFormats"]["short"]
 	l.date_format = (
@@ -148,19 +141,30 @@ def write_locale(l: Locale) -> None:
 	)
 
 	fmt = jn["main"][bcp]["numbers"]["currencyFormats-numberSystem-latn"]["standard"]
-	parts = fmt.replace("¤", "€").split(";")
-	l.monetary_pre = ["", ""]
-
-	for i, x in enumerate(parts):
-		pre_suf = re.split(r"[0#,.]+", x)
-		l.monetary_pre[i] = pre_suf[0]
-		l.monetary_suf = pre_suf[1]
+	parts = list(map(numfmt_subst, fmt.replace("¤", "€").split(";")))
 	if len(parts) == 1:
-		l.monetary_pre[1] = "-" + l.monetary_pre[0]
+		parts.append('-' + parts[0])
+	l.monetary_formats = tuple(parts)
+
+
+def numfmt_subst(s: str) -> str:
+	return re.sub(r"[0#,.]+", "123", s)
 
 
 def pascal(s: str) -> str:
 	return ''.join(map(str.capitalize, s.split('_')))
+
+
+def val_to_go(x: Any) -> str:
+	match x:
+		case bool():
+			return "true" if x else "false"
+		case Rune():
+			return "'%s'" % chr(x)
+		case str():
+			return '"%s"' % x
+		case (str(), str()):
+			return "[2]string{%s, %s}" % (val_to_go(x[0]), val_to_go(x[1]))
 
 
 if __name__ == "__main__":

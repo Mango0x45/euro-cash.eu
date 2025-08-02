@@ -280,34 +280,44 @@ func sprintfL(li LocaleInfo, bob *strings.Builder, v any) error {
 }
 
 func sprintfm(li LocaleInfo, bob *strings.Builder, v any) error {
+	var (
+		fmt  string
+		negp bool
+	)
 	switch v.(type) {
 	case int:
-		n := v.(int)
-		htmlesc(bob, li.MonetaryPre[btoi(n >= 0)])
-		writeInt(bob, abs(n), li)
-		htmlesc(bob, li.MonetarySuf)
+		negp = v.(int) < 0
 	case float64:
-		n := v.(float64)
-		htmlesc(bob, li.MonetaryPre[btoi(n >= 0)])
-		writeFloat(bob, abs(n), li)
-		htmlesc(bob, li.MonetarySuf)
-	default:
-		return errors.New("TODO")
+		negp = v.(float64) < 0
 	}
+
+	fmt = li.MonetaryFormats[btoi(negp)]
+	pre, suf, _ := strings.Cut(fmt, "123")
+	htmlesc(bob, pre)
+
+	switch v.(type) {
+	case int:
+		writeInt(bob, abs(v.(int)), li)
+	case float64:
+		writeFloat(bob, abs(v.(float64)), li)
+	}
+
+	htmlesc(bob, suf)
 	return nil
 }
 
 func sprintfp(li LocaleInfo, bob *strings.Builder, v any) error {
-	var bob2 strings.Builder
+	pre, suf, _ := strings.Cut(li.PercentFormat, "123")
+	htmlesc(bob, pre)
+
 	switch v.(type) {
 	case int:
-		writeInt(&bob2, v.(int), li)
+		writeInt(bob, v.(int), li)
 	case float64:
-		writeFloat(&bob2, v.(float64), li)
-	default:
-		return errors.New("TODO")
+		writeFloat(bob, v.(float64), li)
 	}
-	bob.WriteString(fmt.Sprintf(li.PercentFormat, bob2.String()))
+
+	htmlesc(bob, suf)
 	return nil
 }
 
@@ -375,9 +385,9 @@ func abs[T number](x T) T {
 
 func btoi(b bool) int {
 	if b {
-		return 0
+		return 1
 	}
-	return 1
+	return 0
 }
 
 func htmlesc(bob *strings.Builder, s string) {
