@@ -33,7 +33,7 @@ func Init(locale string) {
 	q.Set("prop", "langlinks")
 	q.Set("titles", titles)
 	q.Set("formatversion", "2")
-	q.Set("lllimit", "100")
+	q.Set("lllimit", "max")
 
 	for {
 		if resp.Continue != nil {
