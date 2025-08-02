@@ -12,7 +12,7 @@ import (
 
 var (
 	defaultLocale string
-	titlemap = make(map[string]map[string]string)
+	titlemap      = make(map[string]map[string]string)
 )
 
 func Init(locale string) {
