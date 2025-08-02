@@ -45,8 +45,8 @@ var (
 	currentFile  []byte
 	currentPath  string
 	lastComment  string
-	translations map[translation]transinfo = make(map[translation]transinfo)
-	configs                                = map[string]config{
+	translations = make(map[translation]transinfo)
+	configs      = map[string]config{
 		"Get":    {1, -1, -1, -1},
 		"GetC":   {1, -1, 2, -1},
 		"GetD":   {2, -1, -1, 1},

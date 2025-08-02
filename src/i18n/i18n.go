@@ -41,7 +41,7 @@ var (
 		'r': sprintfr,
 	}
 
-	Printers       map[string]Printer = make(map[string]Printer, len(locales))
+	Printers       = make(map[string]Printer, len(locales))
 	DefaultPrinter Printer
 )
 
