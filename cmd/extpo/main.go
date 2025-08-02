@@ -41,7 +41,6 @@ func (l loc) String() string {
 }
 
 var (
-	outfile      *os.File
 	currentFile  []byte
 	currentPath  string
 	lastComment  string
@@ -76,6 +75,7 @@ func main() {
 		os.Exit(1)
 	}
 
+	var outfile *os.File
 	if *outpath == "-" {
 		outfile = os.Stdout
 	} else {
