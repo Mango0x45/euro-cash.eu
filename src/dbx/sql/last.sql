@@ -1,3 +1,6 @@
+DELETE FROM mintages_s;
+DELETE FROM mintages_c;
+
 INSERT INTO mintages_s (
 	country,
 	type,
