@@ -1,7 +1,5 @@
 package email
 
-/* TODO: Put this in /pkg */
-
 import (
 	"crypto/tls"
 	"errors"

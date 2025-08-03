@@ -174,11 +174,6 @@ func (p Printer) Sprintf(format string, args ...map[string]any) string {
 		htmlesc(&bob, format[:i])
 
 		format = format[i+1:]
-		if len(format) == 0 {
-			/* TODO: Handle error: trailing percent */
-			break
-		}
-
 		i = strings.IndexRune(format, '}')
 		if i == -1 {
 			/* TODO: Handle error: unterminated { */
