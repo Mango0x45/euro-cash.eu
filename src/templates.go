@@ -31,6 +31,7 @@ var (
 		"locales":          i18n.Locales,
 		"map":              templateMakeMap,
 		"safe":             asHTML,
+		"toString":         toString,
 		"toUpper":          strings.ToUpper,
 		"tuple":            templateMakeTuple,
 		"withTranslation":  withTranslation,
@@ -90,6 +91,10 @@ func buildTemplate(dir fs.FS, name string) *template.Template {
 
 func asHTML(s string) template.HTML {
 	return template.HTML(s)
+}
+
+func toString(s template.HTML) string {
+	return string(s)
 }
 
 func templateMakeTuple(args ...any) []any {

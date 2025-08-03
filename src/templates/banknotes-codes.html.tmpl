@@ -143,76 +143,103 @@
 			<tr>
 				<td>D</td>
 				<td>{{ .GetC "Finland" "Place Name" }}</td>
-				<td>SETEC</td>
+				{{ withTranslations "td"
+					(.GetC "SETEC" "Company Name" | toString)
+					(tuple "" "SETEC") }}
 			</tr>
 			<tr>
 				<td>E</td>
 				<td>{{ .GetC "France" "Place Name" }}</td>
-				<td>Oberthur</td>
+				{{ withTranslations "td"
+					(.GetC "Oberthur" "Company Name" | toString)
+					(tuple "" "Oberthur") }}
 			</tr>
 			<tr>
 				<td>F</td>
 				<td>{{ .GetC "Austria" "Place Name" }}</td>
-				<td>
-					<span lang="de">
-						Österreichische Banknoten- und Sicherheitsdruck GmbH
-					</span>
-				</td>
+				{{ withTranslations "td"
+					(.GetC "Austrian Banknote and Security Printing" "Company Name" | toString)
+					(tuple "de" "Oesterreichische Banknoten- und Sicherheitsdruck") }}
 			</tr>
 			<tr>
 				<td>G</td>
 				<td>{{ .GetC "Netherlands" "Place Name" }}</td>
-				<td><span lang="nl">Koninklijke Joh. Enschedé</span></td>
+				{{ withTranslations "td"
+					(.GetC "Royal Joh. Enschedé" "Company Name" | toString)
+					(tuple "nl" "Koninklijke Joh. Enschedé") }}
 			</tr>
 			<tr>
 				<td>H</td>
 				<td>{{ .GetC "United Kingdom" "Place Name" }}</td>
-				<td>De La Rue</td>
+				{{ withTranslations "td"
+					(.GetC "De La Rue" "Company Name" | toString)
+					(tuple "" "De La Rue") }}
 			</tr>
 			<tr>
 				<td>J</td>
 				<td>{{ .GetC "Italy" "Place Name" }}</td>
-				<td>{{ .Get "Bank of Italy" }}</td>
+				{{ withTranslations "td"
+					(.GetC "Bank of Italy" "Company Name" | toString)
+					(tuple "it" "Banca d’Italia") }}
 			</tr>
 			<tr>
 				<td>K</td>
 				<td>{{ .GetC "Ireland" "Place Name" }}</td>
-				<td>{{ .Get "Central Bank of Ireland" }}</td>
+				{{ withTranslations "td"
+					(.GetC "Central Bank of Ireland" "Company Name" | toString)
+					(tuple "ga" "Banc Ceannais na hÉireann")
+					(tuple "en" "Central Bank of Ireland") }}
 			</tr>
 			<tr>
 				<td>L</td>
 				<td>{{ .GetC "France" "Place Name" }}</td>
-				<td>{{ .Get "Bank of France" }}</td>
+				{{ withTranslations "td"
+					(.GetC "Bank of France" "Company Name" | toString)
+					(tuple "fr" "Banque du France") }}
 			</tr>
 			<tr>
 				<td>M</td>
 				<td>{{ .GetC "Spain" "Place Name" }}</td>
-				<td>{{ .Get "Royal Mint of Spain" }}</td>
+				{{ withTranslations "td"
+					(.GetC "Royal Mint of Spain" "Company Name" | toString)
+					(tuple "es" "Fábrica Nacional de Moneda y Timbre") }}
 			</tr>
 			<tr>
 				<td>N</td>
 				<td>{{ .GetC "Greece" "Place Name" }}</td>
-				<td>{{ .Get "Bank of Greece" }}</td>
+				{{ withTranslations "td"
+					(.GetC "Bank of Greece" "Company Name" | toString)
+					(tuple "gr" "Τράπεζα της Ελλάδος") }}
 			</tr>
 			<tr>
 				<td>P</td>
 				<td>{{ .GetC "Germany" "Place Name" }}</td>
-				<td>Giesecke+Devrient GmbH</td>
+				{{ withTranslations "td"
+					(.GetC "Giesecke+Devrient" "Company Name" | toString)
+					(tuple "de" "Giesecke+Devrient") }}
 			</tr>
 			<tr>
 				<td>R</td>
 				<td>{{ .GetC "Germany" "Place Name" }}</td>
-				<td><span lang="de">Bundesdruckerei GmbH</span></td>
+				{{ withTranslations "td"
+					(.GetC "Federal Printing Office" "Company Name" | toString)
+					(tuple "de" "Bundesdruckerei") }}
 			</tr>
 			<tr>
 				<td>T</td>
 				<td>{{ .GetC "Belgium" "Place Name" }}</td>
-				<td>{{ .Get "National Bank of Belgium" }}</td>
+				{{ withTranslations "td"
+					(.GetC "National Bank of Belgium" "Company Name" | toString)
+					(tuple "nl" "Nationale Bank van België")
+					(tuple "fr" "Banque nationale de Belgique")
+					(tuple "de" "Belgische Nationalbank") }}
 			</tr>
 			<tr>
 				<td>U</td>
 				<td>{{ .GetC "Portugal" "Place Name" }}</td>
-				<td>Valora S.A.</td>
+				{{ withTranslations "td"
+					(.GetC "Valora S.A." "Company Name" | toString)
+					(tuple "" "Valora S.A.") }}
 			</tr>
 		</tbody>
 	</table>
@@ -232,76 +259,103 @@
 		<tr>
 			<td>E</td>
 			<td>{{ .GetC "France" "Place Name" }}</td>
-			<td>Oberthur</td>
+			{{ withTranslations "td"
+				(.GetC "Oberthur" "Company Name" | toString)
+				(tuple "" "Oberthur") }}
 		</tr>
 		<tr>
 			<td>F</td>
 			<td>{{ .GetC "Bulgaria" "Place Name" }}</td>
-			<td>Oberthur Fiduciaire AD</td>
+			{{ withTranslations "td"
+				(.GetC "Oberthur Fiduciaire AD" "Company Name" | toString)
+				(tuple "" "Oberthur Fiduciaire AD") }}
 		</tr>
 		<tr>
 			<td>M</td>
 			<td>{{ .GetC "Portugal" "Place Name" }}</td>
-			<td>Valora S.A.</td>
+			{{ withTranslations "td"
+				(.GetC "Valora S.A." "Company Name" | toString)
+				(tuple "" "Valora S.A.") }}
 		</tr>
 		<tr>
 			<td>N</td>
 			<td>{{ .GetC "Austria" "Place Name" }}</td>
-			<td>
-				<span lang="de">
-					Österreichische Banknoten- und Sicherheitsdruck GmbH
-				</span>
-			</td>
+			{{ withTranslations "td"
+				(.GetC "Austrian Banknote and Security Printing" "Company Name" | toString)
+				(tuple "de" "Oesterreichische Banknoten- und Sicherheitsdruck") }}
 		</tr>
 		<tr>
 			<td>P</td>
 			<td>{{ .GetC "Netherlands" "Place Name" }}</td>
-			<td><span lang="nl">Koninklijke Joh. Enschedé</span></td>
+			{{ withTranslations "td"
+				(.GetC "Royal Joh. Enschedé" "Company Name" | toString)
+				(tuple "nl" "Koninklijke Joh. Enschedé") }}
 		</tr>
 		<tr>
 			<td>R</td>
 			<td>{{ .GetC "Germany" "Place Name" }}</td>
-			<td><span lang="de">Bundesdruckerei GmbH</span></td>
+			{{ withTranslations "td"
+				(.GetC "Federal Printing Office" "Company Name" | toString)
+				(tuple "de" "Bundesdruckerei") }}
 		</tr>
 		<tr>
 			<td>S</td>
 			<td>{{ .GetC "Italy" "Place Name" }}</td>
-			<td>{{ .Get "Bank of Italy" }}</td>
+			{{ withTranslations "td"
+				(.GetC "Bank of Italy" "Company Name" | toString)
+				(tuple "it" "Banca d’Italia") }}
 		</tr>
 		<tr>
 			<td>T</td>
 			<td>{{ .GetC "Ireland" "Place Name" }}</td>
-			<td>{{ .Get "Central Bank of Ireland" }}</td>
+			{{ withTranslations "td"
+				(.GetC "Central Bank of Ireland" "Company Name" | toString)
+				(tuple "ga" "Banc Ceannais na hÉireann")
+				(tuple "en" "Central Bank of Ireland") }}
 		</tr>
 		<tr>
 			<td>U</td>
 			<td>{{ .GetC "France" "Place Name" }}</td>
-			<td>{{ .Get "Bank of France" }}</td>
+			{{ withTranslations "td"
+				(.GetC "Bank of France" "Company Name" | toString)
+				(tuple "fr" "Banque du France") }}
 		</tr>
 		<tr>
 			<td>V</td>
 			<td>{{ .GetC "Spain" "Place Name" }}</td>
-			<td>{{ .Get "Royal Mint of Spain" }}</td>
+			{{ withTranslations "td"
+				(.GetC "Royal Mint of Spain" "Company Name" | toString)
+				(tuple "es" "Fábrica Nacional de Moneda y Timbre") }}
 		</tr>
 		<tr>
 			<td>W</td>
 			<td>{{ .GetC "Germany" "Place Name" }}</td>
-			<td>Giesecke+Devrient GmbH {{ .Get "Leipzig" }}</td>
+			{{ withTranslations "td"
+				(.GetC "Giesecke+Devrient Leipzig" "Company Name" | toString)
+				(tuple "de" "Giesecke+Devrient Leipzig") }}
 		</tr>
 		<tr>
 			<td>X</td>
 			<td>{{ .GetC "Germany" "Place Name" }}</td>
-			<td>Giesecke+Devrient GmbH {{ .Get "Munich" }}</td>
+			{{ withTranslations "td"
+				(.GetC "Giesecke+Devrient Munich" "Company Name" | toString)
+				(tuple "de" "Giesecke+Devrient München") }}
 		</tr>
 		<tr>
 			<td>Y</td>
 			<td>{{ .GetC "Greece" "Place Name" }}</td>
-			<td>{{ .Get "Bank of Greece" }}</td>
+			{{ withTranslations "td"
+				(.GetC "Bank of Greece" "Company Name" | toString)
+				(tuple "gr" "Τράπεζα της Ελλάδος") }}
 		</tr>
 		<tr>
 			<td>Z</td>
 			<td>{{ .GetC "Belgium" "Place Name" }}</td>
-			<td>{{ .Get "National Bank of Belgium" }}</td>
+			{{ withTranslations "td"
+				(.GetC "National Bank of Belgium" "Company Name" | toString)
+				(tuple "nl" "Nationale Bank van België")
+				(tuple "fr" "Banque nationale de Belgique")
+				(tuple "de" "Belgische Nationalbank") }}
 		</tr>
 	</table>
 </main>
