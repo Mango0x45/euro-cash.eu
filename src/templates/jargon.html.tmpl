@@ -1,13 +1,20 @@
 {{ define "header" }}
 {{ template "header-navbar" . }}
+
+<style>
+	dt > a:target {
+		background-color: var(--pico-mark-background-color);
+	}
+</style>
 {{ end }}
+
 {{ define "content" }}
 
-<header>
+<header class="container">
 	{{ template "navbar" . }}
 	<h1>{{ .Get "Euro Cash Jargon" }}</h1>
 </header>
-<main>
+<main class="container">
 	<p>
 		{{ .Get "Both on this website and in other related forums you will come across many terms that you may not be familiar with. This page will hopefully get you up to speed with the most important and frequently-used terminology." }}
 	</p>

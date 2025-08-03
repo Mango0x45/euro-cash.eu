@@ -13,6 +13,8 @@ import (
 	"strings"
 	"time"
 
+	"golang.org/x/text/collate"
+	"golang.org/x/text/language"
 	. "git.thomasvoss.com/euro-cash.eu/pkg/try"
 
 	"git.thomasvoss.com/euro-cash.eu/src/dbx"
@@ -38,6 +40,7 @@ func Run(port int) {
 	mux.Handle("GET /storage/", fs)
 	if Debugp {
 		mux.Handle("GET /style.css", fs)
+		mux.Handle("GET /style-2.css", fs)
 	} else {
 		mux.Handle("GET /style.min.css", fs)
 	}
@@ -137,12 +140,6 @@ func countryHandler(next http.Handler) http.Handler {
 func mintageHandler(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		td := r.Context().Value("td").(*templateData)
-		td.Code = r.FormValue("code")
-		if !slices.ContainsFunc(td.Countries, func(c country) bool {
-			return c.Code == td.Code
-		}) {
-			td.Code = td.Countries[0].Code
-		}
 
 		td.Type = r.FormValue("type")
 		switch td.Type {
@@ -151,8 +148,60 @@ func mintageHandler(next http.Handler) http.Handler {
 			td.Type = "circ"
 		}
 
+		td.FilterBy = r.FormValue("filter-by")
+		switch td.FilterBy {
+		case "country", "year":
+		default:
+			td.FilterBy = "country"
+		}
+
 		var err error
-		td.Mintages, err = dbx.GetMintages(td.Code, dbx.NewMintageType(td.Type))
+		mt := dbx.NewMintageType(td.Type)
+
+		switch td.FilterBy {
+		case "country":
+			td.Code = r.FormValue("country")
+			if !slices.ContainsFunc(td.Countries, func(c country) bool {
+				return c.Code == td.Code
+			}) {
+				td.Code = td.Countries[0].Code
+			}
+			td.CountryMintages, err = dbx.GetMintagesByCountry(td.Code, mt)
+		case "year":
+			td.Year, err = strconv.Atoi(r.FormValue("year"))
+			if err != nil {
+				td.Year = 1999
+			}
+			td.YearMintages, err = dbx.GetMintagesByYear(td.Year, mt)
+
+			/* NOTE: It’s safe to use MustParse() here, because by this
+			   point we know that all BCPs are valid. */
+			c := collate.New(language.MustParse(td.Printer.Bcp))
+			for i, r := range td.YearMintages.Standard {
+				name := td.Printer.GetC(
+					countryCodeToName[r.Country], "Place Name")
+				td.YearMintages.Standard[i].Country = name
+			}
+			for i, r := range td.YearMintages.Commemorative {
+				name := td.Printer.GetC(
+					countryCodeToName[r.Country], "Place Name")
+				td.YearMintages.Commemorative[i].Country = name
+			}
+			slices.SortFunc(td.YearMintages.Standard, func(x, y dbx.MSYearRow) int {
+				Δ := c.CompareString(x.Country, y.Country)
+				if Δ == 0 {
+					Δ = c.CompareString(x.Mintmark, y.Mintmark)
+				}
+				return Δ
+			})
+			slices.SortFunc(td.YearMintages.Commemorative, func(x, y dbx.MCYearRow) int {
+				Δ := c.CompareString(x.Country, y.Country)
+				if Δ == 0 {
+					Δ = c.CompareString(x.Mintmark, y.Mintmark)
+				}
+				return Δ
+			})
+		}
 		if err != nil {
 			throwError(http.StatusInternalServerError, err, w, r)
 			return

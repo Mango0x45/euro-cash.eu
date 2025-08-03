@@ -22,7 +22,7 @@
 			> :first-child {
 				font-size: 2em;
 				font-weight: 600; /* Between normal and bold */
-				min-width: calc(var(--form-element-spacing-horizontal) + 2ch);
+				min-width: calc(var(--pico-form-element-spacing-horizontal) + 2ch);
 			}
 		}
 	}
@@ -73,14 +73,14 @@
 {{ end }}
 
 {{ define "content" }}
-<header>
+<header class="container">
 	{{ template "navbar" . }}
 	<h1>
 		{{ .Get "Select Your Language" }}
 		<br><span class="lang-fade-in-out translation">&nbsp;</span>
 	</h1>
 </header>
-<main>
+<main class="container">
 	<h2>
 		{{ .Get "Eurozone Languages" }}
 		<br><span class="lang-fade-in-out translation">&nbsp;</span>

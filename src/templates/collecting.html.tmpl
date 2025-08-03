@@ -1,63 +1,61 @@
 {{ define "header" }}
 {{ template "header-navbar" . }}
+
+<style>
+	#sections {
+		--button-min-width: 40ch;
+
+		article {
+			min-height: 100%;
+		}
+	}
+</style>
 {{ end }}
 
 {{ define "content" }}
-<header>
+<header class="container">
 	{{ template "navbar" . }}
 	<h1>{{ .Get "Euro Coin Collecting" }}</h1>
 </header>
-<main>
+<main class="container">
 	<p>
 		{{ .Get "On this section of the site you can find everything there is to know about collecting Euro coins. If this is a hobby that interests you, join the Discord server linked at the top of the page!" }}
 	</p>
 	<hr>
-	<section>
-		<div class="grid">
-			<a class="no-deco" href="/collecting/crh">
-				<article>
-					<header>
-						<h3>{{ .Get "Coin Roll Hunting" }}</h3>
-					</header>
-					<main>
-						{{ .Get "Learn about collecting coins from coin rolls" }}
-					</main>
-				</article>
-			</a>
-			<a class="no-deco" href="/collecting/storage">
-				<article>
-					<header>
-						<h3>{{ .Get "Coin Storage" }}</h3>
-					</header>
-					<main>
-						{{ .Get "Learn about the different methods to storing your collection" }}
-					</main>
-				</article>
-			</a>
-			<!-- TODO: Implement the shop hunting page -->
-			<a class="no-deco" href="#">
-				<article>
-					<header>
-						<h3>{{ .Get "Shop Hunting" }}</h3>
-					</header>
-					<main>
-						{{ .Get "Learn about how to collect coins from shops" }}
-					</main>
-				</article>
-			</a>
-		</div>
-		<div class="grid">
-			<a class="no-deco" href="/collecting/vending">
-				<article>
-					<header>
-						<h3>{{ .Get "Vending Machine Hunting" }}</h3>
-					</header>
-					<main>
-						{{ .Get "Learn about collecting coins from vending machines" }}
-					</main>
-				</article>
-			</a>
-		</div>
-	</section>
+	<div id="sections" class="button-grid">
+		<a class="no-deco" href="/collecting/crh">
+			<article>
+				<header>
+					<h3>{{ .Get "Coin Roll Hunting" }}</h3>
+				</header>
+				{{ .Get "Learn about collecting coins from coin rolls" }}
+			</article>
+		</a>
+		<a class="no-deco" href="/collecting/storage">
+			<article>
+				<header>
+					<h3>{{ .Get "Coin Storage" }}</h3>
+				</header>
+				{{ .Get "Learn about the different methods to storing your collection" }}
+			</article>
+		</a>
+		<!-- TODO: Implement the shop hunting page -->
+		<a class="no-deco" href="#">
+			<article>
+				<header>
+					<h3>{{ .Get "Shop Hunting" }}</h3>
+				</header>
+				{{ .Get "Learn about how to collect coins from shops" }}
+			</article>
+		</a>
+		<a class="no-deco" href="/collecting/vending">
+			<article>
+				<header>
+					<h3>{{ .Get "Vending Machine Hunting" }}</h3>
+				</header>
+				{{ .Get "Learn about collecting coins from vending machines" }}
+			</article>
+		</a>
+	</div>
 </main>
 {{ end }}

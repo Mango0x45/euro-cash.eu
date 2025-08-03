@@ -3,7 +3,7 @@
 {{ end }}
 
 {{ define "content" }}
-<header>
+<header class="container">
 	{{ template "navbar" . }}
 	<hgroup>
 		<h1>{{ .Get "The Euro Cash Wiki" }}</h1>
@@ -16,7 +16,7 @@
 		</p>
 	</hgroup>
 </header>
-<main>
+<main class="container">
 	<!-- TODO(2026): s/26/27/; Welcome Bulgaria! -->
 	<p>
 		{{ .Get "Welcome to the Euro Cash Wiki! This sites aims to be a resource for you to discover everything there is to know about the coins and banknotes of the Euro, a currency that spans 26 countries and 350 million people. We also have dedicated sections of the site for collectors." }}

@@ -1,50 +1,52 @@
 {{ define "header" }}
 {{ template "header-navbar" . }}
+
+<style>
+	#sections {
+		--button-min-width: 40ch;
+
+		article {
+			min-height: 100%;
+		}
+	}
+</style>
 {{ end }}
 
 {{ define "content" }}
-<header>
+<header class="container">
 	{{ template "navbar" . }}
 	<h1>{{ .Get "Euro Coins" }}</h1>
 </header>
-<main>
+<main class="container">
 	<p>
 		{{ .Get "On this section of the site you can find everything there is to know about the coins of the Eurozone." }}
 	</p>
 	<hr />
-	<section>
-		<div class="grid">
-			<a class="no-deco" href="/coins/designs">
-				<article>
-					<header>
-						<h3>{{ .Get "Designs" }}</h3>
-					</header>
-					<main>
-						{{ .Get "View the 600+ different Euro-coin designs" }}
-					</main>
-				</article>
-			</a>
-			<a class="no-deco" href="/coins/mintages">
-				<article>
-					<header>
-						<h3>{{ .Get "Mintages" }}</h3>
-					</header>
-					<main>
-						{{ .Get "View the mintage figures of all the Euro coins" }}
-					</main>
-				</article>
-			</a>
-			<a class="no-deco" href="/coins/varieties">
-				<article>
-					<header>
-						<h3>{{ .Get "Varieties" }}</h3>
-					</header>
-					<main>
-						{{ .Get "View all the known Euro varieties" }}
-					</main>
-				</article>
-			</a>
-		</div>
-	</section>
+	<div id="sections" class="button-grid">
+		<a class="no-deco" href="/coins/designs">
+			<article>
+				<header>
+					<h3>{{ .Get "Designs" }}</h3>
+				</header>
+				{{ .Get "View the 600+ different Euro-coin designs" }}
+			</article>
+		</a>
+		<a class="no-deco" href="/coins/mintages">
+			<article>
+				<header>
+					<h3>{{ .Get "Mintages" }}</h3>
+				</header>
+				{{ .Get "View the mintage figures of all the Euro coins" }}
+			</article>
+		</a>
+		<a class="no-deco" href="/coins/varieties">
+			<article>
+				<header>
+					<h3>{{ .Get "Varieties" }}</h3>
+				</header>
+				{{ .Get "View all the known Euro varieties" }}
+			</article>
+		</a>
+	</div>
 </main>
 {{ end }}

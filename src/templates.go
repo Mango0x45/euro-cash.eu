@@ -5,6 +5,7 @@ import (
 	"io/fs"
 	"log"
 	"strings"
+	"time"
 
 	. "git.thomasvoss.com/euro-cash.eu/pkg/try"
 	"git.thomasvoss.com/euro-cash.eu/pkg/watch"
@@ -14,12 +15,14 @@ import (
 )
 
 type templateData struct {
-	Debugp     bool
-	Printer    i18n.Printer
-	Printers   map[string]i18n.Printer
-	Code, Type string
-	Mintages   dbx.MintageData
-	Countries  []country
+	Debugp               bool
+	Printer              i18n.Printer
+	Printers             map[string]i18n.Printer
+	Code, Type, FilterBy string
+	Year                 int
+	CountryMintages      dbx.CountryMintageData
+	YearMintages         dbx.YearMintageData
+	Countries            []country
 }
 
 var (
@@ -30,16 +33,22 @@ var (
 		"ifElse":           ifElse,
 		"locales":          i18n.Locales,
 		"map":              templateMakeMap,
+		"plus1":            plus1,
 		"safe":             asHTML,
 		"toString":         toString,
 		"toUpper":          strings.ToUpper,
 		"tuple":            templateMakeTuple,
 		"withTranslation":  withTranslation,
 		"withTranslations": withTranslations,
+		"years":            years,
 	}
 )
 
 func BuildTemplates(dir fs.FS) {
+	buildTemplates(dir, Debugp)
+}
+
+func buildTemplates(dir fs.FS, debugp bool) {
 	ents := Try2(fs.ReadDir(dir, "."))
 	notFoundTmpl = buildTemplate(dir, "-404")
 	errorTmpl = buildTemplate(dir, "-error")
@@ -51,7 +60,7 @@ func BuildTemplates(dir fs.FS) {
 		}
 		name := e.Name()
 		buildAndSetTemplate(dir, name)
-		if Debugp {
+		if debugp {
 			go watch.FileFS(dir, name, func() {
 				defer func() {
 					if p := recover(); p != nil {
@@ -59,8 +68,13 @@ func BuildTemplates(dir fs.FS) {
 					}
 				}()
 
-				buildAndSetTemplate(dir, name)
-				log.Printf("Template ‘%s’ updated\n", name)
+				if strings.HasPrefix(name, "-") {
+					buildTemplates(dir, false)
+					log.Println("All templates updated")
+				} else {
+					buildAndSetTemplate(dir, name)
+					log.Printf("Template ‘%s’ updated\n", name)
+				}
 			})
 		}
 	}
@@ -183,6 +197,19 @@ func withTranslations(tag string, text string, translations ...[]any) template.H
 	bob.WriteString(tag)
 	bob.WriteByte('>')
 	return template.HTML(bob.String())
+}
+
+func plus1(x int) int {
+	return x + 1
+}
+
+func years() []int {
+	sy, ey := 1999, time.Now().Year()
+	xs := make([]int, ey-sy+1)
+	for i := range xs {
+		xs[i] = sy + i
+	}
+	return xs
 }
 
 func (td templateData) Get(fmt string, args ...map[string]any) template.HTML {

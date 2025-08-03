@@ -13,6 +13,35 @@ type country struct {
 	Code, Name string
 }
 
+var countryCodeToName = map[string]string{
+	"ad": "Andorra",
+	"at": "Austria",
+	"be": "Belgium",
+	/* TODO(2026): Add Bulgaria */
+	/* "bg": "Bulgaria", */
+	"cy": "Cyprus",
+	"de": "Germany",
+	"ee": "Estonia",
+	"es": "Spain",
+	"fi": "Finland",
+	"fr": "France",
+	"gr": "Greece",
+	"hr": "Croatia",
+	"ie": "Ireland",
+	"it": "Italy",
+	"lt": "Lithuania",
+	"lu": "Luxembourg",
+	"lv": "Latvia",
+	"mc": "Monaco",
+	"mt": "Malta",
+	"nl": "Netherlands",
+	"pt": "Portugal",
+	"si": "Slovenia",
+	"sk": "Slovakia",
+	"sm": "San Marino",
+	"va": "Vatican City",
+}
+
 func sortedCountries(p i18n.Printer) []country {
 	xs := []country{
 		{Code: "ad", Name: p.GetC("Andorra", "Place Name")},

@@ -1,50 +1,52 @@
 {{ define "header" }}
 {{ template "header-navbar" . }}
+
+<style>
+	#sections {
+		--button-min-width: 40ch;
+
+		article {
+			min-height: 100%;
+		}
+	}
+</style>
 {{ end }}
 
 {{ define "content" }}
-<header>
+<header class="container">
 	{{ template "navbar" . }}
 	<h1>{{ .Get "Euro Banknotes" }}</h1>
 </header>
-<main>
+<main class="container">
 	<p>
 		{{ .Get "On this section of the site you can find everything there is to know about the banknotes of the Eurozone." }}
 	</p>
 	<hr>
-	<section>
-		<div class="grid">
-			<a class="no-deco" href="/banknotes/designs">
-				<article>
-					<header>
-						<h3>{{ .Get "Designs" }}</h3>
-					</header>
-					<main>
-						{{ .Get "View the different Euro banknote designs" }}
-					</main>
-				</article>
-			</a>
-			<a class="no-deco" href="/banknotes/codes">
-				<article>
-					<header>
-						<h3>{{ .Get "Location Codes" }}</h3>
-					</header>
-					<main>
-						{{ .Get "Find out where your notes were printed" }}
-					</main>
-				</article>
-			</a>
-			<a class="no-deco" href="/banknotes/test">
-				<article>
-					<header>
-						<h3>{{ .Get "Test Notes" }}</h3>
-					</header>
-					<main>
-						{{ .Get "Learn about the special test notes" }}
-					</main>
-				</article>
-			</a>
-		</div>
-	</section>
+	<div id="sections" class="button-grid">
+		<a class="no-deco" href="/banknotes/designs">
+			<article>
+				<header>
+					<h3>{{ .Get "Designs" }}</h3>
+				</header>
+				{{ .Get "View the different Euro banknote designs" }}
+			</article>
+		</a>
+		<a class="no-deco" href="/banknotes/codes">
+			<article>
+				<header>
+					<h3>{{ .Get "Location Codes" }}</h3>
+				</header>
+				{{ .Get "Find out where your notes were printed" }}
+			</article>
+		</a>
+		<a class="no-deco" href="/banknotes/test">
+			<article>
+				<header>
+					<h3>{{ .Get "Test Notes" }}</h3>
+				</header>
+				{{ .Get "Learn about the special test notes" }}
+			</article>
+		</a>
+	</div>
 </main>
 {{ end }}

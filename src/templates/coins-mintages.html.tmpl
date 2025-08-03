@@ -5,63 +5,103 @@
 	#mintage-table #mintage-table-cc {
 		white-space: nowrap;
 	}
+
+	label[for="country-dd"] { display: none; }
+	label[for="year-dd"]    { display: none; }
+
+	form {
+		&:has(#country:checked) {
+			label[for="country-dd"] { display: unset; }
+		}
+		&:has(#year:checked) {
+			label[for="year-dd"] { display: unset; }
+		}
+	}
 </style>
 {{ end }}
 
 {{ define "content" }}
-<header>
+<header class="container">
 	{{ template "navbar" . }}
 	<h1>{{ .Get "Euro Coin Mintages" }}</h1>
 </header>
-<main>
+<main class="container">
 	<p>
 		{{ .Get "Here you’ll be able to view all the known mintages for all coins. You’ll also be able to filter on country, denomination, etc. If you have any mintage data that’s missing from our site, feel free to contact us." }}
 	</p>
-	<hr />
+	<hr>
 	{{ if eq .Code "nl" }}
-		<h2>{{ .Get "Additional Notes" }}</h2>
-		<ul>
-			<li>
-				{{ .Get "Most coins from the years 2003–2016 are listed as NIFC coins while other popular sources such as Numista claim they were minted for circulation. For more information on why others are wrong, {Link:l}click here{-:E}."
+	<h2>{{ .Get "Additional Notes" }}</h2>
+	<ul>
+		<li>
+			{{ .Get "Most coins from the years 2003–2016 are listed as NIFC coins while other popular sources such as Numista claim they were minted for circulation. For more information on why others are wrong, {Link:l}click here{-:E}."
 				(map "Link" "#TODO") }}
-			</li>
-		</ul>
+		</li>
+	</ul>
 	{{ end }}
-	<section>
-		<form>
-			<div class="grid">
-				<label for="country-dd">
-					{{ .Get "Country" }}
-					<select id="country-dd" name="code">
-						{{ $code := .Code }}
-						{{ range .Countries }}
-							<option
-								value="{{ .Code }}"
-								{{ if eq .Code $code }}
-									selected
-								{{ end }}
-							>
-								{{ .Name }}
-							</option>
-						{{ end }}
-					</select>
-				</label>
-				<fieldset>
-					{{ template "coin-type-radio"
-					   (tuple .Type "circ" (.Get "Circulation Coins")) }}
-					{{ template "coin-type-radio"
-					   (tuple .Type "nifc" (.Get "NIFC / BU Sets")) }}
-					{{ template "coin-type-radio"
-					   (tuple .Type "proof" (.Get "Proof Coins")) }}
-				</fieldset>
-			</div>
-			<button type="submit">{{ .Get "Filter" }}</button>
-		</form>
-		<figure>
-			<figcaption>{{ .Get "Standard Issue Coins" }}</figcaption>
-			<table id="mintage-table" role="grid">
+	<form>
+		<div class="grid">
+			<fieldset>
+				<legend>{{ .GetC "Filter Method" "Header/Label" }}</legend>
+				{{ template "mintages/filter-radio"
+					(tuple .FilterBy "country" (.GetC "Country" "Header/Label")) }}
+				{{ template "mintages/filter-radio"
+					(tuple .FilterBy "year" (.GetC "Year" "Header/Label")) }}
+			</fieldset>
+
+			<label for="country-dd">
+				{{ .GetC "Country" "Header/Label" }}
+				<select id="country-dd" name="country">
+					{{ $code := .Code }}
+					{{ range .Countries }}
+						<option
+							value="{{ .Code }}"
+							{{ if eq .Code $code }}
+								selected
+							{{ end }}
+						>
+							{{ .Name }}
+						</option>
+					{{ end }}
+				</select>
+			</label>
+
+			<label for="year-dd">
+				{{ .GetC "Year" "Header/Label" }}
+				<select id="year-dd" name="year">
+					{{ $year := .Year }}
+					{{ range years }}
+						<option
+							value="{{ . }}"
+							{{ if eq . $year }}
+								selected
+							{{ end }}
+						>
+							{{ . }}
+						</option>
+					{{ end }}
+				</select>
+			</label>
+
+			<fieldset>
+				{{ template "mintages/coin-type-radio"
+				   (tuple .Type "circ" (.Get "Circulation Coins")) }}
+				{{ template "mintages/coin-type-radio"
+				   (tuple .Type "nifc" (.Get "NIFC / BU Sets")) }}
+				{{ template "mintages/coin-type-radio"
+				   (tuple .Type "proof" (.Get "Proof Coins")) }}
+			</fieldset>
+		</div>
+		<button type="submit">{{ .GetC "Filter" "Header/Label" }}</button>
+	</form>
+	<figure>
+		<figcaption>{{ .Get "Standard Issue Coins" }}</figcaption>
+		<div class="overflow-auto">
+			{{ if eq .FilterBy "country" }}
+
+			<table id="mintage-table-country" class="striped" role="grid">
 				<thead>
-					<th>{{ .Get "Year" }}</th>
+					<th>{{ .GetC "Year" "Header/Label" }}</th>
 					<th data-numeric>{{ .Printer.Ftom 0.01 }}</th>
 					<th data-numeric>{{ .Printer.Ftom 0.02 }}</th>
 					<th data-numeric>{{ .Printer.Ftom 0.05 }}</th>
@@ -73,74 +113,126 @@
 				</thead>
 				<tbody>
 					{{ $p := .Printer }}
-					{{ range .Mintages.Standard }}
+					{{ range .CountryMintages.Standard }}
 						<tr>
-							<th scope="col">
+							<th scope="row">
 								{{- .Year -}}
 								{{- if ne .Mintmark "" -}}
 									&nbsp;<sub><small>{{ .Mintmark }}</small></sub>
 								{{- end -}}
 							</th>
 							{{ range .Mintages }}
-								{{ if eq . -1 }}
-									<td data-numeric>{{ $p.Get "Unknown" }}</td>
-								{{ else if eq . -2 }}
-									<td data-numeric class="error">{{ $p.Get "Error" }}</td>
-								{{ else if eq . 0 }}
-									<td data-numeric>—</td>
-								{{ else }}
-									<td data-numeric>{{ $p.Itoa . }}</td>
-								{{ end }}
-								</td>
+							{{ template "mintages/mintage-cell" (tuple . $p) }}
 							{{ end }}
 						</tr>
 					{{ end }}
 				</tbody>
 			</table>
-		</figure>
-		{{ if ne (len .Mintages.Commemorative) 0 }}
-			<figure>
-				<figcaption>{{ .Get "Commemorative Coins" }}</figcaption>
-				<table id="mintage-table-cc" role="grid">
-					<thead>
-						<th>{{ .Get "Year" }}</th>
-						<th>{{ .Get "Commemorated Issue" }}</th>
-						<th>{{ .Get "Mintage" }}</th>
-					</thead>
-					<tbody>
-						{{ $p := .Printer }}
-						{{ range .Mintages.Commemorative }}
-							<tr>
-								<th scope="col">
-									{{- .Year -}}
-									{{- if ne .Mintmark "" -}}
-										&nbsp;<sub><small>{{ .Mintmark }}</small></sub>
-									{{- end -}}
-								</th>
-								<!-- TODO: Translate commemorative names -->
-								<td>{{ .Name }}</td>
-								{{ with .Mintage }}
-									{{ if eq . -1 }}
-										<td data-numeric>{{ $p.Get "Unknown" }}</td>
-									{{ else if eq . -2 }}
-										<td data-numeric class="error">{{ $p.Get "Error" }}</td>
-									{{ else if eq . 0 }}
-										<td data-numeric>—</td>
-									{{ else }}
-										<td data-numeric>{{ $p.Itoa . }}</td>
-									{{ end }}
-								{{ end }}
-							</tr>
+
+			{{ else if eq .FilterBy "year" }}
+
+			<table id="mintage-table-year" class="striped" role="grid">
+				<thead>
+					<th>{{ .GetC "Country" "Header/Label" }}</th>
+					<th data-numeric>{{ .Printer.Ftom 0.01 }}</th>
+					<th data-numeric>{{ .Printer.Ftom 0.02 }}</th>
+					<th data-numeric>{{ .Printer.Ftom 0.05 }}</th>
+					<th data-numeric>{{ .Printer.Ftom 0.10 }}</th>
+					<th data-numeric>{{ .Printer.Ftom 0.20 }}</th>
+					<th data-numeric>{{ .Printer.Ftom 0.50 }}</th>
+					<th data-numeric>{{ .Printer.Ftom 1.00 }}</th>
+					<th data-numeric>{{ .Printer.Ftom 2.00 }}</th>
+				</thead>
+				<tbody>
+					{{ $p := .Printer }}
+					{{ range .YearMintages.Standard }}
+					<tr>
+						<th scope="row">
+							{{- .Country -}}
+							{{- if ne .Mintmark "" -}}
+							&nbsp;<sub><small>{{ .Mintmark }}</small></sub>
+							{{- end -}}
+						</th>
+						{{ range .Mintages }}
+						{{ template "mintages/mintage-cell" (tuple . $p) }}
 						{{ end }}
-					</tbody>
-				</table>
-			</figure>
+					</tr>
+					{{ end }}
+				</tbody>
+			</table>
+			{{ end }}
+		</div>
+	</figure>
+
+	{{ if eq .FilterBy "country" }}
+		{{ if ne (len .CountryMintages.Commemorative) 0 }}
+		<figure>
+			<figcaption>{{ .Get "Commemorative Coins" }}</figcaption>
+			<table id="mintage-table-cc" class="striped" role="grid">
+				<thead>
+					<th>{{ .GetC "Year" "Header/Label" }}</th>
+					<th>{{ .GetC "Commemorated Topic" "Header/Label" }}</th>
+					<th data-numeric>{{ .GetC "Mintage" "Header/Label" }}</th>
+				</thead>
+				<tbody>
+					{{ $p := .Printer }}
+					{{ range .CountryMintages.Commemorative }}
+					<tr>
+						<th scope="row">
+							{{- .Year -}}
+							{{- if ne .Mintmark "" -}}
+							&nbsp;<sub><small>{{ .Mintmark }}</small></sub>
+							{{- end -}}
+						</th>
+						<!-- TODO: Translate commemorative names -->
+						<td>{{ .Name }}</td>
+						{{ with .Mintage }}
+						{{ template "mintages/mintage-cell" (tuple . $p) }}
+						{{ end }}
+					</tr>
+					{{ end }}
+				</tbody>
+			</table>
+		</figure>
 		{{ end }}
-	</section>
+
+	{{ else if eq .FilterBy "year" }}
+
+		{{ if ne (len .YearMintages.Commemorative) 0 }}
+		<figure>
+			<figcaption>{{ .Get "Commemorative Coins" }}</figcaption>
+			<table id="mintage-table-cc" class="striped" role="grid">
+				<thead>
+					<th>{{ .GetC "Country" "Header/Label" }}</th>
+					<th>{{ .GetC "Commemorated Topic" "Header/Label" }}</th>
+					<th data-numeric>{{ .GetC "Mintage" "Header/Label" }}</th>
+				</thead>
+				<tbody>
+					{{ $p := .Printer }}
+					{{ range .YearMintages.Commemorative }}
+					<tr>
+						<th scope="row">
+							{{- .Country -}}
+							{{- if ne .Mintmark "" -}}
+							&nbsp;<sub><small>{{ .Mintmark }}</small></sub>
+							{{- end -}}
+						</th>
+						<!-- TODO: Translate commemorative names -->
+						<td>{{ .Name }}</td>
+						{{ with .Mintage }}
+						{{ template "mintages/mintage-cell" (tuple . $p) }}
+						{{ end }}
+					</tr>
+					{{ end }}
+				</tbody>
+			</table>
+		</figure>
+		{{ end }}
+	{{ end }}
 </main>
 {{ end }}
 
-{{ define "coin-type-radio" }}
+{{ define "mintages/coin-type-radio" }}
 <label for="{{ index . 1 }}">
 	<input
 		id="{{ index . 1 }}"
@@ -148,9 +240,39 @@
 		type="radio"
 		value="{{ index . 1 }}"
 		{{ if eq (index . 0) (index . 1) }}
-			checked
+		checked
 		{{ end }}
 	/>
 	{{ index . 2 }}
 </label>
+{{ end }}
+
+{{ define "mintages/filter-radio" }}
+{{ $v := index . 1 }}
+<label for="{{ $v }}">
+	<input
+		name="filter-by"
+		type="radio"
+		value="{{ $v }}"
+		id="{{ $v }}"
+		{{ if eq (index . 0) $v }}
+		checked
+		{{ end }}
+	>
+	{{ index . 2 }}
+</label>
+{{ end }}
+
+{{ define "mintages/mintage-cell" }}
+{{ $v := index . 0 }}
+{{ $p := index . 1 }}
+{{ if eq $v -1 }}
+	<td data-numeric>{{ $p.Get "Unknown" }}</td>
+{{ else if eq $v -2 }}
+	<td data-numeric class="error">{{ $p.Get "Error" }}</td>
+{{ else if eq $v 0 }}
+	<td data-numeric>—</td>
+{{ else }}
+	<td data-numeric>{{ $p.Itoa $v }}</td>
+{{ end }}
 {{ end }}

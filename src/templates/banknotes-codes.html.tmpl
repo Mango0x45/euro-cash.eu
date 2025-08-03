@@ -1,47 +1,85 @@
 {{ define "header" }}
 {{ template "header-navbar" . }}
+
+<style>
+	.design-container {
+		--euro-cash-design-width: 90%;
+	}
+
+	table {
+		white-space: nowrap;
+
+		tr :is(th, td):first-child {
+			text-align: center;
+		}
+	}
+
+	#seperated-tables {
+		display: none;
+	}
+
+	@media (min-width: 576px) {
+		#seperated-tables {
+			display: flex;
+			justify-content: space-between;
+			gap: var(--pico-grid-column-gap);
+		}
+
+		#joint-table {
+			display: none;
+		}
+	}
+</style>
 {{ end }}
 
 {{ define "content" }}
-<header>
+<header class="container">
 	{{ template "navbar" . }}
 	<h1>{{ .Get "Location Codes" }}</h1>
 </header>
-<main>
+<main class="container">
 	<p>
 		{{ .Get "Euro banknotes have two codes on them: a printer code and a serial number. The printer code tells you where a given note was printed, while the serial number tells you which country issued the banknote (for the 2002 series) or where the banknote was printed (for the Europa series)." }}
 	</p>
 
-	<h2>{{ .Get "Printer Code" }}</h2>
+	<h2>{{ .Get "Printer Codes" }}</h2>
 	<p>
 		{{ .Get "The printer code (not to be confused with the serial number) is a small code printed on banknotes with information about where the banknote was printed. All printer codes have the form ‘X000X0’ — or in other words — a letter followed by 3 numbers, a letter and a final number." }}
 	</p>
 	<p>
 		{{ .Get "The printer code can be a bit tricky to find. The following dropdown menus will show you where to find the printer code on each note." }}
 	</p>
-	<details>
-		<summary>{{ .Get "2002 Series Printer Codes" }}</summary>
-		<p>
-			{{ .Get "All these images are taken from {Link:L}eurobilltracker.com{-:E}."
-			(map "Link" "https://eurobilltracker.com") }}
-		</p>
-		{{ template "banknotes/codes/code-pos" (tuple .Printer   5 "2002") }}
-		{{ template "banknotes/codes/code-pos" (tuple .Printer  10 "2002") }}
-		{{ template "banknotes/codes/code-pos" (tuple .Printer  20 "2002") }}
-		{{ template "banknotes/codes/code-pos" (tuple .Printer  50 "2002") }}
-		{{ template "banknotes/codes/code-pos" (tuple .Printer 100 "2002") }}
-		{{ template "banknotes/codes/code-pos" (tuple .Printer 200 "2002") }}
-		{{ template "banknotes/codes/code-pos" (tuple .Printer 500 "2002") }}
-	</details>
-	<details>
-		<summary>{{ .Get "Europa Series Printer Codes" }}</summary>
-		{{ template "banknotes/codes/code-pos" (tuple .Printer   5 "europa") }}
-		{{ template "banknotes/codes/code-pos" (tuple .Printer  10 "europa") }}
-		{{ template "banknotes/codes/code-pos" (tuple .Printer  20 "europa") }}
-		{{ template "banknotes/codes/code-pos" (tuple .Printer  50 "europa") }}
-		{{ template "banknotes/codes/code-pos" (tuple .Printer 100 "europa") }}
-		{{ template "banknotes/codes/code-pos" (tuple .Printer 200 "europa") }}
-	</details>
+
+	<article>
+		<details name="printer-codes">
+			<summary>{{ .Get "2002 Series Printer Codes" }}</summary><hr>
+			<p>
+				{{ .Get "All these images are taken from {Link:L}eurobilltracker.com{-:E}."
+				(map "Link" "https://eurobilltracker.com") }}
+			</p>
+			<article>
+				{{ template "banknotes/codes/code-pos" (tuple .Printer   5 "2002") }}<hr>
+				{{ template "banknotes/codes/code-pos" (tuple .Printer  10 "2002") }}<hr>
+				{{ template "banknotes/codes/code-pos" (tuple .Printer  20 "2002") }}<hr>
+				{{ template "banknotes/codes/code-pos" (tuple .Printer  50 "2002") }}<hr>
+				{{ template "banknotes/codes/code-pos" (tuple .Printer 100 "2002") }}<hr>
+				{{ template "banknotes/codes/code-pos" (tuple .Printer 200 "2002") }}<hr>
+				{{ template "banknotes/codes/code-pos" (tuple .Printer 500 "2002") }}
+			</article>
+		</details>
+		<hr>
+		<details name="printer-codes">
+			<summary>{{ .Get "Europa Series Printer Codes" }}</summary><hr>
+			<article>
+				{{ template "banknotes/codes/code-pos" (tuple .Printer   5 "europa") }}<hr>
+				{{ template "banknotes/codes/code-pos" (tuple .Printer  10 "europa") }}<hr>
+				{{ template "banknotes/codes/code-pos" (tuple .Printer  20 "europa") }}<hr>
+				{{ template "banknotes/codes/code-pos" (tuple .Printer  50 "europa") }}<hr>
+				{{ template "banknotes/codes/code-pos" (tuple .Printer 100 "europa") }}<hr>
+				{{ template "banknotes/codes/code-pos" (tuple .Printer 200 "europa") }}
+			</article>
+		</details>
+	</article>
 
 	<p>
 		{{ .Get "The first letter in the printer code identifies the specific printer at which the banknote was printed. The tables below will tell you which letters correspond to which printers. The final letter and number form a pair (such as ‘A2’ or ‘D6’) — this pair acts as a set of coordinates telling you where on the sheet of paper the banknote was located. During printing, banknotes are printed in a grid on a large sheet of paper which is then cut into individual banknotes. A note with the pair ‘A1’ will have been at the upper-left corner of the printing sheet, with ‘A2’ to its right and ‘B1’ below it." }}
@@ -52,11 +90,99 @@
 		{{ .Get "In the 2002 series, the first letter of the serial number can be used to identify the country that issued the banknote. The following table shows which countries map to which codes." }}
 	</p>
 
-	<table role="grid">
+	<div id="seperated-tables">
+		<table class="striped">
+			<thead>
+				<tr>
+					<th>{{ .GetC "Code" "Header/Label" }}</th>
+					<th>{{ .GetC "Country" "Header/Label" }}</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>D</td>
+					<td>{{ .GetC "Estonia" "Place Name" }}</td>
+				</tr>
+				<tr>
+					<td>E</td>
+					<td>{{ .GetC "Slovakia" "Place Name" }}</td>
+				</tr>
+				<tr>
+					<td>F</td>
+					<td>{{ .GetC "Malta" "Place Name" }}</td>
+				</tr>
+				<tr>
+					<td>G</td>
+					<td>{{ .GetC "Cyprus" "Place Name" }}</td>
+				</tr>
+				<tr>
+					<td>H</td>
+					<td>{{ .GetC "Slovenia" "Place Name" }}</td>
+				</tr>
+				<tr>
+					<td>L</td>
+					<td>{{ .GetC "Finland" "Place Name" }}</td>
+				</tr>
+				<tr>
+					<td>M</td>
+					<td>{{ .GetC "Portugal" "Place Name" }}</td>
+				</tr>
+				<tr>
+					<td>N</td>
+					<td>{{ .GetC "Austria" "Place Name" }}</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table class="striped">
+			<thead>
+				<tr>
+					<th>{{ .GetC "Code" "Header/Label" }}</th>
+					<th>{{ .GetC "Country" "Header/Label" }}</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>P</td>
+					<td>{{ .GetC "Netherlands" "Place Name" }}</td>
+				</tr>
+				<tr>
+					<td>S</td>
+					<td>{{ .GetC "Italy" "Place Name" }}</td>
+				</tr>
+				<tr>
+					<td>T</td>
+					<td>{{ .GetC "Ireland" "Place Name" }}</td>
+				</tr>
+				<tr>
+					<td>U</td>
+					<td>{{ .GetC "France" "Place Name" }}</td>
+				</tr>
+				<tr>
+					<td>V</td>
+					<td>{{ .GetC "Spain" "Place Name" }}</td>
+				</tr>
+				<tr>
+					<td>X</td>
+					<td>{{ .GetC "Germany" "Place Name" }}</td>
+				</tr>
+				<tr>
+					<td>Y</td>
+					<td>{{ .GetC "Greece" "Place Name" }}</td>
+				</tr>
+				<tr>
+					<td>Z</td>
+					<td>{{ .GetC "Belgium" "Place Name" }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<table id="joint-table" class="striped">
 		<thead>
 			<tr>
-				<th>{{ .Get "Code" }}</th>
-				<th>{{ .Get "Country" }}</th>
+				<th>{{ .GetC "Code" "Header/Label" }}</th>
+				<th>{{ .GetC "Country" "Header/Label" }}</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -131,22 +257,146 @@
 		{{ .Get "The first letter of the printer code can be used to identify the specific printer at which the banknote was printed. The printer and country codes do not need to line up; a banknote issued by a country will often be printed in another." }}
 	</p>
 
-	<table role="grid">
-		<thead>
-			<tr>
-				<th>{{ .Get "Code" }}</th>
-				<th>{{ .Get "Country" }}</th>
-				<th>{{ .Get "Printer" }}</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>D</td>
-				<td>{{ .GetC "Finland" "Place Name" }}</td>
-				{{ withTranslations "td"
-					(.GetC "SETEC" "Company Name" | toString)
-					(tuple "" "SETEC") }}
-			</tr>
+	<div class="overflow-auto">
+		<table class="striped">
+			<thead>
+				<tr>
+					<th>{{ .GetC "Code" "Header/Label" }}</th>
+					<th>{{ .GetC "Country" "Header/Label" }}</th>
+					<th>
+						{{ .GetC "Printer" "Header/Label" }}<br>
+						<span class="translation">
+							{{ .GetC "Local Names" "Header/Label" }}
+						</span>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>D</td>
+					<td>{{ .GetC "Finland" "Place Name" }}</td>
+					{{ withTranslations "td"
+						(.GetC "SETEC" "Company Name" | toString)
+						(tuple "" "SETEC") }}
+				</tr>
+				<tr>
+					<td>E</td>
+					<td>{{ .GetC "France" "Place Name" }}</td>
+					{{ withTranslations "td"
+						(.GetC "Oberthur" "Company Name" | toString)
+						(tuple "" "Oberthur") }}
+				</tr>
+				<tr>
+					<td>F</td>
+					<td>{{ .GetC "Austria" "Place Name" }}</td>
+					{{ withTranslations "td"
+						(.GetC "Austrian Banknote and Security Printing" "Company Name" | toString)
+						(tuple "de" "Oesterreichische Banknoten- und Sicherheitsdruck") }}
+				</tr>
+				<tr>
+					<td>G</td>
+					<td>{{ .GetC "Netherlands" "Place Name" }}</td>
+					{{ withTranslations "td"
+						(.GetC "Royal Joh. Enschedé" "Company Name" | toString)
+						(tuple "nl" "Koninklijke Joh. Enschedé") }}
+				</tr>
+				<tr>
+					<td>H</td>
+					<td>{{ .GetC "United Kingdom" "Place Name" }}</td>
+					{{ withTranslations "td"
+						(.GetC "De La Rue" "Company Name" | toString)
+						(tuple "" "De La Rue") }}
+				</tr>
+				<tr>
+					<td>J</td>
+					<td>{{ .GetC "Italy" "Place Name" }}</td>
+					{{ withTranslations "td"
+						(.GetC "Bank of Italy" "Company Name" | toString)
+						(tuple "it" "Banca d’Italia") }}
+				</tr>
+				<tr>
+					<td>K</td>
+					<td>{{ .GetC "Ireland" "Place Name" }}</td>
+					{{ withTranslations "td"
+						(.GetC "Central Bank of Ireland" "Company Name" | toString)
+						(tuple "ga" "Banc Ceannais na hÉireann")
+						(tuple "en" "Central Bank of Ireland") }}
+				</tr>
+				<tr>
+					<td>L</td>
+					<td>{{ .GetC "France" "Place Name" }}</td>
+					{{ withTranslations "td"
+						(.GetC "Bank of France" "Company Name" | toString)
+						(tuple "fr" "Banque du France") }}
+				</tr>
+				<tr>
+					<td>M</td>
+					<td>{{ .GetC "Spain" "Place Name" }}</td>
+					{{ withTranslations "td"
+						(.GetC "Royal Mint of Spain" "Company Name" | toString)
+						(tuple "es" "Fábrica Nacional de Moneda y Timbre") }}
+				</tr>
+				<tr>
+					<td>N</td>
+					<td>{{ .GetC "Greece" "Place Name" }}</td>
+					{{ withTranslations "td"
+						(.GetC "Bank of Greece" "Company Name" | toString)
+						(tuple "gr" "Τράπεζα της Ελλάδος") }}
+				</tr>
+				<tr>
+					<td>P</td>
+					<td>{{ .GetC "Germany" "Place Name" }}</td>
+					{{ withTranslations "td"
+						(.GetC "Giesecke+Devrient" "Company Name" | toString)
+						(tuple "de" "Giesecke+Devrient") }}
+				</tr>
+				<tr>
+					<td>R</td>
+					<td>{{ .GetC "Germany" "Place Name" }}</td>
+					{{ withTranslations "td"
+						(.GetC "Federal Printing Office" "Company Name" | toString)
+						(tuple "de" "Bundesdruckerei") }}
+				</tr>
+				<tr>
+					<td>T</td>
+					<td>{{ .GetC "Belgium" "Place Name" }}</td>
+					{{ withTranslations "td"
+						(.GetC "National Bank of Belgium" "Company Name" | toString)
+						(tuple "nl" "Nationale Bank van België")
+						(tuple "fr" "Banque nationale de Belgique")
+						(tuple "de" "Belgische Nationalbank") }}
+				</tr>
+				<tr>
+					<td>U</td>
+					<td>{{ .GetC "Portugal" "Place Name" }}</td>
+					{{ withTranslations "td"
+						(.GetC "Valora S.A." "Company Name" | toString)
+						(tuple "" "Valora S.A.") }}
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+	<h2>{{ .Get "Europa Series" }}</h2>
+	<p>
+		{{ .Get "In the Europa series the first letter of the serial number can be used to identify the printer that printed the banknote, just like the printer code. The following table shows which countries map to which codes." }}
+	</p>
+
+	<div class="overflow-auto">
+		<table class="striped">
+			<thead>
+				<tr>
+					<th>{{ .GetC "Code" "Header/Label" }}</th>
+					<th>{{ .GetC "Country" "Header/Label" }}</th>
+					<th>
+						{{ .GetC "Printer" "Header/Label" }}<br>
+						<span class="translation">
+							{{ .GetC "Local Names" "Header/Label" }}
+						</span>
+					</th>
+				</tr>
+			</thead>
 			<tr>
 				<td>E</td>
 				<td>{{ .GetC "France" "Place Name" }}</td>
@@ -156,67 +406,31 @@
 			</tr>
 			<tr>
 				<td>F</td>
+				<td>{{ .GetC "Bulgaria" "Place Name" }}</td>
+				{{ withTranslations "td"
+					(.GetC "Oberthur Fiduciaire AD" "Company Name" | toString)
+					(tuple "" "Oberthur Fiduciaire AD") }}
+			</tr>
+			<tr>
+				<td>M</td>
+				<td>{{ .GetC "Portugal" "Place Name" }}</td>
+				{{ withTranslations "td"
+					(.GetC "Valora S.A." "Company Name" | toString)
+					(tuple "" "Valora S.A.") }}
+			</tr>
+			<tr>
+				<td>N</td>
 				<td>{{ .GetC "Austria" "Place Name" }}</td>
 				{{ withTranslations "td"
 					(.GetC "Austrian Banknote and Security Printing" "Company Name" | toString)
 					(tuple "de" "Oesterreichische Banknoten- und Sicherheitsdruck") }}
 			</tr>
 			<tr>
-				<td>G</td>
+				<td>P</td>
 				<td>{{ .GetC "Netherlands" "Place Name" }}</td>
 				{{ withTranslations "td"
 					(.GetC "Royal Joh. Enschedé" "Company Name" | toString)
 					(tuple "nl" "Koninklijke Joh. Enschedé") }}
-			</tr>
-			<tr>
-				<td>H</td>
-				<td>{{ .GetC "United Kingdom" "Place Name" }}</td>
-				{{ withTranslations "td"
-					(.GetC "De La Rue" "Company Name" | toString)
-					(tuple "" "De La Rue") }}
-			</tr>
-			<tr>
-				<td>J</td>
-				<td>{{ .GetC "Italy" "Place Name" }}</td>
-				{{ withTranslations "td"
-					(.GetC "Bank of Italy" "Company Name" | toString)
-					(tuple "it" "Banca d’Italia") }}
-			</tr>
-			<tr>
-				<td>K</td>
-				<td>{{ .GetC "Ireland" "Place Name" }}</td>
-				{{ withTranslations "td"
-					(.GetC "Central Bank of Ireland" "Company Name" | toString)
-					(tuple "ga" "Banc Ceannais na hÉireann")
-					(tuple "en" "Central Bank of Ireland") }}
-			</tr>
-			<tr>
-				<td>L</td>
-				<td>{{ .GetC "France" "Place Name" }}</td>
-				{{ withTranslations "td"
-					(.GetC "Bank of France" "Company Name" | toString)
-					(tuple "fr" "Banque du France") }}
-			</tr>
-			<tr>
-				<td>M</td>
-				<td>{{ .GetC "Spain" "Place Name" }}</td>
-				{{ withTranslations "td"
-					(.GetC "Royal Mint of Spain" "Company Name" | toString)
-					(tuple "es" "Fábrica Nacional de Moneda y Timbre") }}
-			</tr>
-			<tr>
-				<td>N</td>
-				<td>{{ .GetC "Greece" "Place Name" }}</td>
-				{{ withTranslations "td"
-					(.GetC "Bank of Greece" "Company Name" | toString)
-					(tuple "gr" "Τράπεζα της Ελλάδος") }}
-			</tr>
-			<tr>
-				<td>P</td>
-				<td>{{ .GetC "Germany" "Place Name" }}</td>
-				{{ withTranslations "td"
-					(.GetC "Giesecke+Devrient" "Company Name" | toString)
-					(tuple "de" "Giesecke+Devrient") }}
 			</tr>
 			<tr>
 				<td>R</td>
@@ -226,7 +440,57 @@
 					(tuple "de" "Bundesdruckerei") }}
 			</tr>
 			<tr>
+				<td>S</td>
+				<td>{{ .GetC "Italy" "Place Name" }}</td>
+				{{ withTranslations "td"
+					(.GetC "Bank of Italy" "Company Name" | toString)
+					(tuple "it" "Banca d’Italia") }}
+			</tr>
+			<tr>
 				<td>T</td>
+				<td>{{ .GetC "Ireland" "Place Name" }}</td>
+				{{ withTranslations "td"
+					(.GetC "Central Bank of Ireland" "Company Name" | toString)
+					(tuple "ga" "Banc Ceannais na hÉireann")
+					(tuple "en" "Central Bank of Ireland") }}
+			</tr>
+			<tr>
+				<td>U</td>
+				<td>{{ .GetC "France" "Place Name" }}</td>
+				{{ withTranslations "td"
+					(.GetC "Bank of France" "Company Name" | toString)
+					(tuple "fr" "Banque du France") }}
+			</tr>
+			<tr>
+				<td>V</td>
+				<td>{{ .GetC "Spain" "Place Name" }}</td>
+				{{ withTranslations "td"
+					(.GetC "Royal Mint of Spain" "Company Name" | toString)
+					(tuple "es" "Fábrica Nacional de Moneda y Timbre") }}
+			</tr>
+			<tr>
+				<td>W</td>
+				<td>{{ .GetC "Germany" "Place Name" }}</td>
+				{{ withTranslations "td"
+					(.GetC "Giesecke+Devrient Leipzig" "Company Name" | toString)
+					(tuple "de" "Giesecke+Devrient Leipzig") }}
+			</tr>
+			<tr>
+				<td>X</td>
+				<td>{{ .GetC "Germany" "Place Name" }}</td>
+				{{ withTranslations "td"
+					(.GetC "Giesecke+Devrient Munich" "Company Name" | toString)
+					(tuple "de" "Giesecke+Devrient München") }}
+			</tr>
+			<tr>
+				<td>Y</td>
+				<td>{{ .GetC "Greece" "Place Name" }}</td>
+				{{ withTranslations "td"
+					(.GetC "Bank of Greece" "Company Name" | toString)
+					(tuple "gr" "Τράπεζα της Ελλάδος") }}
+			</tr>
+			<tr>
+				<td>Z</td>
 				<td>{{ .GetC "Belgium" "Place Name" }}</td>
 				{{ withTranslations "td"
 					(.GetC "National Bank of Belgium" "Company Name" | toString)
@@ -234,130 +498,8 @@
 					(tuple "fr" "Banque nationale de Belgique")
 					(tuple "de" "Belgische Nationalbank") }}
 			</tr>
-			<tr>
-				<td>U</td>
-				<td>{{ .GetC "Portugal" "Place Name" }}</td>
-				{{ withTranslations "td"
-					(.GetC "Valora S.A." "Company Name" | toString)
-					(tuple "" "Valora S.A.") }}
-			</tr>
-		</tbody>
-	</table>
-
-	<h2>{{ .Get "Europa Series" }}</h2>
-	<p>
-		{{ .Get "In the Europa series the first letter of the serial number can be used to identify the printer that printed the banknote, just like the printer code. The following table shows which countries map to which codes." }}
-	</p>
-	<table role="grid">
-		<thead>
-			<tr>
-				<th>{{ .Get "Code" }}</th>
-				<th>{{ .Get "Country" }}</th>
-				<th>{{ .Get "Printer" }}</th>
-			</tr>
-		</thead>
-		<tr>
-			<td>E</td>
-			<td>{{ .GetC "France" "Place Name" }}</td>
-			{{ withTranslations "td"
-				(.GetC "Oberthur" "Company Name" | toString)
-				(tuple "" "Oberthur") }}
-		</tr>
-		<tr>
-			<td>F</td>
-			<td>{{ .GetC "Bulgaria" "Place Name" }}</td>
-			{{ withTranslations "td"
-				(.GetC "Oberthur Fiduciaire AD" "Company Name" | toString)
-				(tuple "" "Oberthur Fiduciaire AD") }}
-		</tr>
-		<tr>
-			<td>M</td>
-			<td>{{ .GetC "Portugal" "Place Name" }}</td>
-			{{ withTranslations "td"
-				(.GetC "Valora S.A." "Company Name" | toString)
-				(tuple "" "Valora S.A.") }}
-		</tr>
-		<tr>
-			<td>N</td>
-			<td>{{ .GetC "Austria" "Place Name" }}</td>
-			{{ withTranslations "td"
-				(.GetC "Austrian Banknote and Security Printing" "Company Name" | toString)
-				(tuple "de" "Oesterreichische Banknoten- und Sicherheitsdruck") }}
-		</tr>
-		<tr>
-			<td>P</td>
-			<td>{{ .GetC "Netherlands" "Place Name" }}</td>
-			{{ withTranslations "td"
-				(.GetC "Royal Joh. Enschedé" "Company Name" | toString)
-				(tuple "nl" "Koninklijke Joh. Enschedé") }}
-		</tr>
-		<tr>
-			<td>R</td>
-			<td>{{ .GetC "Germany" "Place Name" }}</td>
-			{{ withTranslations "td"
-				(.GetC "Federal Printing Office" "Company Name" | toString)
-				(tuple "de" "Bundesdruckerei") }}
-		</tr>
-		<tr>
-			<td>S</td>
-			<td>{{ .GetC "Italy" "Place Name" }}</td>
-			{{ withTranslations "td"
-				(.GetC "Bank of Italy" "Company Name" | toString)
-				(tuple "it" "Banca d’Italia") }}
-		</tr>
-		<tr>
-			<td>T</td>
-			<td>{{ .GetC "Ireland" "Place Name" }}</td>
-			{{ withTranslations "td"
-				(.GetC "Central Bank of Ireland" "Company Name" | toString)
-				(tuple "ga" "Banc Ceannais na hÉireann")
-				(tuple "en" "Central Bank of Ireland") }}
-		</tr>
-		<tr>
-			<td>U</td>
-			<td>{{ .GetC "France" "Place Name" }}</td>
-			{{ withTranslations "td"
-				(.GetC "Bank of France" "Company Name" | toString)
-				(tuple "fr" "Banque du France") }}
-		</tr>
-		<tr>
-			<td>V</td>
-			<td>{{ .GetC "Spain" "Place Name" }}</td>
-			{{ withTranslations "td"
-				(.GetC "Royal Mint of Spain" "Company Name" | toString)
-				(tuple "es" "Fábrica Nacional de Moneda y Timbre") }}
-		</tr>
-		<tr>
-			<td>W</td>
-			<td>{{ .GetC "Germany" "Place Name" }}</td>
-			{{ withTranslations "td"
-				(.GetC "Giesecke+Devrient Leipzig" "Company Name" | toString)
-				(tuple "de" "Giesecke+Devrient Leipzig") }}
-		</tr>
-		<tr>
-			<td>X</td>
-			<td>{{ .GetC "Germany" "Place Name" }}</td>
-			{{ withTranslations "td"
-				(.GetC "Giesecke+Devrient Munich" "Company Name" | toString)
-				(tuple "de" "Giesecke+Devrient München") }}
-		</tr>
-		<tr>
-			<td>Y</td>
-			<td>{{ .GetC "Greece" "Place Name" }}</td>
-			{{ withTranslations "td"
-				(.GetC "Bank of Greece" "Company Name" | toString)
-				(tuple "gr" "Τράπεζα της Ελλάδος") }}
-		</tr>
-		<tr>
-			<td>Z</td>
-			<td>{{ .GetC "Belgium" "Place Name" }}</td>
-			{{ withTranslations "td"
-				(.GetC "National Bank of Belgium" "Company Name" | toString)
-				(tuple "nl" "Nationale Bank van België")
-				(tuple "fr" "Banque nationale de Belgique")
-				(tuple "de" "Belgische Nationalbank") }}
-		</tr>
-	</table>
+		</table>
+	</div>
 </main>
 {{ end }}
 
@@ -365,13 +507,14 @@
 {{ $p := (index . 0) }}
 {{ $d := (index . 1) }}
 {{ $args := (map "N" $d) }}
-<details>
+<details name="printer-codes-1">
 	{{/* TRANSLATORS: As in ‘5 Euro Banknote’ */}}
 	<summary>{{ $p.GetN "{N} Euro" "{N} Euro" $d $args }}</summary>
-	<img
-		class="big"
-		src={{ printf "/codes/%s-%03d.jpg" (index . 2) $d }}
-		alt={{ $p.GetN "Printer code on a {N} euro bill" "Printer code on a {N} euro bill" $d $args }}
-	>
+	<div class="design-container">
+		<img
+			src={{ printf "/codes/%s-%03d.jpg" (index . 2) $d }}
+			alt={{ $p.GetN "Printer code on a {N} euro bill" "Printer code on a {N} euro bill" $d $args }}
+		>
+	</div>
 </details>
 {{ end }}

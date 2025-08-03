@@ -8,7 +8,7 @@
 		}
 
 		svg {
-			stroke: var(--color);
+			stroke: var(--pico-color);
 			height: 1rem;
 		}
 	}
@@ -24,31 +24,30 @@
 		}
 
 		svg {
-			--size: 1.2rem;
-			stroke: var(--primary);
+			stroke: var(--pico-primary);
 			stroke-width: .1;
-			height: var(--size);
-			width: var(--size);
+			height: 1.2rem;
+			width: 2rem;
 		}
 	}
 
 	[data-theme="light"] #nav-icon-theme svg {
-		fill: var(--primary);
+		fill: var(--pico-primary);
 	}
 </style>
 {{ end }}
 
 {{ define "navbar" }}
 <nav>
-	<menu>
+	<ul>
 		<li><a href="/">{{ .Get "Home" }}</a></li>
 		<li><a href="#TODO">{{ .Get "News" }}</a></li>
 		<li><a href="/collecting">{{ .Get "Coin Collecting" }}</a></li>
 		<li><a href="/coins">{{ .Get "Coins" }}</a></li>
 		<li><a href="/banknotes">{{ .Get "Banknotes" }}</a></li>
 		<li><a href="/jargon">{{ .Get "Jargon" }}</a></li>
-	</menu>
-	<menu>
+	</ul>
+	<ul>
 		<li>
 			<a href="https://discord.gg/DCaXfRcy9C" target="_blank">
 				{{ .Get "Discord" }}
@@ -263,6 +262,6 @@
 				</svg>
 			</button>
 		</li>
-	</menu>
+	</ul>
 </nav>
 {{ end }}
