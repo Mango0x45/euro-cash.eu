@@ -10,6 +10,7 @@ import (
 	"slices"
 	"strings"
 	"text/template/parse"
+	"time"
 )
 
 type config struct {
@@ -86,8 +87,7 @@ func main() {
 		process(f)
 	}
 
-	/* TODO: Use the correct date */
-	fmt.Fprint(outfile, `# SOME DESCRIPTIVE TITLE.
+	fmt.Fprintf(outfile, `# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
@@ -97,7 +97,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-27 20:08+0200\n"
+"POT-Creation-Date: %s\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -105,7 +105,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-`)
+`, time.Now().Format("2006-01-02 15:04-0700"))
 
 	for tl, ti := range translations {
 		if ti.comment != "" {
