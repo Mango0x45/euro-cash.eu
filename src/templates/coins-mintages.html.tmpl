@@ -1,5 +1,11 @@
 {{ define "header" }}
 {{ template "header-navbar" . }}
+
+<style>
+	#mintage-table #mintage-table-cc {
+		white-space: nowrap;
+	}
+</style>
 {{ end }}
 
 {{ define "content" }}
@@ -53,17 +59,17 @@
 		</form>
 		<figure>
 			<figcaption>{{ .Get "Standard Issue Coins" }}</figcaption>
-			<table class="mintage-table" role="grid">
+			<table id="mintage-table" role="grid">
 				<thead>
 					<th>{{ .Get "Year" }}</th>
-					<th>{{ .Printer.Ftom 0.01 }}</th>
-					<th>{{ .Printer.Ftom 0.02 }}</th>
-					<th>{{ .Printer.Ftom 0.05 }}</th>
-					<th>{{ .Printer.Ftom 0.10 }}</th>
-					<th>{{ .Printer.Ftom 0.20 }}</th>
-					<th>{{ .Printer.Ftom 0.50 }}</th>
-					<th>{{ .Printer.Ftom 1.00 }}</th>
-					<th>{{ .Printer.Ftom 2.00 }}</th>
+					<th data-numeric>{{ .Printer.Ftom 0.01 }}</th>
+					<th data-numeric>{{ .Printer.Ftom 0.02 }}</th>
+					<th data-numeric>{{ .Printer.Ftom 0.05 }}</th>
+					<th data-numeric>{{ .Printer.Ftom 0.10 }}</th>
+					<th data-numeric>{{ .Printer.Ftom 0.20 }}</th>
+					<th data-numeric>{{ .Printer.Ftom 0.50 }}</th>
+					<th data-numeric>{{ .Printer.Ftom 1.00 }}</th>
+					<th data-numeric>{{ .Printer.Ftom 2.00 }}</th>
 				</thead>
 				<tbody>
 					{{ $p := .Printer }}
@@ -77,13 +83,13 @@
 							</th>
 							{{ range .Mintages }}
 								{{ if eq . -1 }}
-									<td>{{ $p.Get "Unknown" }}</td>
+									<td data-numeric>{{ $p.Get "Unknown" }}</td>
 								{{ else if eq . -2 }}
-									<td class="error">{{ $p.Get "Error" }}</td>
+									<td data-numeric class="error">{{ $p.Get "Error" }}</td>
 								{{ else if eq . 0 }}
-									<td>—</td>
+									<td data-numeric>—</td>
 								{{ else }}
-									<td>{{ $p.Sprintf "{N}" (map "N" .) }}</td>
+									<td data-numeric>{{ $p.Itoa . }}</td>
 								{{ end }}
 								</td>
 							{{ end }}
@@ -95,7 +101,7 @@
 		{{ if ne (len .Mintages.Commemorative) 0 }}
 			<figure>
 				<figcaption>{{ .Get "Commemorative Coins" }}</figcaption>
-				<table class="mintage-table-cc" role="grid">
+				<table id="mintage-table-cc" role="grid">
 					<thead>
 						<th>{{ .Get "Year" }}</th>
 						<th>{{ .Get "Commemorated Issue" }}</th>
@@ -115,13 +121,13 @@
 								<td>{{ .Name }}</td>
 								{{ with .Mintage }}
 									{{ if eq . -1 }}
-										<td>{{ $p.Get "Unknown" }}</td>
+										<td data-numeric>{{ $p.Get "Unknown" }}</td>
 									{{ else if eq . -2 }}
-										<td class="error">{{ $p.Get "Error" }}</td>
+										<td data-numeric class="error">{{ $p.Get "Error" }}</td>
 									{{ else if eq . 0 }}
-										<td>—</td>
+										<td data-numeric>—</td>
 									{{ else }}
-										<td>{{ $p.Sprintf "{N}" (map "N" .) }}</td>
+										<td data-numeric>{{ $p.Itoa . }}</td>
 									{{ end }}
 								{{ end }}
 							</tr>
