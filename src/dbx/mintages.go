@@ -73,8 +73,9 @@ func NewMintageType(s string) MintageType {
 	case "proof":
 		return TypeProof
 	}
-	/* TODO: Handle this */
-	panic("TODO")
+	/* We can get here if the user sends a request manually, so just
+	   fallback to this */
+	return TypeCirc
 }
 
 func GetMintages(country string, typ MintageType) (MintageData, error) {
