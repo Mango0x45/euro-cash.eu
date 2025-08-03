@@ -1,14 +1,26 @@
 {{ define "header" }}
 {{ template "header-navbar" . }}
-{{ end }}
-{{ define "content" }}
 
+<style>
+	.portrait {
+		width: 30%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		img {
+			width: 100%;
+		}
+	}
+</style>
+{{ end }}
+
+{{ define "content" }}
 <header>
 	{{ template "navbar" . }}
     <h1>{{ .Get "Belgian Euro Coin Designs" }}</h1>
 </header>
 <main>
-	<!-- TODO: 2008 has a slightly different portrait. Can we document it? -->
     <div class="design-container">
         <img
 			alt="{{ .Get `Belgian €1 coin (King Albert; Series 1)` }}"
@@ -27,6 +39,20 @@
 		{{ .Get "Since 1999 Belgium has released three series of euro coins, with each series having a single design repeated on all denominations. Starting in 1999 the Belgian euro coins featured the portrait of King Albert II with the {Link:L}royal monogram{-:E} in the outer ring of the coins."
 		(map "Link" (.Printer.Wikipedia "Royal cypher")) }}
 	</p>
+
+	<figure>
+		<div class="design-container">
+			<img
+				alt="{{ .Get `2008 portrait of King Albert II` }}"
+				src="/designs/be-portraits/2008.avif"
+			>
+		</div>
+		<figcaption>
+			{{ .Get "2008 portrait of King Albert II" }}<br>
+			<small>© brismike (<a target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC</a>)</small>
+		</figcaption>
+	</figure>
+
 	<p>
 		{{ .Get "In 2008 a second series of coins was released featuring a slightly modified design in which the royal monogram was moved to the inner portion of the coin along with the year of mintage in order to comply with the European Commission’s guidelines. The country code ‘BE’ was also added to the design underneath the royal monogram. The 2008 redesign also saw the use of a slightly modified portrait of the King, but this design change was reverted in 2009." }}
 	</p>
