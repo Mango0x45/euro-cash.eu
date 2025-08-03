@@ -1,5 +1,52 @@
 {{ define "header" }}
 {{ template "header-navbar" . }}
+
+<style>
+	@media (max-width: 1000px) {
+		#ee-vote-table {
+			tr:first-child td:first-child {
+				border-top: var(--border-width) solid var(--table-border-color);
+			}
+
+			thead, tfoot {
+				display: none;
+			}
+			tbody, tr, td {
+				display: block;
+			}
+
+			tr {
+				&:nth-child(even) {
+					background-color: var(--table-row-stripped-background-color);
+				}
+
+				td:not(:first-child) {
+					padding-top: calc(var(--spacing) / 4);
+				}
+				td:not(:last-child) {
+					padding-bottom: 0;
+					border-bottom: none;
+				}
+			}
+
+			td {
+				padding-left: 50%;
+				position: relative;
+				text-align: left;
+
+			}
+
+			:is(td, span)::before {
+				content: attr(data-label);
+				position: absolute;
+				left: 0;
+				width: 50%;
+				padding-left: 2ch;
+				font-weight: bold;
+			}
+		}
+	}
+</style>
 {{ end }}
 
 {{ define "content" }}
@@ -23,7 +70,7 @@
 		(map "Link" (.Printer.Wikipedia "Eurovision Song Contest")) }}
 	</p>
 	<p>
-		{{ .Get "In June 2004 a public design competition was announced with a deadline for the 19th of October. In total 134 designs were submitted by the deadline and 10 designs were selected by a jury. These 10 designs were then voted on in a public vote over the course of one week. In total 45,453 people voted and the current design won with a total of 12,482 votes (27.46%)." }}
+		{{ .Get "In June 2004 a public design competition was announced with a deadline for the 19th of October. A total of 134 designs were submitted by the deadline and of these submissions, 10 were picked by a jury to partake in the public vote over the course of one week. In total, 45,453 people voted and the current design won with a total of 12,482 votes (27.46%)." }}
 	</p>
 	<p>
 		{{ .Get "The winner of the contest was awarded 50,000 KR (€3,196) while the other finalists were each awarded 20,000 KR (€1,278)." }}
@@ -32,7 +79,7 @@
 	<!-- TODO: Add images of the other designs: https://web.archive.org/web/20070704210956/http://www.eestipank.info/pub/et/majandus/euroopaliit/euro/kavand/_1kava.html -->
 	<!-- Good description of one of the designs: http://www.worldofcoins.eu/forum/index.php/topic,21902.15.html?PHPSESSID=pc4qnnd3ng4etv8fp75u41erb1 -->
 
-	<table>
+	<table id="ee-vote-table">
 		<thead>
 			<tr>
 				<th data-numeric style="width: 1%">{{ .Get "Position" }}</th>
@@ -42,93 +89,95 @@
 				</th>
 				<th>{{ .Get "Author(s)" }}</th>
 				<th data-numeric>{{ .Get "Votes" }}</th>
-				<th data-numeric>{{ .Get "Votes (%)" }}</th>
+				<th data-numeric>{{ .Get "Votes (%)" }}</th>
 			</tr>
 		</thead>
 		<tbody>
 			{{ $args := map "Break" "<br>" }}
+			{{ $tag  := printf `td data-label="%s"` (.Get "Name") }}
+			{{ $attr := printf `data-label="%s"` (.Get "Translation") }}
 			<tr>
-				<td data-numeric>1</td>
+				<td data-label="{{ .Get `Position` }}" data-numeric>1</td>
 				{{/* TRANSLATORS: Name of a coin design. Don’t translate unless you use a non-latin script */}}
-				{{ withTranslation "td" "et" "Hara 2"
-					(.Get "Hara 2") }}
-				<td>{{ .Get "Lembit Lõhmus" }}</td>
-				<td data-numeric>{{ .Printer.Itoa 12482 }}</td>
-				<td data-numeric>{{ .Printer.Ftop 27.46 }}</td>
+				{{ withTranslation $tag "et" "Hara 2"
+					(.Get "Hara 2") $attr }}
+				<td data-label="{{ .Get `Author(s)` }}">{{ .Get "Lembit Lõhmus" }}</td>
+				<td data-label="{{ .Get `Votes` }}" data-numeric>{{ .Printer.Itoa 12482 }}</td>
+				<td data-label="{{ .Get `Votes (%)` }}" data-numeric>{{ .Printer.Ftop 27.46 }}</td>
 			</tr>
 			<tr>
-				<td data-numeric>2</td>
-				{{ withTranslation "td" "et" "Järjepidevus"
-					(.Get "Consistency") }}
-				<td>{{ .Get "Tiit Jürna" }}</td>
-				<td data-numeric>{{ .Printer.Itoa 7477 }}</td>
-				<td data-numeric>{{ .Printer.Ftop 16.45 }}</td>
+				<td data-label="{{ .Get `Position` }}" data-numeric>2</td>
+				{{ withTranslation $tag "et" "Järjepidevus"
+					(.Get "Consistency") $attr }}
+				<td data-label="{{ .Get `Author(s)` }}">{{ .Get "Tiit Jürna" }}</td>
+				<td data-label="{{ .Get `Votes` }}" data-numeric>{{ .Printer.Itoa 7477 }}</td>
+				<td data-label="{{ .Get `Votes (%)` }}" data-numeric>{{ .Printer.Ftop 16.45 }}</td>
 			</tr>
 			<tr>
-				<td data-numeric>3</td>
-				{{ withTranslation "td" "la" "In corpore"
-					(.Get "In the Body") }}
-				<td>{{ .Get "Jaan Meristo" }}</td>
-				<td data-numeric>{{ .Printer.Itoa 7284 }}</td>
-				<td data-numeric>{{ .Printer.Ftop 16.03 }}</td>
+				<td data-label="{{ .Get `Position` }}" data-numeric>3</td>
+				{{ withTranslation $tag "la" "In corpore"
+					(.Get "In the Body") $attr }}
+				<td data-label="{{ .Get `Author(s)` }}">{{ .Get "Jaan Meristo" }}</td>
+				<td data-label="{{ .Get `Votes` }}" data-numeric>{{ .Printer.Itoa 7284 }}</td>
+				<td data-label="{{ .Get `Votes (%)` }}" data-numeric>{{ .Printer.Ftop 16.03 }}</td>
 			</tr>
 			<tr>
-				<td data-numeric>4</td>
+				<td data-label="{{ .Get `Position` }}" data-numeric>4</td>
 				{{/* TRANSLATORS: Name of a coin design. Don’t translate unless you use a non-latin script */}}
-				{{ withTranslation "td" "et" "Tomson 5791"
-					(.Get "Tomson 5791") }}
-				<td>{{ .Get "Taavi Torim" }}</td>
-				<td data-numeric>{{ .Printer.Itoa 6219 }}</td>
-				<td data-numeric>{{ .Printer.Ftop 13.68 }}</td>
+				{{ withTranslation $tag "et" "Tomson 5791"
+					(.Get "Tomson 5791") $attr }}
+				<td data-label="{{ .Get `Author(s)` }}">{{ .Get "Taavi Torim" }}</td>
+				<td data-label="{{ .Get `Votes` }}" data-numeric>{{ .Printer.Itoa 6219 }}</td>
+				<td data-label="{{ .Get `Votes (%)` }}" data-numeric>{{ .Printer.Ftop 13.68 }}</td>
 			</tr>
 			<tr>
-				<td data-numeric>5</td>
-				{{/* TRANSLATORS: Estonian Translatiors: Translate this to ‘Eesti keel’ */}}
-				{{ withTranslation "td" "et" "Eesti keel"
-					(.GetC "Estonian" "Language Name") }}
-				<td>{{ .Get "Jaak Peep, Villem Valme" }}</td>
-				<td data-numeric>{{ .Printer.Itoa 5997 }}</td>
-				<td data-numeric>{{ .Printer.Ftop 13.19 }}</td>
+				<td data-label="{{ .Get `Position` }}" data-numeric>5</td>
+				{{/* TRANSLATORS: Estonian Translators: ‘Estonian’ as in the language, not the nationality */}}
+				{{ withTranslation $tag "et" "Eesti keel"
+					(.GetC "Estonian" "Coin Design") $attr }}
+				<td data-label="{{ .Get `Author(s)` }}">{{ .Get "Jaak Peep, Villem Valme" }}</td>
+				<td data-label="{{ .Get `Votes` }}" data-numeric>{{ .Printer.Itoa 5997 }}</td>
+				<td data-label="{{ .Get `Votes (%)` }}" data-numeric>{{ .Printer.Ftop 13.19 }}</td>
 			</tr>
 			<tr>
-				<td data-numeric>6</td>
-				<td>261948</td>
-				<td>{{ .Get "Mai Järmut, Villu Järmut" }}</td>
-				<td data-numeric>{{ .Printer.Itoa 3036 }}</td>
-				<td data-numeric>{{ .Printer.Ftop 6.68 }}</td>
+				<td data-label="{{ .Get `Position` }}" data-numeric>6</td>
+				<td data-label="{{ .Get `Name` }}">261948</td>
+				<td data-label="{{ .Get `Author(s)` }}">{{ .Get "Mai Järmut, Villu Järmut" }}</td>
+				<td data-label="{{ .Get `Votes` }}" data-numeric>{{ .Printer.Itoa 3036 }}</td>
+				<td data-label="{{ .Get `Votes (%)` }}" data-numeric>{{ .Printer.Ftop 6.68 }}</td>
 			</tr>
 			<tr>
-				<td data-numeric>7</td>
-				{{ withTranslation "td" "et" "Linnutee"
-					(.Get "Bird Road") }}
-				<td>{{ .Get "Tiit Jürna" }}</td>
-				<td data-numeric>{{ .Printer.Itoa 1323 }}</td>
-				<td data-numeric>{{ .Printer.Ftop 2.91 }}</td>
+				<td data-label="{{ .Get `Position` }}" data-numeric>7</td>
+				{{ withTranslation $tag "et" "Linnutee"
+					(.Get "Bird Road") $attr }}
+				<td data-label="{{ .Get `Author(s)` }}">{{ .Get "Tiit Jürna" }}</td>
+				<td data-label="{{ .Get `Votes` }}" data-numeric>{{ .Printer.Itoa 1323 }}</td>
+				<td data-label="{{ .Get `Votes (%)` }}" data-numeric>{{ .Printer.Ftop 2.91 }}</td>
 			</tr>
 			<tr>
-				<td data-numeric>8</td>
-				{{ withTranslation "td" "et" "Leopardid-2"
-					(.Get "Leopards-2") }}
-				<td>{{ .Get "Jaarno Ester" }}</td>
-				<td data-numeric>{{ .Printer.Itoa 759 }}</td>
-				<td data-numeric>{{ .Printer.Ftop 1.67 }}</td>
+				<td data-label="{{ .Get `Position` }}" data-numeric>8</td>
+				{{ withTranslation $tag "et" "Leopardid-2"
+					(.Get "Leopards-2") $attr }}
+				<td data-label="{{ .Get `Author(s)` }}">{{ .Get "Jaarno Ester" }}</td>
+				<td data-label="{{ .Get `Votes` }}" data-numeric>{{ .Printer.Itoa 759 }}</td>
+				<td data-label="{{ .Get `Votes (%)` }}" data-numeric>{{ .Printer.Ftop 1.67 }}</td>
 			</tr>
 			<tr>
-				<td data-numeric>9</td>
+				<td data-label="{{ .Get `Position` }}" data-numeric>9</td>
 				{{/* TRANSLATORS: Name of a coin design. Don’t translate unless you use a non-latin script */}}
-				{{ withTranslation "td" "et" "Nova"
-					(.Get "Nova") }}
-				<td>{{ .Get "Rene Haljasmäe" }}</td>
-				<td data-numeric>{{ .Printer.Itoa 498 }}</td>
-				<td data-numeric>{{ .Printer.Ftop 1.1 }}</td>
+				{{ withTranslation $tag "et" "Nova"
+					(.Get "Nova") $attr }}
+				<td data-label="{{ .Get `Author(s)` }}">{{ .Get "Rene Haljasmäe" }}</td>
+				<td data-label="{{ .Get `Votes` }}" data-numeric>{{ .Printer.Itoa 498 }}</td>
+				<td data-label="{{ .Get `Votes (%)` }}" data-numeric>{{ .Printer.Ftop 1.1 }}</td>
 			</tr>
 			<tr>
-				<td data-numeric>10</td>
-				{{ withTranslation "td" "et" "Lill rukkis"
-					(.Get "A Flower in the Rye") }}
-				<td>{{ .Get "Margus Kadarik" }}</td>
-				<td data-numeric>{{ .Printer.Itoa 378 }}</td>
-				<td data-numeric>{{ .Printer.Ftop 0.83 }}</td>
+				<td data-label="{{ .Get `Position` }}" data-numeric>10</td>
+				{{ withTranslation $tag "et" "Lill rukkis"
+					(.Get "A Flower in the Rye") $attr }}
+				<td data-label="{{ .Get `Author(s)` }}">{{ .Get "Margus Kadarik" }}</td>
+				<td data-label="{{ .Get `Votes` }}" data-numeric>{{ .Printer.Itoa 378 }}</td>
+				<td data-label="{{ .Get `Votes (%)` }}" data-numeric>{{ .Printer.Ftop 0.83 }}</td>
 			</tr>
 		</tbody>
 		<tfoot>

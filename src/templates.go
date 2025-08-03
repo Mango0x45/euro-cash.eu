@@ -120,7 +120,10 @@ func ifElse(b bool, x, y any) any {
 	return y
 }
 
-func withTranslation(tag, bcp, text string, trans template.HTML) template.HTML {
+func withTranslation(tag, bcp, text string, trans template.HTML,
+	spanAttrs ...string) template.HTML {
+	name, _, _ := strings.Cut(tag, " ")
+
 	var bob strings.Builder
 	bob.WriteByte('<')
 	bob.WriteString(tag)
@@ -131,13 +134,18 @@ func withTranslation(tag, bcp, text string, trans template.HTML) template.HTML {
 	bob.WriteString("</span>")
 
 	if text != string(trans) {
-		bob.WriteString(`<br><span class="translation">`)
+		bob.WriteString(`<br><span class="translation"`)
+		for _, s := range spanAttrs {
+			bob.WriteByte(' ')
+			bob.WriteString(s)
+		}
+		bob.WriteByte('>')
 		bob.WriteString(string(trans))
 		bob.WriteString("</span>")
 	}
 
 	bob.WriteString("</")
-	bob.WriteString(tag)
+	bob.WriteString(name)
 	bob.WriteByte('>')
 	return template.HTML(bob.String())
 }
