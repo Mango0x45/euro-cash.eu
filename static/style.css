@@ -521,6 +521,7 @@ section {
 figure {
 	display: block;
 	margin: 0;
+	margin-bottom: var(--typography-spacing-vertical);
 	padding: 0;
 	overflow-x: auto;
 }
@@ -2175,10 +2176,14 @@ a[role=button].outline:is(:hover, :active, :focus) {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-}
 
-.design-container + :is(.design-container, p) {
-	margin-top: var(--block-spacing-vertical);
+	> * {
+		width: 30%;
+	}
+
+	+ :is(.design-container, p) {
+		margin-top: var(--block-spacing-vertical);
+	}
 }
 
 img.big {
