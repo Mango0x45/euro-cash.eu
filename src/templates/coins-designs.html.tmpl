@@ -5,8 +5,6 @@
 	.country-grid {
 		--button-min-width: 20ch;
 
-		row-gap: var(--spacing);
-
 		a {
 			display: flex;
 			padding-block: 1ch;
@@ -14,7 +12,7 @@
 			> :first-child {
 				text-align: left;
 				font-weight: bold;
-				width: calc(var(--form-element-spacing-horizontal) + 2ch);
+				width: calc(var(--pico-form-element-spacing-horizontal) + 2ch);
 			}
 		}
 	}
@@ -22,11 +20,11 @@
 {{ end }}
 
 {{ define "content" }}
-<header>
+<header class="container">
 	{{ template "navbar" . }}
 	<h1>{{ .Get "Euro Coin Designs" }}</h1>
 </header>
-<main>
+<main class="container">
 	<p>
 		{{ .Get "Here you’ll be able to view all the coin designs for each country in the Eurozone. This section of the site doesn’t include minor varieties such as different mintmarks or errors; those are on the {Link:l}varieties{-:E} page."
 		(map "Link" "/coins/varieties") }}
