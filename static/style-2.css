@@ -310,7 +310,7 @@ details summary[role=button]:not(.outline)::after {
   --pico-button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --pico-button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --pico-table-border-color: var(--pico-muted-border-color);
-  --pico-table-row-stripped-background-color: rgba(111, 120, 135, 0.0375);
+  --pico-table-row-stripped-background-color: #161b22;
   --pico-code-background-color: rgb(243, 244.5, 246.75);
   --pico-code-color: #646b79;
   --pico-code-kbd-background-color: var(--pico-color);
@@ -437,7 +437,7 @@ details summary[role=button]:not(.outline)::after {
     --pico-button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     --pico-button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     --pico-table-border-color: var(--pico-muted-border-color);
-    --pico-table-row-stripped-background-color: rgba(111, 120, 135, 0.0375);
+    --pico-table-row-stripped-background-color: #161b22;
     --pico-code-background-color: rgb(26, 30.5, 40.25);
     --pico-code-color: #8891a4;
     --pico-code-kbd-background-color: var(--pico-color);
@@ -572,7 +572,7 @@ details summary[role=button]:not(.outline)::after {
   --pico-button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --pico-button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --pico-table-border-color: var(--pico-muted-border-color);
-  --pico-table-row-stripped-background-color: rgba(111, 120, 135, 0.0375);
+  --pico-table-row-stripped-background-color: #161b22;
   --pico-code-background-color: rgb(26, 30.5, 40.25);
   --pico-code-color: #8891a4;
   --pico-code-kbd-background-color: var(--pico-color);

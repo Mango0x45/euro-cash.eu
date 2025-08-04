@@ -2,8 +2,13 @@
 {{ template "header-navbar" . }}
 
 <style>
-	#mintage-table #mintage-table-cc {
+	.mintage-table {
 		white-space: nowrap;
+
+        tr :is(th, td):first-child {
+            position: sticky;
+            left: 0;
+        }
 	}
 
 	label[for="country-dd"] { display: none; }
@@ -99,7 +104,7 @@
 		<div class="overflow-auto">
 			{{ if eq .FilterBy "country" }}
 
-			<table id="mintage-table-country" class="striped" role="grid">
+			<table class="mintage-table striped" role="grid">
 				<thead>
 					<th>{{ .GetC "Year" "Header/Label" }}</th>
 					<th data-numeric>{{ .Printer.Ftom 0.01 }}</th>
@@ -131,7 +136,7 @@
 
 			{{ else if eq .FilterBy "year" }}
 
-			<table id="mintage-table-year" class="striped" role="grid">
+			<table class="mintage-table striped" role="grid">
 				<thead>
 					<th>{{ .GetC "Country" "Header/Label" }}</th>
 					<th data-numeric>{{ .Printer.Ftom 0.01 }}</th>
@@ -168,7 +173,7 @@
 		{{ if ne (len .CountryMintages.Commemorative) 0 }}
 		<figure>
 			<figcaption>{{ .Get "Commemorative Coins" }}</figcaption>
-			<table id="mintage-table-cc" class="striped" role="grid">
+			<table class="mintage-table striped" role="grid">
 				<thead>
 					<th>{{ .GetC "Year" "Header/Label" }}</th>
 					<th>{{ .GetC "Commemorated Topic" "Header/Label" }}</th>
@@ -201,7 +206,7 @@
 		{{ if ne (len .YearMintages.Commemorative) 0 }}
 		<figure>
 			<figcaption>{{ .Get "Commemorative Coins" }}</figcaption>
-			<table id="mintage-table-cc" class="striped" role="grid">
+			<table class="mintage-table striped" role="grid">
 				<thead>
 					<th>{{ .GetC "Country" "Header/Label" }}</th>
 					<th>{{ .GetC "Commemorated Topic" "Header/Label" }}</th>
