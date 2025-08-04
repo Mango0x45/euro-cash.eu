@@ -310,7 +310,7 @@ details summary[role=button]:not(.outline)::after {
   --pico-button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --pico-button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --pico-table-border-color: var(--pico-muted-border-color);
-  --pico-table-row-stripped-background-color: #161b22;
+  --pico-table-row-stripped-background-color: #f9fafa;
   --pico-code-background-color: rgb(243, 244.5, 246.75);
   --pico-code-color: #646b79;
   --pico-code-kbd-background-color: var(--pico-color);
