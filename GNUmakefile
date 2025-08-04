@@ -1,4 +1,5 @@
-GO := go
+GO   := go
+PORT := 8080
 
 cssfiles  := $(shell find static -name '*.css' -not -name '*.min.css')
 cssfiles  := $(cssfiles:.css=.min.css)
@@ -65,6 +66,6 @@ clean:
 	\) -delete
 
 debug:
-	./euro-cash.eu -debug -no-email -db-name :memory:
+	./euro-cash.eu -debug -no-email -db-name :memory: -port $(PORT)
 
 .PHONY: clean debug extract po release
