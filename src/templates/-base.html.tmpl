@@ -14,22 +14,32 @@
 			const $$ = q => document.querySelectorAll(q);
 
 			(() => {
-				const validate = theme =>
-					  ["light", "dark"].includes(theme) ? theme : "light";
-				const toggle = theme =>
-					  theme == "light" ? "dark" : "light";
-
-				const setTheme = theme => {
-					localStorage.setItem("theme", theme);
-					$("html").setAttribute("data-theme", theme);
-					$(`#nav-icon-theme-${theme}`).style.display = "";
-					$(`#nav-icon-theme-${toggle(theme)}`).style.display = "none";
-				};
-
 				document.addEventListener("DOMContentLoaded", _ => {
-					$("#theme-button").onclick = () =>
-						setTheme(toggle(validate(localStorage.getItem("theme"))));
-					setTheme(validate(localStorage.getItem("theme")));
+					const root = $("html");
+					const icons = {
+						light: $("#nav-icon-theme-light"),
+						dark:  $("#nav-icon-theme-dark"),
+					};
+
+					const toggle = theme =>
+						  theme === "light" ? "dark" : "light"
+
+					const setTheme = theme => {
+						localStorage.setItem("theme", theme);
+						root.setAttribute("data-theme", theme);
+						icons[theme].style.display = "";
+						icons[toggle(theme)].style.display = "none";
+					};
+
+					/* Double toggle to handle invalid theme */
+					setTheme(toggle(toggle(localStorage.getItem("theme"))));
+					$("#theme-button").onclick = () => {
+						const theme = toggle(localStorage.getItem("theme"));
+						if (document.startViewTransition)
+							document.startViewTransition(() => setTheme(theme));
+						else
+							setTheme(theme);
+					};
 				});
 			})();
 		</script>
