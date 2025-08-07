@@ -9,6 +9,10 @@
             position: sticky;
             left: 0;
         }
+
+		.striped :is(th, td) {
+			background-color: var(--pico-table-row-stripped-background-color);
+		}
 	}
 
 	label[for="country-dd"] { display: none; }
@@ -180,7 +184,7 @@
 		{{ if ne (len .CountryMintages.Commemorative) 0 }}
 		<figure>
 			<figcaption>{{ .Get "Commemorative Coins" }}</figcaption>
-			<table class="mintage-table striped" role="grid">
+			<table class="mintage-table" role="grid">
 				<thead>
 					<th>{{ .GetC "Year" "Header/Label" }}</th>
 					<th>{{ .GetC "Commemorated Topic" "Header/Label" }}</th>
@@ -188,17 +192,24 @@
 				</thead>
 				<tbody>
 					{{ $p := .Printer }}
-					{{ range .CountryMintages.Commemorative }}
-					<tr>
-						<th scope="row">
-							{{- .Year -}}
-							{{- if .Mintmark.Valid -}}
-							&nbsp;<sub><small>{{ .Mintmark.V }}</small></sub>
+					{{ range $i, $ := .CountryMintages.Commemorative }}
+					{{ $y := .Year }}
+					{{ $mm := .Mintmark }}
+					{{ $ccs := .CCs }}
+					{{ range $j, $cc := .CCs }}
+					<tr {{ if evenp $i }}class="striped"{{ end }}>
+						{{ if eq $j 0 }}
+						<th scope="row" rowspan="{{ len $ccs }}">
+							{{- $y -}}
+							{{- if $mm.Valid -}}
+							&nbsp;<sub><small>{{ $mm.V }}</small></sub>
 							{{- end -}}
 						</th>
+						{{ end }}
 						<td>{{ $p.GetC .Name "CC Name" }}</td>
 						{{ template "mintages/mintage-cell" (tuple .Mintage $p) }}
 					</tr>
+					{{ end }}
 					{{ end }}
 				</tbody>
 			</table>
@@ -210,7 +221,7 @@
 		{{ if ne (len .YearMintages.Commemorative) 0 }}
 		<figure>
 			<figcaption>{{ .Get "Commemorative Coins" }}</figcaption>
-			<table class="mintage-table striped" role="grid">
+			<table class="mintage-table" role="grid">
 				<thead>
 					<th>{{ .GetC "Country" "Header/Label" }}</th>
 					<th>{{ .GetC "Commemorated Topic" "Header/Label" }}</th>
@@ -218,18 +229,24 @@
 				</thead>
 				<tbody>
 					{{ $p := .Printer }}
-					{{ range .YearMintages.Commemorative }}
-					<tr>
-						<th scope="row">
-							{{- .Country -}}
-							{{- if .Mintmark.Valid -}}
-							&nbsp;<sub><small>{{ .Mintmark.V }}</small></sub>
+					{{ range $i, $ := .YearMintages.Commemorative }}
+					{{ $c := .Country }}
+					{{ $mm := .Mintmark }}
+					{{ $ccs := .CCs }}
+					{{ range $j, $cc := .CCs }}
+					<tr {{ if evenp $i }}class="striped"{{ end }}>
+						{{ if eq $j 0 }}
+						<th scope="row" rowspan="{{ len $ccs }}">
+							{{- $c -}}
+							{{- if $mm.Valid -}}
+							&nbsp;<sub><small>{{ $mm.V }}</small></sub>
 							{{- end -}}
 						</th>
-						<!-- TODO: Translate commemorative names -->
-						<td>{{ .Name }}</td>
+						{{ end }}
+						<td>{{ $p.GetC .Name "CC Name" }}</td>
 						{{ template "mintages/mintage-cell" (tuple .Mintage $p) }}
 					</tr>
+					{{ end }}
 					{{ end }}
 				</tbody>
 			</table>

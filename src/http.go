@@ -14,8 +14,6 @@ import (
 	"time"
 
 	. "git.thomasvoss.com/euro-cash.eu/pkg/try"
-	"golang.org/x/text/collate"
-	"golang.org/x/text/language"
 
 	"git.thomasvoss.com/euro-cash.eu/src/dbx"
 	"git.thomasvoss.com/euro-cash.eu/src/email"
@@ -155,7 +153,6 @@ func mintageHandler(next http.Handler) http.Handler {
 			td.FilterBy = "country"
 		}
 
-		var err error
 		mt := dbx.NewMintageType(td.Type)
 
 		switch td.FilterBy {
@@ -166,45 +163,25 @@ func mintageHandler(next http.Handler) http.Handler {
 			}) {
 				td.Code = td.Countries[0].Code
 			}
-			td.CountryMintages, err = dbx.GetMintagesByCountry(td.Code, mt)
+
+			m, err := dbx.GetMintagesByCountry(td.Code, mt)
+			if err != nil {
+				throwError(http.StatusInternalServerError, err, w, r)
+				return
+			}
+			td.CountryMintages = makeCountryMintageTable(m, td.Printer)
 		case "year":
+			var err error
 			td.Year, err = strconv.Atoi(r.FormValue("year"))
 			if err != nil || td.Year < 1999 {
 				td.Year = 1999
 			}
-			td.YearMintages, err = dbx.GetMintagesByYear(td.Year, mt)
-
-			/* NOTE: It’s safe to use MustParse() here, because by this
-			   point we know that all BCPs are valid. */
-			c := collate.New(language.MustParse(td.Printer.Bcp))
-			for i, r := range td.YearMintages.Standard {
-				name := td.Printer.GetC(
-					countryCodeToName[r.Country], "Place Name")
-				td.YearMintages.Standard[i].Country = name
+			m, err := dbx.GetMintagesByYear(td.Year, mt)
+			if err != nil {
+				throwError(http.StatusInternalServerError, err, w, r)
+				return
 			}
-			for i, r := range td.YearMintages.Commemorative {
-				name := td.Printer.GetC(
-					countryCodeToName[r.Country], "Place Name")
-				td.YearMintages.Commemorative[i].Country = name
-			}
-			slices.SortFunc(td.YearMintages.Standard, func(x, y dbx.MSYearRow) int {
-				Δ := c.CompareString(x.Country, y.Country)
-				if Δ == 0 {
-					Δ = c.CompareString(x.Mintmark.V, y.Mintmark.V)
-				}
-				return Δ
-			})
-			slices.SortFunc(td.YearMintages.Commemorative, func(x, y dbx.MCommemorative) int {
-				Δ := c.CompareString(x.Country, y.Country)
-				if Δ == 0 {
-					Δ = c.CompareString(x.Mintmark.V, y.Mintmark.V)
-				}
-				return Δ
-			})
-		}
-		if err != nil {
-			throwError(http.StatusInternalServerError, err, w, r)
-			return
+			td.YearMintages = makeYearMintageTable(m, td.Printer)
 		}
 
 		next.ServeHTTP(w, r)

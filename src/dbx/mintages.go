@@ -100,8 +100,8 @@ func GetMintagesByYear(year int, typ MintageType) (YearMintageData, error) {
 
 	loop:
 		msr := MSYearRow{
-			Country:    x.Country,
-			Mintmark:   x.Mintmark,
+			Country:  x.Country,
+			Mintmark: x.Mintmark,
 		}
 		i := denomToIdx(x.Denomination)
 		msr.Mintages[i] = x.Mintage
@@ -164,8 +164,8 @@ func GetMintagesByCountry(country string, typ MintageType) (CountryMintageData, 
 
 	loop:
 		msr := MSCountryRow{
-			Year:       x.Year,
-			Mintmark:   x.Mintmark,
+			Year:     x.Year,
+			Mintmark: x.Mintmark,
 		}
 		i := denomToIdx(x.Denomination)
 		msr.Mintages[i] = x.Mintage

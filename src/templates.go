@@ -10,7 +10,6 @@ import (
 	. "git.thomasvoss.com/euro-cash.eu/pkg/try"
 	"git.thomasvoss.com/euro-cash.eu/pkg/watch"
 
-	"git.thomasvoss.com/euro-cash.eu/src/dbx"
 	"git.thomasvoss.com/euro-cash.eu/src/i18n"
 )
 
@@ -20,8 +19,8 @@ type templateData struct {
 	Printers             map[string]i18n.Printer
 	Code, Type, FilterBy string
 	Year                 int
-	CountryMintages      dbx.CountryMintageData
-	YearMintages         dbx.YearMintageData
+	CountryMintages      CountryMintageTable
+	YearMintages         YearMintageTable
 	Countries            []country
 }
 
@@ -30,6 +29,7 @@ var (
 	errorTmpl    *template.Template
 	templates    map[string]*template.Template
 	funcmap      = map[string]any{
+		"evenp":            evenp,
 		"ifElse":           ifElse,
 		"locales":          i18n.Locales,
 		"map":              templateMakeMap,
@@ -130,6 +130,10 @@ func templateMakeMap(args ...any) map[string]any {
 		m[k] = args[i+1]
 	}
 	return m
+}
+
+func evenp(n int) bool {
+	return n&1 == 0
 }
 
 func ifElse(b bool, x, y any) any {
