@@ -136,6 +136,7 @@ INSERT INTO mintages_c (
 	('sk', 0, 2014, C_('Slovak Republic to the EU', 'CC Name'), 1, NULL, 1000000, NULL),
 	('sk', 0, 2015, C_('Ľudovít Štúr', 'CC Name'), 1, NULL, 1000000, NULL),
 	('sk', 0, 2015, C_('EU Flag', 'CC Name'), 2, NULL, 1000000, NULL),
+	('nl', 0, 2015, C_('EU Flag', 'CC Name'), 2, NULL, NULL, NULL),
 	('fr', 0, 2015, C_('Peace and security', 'CC Name'), 1, NULL, 4000000, NULL),
 	('fr', 0, 2015, C_('Fête de la Fédération', 'CC Name'), 2, NULL, 4000000, NULL),
 	('fr', 0, 2015, C_('EU Flag', 'CC Name'), 3, NULL, 4000000, NULL);
