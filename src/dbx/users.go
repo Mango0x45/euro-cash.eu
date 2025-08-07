@@ -1,6 +1,7 @@
 package dbx
 
 import (
+	"context"
 	"database/sql"
 	"errors"
 
@@ -27,7 +28,7 @@ func CreateUser(user User) error {
 		return err
 	}
 
-	_, err = db.Exec(`
+	_, err = db.ExecContext(context.TODO(), `
 		INSERT INTO users (
 			email,
 			username,
@@ -43,8 +44,8 @@ func Login(username, password string) (User, error) {
 	username = norm.NFC.String(username)
 	password = norm.NFC.String(password)
 
-	/* TODO: Pass a context here? */
-	rs, err := db.Queryx(`SELECT * FROM users WHERE username = ?`, username)
+	rs, err := db.QueryxContext(context.TODO(),
+		`SELECT * FROM users WHERE username = ?`, username)
 	if err != nil {
 		return User{}, err
 	}
