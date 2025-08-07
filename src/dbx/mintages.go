@@ -1,21 +1,22 @@
 package dbx
 
 import (
+	"context"
 	"database/sql"
 	"slices"
 )
 
 type CountryMintageData struct {
 	Standard      []MSCountryRow
-	Commemorative []MCCountryRow
+	Commemorative []MCommemorative
 }
 
 type YearMintageData struct {
 	Standard      []MSYearRow
-	Commemorative []MCYearRow
+	Commemorative []MCommemorative
 }
 
-type msRowInternal struct {
+type msRow struct {
 	Country      string
 	Type         MintageType
 	Year         int
@@ -25,7 +26,21 @@ type msRowInternal struct {
 	Reference    sql.Null[string]
 }
 
-type mcRowInternal struct {
+type MSCountryRow struct {
+	Year       int
+	Mintmark   sql.Null[string]
+	Mintages   [ndenoms]sql.Null[int]
+	References [ndenoms]sql.Null[string]
+}
+
+type MSYearRow struct {
+	Country    string
+	Mintmark   sql.Null[string]
+	Mintages   [ndenoms]sql.Null[int]
+	References [ndenoms]sql.Null[string]
+}
+
+type MCommemorative struct {
 	Country   string
 	Type      MintageType
 	Year      int
@@ -36,38 +51,6 @@ type mcRowInternal struct {
 	Reference sql.Null[string]
 }
 
-type MSCountryRow struct {
-	Year       int
-	Mintmark   string
-	Mintages   [ndenoms]int
-	References []string
-}
-
-type MCCountryRow struct {
-	Year      int
-	Name      string
-	Number    int
-	Mintmark  string
-	Mintage   int
-	Reference string
-}
-
-type MSYearRow struct {
-	Country    string
-	Mintmark   string
-	Mintages   [ndenoms]int
-	References []string
-}
-
-type MCYearRow struct {
-	Country  string
-	Name string
-	Number    int
-	Mintmark string
-	Mintage   int
-	Reference string
-}
-
 type MintageType int
 
 /* DO NOT REORDER! */
@@ -75,12 +58,6 @@ const (
 	TypeCirc MintageType = iota
 	TypeNifc
 	TypeProof
-)
-
-/* DO NOT REORDER! */
-const (
-	MintageUnknown = -iota - 1
-	MintageInvalid
 )
 
 const ndenoms = 8
@@ -103,10 +80,10 @@ func GetMintagesByYear(year int, typ MintageType) (YearMintageData, error) {
 	var (
 		zero YearMintageData
 		xs   []MSYearRow
-		ys   []MCYearRow
+		ys   []MCommemorative
 	)
 
-	rs, err := db.Queryx(`
+	rs, err := db.QueryxContext(context.TODO(), `
 		SELECT * FROM mintages_s
 		WHERE year = ? AND type = ?
 		ORDER BY country, mintmark, denomination
@@ -116,7 +93,7 @@ func GetMintagesByYear(year int, typ MintageType) (YearMintageData, error) {
 	}
 
 	for rs.Next() {
-		var x msRowInternal
+		var x msRow
 		if err = rs.StructScan(&x); err != nil {
 			return zero, err
 		}
@@ -124,20 +101,14 @@ func GetMintagesByYear(year int, typ MintageType) (YearMintageData, error) {
 	loop:
 		msr := MSYearRow{
 			Country:    x.Country,
-			Mintmark:   sqlOr(x.Mintmark, ""),
-			References: make([]string, 0, ndenoms),
+			Mintmark:   x.Mintmark,
 		}
-		for i := range msr.Mintages {
-			msr.Mintages[i] = MintageUnknown
-		}
-		msr.Mintages[denomToIdx(x.Denomination)] =
-			sqlOr(x.Mintage, MintageUnknown)
-		if x.Reference.Valid {
-			msr.References = append(msr.References, x.Reference.V)
-		}
+		i := denomToIdx(x.Denomination)
+		msr.Mintages[i] = x.Mintage
+		msr.References[i] = x.Reference
 
 		for rs.Next() {
-			var y msRowInternal
+			var y msRow
 			if err = rs.StructScan(&y); err != nil {
 				return zero, err
 			}
@@ -148,11 +119,9 @@ func GetMintagesByYear(year int, typ MintageType) (YearMintageData, error) {
 				goto loop
 			}
 
-			msr.Mintages[denomToIdx(y.Denomination)] =
-				sqlOr(y.Mintage, MintageUnknown)
-			if y.Reference.Valid {
-				msr.References = append(msr.References, y.Reference.V)
-			}
+			i = denomToIdx(y.Denomination)
+			msr.Mintages[i] = y.Mintage
+			msr.References[i] = y.Reference
 		}
 
 		xs = append(xs, msr)
@@ -162,29 +131,11 @@ func GetMintagesByYear(year int, typ MintageType) (YearMintageData, error) {
 		return zero, err
 	}
 
-	rs, err = db.Queryx(`
-	   	SELECT * FROM mintages_c
- 	   	WHERE year = ? AND type = ?
-	   	ORDER BY country, mintmark, number
+	db.SelectContext(context.TODO(), &ys, `
+		SELECT * FROM mintages_c
+		WHERE year = ? and type = ?
+		ORDER BY country, mintmark, number
 	`, year, typ)
-	if err != nil {
-		return zero, err
-	}
-
-	for rs.Next() {
-		var y mcRowInternal
-		if err = rs.StructScan(&y); err != nil {
-			return zero, err
-		}
-		ys = append(ys, MCYearRow{
-			Country:   y.Country,
-			Name:      y.Name,
-			Number:    y.Number,
-			Mintmark:  sqlOr(y.Mintmark, ""),
-			Mintage:   sqlOr(y.Mintage, MintageUnknown),
-			Reference: sqlOr(y.Reference, ""),
-		})
-	}
 
 	return YearMintageData{xs, ys}, nil
 }
@@ -193,10 +144,10 @@ func GetMintagesByCountry(country string, typ MintageType) (CountryMintageData, 
 	var (
 		zero CountryMintageData
 		xs   []MSCountryRow
-		ys   []MCCountryRow
+		ys   []MCommemorative
 	)
 
-	rs, err := db.Queryx(`
+	rs, err := db.QueryxContext(context.TODO(), `
 		SELECT * FROM mintages_s
  		WHERE country = ? AND type = ?
 		ORDER BY year, mintmark, denomination
@@ -206,7 +157,7 @@ func GetMintagesByCountry(country string, typ MintageType) (CountryMintageData, 
 	}
 
 	for rs.Next() {
-		var x msRowInternal
+		var x msRow
 		if err = rs.StructScan(&x); err != nil {
 			return zero, err
 		}
@@ -214,20 +165,14 @@ func GetMintagesByCountry(country string, typ MintageType) (CountryMintageData, 
 	loop:
 		msr := MSCountryRow{
 			Year:       x.Year,
-			Mintmark:   sqlOr(x.Mintmark, ""),
-			References: make([]string, 0, ndenoms),
+			Mintmark:   x.Mintmark,
 		}
-		for i := range msr.Mintages {
-			msr.Mintages[i] = MintageUnknown
-		}
-		msr.Mintages[denomToIdx(x.Denomination)] =
-			sqlOr(x.Mintage, MintageUnknown)
-		if x.Reference.Valid {
-			msr.References = append(msr.References, x.Reference.V)
-		}
+		i := denomToIdx(x.Denomination)
+		msr.Mintages[i] = x.Mintage
+		msr.References[i] = x.Reference
 
 		for rs.Next() {
-			var y msRowInternal
+			var y msRow
 			if err = rs.StructScan(&y); err != nil {
 				return zero, err
 			}
@@ -238,11 +183,9 @@ func GetMintagesByCountry(country string, typ MintageType) (CountryMintageData, 
 				goto loop
 			}
 
-			msr.Mintages[denomToIdx(y.Denomination)] =
-				sqlOr(y.Mintage, MintageUnknown)
-			if y.Reference.Valid {
-				msr.References = append(msr.References, y.Reference.V)
-			}
+			i = denomToIdx(y.Denomination)
+			msr.Mintages[i] = y.Mintage
+			msr.References[i] = y.Reference
 		}
 
 		xs = append(xs, msr)
@@ -252,38 +195,13 @@ func GetMintagesByCountry(country string, typ MintageType) (CountryMintageData, 
 		return zero, err
 	}
 
-	rs, err = db.Queryx(`
-	   	SELECT * FROM mintages_c
- 	   	WHERE country = ? AND type = ?
-	   	ORDER BY year, mintmark, number
+	db.SelectContext(context.TODO(), &ys, `
+		SELECT * FROM mintages_c
+		WHERE country = ? and type = ?
+		ORDER BY year, mintmark, number
 	`, country, typ)
-	if err != nil {
-		return zero, err
-	}
-
-	for rs.Next() {
-		var y mcRowInternal
-		if err = rs.StructScan(&y); err != nil {
-			return zero, err
-		}
-		ys = append(ys, MCCountryRow{
-			Year:      y.Year,
-			Name:      y.Name,
-			Number:    y.Number,
-			Mintmark:  sqlOr(y.Mintmark, ""),
-			Mintage:   sqlOr(y.Mintage, MintageUnknown),
-			Reference: sqlOr(y.Reference, ""),
-		})
-	}
 
 	return CountryMintageData{xs, ys}, rs.Err()
-}
-
-func sqlOr[T any](v sql.Null[T], dflt T) T {
-	if v.Valid {
-		return v.V
-	}
-	return dflt
 }
 
 func denomToIdx(d float64) int {

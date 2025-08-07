@@ -13,9 +13,9 @@ import (
 	"strings"
 	"time"
 
+	. "git.thomasvoss.com/euro-cash.eu/pkg/try"
 	"golang.org/x/text/collate"
 	"golang.org/x/text/language"
-	. "git.thomasvoss.com/euro-cash.eu/pkg/try"
 
 	"git.thomasvoss.com/euro-cash.eu/src/dbx"
 	"git.thomasvoss.com/euro-cash.eu/src/email"
@@ -169,7 +169,7 @@ func mintageHandler(next http.Handler) http.Handler {
 			td.CountryMintages, err = dbx.GetMintagesByCountry(td.Code, mt)
 		case "year":
 			td.Year, err = strconv.Atoi(r.FormValue("year"))
-			if err != nil {
+			if err != nil || td.Year < 1999 {
 				td.Year = 1999
 			}
 			td.YearMintages, err = dbx.GetMintagesByYear(td.Year, mt)
@@ -190,14 +190,14 @@ func mintageHandler(next http.Handler) http.Handler {
 			slices.SortFunc(td.YearMintages.Standard, func(x, y dbx.MSYearRow) int {
 				Δ := c.CompareString(x.Country, y.Country)
 				if Δ == 0 {
-					Δ = c.CompareString(x.Mintmark, y.Mintmark)
+					Δ = c.CompareString(x.Mintmark.V, y.Mintmark.V)
 				}
 				return Δ
 			})
-			slices.SortFunc(td.YearMintages.Commemorative, func(x, y dbx.MCYearRow) int {
+			slices.SortFunc(td.YearMintages.Commemorative, func(x, y dbx.MCommemorative) int {
 				Δ := c.CompareString(x.Country, y.Country)
 				if Δ == 0 {
-					Δ = c.CompareString(x.Mintmark, y.Mintmark)
+					Δ = c.CompareString(x.Mintmark.V, y.Mintmark.V)
 				}
 				return Δ
 			})

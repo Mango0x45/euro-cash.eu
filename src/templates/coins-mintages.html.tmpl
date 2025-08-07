@@ -99,11 +99,12 @@
 		</div>
 		<button type="submit">{{ .GetC "Filter" "Header/Label" }}</button>
 	</form>
+
+	{{ if and (eq .FilterBy "country")
+	          (gt (len .CountryMintages.Standard) 0) }}
 	<figure>
 		<figcaption>{{ .Get "Standard Issue Coins" }}</figcaption>
 		<div class="overflow-auto">
-			{{ if eq .FilterBy "country" }}
-
 			<table class="mintage-table striped" role="grid">
 				<thead>
 					<th>{{ .GetC "Year" "Header/Label" }}</th>
@@ -122,8 +123,8 @@
 						<tr>
 							<th scope="row">
 								{{- .Year -}}
-								{{- if ne .Mintmark "" -}}
-									&nbsp;<sub><small>{{ .Mintmark }}</small></sub>
+								{{- if .Mintmark.Valid -}}
+									&nbsp;<sub><small>{{ .Mintmark.V }}</small></sub>
 								{{- end -}}
 							</th>
 							{{ range .Mintages }}
@@ -133,9 +134,15 @@
 					{{ end }}
 				</tbody>
 			</table>
+		</div>
+	</figure>
 
-			{{ else if eq .FilterBy "year" }}
+	{{ else if and (eq .FilterBy "year")
+	               (gt (len .YearMintages.Standard) 0) }}
 
+	<figure>
+		<figcaption>{{ .Get "Standard Issue Coins" }}</figcaption>
+		<div class="overflow-auto">
 			<table class="mintage-table striped" role="grid">
 				<thead>
 					<th>{{ .GetC "Country" "Header/Label" }}</th>
@@ -154,8 +161,8 @@
 					<tr>
 						<th scope="row">
 							{{- .Country -}}
-							{{- if ne .Mintmark "" -}}
-							&nbsp;<sub><small>{{ .Mintmark }}</small></sub>
+							{{- if .Mintmark.Valid -}}
+							&nbsp;<sub><small>{{ .Mintmark.V }}</small></sub>
 							{{- end -}}
 						</th>
 						{{ range .Mintages }}
@@ -165,9 +172,9 @@
 					{{ end }}
 				</tbody>
 			</table>
-			{{ end }}
 		</div>
 	</figure>
+	{{ end }}
 
 	{{ if eq .FilterBy "country" }}
 		{{ if ne (len .CountryMintages.Commemorative) 0 }}
@@ -185,15 +192,12 @@
 					<tr>
 						<th scope="row">
 							{{- .Year -}}
-							{{- if ne .Mintmark "" -}}
-							&nbsp;<sub><small>{{ .Mintmark }}</small></sub>
+							{{- if .Mintmark.Valid -}}
+							&nbsp;<sub><small>{{ .Mintmark.V }}</small></sub>
 							{{- end -}}
 						</th>
-						<!-- TODO: Translate commemorative names -->
-						<td>{{ .Name }}</td>
-						{{ with .Mintage }}
-						{{ template "mintages/mintage-cell" (tuple . $p) }}
-						{{ end }}
+						<td>{{ $p.GetC .Name "CC Name" }}</td>
+						{{ template "mintages/mintage-cell" (tuple .Mintage $p) }}
 					</tr>
 					{{ end }}
 				</tbody>
@@ -218,15 +222,13 @@
 					<tr>
 						<th scope="row">
 							{{- .Country -}}
-							{{- if ne .Mintmark "" -}}
-							&nbsp;<sub><small>{{ .Mintmark }}</small></sub>
+							{{- if .Mintmark.Valid -}}
+							&nbsp;<sub><small>{{ .Mintmark.V }}</small></sub>
 							{{- end -}}
 						</th>
 						<!-- TODO: Translate commemorative names -->
 						<td>{{ .Name }}</td>
-						{{ with .Mintage }}
-						{{ template "mintages/mintage-cell" (tuple . $p) }}
-						{{ end }}
+						{{ template "mintages/mintage-cell" (tuple .Mintage $p) }}
 					</tr>
 					{{ end }}
 				</tbody>
@@ -271,13 +273,11 @@
 {{ define "mintages/mintage-cell" }}
 {{ $v := index . 0 }}
 {{ $p := index . 1 }}
-{{ if eq $v -1 }}
+{{ if not $v.Valid }}
 	<td data-numeric>{{ $p.Get "Unknown" }}</td>
-{{ else if eq $v -2 }}
-	<td data-numeric class="error">{{ $p.Get "Error" }}</td>
-{{ else if eq $v 0 }}
+{{ else if eq $v.V 0 }}
 	<td data-numeric>—</td>
 {{ else }}
-	<td data-numeric>{{ $p.Itoa $v }}</td>
+	<td data-numeric>{{ $p.Itoa $v.V }}</td>
 {{ end }}
 {{ end }}
