@@ -1,6 +1,7 @@
 package dbx
 
 import (
+	"context"
 	"fmt"
 	"io/fs"
 	"log"
@@ -20,6 +21,16 @@ var (
 func Init(sqlDir fs.FS) {
 	db = sqlx.MustConnect("sqlite3", DBName)
 	atexit.Register(Close)
+
+	conn := Try2(db.Conn(context.Background()))
+	Try(conn.Raw(func(driverConn any) error {
+		return driverConn.(*sqlite3.SQLiteConn).RegisterFunc("C_",
+			func(s, _ string) string {
+				return s
+			}, true)
+	}))
+	conn.Close()
+
 	Try(applyMigrations(sqlDir))
 
 	/* TODO: Remove debug code */

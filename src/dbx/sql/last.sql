@@ -133,9 +133,9 @@ INSERT INTO mintages_c (
 	mintage,
 	reference
 ) VALUES
-	('sk', 0, 2014, 'Slovak Republic to the EU', 1, NULL, 1000000, NULL),
-  	('sk', 0, 2015, 'Ľudovít Štúr', 1, NULL, 1000000, NULL),
-  	('sk', 0, 2015, 'EU Flag', 2, NULL, 1000000, NULL),
-	('fr', 0, 2015, 'Peace and security', 1, NULL, 4000000, NULL),
-	('fr', 0, 2015, 'Fête de la Fédération', 2, NULL, 4000000, NULL),
-	('fr', 0, 2015, 'EU Flag', 3, NULL, 4000000, NULL);
+	('sk', 0, 2014, C_('Slovak Republic to the EU', 'CC Name'), 1, NULL, 1000000, NULL),
+	('sk', 0, 2015, C_('Ľudovít Štúr', 'CC Name'), 1, NULL, 1000000, NULL),
+	('sk', 0, 2015, C_('EU Flag', 'CC Name'), 2, NULL, 1000000, NULL),
+	('fr', 0, 2015, C_('Peace and security', 'CC Name'), 1, NULL, 4000000, NULL),
+	('fr', 0, 2015, C_('Fête de la Fédération', 'CC Name'), 2, NULL, 4000000, NULL),
+	('fr', 0, 2015, C_('EU Flag', 'CC Name'), 3, NULL, 4000000, NULL);
